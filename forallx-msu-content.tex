@@ -1,0 +1,42 @@
+\frontmatter
+
+\include{forallx-msu-part0--frontmatter}
+
+\pagestyle{leadbeater}
+\currentpdfbookmark{Table of Contents}{name}
+\tableofcontents*
+
+\include{forallx-msu-part0--preface}   
+
+\mainmatter
+
+\include{forallx-msu-part1}
+\include{forallx-msu-part2--tfl}
+\include{forallx-msu-part3--truthtables}
+\include{forallx-msu-part4--proof_tfl}
+\include{forallx-yyc-sound_complete}
+
+%\include{forallx-yyc-fol}
+%\include{forallx-yyc-interpretations}
+%\include{forallx-yyc-prooffol}
+%\include{forallx-yyc-metatheory}
+
+\appendix
+\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
+\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
+
+\input{forallx-msu-part5--notation} % RZ for some reason, with an \include here the TOC gets messed up
+\include{forallx-msu-part5--quickreference} % This is from the original Forallx.
+\printglossaries
+  
+%\include{forallx-yyc-alternatives}
+%\include{forallx-yyc-quickreference}
+
+\backmatter
+
+\glsaddall
+\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
+
+\include{forallx-msu-part0--backmatter}
+
