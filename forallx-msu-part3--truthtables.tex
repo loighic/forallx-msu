@@ -600,19 +600,22 @@ $P$&$Q$&\enot&$(P$&\eor&$Q)$\\
 
 
 
-\section{Logical equivalence}\label{equivalence--tt}
-Here is a similar useful notion:
+\section{Equivalence}\label{equivalence--tt}
+When we have two sentences, three possible logical relations can exist between the sentences. (Actually, there are more than three, but we'll focus on three.) The first is \define{equivalence}.
+
 	\factoidbox{
-		$\meta{A}$ and $\meta{B}$ are \define{logically equivalent} if and only if, for every valuation, their truth values agree, i.e.\ if there is no valuation in which they have opposite truth values.
+		$\meta{A}$ and $\meta{B}$ are \define{equivalent} if and only if, for every valuation, their truth values agree, i.e.\ if there is no valuation in which they have opposite truth values. 
+		
+		(Equivalently, if $(\meta{A} \eiff \meta{B})$ is a tautology, then $\meta{A}$ and $\meta{B}$ are \define{equivalent}.)
 	}
-\newglossaryentry{logically equivalent}
+\newglossaryentry{equivalent}
 {
-  name=logical equivalence (in TFL),
-  text = logically equivalent,
+  name=equivalence (in TFL),
+  text = equivalent,
 description={A property held by pairs of sentences if and only if the \gls{complete truth table} for those sentences has identical columns under the two main logical operators, i.e., if the sentences have the same truth value on every valuation}
 }
 
-We have already made use of this notion, in effect, in \S\ref{s:MoreBracketingConventions}; the point was that `$(A \eand B) \eand C$' and  `$A \eand (B \eand C)$' are logically equivalent. Again, it is easy to test for logical equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they logically equivalent? To find out, we construct a truth table containing both sentences.
+We have already made use of this notion, in effect, in \S\ref{s:MoreBracketingConventions}; the point was that `$(A \eand B) \eand C$' and  `$A \eand (B \eand C)$' are logically equivalent. Again, it is easy to test for equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they logically equivalent? To find out, we construct a truth table containing both sentences.
 \begin{center}
 \begin{tabular}{c c|d e e f |d e e e f}
 $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
@@ -627,15 +630,17 @@ Look at the columns for the main logical operators; negation for the first sente
 
 
 \section{Consistency}
-In \S\ref{s:joint-poss}, we said that sentences are jointly possible if and only if it is possible for all of them to be true at once. We can offer a surrogate for this notion too:
+In \S\ref{s:joint-poss}, we said that sentences are jointly possible if and only if it is possible for all of them to be true at once. We have a surrogate for this notion too. 
 	\factoidbox{
-		$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ are \define{jointly logically consistent} iff there is some valuation which makes them all true.
+		$\meta{A}$ and $\meta{B}$ are \define{jointly consistent} if and only if there is some valuation that makes them both true.
+		
+		(Equivalently, if there is at least one valuation that makes ($\meta{A}$ \eand $\meta{B}$) true, then $\meta{A}$ and $\meta{B}$ are \define{jointly consistent}.)
 	}
 
-        \newglossaryentry{logical consistency in TFL}
+        \newglossaryentry{joint consistency in TFL}
 {
-  name=logical consistency (in TFL),
-  text=jointly logically consistent,
+  name=joint consistency (in TFL),
+  text=jointly consistent,
 description={A property held by sentences if and only if the \gls{complete truth table} for those sentences contains one line on which all the sentences are true, i.e., if some \gls{valuation} makes all the sentences true}
 }
 
@@ -644,7 +649,7 @@ This was one of the examples in \S\ref{s:joint-poss}:
 		\item[G1.] \label{MartianGiraffes} There are at least four giraffes at the wild animal park.
 		\item[G2.] There are exactly seven gorillas at the wild animal park.
 	\end{ebullet}
-These are jointly possible because it is possible for them both to be true at the same time. It takes nothing away from their joint possibility that they can also be false at the same time or one can be false while the other is true. Applying that same observation to \textit{jointly logically consistent}, all we need is one or more lines where both sentences are true. $(P \eor Q)$ and  $(P \eand \enot Q)$ have one line where they are both true, and so they are jointly logically consistent: 
+These are jointly possible because it is possible for them both to be true at the same time. It takes nothing away from their joint possibility that they can also be false at the same time or one can be false while the other is true. Applying that same observation to \textit{jointly consistent}, all we need is one or more lines where both sentences are true. $(P \eor Q)$ and  $(P \eand \enot Q)$ have one line where they are both true, and so they are jointly consistent: 
 
 \begin{center}
 \begin{tabular}{c c|d e f |d e e f}
@@ -657,23 +662,45 @@ $P$ &$Q$& $P$& ~\eor~ & $Q$& $P$& \eand& \enot& $Q$\\
 \end{tabular}
 \end{center}
 
+Conversely, sentences are \define{jointly inconsistent} if there is no valuation that makes them all true. If we think about this definition for a moment, we see that there are three ways that two sentences can be jointly inconsistent. 
+\begin{ebullet}	
+\item[(1)] One each line, the truth value for one sentence is `T' and the truth value for the other sentence is `F'. For instance, the truth values for $P \eor Q$ and $\enot P \eand \enot Q$ never match. On each line, one is true and the other is false. Hence, for this relationship between two sentences, all of these criteria are satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology; $\enot(\meta{A} \eiff \meta{B})$ is a tautology; and $(\meta{A} \eor \meta{B})$ is a tautology.
+\medskip
+\item[(2)] When the truth value for one sentence is `T', then the truth value for the other sentence is `F', but both sentences can be false at the same time. For example, $\enot(\enot P \eor Q)$ and $(\enot P \eand \enot Q)$ are never both true on the same line, but they are false on the same line. For sentences that are jointly inconsistent in this way, only this criterion is satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology.
+\medskip
+\item[(3)] Both sentences are false on every line. For example, the truth values for $\enot P \eand P$ and $\enot Q \eand Q$ are always the same. On each line, both sentences are false. So, for sentences that are jointly inconsistent in this way, both of these criteria are satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology and $(\meta{A} \eiff \meta{B})$ is a tautology. (And the latter, recall, means that these sentences are equivalent.) 
+\end{ebullet}
 
-Derivatively, sentences are \define{jointly logically inconsistent} if there is no valuation that makes them all true. There might be lines where both sentences are false, but there is not a line where they are both true. (This same applies to three or more sentences as well.) For instance, the truth values for $P \eor Q$ and $\enot P \eand \enot Q$ never match. On each line, one is true and the other is false. On the other hand, the truth values for $\enot P \eand P$ and $\enot Q \eand Q$ are always the same. On each line, both sentences are false. Both of these pairs of sentences are jointly logically inconsistent. (In fact, if you combine the two truth tables, you'll see that all four sentences are logically inconsistent.)
 \bigskip 
 
-\begin{minipage}{.5\linewidth}
+%\begin{minipage}{.5\linewidth}
 \begin{center}
 \begin{tabular}{c c|d e f |d e e e f}
 $P$& $Q$& $P$& ~\eor~ & $Q$& \enot& $P$& \eand& \enot& $Q$\\
 \hline
- T & T & T & \TTbf{T} & T & F & T & \TTbf{F} & F & T\\
- T & F & T & \TTbf{T} & F & F & T & \TTbf{F} & T & F\\
- F & T & F & \TTbf{T} & T & T & F & \TTbf{F} & F & T\\
- F & F & F & \TTbf{F} & F & T & F & \TTbf{T} & T & F
+ T & T &		 T & \TTbf{T} & T 		&	 F & T & \TTbf{F} & F & T\\
+ T & F &		 T & \TTbf{T} & F 		&	 F & T & \TTbf{F} & T & F\\
+ F & T &		 F & \TTbf{T} & T 		&	 T & F & \TTbf{F} & F & T\\
+ F & F &		 F & \TTbf{F} & F 		&	 T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{center}
-\end{minipage}%
-\begin{minipage}{.5\linewidth}
+
+\medskip
+%\end{minipage}%
+%\begin{minipage}{.5\linewidth}
+\begin{center}
+\begin{tabular}{c c|d e e e f |d e e e f}
+$P$& $Q$&	\enot& (\enot	&$P$	&~\eor~	&$Q)$	&\enot 	&$P$ & \eand 	& \enot	& $Q$\\
+\hline
+T  &	 T & 		\TTbf{F} &	 ~F 		& T 	& T 	& T 		& F 		& T 	& \TTbf{F} 		& F 		& T\\
+T  &	 F & 		\TTbf{T} &	 ~F 		& T 	& F 	& F 		& F 		& T 	& \TTbf{F} 		& T 		& F\\
+F  &	 T & 		\TTbf{F} &	 ~T 		& F	& T 	& T 		& T 		& F 	& \TTbf{F} 		& F 		& T\\
+F  &	 F & 		\TTbf{F} &	 ~T 		& F	& T 	& F 		& T 		& F 	& \TTbf{T} 		& T 		& F
+\end{tabular}
+\end{center}
+%\end{minipage}
+\medskip
+
 \begin{center}
 \begin{tabular}{c c|d e e f |d e e e f}
 $P$&$Q$&\enot&$P$&\eand&$P$&\enot&$Q$&\eand&&$Q$\\
@@ -684,8 +711,9 @@ $P$&$Q$&\enot&$P$&\eand&$P$&\enot&$Q$&\eand&&$Q$\\
  F & F &  T & F & \TTbf{F} & F & T & F & \TTbf{F} &  & F
 \end{tabular}
 \end{center}
-\end{minipage}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% CHAPTER 11
 
 \chapter{Entailment \& validity}\label{s:tt-validity}
