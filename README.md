@@ -1,2 +1,2 @@
 # forallx-msu
-Mississippi State version of forallx
+This is the Mississippi State version of forallx.
