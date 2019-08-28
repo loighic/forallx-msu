@@ -645,16 +645,19 @@ Adding to this sentence again, we get $(((P \eand Q) \eor R) \eif T)$. Now the m
 \item[\ex{logic-operator5}] $((\enot E \eor F) \eif \enot G)$ ~~~The main logical operator is `$\eif$'.
 \end{earg}
 
-As a general rule, you can find the main logical operator for a sentence by using the following method:
+When the sentence includes the outermost brackets, you can find the main logical operator for a sentence by using the following method:
 \begin{ebullet}
-	\item If the first symbol in the sentence is `$\enot$', then that is the main logical operator
-	\item Otherwise, start counting the brackets by following one of these two procedures.
+	\item[(1)] If the first symbol in the sentence is `$\enot$', then that is the main logical operator.
+	\item[(2)] Otherwise, start counting the brackets by following one of these two procedures.
 	\begin{earg}
-	\item[(a)] Start from the left, and for each open-bracket, i.e.\ `(', add $1$; for each closing-bracket, i.e.\ `$)$', subtract $1$. When your count is at exactly $1$, the next operator you come to (\emph{apart} from a `$\enot$') is the main logical operator. 
-	\item[(b)] If starting at the left-side of the sentence doesn't seem to work, follow the same procedure, but begin at the far right (and work left).
+	\item[(2a)] Start from the left, and for each open-bracket, i.e.\ `(', add $1$; for each closing-bracket, i.e.\ `$)$', subtract $1$. When your count is at exactly $1$, the next operator you come to (\emph{apart} from a `$\enot$') is the main logical operator. 
+	\item[(2b)] If starting at the left-side of the sentence doesn't seem to work, follow the same procedure, but begin at the far right (and work left).
 	\end{earg}
 \end{ebullet}
-(Note: if you use this method, then make sure to include \emph{all} the brackets in the sentence, rather than omitting some as per the conventions of \S\ref{TFLconventions}! Or, if you omit the outer brackets, then stop when your count gets to zero.)
+
+As we will discuss in the next section (\S\ref{TFLconventions}), it is, in some cases, acceptable to omit the outermost brackets of a sentence. For instance, although it is not strictly allowable give the rules in \S\ref{s:Sentences}, we can write `$((P \eand R) \eif Q)$' as `$(P \eand R) \eif Q$'. 
+
+When the outermost brackets are omitted, `$\enot$' will not be the main logical operator, and so (1) will not apply. In other words, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. But remember, just as in $\enot(((P \eand Q) \eor R) \eif T)$, when `$\enot$' is the main logical operator, it will be outside the outermost brackets. (2a) and (2b) can be used, but stop when your count gets to zero instead of $1$.
 
 \newglossaryentry{main logical operator}
 {
