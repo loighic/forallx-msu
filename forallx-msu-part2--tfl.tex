@@ -626,9 +626,9 @@ Let's consider some examples.
 
 Suppose we want to know whether or not `$\enot \enot \enot D$' is a sentence of TFL. Looking at the second clause of the definition, we know that `$\enot \enot \enot D$' is a sentence \emph{if} `$\enot \enot D$' is a sentence. So now we need to ask whether or not `$\enot \enot D$' is a sentence. Again looking at the second clause of the definition, `$\enot \enot D$' is a sentence \emph{if} `$\enot D$' is. So, `$\enot D$' is a sentence \emph{if} `$D$' is a sentence. Now `$D$' is an atomic sentence of TFL, so we know that `$D$' is a sentence by the first clause of the definition. So for a compound sentence like `$\enot \enot \enot D$', we must apply the definition repeatedly. Eventually we arrive at the atomic sentences from which the sentence is built up.
 
-Next, consider the example `$\enot (P \eand \enot (\enot Q \eor R))$'. Looking at the second clause of the definition, this is a sentence if `$(P \eand \enot (\enot Q \eor R))$' is, and this is a sentence if \emph{both} `$P$' \emph{and} `$\enot (\enot Q \eor R)$' are sentences. The former is an atomic sentence, and the latter is a sentence if `$(\enot Q \eor R)$' is a sentence. It is. Looking at the fourth clause of the definition, this is a sentence if both `$\enot Q$' and `$R$' are sentences, and both are!
+Next, consider the example `$\enot (P \eand \enot (\enot Q \eor R))$'. Looking at the second clause of the definition, this is a sentence if `$(P \eand \enot (\enot Q \eor R))$' is, and this is a sentence if \emph{both} `$P$' \emph{and} `$\enot (\enot Q \eor R)$' are sentences. The former is an atomic sentence, and the latter is a sentence if `$(\enot Q \eor R)$' is a sentence. It is. Looking at the fourth clause of the definition, this is a sentence if both `$\enot Q$' and `$R$' are sentences, and both are! Ultimately, every sentence is constructed nicely out of atomic sentences. 
 
-Ultimately, every sentence is constructed nicely out of atomic sentences. 
+The recursive structure of sentences in TFL will also be important when we consider the circumstances under which a particular sentence would be true or false. The sentence `$\enot \enot \enot D$' is true if and only if the sentence `$\enot \enot D$' is false, and so on through the structure of the sentence, until we arrive at the atomic components. We will return to this point in Part~\ref{ch.TruthTables}.
 
 
 \section{The main logical operator}
@@ -655,9 +655,7 @@ When the sentence includes the outermost brackets, you can find the main logical
 	\end{earg}
 \end{ebullet}
 
-As we will discuss in the next section (\S\ref{TFLconventions}), it is, in some cases, acceptable to omit the outermost brackets of a sentence. For instance, although it is not strictly allowable give the rules in \S\ref{s:Sentences}, we can write `$((P \eand R) \eif Q)$' as `$(P \eand R) \eif Q$'. 
-
-When the outermost brackets are omitted, `$\enot$' will not be the main logical operator, and so (1) will not apply. In other words, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. But remember, just as in $\enot(((P \eand Q) \eor R) \eif T)$, when `$\enot$' is the main logical operator, it will be outside the outermost brackets. (2a) and (2b) can be used, but stop when your count gets to zero instead of $1$.
+As we will discuss in the next section (\S\ref{TFLconventions}), it is, in some cases, acceptable to omit the outermost brackets. For instance, although it is not strictly allowable according to the rules given in \S\ref{s:Sentences}, we can write `$(P \eand R) \eif Q$' instead of `$((P \eand R) \eif Q)$'. When the outermost brackets are omitted, `$\enot$' won't be the main logical operator, and so (1) will not apply. In other words, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. But remember, when `$\enot$' is the main logical operator---as it is in this example: $\enot(((P \eand Q) \eor R) \eif T)$---the `$\enot$' will be outside the outermost brackets. When the outermost brackes are omitted, (2a) and (2b) can be used, but stop when your count gets to zero instead of $1$.
 
 \newglossaryentry{main logical operator}
 {
@@ -665,11 +663,9 @@ name=main connective,
 description={The last connective that you add when you assemble a sentence using the recursive definition.}
 }
 
-The recursive structure of sentences in TFL will be important when we consider the circumstances under which a particular sentence would be true or false. The sentence `$\enot \enot \enot D$' is true if and only if the sentence `$\enot \enot D$' is false, and so on through the structure of the sentence, until we arrive at the atomic components. We will return to this point in Part~\ref{ch.TruthTables}.
-
-The recursive structure of sentences in TFL also allows us to give a formal definition of the \emph{scope} of a negation (mentioned in \S\ref{s:ConnectiveConjunction}). The scope of a `$\enot$' is the subsentence for which `$\enot$' is the main logical operator. Consider a sentence like:
+Finally, let's give a formal definition of the \emph{scope} of a negation (which was mentioned in \S\ref{s:ConnectiveConjunction}). The scope of a `$\enot$' is the subsentence for which `$\enot$' is the main logical operator. Consider a sentence like:
 $$(P \eand (\enot (R \eand B) \eiff Q))$$
-which was constructed by conjoining `$P$' with `$ (\enot (R \eand B) \eiff Q)$'. This last sentence was constructed by placing a biconditional between `$\enot (R \eand B)$' and `$Q$'. The former of these sentences---a subsentence of our original sentence---is a sentence for which `$\enot$' is the main logical operator. So the scope of the negation is just `$\enot(R \eand B)$'. More generally:
+which was constructed by conjoining `$P$' with `$ (\enot (R \eand B) \eiff Q)$'. This last sentence was constructed by placing a biconditional between `$\enot (R \eand B)$' and `$Q$'. The former of these sentences---a subsentence of our original sentence---is a sentence for which `$\enot$' is the main logical operator. So the scope of the negation is just `$\enot(R \eand B)$'. The same holds for every connective, and so we have the following definition.
 	\factoidbox{The \define{scope} of a connective (in a sentence) is the subsentence for which that connective is the main logical operator.}
 \newglossaryentry{scope}
 {
