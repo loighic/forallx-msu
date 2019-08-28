@@ -1,0 +1,10 @@
+*.glo
+*.glsdefs
+*.ist
+*.log
+# *.pdf
+*.synctex.gz
+*.toc
+*.aux
+*.glg
+*.gls
