@@ -1,0 +1,982 @@
+\graphicspath{{figures--tt/}}
+
+%%%%%%%%%%%%%%%%% CHAPTER 11
+
+\chapter{Entailment \& validity}\label{c:tt-validity}
+
+\section{Entailment}\label{s:tt-entailment}
+
+Having examined the logical relations between two sentences in \S\ref{equivalence--tt} and \S\ref{consistency--tt}, we can now go a step further and consider the relationship between the premises and the conclusion of an argument. This begins with \define{entailment}.
+
+	\factoidbox{
+		The sentences $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ \define{entail} the sentence $\meta{C}$ if there is no valuation of the atomic sentences that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true and $\meta{C}$ false.
+	}
+       \newglossaryentry{logically valid in TFL}
+{
+  name=logical validity (in TFL),
+  text = logically valid,
+description={A property held by arguments if and only if the \gls{complete truth table} for the argument contains no rows where the \glspl{premise} are all true and the \gls{conclusion} false, i.e., if no \gls{valuation} makes all premises true and the conclusion false}
+}
+ 
+Entailment is easy to check with a truth table. Does `$\enot L \eif (M \eor L)$' and `$\enot L$' entail `$M$'? To find out, we check whether there is any valuation that makes both `$\enot L \eif (M \eor L)$' and `$\enot L$' true whilst making `$M$' false.  
+\begin{center}
+\begin{tabular}{c c|d e e e e f|d f| c}
+$M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$&$M$\\
+\hline
+%J   L   -   L      ->     (J   v   L)
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T & \TTbf{T}\\
+ T & F & T & F & \circled{\TTbf{T}} & T & T & F & \circled{\TTbf{T}} & F & \circled{\TTbf{T}}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T & \TTbf{F}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F & \TTbf{F}
+\end{tabular}
+\end{center}
+There is only one row where both `$\enot L \eif (M \eor L)$' and `$\enot L$' are true---the second row---and so that is the only row that concerns us. On that row, `$M$' is also true. Hence, `$\enot L \eif (M \eor L)$' and `$\enot L$' entail `$M$'. 
+
+Our next step is this important observation:
+	\factoidbox{
+		If $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \therefore \meta{C}$ is valid.
+	}
+
+Just to remind ourselves, an argument is valid when it is the case that if the premises are true, then the conclusion has to be true. A different but equivalent way of wording this definition will be more useful to us here, though. 
+\factoidbox{
+		An argument is \define{valid} if and only if it is impossible for all of the premises to be true and the conclusion false.
+	}
+
+Here's why entailment equals validity. If $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then there is no valuation that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true while making $\meta{C}$ false. This means that it is \emph{impossible} for $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ to be true and $\meta{C}$ to be false. But this is just what it takes for an argument, with premises $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and conclusion $\meta{C}$, to be valid!
+
+In short, we have a way to test whether an argument in English is valid. First, we symbolize the premises and conclusion in TFL. Then we test for entailment using truth tables. 
+
+\section{Validity}\label{s:tt-validity}
+
+When using a truth table to determine if an argument is valid, the premise or premises are listed first, followed by the conclusion. (In the example in \S\ref{s:tt-entailment}, `$\enot L \eif (M \eor L)$' and `$\enot L$' are the premises. $M$ is the conclusion.) Once the truth table is completed, we check for lines that violate the definition of a valid argument. We'll call lines that violate that definition \textit{bad lines}. 
+	\begin{earg}
+		\item[(1)] Any line where all of the premises are true and the conclusion is false \textbf{is a bad line}.
+		\item[(2)] Any line where all of the premises are true and the conclusion is true \textbf{is a good line}.
+		\item[(3)] Moreover, any line where the conclusion is true \textbf{cannot} be a bad line. (So, whatever the case may be with the premises, it's a good line.) 
+		\item[(4)] And any line where at least one premise is false \textbf{cannot} be a bad line. (So, whatever the case may be with the other premises and the 			 								conclusion, it's a good line.) 
+	\end{earg}
+
+Let's look at the truth table for an argument with one small (but significant) change: $\enot L \eif (M \eor L)$, $\enot L \therefore \enot M$. The premises are the same, but now the conclusion is $\enot M$ instead of $M$. Here is the truth table:
+\begin{center}
+\begin{tabular}{c c|d e e e e f|d f| c}
+$M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$&$\enot M$\\
+\hline
+%M   L   -   L      ->     (M   v   L)
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T & \TTbf{F}\\
+ T & F & T & F & \TTbf{T} & T & T & F & \TTbf{T} & F & \TTbf{F}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T & \TTbf{T}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F & \TTbf{T}
+\end{tabular}
+\end{center}
+The truth values for the premises are the same, and the truth values for the conclusion have, on each line, flipped from T to F or vice versa. Now, when we evaluate each line, what do we find? As before, on lines 1, 3, and 4, one of the premises is false, and so they are not bad lines. On line 2, the premises are true and the conclusion is false. Bad line! That means that $\enot L \eif (M \eor L)$ and $\enot L$ do not entail $\enot M$ and the argument `$\enot L \eif (M \eor L)$, $\enot L \therefore \enot M$' is not valid.  
+
+
+\section{The double-turnstile}
+We are going to use the notion of entailment rather a lot in this course. It will help us, then, to introduce a symbol that abbreviates it. Rather than saying that the TFL sentences $\meta{A}_1, \meta{A}_2, \ldots$ and $\meta{A}_n$ together entail $\meta{C}$, we will abbreviate this by:
+	$$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \entails \meta{C}$$
+The symbol `$\entails$' is known as \emph{the double-turnstile}, since it looks like a turnstile with two horizontal beams.
+
+Let me be clear. `$\entails$' is not a symbol of TFL. Rather, it is a symbol of our metalanguage, augmented English (recall the difference between object language and metalanguage from \S\ref{s:Metalanguage}). So the metalanguage sentence:
+	\begin{ebullet}
+		\item $P, P \eif Q \entails Q$
+	\end{ebullet}
+is just an abbreviation for the English sentence: 
+	\begin{ebullet}
+		\item The TFL sentences `$P$' and `$P \eif Q$' entail `$Q$'
+	\end{ebullet}
+Note that there is no limit on the number of TFL sentences that can be mentioned before the symbol `$\entails$'. Indeed, we can even consider the limiting case:
+	$$\entails \meta{C}$$
+This says that there is no set of sentences and no valuation for those sentences that makes $\meta{C}$ false---for example, $\entails \enot(R \eand \enot R)$ is one such sentence. Otherwise put, every valuation makes $\meta{C}$ true, which means that $\meta{C}$ is a tautology. Equally:
+	$$\meta{A} \entails$$
+says that $\meta{A}$ is a contradiction---for example, $(R \eand \enot R) \entails$.
+
+
+
+\section{Checking for validity in Carnap}\label{s:tt--validity--Carnap}
+
+When you are checking whether an argument is valid in Carnap, the truth table will look like the one shown in figure \ref{fig:tt-7a}. The premise, $(P \eand R)$, is separated from the conclusion, $R$, by a turnstile (`$\proves$'). (This symbol represents a different concept than the double turnstile (`$\entails$'), and chapter \ref{s:ProofTheoreticConcepts} explains how they are different. Nonetheless, for both the turnstile and the double turnstile, the premises precede the $\proves$ or $\entails$ and the conclusion follows it. Carnap only uses the turnstile.) When an argument contains more than one premise, the premises will be separated by a comma---for example, like this: $(P \eiff (Q \eor R)), P \proves (\enot Q \eif R)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{SCfigure}[][h]
+%\centering
+\includegraphics[width=6.5cm]{tt-7a.png} % 2.5 inches
+\caption{}
+\label{fig:tt-7a}
+\end{SCfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The truth values for each atomic sentence and the connectives are filled in normally. But, as shown in figure \ref{fig:tt-7b}, that will leave one column under the `$\proves$'. That column will also be filled in with `T's and `F's, but there `T' and `F' don't mean `true' and `false'. `T' means that the line is a good line. `F' means that the line is a bad line. (See \S\ref{s:tt-entailment} and \S\ref{s:tt-validity} for the definition of \textit{valid} and an explanation of when lines are good and when they are bad.) If all of the lines are good, then the argument is valid. If one or more of the lines is bad, the argument is invalid. 
+
+In this example, all of the lines are good, and so we have all `T's below the `$\proves$' (figure \ref{fig:tt-9}). Recall from \S\ref{s:tt-validity}, each line is a good line and the argument is valid even though, on the third line, the premise is false and the conclusion is true, and on the second and fourth lines, the premise is false and the conclusion is false. The only scenario that makes a line a bad line is when the premise or premises are true and the conclusion is  false. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+\begin{subfigure}[t]{0.50\textwidth}
+\includegraphics[width=6.35cm]{tt-7b.png}
+\subcaption{}
+\label{fig:tt-7b}
+\end{subfigure}
+%\hspace{.2cm}
+\begin{subfigure}[t]{0.50\textwidth}
+\includegraphics[width=6.35cm]{tt-9.png}
+\subcaption{}
+\label{fig:tt-9}
+\end{subfigure}
+\caption{}
+\end{figure} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Consider the argument in figure \ref{fig:tt-10}: $P \eor R \proves R \eif \enot P$. In the first line of this truth table, the premise is true and the conclusion is false. That's a bad line, and so in the column under the `$\proves$', we put an `F'. Even though all of the other lines are fine, because we have one bad line, the argument is not valid. 
+
+Once the truth table is completed and has been checked, you can submit it.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\begin{subfigure}[t]{0.50\textwidth}
+\includegraphics[width=6.35cm]{tt-10.png}
+\subcaption{}
+\label{fig:tt-10}
+\end{subfigure}
+%\hspace{.2cm}
+\begin{subfigure}[t]{0.50\textwidth}
+\includegraphics[width=6.35cm]{tt-11.png}
+\subcaption{}
+\label{fig:tt-11}
+\end{subfigure}
+\caption{}
+\end{figure} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{`$\entails$' versus `$\eif$'}
+We now want to compare and contrast `$\entails$' and `$\eif$'. 
+
+Observe: $\meta{A} \entails \meta{C}$ if and only if there is no valuation of the atomic sentences that makes $\meta{A}$ true and $\meta{C}$ false. 
+
+Observe: $\meta{A} \eif \meta{C}$ is a tautology if and only if there is no valuation of the atomic sentences that makes $\meta{A} \eif \meta{C}$ false. Since a conditional is true except when its antecedent is true and its consequent false, $\meta{A} \eif \meta{C}$ is a tautology iff there is no valuation that makes $\meta{A}$ true and $\meta{C}$ false. 
+
+Combining these two observations, we see that $\meta{A} \eif \meta{C}$  is a tautology iff  $\meta{A} \entails \meta{C}$. But there is a really, really important difference between `$\entails$' and `$\eif$':
+	\factoidbox{`$\eif$' is a sentential connective of TFL.\\ `$\entails$' is a symbol of augmented English.
+	}
+Indeed, when `$\eif$' is flanked with two TFL sentences, the result is a longer TFL sentence. By contrast, when we use `$\entails$', we form a metalinguistic sentence that \emph{mentions} the surrounding TFL sentences. 
+
+
+\section{The limits of these tests}\label{s:ParadoxesOfMaterialConditional}
+We have reached an important milestone: a test for the validity of arguments! However, we should not get carried away just yet. It is important to understand the \emph{limits} of our achievement. We will illustrate these limits with three examples.
+
+First, consider the argument: 
+	\begin{earg}
+		\item Daisy has four legs. Therefore, Daisy has more than two legs.
+	\end{earg}
+To symbolize this argument in TFL, we would have to use two different atomic sentences---perhaps `$F$'  and `$T$'---for the premise and the conclusion respectively. Now, it is obvious that `$F$' does not entail `$T$'. The English argument surely seems valid, though!
+
+Second, consider the sentence:
+	\begin{earg}
+\setcounter{eargnum}{1}
+		\item\label{n:JohnBald} John is neither bald nor not-bald.
+	\end{earg}
+To symbolize this sentence in TFL, we would offer something like `$\enot J \eand \enot \enot J$'. This a contradiction (check this with a truth-table), but sentence \ref{n:JohnBald} does not seem like a contradiction; for we might have happily gone on to add ``John is on the borderline of baldness''!
+
+Third, consider the following sentence:
+	\begin{earg}
+\setcounter{eargnum}{2}	
+		\item\label{n:GodParadox}	It's not the case that, if God exists, he answers malevolent prayers.
+%	Aaliyah wants to kill Zebedee. She knows that, if she puts chemical A into Zebedee's water bottle, Zebedee will drink the contaminated water and die. Equally, Bathsehba wants to kill Zebedee. She knows that, if she puts chemical B into Zebedee's water bottle, then Zebedee will drink the contaminated water and die. But chemicals A and B neutralize each other; so that if both are added to the water bottle, then Zebedee will not die.
+	\end{earg}
+        Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize sentence \ref{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept sentence \ref{n:GodParadox}, without contradicting herself!
+
+        One lesson of this is that the symbolization of \ref{n:GodParadox} as `$\enot(G \eif M)$' shows that \ref{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
+        	\begin{earg}
+                  \setcounter{eargnum}{2}	
+                \item\label{n:GodParadox2} If God exists, he does not answer malevolent prayers.
+  \end{earg}
+and symbolize \ref{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, then `$G \eif M$' (i.e., `If God exists, he answers malevolent prayers') is \emph{also} true!
+                
+In different ways, these four examples highlight some of the limits of working with a language like TFL that can \emph{only} handle truth-functional connectives. Moreover, these limits give rise to some interesting questions in philosophical logic. The case of John's baldness (or otherwise) raises the general question of what logic we should use when dealing with \emph{vague} discourse. The case of the atheist raises the question of how to deal with the (so-called) \emph{paradoxes of the material conditional}. Part of the purpose of this course is to equip you with the tools to explore these questions of \emph{philosophical logic}. But we have to walk before we can run; and  so we have to become proficient using TFL, before we can adequately discuss its limits and consider alternatives. 
+
+
+
+\practiceproblems
+\problempart
+Revisit your answers to the exercises in part A of chapter \ref{s:CompleteTruthTables}, and determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.
+\solutions
+
+\
+
+\problempart
+\label{pr.TT.consistent}
+Use truth tables to determine whether these sentences are jointly consistent, or jointly inconsistent:
+\begin{earg}
+\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %consistent
+\item $A\eor B$, $A\eif C$, $B\eif C$ %consistent
+\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$  %inconsistent
+\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$ %consistent
+\end{earg}
+
+
+\solutions
+\problempart
+\label{pr.TT.valid}
+Use truth tables to determine whether each argument is valid or invalid.
+\begin{earg}
+\item $A\eif A \therefore A$ %invalid
+\item $A\eif(A\eand\enot A) \therefore \enot A$ %valid
+\item $A\eor(B\eif A) \therefore \enot A \eif \enot B$ %valid
+\item $A\eor B, B\eor C, \enot A \therefore B \eand C$ %invalid
+\item $(B\eand A)\eif C, (C\eand A)\eif B \therefore (C\eand B)\eif A$ %invalid
+\end{earg}
+
+\problempart Determine whether each sentence is a tautology, a contradiction, or a contingent sentence, using a complete truth table.
+\begin{earg}
+\item $\enot B \eand B$ \vspace{.5ex}%contra
+
+
+\item $\enot D \eor D$ \vspace{.5ex}%taut
+
+
+\item $(A\eand B) \eor (B\eand A)$\vspace{.5ex} %contingent
+
+
+\item $\enot[A \eif (B \eif A)]$\vspace{.5ex} %contra
+
+
+\item $A \eiff [A \eif (B \eand \enot B)]$ \vspace{.5ex}%contra
+
+
+\item $[(A \eand B) \eiff B] \eif (A \eif B)$ \vspace{.5ex}% contingent. 
+
+\end{earg}
+
+
+
+\noindent\problempart
+\label{pr.TT.equiv}
+Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``Not equivalent.'' 
+\begin{earg}
+\item $A$ and $\enot A$
+\item $A \eand \enot A$ and $\enot B \eiff B$
+\item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
+\item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
+\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{earg}
+
+
+\problempart
+\label{pr.TT.equiv2}
+Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
+\begin{earg}
+\item $A\eif A$ and $A \eiff A$
+\item $\enot(A \eif B)$ and $\enot A \eif \enot B$
+\item $A \eor B$ and $\enot A \eif B$
+\item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
+\item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
+\end{earg}
+
+
+\problempart
+\label{pr.TT.consistent2}
+Determine whether each collection of sentences is jointly consistent or jointly inconsistent using a complete truth table. 
+\begin{earg}
+\item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$\vspace{.5ex} %Consistent
+
+%\begin{tabular}{ccccccccccccccc} 
+%1. 	&	A 					 & \eand 		&  \enot & B & & \enot  		& 	 (A	  & 	 \eif	 	 & 	 B)		 & 	 & 	 B	 	 & 	\eif 	 	 & 	A 	 	 & 	 Consistent \\ 
+%\cline{2-5} \cline{7-10}\cline{12-14} 
+%	& 	T 					 & 	 F	 		&  F	 & T & & F	 		& 	 T	  & 	 T	 	 & 	T 	 	 & 	 & 	 T	 	 & 	 T	 	 & T	 	 	&	  \\ 
+%\cline{2-14}
+%	& \multicolumn{1}{|r}{T}& 	\textbf{T}	 & T	 & F & & \textbf{T}	 & 	 T	 & 	 F	 	 & 	 F	 	 & 	 & 	 F	 	 & 	 \textbf{T}	 	 & 	 \multicolumn{1}{r|}{T}	 	 & 	  \\ 
+%\cline{2-14}
+%	& 	 F	 				 & 	 F	 & 	 F	 & T & 	& 	 F	 & 	 F	 & 	 T	 	 & 	 T	 	 & 	  & 	 T	 	 & 	 F	 	 & 	 F	 	 & 	  \\ 
+%	& 	 F	  				& 	 F	 & 	 T	 & 	F&  & 	 F	 & 	 F	 & 	 T	 	 & 	 F	 	 & 	  & 	 F	 	 & 	 T	 	 & 	 F	 	 & 	  \\ 
+%\end{tabular}
+
+\item $A \eor B$, $A \eif \enot A$, $B \eif \enot B$ \vspace{.5ex}%inconsistent. 
+
+%\begin{tabular}{ccccccccccccccc} 
+%2. &A	 & \eor 	 & B 	 & 	 	 & A 	 & \eif 	 & 	\enot & A 	 & 	 	 & B 	 & \eif 	 & \enot	 & 	B 	 & 	Inconsistent \\ 
+%\cline{2-4}\cline{6- 9} \cline{11-14}
+%   &	T	 & 	 T	 &T  	 & 	 	 & T	 & 	 F	 & 	F 	 & T 	 & 	 	 & 	T 	 & 	F 	 & 	 F	 & 	T 	 & 	 \\ 
+%   &	 T	& 	 T	 & F 	 & 	 	 & 	T 	 & 	 F	 & 	 F	 & 	 T	 & 	 	 & 	F 	 & 	 T	 & 	 T	 & 	 F	 & 	 \\ 
+%   &	 F	& 	 T	 & 	 T	 & 	 	 & 	F 	 & 	 T	 & 	 T	 & 	F 	 & 	 	 & 	 T	 & 	 F	 & 	 F	 & 	 T	 & 	 \\ 
+%   &	 F	& 	 F	 & 	 F	 & 	 	 & 	 F	 & 	 T	 & 	 T	 & 	 F	 & 	 	 & 	 F	 & 	 T	 & 	 T	 & 	 F	 & 	 \\ 
+%\end{tabular}
+
+\item $\enot(\enot A \eor B) $, $A \eif \enot C$, $A \eif (B \eif C)$\vspace{.5ex} %Inconsistent
+
+%3. &\enot & (\enot & A & \eor &B) &  &A  & \eif 	 &\enot 	 &C & 	 & A &\eif 	& (B 	 &\eif 	& C)	 &Consistent \\ 
+%\cline{2-6}\cline{8-11} \cline{13-17} 
+%   &	F 	& 	F	 & 	T & T	 & T & 	  & T & F	 & 	 F&T 	 & 	 &T & T	 & T	 &T 	 &T 	 & \\ 
+%   &	 F	& 	F	 & 	T & T	 & T & 	  & T & T	 & 	 T& F	 & 	 &T & F	 & T	 & F	 &F 	 & \\ 
+% 
+%  &	 T & 	F 	& 	T & F	 & F & 	  & T & F	 & 	 F& T	 & 	 &T & T	 & F	 & T	 &T 	 & \\ 
+%\cline{2-17}
+%   &	 \multicolumn{1}{|r}{{\color{red}T}}		&  F	 & 	T & F	 & 	F &  & 	T & {\color{red}T}	 & 	 T&F 	& 	 &T & {\color{red}T}	 & F	 & T	 &\multicolumn{1}{r|}{F} 	 & \\ 
+%\cline{2-17}
+%   &	 F	& 	T	 & 	F & T	 & 	T &  & 	F & T	 & 	 F& T	 & 	 &F	 & F	 & T	 & T	 &T 	 & \\ 
+%   &	 F	& 	 T	& 	F & T	 & 	T &  & 	F & T	 & 	T & F 	& 	 &F	 & T	 & T	 &F 	 &F 	 & \\ 
+%   &	 F	& 	 T	& 	F & T	 & 	F &  & 	F & T	 & 	F & T	 & 	 &F	 & T	 & F	 & T	 &T 	 & \\ 
+%   &	 F	& 	 T	& 	F & T	 & 	F &  & 	F & T	 & 	T & F	 & 	 &F	 & T	 & F	 & T	 &F 	 & \\ 
+%\end{tabular}
+%
+
+
+\item $A \eif B$, $A \eand \enot B$\vspace{.5ex} %Inconsistent
+
+\item $A \eif (B \eif C)$, $(A \eif B) \eif C$, $A \eif C$\vspace{.5ex} % consistent. 
+
+\end{earg}
+
+\noindent\problempart
+\label{pr.TT.consistent3}
+Determine whether each collection of sentences is jointly consistent or jointly inconsistent, using a complete truth table. 
+\begin{earg}
+\item $\enot B$, $A \eif B$, $A$ \vspace{.5ex}%inconsistent.
+\item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} %Consistent
+\item $A \eor B$, $\enot B$, $\enot B \eif \enot A$\vspace{.5ex} %Inconsistent
+\item $A \eiff B$, $\enot B \eor \enot A$, $A \eif B$\vspace{.5ex} %consistent. 
+\item $(A \eor B) \eor C$, $\enot A \eor \enot B$, $\enot C \eor \enot B$\vspace{.5ex} %consistent
+\end{earg}
+
+
+
+
+\noindent\problempart
+\label{pr.TT.valid2}
+Determine whether each argument is valid or invalid, using a complete truth table. 
+\begin{earg}
+\item $A\eif B$, $B \therefore  A$ %invalid
+
+\item $A\eiff B$, $B\eiff C \therefore A\eiff C$ %valid
+
+\item $A \eif B$, $A \eif C\therefore B \eif C$ %invalid. 
+
+\item $A \eif B$, $B \eif A\therefore A \eiff B$ %valid. 
+
+\end{earg}
+
+\noindent\problempart
+\label{pr.TT.valid3}
+Determine whether each argument is valid or invalid, using a complete truth table. 
+\begin{earg}
+\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore  A $\vspace{.5ex}%invalid
+\item $A\eor B$, $B\eor C$, $\enot B \therefore A \eand C$\vspace{.5ex} %valid
+\item $A \eif B$, $\enot A\therefore \enot B$ \vspace{.5ex}%invalid
+\item $A$, $B\therefore \enot(A\eif \enot B)$ \vspace{.5ex}%valid
+\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\therefore C$ \vspace{.5ex}%valid 
+\end{earg}
+
+\solutions
+\problempart
+\label{pr.TT.concepts}
+Answer each of the questions below and justify your answer.
+\begin{earg}
+\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $\meta{A}\eiff\meta{B}$?
+%\meta{A} and \meta{B} have the same truth value on every line of a complete truth table, so $\meta{A}\eiff\meta{B}$ is true on every line. It is a tautology.
+\item Suppose that $(\meta{A}\eand\meta{B})\eif\meta{C}$ is neither a tautology nor a contradiction. What can you say about whether $\meta{A}, \meta{B} \therefore\meta{C}$ is valid?
+%The sentence is false on some line of a complete truth table. On that line, \meta{A} and \meta{B} are true and \meta{C} is false. So the argument is invalid.
+\item Suppose that $\meta{A}$, $\meta{B}$ and $\meta{C}$  are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B}\eand\meta{C})$?
+\item Suppose that \meta{A} is a contradiction. What can you say about whether $\meta{A}, \meta{B} \entails \meta{C}$?
+%Since \meta{A} is false on every line of a complete truth table, there is no line on which \meta{A} and \meta{B} are true and \meta{C} is false. So the argument is valid.
+\item Suppose that \meta{C} is a tautology. What can you say about whether $\meta{A}, \meta{B}\entails \meta{C}$?
+%Since \meta{C} is true on every line of a complete truth table, there is no line on which \meta{A} and \meta{B} are true and \meta{C} is false. So the argument is valid.
+\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+%Not much. $(\meta{A}\eor\meta{B})$ is a tautology if \meta{A} and \meta{B} are tautologies; it is a contradiction if they are contradictions; it is contingent if they are contingent.
+\item Suppose that \meta{A} and \meta{B} are \emph{not} logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+%\meta{A} and \meta{B} have different truth values on at least one line of a complete truth table, and $(\meta{A}\eor\meta{B})$ will be true on that line. On other lines, it might be true or false. So $(\meta{A}\eor\meta{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.
+\end{earg}
+\problempart 
+Consider the following principle:
+	\begin{ebullet}
+		\item Suppose $\meta{A}$ and $\meta{B}$ are logically equivalent. Suppose an argument contains $\meta{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\meta{A}$ with $\meta{B}$.
+	\end{ebullet}
+Is this principle correct? Explain your answer.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Truth table shortcuts}
+With practice, you will quickly become adept at filling out truth tables. In this section, we want to give you some permissible shortcuts to help you along the way. 
+
+\section{Working through truth tables}
+You will quickly find that you do not need to copy the truth value of each atomic sentence, but can simply refer back to them. So you can speed things up by writing:
+\begin{center}
+\begin{tabular}{c c|d e e e e f}
+$P$&$Q$&$(P$&\eor&$Q)$&\eiff&\enot&$P$\\
+\hline
+ T & T &  & T &  & \TTbf{F} & F\\
+ T & F &  & T &  & \TTbf{F} & F\\
+ F & T &  & T & & \TTbf{T} & T\\
+ F & F &  & F &  & \TTbf{F} & T
+\end{tabular}
+\end{center}
+You also know for sure that a disjunction is true whenever one of the disjuncts is true. So if you find a true disjunct, there is no need to work out the truth values of the other disjuncts. Thus you might offer:
+\begin{center}
+\begin{tabular}{c c|d e e e e e e f}
+$P$&$Q$& $(\enot$ & $P$&\eor&\enot&$Q)$&\eor&\enot&$P$\\
+\hline
+ T & T & F & & F & F& & \TTbf{F} & F\\
+ T & F &  F & & T& T& &  \TTbf{T} & F\\
+ F & T & & &  & & & \TTbf{T} & T\\
+ F & F & & & & & &\TTbf{T} & T
+\end{tabular}
+\end{center}
+Equally, you know for sure that a conjunction is false whenever one of the conjuncts is false. So if you find a false conjunct, there is no need to work out the truth value of the other conjunct. Thus you might offer:
+\begin{center}
+\begin{tabular}{c c|d e e e e e e f}
+$P$&$Q$&\enot &$(P$&\eand&\enot&$Q)$&\eand&\enot&$P$\\
+\hline
+ T & T &  &  & &  & & \TTbf{F} & F\\
+ T & F &   &  &&  & & \TTbf{F} & F\\
+ F & T & T &  & F &  & & \TTbf{T} & T\\
+ F & F & T &  & F & & & \TTbf{T} & T
+\end{tabular}
+\end{center}
+A similar short cut is available for conditionals. You immediately know that a conditional is true if either its consequent is true, or its antecedent is false. Thus you might present:
+\begin{center}
+\begin{tabular}{c c|d e e e e e f}
+$P$&$Q$& $((P$&\eif&$Q$)&\eif&$P)$&\eif&$P$\\
+\hline
+ T & T & &  & & & & \TTbf{T} & \\
+ T & F &  &  & && & \TTbf{T} & \\
+ F & T & & T & & F & & \TTbf{T} & \\
+ F & F & & T & & F & &\TTbf{T} & 
+\end{tabular}
+\end{center}
+So `$((P \eif Q) \eif P) \eif P$' is a tautology. In fact, it is an instance of \emph{Peirce's Law}, named after Charles Sanders Peirce.
+
+
+\section{Testing for validity and entailment}
+
+As we said in \S\ref{s:tt-validity}, when we use truth tables to test for validity or entailment, we are checking for \emph{bad} lines: lines where the premises are all true and the conclusion is false. Consequently,
+	\begin{earg}
+		\item[\textbullet] Any line where the conclusion is true is not a bad line. 
+		\item[\textbullet] Any line where some premise is false is not a bad line. 
+	\end{earg}
+Since \emph{all} we are doing is looking for bad lines, if we find a line where the conclusion is true, we do not need to evaluate anything else on that line. That line definitely isn't bad. Likewise, if we find a line where some premise is false, we do not need to evaluate anything else on that line. 
+
+With this in mind, consider how we might test the following for validity:
+	$$\enot L \eif (J \eor L), \enot L \therefore J$$
+The \emph{first} thing we should do is evaluate the conclusion. If we find that the conclusion is \emph{true} on some line, then that is not a bad line, and so we can simply ignore the rest of the line. At our first stage, we are left with something like this:
+\begin{center}
+\begin{tabular}{c c|d e e e e f |d f|c}
+$J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
+\hline
+%J   L   -   L      ->     (J   v   L)
+ T & T & &&&&&&&& {T}\\
+ T & F & &&&&&&&& {T}\\
+ F & T & &&?&&&&?&& {F}\\
+ F & F & &&?&&&&?&& {F}
+\end{tabular}
+\end{center}
+The blank spaces under $\enot L \eif (J \eor L)$ and $\enot L$  indicate that we are not going to bother doing any more investigation (since the line is not bad). The question-marks indicate that we need to keep investigating. On those lines, it is possible that the premises are true and the conclusion is false. 
+
+The easiest premise to evaluate is the second ($\enot L$), so we do that next:
+\begin{center}
+\begin{tabular}{c c|d e e e e f |d f|c}
+$J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
+\hline
+%J   L   -   L      ->     (J   v   L)
+ T & T & &&&&&&&& {T}\\
+ T & F & &&&&&&&& {T}\\
+ F & T & &&&&&&{F}&& {F}\\
+ F & F & &&?&&&&{T}&& {F}
+\end{tabular}
+\end{center}
+Now we see that we no longer need to consider the third line: it will not be a bad line, because (at least) one of the premises is false on that line, $\enot L$. Finally, we complete the fourth line:
+\begin{center}
+\begin{tabular}{c c|d e e e e f |d f|c}
+$J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
+\hline
+%J   L   -   L      ->     (J   v   L)
+ T & T & &&&&&&&& {T}\\
+ T & F & &&&&&&&& {T}\\
+ F & T & &&&&&&{F}& & {F}\\
+ F & F & T &  & \TTbf{F} &  & F & & {T} & & {F}
+\end{tabular}
+\end{center}
+Since the fourth line tells us that---for those valuations of $J$ and $L$---the first premise is false, the truth table has no bad lines. Hence, the argument is valid: any valuation for which all the premises are true is a valuation for which the conclusion is true.
+
+It might be worth illustrating the tactic again. Let us check whether the following argument is valid
+$$A\eor B, \enot (A\eand C), \enot (B \eand \enot D) \therefore (\enot C\eor D)$$
+At the first stage, we determine the truth value of the conclusion. Since this is a disjunction, it is true whenever either disjunct is true, so we can speed things along a bit. We can then ignore every line apart from the few lines where the conclusion is false. (Notice that the negation in the conclusion is determined for just those lines were $D$ is false.)
+\begin{center}
+\begin{tabular}[t]{c c c c | c|c|c|d e e f }
+$A$ & $B$ & $C$ & $D$ & $A\eor B$ & $\enot (A\eand C)$ & $\enot (B\eand \enot D)$ & $(\enot$ &$C$& $\eor$ & $D)$\\
+\hline
+T & T & T & T & & & & &  &  \TTbf{T} & \\
+T & T & T & F & ? & ? & ? & F & &  \circled{\TTbf{F}} & \\
+T & T & F & T &  & &   & & &  \TTbf{T} & \\
+T & T & F & F &  &  &   & T & &  \TTbf{T} &\\
+T & F & T & T &  &  &  & & &  \TTbf{T} & \\
+T & F & T & F & ? & ? & ?  & F &  &  \circled{\TTbf{F}} &\\
+T & F & F & T & & & & & & \TTbf{T} &\\
+T & F & F & F & & & & T &  & \TTbf{T} & \\
+F & T & T & T & & & & & & \TTbf{T} & \\
+F & T & T & F & ? & ? & ? & F &  & \circled{\TTbf{F}} &\\
+F & T & F & T & & &  & & & \TTbf{T} & \\
+F & T & F & F & & & &T & & \TTbf{T} & \\
+F & F & T & T & & & & & & \TTbf{T} & \\
+F & F & T & F & ? & ? & ? & F & & \circled{\TTbf{F}} & \\
+F & F & F & T & & & & & & \TTbf{T} & \\
+F & F & F & F & & & & T& & \TTbf{T} & \\
+\end{tabular}
+\end{center}
+We must now evaluate the premises. The first premise is the simplest, so we start there. Of the four lines where the conclusion is false, there are three where $A \eor B$ is true. So the truth values for the next premise have to be determined for those three lines. (The second premise is simpler to evaluate than the third, so it's next.) Knowing the truth value for $\enot(A \eand C)$ leaves us with one line where the first two premise are true. A little bit more work tells us that the third premise is false on that line. There is no line where the premises are true and the conclusion is false! The argument is valid.
+\begin{center}
+\begin{tabular}[t]{c c c c | d e f |d e e f |d e e e f |d e e f }
+$A$ & $B$ & $C$ & $D$ & $A$ & $\eor$ & $B$ & $\enot$ & $(A$ &$\eand$ &$ C)$ & $\enot$ & $(B$ & $\eand$ & $\enot$ & $D)$ & $(\enot$ &$C$& $\eor$ & $D)$\\
+\hline
+T & T & T & T & & && & && & && & & & &  &  \TTbf{T} & \\
+T & T & T & F & &\TTbf{T}& & \TTbf{F}& &T& & & & & & & F & &  \TTbf{F} & \\
+T & T & F & T & & && & && & &&  & &   & & &  \TTbf{T} & \\
+T & T & F & F & & && & && & &&  &  &   & T & &  \TTbf{T} & \\
+T & F & T & T & & && & && & &&  &  &  & & &  \TTbf{T} & \\
+T & F & T & F & &\TTbf{T}& &\TTbf{F}& &T& &  && & & & F & & \TTbf{F} & \\
+T & F & F & T & & && & && & && & & & & & \TTbf{T} & \\
+T & F & F & F & & && & && & && & & & T &  & \TTbf{T} & \\
+F & T & T & T& & && & && & & & & & & & & \TTbf{T} & \\
+F & T & T & F & &\TTbf{T}& & \TTbf{T}& & F& & \TTbf{F}& & T& T&  & F &  & \TTbf{F} & \\
+F & T & F & T & & && & && & && & &  & & & \TTbf{T} & \\
+F & T & F & F& & && & && & && & & &T & & \TTbf{T} & \\
+F & F & T & T & & && & && & && & & & & & \TTbf{T} & \\
+F & F & T & F & & \TTbf{F} & & & & & & &&  &  &  & F & & \TTbf{F} & \\
+F & F & F & T & & && & && & && & & & & & \TTbf{T} & \\
+F & F & F & F & & && & && & && & & & T& & \TTbf{T} & \\
+\end{tabular}
+\end{center}
+If we had used no shortcuts, we would have had to write 256 `T's or `F's on this table. Using shortcuts, we only had to write 37. We have saved ourselves a \emph{lot} of work.
+
+We have been discussing shortcuts in testing for logically validity, but exactly the same shortcuts can be used in testing for entailment. By employing a similar notion of \emph{bad} lines, you can save yourself a huge amount of work.
+
+\practiceproblems
+\problempart
+\label{pr.TT.TTorC2}
+Using shortcuts, determine whether each sentence is a tautology, a contradiction, or neither. 
+\begin{earg}
+\item $\enot B \eand B$ %contra
+\item $\enot D \eor D$ %taut
+\item $(A\eand B) \eor (B\eand A)$ %contingent
+\item $\enot[A \eif (B \eif A)]$ %contra
+\item $A \eiff [A \eif (B \eand \enot B)]$ %contra
+\item $\enot(A\eand B) \eiff A$ %contingent
+\item $A\eif(B\eor C)$ %contingent
+\item $(A \eand\enot A) \eif (B \eor C)$ %tautology
+\item $(B\eand D) \eiff [A \eiff(A \eor C)]$%contingent
+\end{earg}
+
+
+\chapter{Partial truth tables}\label{s:PartialTruthTable}
+
+Sometimes, we do not need to know what happens on every line of a truth table. Sometimes, just a line or two will do. 
+
+\paragraph{Tautology.} 
+In order to show that a sentence is a tautology, we need to show that it is true on every valuation. That is to say, we need to know that it comes out true on every line of the truth table. So we need a complete truth table. 
+
+To show that a sentence is \emph{not} a tautology, however, we only need one line: a line on which the sentence is false. Therefore, in order to show that some sentence is not a tautology, it is enough to provide a single valuation---a single line of the truth table---which makes the sentence false. 
+
+Suppose that we want to show that the sentence `$(U \eand T) \eif (S \eand W)$' is \emph{not} a tautology. We set up a \define{partial truth table}:
+\begin{center}
+\begin{tabular}{c c c c |d e e e e e f}
+$S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
+\hline
+   &   &   &   &    &   &    &\TTbf{F}&    &   &   
+\end{tabular}
+\end{center}
+We have only left space for one line, rather than 16, since we are only looking for one line on which the sentence is false. For just that reason, we have filled in `F' for the entire sentence. 
+
+The main logical operator of the sentence is a conditional. In order for the conditional to be false, the antecedent must be true and the consequent must be false. So we fill these in on the table:
+\begin{center}
+\begin{tabular}{c c c c |d e e e e e f}
+$S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
+\hline
+   &   &   &   &    &  T  &    &\TTbf{F}&    &   F &   
+\end{tabular}
+\end{center}
+In order for the `$(U\eand T)$' to be true, both `$U$' and `$T$' must be true.
+\begin{center}
+\begin{tabular}{c c c c|d e e e e e f}
+$S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
+\hline
+   & T & T &   &  T &  T  & T  &\TTbf{F}&    &   F &   
+\end{tabular}
+\end{center}
+Now we just need to make `$(S\eand W)$' false. To do this, we need to make at least one of `$S$' and `$W$' false. We can make both `$S$' and `$W$' false if we want. All that matters is that the whole sentence turns out false on this line. Making an arbitrary decision, we finish the table in this way:
+\begin{center}
+\begin{tabular}{c c c c|d e e e e e f}
+$S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
+\hline
+ F & T & T & F &  T &  T  & T  &\TTbf{F}&  F &   F & F  
+\end{tabular}
+\end{center}
+We now have a partial truth table, which shows that `$(U \eand T) \eif (S \eand W)$' is not a tautology. Put otherwise, we have shown that there is a valuation which makes `$(U \eand T) \eif (S \eand W)$' false, namely, the valuation which makes `$S$' false, `$T$' true, `$U$' true and `$W$' false. 
+
+\paragraph{Contradiction.}
+Showing that something is a contradiction requires a complete truth table: we need to show that there is no valuation which makes the sentence true; that is, we need to show that the sentence is false on every line of the truth table. 
+
+However, to show that something is \emph{not} a contradiction, all we need to do is find a valuation which makes the sentence true, and a single line of a truth table will suffice. We can illustrate this with the same example.
+\begin{center}
+\begin{tabular}{c c c c|d e e e e e f}
+$S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
+\hline
+  &  &  &  &   &   &   &\TTbf{T}&  &  &
+\end{tabular}
+\end{center}
+To make the sentence true, it will suffice to ensure that the antecedent is false. Since the antecedent is a conjunction, we can just make one of them false. For no particular reason, we choose to make `$U$' false; and then we can assign whatever truth value we like to the other atomic sentences.
+\begin{center}
+\begin{tabular}{c c c c|d e e e e e f}
+$S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
+\hline
+ F & T & F & F &  F &  F  & T  &\TTbf{T}&  F &   F & F
+\end{tabular}
+\end{center}
+
+\paragraph{Truth functional equivalence.}
+To show that two sentences are logically equivalent, we must show that the sentences have the same truth value on every valuation. So this requires a  complete truth table.
+
+To show that two sentences are \emph{not} logically equivalent, we only need to show that there is a valuation on which they have different truth values. So this requires only a one-line partial truth table: make the table so that one sentence is true and the other false.
+
+\paragraph{Consistency.}
+To show that some sentences are jointly consistent, we must show that there is a valuation which makes all of the sentences true,so this requires only a partial truth table with a single line. 
+
+To show that some sentences are jointly inconsistent, we must show that there is no valuation which makes all of the sentence true. So this requires a complete truth table: You must show that on every row of the table at least one of the sentences is false.
+
+\paragraph{Validity.}
+To show that an argument is valid, we must show that there is no valuation which makes all of the premises true and the conclusion false. So this  requires a complete truth table.  (Likewise for entailment.)
+
+To show that argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)
+
+This table summarises what is required:
+
+\begin{center}
+\begin{tabular}{l l l}
+%\cline{2-3}
+ & \textbf{Yes} & \textbf{No}\\
+ \hline
+%\cline{2-3}
+tautology? & complete & one-line partial \\
+contradiction? &  complete & one-line partial \\
+%contingent? & two-line partial truth table & complete truth table\\
+equivalent? & complete  & one-line partial \\
+consistent? & one-line partial & complete \\
+valid? & complete & one-line partial \\
+entailment? & complete & one-line partial\\
+\end{tabular}
+\end{center}
+\label{table.CompleteVsPartial}
+
+
+\practiceproblems
+\solutions
+
+\solutions
+\problempart
+\label{pr.TT.equiv3}
+Use complete or partial truth tables (as appropriate) to determine whether these pairs of sentences are logically equivalent:
+\begin{earg}
+\item $A$, $\enot A$ %No
+\item $A$, $A \eor A$ %Yes
+\item $A\eif A$, $A \eiff A$ %Yes
+\item $A \eor \enot B$, $A\eif B$ %No
+\item $A \eand \enot A$, $\enot B \eiff B$ %Yes
+\item $\enot(A \eand B)$, $\enot A \eor \enot B$ %Yes
+\item $\enot(A \eif B)$, $\enot A \eif \enot B$ %No
+\item $(A \eif B)$, $(\enot B \eif \enot A)$ %Yes
+\end{earg}
+
+\solutions
+\problempart
+\label{pr.TT.consistent4}
+Use complete or partial truth tables (as appropriate) to determine whether these sentences are jointly consistent, or jointly inconsistent:
+\begin{earg}
+\item $A \eand B$, $C\eif \enot B$, $C$ %inconsistent
+\item $A\eif B$, $B\eif C$, $A$, $\enot C$ %inconsistent
+\item $A \eor B$, $B\eor C$, $C\eif \enot A$ %consistent
+\item $A$, $B$, $C$, $\enot D$, $\enot E$, $F$ %consistent
+\item $A \eand (B \eor C)$, $\enot(A \eand C)$, $\enot(B \eand C)$ %consistent
+\item $A \eif B$, $B \eif C$, $\enot(A \eif C)$ %inconsistent
+\end{earg}
+
+\solutions
+\problempart
+\label{pr.TT.valid4}
+Use complete or partial truth tables (as appropriate) to determine whether each argument is valid or invalid:
+\begin{earg}
+\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore A$ %invalid
+\item $A\eiff\enot(B\eiff A) \therefore A$ %invalid
+\item $A\eif B, B \therefore A$ %invalid
+\item $A\eor B, B\eor C, \enot B \therefore A \eand C$ %valid
+\item $A\eiff B, B\eiff C \therefore A\eiff C$ %valid
+\end{earg}
+
+\problempart
+\label{pr.TT.TTorC3}
+Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table where appropriate.
+
+% truth tables in LaTeX generated by http://www.curtisbright.com/logic/. Be sure to give him a shout out.
+
+\begin{earg}
+\item  $A \eif \enot A$ \vspace{.5ex}							
+
+%{\color{red}
+%$
+%\begin{array}{c|cccc}
+%A&A&\eif&\enot&A\\\hline
+%T&T&\mathbf{F}&F&T\\
+%F&F&\mathbf{T}&T&F
+%\end{array}
+%$ 
+%
+%Contingent	 \vspace{6pt}
+%}
+%	T letter, 2 connectives
+\item $A \eif (A \eand (A \eor B))$ \vspace{.5ex}	
+
+%{\color{red}
+%$
+%\begin{array}{cc|ccc@{}ccc@{}ccc@{}c@{}c}
+%A&B&A&\eif&(&A&\eand&(&A&\eor&B&)&)\\\hline
+%T&T&T&\mathbf{T}&&T&T&&T&T&T&&\\
+%T&F&T&\mathbf{T}&&T&T&&T&T&F&&\\
+%F&T&F&\mathbf{T}&&F&F&&F&T&T&&\\
+%F&F&F&\mathbf{T}&&F&F&&F&F&F&&
+%\end{array}
+%$
+%
+%Tautology \vspace{6pt}
+%}
+%			2 letters, 3 connectives
+
+\item $(A \eif B) \eiff (B \eif A)$ 	\vspace{.5ex}				%
+%
+%{\color{red}
+%$
+%\begin{array}{cc|c@{}ccc@{}ccc@{}ccc@{}c}
+%a&b&(&a&\rightarrow&b&)&\leftrightarrow&(&b&\rightarrow&a&)\\\hline
+%T&T&&T&T&T&&\mathbf{T}&&T&T&T&\\
+%T&F&&T&F&F&&\mathbf{F}&&F&T&T&\\
+%F&T&&F&T&T&&\mathbf{F}&&T&F&F&\\
+%F&F&&F&T&F&&\mathbf{T}&&F&T&F&
+%\end{array}
+%$
+%
+%Contingent \vspace{6pt}
+%
+%}
+%		2 letters, 3 connectives
+
+\item $A \eif \enot(A \eand (A \eor B)) $	\vspace{.5ex}	
+
+%{\color{red}
+%$
+%\begin{array}{cc|cccc@{}ccc@{}ccc@{}c@{}c}
+%a&b&a&\rightarrow&\enot&(&a&\eand&(&a&\eor&b&)&)\\\hline
+%T&T&T&\mathbf{F}&F&&T&T&&T&T&T&&\\
+%T&F&T&\mathbf{F}&F&&T&T&&T&T&F&&\\
+%F&T&F&\mathbf{T}&T&&F&F&&F&T&T&&\\
+%F&F&F&\mathbf{T}&T&&F&F&&F&F&F&&
+%\end{array}
+%$
+%
+%Contingent	\vspace{6pt}
+%
+%}
+%
+% 2 letters, 4 connectives
+
+\item $\enot B \eif [(\enot A \eand A) \eor B]$\vspace{.5ex} 
+
+%{\color{red}
+%$
+%\begin{array}{cc|cccc@{}c@{}cccc@{}ccc@{}c}
+%a&b&\enot&b&\rightarrow&(&(&\enot&a&\eand&a&)&\eor&b&)\\\hline
+%T&T&F&T&\mathbf{T}&&&F&T&F&T&&T&T&\\
+%T&F&T&F&\mathbf{F}&&&F&T&F&T&&F&F&\\
+%F&T&F&T&\mathbf{T}&&&T&F&F&F&&T&T&\\
+%F&F&T&F&\mathbf{F}&&&T&F&F&F&&F&F&
+%\end{array}
+%$
+%Contingent	 \vspace{6pt}
+%
+%}
+%	2 letters, 5 connectives
+
+\item $\enot(A \eor B) \eiff (\enot A \eand \enot B)$ \vspace{.5ex}
+
+%{\color{red}
+%$
+%\begin{array}{cc|cc@{}ccc@{}ccc@{}ccccc@{}c}
+%a&b&\enot&(&a&\eor&b&)&\leftrightarrow&(&\enot&a&\eand&\enot&b&)\\\hline
+%T&T&F&&T&T&T&&\mathbf{T}&&F&T&F&F&T&\\
+%T&F&F&&T&T&F&&\mathbf{T}&&F&T&F&T&F&\\
+%F&T&F&&F&T&T&&\mathbf{T}&&T&F&F&F&T&\\
+%F&F&T&&F&F&F&&\mathbf{T}&&T&F&T&T&F&
+%\end{array}
+%$
+%
+%Tautology \vspace{6pt}
+%}
+%2 letters, 6 connectives
+
+\item $[(A \eand B) \eand C] \eif B$\vspace{.5ex}							
+%
+%{\color{red}
+%$
+%\begin{array}{ccc|c@{}c@{}ccc@{}ccc@{}ccc}
+%a&b&c&(&(&a&\eand&b&)&\eand&c&)&\rightarrow&b\\\hline
+%T&T&T&&&T&T&T&&T&T&&\mathbf{T}&T\\
+%T&T&F&&&T&T&T&&F&F&&\mathbf{T}&T\\
+%T&F&T&&&T&F&F&&F&T&&\mathbf{T}&F\\
+%T&F&F&&&T&F&F&&F&F&&\mathbf{T}&F\\
+%F&T&T&&&F&F&T&&F&T&&\mathbf{T}&T\\
+%F&T&F&&&F&F&T&&F&F&&\mathbf{T}&T\\
+%F&F&T&&&F&F&F&&F&T&&\mathbf{T}&F\\
+%F&F&F&&&F&F&F&&F&F&&\mathbf{T}&F
+%\end{array}
+%$
+%
+%Tautology \vspace{6pt}
+%}
+%
+%3 letters, 3 connectives
+
+\item $\enot\bigl[(C\eor A) \eor B\bigr]$\vspace{.5ex} 						
+%
+%{\color{red}
+%$
+%\begin{array}{ccc|cc@{}c@{}ccc@{}ccc@{}c}
+%a&b&c&\enot&(&(&c&\eor&a&)&\eor&b&)\\\hline
+%T&T&T&\mathbf{F}&&&T&T&T&&T&T&\\
+%T&T&F&\mathbf{F}&&&F&T&T&&T&T&\\
+%T&F&T&\mathbf{F}&&&T&T&T&&T&F&\\
+%T&F&F&\mathbf{F}&&&F&T&T&&T&F&\\
+%F&T&T&\mathbf{F}&&&T&T&F&&T&T&\\
+%F&T&F&\mathbf{F}&&&F&F&F&&T&T&\\
+%F&F&T&\mathbf{F}&&&T&T&F&&T&F&\\
+%F&F&F&\mathbf{T}&&&F&F&F&&F&F&
+%\end{array}
+%$
+%
+%Contingent \vspace{6pt}
+%
+%}
+%	 	3 letters, 3 connectives
+
+\item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$ \vspace{.5ex}	
+%
+%{\color{red}
+%$
+%\begin{array}{ccc|c@{}c@{}ccc@{}cccc@{}ccc@{}c@{}ccc}
+%a&b&c&(&(&a&\eand&b&)&\eand&\enot&(&a&\eand&b&)&)&\eand&c\\\hline
+%T&T&T&&&T&T&T&&F&F&&T&T&T&&&\mathbf{F}&T\\
+%T&T&F&&&T&T&T&&F&F&&T&T&T&&&\mathbf{F}&F\\
+%T&F&T&&&T&F&F&&F&T&&T&F&F&&&\mathbf{F}&T\\
+%T&F&F&&&T&F&F&&F&T&&T&F&F&&&\mathbf{F}&F\\
+%F&T&T&&&F&F&T&&F&T&&F&F&T&&&\mathbf{F}&T\\
+%F&T&F&&&F&F&T&&F&T&&F&F&T&&&\mathbf{F}&F\\
+%F&F&T&&&F&F&F&&F&T&&F&F&F&&&\mathbf{F}&T\\
+%F&F&F&&&F&F&F&&F&T&&F&F&F&&&\mathbf{F}&F
+%\end{array}
+%$
+%
+%Contradiction \vspace{6pt}
+%
+%}
+%
+%% 	3 letters, 5 connectives
+%
+\item $(A \eand B) ]\eif[(A \eand C) \eor (B \eand D)]$ \vspace{.5ex}		
+%
+%{\color{red}
+%$
+%\begin{array}{cccc|c@{}c@{}ccc@{}c@{}ccc@{}c@{}ccc@{}ccc@{}ccc@{}c@{}c}
+%a&b&c&d&(&(&a&\eand&b&)&)&\eif&(&(&a&\eand&c&)&\eor&(&b&\eand&d&)&)\\\hline
+%T&T&T&T&&&T&T&T&&&\mathbf{T}&&&T&T&T&&T&&T&T&T&&\\
+%T&T&F&F&&&T&T&T&&&\mathbf{F}&&&T&F&F&&F&&T&F&F&&\\
+%\end{array}
+%$
+%
+%Contingent \vspace{6pt}
+%}
+%
+%	4 letters, 5 connectives
+\end{earg}
+
+\noindent\problempart
+\label{pr.TT.TTorC4}
+Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table where appropriate.
+\begin{earg}
+\item  $\enot (A \eor A)$\vspace{.5ex}							%	Contradiction		1 letter, 2 connectives
+\item $(A \eif B) \eor (B \eif A)$\vspace{.5ex}					%	Tautology			2 letters, 2 connectives
+\item $[(A \eif B) \eif A] \eif A$\vspace{.5ex}					%	Tautology			2 letters, 3 connectives
+\item $\enot[( A \eif B) \eor (B \eif A)]$\vspace{.5ex}			%	Contradiction		2 letters, 4 connectives
+\item $(A \eand B) \eor (A \eor B)$\vspace{.5ex} 				%	Contingent		2 letters, 5 connectives
+\item $\enot(A\eand B) \eiff A$\vspace{.5ex} 					%contingent			2 letters, 3 connectives
+\item $A\eif(B\eor C)$\vspace{.5ex} 							%contingent			3 letters, 2 connectives
+\item $(A \eand\enot A) \eif (B \eor C)$\vspace{.5ex} 			%tautology			3 letters, 4 connectives 
+\item $(B\eand D) \eiff [A \eiff(A \eor C)]$\vspace{.5ex}			%contingent			4 letters, 4 connectives
+\item $\enot[(A \eif B) \eor (C \eif D)]$\vspace{.5ex} 			% Contingent. 		4 letters, 4 connectives
+\end{earg}
+
+
+
+\noindent\problempart
+Determine whether each the following pairs of sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
+\begin{earg}
+\item $A$ and $A \eor A$
+\item $A$ and $A \eand A$
+\item $A \eor \enot B$ and $A\eif B$
+\item $(A \eif B)$ and $(\enot B \eif \enot A)$
+\item $\enot(A \eand B)$ and $\enot A \eor \enot B$
+\item $ ((U \eif (X \eor X)) \eor U)$ and $\enot (X \eand (X \eand U))$
+\item $ ((C \eand (N \eiff C)) \eiff C)$ and $(\enot \enot \enot N \eif C)$
+\item $[(A \eor B) \eand C]$ and $[A \eor (B \eand C)]$
+\item $((L \eand C) \eand I)$ and $L \eor C$
+\end{earg}
+
+
+\noindent\problempart
+\label{pr.TT.consistent5}
+Determine whether each collection of sentences is jointly consistent or jointly inconsistent. Justify your answer with a complete or partial truth table where appropriate.
+\begin{earg}
+\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %consistent
+\item $A \eif \enot A$, $\enot A \eif A$%inconsistent. 
+\item $A\eor B$, $A\eif C$, $B\eif C$ %consistent
+\item $A \eor B$, $A \eif C$, $B \eif C$, $\enot C$ %	Inconsistent
+\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$  %inconsistent
+\item $(A \eiff B) \eif B$,  $B \eif \enot (A \eiff B)$, $A \eor B$  %	Consistent
+\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$ %consistent
+\item  $A \eiff B$,  $\enot B \eor \enot A$,  $A \eif  B$ % Consistent
+\item $A \eiff B$, $A \eif C$, $B \eif D$, $\enot(C \eor D)$ %consitent
+\item $\enot (A \eand \enot B)$,  $B \eif \enot A$, $\enot B$   %Consistent
+\end{earg}
+
+\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table where appropriate.
+\label{pr.TT.valid5} 
+\begin{earg}
+\item $A\eif(A\eand\enot A)\therefore \enot A$% valid
+\item $A \eor B$, $A \eif B$, $B \eif A \therefore  A \eiff B$  % Valid
+\item $A\eor(B\eif A)\therefore \enot A \eif \enot B$ %valid
+\item $A \eor B$, $A \eif B$, $ B \eif A \therefore  A \eand B$ %valid
+\item $(B\eand A)\eif C$, $(C\eand A)\eif B\therefore (C\eand B)\eif A$ % invalid
+\item $\enot (\enot A \eor \enot B)$, $A \eif \enot C \therefore  A \eif (B \eif C)$ % invalid.
+\item $A \eand (B \eif C)$, $\enot C \eand (\enot B \eif \enot A)\therefore C \eand \enot C$ % valid
+\item $A \eand B$, $\enot A \eif \enot C$, $B \eif \enot D \therefore  A \eor B$ % Invalid
+\item $A \eif B\therefore (A \eand B) \eor (\enot A \eand \enot B)$ % invalid
+\item $\enot A \eif B$,$ \enot B \eif C $,$ \enot C \eif A \therefore  \enot A \eif (\enot B \eor \enot C) $% Invalid
+
+\end{earg}
+
+\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table where appropriate.
+\label{pr.TT.valid6} 
+\begin{earg}
+\item $A\eiff\enot(B\eiff A)\therefore A$ % invalid
+\item $A\eor B$, $B\eor C$, $\enot A\therefore B \eand C$ % invalid
+\item $A \eif C$, $E \eif (D \eor B)$, $B \eif \enot D\therefore (A \eor C) \eor (B \eif (E \eand D))$ % invalid
+\item $A \eor B$, $C \eif A$, $C \eif B\therefore A \eif (B \eif C)$ % invalid
+\item $A \eif B$, $\enot B \eor A\therefore A \eiff B$ % valid
+\end{earg}
+
