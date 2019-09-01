@@ -117,7 +117,7 @@
 \def\eor{\ensuremath{\vee}}
 % conjunction: 
 % {\,^{_{_{_{_{\mbox{\footnotesize\textbullet}}}}}}} gives the dot
-\def\eand{\ensuremath{~\&~}}   	%{\wedge}
+\def\eand{\ensuremath{\mathbin{\&}}}   	%{\wedge}, \mathbin is only needed with \&
 % conditional: \supset gives the horseshoe
 \def\eif{\ensuremath{\rightarrow}}
 % biconditional: \equiv gives the triple bar
@@ -304,9 +304,9 @@
 % In the preceding column definition, I would offer instead:
 %\begin{tabular}{c c | d e e e f}
 % d for left-most columns, e for middle ones, f for right-most ones. The ensuing spacing is ok.
-\newcolumntype{d}{ c@{\extracolsep{0.1em}}}
-\newcolumntype{e}{@{\extracolsep{0.1em}}c@{\extracolsep{0.1em}}}
-\newcolumntype{f}{@{\extracolsep{0.1em}}c }
+\newcolumntype{d}{ c@{\extracolsep{0.3em}}}
+\newcolumntype{e}{@{\extracolsep{0.3em}}c@{\extracolsep{0.3em}}}
+\newcolumntype{f}{@{\extracolsep{0.3em}}c }
 \newcommand*{\TTbf}[1]{\textbf{#1}}
 
 
