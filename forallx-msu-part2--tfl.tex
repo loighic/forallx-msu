@@ -634,18 +634,30 @@ The recursive structure of sentences in TFL will also be important when we consi
 \section{The main logical operator}
 \label{main_logical_operator}
 
-When we are dealing with a \emph{sentence} other than an atomic sentence, we can see that there must be some sentential connective that was introduced \emph{last}, when constructing the sentence. We call that connective the \define{main logical operator} of the sentence. In the simplest case, when there is only one connective---for instance, as there is here: $(P \eand Q)$---the main logical operator is the one connective, the `$\eand$'. If we add to this sentence, for instance like this: $((P \eand Q) \eor R)$, then the main logical operator becomes `$\eor$'. This is not only the operator that was added last, but it also dictates, at the most general level, what kind of sentence this is: it's a disjunction. (And one of the disjuncts happens to be a conjunction.) 
+Consider this sentence: \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office}. This sentence contains two connectives, `and' and `not', and one of these connectives is the \define{main logical operator} of the sentence. The main logical operator determines, at the most general level, what kind of sentence it is---a conjunction, a disjunction, a conditional, a biconditional, or a negation. The sentence \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office} is a conjunction, and the two conjuncts are \textit{Dr. Wilson is in his office} and \textit{Dr. Cook is not in her office}. The second conjunct is  a negation (that is, it's the negation of `Dr. Cook is in her office'), but this negation is subordinate to the `and'. So, in \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office} the main logical operator is the `and'.
 
-Adding to this sentence again, we get $(((P \eand Q) \eor R) \eif T)$. Now the main logical operator is `$\eif$', and the sentence is a conditional. And finally, if we negate the sentence: $\enot(((P \eand Q) \eor R) \eif T)$, `$\enot$' becomes the main logical operator. Some more  examples:
+Now consider this sentence: \textit{If today is not Saturday, then Amy is at work and Kate is at school}. What kind of sentence is it? It's a conditional. The antecedent is \textit{today is not Saturday}, and the consequent is \textit{Amy is at work and Kate is at school}. So, although there are three connectives in this sentence, the main logical operator is the \textit{if ..., then ...} (and so if we translated this sentence into TFL, the main logical operator would be the `$\eif$'). 
+
+Let's consider for a moment why this sentence isn't a negation or a conjunction, even though the sentence also contains both of those connectives. If we tried to explain the sentence as a negation, all that we could say is that it is the negation of \textit{today is Saturday}. The `not' doesn't apply to any other part of the sentence, and so we would leave the rest of the sentence out of the explanation. Similarly, if we tried to explain the sentence as a conjunction, then all we would be able to say is that one conjunct is \textit{Amy is at work} and the other is \textit{Kate is at school}. Again, we would leave part of the sentence completely out of our explanation. 
+
+We will define the term \textit{scope} at the end of this section, but right you can start to see that in \textit{If today is not Saturday, then Amy is at work and Kate is at school}, the scope of the `not' is only \textit{today is not Saturday} and the scope of the `and' is \textit{Amy is at work and Kate is at school}. The scope of the conditional, meanwhile, is the entire sentence.  
+
+Now let's turn to expressions in TFL. Although a long expression in TFL can look confusing at first, because we are using parentheses, it is (with some practice) easy to identify the main logical operator. Let's start with this example: $((P \eand Q) \eor R)$. What kind of sentence is it? It's a disjunction. One disjunct is $(P \eand Q)$ and the other is $R$. Hence, the main logical operator is the `$\eor$'. (Notice that if we tried to explain it as a conjunction, we would only be able to say that one conjunct is $P$ and the other is $Q$. We wouldn't be able to include the $R$ in our explanation.)
+
+Now, let's change the expression to $\enot((P \eand Q) \eor R)$. This is a negation, and so the main logical operator is the `$\enot$'. Notice that the `$\enot$' is outside of the brackets that enclose the entire $(P \eand Q) \eor R$. That means that the `$\enot$' ranges over the entire sentence (or in other words, the scope of the `$\enot$' is the entire sentence). That's what makes it the main logical operator. 
+
+Some other examples:
 \begin{earg}
 \item[\ex{logic-operator1}] $((P \eand R) \eif (\enot Q \eand S))$ ~~~The main logical operator is the `$\eif$'. 
 \item[\ex{logic-operator2}] $(((T \eif P) \eand R) \eor (S \eiff Q))$ ~~~The main logical operator is the `$\eor$'.
 \item[\ex{logic-operator3}] $\enot\enot\enot D$ ~~~The main logical operator is the first `$\enot$' sign.
-\item[\ex{logic-operator4}] $(P \eand \enot (\enot Q \eor R))$ ~~~The main logical operator is `$\eand$'. 
-\item[\ex{logic-operator5}] $((\enot E \eor F) \eif \enot G)$ ~~~The main logical operator is `$\eif$'.
+\item[\ex{logic-operator4}] $(P \eand \enot (\enot Q \eor R))$ ~~~The main logical operator is the `$\eand$'. 
+\item[\ex{logic-operator5}] $((\enot E \eor F) \eif \enot G)$ ~~~The main logical operator is the `$\eif$'.
 \end{earg}
 
-When the sentence includes the outermost brackets, you can find the main logical operator for a sentence by using the following method:
+Ultimately, you want to be able to identify the main logical operator by looking at a sentence and simply identifying what kind of sentence it is. If it is a conjunction, then part of the sentence will be one conjunct and the rest will be the other conjunct (and nothing will be left over). If it's a disjunction, then part of the sentence will be one disjunct and the rest will the other disjunct, again with nothing left over. If it's a conditional, then part of the sentence will the antecedent and the rest will be the consequent. And if it's a negation, then the whole sentence (minus the `not' itself) is being negated.
+
+Alternatively, when the sentence includes the outermost brackets, you can find the main logical operator by using this method:
 \begin{ebullet}
 	\item[(1)] If the first symbol in the sentence is `$\enot$', then that is the main logical operator.
 	\item[(2)] Otherwise, start counting the brackets by following one of these two procedures.
@@ -655,7 +667,11 @@ When the sentence includes the outermost brackets, you can find the main logical
 	\end{earg}
 \end{ebullet}
 
-As we will discuss in the next section (\S\ref{TFLconventions}), it is, in some cases, acceptable to omit the outermost brackets. For instance, although it is not strictly allowable according to the rules given in \S\ref{s:Sentences}, we can write `$(P \eand R) \eif Q$' instead of `$((P \eand R) \eif Q)$'. When the outermost brackets are omitted, `$\enot$' won't be the main logical operator, and so (1) will not apply. In other words, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. But remember, when `$\enot$' is the main logical operator---as it is in this example: $\enot(((P \eand Q) \eor R) \eif T)$---the `$\enot$' will be outside the outermost brackets. When the outermost brackes are omitted, (2a) and (2b) can be used, but stop when your count gets to zero instead of $1$.
+As we will discuss in the next section (\S\ref{TFLconventions}), it is, in some cases, acceptable to omit the outermost brackets. For instance, although it is not strictly allowable according to the rules given in \S\ref{s:Sentences}, we can write `$(P \eand R) \eif Q$' instead of `$((P \eand R) \eif Q)$'. 
+
+When the outermost brackets are omitted, `$\enot$' won't be the main logical operator, and so (1) will not apply. In other words, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. But remember, when `$\enot$' is the main logical operator---as it is in this example: $\enot((P \eand Q) \eor R)$---the `$\enot$' will be outside the outermost brackets. 
+
+When the outermost brackes are omitted, (2a) and (2b) can be used, but stop when your count gets to zero instead of $1$.
 
 \newglossaryentry{main logical operator}
 {
@@ -663,14 +679,18 @@ name=main connective,
 description={The last connective that you add when you assemble a sentence using the recursive definition.}
 }
 
-Finally, let's give a formal definition of the \emph{scope} of a negation (which was mentioned in \S\ref{s:ConnectiveConjunction}). The scope of a `$\enot$' is the subsentence for which `$\enot$' is the main logical operator. Consider a sentence like:
-$$(P \eand (\enot (R \eand B) \eiff Q))$$
-which was constructed by conjoining `$P$' with `$ (\enot (R \eand B) \eiff Q)$'. This last sentence was constructed by placing a biconditional between `$\enot (R \eand B)$' and `$Q$'. The former of these sentences---a subsentence of our original sentence---is a sentence for which `$\enot$' is the main logical operator. So the scope of the negation is just `$\enot(R \eand B)$'. The same holds for every connective, and so we have the following definition.
-	\factoidbox{The \define{scope} of a connective (in a sentence) is the subsentence for which that connective is the main logical operator.}
+Finally, let's give a formal definition of the \emph{scope} of a connective. The scope of the main logical operator is always the entire sentence. The scope of every other connective is the subsentence for which the connective is the main logical operator. Consider this sentence:
+
+$$(\enot(R \eand B) \eiff (P \eand Q))$$
+
+The main logical operator is the `$\eiff$'. The scope of the `$\enot$' is $\enot(R \eand B)$, which means that `$\enot$' is the main logical operator for just that subsentence. Similarly, the `$\eand$' is the main logical operator for just the $(R \eand B)$, and so the scope of that `$\eand$' is that  subsentence. 
+
+The same holds for every connective and every sentence and subsentence, and so we have the following definition.
+	\factoidbox{The \define{scope} of a connective (in a sentence) is the sentence or subsentence for which that connective is the main logical operator.}
 \newglossaryentry{scope}
 {
 name=scope,
-description={The sentences that are joined by a connective. These are the sentences the connective was applied to when the sentence was assembled using a recursive definition.}
+description={A property of connectives. The sentence or subsentence for which that connective is the main logical operator.}
 }
 
 
