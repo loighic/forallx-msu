@@ -223,24 +223,24 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 
 The \define{conditional introduction rule} is a little bit more complicated than the conditional elimination rule, but, with some thought (and maybe some time), it's easily grasped. We'll start with this symbolization key for the sentence letters \textit{L}, \textit{R}, and \textit{T}:
 	\begin{ekey}
-		\item[L] Kate has logic class.
 		\item[T] Today is Tuesday.
+		\item[L] Kate has logic class today.
 		\item[R] It is raining.
 	\end{ekey}
 And this is our argument: 
-$$T \eand L \therefore R \eif K$$
+$$T \eand L \therefore R \eif L$$
  
 Maybe you can see that this argument is valid. (That is, you can see that if the premise is true, then the conclusion has to be true.) But if you can't right now, that's ok. Let's move to the natural deduction format and fill in the steps that take us from that premise to the conclusion. We start by listing the premise.
 	\begin{proof}
 		\hypo{r}{T \eand L} \by{PR}{}
 	\end{proof}
-The next thing that we need to do is to make an \emph{additional} assumption: `It is raining'. (We might say that we're making this assumption ``for the sake of argument'' or to see where it leads). To indicate that we are no longer dealing \emph{merely} with our initial assumption (the premise `$T \eand L$'), but with some additional assumption, we put `R' on line 2 this way:
+The next thing that we need to do is to make an \emph{additional} assumption: `It is raining'. (We might say that we're making this assumption ``for the sake of argument'' or to see where it leads). To indicate that we are no longer dealing \emph{merely} with our initial assumption (the premise `$T \eand L$'), but with some additional assumption, we put `$R$' on line 2 this way:
 	\begin{proof}
 		\hypo{r}{T \eand L} \by{PR}{}
 		\open
 			\hypo{l}{R} \by{AS}{}
 	\end{proof}
-We are not claiming to have derived `$R$' from line 1, and so we do not need to cite a rule on line 2. The `AS' indicates that `R' is an assumption. We also, however, draw a line under the `R' (to indicate that it is an assumption) and indent it with a further vertical line (to indicate that it is additional). 
+We are not claiming to have derived `$R$' from line 1, and so we do not need to cite a rule on line 2. The `AS' indicates that `$R$' is an assumption. We also, however, draw a line under the `$R$' (to indicate that it is an assumption) and indent it with a further vertical line (to indicate that it is additional). 
 
 With this extra assumption in place, we can use $\eand$E:
 	\begin{proof}
@@ -260,7 +260,7 @@ Now, on the next line we can put our conclusion: `if it is raining, then Kate ha
 	\end{proof}
 For this final step, we have dropped back to the original vertical line. When we introduce the conditional, we \emph{discharged} the assumption that we made (`$R$'), which will always be the antecedent of the conditional. 
 
-That is a simple argument, but it illustrates how we introduce a conditional. On line 1, we began with the premise, which we are assuming to be true: `Today is Tuesday' and `Kate has logic class'. On line 2, we are setting down the assumption `it is raining'. We can even say, since we know that this will be the antecedent of the conditional, that on line 2 we have `if it is raining, ...'. With the conjunction-elimination rule, we can put `$L$' on line 3. Since we want `$L$' to be the consequent of the conditional, on the next line we put `$R \eif L$'. This makes sense, if the premise is true---that is, if `Kate has logic class today' is true---then, the conditional `if it is raining, Kate has logic class is true'. 
+That is a simple argument, but it illustrates how we introduce a conditional. On line 1, we began with the premise, which we are assuming is true: `Today is Tuesday' and `Kate has logic class today'. On line 2, we are setting down the assumption `it is raining'. We can even say, since we know that this will be the antecedent of the conditional, that on line 2 we have `if it is raining, ...'. With the conjunction-elimination rule, we can put `$L$' on line 3. Since we want `$L$' to be the consequent of the conditional, on the next line we put `$R \eif L$'. This makes sense, if the premise is true---that is, if `Kate has logic class today' is true---then, the conditional `if it is raining, Kate has logic class today' is true. 
 
 Similarly, we could have put `$\enot R$' on line 2, in which case our conditional would have been `if it is not raining, then Kate has logic today'. The point is that, on line 2, we are making an assumption, and then we see what follows. Since `Kate has logic class today' is in the conjunction on line 1, it will follow no matter what the assumption is.
 
@@ -275,7 +275,7 @@ To summarize, first, we make an assumption, \meta{A}. From that assumption, we d
 	\end{proof}}
 \noindent There can be as many or as few lines as needed between lines $i$ and $j$. 
 
-Lines $i$ through $j$ are called a \define{subproof}, and once a subproof has been closed, none of the lines in the subproof can be used again. The conditional $\meta{A}\eif\meta{B}$ can be used later in the proof (if it's needed) because it is outside of the subproof. Also, a proof is not complete until every assumption that has been introduced is discharged. That is to say, every subproof must be closed by the application of the $\eif$I rule (or, as we will see, the $\enot$I or $\enot$E rules).
+Lines $i$ through $j$ are called a \define{subproof}, and once a subproof has been closed, none of the lines in the subproof can be used again. The conditional $\meta{A}\eif\meta{B}$ can be used later in the proof (if it's needed) because it is outside of the subproof. Also, a proof is not complete until every assumption that has been introduced has been discharged. That is to say, every subproof must be closed by the application of the $\eif$I rule (or, as we will see shortly, the $\enot$I or $\enot$E rules).
 Thus, we stipulate the following.
 
 \factoidbox{To cite individual lines when applying a rule, those lines must (1) come before the application of the rule, but (2) not occur within a closed subproof.\\ 
@@ -419,7 +419,7 @@ In addition to the rules for each logical operator, we also have the \define{rei
 	\have[n]{a2}{\meta{A}} \by{R}{a1}
 \end{proof}}
 
-To demonstrate both the reiteration rule and the negation elimination rule, we will go through the proof for this argument: $\enot P \eif \enot Q, Q$ \therefore\ $P$. Looking at the argument, you'll notice that our conclusion is $P$, but $P$ itself does not occur anywhere in the premises. Hence, we cannot get $P$ by simply using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That's a sign that we will need to use one of our negation rules.
+To demonstrate both the reiteration rule and the negation elimination rule, we will go through the proof for this argument: $\enot P \eif \enot Q, Q$ \therefore\ $P$. Looking at the argument, you'll notice that our conclusion is $P$, but $P$ itself does not occur anywhere in the premises. Hence, we cannot get $P$ by simply using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That tells us that we will need to use one of our negation rules.
 
 After the premises, we make the assumption that we need for negation elimination. Since, ultimately, we want `$P$', we will assume `$\enot P$', knowing, of course, that once we discharge this subproof, we will have `$P$'.
 
@@ -452,7 +452,7 @@ Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to disc
 	\have{c}{P}\ni{np-ng}
 \end{proof}
 
-The double negation rule, like the reiteration rule, is primarily a rule of convenience. The first version of this rule allows you to add two `nots' to an atomic sentence (which, of course, will not change the sentence's truth value). This is sometimes useful, especially when you need to use the disjunction elimination rule. The second version of the double negation rule allows you to remove two `nots', although needing to do that is less common.
+The double negation rule, like the reiteration rule, is primarily a rule of convenience. The first version of this rule allows you to add two \textit{not}s (i.e., \textit{not not}) to an atomic sentence---which, of course, will not change the sentence's truth value. This is sometimes useful, especially when you need to use the disjunction elimination rule. The second version of the double negation rule allows you to remove two \textit{not}s, although needing to do that is less common.
 
 \factoidbox{
 \begin{proof}
@@ -466,7 +466,7 @@ The double negation rule, like the reiteration rule, is primarily a rule of conv
 \end{proof}
 }
 
-To illustrate the double negation rule---and also review the $\eor$E and $\eif$I rules---we will go through the proof for this argument: $\enot P \eor (R \eand Q)$ \therefore\ $P \eif Q$. We begin by listing the premise and making the assumption for $\eif$I.
+To illustrate the double negation rule---and also to review the $\eor$E and $\eif$I rules---we will go through the proof for this argument: $\enot P \eor (R \eand Q)$ \therefore\ $P \eif Q$. We begin by listing the premise and making the assumption for $\eif$I.
 
 \begin{proof}
 	\hypo{p1}{\enot P \eor (R \eand Q)} \by{PR}{}	
@@ -648,7 +648,7 @@ Creating proofs in Carnap is not difficult. To type the connectives, use the sym
 	\end{tabular}
 	\end{table}
 
-\noindent Carnap will number the lines automatically. After the sentence on each line, there has to be a colon (`:') before the `PR', `AS', or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put two spaces between the sentence and `:PR', `:AS', or the rule (:$\eif$E, :$\eor$I, etc.). Also indent subproofs with two spaces. (Carnap will let you use more or fewer spaces, but a subproof has to be indented some amount.)
+\noindent Carnap will number the lines automatically. After the sentence on each line, there has to be a colon (`:') before the `PR', `AS', or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put a tab space between the sentence and `:PR', `:AS', or the rule (:$\eif$E, :$\eor$I, etc.). Also indent subproofs with a tab space. (Carnap will let you use more or fewer spaces, but a subproof has to be indented some amount.)
 
 To produce a proof, you are given an interface like the one shown in figure \ref{fig:proof-1a}. The argument for which you are creating the proof is at the top. In this case, the premises are $P \eif Q$ and $R \eand P$, and the conclusion is $Q$. (The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$'). See chapter \ref{s:ProofTheoreticConcepts} for further explanation of the meaning of the turnstile.)
 
@@ -683,7 +683,7 @@ Once you complete each line, Carnap will give you the typographically correct ve
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Our next example, $(A \eor B) \proves (\enot A \eif B)$, requires a subproof. We begin as before. To create the subproof, put two spaces before $\enot A$ and put `:AS' at the end of the line (figure \ref{fig:proof-2a}). Since the next line is also part of the subproof, we again need two spaces before the $B$. We end the subproof (and discharge the assumption) with the $\eif$I rule. $\enot A \eif B$ is not indented (so no spaces before the $\enot A$). That's the conclusion, and so if everything is correct, Carnap will give you the green bar and you can submit the proof (figure \ref{fig:proof-2b}). 
+Our next example, $(A \eor B) \proves (\enot A \eif B)$, requires a subproof. We begin as before. To create the subproof, put a tab before $\enot A$ and put `:AS' at the end of the line (figure \ref{fig:proof-2a}). Since the next line is also part of the subproof, we again need a tab before the $B$. We end the subproof (and discharge the assumption) with the $\eif$I rule. $\enot A \eif B$ is not indented (so no tabs or spaces before the $\enot A$). That's the conclusion, and so if everything is correct, Carnap will give you the green bar and you can submit the proof (figure \ref{fig:proof-2b}). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
