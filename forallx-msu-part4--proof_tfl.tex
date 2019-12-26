@@ -221,41 +221,48 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 
 \section{Conditional introduction}
 
-The \define{conditional introduction rule} is a little bit more complicated than the conditional elimination rule, but, with some thought (and maybe some time), it's easily grasped. We'll start with this short argument:
-	\begin{enumerate}
-\itemsep-1mm
-\item	The green van is next to the building.
-\item	Therefore, if today is Tuesday, then the green van is next to the building \emph{and} today is Tuesday.
-	\end{enumerate}
+The \define{conditional introduction rule} is a little bit more complicated than the conditional elimination rule, but, with some thought (and maybe some time), it's easily grasped. We'll start with this symbolization key for the sentence letters \textit{L}, \textit{R}, and \textit{T}:
+	\begin{ekey}
+		\item[L] Kate has logic class.
+		\item[T] Today is Tuesday.
+		\item[R] It is raining.
+	\end{ekey}
+And this is our argument: 
+$$T \eand L \therefore R \eif K$$
+ 
 Maybe you can see that this argument is valid. (That is, you can see that if the premise is true, then the conclusion has to be true.) But if you can't right now, that's ok. Let's move to the natural deduction format and fill in the steps that take us from that premise to the conclusion. We start by listing the premise.
 	\begin{proof}
-		\hypo{r}{G} \by{PR}{}
+		\hypo{r}{T \eand L} \by{PR}{}
 	\end{proof}
-The next thing that we need to do is to make an \emph{additional} assumption: `today is Tuesday'. (We might say that we're making this assumption ``for the sake of argument'' or to see where it leads). To indicate that we are no longer dealing \emph{merely} with our initial assumption (the premise `$G$'), but with some additional assumption, we put `T' on line 2 this way:
+The next thing that we need to do is to make an \emph{additional} assumption: `It is raining'. (We might say that we're making this assumption ``for the sake of argument'' or to see where it leads). To indicate that we are no longer dealing \emph{merely} with our initial assumption (the premise `$T \eand L$'), but with some additional assumption, we put `R' on line 2 this way:
 	\begin{proof}
-		\hypo{r}{G} \by{PR}{}
+		\hypo{r}{T \eand L} \by{PR}{}
 		\open
-			\hypo{l}{T} \by{AS}{}
+			\hypo{l}{R} \by{AS}{}
 	\end{proof}
-We are not claiming to have derived `$T$' from line 1, and so we do not need to cite a rule on line 2. The `AS' indicates that `T' is an assumption. We also, however, draw a line under the `T' (to indicate that it is an assumption) and indent it with a further vertical line (to indicate that it is additional). 
+We are not claiming to have derived `$R$' from line 1, and so we do not need to cite a rule on line 2. The `AS' indicates that `R' is an assumption. We also, however, draw a line under the `R' (to indicate that it is an assumption) and indent it with a further vertical line (to indicate that it is additional). 
 
-With this extra assumption in place, we can use $\eand$I:
+With this extra assumption in place, we can use $\eand$E:
 	\begin{proof}
-		\hypo{r}{G} \by{PR}{}
+		\hypo{r}{T \eand L} \by{PR}{}
 		\open
-			\hypo{l}{T} \by{AS}{}
-			\have{rl}{G \eand T}\ai{r, l}
+			\hypo{l}{R} \by{AS}{}
+			\have{rl}{L}\ae{r}
 	\end{proof}
-So we have now shown that, on the additional assumption, `$G$', we can obtain `$G \eand T$'. We can therefore conclude that, `if $T$' is the case , then so is $G \eand T$'. Or, more briefly: `$T \eif (G \eand T)$':
+Now, on the next line we can put our conclusion: `if it is raining, then Kate has logic class'. Or, more briefly: `$R \eif L$':
 	\begin{proof}
-		\hypo{r}{G} \by{PR}{}
+		\hypo{r}{T \eand L} \by{PR}{}
 		\open
-			\hypo{l}{T} \by{AS}{}
-			\have{rl}{G \eand T}\ai{r, l}
+			\hypo{l}{R} \by{AS}{}
+			\have{rl}{L}\ae{r}
 			\close
-		\have{con}{T \eif (G \eand T)}\ci{l-rl}
+		\have{con}{R \eif L}\ci{l-rl}
 	\end{proof}
-For this final step, we have dropped back to the original vertical line. When we introduce the conditional, we \emph{discharged} the assumption that we made (`$T$'), which will always be the antecedent of the conditional.  
+For this final step, we have dropped back to the original vertical line. When we introduce the conditional, we \emph{discharged} the assumption that we made (`$R$'), which will always be the antecedent of the conditional. 
+
+That is a simple argument, but it illustrates how we introduce a conditional. On line 1, we began with the premise, which we are assuming to be true: `Today is Tuesday' and `Kate has logic class'. On line 2, we are setting down the assumption `it is raining'. We can even say, since we know that this will be the antecedent of the conditional, that on line 2 we have `if it is raining, ...'. With the conjunction-elimination rule, we can put `$L$' on line 3. Since we want `$L$' to be the consequent of the conditional, on the next line we put `$R \eif L$'. This makes sense, if the premise is true---that is, if `Kate has logic class today' is true---then, the conditional `if it is raining, Kate has logic class is true'. 
+
+Similarly, we could have put `$\enot R$' on line 2, in which case our conditional would have been `if it is not raining, then Kate has logic today'. The point is that, on line 2, we are making an assumption, and then we see what follows. Since `Kate has logic class today' is in the conjunction on line 1, it will follow no matter what the assumption is.
 
 To summarize, first, we make an assumption, \meta{A}. From that assumption, we derive \meta{B}. Once we've done that, we know that \textit{if} \meta{A}, then \meta{B}, and we have our conditional. 
 \factoidbox{
