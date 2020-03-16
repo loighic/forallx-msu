@@ -1,0 +1,136 @@
+\graphicspath{{figures--proofs/}}
+\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
+
+
+\chapter{Additional rules for TFL}\label{s:Further}
+
+\section{Derived rules}
+The rules of our natural deduction system are systematic. There is an introduction and an elimination rule for each logical operator. But why these basic rules rather than others? Some natural deduction systems have this rule:
+\factoidbox{
+\begin{proof}
+	\have[m]{ab}{\meta{A}\eor\meta{B}}
+	\have[n]{ac}{\meta{A}\eif\meta{C}}
+	\have[o]{bc}{\meta{B}\eif\meta{C}}
+	\have[\ ]{c}{\meta{C}} \by{DIL}{ab,ac,bc}
+\end{proof}}
+
+Let's call this rule \define{dilemma} (DIL) It might seem as if there will be some proofs that we cannot do without this rule. But that is not the case. Any proof that you can do using the Dilemma rule can be done with basic rules of our natural deduction system. It will just take more steps. Consider this proof:
+
+\begin{proof}
+	\hypo{ab}{A \eor B} \by{PR}{}
+	\hypo{ac}{A\eif C} \by{PR}{}
+	\hypo{bc}{B \eif C}\by{PR}{}
+	\open
+		\hypo{nc}{\enot C}\by{AS}{}
+		\open
+			\hypo{a1}{A} \by{AS}{}
+			\have{c1}{C}\ce{ac, a1}
+			\have{nc1}{\enot C}\by{R}{nc}
+		\close
+		\have{na}{\enot A}\ni{a1-nc1}
+		\open
+			\hypo{b2}{B}\by{AS}{}
+			\have{c2}{C}\ce{bc, b2}
+			\have{nc2}{\enot C}\by{R}{nc}
+		\close
+		\have{b}{B}\oe{ab, na}
+		\have{nb}{\enot B}\ni{b2-nc2}
+	\close
+	\have{c}{C} \ne{nc-nb}
+\end{proof}
+
+This proof demonstrates that the dilemma rule is not really necessary. Adding it to the list of basic rules would not allow us to derive anything that we could not derive without it.
+Nevertheless, the it would be convenient. It would allow us to do in one line what requires eleven lines with the basic rules (and subproofs within subproofs!). So we will add it to the proof system as a derived rule.
+
+A \define{derived rule} is a rule of proof that does not make any new proofs possible. Anything that can be proven with a derived rule can be proven without it. You can think of a short proof using a derived rule as shorthand for a longer proof that uses only the basic rules. Anytime you use the dilemma rule, you could always take ten extra lines and prove the same thing without it.
+
+For the sake of convenience, we will add several other derived rules, all of which can be used in Carnap. One is \define{modus tollens} (MT).
+\factoidbox{
+\begin{proof}
+	\have[m]{ab}{\meta{A}\eif\meta{B}}
+	\have[n]{a}{\enot\meta{B}}
+	\have[\ ]{b}{\enot\meta{A}} \by{MT}{ab,a}
+\end{proof}}
+\noindent We leave the proof of this rule as an exercise. Note that if we had already proven the MT rule, then the proof of the DIL rule could have been done in only five lines.
+We will also add the \define{hypothetical syllogism} (HS) as a derived rule. We have already given a proof of it on p.~\pageref{HSproof}.
+\factoidbox{
+\begin{proof}
+	\have[m]{ab}{\meta{A}\eif\meta{B}}
+	\have[n]{bc}{\meta{B}\eif\meta{C}}
+	\have[\ ]{ac}{\meta{A}\eif\meta{C}}\by{HS}{ab,bc}
+\end{proof}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Rules of replacement}
+
+We will now introduce some derived rules that may be applied to part of a sentence. These are called \define{rules of replacement}, because they can be used to replace part of a sentence with a logically equivalent expression. One simple rule of replacement is \define{commutivity} (abbreviated Comm), which says that we can swap the order of conjuncts in a conjunction or the order of disjuncts in a disjunction. We define the rule this way:
+\factoidbox{
+\begin{center}
+\begin{tabular}{rl}
+$(\meta{A}\eand\meta{B}) \Longleftrightarrow (\meta{B}\eand\meta{A})$\\
+$(\meta{A}\eor\meta{B}) \Longleftrightarrow (\meta{B}\eor\meta{A})$\\
+$(\meta{A}\eiff\meta{B}) \Longleftrightarrow (\meta{B}\eiff\meta{A})$
+& Comm
+\end{tabular}
+\end{center}}
+
+The bold arrow means that you can take a subformula on one side of the arrow and replace it with the subformula on the other side. \textbf{The arrow is double-headed because rules of replacement work in both directions.} (In this case, and in the other cases below, the name `Comm' applies to each of the three versions, even though they use different logical operators.)
+
+Consider this argument: $(M \eor P) \eif (P \eand M)$ \therefore\ $(P \eor M) \eif (M \eand P)$. Although it is obviously valid, a proof of it using only the basic rules would be quite long. With the Comm rule, however, we can easily provide a proof:
+
+\begin{proof}
+	\hypo{1}{(M \eor P) \eif (P \eand M)} \by{PR}{}
+	\have{2}{(P \eor M) \eif (P \eand M)}\by{Comm}{1}
+	\have{n}{(P \eor M) \eif (M \eand P)}\by{Comm}{2}
+\end{proof}
+
+\begin{comment} % I have DN with the basic rules
+Another rule of replacement is \define{double negation} (DN). With the DN rule, you can remove or insert a pair of negations anywhere in a sentence. This is the rule:
+\factoidbox{
+\begin{center}
+\begin{tabular}{rl}
+$\enot\enot\meta{A} \Longleftrightarrow \meta{A}$ & DN
+\end{tabular}
+\end{center}}
+\end{comment} % end comment
+
+% \begin{comment} % This is taking out DeMorgan's and the material conditional rule
+Two more replacement rules are called \define{De Morgan's Laws}, named for the 19th-century British logician August De Morgan. (Although De Morgan did discover these laws, he was not the first to do so.) The rules capture useful relations between negation, conjunction, and disjunction, and we demonstrated that the sentences in the first one are logically equivalent in \S\ref{equivalence--tt}. Here are the rules, which we abbreviate `DeM':
+\factoidbox{
+\begin{center}
+\begin{tabular}{rl}
+$\enot(\meta{A}\eor\meta{B}) \Longleftrightarrow (\enot\meta{A}\eand\enot\meta{B})$\\
+$\enot(\meta{A}\eand\meta{B}) \Longleftrightarrow (\enot\meta{A}\eor\enot\meta{B})$
+& DeM
+\end{tabular}
+\end{center}}
+
+In \S\ref{s:unless}, we discussed different ways of translating `you will catch a cold unless you wear a jacket'. We found that multiple translations were plausible: `$\enot J \eif D$', `$\enot D \eif J$', and `$J \eor D$', and I said that these were all equivalent. The \define{material conditional} rule (MC) is used for this equivalence. It takes two forms:
+\factoidbox{
+\begin{center}
+\begin{tabular}{rl}
+$(\meta{A}\eif\meta{B}) \Longleftrightarrow (\enot\meta{A}\eor\meta{B})$ &\\
+$(\meta{A}\eor\meta{B}) \Longleftrightarrow (\enot\meta{A}\eif\meta{B})$ & MC
+\end{tabular}
+\end{center}}
+
+Now consider this argument: $\enot(P \eif Q)$ \therefore\ $P \eand \enot Q$. We could prove this argument using only the basic rules, but that would take 17 lines and five subproofs. With DN, DeM, and MC, the proof is much simpler:
+
+\begin{proof}
+	\hypo{1}{\enot(P \eif Q)} \by{PR}{}
+	\have{2}{\enot(\enot P \eor Q)}\by{MC}{1}
+	\have{3}{\enot\enot P \eand \enot Q}\by{DeM}{2}
+	\have{4}{P \eand \enot Q}\by{DN}{3}
+\end{proof}
+% \end{comment}  % end comment
+
+A final replacement rule captures the relation between conditionals and biconditionals. We will call this rule \define{biconditional exchange} and abbreviate it {\eiff}{ex}.
+\factoidbox{
+\begin{center}
+\begin{tabular}{rl}
+$[(\meta{A}\eif\meta{B})\eand(\meta{B}\eif\meta{A})] \Longleftrightarrow (\meta{A}\eiff\meta{B})$
+& {\eiff}{ex}
+\end{tabular}
+\end{center}}
