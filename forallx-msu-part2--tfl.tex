@@ -110,27 +110,29 @@ description={A list that shows which English sentences are represented by which 
 \chapter{Connectives}
 \label{s:TFLConnectives}
 
-In the previous chapter, we considered symbolizing fairly basic English sentences with atomic sentences of TFL. This leaves us wanting to deal with the English expressions `and', `or', `not', and so forth. These are \emph{connectives}---they can be used to form new sentences out of old ones. In TFL, we will make use of logical connectives to build complex sentences from atomic components. There are five logical connectives in TFL. This table summarises them, and they are explained throughout this section.
+In the previous chapter, we considered symbolizing fairly basic English sentences with atomic sentences of TFL. This leaves us wanting to deal with the English expressions `and', `or', `not', and so forth. These are \emph{connectives}---they can be used to form new sentences out of old ones. In TFL, we will make use of logical connectives to build complex sentences from atomic components. There are five logical connectives in TFL, and they are summarized in table \ref{table.connectives}.
 
 \newglossaryentry{connective}
 {
 name=connective,
 description={A logical operator in TFL used to combine \glspl{atomic sentence} into larger sentences}
 }
-	\begin{table}[h]
-	\center
-	\begin{tabular}{l l l}
 	
-	\textbf{symbol}&\textbf{what it is called}&\textbf{rough meaning}\\
-	\hline
+	
+\begin{table*}\centering\sffamily\footnotesize
+\ra{1.25}
+\begin{tabular}{@{}l l l@{}}\toprule
+symbol & its name & meaning\\\midrule
 	\enot&negation&`It is not the case that$\ldots$'\\
 	\eand&conjunction&`Both$\ldots$\ and $\ldots$'\\
 	\eor&disjunction&`Either$\ldots$\ or $\ldots$'\\
 	\eif&conditional&`If $\ldots$\ then $\ldots$'\\
 	\eiff&biconditional&`$\ldots$ if and only if $\ldots$'\\
+\bottomrule
+\end{tabular}
+\caption{}\label{table.connectives}
+\end{table*}
 	
-	\end{tabular}
-	\end{table}
 
 These are not the only connectives in English. Others are, for example, `unless', `neither \dots{} nor \dots', and `because'. We will see that the first two can be expressed by the connectives we will discuss, while the last cannot. `Because', in contrast to the others, is not \emph{truth functional}.
 
@@ -634,19 +636,24 @@ The recursive structure of sentences in TFL will also be important when we consi
 \section{The main logical operator}
 \label{main_logical_operator}
 
-Consider this sentence: \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office}. This sentence contains two connectives, `and' and `not', and one of these connectives is the \define{main logical operator} of the sentence. The main logical operator determines, at the most general level, what kind of sentence it is---a conjunction, a disjunction, a conditional, a biconditional, or a negation. The sentence \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office} is a conjunction, and the two conjuncts are \textit{Dr. Wilson is in his office} and \textit{Dr. Cook is not in her office}. The second conjunct is  a negation (that is, it's the negation of `Dr. Cook is in her office'), but this negation is subordinate to the `and'. So, in \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office} the main logical operator is the `and'.
+Consider this sentence: \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office}. This sentence contains two connectives, `and' and `not', and one of these connectives is the \define{main logical operator} of the sentence. The main logical operator determines, at the most general level, what kind of sentence it is---a conjunction, a disjunction, a conditional, a biconditional, or a negation. The sentence \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office} is a conjunction. Thus, the `and' is the main logic operator, and the two conjuncts are \textit{Dr. Wilson is in his office} and \textit{Dr. Cook is not in her office}. The second conjunct is  a negation (that is, it's the negation of `Dr. Cook is in her office'), but this negation is subordinate to full sentence. 
 
-Now consider this sentence: \textit{If today is not Saturday, then Amy is at work and Kate is at school}. What kind of sentence is it? It's a conditional. The antecedent is \textit{today is not Saturday}, and the consequent is \textit{Amy is at work and Kate is at school}. So, although there are three connectives in this sentence, the main logical operator is the \textit{if ..., then ...} (and so if we translated this sentence into TFL, the main logical operator would be the `$\eif$'). 
+Now let's look at this sentence: 
+\begin{ebullet}
+	\item[] \textit{If today is not Saturday, then Amy is at work and Kate is at school}. 
+\end{ebullet}
+	
+\noindent What kind of sentence is it? It's a conditional. The antecedent is \textit{today is not Saturday}, and the consequent is \textit{Amy is at work and Kate is at school}. So, although there are three connectives in this sentence, the main logical operator is the \textit{if ..., then ...} (and so if we translated this sentence into TFL, the main logical operator would be the `$\eif$'). 
 
-Let's consider for a moment why this sentence isn't a negation or a conjunction, even though the sentence also contains both of those connectives. If we tried to explain the sentence as a negation, all that we could say is that it is the negation of \textit{today is Saturday}. The `not' doesn't apply to any other part of the sentence, and so we would leave the rest of the sentence out of the explanation. Similarly, if we tried to explain the sentence as a conjunction, then all we would be able to say is that one conjunct is \textit{Amy is at work} and the other is \textit{Kate is at school}. Again, we would leave part of the sentence completely out of our explanation. 
+Let's consider for a moment why \textit{If today is not Saturday, then Amy is at work and Kate is at school} isn't a negation or a conjunction, even though the sentence also contains both of those connectives. If we tried to explain the sentence as a negation, all that we could say is that it is the negation of \textit{today is Saturday}. The `not' doesn't apply to any other part of the sentence, and so we would leave the rest of the sentence out of the explanation. Similarly, if we tried to explain the sentence as a conjunction, then all we would be able to say is that one conjunct is \textit{Amy is at work} and the other is \textit{Kate is at school}. Again, we would leave part of the sentence completely out of our explanation. 
 
-We will define the term \textit{scope} at the end of this section, but right you can start to see that in \textit{If today is not Saturday, then Amy is at work and Kate is at school}, the scope of the `not' is only \textit{today is not Saturday} and the scope of the `and' is \textit{Amy is at work and Kate is at school}. The scope of the conditional, meanwhile, is the entire sentence.  
+We will define the term \textit{scope} at the end of this section, but right you can see that, in this sentence, the scope of the `not' is only \textit{today is not Saturday} and the scope of the `and' is \textit{Amy is at work and Kate is at school}. The scope of the conditional, meanwhile, is the entire sentence.  
 
-Now let's turn to expressions in TFL. Although a long expression in TFL can look confusing at first, because we are using parentheses, it is (with some practice) easy to identify the main logical operator. Let's start with this example: $((P \eand Q) \eor R)$. What kind of sentence is it? It's a disjunction. One disjunct is $(P \eand Q)$ and the other is $R$. Hence, the main logical operator is the `$\eor$'. (Notice that if we tried to explain it as a conjunction, we would only be able to say that one conjunct is $P$ and the other is $Q$. We wouldn't be able to include the $R$ in our explanation.)
+Now let's turn to expressions in TFL. Although identifying the main logical operator in a long expression in TFL can seem confusing at first, because we are using parentheses, you'll find that it's not too difficult. Let's start with this example: $((P \eand Q) \eor R)$. What kind of sentence is it? It's a disjunction. One disjunct is $(P \eand Q)$ and the other is $R$. Hence, the main logical operator is the `$\eor$'. (Notice that if we tried to explain it as a conjunction, we would only be able to say that one conjunct is $P$ and the other is $Q$. We wouldn't be able to include the $R$ in our analysis.)
 
-Now, let's change the expression to $\enot((P \eand Q) \eor R)$. This is a negation, and so the main logical operator is the `$\enot$'. Notice that the `$\enot$' is outside of the brackets that enclose the entire $(P \eand Q) \eor R$. That means that the `$\enot$' ranges over the entire sentence (or in other words, the scope of the `$\enot$' is the entire sentence). That's what makes it the main logical operator. 
+Now, let's change the expression to $\enot((P \eand Q) \eor R)$. This is a negation, and so the main logical operator is the `$\enot$'. Notice that the `$\enot$' is outside of the brackets that enclose the entire $(P \eand Q) \eor R$. That means that the `$\enot$' ranges over the entire sentence (or in other words, the scope of the `$\enot$' is the entire sentence). Hence, it is the main logical operator. 
 
-Some other examples:
+Here are some other examples:
 \begin{earg}
 \item[\ex{logic-operator1}] $((P \eand R) \eif (\enot Q \eand S))$ ~~~The main logical operator is the `$\eif$'. 
 \item[\ex{logic-operator2}] $(((T \eif P) \eand R) \eor (S \eiff Q))$ ~~~The main logical operator is the `$\eor$'.
@@ -655,23 +662,24 @@ Some other examples:
 \item[\ex{logic-operator5}] $((\enot E \eor F) \eif \enot G)$ ~~~The main logical operator is the `$\eif$'.
 \end{earg}
 
-Ultimately, you want to be able to identify the main logical operator by looking at a sentence and simply identifying what kind of sentence it is. If it is a conjunction, then part of the sentence will be one conjunct and the rest will be the other conjunct (and nothing will be left over). If it's a disjunction, then part of the sentence will be one disjunct and the rest will the other disjunct, again with nothing left over. If it's a conditional, then part of the sentence will the antecedent and the rest will be the consequent. And if it's a negation, then the whole sentence (minus the `not' itself) is being negated.
+Ultimately, you want to be able to identify the main logical operator by just looking at a sentence and seeing what kind of sentence it is. If it is a conjunction, then part of the sentence will be one conjunct and the rest will be the other conjunct (and nothing will be left over). If it's a disjunction, then part of the sentence will be one disjunct and the rest will the other disjunct, again with nothing left over. If it's a conditional, then part of the sentence will be the antecedent and the rest will be the consequent. And if it's a negation, then the whole sentence (minus the `not' itself) is being negated.
 
 Alternatively, when the sentence includes the outermost brackets, you can find the main logical operator by using this method:
 \begin{ebullet}
 	\item[(1)] If the first symbol in the sentence is `$\enot$', then that is the main logical operator.
-	\item[(2)] Otherwise, start counting the brackets by following one of these two procedures.
+	\item[(2)] Otherwise, start counting the brackets by following one of these two procedures. (The open-bracket is `(' and the closed bracket is `)'.) 
 	\begin{earg}
-	\item[(2a)] Start from the left, and for each open-bracket, i.e.\ `(', add $1$; for each closing-bracket, i.e.\ `$)$', subtract $1$. When your count is at exactly $1$, the next operator you come to (\emph{apart} from a `$\enot$') is the main logical operator. 
+	\item[(2a)] Start from the left, and begin counting. For each open-bracket add $1$, and for each closing-bracket, subtract $1$. When your count is at exactly $1$, the next operator you come to (\emph{apart} from a `$\enot$') is the main logical operator. 
 	\item[(2b)] If starting at the left-side of the sentence doesn't seem to work, follow the same procedure, but begin at the far right (and work left).
 	\end{earg}
 \end{ebullet}
 
-As we will discuss in the next section (\S\ref{TFLconventions}), it is, in some cases, acceptable to omit the outermost brackets. For instance, although it is not strictly allowable according to the rules given in \S\ref{s:Sentences}, we can write `$(P \eand R) \eif Q$' instead of `$((P \eand R) \eif Q)$'. 
+As we will discuss in the next section, in some cases, it is acceptable to omit the outermost brackets in a sentence in TFL. For instance, although it is not strictly allowable according to the rules given in \S\ref{s:Sentences}, because it will not introduce any confusion or ambiguity, we can write `$(P \eand R) \eif Q$' instead of `$((P \eand R) \eif Q)$'. 
 
-When the outermost brackets are omitted, `$\enot$' won't be the main logical operator, and so (1) will not apply. In other words, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. But remember, when `$\enot$' is the main logical operator---as it is in this example: $\enot((P \eand Q) \eor R)$---the `$\enot$' will be outside the outermost brackets. 
-
-When the outermost brackes are omitted, (2a) and (2b) can be used, but stop when your count gets to zero instead of $1$.
+\begin{ebullet}
+\item[(3)] If `$\enot$' is the main logical operator, then the outermost brackets have to be used. (When `$\enot$' is the main logical operator---as it is in this example: $\enot((P \eand Q) \eor R)$---the `$\enot$' will be outside the outermost brackets.) In other words, when the outermost brackets are omitted, `$\enot$' won't be the main logical operator, and so (1) will not apply. 
+\item[(4)] When the outermost brackes are omitted, (2a) and (2b) can still be used, but stop when your count gets to zero instead of $1$.
+\end{ebullet}
 
 \newglossaryentry{main logical operator}
 {
@@ -679,13 +687,12 @@ name=main connective,
 description={The last connective that you add when you assemble a sentence using the recursive definition.}
 }
 
-Finally, let's give a formal definition of the \emph{scope} of a connective. The scope of the main logical operator is always the entire sentence. The scope of every other connective is the subsentence for which the connective is the main logical operator. Consider this sentence:
+Finally, let's define the \emph{scope} of a connective. The scope of the main logical operator is always the entire sentence. The scope of every other connective is the subsentence for which the connective is the main logical operator. Consider this sentence:
 
 $$(\enot(R \eand B) \eiff (P \eand Q))$$
 
-The main logical operator is the `$\eiff$'. The scope of the `$\enot$' is $\enot(R \eand B)$, which means that `$\enot$' is the main logical operator for just that subsentence. Similarly, the `$\eand$' is the main logical operator for just the $(R \eand B)$, and so the scope of that `$\eand$' is that  subsentence. 
+The main logical operator is the `$\eiff$'. The scope of the `$\enot$' is $\enot(R \eand B)$, which means that `$\enot$' is the main logical operator for that subsentence. Similarly, the `$\eand$' is the main logical operator for just the $(R \eand B)$, and so the scope of that `$\eand$' is $(R \eand B)$. The same holds for every connective and every sentence and subsentence, and so we have the following definition.
 
-The same holds for every connective and every sentence and subsentence, and so we have the following definition.
 	\factoidbox{The \define{scope} of a connective (in a sentence) is the sentence or subsentence for which that connective is the main logical operator.}
 \newglossaryentry{scope}
 {
@@ -696,15 +703,15 @@ description={A property of connectives. The sentence or subsentence for which th
 
 \section{Bracketing conventions}
 \label{TFLconventions}
-Strictly speaking, the brackets in `$(Q \eand R)$' are required. One reason for this is because the rules for forming sentences in TFL state that two atomic sentences connected by a connective are enclosed in brackets. (See section \ref{s:Sentences}.) Another reason is that we might use `$(Q \eand R)$' as a subsentence in a more complicated sentence. For example, we might want to negate `$(Q \eand R)$', obtaining `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the brackets and put a negation in front of it, we would have `$\enot Q \eand R$'. But `$\enot Q \eand R$'---or `$(\enot Q \eand R)$'---is very different than `$\enot(Q\eand R)$'.
+Strictly speaking, the brackets in `$(Q \eand R)$' are required. One reason for this is because the rules for forming sentences in TFL state that two atomic sentences connected by a connective are enclosed in brackets. (See \S\ref{s:Sentences}.) Another reason is that we might use `$(Q \eand R)$' as a subsentence in a more complicated sentence. For example, we might want to negate `$(Q \eand R)$', which would give us `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the brackets and put a negation in front of it, we would have `$\enot Q \eand R$'. But `$\enot Q \eand R$' is different than `$\enot(Q\eand R)$'. 
 
-That said, there are some convenient conventions that we can use as long as we are careful. First,  we allow ourselves to omit the \emph{outermost} brackets of a sentence. Thus, we allow ourselves to write `$Q \eand R$' instead of the sentence `$(Q \eand R)$'. We must remember, however, to put brackets around it when we want to embed the sentence into a more complicated sentence.
+That said, there are some convenient conventions that we can use as long as we are careful. First,  we allow ourselves to omit the \emph{outermost} brackets of a sentence. Thus, we allow ourselves to write `$Q \eand R$' instead of `$(Q \eand R)$' when `$Q \eand R$' is the whole sentence. We must remember, however, to put brackets around it when we want to embed the sentence into a more complicated sentence.
 
-Second, it can be a bit painful to stare at long sentences with many nested pairs of brackets. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and `]', instead of rounded ones. So there is no logical difference between `$(P\eor Q)$' and `$[P\eor Q]$', for example. 
+Second, it can be a bit painful to stare at long sentences with many nested pairs of brackets. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and `]', instead of rounded ones. So, there is no logical difference, for example, between `$(P\eor Q)$' and `$[P\eor Q]$'. 
 
-Combining these two conventions, we can rewrite the unwieldy sentence
+Combining these two conventions, we can rewrite 
 $$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
-rather more clearly as follows:
+rather more clearly this way:
 $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
 The scope of each connective is now much easier to pick out.
 
