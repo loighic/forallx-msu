@@ -17,16 +17,22 @@
 
 %RZ: typefaces 
 
-\usepackage{helvet}
-\usepackage[osf]{Baskervaldx} % oldstyle figures
+%\usepackage{helvet}
+\usepackage{cabin}									% default sans serif font
+
+\usepackage[osf]{mathpazo} 							% Palatino with smallcaps and oldstyle numbers. This sets the serif font for the document.
+%\usepackage[osf]{Baskervaldx} 						% oldstyle figures
 \usepackage[bigdelims,baskervaldx]{newtxmath} 
-\usepackage[cal=boondoxo]{mathalfa}
+\usepackage[cal=rsfso]{mathalfa}					% script for meta-variables ??
 
 % This allows spacing between letters (for the all caps subtitle and small caps). Use with \textls{letter-spaced text}
 \usepackage[tracking=smallcaps, letterspace=70]{microtype}
 \SetTracking{encoding={*}, shape=sc}{50}
 
 
+% tables
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 
 
 %RZ: Make sure we have a copyright symbol
