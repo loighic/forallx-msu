@@ -500,6 +500,10 @@ Now we can use $\eor$E. Once we have $R \eand Q$, we use $\eand$E and then disch
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CHAPTER 16
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -511,9 +515,10 @@ means that there is some proof which starts with assumptions among $\meta{A}_1, 
 
 The symbol `$\proves$' is called the \emph{single turnstile}. This is not the {double turnstile} symbol (`$\entails$') that we introduced in chapter~\ref{s:SemanticConcepts} to symbolize entailment. The single turnstile, `$\proves$', concerns the existence of proofs; the double turnstile, `$\entails$', concerns the existence of valuations (or interpretations, when used for FOL). \emph{They are very different notions.}
 
-Armed with our `$\proves$' symbol, we can introduce some more terminology. To say that there is a proof of $\meta{A}$ with no undischarged assumptions, we write: ${} \proves \meta{A}$. In this case, we say that $\meta{A}$ is a \define{theorem}.
+Armed with our `$\proves$' symbol, we can introduce some more terminology. To say that there is a proof of $\meta{A}$ with no undischarged assumptions---that is, in particular, with no premises---we write: ${} \proves \meta{A}$. In this case, we say that $\meta{A}$ is a \define{theorem}.
+
 	\factoidbox{\label{def:syntactic_tautology_in_sl}
-		$\meta{A}$ is a \define{theorem} iff $\proves \meta{A}$
+		$\meta{A}$ is a \define{theorem} iff ~ $\proves \meta{A}$
 	}
 \newglossaryentry{theorem}
 {
@@ -527,9 +532,8 @@ description={A sentence that can be proved without any premises}
 			\hypo{con}{A \eand \enot A}
 			\have{a}{A}\ae{con}
 			\have{na}{\enot A}\ae{con}
-			\have{red}{\ered}\ne{na, a}
 		\close
-		\have{lnc}{\enot (A \eand \enot A)}\ni{con-red}
+		\have{lnc}{\enot (A \eand \enot A)}\ni{con-na}
 	\end{proof}
 We have therefore proved `$\enot (A \eand \enot A)$' on no (undischarged) assumptions. This particular theorem is an instance of what is sometimes called \emph{the Law of Non-Contradiction}.
 
@@ -563,22 +567,20 @@ Here is a third, related, bit of terminology:
 
 It is easy to show that some sentences are provably inconsistent: you just need to prove a contradiction from assuming all the sentences. Showing that some sentences are not provably inconsistent is much harder. It would require more than just providing a proof or two; it would require showing that no proof of a certain kind is \emph{possible}.
 
-\
-\\
-This table summarises whether one or two proofs suffice, or whether we must reason about all possible proofs.
+Table \ref{table.one-mult-proofs} summarizes whether one, two, or all possible proofs (!) are needed to show that a sentence is a theorem, two sentences are equivalent, or two or more sentences are consistent or inconsistent. 
 
-\begin{center}
-\begin{tabular}{l l l}
-%\cline{2-3}
- & \textbf{Yes} & \textbf{No}\\
- \hline
-%\cline{2-3}
+\begin{table*}\centering\sffamily\footnotesize
+\ra{1.25}
+\begin{tabular}{@{}l l l@{}}\toprule
+To check & Yes & No\\\midrule
 theorem? & one proof & all possible proofs\\
-inconsistent? &  one proof  & all possible proofs\\
 equivalent? & two proofs & all possible proofs\\
+inconsistent? &  one proof  & all possible proofs\\
 consistent? & all possible proofs & one proof\\
+\bottomrule
 \end{tabular}
-\end{center}
+\caption{This table summarizes what is required to check each of these logical notions.}\label{table.one-mult-proofs}
+\end{table*}
 
 
 \practiceproblems
@@ -621,29 +623,33 @@ If you know that $\meta{A}\proves\meta{B}$, what can you say about $(\meta{A}\ea
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CHAPTER 17
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \chapter{Proofs in Carnap}\label{s:Carnap-proofs}
 
-Creating proofs in Carnap is not difficult. To type the connectives, use the symbols on the right in this table. 
+Creating proofs in Carnap is not difficult. To type the connectives, use the symbols on the right in table \ref{symbols-Carnap}. 
 
-	\begin{table}[h]
-	\center
-	\begin{tabular}{p{1cm} l l}
-	
-%	&\textsf{In Carnap}&\\
-	\hline
-	\enot&$\sim$&\\
-	\eand&\&&\\
-	\eor&v (lowercase v)&\\
-	\eif&-> (dash, greater than sign)&\\
-	\eiff&<->&\\
-	\hline
-	\end{tabular}
-	\end{table}
+\begin{table*}\centering\sffamily\footnotesize
+\ra{1.25}
+\begin{tabular}{@{}l l@{}}\toprule
+TFL connective & in Carnap \\\midrule
+	\enot & $ \sim$\\
+	\eand & \&\\
+	\eor & v (lowercase v)\\
+	\eif & $-$$>$ (dash, greater than sign)\\
+	\eiff & $<$$-$$>$\\
+\bottomrule
+\end{tabular}
+\caption{}\label{symbols-Carnap}
+\end{table*}
 
-\noindent Carnap will number the lines automatically. After the sentence on each line, there has to be a colon (`:') before the `PR', `AS', or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put a tab space between the sentence and `:PR', `:AS', or the rule (:$\eif$E, :$\eor$I, etc.). Also indent subproofs with a tab space. (Carnap will let you use more or fewer spaces, but a subproof has to be indented some amount.)
+
+Carnap will number the lines automatically. After the sentence on each line, there has to be a colon (`:') before the `PR', `AS', or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put a tab space between the sentence and `:PR', `:AS', or the rule (:$\eif$E, :$\eor$I, etc.). Also indent subproofs with a tab space. (Carnap will let you use more or fewer spaces, but a subproof has to be indented some amount.)
 
 To produce a proof, you are given an interface like the one shown in figure \ref{fig:proof-1a}. The argument for which you are creating the proof is at the top. In this case, the premises are $P \eif Q$ and $R \eand P$, and the conclusion is $Q$. (The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$'). See chapter \ref{s:ProofTheoreticConcepts} for further explanation of the meaning of the turnstile.)
 
@@ -701,13 +707,13 @@ Our next example, $(A \eor B) \proves (\enot A \eif B)$, requires a subproof. We
 As I said at the beginning of this chapter, creating proofs in Carnap is not difficult. You do have to be careful, however. Programming a language like TFL is relatively simple because there are only a small number of rules and, to produce proofs of valid arguments, we follow those rules very strictly. But as a consequence, Carnap is not designed to understand what you are trying to do if you deviate from the rules, even if it is a minor deviation or an innocent mistake. So, some reminders:
 \begin{enumerate}
 \itemsep-.3mm
-	\item Capitalize `PR', `AS',`E' and `I' (in the rules), and all atomic sentences.
+	\item Capitalize `PR', `AS',`E', `I' (in the rules), and all atomic sentences.
 	\item Don't forget the `:' right before PR, AS, or the rule that you are citing. 
 	\item There is no space between the $\eand$, $\eor$, $\eif$, $\eiff$, or $\enot$ and the `E' or `I'.  
 	\item There is a space (and no punctuation) after the `E' or `I'. 
 	\item There is a comma between the two lines that have to be cited for $\eand$I, $\eor$E, $\eif$E, and $\eiff$E (e.g., `$\eif$E 2,4').
 	\item There is a dash between the two lines that have to be cited for $\eif$I, $\enot$I, and $\enot$E (e.g., `$\enot$E 4-6').
-	\item The $\eiff$I rule requires dashes and a comma. (Check the format on p.~\pageref{eiff-I}.)
+%	\item The $\eiff$I rule requires dashes and a comma. (Check the format on p.~\pageref{eiff-I}.)
 \end{enumerate}
 
 
