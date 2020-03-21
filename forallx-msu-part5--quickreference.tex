@@ -166,7 +166,7 @@ One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizati
 
 \begin{proof}
 	\have[m]{a}{\meta{A}}
-	\have[\ ]{c}{\meta{A}} \by{R}{a}
+	\have[\ ]{c}{\meta{A}} \reit{a}
 \end{proof}
 \bigskip
 
@@ -232,7 +232,7 @@ One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizati
 \nopagebreak
 \begin{proof}
 	\open
-		\hypo[m]{a}{\meta{A}} \by{AS}{}
+		\hypo[m]{a}{\meta{A}} \as{}
 		\have[n]{b}{\meta{B}}
 	\close
 	\have[\ ]{ab}{\meta{A}\eif\meta{B}}\ci{a-b}
@@ -253,11 +253,11 @@ One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizati
 
 \begin{proof}
 	\open
-		\hypo[m]{a1}{\meta{A}} \by{AS}{}
+		\hypo[m]{a1}{\meta{A}} \as{}
 		\have[n]{b1}{\meta{B}}
 	\close
 	\open
-		\hypo[p]{b2}{\meta{B}} \by{AS}{}
+		\hypo[p]{b2}{\meta{B}} \as{}
 		\have[q]{a2}{\meta{A}}
 	\close
 	\have[\ ]{ab}{\meta{A}\eiff\meta{B}}\bi{a1-b1,b2-a2}
@@ -285,7 +285,7 @@ One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizati
 
 \begin{proof}
 	\open
-		\hypo[m]{a}{\meta{A}} \by{AS}{}
+		\hypo[m]{a}{\meta{A}} \as{}
 		\have[n][-1]{b}{\meta{B}}
 		\have{nb}{\enot\meta{B}}
 	\close
@@ -298,7 +298,7 @@ One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizati
 
 \begin{proof}
 	\open
-		\hypo[m]{na}{\enot\meta{A}} \by{AS}{}
+		\hypo[m]{na}{\enot\meta{A}} \as{}
 		\have[n][-1]{b}{\meta{B}}
 		\have{nb}{\enot\meta{B}}
 	\close
