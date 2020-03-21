@@ -48,7 +48,7 @@ As an illustration, consider this argument:
 	$$\enot (A \eor B) \therefore \enot A \eand \enot B$$
 We start the proof by writing the premise:
 \begin{proof}
-	\hypo{a1}{\enot (A \eor B)} \by{:PR}{}
+	\hypo{a1}{\enot (A \eor B)} \pr{}
 \end{proof}
 Notice that we have numbered the premise. Every line in a proof is numbered so that we can refer to it later if we need to do so. We have also indicated that this is a premise by putting `PR' at the end of the line. And finally, we have drawn a line underneath the premise. Everything written above the line is an \emph{initial assumption} (i.e., a premise). Everything written below the line will either be something that follows from that assumption, or it will be a new assumption. We are hoping to conclude that `$\enot A \eand \enot B$'; and so we want our proof to end, on line $n$, with
 \begin{proof}
@@ -60,9 +60,9 @@ Similarly, suppose we have this argument:
 $$A\eor B, \enot (A\eand C), \enot (B \eand \enot D) \therefore \enot C\eor D$$
 This argument has three premises, and so we start by listing them, numbering each line, and drawing a line under the final premise:
 \begin{proof}
-	\hypo{a1}{A \eor B} \by{:PR}{}
-	\hypo{a2}{\enot (A\eand C)} \by{:PR}{}
-	\hypo{a3}{\enot (B \eand \enot D)} \by{:PR}{}
+	\hypo{a1}{A \eor B} \pr{}
+	\hypo{a2}{\enot (A\eand C)} \pr{}
+	\hypo{a3}{\enot (B \eand \enot D)} \pr{}
 \end{proof}
 We are hoping to conclude with this line:
 \begin{proof}
@@ -130,24 +130,24 @@ Even with just these two rules, we can start to see how our formal proof system 
 \end{earg}
 The main logical operator in both the premise and conclusion of this argument is `$\eand$', and so we will use both of our conjunction rules in this proof. We begin by writing down the premise, and we draw a line below it. Everything after this line must follow from our premise by the application of our rules. 
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eand H)} \by{PR}{}
+	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 \end{proof}
 From the premise, we can eliminate the main connective (and only the main connective) using {\eand}E. Using $\eand$E twice gives us this:
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eand H)} \by{PR}{}
+	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
 	\have{b}{(G\eand H)} \ae{ab}
 \end{proof}
 Now that $(G\eand H)$ is on its own line, we can use $\eand$E again to get $H$ by itself. 
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eif H)} \by{PR}{}
+	\hypo{ab}{(A\eor B) \eand (G\eif H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
 	\have{b}{(G\eand H)} \ae{ab}
 	\have{b2}{H} \ae{b}
 \end{proof}
 Our final step requires $\eand$I to get the conclusion, $(A\eor B)\eand H$.
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eif H)} \by{PR}{}
+	\hypo{ab}{(A\eor B) \eand (G\eif H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
 	\have{b}{(G\eand H)} \ae{ab}
 	\have{b2}{H} \ae{b}
@@ -178,7 +178,7 @@ Knowing all this, we have the \define{disjunction introduction rule} (which, aga
 \end{proof}}
 \noindent \meta{B} can be \emph{any} sentence whatsoever. The only line that we need before we use this rule is the one containing \meta{A}. Hence, the following is a perfectly acceptable proof:
 \begin{proof}
-	\hypo{m}{M} \by{PR}{}
+	\hypo{m}{M} \pr{}
 	\have{mmm}{M \eor [(A\eiff B) \eif (C \eand D)]}\oi{m}
 \end{proof}
 
@@ -241,7 +241,7 @@ The \define{biconditional introduction rule} is based on the fact, mentioned in 
 \factoidbox{
 \begin{proof}\label{eiff-I}
     \have[m]{ab}{(\meta{A}\eif\meta{B}) \eand (\meta{B}\eif\meta{A})}
-	\have[\ ]{b}{\meta{A}\eiff\meta{B}} \by{\eiff ex}{ab}
+	\have[\ ]{b}{\meta{A}\eiff\meta{B}} \bex{ab}
 \end{proof}}
 
 The order of the $\meta{A}$ and $\meta{B}$ in $\meta{A}\eiff\meta{B}$ has to match their order in the first conditional in the conjunction, but since, typically, that line will have to be generated using the conjunction introduction rule, those conjuncts  can be put in either order then. Also, notice that when we cite the rule, we use $\eiff$ex, not $\eiff$I.
@@ -260,28 +260,28 @@ $$T \eand L \therefore R \eif L$$
  
 Maybe you can see that this argument is valid. (That is, you can see that if the premise is true, then the conclusion has to be true.) But if you can't right now, that's ok. Let's move to the natural deduction format and fill in the steps that take us from that premise to the conclusion. We start by listing the premise.
 	\begin{proof}
-		\hypo{r}{T \eand L} \by{PR}{}
+		\hypo{r}{T \eand L} \pr{}
 	\end{proof}
 The next thing that we need to do is to make an \emph{additional} assumption: `It is raining'. (We might say that we're making this assumption ``for the sake of argument'' or to see where it leads). To indicate that we are no longer dealing \emph{merely} with our initial assumption (the premise `$T \eand L$'), but with some additional assumption, we put `$R$' on line 2 this way:
 	\begin{proof}
-		\hypo{r}{T \eand L} \by{PR}{}
+		\hypo{r}{T \eand L} \pr{}
 		\open
-			\hypo{l}{R} \by{AS}{}
+			\hypo{l}{R} \as{}
 	\end{proof}
 We are not claiming to have derived `$R$' from line 1, and so we do not need to cite a rule on line 2. The `AS' indicates that `$R$' is an assumption. We also, however, draw a line under the `$R$' (to indicate that it is an assumption) and indent it with a further vertical line (to indicate that it is additional). 
 
 With this extra assumption in place, we can use $\eand$E:
 	\begin{proof}
-		\hypo{r}{T \eand L} \by{PR}{}
+		\hypo{r}{T \eand L} \pr{}
 		\open
-			\hypo{l}{R} \by{AS}{}
+			\hypo{l}{R} \as{}
 			\have{rl}{L}\ae{r}
 	\end{proof}
 Now, on the next line we can put our conclusion: `if it is raining, then Kate has logic class'. Or, more briefly: `$R \eif L$':
 	\begin{proof}
-		\hypo{r}{T \eand L} \by{PR}{}
+		\hypo{r}{T \eand L} \pr{}
 		\open
-			\hypo{l}{R} \by{AS}{}
+			\hypo{l}{R} \as{}
 			\have{rl}{L}\ae{r}
 			\close
 		\have{con}{R \eif L}\ci{l-rl}
@@ -296,7 +296,7 @@ To summarize, first, we make an assumption, \meta{A}. From that assumption, we d
 \factoidbox{
 	\begin{proof}
 		\open
-			\hypo[i]{a}{\meta{A}} \by{AS}{}
+			\hypo[i]{a}{\meta{A}} \as{}
 			\have[j]{b}{\meta{B}}
 		\close
 		\have[\ ]{ab}{\meta{A}\eif\meta{B}}\ci{a-b}
@@ -313,18 +313,18 @@ Let's go through a second example. Suppose we want a proof of this argument:
 	$$P \eif Q, Q \eif R \therefore P \eif R$$
 We start by listing both of our premises. Next, since we want ($P \eif R$), we assume the antecedent of that conditional. 
 \begin{proof}
-	\hypo{pq}{P \eif Q} \by{PR}{}
-	\hypo{qr}{Q \eif R} \by{PR}{}
+	\hypo{pq}{P \eif Q} \pr{}
+	\hypo{qr}{Q \eif R} \pr{}
 	\open
-		\hypo{p}{P} \by{AS}{}
+		\hypo{p}{P} \as{}
 	\close
 \end{proof}
 Now, even though it is an assumption that we've introduced, since `$P$' is on a line by itself (and the subproof has not yet been closed), we can use it for our next step. With `$P$', we can use {\eif}E on the first premise. This gives us `$Q$'. 
 \begin{proof}
-	\hypo{pq}{P \eif Q} \by{PR}{}
-	\hypo{qr}{Q \eif R} \by{PR}{}
+	\hypo{pq}{P \eif Q} \pr{}
+	\hypo{qr}{Q \eif R} \pr{}
 	\open
-		\hypo{p}{P}\by{AS}{}
+		\hypo{p}{P}\as{}
 		\have{q}{Q}\ce{pq,p}
 %		\have{r}{R}\ce{qr,q}
 	\close
@@ -333,10 +333,10 @@ Now, even though it is an assumption that we've introduced, since `$P$' is on a 
 With the $Q$ on line 4, we can use {\eif}E on the second premise, and that gives us $R$ So, by assuming `$P$', we were able to get `$R$'. Last, we apply the {\eif}I rule, which discharges `$P$' and completes the proof.
 \label{HSproof}
 \begin{proof}
-	\hypo{pq}{P \eif Q} \by{PR}{}
-	\hypo{qr}{Q \eif R} \by{PR}{}
+	\hypo{pq}{P \eif Q} \pr{}
+	\hypo{qr}{Q \eif R} \pr{}
 	\open
-		\hypo{p}{P}\by{AS}{}
+		\hypo{p}{P}\as{}
 		\have{q}{Q}\ce{pq,p}
 		\have{r}{R}\ce{qr,q}
 	\close
@@ -346,9 +346,9 @@ With the $Q$ on line 4, we can use {\eif}E on the second premise, and that gives
 One more example. Consider how you would prove: $F\eif(G\eand H)$ \therefore\ $F\eif G$. Perhaps it is tempting to write down the premise and then apply the {\eand}E rule to the conjunction $(G \eand H)$. This is not allowed, however. \textbf{The rules of proof can only be applied to the main connective of a sentence.} (That's the `$\eif$' in this sentence, not the `$\eand$'.) To use $\eand$E, we need to get $(G \eand H)$ on a line by itself, and so we proceed this way:
 
 \begin{proof}
-	\hypo{fgh}{F\eif(G\eand H)} \by{PR}{}
+	\hypo{fgh}{F\eif(G\eand H)} \pr{}
 	\open
-		\hypo{f}{F}\by{AS}{}
+		\hypo{f}{F}\as{}
 		\have{gh}{G \eand H}\ce{fgh,f}
 		\have{g}{G}\ae{gh}
 	\close
@@ -373,7 +373,7 @@ Our two negation rules (which are basically the same rule) formalize this reason
 \factoidbox{
 \begin{proof}
 \open
-	\hypo[m]{na}{\meta{A}}\by{AS}{}
+	\hypo[m]{na}{\meta{A}}\as{}
 	\have[n]{b}{\meta{B}}
 	\have[p]{nb}{\enot\meta{B}}
 \close
@@ -386,7 +386,7 @@ Our two negation rules (which are basically the same rule) formalize this reason
 \factoidbox{
 \begin{proof}
 \open
-	\hypo[m]{na}{\enot\meta{A}}\by{AS}{}
+	\hypo[m]{na}{\enot\meta{A}}\as{}
 	\have[n]{b}{\meta{B}}
 	\have[p]{nb}{\enot\meta{B}}
 \close
@@ -398,7 +398,7 @@ When using the negation rules, the last two lines of the subproof must be an exp
 
 %\begin{proof}
 %	\open
-%		\hypo{gng}{G\eand \enot G}\by{AS}{}
+%		\hypo{gng}{G\eand \enot G}\as{}
 %		\have{g}{G}\ae{gng}
 %		\have{ng}{\enot G}\ae{gng}
 %	\close
@@ -411,7 +411,7 @@ In addition to the rules for each logical operator, we also have the \define{rei
 \factoidbox{
 \begin{proof}
 	\have[m]{a1}{\meta{A}}
-	\have[n]{a2}{\meta{A}} \by{R}{a1}
+	\have[n]{a2}{\meta{A}} \reit{a1}
 \end{proof}}
 
 To demonstrate both the reiteration rule and the negation elimination rule, we will go through the proof for this argument: $\enot P \eif \enot Q, Q$ \therefore\ $P$. Looking at the argument, you'll notice that our conclusion is $P$, but $P$ itself does not occur anywhere in the premises. Hence, we cannot get $P$ by simply using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That tells us that we will need to use one of our negation rules.
@@ -419,30 +419,30 @@ To demonstrate both the reiteration rule and the negation elimination rule, we w
 After the premises, we make the assumption that we need for negation elimination. Since, ultimately, we want `$P$', we will assume `$\enot P$', knowing, of course, that once we discharge this subproof, we will have `$P$'.
 
 \begin{proof}
-	\hypo{p1}{\enot P \eif \enot Q} \by{PR}{}	
-	\hypo{p2}{Q} \by{PR}{}
+	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
+	\hypo{p2}{Q} \pr{}
 	\open
-		\hypo{np}{\enot P}\by{AS}{}
+		\hypo{np}{\enot P}\as{}
 \end{proof}
 We then use the conditional elimination rule to get $\enot Q$ on line 4. The $Q$ (on line 2) and $\enot Q$ are a contradiction, but to use $\enot$E we need to have $Q$ on line 5. So, we use the reiteration rule. 
 
 \begin{proof}
-	\hypo{p1}{\enot P \eif \enot Q} \by{PR}{}	
-	\hypo{p2}{Q} \by{PR}{}
+	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
+	\hypo{p2}{Q} \pr{}
 	\open
-		\hypo{np}{\enot P}\by{AS}{}
+		\hypo{np}{\enot P}\as{}
 		\have{nq}{\enot Q}\ce{p1,np}
-		\have{ng}{Q}\by{R}{p2}
+		\have{ng}{Q}\reit{p2}
 \end{proof}
 Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to discharge the assumption that we made, and that gives us the conclusion we are after: $P$.
 
 \begin{proof}
-	\hypo{p1}{\enot P \eif \enot Q} \by{PR}{}	
-	\hypo{p2}{Q} \by{PR}{}
+	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
+	\hypo{p2}{Q} \pr{}
 	\open
-		\hypo{np}{\enot P}\by{AS}{}
+		\hypo{np}{\enot P}\as{}
 		\have{nq}{\enot Q}\ce{p1,np}
-		\have{ng}{Q}\by{R}{p2}
+		\have{ng}{Q}\reit{p2}
 	\close
 	\have{c}{P}\ni{np-ng}
 \end{proof}
@@ -452,21 +452,21 @@ The double negation rule, like the reiteration rule, is primarily a rule of conv
 \factoidbox{
 \begin{proof}
 	\have[m]{a1}{\meta{A}}
-	\have[n]{a2}{\enot\enot\meta{A}} \by{DN}{a1}
+	\have[n]{a2}{\enot\enot\meta{A}} \dn{a1}
 \end{proof}
 
 \begin{proof}
 	\have[m]{a1}{\enot\enot\meta{A}}
-	\have[n]{a2}{\meta{A}} \by{DN}{a1}
+	\have[n]{a2}{\meta{A}} \dn{a1}
 \end{proof}
 }
 
 To illustrate the double negation rule---and also to review the $\eor$E and $\eif$I rules---we will go through the proof for this argument: $\enot P \eor (R \eand Q)$ \therefore\ $P \eif Q$. We begin by listing the premise and making the assumption for $\eif$I.
 
 \begin{proof}
-	\hypo{p1}{\enot P \eor (R \eand Q)} \by{PR}{}	
+	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
 	\open
-		\hypo{p}{P}\by{AS}{}
+		\hypo{p}{P}\as{}
 \end{proof}
 The next thing that we want is $(R \eand Q)$ on a line by itself. Now, you might think that, with $\enot P \eor (R \eand Q)$ and $P$, we can use $\eor$E to infer $(R \eand Q)$. After all, $P$ is the \textit{denial} of $\enot P$. Recall, however, the disjunction elimination rule.
 \factoidbox{
@@ -479,18 +479,18 @@ The next thing that we want is $(R \eand Q)$ on a line by itself. Now, you might
 `$\enot\meta{B}$' is `$\enot\enot\meta{B}$' (and so on by the same pattern). Hence, to use the disjunction elimination rule in this case, we need $\enot\enot P$, which we get with the double negation rule.
 
 \begin{proof}
-	\hypo{p1}{\enot P \eor (R \eand Q)} \by{PR}{}	
+	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
 	\open
-		\hypo{p}{P}\by{AS}{}
-		\have{dn}{\enot\enot P} \by{DN}{p}
+		\hypo{p}{P}\as{}
+		\have{dn}{\enot\enot P} \dn{p}
 \end{proof}
 Now we can use $\eor$E. Once we have $R \eand Q$, we use $\eand$E and then discharge the subproof to get the conclusion.
 
 \begin{proof}
-	\hypo{p1}{\enot P \eor (R \eand Q)} \by{PR}{}	
+	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
 	\open
-		\hypo{p}{P}\by{AS}{}
-		\have{dn}{\enot\enot P} \by{DN}{p}
+		\hypo{p}{P}\as{}
+		\have{dn}{\enot\enot P} \dn{p}
 		\have{rq}{R \eand Q} \oe{p1,dn}
 		\have{q}{Q} \ae{rq}
 	\close
