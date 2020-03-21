@@ -2,8 +2,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{forallxyyc}[2011/10/29 support for a logic textbook]
 
-\def\forallxversion{Spring 2020}
-\def\forallxshortversion{S20}
+\def\forallxversion{Fall 2020}
+\def\forallxshortversion{F20}
 
 \RequirePackage{amssymb,amsmath,hyperref,multicol,ifthen,graphicx,pifont,rotating,xcolor}
 \usepackage[numbered]{bookmark} %TB: added for speedy navigation
@@ -12,8 +12,16 @@
 \makeglossaries
 \usepackage{tabu}
 
+
+% COLORS
 \definecolor{maroon}{RGB}{102,0,0}
- \definecolor{light-gray}{gray}{0.80}
+\definecolor{light-gray}{gray}{0.80}
+ 
+\colorlet{leadbeater}{black} 
+\colorlet{dkleadbeater}{black}
+\colorlet{ltleadbeater}{black!50}
+\colorlet{vltleadbeater}{black!3}
+
 
 %RZ: typefaces 
 
@@ -32,6 +40,8 @@
 
 % tables
 \usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl} 		% to color the rows (also requires xcolor)
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 
 
@@ -55,39 +65,48 @@
 \usepackage{subcaption}					% for placing figures next to each other
 \usepackage{sidecap}						% captions next to figures
 
+
+%    ****************************************
+%    *         TABLE OF CONTENTS, ETC.      *
+%    ****************************************
+
+%\renewcommand{\thechapter}{\arabic{chapter}}
+%\renewcommand{\thepart}{\Roman{part}}
+%\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+
 % RZ: TOC widths
 
 \setlength{\cftpartnumwidth}{3em}
 \setlength{\cftchapternumwidth}{2.2em}
 \setlength{\cftsectionnumwidth}{3.3em}
 \setlength{\cftbeforechapterskip}{0pt} %TB: to leave no gap between sections (which LaTeX regards as chapters) in the TOC
-\renewcommand{\cftchapterfont}{\textrm}
-\renewcommand{\cftchapterpagefont}{\textrm}
+\renewcommand{\cftchapterfont}{\textsf}			%{\textrm}
+\renewcommand{\cftchapterpagefont}{\textrm}	% this is just for the page numbers in the TOC??
 
-% Chapter style
 
-%\makeatletter
-\setlength\midchapskip{10pt}
-\makechapterstyle{VZ14}{
-\renewcommand\chapternamenum{}
-\renewcommand\printchaptername{}
-\renewcommand\chapnamefont{\Large\scshape}
-\renewcommand\printchapternum{%
-\chapnamefont\centering\@chapapp\space\thechapter} 
+\chapterstyle{ell}
 
-\renewcommand\printchapternonum{%
-\par\par\vskip\midchapskip
-\hrule\vskip\midchapskip
-}
 
-\renewcommand\chaptitlefont{\Huge\scshape\centering}
-\renewcommand\afterchapternum{%
-\par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip}
-\renewcommand\afterchaptertitle{%
-\par\vskip\midchapskip\hrule\nobreak\vskip\afterchapskip}
-}
-%\makeatother
-\chapterstyle{VZ14}
+% This is the part style (to match the ell chapter style)
+\renewcommand{\midpartskip}{\begingroup
+ \vspace*{-.4\beforechapskip}
+ \begin{adjustwidth}{}{-.5\chapindent}
+ \hrulefill
+ \smash{\rule{0.4pt}{15mm}}
+ \end{adjustwidth}\endgroup}
+
+% numeric instead of roman numeral for the part num:
+\renewcommand*{\thepart}{\arabic{part}}
+% ell like Fonts:
+%
+% ragged left: from http://tex.stackexchange.com/questions/42489/a-modification-of-part-style-in-memoir
+% (moves the text to the right)
+\renewcommand*{\parttitlefont}{\normalfont\huge\sffamily\raggedleft}
+\renewcommand*{\partnumfont}{\normalfont\HUGE\sffamily\raggedleft}
+\renewcommand*{\partnamefont}{\normalfont\HUGE\sffamily\raggedleft}
+% this (without the \beforepartskip of the same form) force the part text higher onto the page.
+% \renewcommand{\afterpartskip}{\vspace*{\fill}}
+
 
 %%
 
@@ -277,12 +296,6 @@
 \newenvironment{solutioninlist}{}{}%{~\vspace{-1.6em}}{}
 
 
-%    ****************************************
-%    *         TABLE OF CONTENTS, ETC.      *
-%    ****************************************
-\renewcommand{\thechapter}{\arabic{chapter}}
-\renewcommand{\thepart}{\Roman{part}}
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 
 
 %    ****************************************
@@ -670,6 +683,7 @@
 % * * *
 % This block defines the natural deduction rules.
 % Rules designated by ordinary letters may be specified with \by{RULE}
+% the : in the TFL rules is there to match Carnap.io. 
 % * * *
 
 \def\nd*init{%
@@ -680,20 +694,25 @@
 %  \let\theo\nd*theo%
   \let\by\nd*by%
   \let\guard\nd*guard%
-  \def\bi{\by{{\eiff}I}}%
-  \def\be{\by{{\eiff}E}}%
-  \def\ci{\by{{\eif}I}}%
-  \def\ce{\by{{\eif}E}}%
+  \def\pr{\by{:PR}} % premise
+  \def\as{\by{:AS}}  % assumption (to begin a sub-proof)
+  \def\bi{\by{{:\eiff}I}}%
+  \def\be{\by{{:\eiff}E}}%
+  \def\bex{\by{{:\eiff}ex}}% biconditional-elim in forallx: MSU
+  \def\ci{\by{{:\eif}I}}%
+  \def\ce{\by{{:\eif}E}}%
   \def\Ai{\by{$\forall$I}}%
   \def\Ae{\by{$\forall$E}}%
   \def\Ei{\by{$\exists$I}}%
   \def\Ee{\by{$\exists$E}}%
-  \def\ae{\by{{\eand}E}}%
-  \def\ai{\by{{\eand}I}}%
-  \def\oi{\by{{\eor}I}}%
-  \def\oe{\by{{\eor}E}}%
-  \def\ni{\by{{\enot}I}}%
-  \def\ne{\by{{\enot}E}}%
+  \def\ae{\by{{:\eand}E}}%
+  \def\ai{\by{{:\eand}I}}%
+  \def\oi{\by{{:\eor}I}}%
+  \def\oe{\by{{:\eor}E}}%
+  \def\ni{\by{{:\enot}I}}%
+  \def\ne{\by{{:\enot}E}}%
+  \def\reit{\by{:R}} % reiteration rule
+  \def\dn{\by{:DN}} % double-negation rule
   \def\ri{\by{{\enot}E}}% RZ: this is now \enot E
   \def\re{\by{X}}% RZ: this is now X (explosion)
   \def\ii{\by{$=$I}}%
