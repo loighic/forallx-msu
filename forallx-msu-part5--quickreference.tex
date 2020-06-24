@@ -13,14 +13,14 @@
 \begin{tabular}{c|c}
 \meta{A} & \enot\meta{A}\\
 \hline
-T & F\\
+T & F\Tstrut\\
 F & T 
 \end{tabular}
 \hfill
-\begin{tabular}{c|c|c|c|c|c}
-\meta{A} & \meta{B} & \meta{A}\eand\meta{B} & \meta{A}~\eor~\meta{B} & \meta{A}~\eif~\meta{B} & \meta{A}~\eiff~\meta{B}\\
+\begin{tabular}{c c|c|c|c|c}
+\meta{A} & \meta{B} & \meta{A}~\eand~\meta{B} & \meta{A}~\eor~\meta{B} & \meta{A}~\eif~\meta{B} & \meta{A}~\eiff~\meta{B}\\
 \hline
-T & T & T & T & T & T\\
+T & T & T & T & T & T\Tstrut\\
 T & F & F & T & F & F\\
 F & T & F & T & T & F\\
 F & F & F & F & T & T
@@ -34,14 +34,14 @@ F & F & F & F & T & T
 \begin{tabular}{c|c}
 \meta{A} & \enot\meta{A}\\
 \hline
-1 & 0\\
+1 & 0\Tstrut\\
 0 & 1 
 \end{tabular}
 \hfill
-\begin{tabular}{c|c|c|c|c|c}
-\meta{A} & \meta{B} & \meta{A}\eand\meta{B} & \meta{A}~\eor~\meta{B} & \meta{A}~\eif~\meta{B} & \meta{A}~\eiff~\meta{B}\\
+\begin{tabular}{c c|c|c|c|c}
+\meta{A} & \meta{B} & \meta{A}~\eand~\meta{B} & \meta{A}~\eor~\meta{B} & \meta{A}~\eif~\meta{B} & \meta{A}~\eiff~\meta{B}\\
 \hline
-1 & 1 & 1 & 1 & 1 & 1\\
+1 & 1 & 1 & 1 & 1 & 1\Tstrut\\
 1 & 0 & 0 & 1 & 0 & 0\\
 0 & 1 & 0 & 1 & 1 & 0\\
 0 & 0 & 0 & 0 & 1 & 1
@@ -65,79 +65,9 @@ Both $P$, and $Q$. & $(P \eand Q)$\\
 If $P$, then $Q$. & $(P \eif Q)$\\
 $P$ only if $Q$. & $(P \eif Q)$\\
 $P$ if and only if $Q$. & $(P \eiff Q)$\\
-Unless $P$, $Q$. $P$ unless $Q$. & $(P \eor Q)$\\
-\\
-\multicolumn{2}{c}{\label{SymbolizingPredicates}\textsc{Predicates}}\\ \\
-All $F$s are $G$s. & $\forall x(Fx \eif Gx)$\\
-Some $F$s are $G$s. & $\exists x(Fx \eand Gx)$\\
-Not all $F$s are $G$s. & $\enot\forall x(Fx \eif Gx)$\ or\ $\exists x(Fx \eand \enot Gx)$\\
-No $F$s are $G$s. & $\forall x(Fx \eif\enot Gx)$\ or\ $\enot\exists x(Fx \eand Gx)$\\
-\\
-\multicolumn{2}{c}{\textsc{Identity}}\\ \\
-Only $j$ is $G$. & $\forall x(Gx \eiff x=j)$\\
-Everything besides $j$ is $G$. & $\forall x(x \neq j \eif Gx)$\\
-%$j$ is more $R$ than anyone else. & $\forall x(x\neq j \eif Rjx)$\\
-The $F$ is $G$. & $\exists x(Fx \eand \forall y(Fy \eif x=y) \eand Gx)$\\
-
-%\multicolumn{2}{l}{`The F is not G' can be translated two ways:} \\
-It is not the case that the F is G. (wide)& $\enot\exists x(Fx \eand \forall y(Fy \eif x=y) \eand Gx)$\\
-The $F$ is non-$G$. (narrow) & $\exists x(Fx \eand \forall y(Fy \eif x=y) \eand \enot Gx)$
+$P$ unless $Q$. & $(P \eor Q)$\\
 \end{tabular*}
 \end{center}
-
-
-
-% BEGIN: symbolizing cardinality
-
-\newpage
-\section*{Using identity to symbolize quantities}
-
-\subsection*{There are at least \blank\ $F$s.}
-\label{summary.atleast}
-
-\begin{ekey}
-\item[one] $\exists xFx$
-\item[two] $\exists x_1\exists x_2(Fx_1 \eand Fx_2 \eand x_1 \neq x_2)$
-\item[three] $\exists x_1\exists x_2\exists x_3(Fx_1 \eand Fx_2 \eand Fx_3 \eand x_1 \neq x_2 \eand x_1 \neq x_3 \eand x_2 \neq x_3)$
-\item[four] $\exists x_1\exists x_2\exists x_3\exists x_4 (Fx_1 \eand Fx_2 \eand Fx_3 \eand Fx_4 \eand x_1 \neq x_2 \eand x_1 \neq x_3 \eand x_1 \neq x_4 \eand x_2 \neq x_3 \eand x_2 \neq x_4 \eand x_3 \neq x_4)$
-\item[n] $\exists x_1\cdots\exists x_n(Fx_1 \eand\cdots\eand Fx_n \eand x_1 \neq x_2 \eand\cdots\eand x_{n-1}\neq x_n)$ 
-\end{ekey}
-
-\subsection*{There are at most \blank\ $F$s.}
-\label{summary.atmost}
-
-One way to say `at most $n$ things are $F$' is to put a negation sign in front of one of the symbolizations above and say $\enot$`at least $n+1$ things are $F$.' Equivalently:
-\begin{ekey}
-\item[one] $\forall x_1\forall x_2\bigl[(Fx_1 \eand Fx_2) \eif x_1=x_2\bigr]$
-\item[two] $\forall x_1\forall x_2\forall x_3\bigl[(Fx_1 \eand Fx_2 \eand Fx_3) \eif (x_1=x_2 \eor x_1=x_3 \eor x_2=x_3)\bigr]$
-\item[three] $\forall x_1\forall x_2\forall x_3\forall x_4\bigl[(Fx_1 \eand Fx_2 \eand Fx_3 \eand Fx_4) \eif (x_1=x_2 \eor x_1=x_3 \eor x_1=x_4 \eor x_2=x_3 \eor x_2=x_4 \eor x_3=x_4)\bigr]$
-\item[n]$\forall x_1\cdots\forall x_{n+1}
-\bigl[(Fx_1\eand \cdots \eand Fx_{n+1}) \eif (x_1=x_2 \eor \cdots \eor x_n=x_{n+1})\bigr]$ 
-\end{ekey}
-
-\subsection*{There are exactly \blank\ $F$s.}
-\label{summary.exactly}
-
-One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizations above and say `at least $n$ things are $F$' \eand\ `at most $n$ things are $F$.' The following equivalent formulae are shorter:
-\begin{ekey}
-\item[zero] $\forall x\enot Fx$
-\item[one] $\exists x\bigl[Fx \eand \enot\exists y(Fy \eand x\neq y)\bigr]$
-\item[two] $\exists x_1\exists x_2\bigl[Fx_1 \eand Fx_2 \eand x_1 \neq x_2 \eand \enot\exists y\bigl(Fy \eand y\neq x_1 \eand y \neq x_2\bigr) \bigr]$
-\item[three] $\exists x_1\exists x_2\exists x_3\bigl[Fx_1 \eand Fx_2 \eand Fx_3 \eand x_1 \neq x_2 \eand x_1 \neq x_3 \eand x_2 \neq x_3 \eand\\
-\enot\exists y(Fy \eand y \neq x_1 \eand y \neq x_2 \eand y\neq x_3) \bigr]$
-\item[n] $\exists x_1\cdots\exists x_n\bigl[Fx_1 \eand\cdots\eand Fx_n  \eand x_1 \neq x_2 \eand\cdots\eand x_{n-1}\neq x_n \eand\\
- \enot\exists y(Fy \eand y\neq x_1 \eand \cdots \eand y\neq x_n)\bigr]$ 
-%\item[one] $\exists x\forall y\bigl[Fx \eand (Fy \eif y = x)\bigr]$
-%\item[two] $\exists x\exists y\forall z\Bigl(Fx \eand Fy \eand \bigl[Fz \eif (z=x \eor z=y)\bigr] \eand x \neq y\Bigr)$
-%\item[three] $\exists x_1\exists x_2\exists x_3\forall y\Bigl(Fx_1 \eand Fx_2 \eand Fx_3 \eand [Fy \eif (y=x_1 \eor y=x_2 \eor y=x_3)] \eand x_1 \neq x_2 \eand x_1 \neq x_3 \eand x_2 \neq x_3\Bigr)$
-%\item[n] $\exists x_1\cdots\exists x_n\forall y\Bigl(Fx_1 \eand\cdots\eand Fx_n \eand \bigl[Fy \eif (y=x_1 \eor \cdots \eor y=x_n)\bigr] \eand x_1 \neq x_2 \eand\cdots\eand x_{n-1}\neq x_n\Bigr)$ 
-\end{ekey}
-
-%\subsection*{Specifying the size of the UD}
-
-%Removing $F$ from the symbolizations above produces sentences that talk about the size of the UD. For instance, `there are at least 2 things (in the UD)' may be symbolized as $\exists x\exists y(x \neq y)$.
-
-
 
 
 %  BEGIN: Rules of proof
@@ -156,157 +86,192 @@ One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizati
 % eliminate page numbers
 %\pagestyle{empty}
 
-\label{ProofRules} 
-\section{Basic rules for TFL}
+\section{Basic rules for TFL}\label{ProofRules}
 
+When you have what is in \textcolor{blue}{blue}, then, on a new line, you can put what is in \textcolor{red2}{red}. 
+
+\noindent$m$, $n$, $p$, and $q$ stand for lines numbers. $m$ and $n$ don't have to be consecutive line numbers. $p$ and $q$, as they are used in the negation-introduction and negation-elimination rules are consecutive line numbers.
+
+\setlength{\columnsep}{2.25cm}
 \begin{multicols}{2}
 %\twocolumn
+
+\noindent\textsc{Conjunction Intro}
+
+\begin{proof}
+	\have[m]{a}{\textcolor{blue}{\meta{A}}}
+	\have[n]{b}{\textcolor{blue}{\meta{B}}}
+	\have[\ ]{c}{\textcolor{red2}{\meta{A}\eand\meta{B}}} \ai{a, b}
+\end{proof}
+
+\begin{proof}
+	\have[m]{a}{\textcolor{blue}{\meta{A}}}
+	\have[n]{b}{\textcolor{blue}{\meta{B}}}
+	\have[\ ]{c}{\textcolor{red2}{\meta{B}\eand\meta{A}}} \ai{a, b}
+\end{proof}
+\bigskip
+
+\noindent\textsc{Conjunction Elim}
+
+\begin{proof}
+	\have[m]{ab}{\textcolor{blue}{\meta{A}\eand\meta{B}}}
+	\have[\ ]{a}{\textcolor{red2}{\meta{A}}} \ae{ab}
+\end{proof}
+
+\begin{proof}
+	\have[m]{ab}{\textcolor{blue}{\meta{A}\eand\meta{B}}}
+	\have[\ ]{b}{\textcolor{red2}{\meta{B}}} \ae{ab}
+\end{proof}
+\bigskip
+
+
+
+\vfill\null
+\columnbreak
+%%%%%%%%%%%%%%%%%%%% column break
+
+\noindent\textsc{Disjunction Intro}
+
+\begin{proof}
+	\have[m]{a}{\textcolor{blue}{\meta{A}}}
+	\have[\ ]{ab}{\textcolor{red2}{\meta{A}\eor\meta{B}}} \oi{a}
+\end{proof}
+
+\begin{proof}
+	\have[m]{a}{\textcolor{blue}{\meta{A}}}
+	\have[\ ]{ba}{\textcolor{red2}{\meta{B}\eor\meta{A}}} \oi{a}
+\end{proof}
+\bigskip
+
+
+\noindent\textsc{Disjunction Elim}
+
+\begin{proof}
+	\have[m]{ab}{\textcolor{blue}{\meta{A}\eor\meta{B}}}
+	\have[n]{nb}{\textcolor{blue}{\enot\meta{B}}}
+	\have[\ ]{a}{\textcolor{red2}{\meta{A}}} \oe{ab,nb}
+\end{proof}
+
+\begin{proof}
+	\have[m]{ab}{\textcolor{blue}{\meta{A}\eor\meta{B}}}
+	\have[n]{na}{\textcolor{blue}{\enot\meta{A}}}
+	\have[\ ]{b}{\textcolor{red2}{\meta{B}}} \oe{ab,nb}
+\end{proof}
+\bigskip
+
+
+\newpage %%%
+
+\noindent\textsc{Conditional Elim}
+
+\begin{proof}
+	\have[m]{ab}{\textcolor{blue}{\meta{A}\eif\meta{B}}}
+	\have[n]{a}{\textcolor{blue}{\meta{A}}}
+	\have[\ ]{b}{\textcolor{red2}{\meta{B}}} \ce{ab,a}
+\end{proof}
+\bigskip
+
+
+\noindent\textsc{Biconditional Intro}
+
+\begin{proof}
+	\have[m]{a1}{\textcolor{blue}{(\meta{A}\eif\meta{B}) \eand (\meta{B}\eif\meta{A})}}
+	\have[\ ]{b1}{\textcolor{red2}{\meta{A}\eiff\meta{B}} \qquad\qquad :\eiff$ex$~m}  %\bex{ab}
+	\end{proof}
+\bigskip
+
+
+\noindent\textsc{Biconditional Elim}
+
+\begin{proof}
+	\have[m]{ab}{\textcolor{blue}{\meta{A}\eiff\meta{B}}}
+	\have[n]{a}{\textcolor{blue}{\meta{B}}}
+	\have[\ ]{b}{\textcolor{red2}{\meta{A}}} \be{ab,a}
+\end{proof}
+
+\begin{proof}
+	\have[m]{ab}{\textcolor{blue}{\meta{A}\eiff\meta{B}}}
+	\have[n]{a}{\textcolor{blue}{\meta{A}}}
+	\have[\ ]{b}{\textcolor{red2}{\meta{B}}} \be{ab,a}
+\end{proof}
+\bigskip
+
 
 \noindent\textsc{Reiteration}
 
 \begin{proof}
-	\have[m]{a}{\meta{A}}
-	\have[\ ]{c}{\meta{A}} \reit{a}
+	\have[m]{a}{\textcolor{blue}{\meta{A}}}
+	\have[\ ]{c}{\textcolor{red2}{\meta{A}}} \reit{a}
 \end{proof}
 \bigskip
 
 
-\noindent\textsc{Conjunction Introduction}
-
-\begin{proof}
-	\have[m]{a}{\meta{A}}
-	\have[n]{b}{\meta{B}}
-	\have[\ ]{c}{\meta{A}\eand\meta{B}} \ai{a, b}
-\end{proof}
-\bigskip
 
 
-\noindent\textsc{Conjunction Elimination}
-
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eand\meta{B}}
-	\have[\ ]{a}{\meta{A}} \ae{ab}
-\end{proof}
-
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eand\meta{B}}
-	\have[\ ]{b}{\meta{B}} \ae{ab}
-\end{proof}
-\bigskip
-
-
-\noindent\textsc{Disjunction Introduction}
-
-\begin{proof}
-	\have[m]{a}{\meta{A}}
-	\have[\ ]{ab}{\meta{A}\eor\meta{B}}\oi{a}
-\end{proof}
-
-\begin{proof}
-	\have[m]{a}{\meta{A}}
-	\have[\ ]{ba}{\meta{B}\eor\meta{A}}\oi{a}
-\end{proof}
-\bigskip
 
 \vfill\null
 \columnbreak
-
-\noindent\textsc{Disjunction Elimination}
-
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eor\meta{B}}
-	\have[n]{nb}{\enot\meta{B}}
-	\have[\ ]{a}{\meta{A}} \oe{ab,nb}
-\end{proof}
-
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eor\meta{B}}
-	\have[n]{na}{\enot\meta{A}}
-	\have[\ ]{b}{\meta{B}} \oe{ab,nb}
-\end{proof}
-\bigskip
+%%%%%%%%%%%%%%%%%%%% column break
 
 
-\noindent\textsc{Conditional Introduction}
+\noindent\textsc{Conditional Intro}
 
 \nopagebreak
 \begin{proof}
 	\open
-		\hypo[m]{a}{\meta{A}} \as{}
-		\have[n]{b}{\meta{B}}
+		\hypo[m]{a}{\textcolor{blue}{\meta{A}}} \as{}
+		\have[n]{b}{\textcolor{blue}{\meta{B}}}
 	\close
-	\have[\ ]{ab}{\meta{A}\eif\meta{B}}\ci{a-b}
+	\have[\ ]{ab}{\textcolor{red2}{\meta{A}\eif\meta{B}}} \ci{a-b}
 \end{proof}
 \bigskip
 
-
-\noindent\textsc{Conditional Elimination}
-
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eif\meta{B}}
-	\have[n]{a}{\meta{A}}
-	\have[\ ]{b}{\meta{B}} \ce{ab,a}
-\end{proof}
-\bigskip
-
-\noindent\textsc{Biconditional Introduction}
-
-\begin{proof}
-	\open
-		\hypo[m]{a1}{\meta{A}} \as{}
-		\have[n]{b1}{\meta{B}}
-	\close
-	\open
-		\hypo[p]{b2}{\meta{B}} \as{}
-		\have[q]{a2}{\meta{A}}
-	\close
-	\have[\ ]{ab}{\meta{A}\eiff\meta{B}}\bi{a1-b1,b2-a2}
-\end{proof}
-\bigskip
-
-
-\noindent\textsc{Biconditional Elimination}
-
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eiff\meta{B}}
-	\have[n]{a}{\meta{B}}
-	\have[\ ]{b}{\meta{A}} \be{ab,a}
-\end{proof}
-
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eiff\meta{B}}
-	\have[n]{a}{\meta{A}}
-	\have[\ ]{b}{\meta{B}} \be{ab,a}
-\end{proof}
-\bigskip
 
 
 \noindent\textsc{Negation Introduction}
 
 \begin{proof}
 	\open
-		\hypo[m]{a}{\meta{A}} \as{}
-		\have[n][-1]{b}{\meta{B}}
-		\have{nb}{\enot\meta{B}}
+		\hypo[m]{a}{\textcolor{blue}{\meta{A}}} \as{}
+		\have[p]{b}{\textcolor{blue}{\meta{B}}}
+		\have[q]{nb}{\textcolor{blue}{\enot\meta{B}}}
 	\close
-	\have[\ ]{na}{\enot\meta{A}}\ni{a-nb}
+	\have[\ ]{na}{\textcolor{red2}{\enot\meta{A}}} \ni{a-nb}
 \end{proof}
 \bigskip
 
 
-\noindent\textsc{Negation Elimination}
+\noindent\textsc{Negation Elimination}\label{ProofRules-end}
 
 \begin{proof}
 	\open
-		\hypo[m]{na}{\enot\meta{A}} \as{}
-		\have[n][-1]{b}{\meta{B}}
-		\have{nb}{\enot\meta{B}}
+		\hypo[m]{na}{\textcolor{blue}{\enot\meta{A}}} \as{}
+		\have[p]{b}{\textcolor{blue}{\meta{B}}}
+		\have[q]{nb}{\textcolor{blue}{\enot\meta{B}}}
 	\close
-	\have[\ ]{a}{\meta{A}}\ne{na-nb}
+	\have[\ ]{a}{\textcolor{red2}{\meta{A}}} \ne{na-nb}
 \end{proof}
 \bigskip
 
 
+\noindent\textsc{Double Negation}
+
+\begin{proof}
+	\have[m]{a}{\textcolor{blue}{\meta{A}}}
+	\have[\ ]{c}{\textcolor{red2}{\enot\enot\meta{A}}} \dn{a}
+\end{proof}
+
+\begin{proof}
+	\have[m]{a}{\textcolor{blue}{\enot\enot\meta{A}}}
+	\have[\ ]{c}{\textcolor{red2}{\meta{A}}} \dn{a}
+\end{proof}
+\bigskip
+
+
+\vfill\null
+
+%%%%%%%%%% begin commented out
+\begin{comment}
 \section{Derived rules for TFL}
 
 \textsc{Dilemma}
@@ -336,116 +301,8 @@ One way to say `exactly $n$ things are $F$' is to conjoin two of the symbolizati
 	\have[\ ]{ac}{\meta{A}\eif\meta{C}}\by{HS}{ab,bc}
 \end{proof}
 
+\end{comment}
+%%%%%%%%%% end commented out
+
 \end{multicols}
-
-\newpage
-
-\section{Quantifier rules}
-
-\noindent\textsc{Existential Introduction}
-
-\begin{proof}
-	\have[m]{a}{\meta{A}\meta{c}}
-	\have[\ ]{c}{\exists \meta{x}\meta{A}\meta{x}} \Ei{a}
-\end{proof}
-
-Note that \meta{x} may replace some or all occurrences of \meta{c} in \meta{A}\meta{c}.
-\bigskip
-
-
-\noindent\textsc{Existential Elimination}
-
-\begin{proof}
-	\have[m]{a}{\exists \meta{x}\meta{A}\meta{x}}
-	\open	
-		\hypo[n]{b}{\meta{A}\meta{c}^\ast}
-		\have[p]{c}{\meta{B}}
-	\close
-	\have[\ ]{d}{\meta{B}} \Ee{a,b-c}
-\end{proof}
-
-$^\ast$ \meta{c} must not appear in $\exists\meta{x}\meta{A}\meta{x}$, in \meta{B}, or in any undischarged assumption.
-\bigskip
-
-\noindent\textsc{Universal Introduction}
-
-\begin{proof}
-	\have[m]{a}{\meta{A}\meta{c}^\ast}
-	\have[\ ]{c}{\forall \meta{x}\meta{A}\meta{x}} \Ai{a}
-\end{proof}
-
-$^\ast$ \meta{c} must not occur in any undischarged assumptions.
-\bigskip
-
-\noindent\textsc{Universal Elimination}
-
-\begin{proof}
-	\have[m]{a}{\forall \meta{x}\meta{A}\meta{x}}
-	\have[\ ]{c}{\meta{A}\meta{c}} \Ae{a}
-\end{proof}
-
-\newpage
-
-\section{Identity rules}
-
-\noindent\textsc{Identity introduction}
-
-\begin{proof}
-	\have[\ \,\,\,]{x}{\meta{c}=\meta{c}} \by{=I}{}
-\end{proof}
-
-
-\noindent\textsc{Identity elimination}
-
-\begin{multicols}{2}
-\begin{proof}
-	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{A}(\ldots \meta{a} \ldots \meta{a}\ldots)}
-	\have[\ ]{ea1}{\meta{A}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
-\end{proof}
-\begin{proof}
-	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{A}(\ldots \meta{b} \ldots \meta{b}\ldots)}
-	\have[\ ]{ea2}{\meta{A}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
-\end{proof}
-\end{multicols}
-
-
-
-\section{Replacement rules}
-
-{
-\center
-
-\textsc{Commutivity} (Comm)\\
-$(\meta{A}\eand\meta{B}) \Longleftrightarrow (\meta{B}\eand\meta{A})$\\
-$(\meta{A}\eor\meta{B}) \Longleftrightarrow (\meta{B}\eor\meta{A})$\\
-$(\meta{A}\eiff\meta{B}) \Longleftrightarrow (\meta{B}\eiff\meta{A})$
-\bigskip
-
-\textsc{DeMorgan} (DeM)\\
-$\enot(\meta{A}\eor\meta{B}) \Longleftrightarrow (\enot\meta{A}\eand\enot\meta{B})$\\
-$\enot(\meta{A}\eand\meta{B}) \Longleftrightarrow (\enot\meta{A}\eor\enot\meta{B})$
-\bigskip
-
-\textsc{Double Negation} (DN)\\
-$\enot\enot\meta{A} \Longleftrightarrow \meta{A}$
-\bigskip
-
-\textsc{Material Conditional} (MC)\\
-$(\meta{A}\eif\meta{B}) \Longleftrightarrow (\enot\meta{A}\eor\meta{B})$\\
-$(\meta{A}\eor\meta{B}) \Longleftrightarrow (\enot\meta{A}\eif\meta{B})$
-\bigskip
-
-\textsc{Biconditional Exchange} ({\eiff}{ex})\\
-$[(\meta{A}\eif\meta{B})\eand(\meta{B}\eif\meta{A})] \Longleftrightarrow (\meta{A}\eiff\meta{B})$
-\bigskip
-
-\textsc{Quantifier Negation} (QN)\\
-$\enot\forall\meta{x}\meta{A} \Longleftrightarrow \exists\meta{x}\enot\meta{A}$\\
-$\enot\exists\meta{x}\meta{A} \Longleftrightarrow \forall\meta{x}\enot\meta{A}$
-
-}
-
-
 
