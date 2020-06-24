@@ -262,8 +262,8 @@ The complete truth table requires only two lines because there are only two poss
 \begin{tabular}{c| d e e e e e e e e e e e e e e f}
 $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
 \hline
- T &    & T &  T  & T &   & T  & T & &\TTbf{F}&  F& &   T &  T  & T &   \\
- F &    & F &  T  & F &   & F  & F & &\TTbf{F}&  F& &   F &  T  & F &   \\
+ T &    & T &  T  & T &   & T  & T & &\TTbf{\textcolor{red2}{F}}&  F& &   T &  T  & T & \Tstrut\\
+ F &    & F &  T  & F &   & F  & F & &\TTbf{\textcolor{red2}{F}}&  F& &   F &  T  & F &   \\
 \end{tabular}
 \end{center}
 Looking at the column underneath the main logical operator, we see that the sentence is false on both rows of the table; i.e., the sentence is false regardless of whether `$C$' is true or false. It is false on every valuation.
@@ -275,14 +275,14 @@ A sentence that contains three atomic sentences requires eight lines, as  shown 
 \begin{tabular}{c c c|d e e e f}
 $M$&$N$&$P$&$M$&\eand&$(N$&\eor&$P)$\\
 \hline
-T & T & T & T & \TTbf{T} & T & T & T\\
-T & T & F & T & \TTbf{T} & T & T & F\\
-T & F & T & T & \TTbf{T} & F & T & T\\
-T & F & F & T & \TTbf{F} & F & F & F\\
-F & T & T & F & \TTbf{F} & T & T & T\\
-F & T & F & F & \TTbf{F} & T & T & F\\
-F & F & T & F & \TTbf{F} & F & T & T\\
-F & F & F & F & \TTbf{F} & F & F & F
+T & T & T & T & \TTbf{\textcolor{red2}{T}} & T & T & T\Tstrut\\
+T & T & F & T & \TTbf{\textcolor{red2}{T}} & T & T & F\\
+T & F & T & T & \TTbf{\textcolor{red2}{T}} & F & T & T\\
+T & F & F & T & \TTbf{\textcolor{red2}{F}} & F & F & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & \TTbf{\textcolor{red2}{F}} & T & T & T\Tstrut\\
+F & T & F & F & \TTbf{\textcolor{red2}{F}} & T & T & F\\
+F & F & T & F & \TTbf{\textcolor{red2}{F}} & F & T & T\\
+F & F & F & F & \TTbf{\textcolor{red2}{F}} & F & F & F
 \end{tabular}
 \end{center}
 From this table, we know that the sentence `$M\eand(N\eor P)$' can be true or false, depending on the truth values of `$M$', `$N$', and `$P$'.
@@ -294,7 +294,8 @@ But whether a truth table has four lines or 64 lines, every truth table for the 
 
 \section{Some more examples}
 
-To create a truth table for `$(P \eiff Q) \eif (P \eor Q)$', we first, as always, fill in the columns below each $P$ and $Q$. Next, we fill in the columns under the `$\eiff$' and the `$\eor$' (in either order). 
+\begin{earg}
+\item[\ex{9.3.1}] To create a truth table for `$(P \eiff Q) \eif (P \eor Q)$', we first, as always, fill in the columns below each $P$ and $Q$. Next, we fill in the columns under the `$\eiff$' and the `$\eor$' (in either order). 
 \begin{center}
 \begin{tabular}{c c|d e e e e e f}
 $P$ &$Q$&  ($P$& $\eiff$& $Q$)& $\eif$& ($P$& $\eor$& $Q$)\\
@@ -306,7 +307,6 @@ F& F&      \textcolor{light-gray}{F}& T&  \textcolor{light-gray}{F}&   &   \text
 \end{tabular}
 \end{center}
 Once we have those columns complete, we finish the truth table by filling in the column under the `$\eif$', which we do by looking at the column under the `$\eiff$' and the column under the `$\eor$'.
-
 \begin{center}
 \begin{tabular}{c c|d e e e e e f}
 $P$ &$Q$&  ($P$& $\eiff$& $Q$)& $\eif$& ($P$& $\eor$& $Q$)\\
@@ -318,7 +318,7 @@ F& F&      \textcolor{light-gray}{F}& T&  \textcolor{light-gray}{F}&   \TTbf{\te
 \end{tabular}
 \end{center}
 
-To make a truth table for `$P \eand \enot Q$', we first (after filling in the columns below the $P$ and $Q$) fill in the column under the $\enot$. To do that, we look at the column under the $Q$.
+\item[\ex{9.3.2}]To make a truth table for `$P \eand \enot Q$', we first (after filling in the columns below the $P$ and $Q$) fill in the column under the $\enot$. To do that, we look at the column under the $Q$.
 \begin{center}
 \begin{tabular}{c c|d e e f}
 $P$& $Q$&  ($P$& $\eand$& $\enot$& $Q$)\\ 
@@ -341,7 +341,7 @@ F& F&    F& \TTbf{\textcolor{red2}{F}}& T& \textcolor{light-gray}{F}\\
 \end{tabular}
 \end{center}
 
-For `$\enot(P \eif Q)$', after we have filled in the columns under the `$P$' and the `$Q$', we fill in the column under the `$\eif$'.
+\item[\ex{9.3.3}]For `$\enot(P \eif Q)$', after we have filled in the columns under the `$P$' and the `$Q$', we fill in the column under the `$\eif$'.
 \begin{center}
 \begin{tabular}{c c|d e e f}
 $P$& $Q$& $\enot$& ($P$& $\eif$& $Q$)\\ 
@@ -365,7 +365,7 @@ F& F&  \TTbf{\textcolor{red2}{F}}&   \textcolor{light-gray}{F}& T& \textcolor{li
 \end{center}
 
 
-In `$(P \eand \enot Q) \eor Q$', the `$\eor$' is the main logical operator, and so will fill in the column under it last. First (after we have filled in the columns under the `$P$' and the `$Q$'), we fill in the column under the `$\enot$'.
+\item[\ex{9.3.4}]In `$(P \eand \enot Q) \eor Q$', the `$\eor$' is the main logical operator, and so will fill in the column under it last. First (after we have filled in the columns under the `$P$' and the `$Q$'), we fill in the column under the `$\enot$'.
 \begin{center}
 \begin{tabular}{c c|d e e e e f}
 $P$& $Q$&   ($P$& $\eand$& $\enot$& $Q$)& $\eor$& $Q$\\  
@@ -398,6 +398,8 @@ F& T&      \textcolor{light-gray}{F}& F& \textcolor{light-gray}{F}& \textcolor{l
 F& F&      \textcolor{light-gray}{F}& F& \textcolor{light-gray}{T}& \textcolor{light-gray}{F}&   \TTbf{\textcolor{red2}{F}}& F\\ 
 \end{tabular}
 \end{center}
+
+\end{earg}
 
 
 \section{Truth tables in Carnap}\label{s:ttCarnap-intro}
