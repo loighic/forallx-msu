@@ -1,0 +1,128 @@
+
+
+\chapter{Soundness and completeness}
+\label{sec:soundness_and_completeness}
+
+
+We have two ways of checking or verifying that an argument is valid: (1) using truth tables and (2) using the natural deduction system to provide a proof. Consequently, we also have two ways of characterizing the concept of \textit{validity}. (See table \ref{table:truth_tables_or_derivations}.)
+You might think that we can take it for granted that, with respect to determining if an argument is valid, both methods will always give us the same result, but that is not exactly the case. (We, right now, can take it for granted, but that's only because the requisite work to show that the two methods will always agree has already been done.) If you think about it for a moment, you'll notice that the two methods don't have anything in common, and so, it is not intuitively obvious that they will always produce the same result. But they do.
+
+%and not just for \textit{valid}, but for \textit{contradiction}, \textit{contingent}, \textit{equivalent}, \textit{inconsistent}, and \textit{consistent}---and any sentence that is a tautology will also be a theorem. (A summary of how we establish each of these concepts using truth tables and the natural deduction system is given in \ref{table:truth_tables_or_derivations}.)
+
+
+\begin{sidewaystable}\centering\sffamily\footnotesize 
+\ra{1.4}
+\begin{tabularx}{1.0\linewidth}{@{}>{\columncolor{white}[0pt][\tabcolsep]} l  X >{\columncolor{white}[\tabcolsep][0pt]} X @{}}
+				&	\textsc{Truth table (semantic) definition} 	&	\textsc{Proof-theoretic (syntactic) definition} \\
+				
+\rowcolor{blue!5}Tautology   &	A sentence whose truth table has a \textit{T} on every line under the main connective & A sentence that can be derived without any premises. I.e., a theorem.\\
+ 
+Contradiction		&	A sentence whose truth table has an \textit{F} on every line under the main connective  &	A sentence whose negation can be derived without any premises\\
+
+\rowcolor{blue!5}Contingent sentence	&	A sentence whose truth table has both \textit{T} and \textit{F} (in any combination) under the main connective & A sentence that is not a theorem or contradiction \\
+
+Equivalent sentences &	The columns under the main connective for both sentences are identical.& The sentences can be derived from each other	\\
+
+\rowcolor{blue!5}Inconsistent sentences	&	Sentences that do not have a single line in their truth tables where, in the column under the main connective, they all have a \textit{T}.	& Sentences  from which one can derive a contradiction \\
+
+Consistent sentences	&	Sentences that have at least one line in their truth tables where, in the column under  the main connective, they all have a  \textit{T}. & Sentences that are not inconsistent	\\
+
+\rowcolor{blue!5}Valid argument		&	An argument whose truth table has no lines where there is a  \textit{T} under each main connective for the premises and an  \textit{F} under the main connective for the conclusion.  & An argument where one can derive the conclusion from the premises	\\ 
+\end{tabularx}
+\caption{The two ways of defining each of these logical concepts in TFL.}\label{table:truth_tables_or_derivations}
+\end{sidewaystable}
+
+How do we know that the truth table method and the natural deduction method will always agree? Demonstrating that they will goes beyond the scope of this book. But we will review the two properties that a logic system (like TFL) must have for the two methods to always be in agreement.  To begin, let us define two new terms. 
+\begin{earg}
+\item[] \textit{p-valid}: being valid because a proof can be given using the rules in our natural deduction system. (\textit{p-valid} is short for \textit{proof-valid}. This is also sometimes called \textit{syntactically valid}). 
+\item[] \textit{tt-valid}: being valid because there is no line in a truth table where the premises are true and the conclusion is false. (This is also sometimes called \textit{semantically valid}).
+\end{earg}
+First, it must be the case that every argument that is p-valid is tt-valid. This property is called \define{soundness}.
+
+\begin{factboxy}{Soundness}\label{def:Soundness}
+\define{Soundness} is a property of a logic system iff, for any argument, if the argument is p-valid, then the argument tt-valid.
+\tcblower
+Equivalently, \define{soundness} is a property of a logic system iff, for any sentence, if a sentence is a theorem, then it is a tautology. 
+\end{factboxy}
+
+\noindent Soundness is a property of TFL because every argument for which we can give a proof (and hence show that it is valid that way) will also be valid by the truth table method.
+
+
+\begin{notebox}
+\textit{Soundness}, the property of logical systems that we are discussing here, is different than the \textit{sound}, the property of individual arguments, that was defined on p.~\pageref{def-sound-arg}.
+\end{notebox}
+
+Soundness is the property that goes in this direction: p-valid $\Rightarrow$ tt-valid. The other direction, tt-valid $\Rightarrow$ p-valid, is called \define{completeness}.
+
+\begin{notebox}
+Like `$\eif$', `$\Rightarrow$' can be read as `if \ldots, then \ldots'. Since `p-valid $\Rightarrow$ tt-valid' is not an expression in TFL, we shouldn't use the `$\eif$' symbol in it. Instead, we are using the \textit{metalogical arrow} to express the relationship between \textit{p-valid} and \textit{tt-valid}.
+\end{notebox}
+
+\begin{factboxy}{Completeness}\label{def:completeness}
+\define{Completeness} is a property of a logic system iff, for any argument, if the argument is tt-valid, the the argument is p-valid.
+\tcblower
+Equivalently, \define{completeness} is a property of a logic system iff, for any sentence, if the sentence is a tautology, then it is a theorem.
+\end{factboxy}
+
+Proving that a logic system is complete is generally harder than proving soundness. Proving soundness for a logic system amounts to showing that all of the rules of the deduction system work the way they are supposed to work. Showing that a logic system is complete means showing that all of the rules that are needed have been included, and none have been left out.
+Again, showing this is beyond the scope of this book. The important point is that, happily, TFL is both sound and complete. This is not the case for all formal languages (or all logical systems). Because it is true of TFL, we can choose to give proofs or give truth tables---whichever is easier for the task at hand.
+
+Some people are naturally drawn to truth tables because they can be produced mechanically, and that seems easier. But, as we mentioned in chapter \ref{s:NDVeryIdea}, when arguments contain more than three letters, their truth table become quite large. Also, providing a proof informs us of the steps that must be taken to get from the premises to the conclusion. It illustrates \textit{why} an argument is valid in a way that a truth table cannot. Comparing proofs also gives us insight into how arguments are similar or different, and that, in turn, informs us about the similarities and differences between various reasoning strategies. Truth tables, meanwhile, tell us nothing but whether an argument is valid or invalid.
+
+It also bears mentioning that TFL is the standard first step into formal logic, but more complex systems of logic cannot employ truth tables and so derivations must be used. It is wise, therefore, to master derivations in TFL before moving onto to other branches of logic. 
+
+At the same time, there are some logical properties, the presence (or really the absence) of which, can only only be established with truth tables. In each of these cases, we might surmise from our failure to find a proof that the property is present, but our failure might just be a consequence of not trying hard enough. This is true for showing that (1) an argument is invalid, (2) a sentence is \textit{not} a theorem, (3) a sentence is \textit{not} a contradiction, (4) a sentence is contingent (which is to say that it's \textit{not} a theorem and \textit{not} a contradiction), (4) two sentences are \textit{not} equivalent, and (5) two or more sentences are consistent (which is to say that they are \textit{not} inconsistent). If we wish to show that any of those properties apply, then we have to resort to truth tables. 
+
+
+\begin{table*}\centering\sffamily\footnotesize
+\ra{1.4}
+\begin{tabular}{@{}l l l@{}}\toprule
+					&	\textsc{To show it is present} &	\textsc{To show it is absent} \\\midrule
+Tautology 		& proof or a truth table 							& truth table \\
+Contradiction 	&  proof or a truth table  		 				& truth table\\ 
+Contingent		& truth table 										& proof or a truth table\\
+Equivalent 		& proof or a truth table 		 					& truth table\\
+Consistent 		& truth table 										& proof or a truth table\\
+Valid 				& proof or a truth table 							& truth table \\ 
+\bottomrule
+\end{tabular}
+\caption{This table summarizes what is required to check each of these logical properties.}\label{table.proof-or-model}
+\end{table*}
+
+
+
+
+\practiceproblems
+\noindent\problempart Use either a derivation or a truth table for each of the following. 
+\begin{enumerate}%[label=(\arabic*)]
+\item Show that $A \eif [((B \eand C) \eor D) \eif A]$ is a tautology.
+\item Show that $A \eif (A \eif B)$ is not a tautology
+\item Show that the sentence $A \eif \enot{A}$ is not a contradiction.
+\item Show that the sentence $A \eiff \enot A$ is a contradiction. 
+\item Show that the sentence $ \enot (W \eif (J \eor J)) $ is contingent
+\item Show that the sentence $ \enot(X \eor (Y \eor Z)) \eor (X \eor (Y \eor Z))$ is not contingent
+ \item Show that the sentence $B \eif \enot S$ is equivalent to the sentence $\enot \enot B \eif \enot S$
+\item Show that the sentence $ \enot (X \eor O) $ is not equivalent to the sentence $X \eand O$
+\item Show that the sentences $\enot(A \eor B)$, $C$, $C \eif A$  are jointly inconsistent.
+\item Show that the sentences $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ are jointly consistent
+\item Show that $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ is valid.
+\item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid. 
+\end{enumerate}
+
+
+\noindent\problempart Use either a derivation or a truth table for each of the following. 
+\begin{enumerate}%[label=(\arabic*)]
+\item Show that $A \eif (B \eif A)$ is a tautology
+\item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a tautology
+\item Show that $ Z \eor (\enot Z \eiff Z) $ is contingent
+\item show that $ (L \eiff ((N \eif N) \eif L)) \eor H $ is not contingent
+\item Show that $ (A \eiff A) \eand (B \eand \enot B)$ is a contradiction
+\item Show that $ (B \eiff (C \eor B)) $ is not a contradiction.
+\item Show that $ ((\enot X \eiff X) \eor X) $ is equivalent to $X$
+\item Show that $F \eand (K \eand R) $ is not equivalent to $ (F \eiff (K \eiff R)) $
+\item Show that the sentences $ \enot (W \eif W)$, $(W \eiff W) \eand W$, $E \eor (W \eif \enot (E \eand W))$ are inconsistent.
+\item Show that the sentences  $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor R) \eif R) $ are consistent.
+\item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
+\item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid. 
+\end{enumerate}
+
