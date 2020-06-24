@@ -8,9 +8,9 @@
 
 Having examined the logical relations between two sentences in \S\ref{equivalence--tt} and \S\ref{consistency--tt}, we can now go a step further and consider the relationship between the premises and the conclusion of an argument. This begins with \define{entailment}.
 
-\factoidbox{
-		The sentences $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ \define{entail} the sentence $\meta{C}$ if there is no valuation of the atomic sentences that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true and $\meta{C}$ false.
-	}
+\begin{factboxy}{Entailment}
+The sentences $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ \define{entail} the sentence $\meta{C}$ if there is no valuation of the atomic sentences that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true and $\meta{C}$ false.
+\end{factboxy}
  
 Entailment is easy to check with a truth table. Do `$\enot L \eif (M \eor L)$' and `$\enot L$' entail `$M$'? To find out, we check whether there is any valuation that makes both `$\enot L \eif (M \eor L)$' and `$\enot L$' true while making `$M$' false.  
 \begin{center}
@@ -26,15 +26,12 @@ $M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$&$M$\\
 \end{center}
 There is only one row where both `$\enot L \eif (M \eor L)$' and `$\enot L$' are true---the second row---and so that is the only row that concerns us. On that row, `$M$' is also true. Hence, `$\enot L \eif (M \eor L)$' and `$\enot L$' entail `$M$'. 
 
-Next is this important observation:
-	\factoidbox{
-		If $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \therefore \meta{C}$ is valid.
-	}
+Next is this important observation: if $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \therefore \meta{C}$ is valid.
 
 Just to remind ourselves, an argument is valid when it is the case that if the premises are true, then the conclusion has to be true. A different but equivalent way of wording this definition will be more useful to us here, though. 
-\factoidbox{
-		An argument is \define{valid} if and only if it is impossible for all of the premises to be true and the conclusion false.
-	}
+\begin{factboxy}{Valid}
+An argument is \define{valid} if and only if it is impossible for all of the premises to be true and the conclusion false.
+\end{factboxy}
 
 Here's why entailment equals validity. If $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then there is no valuation that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true while making $\meta{C}$ false. This means that it is \emph{impossible} for $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ to be true and $\meta{C}$ to be false. And that is just what it takes for an argument, with premises $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and conclusion $\meta{C}$, to be valid!
 
@@ -144,8 +141,8 @@ $P$& $Q$& $R$&  $P$& 	$\eor$& 	$Q$,&   $P$		&$\eif$	&$R$,		&$Q$		&$\eif$	&$\enot
 T& T& T &   T &\TTbf{T}& T   &   T &\TTbf{T}& T   &   T& \TTbf{F}& F& T&\checkmark   & \TTbf{T}\Tstrut\\ 
 T& T& F &   T &\TTbf{T}& T   &   T &\TTbf{F}& F   &   T& \TTbf{T}& T& F&\checkmark   & \TTbf{F}\\ 
 T& F& T &   T &\TTbf{T}& F   &   T &\TTbf{T}& T   &   F& \TTbf{T}& F& T&\checkmark   & \TTbf{T}\\ 
-T& F& F &   T &\TTbf{T}& F   &   T &\TTbf{F}& F   &   F& \TTbf{T}& T& F &\checkmark  & \TTbf{F}\\ 
-F& T& T &   F &\TTbf{T}& T   &   F &\TTbf{T}& T   &   T& \TTbf{F}& F& T&\checkmark   & \TTbf{T}\\ 
+T& F& F &   T &\TTbf{T}& F   &   T &\TTbf{F}& F   &   F& \TTbf{T}& T& F &\checkmark  & \TTbf{F}\\\arrayrulecolor{light-gray}\hline
+F& T& T &   F &\TTbf{T}& T   &   F &\TTbf{T}& T   &   T& \TTbf{F}& F& T&\checkmark   & \TTbf{T}\Tstrut\\ 
 F& T& F &   F &\TTbf{T}& T   &   F &\TTbf{T}& F   &   T& \TTbf{T}& T& F &\ding{55} & \TTbf{F}\\ 
 F& F& T &   F &\TTbf{F}& F   &   F &\TTbf{T}& T   &   F& \TTbf{T}& F& T &\checkmark  & \TTbf{T}\\ 
 F& F& F &   F &\TTbf{F}& F   &   F &\TTbf{T}& F   &   F& \TTbf{T}& T& F &\checkmark  & \TTbf{F}\\
@@ -462,16 +459,16 @@ $A$ & $B$ & $C$ & $D$ & $A\eor B$, & $\enot (A\eand C)$, & $\enot (B\eand \enot 
 T & T & T & T & & &			&\checkmark		&  &&  \TTbf{T} & \Tstrut\\
 T & T & T & F & ? & ? & ? 	&?		& F & &  \circled{\TTbf{F}} & \\
 T & T & F & T &  & &			&\checkmark  & & &  \TTbf{T} & \\
-T & T & F & F &  &  &   		&\checkmark	& T & &  \TTbf{T} &\\
-T & F & T & T &  &  &  		&\checkmark	& & &  \TTbf{T} & \\
+T & T & F & F &  &  &   		&\checkmark	& T & &  \TTbf{T} &\\\arrayrulecolor{light-gray}\hline
+T & F & T & T &  &  &  		&\checkmark	& & &  \TTbf{T} &\Tstrut\\
 T & F & T & F & ? & ? & ?  	&?	& F &  &  \circled{\TTbf{F}} &\\
 T & F & F & T & & & 			&\checkmark	& & & \TTbf{T} &\\
-T & F & F & F & & & 			&\checkmark	& T &  & \TTbf{T} & \\
-F & T & T & T & & & 			&\checkmark	& & & \TTbf{T} & \\
+T & F & F & F & & & 			&\checkmark	& T &  & \TTbf{T} & \\\arrayrulecolor{light-gray}\hline
+F & T & T & T & & & 			&\checkmark	& & & \TTbf{T} & \Tstrut\\
 F & T & T & F & ? & ? & ? 	&?	& F &  & \circled{\TTbf{F}} &\\
 F & T & F & T & & &  			&\checkmark	& & & \TTbf{T} & \\
-F & T & F & F & & & 			&\checkmark	&T & & \TTbf{T} & \\
-F & F & T & T & & & 			&\checkmark	& & & \TTbf{T} & \\
+F & T & F & F & & & 			&\checkmark	&T & & \TTbf{T} & \\\arrayrulecolor{light-gray}\hline
+F & F & T & T & & & 			&\checkmark	& & & \TTbf{T} & \Tstrut\\
 F & F & T & F & ? & ? & ? 	&?	& F & & \circled{\TTbf{F}} & \\
 F & F & F & T & & & 			&\checkmark	& & & \TTbf{T} & \\
 F & F & F & F & & & 			&\checkmark	& T& & \TTbf{T} & \\
@@ -485,16 +482,16 @@ $A$ & $B$ & $C$ & $D$ & $A$ & $\eor$ & $B$, & $\enot$ & $(A$ &$\eand$ &$ C)$, & 
 T & T & T & T & & && & && & && & & 								&\checkmark	& &  &  \TTbf{T} & \Tstrut\\ 
 T & T & T & F & &\TTbf{T}& & \TTbf{F}& &T& & & & & & 		&\checkmark	& F & &  \TTbf{F} & \\
 T & T & F & T & & && & && & &&  & &   							&\checkmark	& & &  \TTbf{T} & \\
-T & T & F & F & & && & && & &&  &  &   							&\checkmark	& T & &  \TTbf{T} & \\
-T & F & T & T & & && & && & &&  &  &  							&\checkmark	& & &  \TTbf{T} & \\
+T & T & F & F & & && & && & &&  &  &   							&\checkmark	& T & &  \TTbf{T} & \\\arrayrulecolor{light-gray}\hline
+T & F & T & T & & && & && & &&  &  &  							&\checkmark	& & &  \TTbf{T} & \Tstrut\\
 T & F & T & F & &\TTbf{T}& &\TTbf{F}& &T& &  && & & 		&\checkmark	& F & & \TTbf{F} & \\
 T & F & F & T & & && & && & && & & 								&\checkmark	& & & \TTbf{T} & \\
-T & F & F & F & & && & && & && & & 								&\checkmark	& T &  & \TTbf{T} & \\
-F & T & T & T& & && & && & & & & & 								&\checkmark	& & & \TTbf{T} & \\
+T & F & F & F & & && & && & && & & 								&\checkmark	& T &  & \TTbf{T} & \\\arrayrulecolor{light-gray}\hline
+F & T & T & T& & && & && & & & & & 								&\checkmark	& & & \TTbf{T} & \Tstrut\\
 F & T & T & F & &\TTbf{T}& & \TTbf{T}& & F& & \TTbf{F}& & T& T&  			&\checkmark	& F &  & \TTbf{F} & \\
 F & T & F & T & & && & && & && & &  								&\checkmark	& & & \TTbf{T} & \\
-F & T & F & F& & && & && & && & & 								&\checkmark	&T & & \TTbf{T} & \\
-F & F & T & T & & && & && & && & & 								&\checkmark	& & & \TTbf{T} & \\
+F & T & F & F& & && & && & && & & 								&\checkmark	&T & & \TTbf{T} & \\\arrayrulecolor{light-gray}\hline
+F & F & T & T & & && & && & && & & 								&\checkmark	& & & \TTbf{T} & \Tstrut\\
 F & F & T & F & & \TTbf{F} & & & & & & &&  &  &  				&\checkmark	& F & & \TTbf{F} & \\
 F & F & F & T & & && & && & && & & 								&\checkmark	& & & \TTbf{T} & \\
 F & F & F & F & & && & && & && & & 								&\checkmark	& T& & \TTbf{T} & \\
@@ -579,11 +576,6 @@ To show that some sentences are jointly consistent, we must show that there is a
 
 To show that some sentences are jointly inconsistent, we must show that there is no valuation which makes all of the sentence true. So this requires a complete truth table: You must show that on every row of the table at least one of the sentences is false.
 
-\paragraph{Validity.}
-To show that an argument is valid, we must show that there is no valuation which makes all of the premises true and the conclusion false. So this  requires a complete truth table.  (Likewise for entailment.)
-
-To show that argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)
-
 \begin{table*}\centering\sffamily\footnotesize
 \ra{1.25}
 \begin{tabular}{@{}l l l@{}}\toprule
@@ -598,6 +590,13 @@ entailment & complete & one-line partial\\
 \end{tabular}
 \caption{The kind of truth table required to check each of these logical notions.}\label{table.CompleteVsPartial}
 \end{table*}
+
+\paragraph{Validity.}
+To show that an argument is valid, we must show that there is no valuation which makes all of the premises true and the conclusion false. So this  requires a complete truth table.  (Likewise for entailment.)
+
+To show that argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)
+
+
 
 
 
