@@ -1,6 +1,6 @@
 %!TEX root = forallxyyc.tex
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{forallxyyc}[2011/10/29 support for a logic textbook]
+%\ProvidesPackage{forallxyyc}[2011/10/29 support for a logic textbook]
 
 \def\forallxversion{Fall 2020}
 \def\forallxshortversion{F20}
@@ -166,7 +166,7 @@
 %    *        TITLE AND VERSION DATA        *
 %    ****************************************
 % the title of the book
-\newcommand*{\forallx}{\texttt{forall}\script{x}}
+\newcommand*{\forallx}{\texttt{forall}\textit{x}}
 \newcommand*{\forallxyyc}{\texttt{forall}\script{x}\texttt{:MSU}}
 % The version number of the book is a 5 digit integer:
 % the last digit of the year, the month, the day of the month
@@ -198,6 +198,7 @@
 \newcommand*{\model}[1]{\ensuremath{\mathbb{#1}}}
 \newcommand*{\extension}[1]{\ensuremath{\mbox{extension}(#1)}}
 \newcommand*{\referent}[1]{\ensuremath{\mbox{referent}(#1)}}
+
   % I personally dislike the default LaTeX angle brackets. I think that
   % they are too narrow. If you want to use them, though, you can
   % replace < and > in the commands below with \langle and \rangle
@@ -307,7 +308,11 @@ fontupper=\footnotesize
 \newcommand*{\problempart}{\par\noindent\refstepcounter{ProbPart}\textbf{\Alph{ProbPart}. }}
 % This bullet is used to indicate that solutions appear at the end of
 % the book.
-\newcommand*{\solutions}{} %TB: removed, since I am not including the solutions in the book
+\newcommand*{\solutions}{ 
+	\setcounter{ProbPart}{0}\section*{Answers}%
+	\addcontentsline{toc}{section}{Answers}
+}
+
 % When solutions are only given for selected problems, the
 % star is placed left of the problem number.
 \newcommand*{\leftsolutions}{\hspace{-2.2em}\makebox[2em][l]{\solutions}}
@@ -367,6 +372,10 @@ fontupper=\footnotesize
 \newcolumntype{e}{@{\extracolsep{0.3em}}c@{\extracolsep{0.3em}}}
 \newcolumntype{f}{@{\extracolsep{0.3em}}c }
 \newcommand*{\TTbf}[1]{\textbf{#1}}
+
+% For checking validity with a truth table
+\def\cm{\checkmark} 
+\def\xm{\ding{55}} 	% X mark
 
 
 %    ****************************************
