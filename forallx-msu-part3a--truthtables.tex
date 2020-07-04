@@ -107,6 +107,8 @@ F & F & T
 \end{center}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -478,9 +480,23 @@ So if we were to write:
 	\end{align*}
 it would be dangerously ambiguous. \emph{Never write this.} The moral is never drop brackets, unless there is no possibility of ambiguity.
 
-\practiceproblems\label{pr.TT.TTorC}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  exercises for `Complete truth tables'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\practiceproblems
+\section{Practice exercises}\label{pr.TT.TTorC}
+\setcounter{ProbPart}{0}
+
 \problempart
-Make complete truth tables for each of the following:
+Make a complete truth table for each sentence.
 \begin{earg}
 \item $A \eif A$ %taut
 \item $C \eif\enot C$ %contingent
@@ -492,8 +508,9 @@ Make complete truth tables for each of the following:
 \item $[(A \eand B) \eand C] \eif B$ %taut
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \end{earg}
+
 \problempart
-Check all the claims made in \S\ref{s:MoreBracketingConventions}; that is, show that:
+Check all the claims made in \S\ref{s:MoreBracketingConventions}. That is, show that:
 \begin{earg}
 	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
 	\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
@@ -506,178 +523,453 @@ Also, check whether:
 \end{earg}
 
 \problempart
-Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
+Make truth tables for the following sentences, and mark the column that represents the possible truth values for the whole sentence.
 
 \begin{earg}
 
-\item $\enot (S \eiff (P \eif S))$
+\item $\enot (N \eiff (P \eif N))$
 
-%\begin{tabular}{c|c|ccccc}
-%\cline{2-2}
-%1.	&	\enot 	&	(S 	&	\eiff	&	(P 	&	\eif	&	S))	\\ 
-%\cline{2-7}
-%	& 	F 		&	T	&	T	&	T	&	T	&	T	\\
-%	& 	F 		&	T	&	T	&	F	&	T	&	T	\\
-%	& 	F 		&	F	&	T	&	T	&	F	&	F	\\
-%	& 	T 		&	F	&	F	&	F	&	T	&	F	\\
-%\cline{2-2}
-%\end{tabular}
-
-
- \item $\enot [(X \eand Y) \eor (X \eor Y)]$
-
-%\begin{tabular}{c|c|ccccccc}
-%\cline{2-2}
-%2.	&	\enot	&	 [(X 	&	\eand& 	Y) 	&	\eor 	&	(X 	&	\eor 	&	Y)] \\
-%\cline{2-9}
-%	&	F	&	T	&	T	&	T	&	T	&	T	&	T	&	T	\\
-%	&	F	&	T	&	F	&	F	&	T	&	T	&	T	&	F	\\
-%	&	F	&	F	&	F	&	T	&	T	&	F	&	T	&	T	\\
-%	&	T	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
-%\cline{2-2}
-%\end{tabular}
-
+\item $\enot [(X \eand Y) \eor (X \eor Y)]$
 
 \item $(A \eif B) \eiff (\enot B\eiff \enot A)$
-%\begin{tabular}{cccc|c|ccccc}
-%\cline{5-5}
-%3.	&	(A 	&	\eif	&	B)	&	 \eiff 	&	(\enot&	B 	&	\eiff 	&	 \enot 	& 	 A) \\
-%\cline{2-10}
-%	&	T	&	T	&	T	&	T		&	F	 &	T	&	T	&	F		&	T	\\	
-%	&	T	&	F	&	F	&	T		&	T	 &	F	&	F	&	F		&	T	\\
-%	&	F	&	T	&	T	&	F		&	F	 &	T	&	F	&	T		&	F	\\
-%	&	F	&	T	&	F	&	T		&	T	 &	F	&	T	&	T		&	F	\\
-%\cline{5-5}
-%\end{tabular}
 
 \item $[C \eiff (D \eor E)] \eand \enot C$
 
-%\begin{tabular}{cccccc|c|cc}
-%\cline{7-7}
-%4.	&	[C 	&	\eiff 	&	(D 	&	\eor 	&	E)] 	&	\eand 	&	 \enot 	&	 C \\
-%\cline{2-9}
-%	&	T	&	T	&	T	&	T	&	T	&	F		&	F		&	T	\\
-%	&	T	&	T	&	T	&	T	&	F	&	F		&	F		&	T	\\
-%	&	T	&	T	&	F	&	T	&	T	&	F		&	F		&	T	\\
-%	&	T	&	F	&	F	&	F	&	F	&	F		&	F		&	T	\\
-%	&	F	&	F	&	T	&	T	&	T	&	F		&	T		&	F	\\
-%	&	F	&	F	&	T	&	T	&	F	&	F		&	T		&	F	\\
-%	&	F	&	F	&	F	&	T	&	T	&	F		&	T		&	F	\\
-%	&	F	&	T	&	F	&	F	&	F	&	T		&	T		&	F	\\
-%\cline{7-7}
-%\end{tabular}
-
-\item $\enot(G \eand (B \eand H)) \eiff (G \eor (B \eor H))$
-%
-%\begin{tabular}{ccccccc|c|ccccc}
-%\cline{8-8}
-%5.	&\enot&	(G 	&\eand &	(B 	&	 \eand 	&	 H))	&	\eiff 	&	(G 	& \eor 	& (B 	& \eor	& H))	\\
-%\cline{2-13}
-%	&F	   &	T	&	  T &	T	&	T		&	T	&	F	&	T	&	T	&	T	&	T	&	T	\\
-%	&T	   &	T	&	  F &	T	&	F		&	F	&	T	&	T	&	T	&	T	&	T	&	F	\\	
-%	&T	   &	T	&	 F  &	F	&	F		&	T	&	T	&	T	&	T	&	F	&	T	&	T	\\
-%	&T	   &	T	&	 F  &	F	&	F		&	F	&	T	&	T	&	T	&	F	&	F	&	F	\\
-%	&T	   &	F	&	F   &	T	&	T		&	T	&	T	&	F	&	T	&	T	&	T	&	T	\\
-%	&T	   &	F	&	F   &	T	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	F	\\
-%	&T	   &	F	&	F   &	F	&	F		&	T	&	T	&	F	&	T	&	F	&	T	&	T	\\
-%	&T	   &	F	&	F   &	F	&	F		&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
-%\cline{8-8}
-%\end{tabular}
-
-%\vspace{1em}
-
-\end{earg}
-
-\problempart
-Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
-
-\begin{earg}
+\item $\enot(C \eand (B \eand H)) \eiff (C \eor (B \eor H))$
 
 \item	$(D \eand \enot D) \eif G $
 
-%\vspace{1em}
-
-%\begin{tabular}{ccccc|c|c}
-%\cline{6-6}
-%1.	&	(D 	&	 \eand 	& 	 \enot	&	 D) 	&	 \eif 	&	 G \\
-%	&	T	&	F		&	F		&	T	&	T	&	T	\\
-%	&	T	&	F		&	F		&	T	&	T	&	F	\\
-%	&	F	&	F		&	T		&	F	&	T	&	T	\\
-%	&	F	&	F		&	T		&	F	&	T	&	F	\\
-%\cline{6-6}
-%\end{tabular}
-%\vspace{1em}
-
-
-\item	$(\enot P \eor \enot M) \eiff M $
-
-%\begin{tabular}{cccccc|c|c}
-%\cline{7-7}
-%2.	&	(\enot 	&	P 	&	\eor 	&	\enot 	& 	 M) 	& 	\eiff 	&	 M \\
-%	&	F		&	T	&	F	&	F		&	T	&	T	&	T	\\
-%	&	F		&	T	&	T	&	T		&	F	&	F	&	F	\\
-%	&	T		&	F	&	T	&	F		&	T	&	T	&	T	\\
-%	&	T		&	F	&	T	&	T		&	F	&	T	&	F	\\
-%\cline{7-7}
-%\end{tabular}
-%\vspace{1em}
-
-
+\item	$(\enot P \eor \enot R) \eiff R $
 
 \item	$\enot \enot (\enot A \eand \enot B)  $
 
-%\begin{tabular}{c|c|cccccc}
-%\cline{2-2}
-%3.	&	\enot		&	 \enot 	&	(\enot 	& 	 A 	& \eand 	& 	\enot 	&	 B)  \\
-%	&	F		&	T		&	F		&	T	&	F	&	F		&	T	\\
-%	&	F		&	T		&	F		&	T	&	F	&	T		&	F	\\
-%	&	F		&	T		&	T		&	F	&	F	&	F		&	T	\\
-%	&	T		&	F		&	T		&	F	&	T	&	T		&	F	\\
-%\cline{2-2}
-%\end{tabular}
+\item 	$[(D \eand H) \eif J] \eif \enot(D \eor H) $
+
+\item	$\enot [(D \eiff F) \eiff G] \eif (\enot D \eand F) $
+
+\end{earg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  answers for `Complete truth tables'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Answers}
+\setcounter{ProbPart}{0}
+
+\problempart\label{pr.TT.TTorC-a}
+
+\begin{earg}
+
+\item $A \eif A$ %taut
+\myanswer{\begin{center}
+\begin{tabular}{c | def}
+$A$ & $A$&$\eif$&$A$\\
+\hline
+ T & T&\TTbf{T}&T\Tstrut\\
+F & F&\TTbf{T}&F
+\end{tabular}
+\end{center}
+}
+
+\item $C \eif\enot C$ %contingent
+\myanswer{\begin{center}
+\begin{tabular}{c | d e e f}
+$C$ & $C$&$\eif$&$\enot$&$C$\\
+\hline
+ T & T & \TTbf{F}& F& T\Tstrut\\
+F & F & \TTbf{T}& T& F\\
+\end{tabular}
+\end{center}}
+
+\item $(A \eiff B) \eiff \enot(A\eiff \enot B)$ %tautology
+\myanswer{\begin{center}
+\begin{tabular}{c c | d e e e e e e e f}
+$A$ & $B$&$(A$&$\eiff$&$B)$&$\eiff$&$\enot$&$(A$&$\eiff$&$\enot$&$B)$ \\
+\hline
+T & T & T & T & T & \TTbf{T} & T & T & F & F & T\Tstrut\\
+T & F & T & F & F & \TTbf{T} & F & T & T & T & F\\
+F & T & F & F & T & \TTbf{T} & F & F & T & F & T\\
+F & F & F & T & F & \TTbf{T} & T & F & F & T & F
+ \end{tabular}
+\end{center}}
+
+\item $(A \eif B) \eor (B \eif A)$ % taut
+\myanswer{
+\begin{center}
+\begin{tabular}{c c | d e e e e e f}
+$A$ & $B$&$(A$&$\eif$&$B)$&$\eor$&$(B$&$\eif$&$A)$ \\
+\hline
+T & T & T & T & T & \TTbf{T} & T & T & T\Tstrut\\
+T & F & T & F & F & \TTbf{T} & F & T & T\\
+F & T & F & T & T & \TTbf{T} & T & F & F \\
+F & F & F & T & F & \TTbf{T} & F & T & F
+ \end{tabular}
+\end{center}}
+
+\item $(A \eand B) \eif (B \eor A)$  %taut
+\myanswer{
+\begin{center}
+\begin{tabular}{c c | d e e e e e f}
+$A$ & $B$&$(A$&$\eand$&$B)$&$\eif$&$(B$&$\eor$&$A)$ \\
+\hline
+T & T & T & T & T & \TTbf{T} & T & T & T\Tstrut\\
+T & F & T & F & F & \TTbf{T} & F & T & T\\
+F & T & F & F & T & \TTbf{T} & T & T & F \\
+F & F & F & F & F & \TTbf{T} & F & F & F
+ \end{tabular}
+\end{center}}
+\item $\enot(A \eor B) \eiff (\enot A \eand \enot B)$ %taut
+
+\myanswer{\begin{center}
+\begin{tabular}{c c | d e e e e e e e e f}
+$A$ & $B$&$\enot$&$(A$&$\eor$&$B)$&$\eiff$&$(\enot$&$A$&$\eand$&$\enot$&$B)$\\
+\hline
+T & T & F & T & T & T & \TTbf{T} & F & T & F & F & T\Tstrut\\
+T & F & F & T& T & F & \TTbf{T} & F & T & F & T & F\\
+F & T & F & F & T & T & \TTbf{T} & T & F & F & F & T\\
+F & F & T & F & F & F & \TTbf{T} & T & F & T & T & F
+ \end{tabular}
+\end{center}}
+
+
+\item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$ %contradiction
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e e e e e e f}
+$A$ & $B$&$C$&$\bigl[(A$&$\eand$&$B)$&$ \eand$&$\enot$&$(A$&$\eand$&$B)\bigr]$&$\eand$&$C$\\
+\hline
+T & T & T & T & T & T & F & F & T & T & T & \TTbf{F} & T\Tstrut\\
+T & T & F & T& T & T & F & F & T & T & T & \TTbf{F}& F\\
+T & F & T & T & T & F & F & T & T & F & F & \TTbf{F} & T\\
+T & F & F & T & F & F & F & T & T & F & F & \TTbf{F} & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & F & T & F & T & F & F & T & \TTbf{F} & T\Tstrut\\
+F & T & F & F & F & T & F & T & F & F & T & \TTbf{F} & F\\
+F & F & T & F & F & F & F & T & F & F & F & \TTbf{F} & T\\
+F & F & F & F & F & F & F & F & F & F & F & \TTbf{F} & F
+\end{tabular}
+\end{center}}
+
+\item $[(A \eand B) \eand C] \eif B$ %taut
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e e e f}
+$A$ & $B$&$C$&$[(A$&$\eand$&$B)$&$\eand$&$C]$&$\eif$&$B$\\
+\hline
+T & T & T & T & T & T & T & T & \TTbf{T} & T\Tstrut\\
+T & T & F & T & T & T & F & F & \TTbf{T} & T\\
+T & F & T & T & F & F & F & T & \TTbf{T} & F\\
+T & F & F & T & F & F & F & F & \TTbf{T} & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & F & T & F & T & \TTbf{T} & T\Tstrut\\
+F & T & F & F & F & T & F & F & \TTbf{T} & T\\
+F & F & T & F & F & F & F & T & \TTbf{T} & F\\
+F & F & F & F & F & F & F & F & \TTbf{T} & F\\
+\end{tabular}
+\end{center}}
+
+\item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e e f}
+$A$ & $B$&$C$&$\enot\bigl[($&$C$&$\eor$&$A)$&$\eor$&$B\bigr]$\\
+\hline
+T & T & T & \TTbf{F} & T & T & T & T & T\Tstrut\\
+T & T & F & \TTbf{F} & F & T & T & T & T\\
+T & F & T & \TTbf{F} & T & T & T & T & F\\
+T & F & F & \TTbf{F} & F & T & T & T & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & \TTbf{F} & T & T & F & T & T\Tstrut\\
+F & T & F & \TTbf{F} & F & F & F & T & T\\
+F & F & T & \TTbf{F} & T & T & F & T & F\\
+F & F & F & \TTbf{T} & F & F & F & F & F
+\end{tabular}
+\end{center}}
+\end{earg}
+
+
+\problempart
+
+\begin{earg}
+\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e f | d e e e f }
+$A$ & $B$ & $C$ & $(A$&$\eand$& $B)$ &$ \eand$ & $C$ & $A$ & $\eand$ & $(B$&$\eand$&$C)$\\
+\hline
+T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
+T & T & F & T& T & T &  \TTbf{F} & F & T& \TTbf{F} & T & F& F\\
+T & F & T & T & F & F &  \TTbf{F} & T & T & \TTbf{F} & F & F & T \\
+T & F & F &  T & F & F &  \TTbf{F} & F & T& \TTbf{F} & F & F & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & F & T & \TTbf{F} & T & F& \TTbf{T} & T & T & T\Tstrut\\
+F & T & F & F & F & T & \TTbf{F} & F & F& \TTbf{F} &  T & F & F\\
+F & F & T & F & F & F & \TTbf{F} & T & F& \TTbf{F} & F& F & T\\
+F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
+\end{tabular}
+\end{center}}
+
+\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e f | d e e e f }
+$A$ & $B$ & $C$ & $(A$&$\eor$& $B)$ &$ \eor$ & $C$ & $A$ & $\eor$ & $(B$&$\eor$&$C)$\\
+\hline
+T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
+T & T & F & T& T & T &  \TTbf{T} & F & T& \TTbf{T} & T & T& F\\
+T & F & T & T & T & F &  \TTbf{T} & T & T & \TTbf{T} & F & T & T \\
+T & F & F &  T & T& F &  \TTbf{T} & F & T& \TTbf{T} & F & F & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & T & T & \TTbf{T} & T & F& \TTbf{T} & T & T & T\Tstrut\\
+F & T & F & F & T & T & \TTbf{T} & F & F& \TTbf{T} &  T & T & F\\
+F & F & T & F & F & F & \TTbf{T} & T & F& \TTbf{T} & F& T & T\\
+F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
+\end{tabular}
+\end{center}}
+
+\item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e f | d e e e f }
+$A$ & $B$ & $C$ & $(A$&$\eor$& $B)$ &$ \eand$ & $C$ & $A$ & $\eor$ & $(B$&$\eand$&$C)$\\
+\hline
+T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
+T & T & F & T& T & T &  \TTbf{F} & F & T& \TTbf{T} & T & F& F\\
+T & F & T & T & T & F &  \TTbf{T} & T & T & \TTbf{T} & F & F & T \\
+T & F & F &  T & T& F &  \TTbf{F} & F & T& \TTbf{T} & F & F & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & T & T & \TTbf{T} & T & F& \TTbf{T} & T & T & T\Tstrut\\
+F & T & F & F & T & T & \TTbf{F} & F & F& \TTbf{F} &  T & F & F\\
+F & F & T & F & F & F & \TTbf{F} & T & F& \TTbf{F} & F& F & T\\
+F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
+\end{tabular}
+\end{center}}
+
+\item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e f | d e e e f }
+$A$ & $B$ & $C$ & $(A$&$\eif$& $B)$ &$ \eif$ & $C$ & $A$ & $\eif$ & $(B$&$\eif$&$C)$\\
+\hline
+T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
+T & T & F & T& T & T &  \TTbf{F} & F & T& \TTbf{F} & T & F& F\\
+T & F & T & T & F & F &  \TTbf{T} & T & T & \TTbf{T} & F & T & T \\
+T & F & F &  T & F& F &  \TTbf{T} & F & T& \TTbf{T} & F & T & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & T & T & \TTbf{T} & T & F& \TTbf{T} & T & T & T\Tstrut\\
+F & T & F & F & T & T & \TTbf{F} & F & F& \TTbf{T} &  T & F & F\\
+F & F & T & F & T & F & \TTbf{T} & T & F& \TTbf{T} & F& T & T\\
+F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{T} &  F& T & F\\
+\end{tabular}
+\end{center}}
+
+\item `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table.\\
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e f | d e e e f }
+$A$ & $B$ & $C$ & $(A$&$\eiff$& $B)$ &$ \eiff$ & $C$ & $A$ & $\eiff$ & $(B$&$\eiff$&$C)$\\
+\hline
+T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
+T & T & F & T& T & T &  \TTbf{F} & F & T& \TTbf{F} & T & F& F\\
+T & F & T & T & F & F &  \TTbf{F} & T & T & \TTbf{F} & F & F & T \\
+T & F & F &  T & F& F &  \TTbf{T} & F & T& \TTbf{T} & F & T & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & F & T & \TTbf{F} & T & F& \TTbf{F} & T & T & T\Tstrut\\
+F & T & F & F & F & T & \TTbf{T} & F & F& \TTbf{T} &  T & F & F\\
+F & F & T & F & T & F & \TTbf{T} & T & F& \TTbf{T} & F& F & T\\
+F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{F} &  F& T & F\\
+\end{tabular}
+\end{center}}
+\end{earg}
+
+\problempart
+Complete truth tables for each sentence with the column that represents the possible truth values for the whole sentence marked.
+
+\begin{earg}
+
+\item $\enot (N \eiff (P \eif N))$
+\myanswer{
+\begin{center}
+\begin{tabular}{c c | |c|c c c c c c}
+\cline{3-3}
+$N$ & $P$ &	\enot 	&	(N 	&	\eiff	&	(P 	&	\eif	&	N))	\\ 
+\hline
+T & T	& 	F 		&	T	&	T	&	T	&	T	&	T\Tstrut\\
+T & F	& 	F 		&	T	&	T	&	F	&	T	&	T	\\
+F & T	& 	F 		&	F	&	T	&	T	&	F	&	F	\\
+F & F	& 	T 		&	F	&	F	&	F	&	T	&	F	\\
+\cline{3-3}
+\end{tabular}
+\end{center}
+}
+
+
+\item $\enot [(X \eand Y) \eor (X \eor Y)]$
+\myanswer{
+\begin{center}
+\begin{tabular}{c c || c |ccccccc}
+\cline{3-3}
+$X$ & $Y$	&	\enot	&	 [(X 	&	\eand& 	Y) 	&	\eor 	&	(X 	&	\eor 	&	Y)] \\
+\hline
+T & T	&	F	&	T	&	T	&	T	&	T	&	T	&	T	&	T\Tstrut	\\
+T & F &	F	&	T	&	F	&	F	&	T	&	T	&	T	&	F	\\
+F & T	&	F	&	F	&	F	&	T	&	T	&	F	&	T	&	T	\\
+F & F	&	T	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
+\cline{3-3}
+\end{tabular}
+\end{center}
+}
+
+
+\item $(A \eif B) \eiff (\enot B\eiff \enot A)$
+\myanswer{
+\begin{center}
+\begin{tabular}{c c | ccc|c|ccccc}
+\cline{6-6}
+$A$ & $B$	&	(A 	&	\eif	&	B)	&	 \eiff 	&	(\enot&	B 	&	\eiff 	&	 \enot 	& 	 A) \\
+\hline
+T & T	&	T	&	T	&	T	&	T		&	F	 &	T	&	T	&	F		&	T\Tstrut	\\	
+T & F	&	T	&	F	&	F	&	T		&	T	 &	F	&	F	&	F		&	T	\\
+F & T	&	F	&	T	&	T	&	F		&	F	 &	T	&	F	&	T		&	F	\\
+F & F	&	F	&	T	&	F	&	T		&	T	 &	F	&	T	&	T		&	F	\\
+\cline{6-6}
+\end{tabular}
+\end{center}
+}
+
+\item $[C \eiff (D \eor E)] \eand \enot C$
+\myanswer{
+\begin{center}
+\begin{tabular}{c c c | ccccc|c|cc}
+\cline{9-9}
+$C$ & $D$ & $E$	&	[C 	&	\eiff 	&	(D 	&	\eor 	&	E)] 	&	\eand 	&	 \enot 	&	 C \\
+\hline
+T& T& T	&	T	&	T	&	T	&	T	&	T	&	F		&	F		&	T\Tstrut\\
+T& T& F	&	T	&	T	&	T	&	T	&	F	&	F		&	F		&	T	\\
+T& F& T	&	T	&	T	&	F	&	T	&	T	&	F		&	F		&	T	\\
+T& F& F	&	T	&	F	&	F	&	F	&	F	&	F		&	F		&	T	\\\arrayrulecolor{light-gray}\hline
+F& T& T	&	F	&	F	&	T	&	T	&	T	&	F		&	T		&	F	\Tstrut\\
+F& T& F	&	F	&	F	&	T	&	T	&	F	&	F		&	T		&	F	\\
+F& F& T	&	F	&	F	&	F	&	T	&	T	&	F		&	T		&	F	\\
+F& F&	 F   &	F	&	T	&	F	&	F	&	F	&	T		&	T		&	F	\\
+\cline{9-9}
+\end{tabular}
+\end{center}
+}
+
+\item $\enot(C \eand (B \eand H)) \eiff (C \eor (B \eor H))$
+\myanswer{
+\begin{center}
+\begin{tabular}{c c c | cccccc|c|ccccc}
+\cline{10-10}
+$C$& $B$& $H$	&\enot&	(C 	&\eand &	(B 	&	 \eand 	&	 H))	&	\eiff 	&	(C 	& \eor 	& (B 	& \eor	& H))	\\
+\hline
+T& T& T	&F	   &	T	&	  T &	T	&	T		&	T	&	F	&	T	&	T	&	T	&	T	&	T\Tstrut\\
+T& T& F	&T	   &	T	&	  F &	T	&	F		&	F	&	T	&	T	&	T	&	T	&	T	&	F	\\	
+T& F& T	&T	   &	T	&	 F  &	F	&	F		&	T	&	T	&	T	&	T	&	F	&	T	&	T	\\
+T& F& F	&T	   &	T	&	 F  &	F	&	F		&	F	&	T	&	T	&	T	&	F	&	F	&	F	\\\arrayrulecolor{light-gray}\hline
+F& T& T	&T	   &	F	&	F   &	T	&	T		&	T	&	T	&	F	&	T	&	T	&	T	&	T	\Tstrut\\
+F& T& F	&T	   &	F	&	F   &	T	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	F	\\
+F& F& T	&T	   &	F	&	F   &	F	&	F		&	T	&	T	&	F	&	T	&	F	&	T	&	T	\\
+F& F& F	&T	   &	F	&	F   &	F	&	F		&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
+\cline{10-10}
+\end{tabular}
+\end{center}
+}
+
+\vspace{1em}
+
+\item	$(D \eand \enot D) \eif G $
 %\vspace{1em}
+\myanswer{
+\begin{center}
+\begin{tabular}{c c | cccc|c|c}
+\cline{7-7}
+$D$& $G$	&	(D 	&	 \eand 	& 	 \enot	&	 D) 	&	 \eif 	&	 G \\
+ \hline
+T&  T	&	T	&	F		&	F		&	T	&	T	&	T\Tstrut	\\
+T&  F	&	T	&	F		&	F		&	T	&	T	&	F	\\
+F&  T	&	F	&	F		&	T		&	F	&	T	&	T	\\
+F&  F	&	F	&	F		&	T		&	F	&	T	&	F	\\
+\cline{7-7}
+\end{tabular}
+\end{center}
+}
+\vspace{1em}
 
 
-
-\item 	$[(D \eand R) \eif I] \eif \enot(D \eor R) $
-
-%\begin{tabular}{cccccc|c|cccc}
-%\cline{7-7}
-%4.	&	[(D 	& 	 \eand 	& 	 R)	& 	\eif 	&	I] 	&	\eif 	&	 \enot 	&	(D 	&	 \eor 	& R) \\
-%	&	T	&	T		&	T	&	T	&	T	&	F	&	F		&	T	&	T		&T	\\
-%	&	T	&	T		&	T	&	F	&	F	&	T	&	F		&	T	&	T		&T	\\
-%	&	T	&	F		&	F	&	T	&	T	&	F	&	F		&	T	&	T		&F	\\
-%	&	T	&	F		&	F	&	T	&	F	&	F	&	F		&	T	&	T		&F	\\
-%	&	F	&	F		&	T	&	T	&	T	&	F	&	F		&	F	&	T		&T	\\
-%	&	F	&	F		&	T	&	T	&	F	&	F	&	F		&	F	&	T		&T	\\
-%	&	F	&	F		&	F	&	T	&	T	&	T	&	T		&	F	&	F		&F	\\
-%	&	F	&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
-%\cline{7-7}
-%\end{tabular}
-%	
-%\vspace{1em}
+\item	$(\enot P \eor \enot R) \eiff R $
+\myanswer{
+\begin{center}
+\begin{tabular}{c  c | ccccc|c|c}
+\cline{8-8}
+$P$& $R$	&	(\enot 	&	P 	&	\eor 	&	\enot 	& 	 R) 	& 	\eiff 	&	 R \\
+\hline
+T& T	&	F		&	T	&	F	&	F		&	T	&	F	&	T\Tstrut	\\
+T& F	&	F		&	T	&	T	&	T		&	F	&	F	&	F	\\
+F& T	&	T		&	F	&	T	&	F		&	T	&	T	&	T	\\
+F& F	&	T		&	F	&	T	&	T		&	F	&	F	&	F	\\
+\cline{8-8}
+\end{tabular}
+\end{center}
+}
+\vspace{1em}
 
 
-\item	$\enot [(D \eiff O) \eiff A] \eif (\enot D \eand O) $
+\item	$\enot \enot (\enot A \eand \enot B)  $
+\myanswer{
+\begin{center}
+\begin{tabular}{c c | |c|cccccc}
+\cline{3-3}
+$A$& $B$	&	\enot		&	 \enot 	&	(\enot 	& 	 A 	& \eand 	& 	\enot 	&	 B)  \\
+ \hline
+T& T	&	F		&	T		&	F		&	T	&	F	&	F		&	T\Tstrut	\\
+T& F	&	F		&	T		&	F		&	T	&	F	&	T		&	F	\\
+F& T	&	F		&	T		&	T		&	F	&	F	&	F		&	T	\\
+F& F	&	T		&	F		&	T		&	F	&	T	&	T		&	F	\\
+\cline{3-3}
+\end{tabular}
+\end{center}
+}
+\vspace{1em}
 
-%\begin{tabular}{ccccccc|c|cccc}
-%\cline{8-8}
-%5.	&	\enot 	&	[(D 	&	\eiff 	&	O) 	&	\eiff 	&	 A]	& 	\eif 	 &	(\enot 	& 	D 	 & 	 \eand &O) \\ 
-%	&	F		&	T	&	T	&	T	&	T	&	T	&	T	&	F		&	T	&	F	&T	\\
-%	&	T		&	T	&	T	&	T	&	F	&	F	&	F	&	F		&	T	&	F	&T	\\
-%	&	T		&	T	&	F	&	F	&	F	&	T	&	F	&	F		&	T	&	F	&F	\\
-%	&	F		&	T	&	F	&	F	&	T	&	F	&	T	&	F		&	T	&	F	&F	\\
-%	&	T		&	F	&	F	&	T	&	F	&	T	&	T	&	T		&	F	&	T	&T	\\
-%	&	F		&	F	&	F	&	T	&	T	&	F	&	T	&	T		&	F	&	T	&T	\\
-%	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	T		&	F	&	F	&F	\\
-%	&	T		&	F	&	T	&	F	&	F	&	F	&	T	&	T		&	F	&	F	&F	\\
-%\cline{8-8}
-%\end{tabular}
+
+\item 	$[(D \eand H) \eif J] \eif \enot(D \eor H) $
+\myanswer{
+\begin{center}
+\begin{tabular}{c  c  c | ccccc|c|cccc}
+\cline{9-9}
+$D$& $H$ & $J$ 	&	[(D 	& 	 \eand 	& 	 H)	& 	\eif 	&	J] 	&	\eif 	&	 \enot 	&	(D 	&	 \eor 	& H) \\
+\hline
+T&  T&  T	&	T	&	T		&	T	&	T	&	T	&	F	&	F		&	T	&	T		&T\Tstrut\\
+T&  T&  F	&	T	&	T		&	T	&	F	&	F	&	T	&	F		&	T	&	T		&T	\\
+T&  F&  T	&	T	&	F		&	F	&	T	&	T	&	F	&	F		&	T	&	T		&F	\\
+T&  F&  F	&	T	&	F		&	F	&	T	&	F	&	F	&	F		&	T	&	T		&F	\\\arrayrulecolor{light-gray}\hline
+F&  T&  T	&	F	&	F		&	T	&	T	&	T	&	F	&	F		&	F	&	T		&T	\Tstrut\\
+F&  T&  F	&	F	&	F		&	T	&	T	&	F	&	F	&	F		&	F	&	T		&T	\\
+F&  F&  T	&	F	&	F		&	F	&	T	&	T	&	T	&	T		&	F	&	F		&F	\\
+F&  F&  F	&	F	&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
+\cline{9-9}
+\end{tabular}
+\end{center}
+}
+	
+\vspace{1em}
+
+
+\item	$\enot [(D \eiff F) \eiff G] \eif (\enot D \eand F) $
+\myanswer{
+\begin{center}
+\begin{tabular}{c c  c | cccccc|c|cccc}
+\cline{10-10}
+$D$& $F$ & $G$ 	&	\enot 	&	[(D 	&	\eiff 	&	F) 	&	\eiff 	&	 G]	& 	\eif 	 &	(\enot 	& 	D 	 & 	 \eand &F) \\ 
+\hline
+T&  T&  T	&	F		&	T	&	T	&	T	&	T	&	T	&	T	&	F		&	T	&	F	&T	\Tstrut\\
+T&  T&  F	&	T		&	T	&	T	&	T	&	F	&	F	&	F	&	F		&	T	&	F	&T	\\
+T&  F&  T	&	T		&	T	&	F	&	F	&	F	&	T	&	F	&	F		&	T	&	F	&F	\\
+T&  F&  F	&	F		&	T	&	F	&	F	&	T	&	F	&	T	&	F		&	T	&	F	&F	\\\arrayrulecolor{light-gray}\hline
+F&  T&  T	&	T		&	F	&	F	&	T	&	F	&	T	&	T	&	T		&	F	&	T	&T	\Tstrut\\
+F&  T&  F	&	F		&	F	&	F	&	T	&	T	&	F	&	T	&	T		&	F	&	T	&T	\\
+F&  F&  T	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	T		&	F	&	F	&F	\\
+F&  F&  F	&	T		&	F	&	T	&	F	&	F	&	F	&	F	&	T		&	F	&	F	&F	\\
+\cline{10-10}
+\end{tabular}
+\end{center}
+}
 %\vspace{1em}
 \end{earg}
 
 
-%If you want additional practice, you can construct truth tables for any of the sentences and arguments in the exercises for the previous chapter.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -832,4 +1124,310 @@ $P$&$Q$&\enot&$P$&\eand&$P$&\enot&$Q$&\eand&&$Q$\\
 %\end{minipage}
 %\medskip
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  exercises for `Semantic concepts'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\practiceproblems
+\section{Practice exercises}
+\setcounter{ProbPart}{0}
+
+\problempart
+Revisit your answers to the exercises in part A of chapter \ref{s:CompleteTruthTables}, and determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.\\
+
+
+\problempart Create a truth table for each sentence, and then determine whether the sentence is a \textbf{tautology}, a \textbf{contradiction}, or is \textbf{contingent}.
+
+\begin{earg}
+\item $\enot B \eand B$ \vspace{.5ex}%contra
+\item $\enot D \eor D$ \vspace{.5ex}%taut
+\item $(A\eand B) \eor (B\eand A)$\vspace{.5ex} %contingent
+\item $\enot[A \eif (B \eif A)]$\vspace{.5ex} %contra
+\item $A \eiff [A \eif (B \eand \enot B)]$ \vspace{.5ex}%contra
+\item $[(A \eand B) \eiff B] \eif (A \eif B)$ \vspace{.5ex}% contingent. 
+\end{earg}
+
+
+\problempart
+\label{pr.TT.consistent}
+For each set of sentences, create a truth table and then determine whether the sentences are \textbf{jointly consistent} or \textbf{jointly inconsistent}.
+\begin{earg}
+\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %consistent
+\item $A\eor B$, $A\eif C$, $B\eif C$ %consistent
+\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$  %inconsistent
+\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$ %consistent
+
+\item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$\vspace{.5ex} %Consistent
+\item $A \eor B$, $A \eif \enot A$, $B \eif \enot B$ \vspace{.5ex}%inconsistent. 
+\item $\enot(\enot A \eor B) $, $A \eif \enot C$, $A \eif (B \eif C)$\vspace{.5ex} %Inconsistent
+\item $A \eif B$, $A \eand \enot B$\vspace{.5ex} %Inconsistent
+\item $A \eif (B \eif C)$, $(A \eif B) \eif C$, $A \eif C$\vspace{.5ex} % consistent. 
+
+\item $\enot B$, $A \eif B$, $A$ \vspace{.5ex}%inconsistent.
+\item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} %Consistent
+\item $A \eor B$, $\enot B$, $\enot B \eif \enot A$\vspace{.5ex} %Inconsistent
+\item $A \eiff B$, $\enot B \eor \enot A$, $A \eif B$\vspace{.5ex} %consistent. 
+\item $(A \eor B) \eor C$, $\enot A \eor \enot B$, $\enot C \eor \enot B$\vspace{.5ex} %consistent
+\end{earg}
+
+
+\problempart
+\label{pr.TT.equiv}
+For each pair of sentences, create a truth table and then determine whether the pair of sentences are \textbf{equivalent} or are not. 
+\begin{earg}
+\item $A$ and $\enot A$
+\item $A \eand \enot A$ and $\enot B \eiff B$
+\item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
+\item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
+\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$
+
+
+\item $A\eif A$ and $A \eiff A$
+\item $\enot(A \eif B)$ and $\enot A \eif \enot B$
+\item $A \eor B$ and $\enot A \eif B$
+\item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
+\item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
+\end{earg}
+
+
+\problempart
+\label{pr.TT.concepts}
+\begin{earg}
+\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $\meta{A}\eiff\meta{B}$?
+
+\item Suppose that $\meta{A}$, $\meta{B}$ and $\meta{C}$  are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B}\eand\meta{C})$?
+
+\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+
+\item Suppose that \meta{A} and \meta{B} are \emph{not} logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+
+\item Consider this principle:
+	\begin{ebullet}
+		\item[] Suppose $\meta{A}$ and $\meta{B}$ are equivalent. Suppose an argument contains $\meta{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\meta{A}$ with $\meta{B}$.
+	\end{ebullet}
+Is this principle correct? Explain your answer.
+\end{earg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  answers for `Semantic concepts'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Answers}
+\setcounter{ProbPart}{0}
+
+\problempart
+From chapter \ref{s:CompleteTruthTables}
+\begin{earg}
+\item $A \eif A$ \hfill \myanswer{tautology}
+\item $C \eif\enot C$ \hfill \myanswer{neither}
+\item $(A \eiff B) \eiff \enot(A\eiff \enot B)$  \hfill \myanswer{tautology}
+\item $(A \eif B) \eor (B \eif A)$  \hfill \myanswer{tautology}
+\item $(A \eand B) \eif (B \eor A)$  \hfill \myanswer{tautology}
+\item $\enot(A \eor B) \eiff (\enot A \eand \enot B)$ \hfill \myanswer{tautology}
+\item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$  \hfill \myanswer{contradiction}
+\item $[(A \eand B) \eand C] \eif B$  \hfill \myanswer{tautology}
+\item $\enot\bigl[(C\eor A) \eor B\bigr]$  \hfill \myanswer{neither}
+\end{earg}
+
+
+\problempart Use a truth table to determine whether each sentence is a tautology, a contradiction, or a contingent sentence.
+\begin{earg}
+\item $\enot B \eand B$ \vspace{.5ex} \hfill \myanswer{Contradiction}
+\item $\enot D \eor D$ \vspace{.5ex} \hfill \myanswer{Tautology}
+\item $(A\eand B) \eor (B\eand A)$\vspace{.5ex} \hfill \myanswer{Contingent}
+\item $\enot[A \eif (B \eif A)]$\vspace{.5ex} \hfill \myanswer{Contradiction}
+\item $A \eiff [A \eif (B \eand \enot B)]$ \vspace{.5ex} \hfill \myanswer{Contradiction}
+\item $[(A \eand B) \eiff B] \eif (A \eif B)$ \vspace{.5ex} \hfill \myanswer{Contingent}
+\end{earg}
+
+
+\problempart
+\label{pr.TT.consistent}
+Use a truth table to determine whether each set of sentences are jointly consistent or jointly inconsistent.
+\begin{earg}
+\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \\
+These sentences are jointly consistent. (See line 1.)
+\myanswer{\begin{center}
+\begin{tabular}{c | d e f | d e e e f | d e f | d e f}
+$A$ &  $A$&$\eif$&$A$&$\enot$&$A$&$\eif$&$\enot$&$A$&$A$&$\eand$&$A$&$A$&$\eor$&$A$\\
+\hline
+T & T & \TTbf{T} & T& F & T & \TTbf{T} & F & T & T & \TTbf{T} & T & T & \TTbf{T} & T\Tstrut\\
+F & F & \TTbf{T} & F& T & F & \TTbf{T} & T & F & F & \TTbf{F} & F & F & \TTbf{F} & F
+\end{tabular}
+\end{center}}
+
+\item $A\eor B$, $A\eif C$, $B\eif C$ \\
+These sentences are jointly consistent. (See line 1.)
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e f | d e f | d e f}
+$A$ & $B$ & $C$ & $A$&$\eor$&$B$&$A$&$\eif$&$C$&$B$&$\eif$&$C$\\
+\hline
+T & T & T & T & \TTbf{T} & T & T & \TTbf{T} & T & T & \TTbf{T} & T\Tstrut\\
+T & T & F & T & \TTbf{T} & T & T & \TTbf{F} & F & T & \TTbf{F} & F\\
+T & F & T & T & \TTbf{T} & T & T & \TTbf{T} & T & F & \TTbf{T} & T\\
+T & F & F & T & \TTbf{T} & F & T & \TTbf{F} & F & F & \TTbf{T} & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & \TTbf{T} & F & F & \TTbf{T} & T & T & \TTbf{T} & T\Tstrut\\
+F & T & F & F & \TTbf{T} & T & F & \TTbf{T} & F & T & \TTbf{F} & F\\
+F & F & T & F & \TTbf{F} & F & F & \TTbf{T} & T & F & \TTbf{T} & T\\
+F & F & F & F & \TTbf{F} & F & F & \TTbf{T} & F & F & \TTbf{T} & F\\
+\end{tabular}
+\end{center}}
+
+\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$ \\
+These sentences are jointly inconsistent.
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e f | d e f | d e e f}
+$A$ & $B$ & $C$ & $B$&$\eand$&$(C$&$\eor$&$A)$&$A$&$\eif$&$B$&$\enot$&$(B$&$\eor$&$C)$\\
+\hline
+T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T & \TTbf{F} & T & T & T\Tstrut\\
+T & T & F & T & \TTbf{T} & F & T & T & T & \TTbf{T} & T & \TTbf{F} & T &  T & F\\
+T & F & T & F & \TTbf{F} & T & T & T & T & \TTbf{F} & F & \TTbf{F} & F &  T & T\\
+T & F & F & F & \TTbf{F} & F & T & T & T & \TTbf{F} & F & \TTbf{T} & F & F & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & T & \TTbf{T} & T & T & F & F & \TTbf{T} & T & \TTbf{F} & T & T & T\Tstrut\\
+F & T & F & T & \TTbf{F} & F & F & F & F & \TTbf{T} & T & \TTbf{F} & T & T & F\\
+F & F & T & F & \TTbf{F} & T & T & F & F & \TTbf{T} & F & \TTbf{F} & F & T & T\\
+F & F & F & F & \TTbf{F} & F & F & F & F & \TTbf{T} & F & \TTbf{T} & F & F & F\\
+\end{tabular}
+\end{center}}
+
+\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$  
+These sentences are jointly consistent. (See line 8.)
+\myanswer{\begin{center}
+\begin{tabular}{c c c | d e e e f | d e e f | d e e f}
+$A$ & $B$ & $C$ & $A$&$\eiff$&$(B$&$\eor$&$C)$&$C$&$\eif$&$\enot$&$A$&$A$&$\eif$&$\enot$&$B$\\
+\hline
+T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{F} & F & T & T & \TTbf{F} & F & T\Tstrut\\
+T & T & F & T & \TTbf{T} & T & T & F & F & \TTbf{T} & F & T & T & \TTbf{F} & F & T\\
+T & F & T & T & \TTbf{T} & F & T & T & T & \TTbf{F} & F & T & T & \TTbf{T} & T & F\\
+T & F & F & T & \TTbf{F} & F & F & F & F & \TTbf{T} & F & T & T & \TTbf{T} & T & F\\\arrayrulecolor{light-gray}\hline
+F & T & T & F & \TTbf{F} & T & T & T & T & \TTbf{T} & T & F & F & \TTbf{T} &  F & T\Tstrut\\
+F & T & F & F & \TTbf{F} & T & T & F & F & \TTbf{T} & T & F & F & \TTbf{T} & F & T\\
+F & F & T & F & \TTbf{F} & F & T & T & T & \TTbf{T} & T & F & F & \TTbf{T} &T & F\\
+F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T & F & F & \TTbf{T} & T & F
+\end{tabular}
+\end{center}}
+
+\item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$\\
+These sentences are jointly consistent. (See line 2.)
+\myanswer{
+\begin{center}
+\begin{tabular}{c c | c c c c | c c c c | c c c } 
+$A$ & $B$ 	&	A 	& \eand	&  \enot & B &  \enot &  (A &  \eif & B)	 & 	 B	 & 	\eif  & A   \\ 
+\hline
+T  & T	& 	T   & F     &   F	 & T  &  F	& 	T &   T	  & T 	  & 	 T	 & 	 T	  & T\Tstrut\\ 
+T  & F	&  T & 	\textbf{T}	 & T	 & F &  \textbf{T}	 & 	 T	 & 	 F	 	 & 	 F	 	 	 & 	 F	 	 & 	 \textbf{T}	 	 & 	 T	 	  	  \\ 
+F  & T	& 	 F	 				 & 	 F	 & 	 F	 & T & 		 F	 & 	 F	 & 	 T	 	 & 	 T	 	  	  & 	 T	 	 & 	 F	 	 & 	 F	 \\ 
+F  & F	& 	 F	  				& 	 F	 & 	 T	 & 	F&    	 	 F	 & 	 F	 & 	 T	 	 & 	 F	 	  	  & 	 F	 	 & 	 T	 	 & 	 F	 \\ 
+\end{tabular}
+\end{center}
+}
+
+\item $A \eor B$, $A \eif \enot A$, $B \eif \enot B$\\
+These sentences are jointly inconsistent.
+\myanswer{
+\begin{center}
+\begin{tabular}{cc | ccc | cccc | cccc} 
+$A$ & $B$  & A	 & \eor 	 & B 	  	 	 & A 	 & \eif 	 & 	\enot & A 	  	 	 & B 	 & \eif 	 & \enot	 & 	B \\ 
+\hline
+T & T   &	 T	 & 	 T	 &T  	  	 	 & T	 & 	 F	 & 	F 	 & T 	 & 	 	  	T 	 & 	F 	 & 	 F	 & 	T\Tstrut\\
+T &  F &	 T	& 	 T	 & F 	  	 	 & 	T 	 & 	 F	 & 	 F	 & 	 T	 & 	 	  	F 	 & 	 T	 & 	 T	 & 	 F	 \\ 
+F &  T  &	 F	& 	 T	 & 	 T	  	 	 & 	F 	 & 	 T	 & 	 T	 & 	F 	 & 	 	    T	 & 	 F	 & 	 F	 & 	 T	 \\ 
+F &  F  &	 F	& 	 F	 & 	 F	  	 	 & 	 F	 & 	 T	 & 	 T	 & 	 F	 & 	 	  	 F	 & 	 T	 & 	 T	 & 	 F	 \\ 
+\end{tabular}
+\end{center}
+}
+
+\item $\enot(\enot A \eor B) $, $A \eif \enot C$, $A \eif (B \eif C)$\\
+These sentences are jointly consistent.
+\begin{center}
+\begin{tabular}{ccc | ccccc | cccc | ccccc}
+$A$ & $B$  & $C$ &   \enot & (\enot & A & \eor & B)  & A  & \eif 	 & \enot 	 & C & 	 A & \eif 	& (B & \eif & C)  \\ 
+ \hline
+T&	T&	T&	F 	& 	F	 & 	T & T	 & T  	  & T & F	 & 	 F & T 	  	 & T & T	 & T	 & T 	 & T\Tstrut\\ 
+T&	T&	F&	   	 F	& 	F	 & 	T & T	 & T  	  & T & T	 & 	 T & F	  	 & T & F	 & T	 & F	 & F 	  \\ 
+T&	F&	T&	   	 T & 	F 	& 	T & F	 & F  	  & T & F	 & 	 F & T	  	 & T & T	 & F	 & T	 & T 	  \\ 
+T&	F&	F&	      \TTbf{T}		&  F	 & 	T & F	 & 	F   & 	T & \TTbf{T}	 & 	 T & F 		 & T & \TTbf{T}	 & F	 & T	 & F\\\arrayrulecolor{light-gray}\hline 
+F&	T&	T&	   	 F	& 	T	 & 	F & T	 & 	T   & 	F & T	 & 	 F & T	  	 & F	 & F	 & T	 & T	 & T\Tstrut\\
+F&	T&	F&	   	 F	& 	 T	& 	F & T	 & 	T   & 	F & T	 & 	T & F 	 	 & F	 & T	 & T	 & F 	 & F 	\\ 
+F&	F&	T&	   	 F	& 	 T	& 	F & T	 & 	F   & 	F & T	 & 	F & T	  	 & F	 & T	 & F	 & T	 & T 	\\ 
+F&	F&	F&	   	 F	& 	 T	& 	F & T	 & 	F   & 	F & T	 & 	T & F	  	 & F	 & T	 & F	 & T	 & F 	\\ 
+\end{tabular}
+\end{center}
+
+
+\item $A \eif B$, $A \eand \enot B$ \hfill \myanswer{Inconsistent}
+
+\item $A \eif (B \eif C)$, $(A \eif B) \eif C$, $A \eif C$ \hfill \myanswer{ Consistent} 
+
+\item $\enot B$, $A \eif B$, $A$ \vspace{.5ex} \hfill \myanswer{Inconsistent}
+\item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} \hfill \myanswer{Consistent}
+\item $A \eor B$, $\enot B$, $\enot B \eif \enot A$\vspace{.5ex} \hfill \myanswer{Inconsistent}
+\item $A \eiff B$, $\enot B \eor \enot A$, $A \eif B$\vspace{.5ex} \hfill \myanswer{Consistent} 
+\item $(A \eor B) \eor C$, $\enot A \eor \enot B$, $\enot C \eor \enot B$\vspace{.5ex} \hfill \myanswer{Consistent}
+\end{earg}
+
+
+\problempart
+\label{pr.TT.equiv}
+Use a truth table to determine whether each set of sentences are equivalent or not.
+\begin{earg}
+\item $A$ and $\enot A$
+\item $A \eand \enot A$ and $\enot B \eiff B$
+\item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
+\item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
+\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$
+
+\item $A\eif A$ and $A \eiff A$
+\item $\enot(A \eif B)$ and $\enot A \eif \enot B$
+\item $A \eor B$ and $\enot A \eif B$
+\item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
+\item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
+\end{earg}
+
+
+\problempart
+\label{pr.TT.concepts}
+\begin{earg}
+\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $\meta{A}\eiff\meta{B}$?
+\begin{ebullet}
+\item[] \myanswer{\meta{A} and \meta{B} have the same truth value on every line of a complete truth table, so $\meta{A}\eiff\meta{B}$ is true on every line. It is a tautology.}
+\end{ebullet}
+
+\item Suppose that $\meta{A}$, $\meta{B}$ and $\meta{C}$  are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B}\eand\meta{C})$?
+\begin{ebullet}
+\item[] \myanswer{Since the sentences are jointly inconsistent, there is no valuation on which they are all true. So their conjunction is false on every valuation. It is a contradiction}
+\end{ebullet}
+
+\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+\begin{ebullet}
+\item[] \myanswer{Not much. Since $\meta{A}$ and $\meta{B}$ are true on exactly the same lines of the truth table, their disjunction is true on exactly the same lines. So, their disjunction is logically equivalent to them.}
+\end{ebullet}
+
+\item Suppose that \meta{A} and \meta{B} are \emph{not} logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+\begin{ebullet}
+\item[] \myanswer{\meta{A} and \meta{B} have different truth values on at least one line of a complete truth table, and $(\meta{A}\eor\meta{B})$ will be true on that line. On other lines, it might be true or false. So $(\meta{A}\eor\meta{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.}
+\end{ebullet}
+
+\item Consider this principle:
+\begin{ebullet}
+\item[] Suppose $\meta{A}$ and $\meta{B}$ are logically equivalent. Suppose an argument contains $\meta{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\meta{A}$ with $\meta{B}$.
+\end{ebullet}
+Is this principle correct? Explain your answer.
+
+\begin{ebullet}
+\item[] The principle is correct. Since $\meta{A}$ and $\meta{B}$ are logically equivalent, they have the same truth table. So every valuation that makes $\meta{A}$ true also makes $\meta{B}$ true, and every valuation that makes $\meta{A}$ false also makes $\meta{B}$ false. So if no valuation makes all the premises true and the conclusion false, when $\meta{A}$ was among the premises or the conclusion, then no valuation makes all the premises true and the conclusion false, when we replace $\meta{A}$ with $\meta{B}$.
+\end{ebullet}
+
+\end{earg}
 
