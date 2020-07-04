@@ -279,7 +279,10 @@ The order of the $\meta{A}$ and $\meta{B}$ in $\meta{A}\eiff\meta{B}$ has to mat
 
 \section{Some examples}
 
-We will now review some proofs that use the rules that we have learned so far. First, a proof of $P \eand Q, \enot R \proves Q \eand \enot R$ requires the conjunction introduction rule and the conjunction elimination rule.
+We will now review some proofs that use the rules that we have learned so far. 
+
+\begin{earg}
+\item[\ex{14.6.1}] First, a proof of $P \eand Q, \enot R \proves Q \eand \enot R$ requires the conjunction introduction rule and the conjunction elimination rule.
 \begin{proof}
 	\hypo{p1}{P \eand Q} \pr{}
 	\hypo{p2}{\enot R} \pr{}
@@ -287,7 +290,7 @@ We will now review some proofs that use the rules that we have learned so far. F
 	\have{c}{Q \eand \enot R} \ai{p2,q}
 \end{proof}\medskip
 
-For a proof of $P \eor Q, R \eand \enot Q \proves P \eor S$, we need the conjunction elimination rule, disjunction introduction rule, and the disjunction elimination rule.
+\item[\ex{14.6.2}]For a proof of $P \eor Q, R \eand \enot Q \proves P \eor S$, we need the conjunction elimination rule, disjunction introduction rule, and the disjunction elimination rule.
 \begin{proof}
 	\hypo{p1}{P \eor Q} \pr{}
 	\hypo{p2}{R \eand \enot Q} \pr{}
@@ -296,7 +299,7 @@ For a proof of $P \eor Q, R \eand \enot Q \proves P \eor S$, we need the conjunc
 	\have{c}{P \eor S} \oi{p}
 \end{proof}\medskip
 
-For a proof of $P \eif Q, R \eand P \proves Q \eand R$, we use the conjunction introduction rule, the conjunction elimination rule, and the conditional elimination rule.
+\item[\ex{14.6.3}] For a proof of $P \eif Q, R \eand P \proves Q \eand R$, we use the conjunction introduction rule, the conjunction elimination rule, and the conditional elimination rule.
 \begin{proof}
 	\hypo{p1}{P \eif Q} \pr{}
 	\hypo{p2}{R \eand P} \pr{}
@@ -305,7 +308,7 @@ For a proof of $P \eif Q, R \eand P \proves Q \eand R$, we use the conjunction i
 	\have{c}{Q \eand R} \ai{p,q}
 \end{proof}\medskip
 
-For a proof of $R \eiff T, P \eor T, \enot P \proves R$, we the disjunction elimination rule and the biconditional elimination rule.
+\item[\ex{14.6.4}] For a proof of $R \eiff T, P \eor T, \enot P \proves R$, we the disjunction elimination rule and the biconditional elimination rule.
 \begin{proof}
 	\hypo{p1}{R \eiff T} \pr{}
 	\hypo{p2}{P \eor T} \pr{}
@@ -314,7 +317,7 @@ For a proof of $R \eiff T, P \eor T, \enot P \proves R$, we the disjunction elim
 	\have{c}{R} \be{p1,t}
 \end{proof}\medskip
 
-And last, a proof for $$(S \eif T) \eor R, (T \eif S) \eor Q, \enot R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the disjunction elimination rule, and the biconditional introduction rule ($\eiff$ex).
+\item[\ex{14.6.5}] And last, a proof for $$(S \eif T) \eor R, (T \eif S) \eor Q, \enot R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the disjunction elimination rule, and the biconditional introduction rule ($\eiff$ex).
 \begin{proof}
 	\hypo{p1}{(S \eif T) \eor R} \pr{}
 	\hypo{p2}{(T \eif S) \eor Q} \pr{}
@@ -326,7 +329,7 @@ And last, a proof for $$(S \eif T) \eor R, (T \eif S) \eor Q, \enot R \eand \eno
 	\have{con}{(T \eif S) \eand (S \eif T)} \ai{st,ts}
 	\have{c}{T \eiff S} \bex{con}
 \end{proof}\medskip
-
+\end{earg}
 
 \section{Conditional introduction}
 
@@ -604,6 +607,184 @@ In this chapter, we have taken it for granted that each argument that we have en
 In chapter \ref{s:NDVeryIdea}, we discussed some reasons to prefer natural deduction to truth tables for checking that an argument is valid. To show that an argument is invalid, however, creating a truth table is not merely a superior method but is our only option.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercises for chapter on proofs
+
+\section{Practice exercises}
+\setcounter{ProbPart}{0}
+
+\problempart
+Give a proof for each argument.
+\begin{earg}
+\item $\enot P \eif (Q \eor P), \enot P \proves Q$
+\item $D \eand H, H \eiff J  \proves J \eor N$ 
+\item $G \eand (H \eand J), (H \eor J) \eif K \proves K$
+\item $P \eand (Q \eor R), P \eif \enot R \proves Q \eor S$
+\end{earg}
+
+
+\problempart
+Give a proof for each argument.
+\begin{earg}
+\item $P \eif (Q \eif R) \proves (P \eand Q) \eif R$
+\item $Q \eif R \proves (Q \eand S) \eif (R \eor T)$ 
+\item $\enot(P \eif Q) \proves \enot Q$
+\item $S \eiff T \proves S \eiff (T \eor S)$ 
+\item $D \eor F, D \eif G, F \eif H \proves G \eor H$ 
+\end{earg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  answers
+
+\section{Answers}
+\setcounter{ProbPart}{0}
+
+\problempart
+\begin{earg}
+\item $\enot P \eif (Q \eor P), \enot P \proves Q$
+\begin{proof}
+	\hypo{p1}{\enot P \eif (Q \eor P)} \pr{}
+	\hypo{p2}{\enot P} \pr{}
+	\have{qp}{Q \eor P} \ce{p1,p2}
+	\have{q}{Q} \oe{p2,qp}
+\end{proof}
+\medskip
+
+\item $D \eand H, H \eiff J  \proves J \eor N$ 
+\begin{proof}
+	\hypo{p1}{D \eand H} \pr{}
+	\hypo{p2}{H \eiff J} \pr{}
+	\have{h}{H} \ae{p1}
+	\have{j}{J} \be{p2,h}
+	\have{jn}{J \eor N} \oi{j}
+\end{proof}
+\medskip
+
+
+\item $G \eand (H \eand J), (H \eor J) \eif K \proves K$
+\begin{proof}
+	\hypo{p1}{G \eand (H \eand J)} \pr{}
+	\hypo{p2}{(H \eor J) \eif K} \pr{}
+	\have{hj}{H \eand J} \ae{p1}
+	\have{h}{H} \ae{hj}
+	\have{hj2}{H \eor J} \oi{h}
+	\have{k}{K} \ci{p2,hj2}
+\end{proof}
+\medskip
+
+\filbreak
+\item $P \eand (Q \eor R), P \eif \enot R \proves Q \eor S$
+\begin{proof}
+	\hypo{p1}{P \eand (Q \eor R)} \pr{}
+	\hypo{p2}{P \eif \enot R} \pr{}
+	\have{p}{P} \ae{p1}
+	\have{nr}{\enot R} \ci{p2,p}
+	\have{qr}{Q \eor R} \ae{p1}
+	\have{q}{Q} \oe{nr,qr}
+	\have{qs}{Q \eor S} \oi{q}
+\end{proof}
+\medskip
+\end{earg}
+
+
+\problempart
+\begin{earg}
+\item $P \eif (Q \eif R) \proves (P \eand Q) \eif R$
+\begin{proof}
+	\hypo{p1}{P \eif (Q \eif R)} \pr{}
+	\open
+	\hypo{as}{P \eand Q} \as{}
+	\have{p}{P} \ae{as}
+	\have{qr}{Q \eif R} \ce{p1,p}
+	\have{q}{Q} \ae{as}
+	\have{r}{R} \ce{qr,q}
+	\close
+	\have{con}{(P \eand Q) \eif R} \ci{as-r}
+\end{proof}
+\medskip
+
+\filbreak
+\item $Q \eif R \proves (Q \eand S) \eif (R \eor T)$ 
+\begin{proof}
+	\hypo{p1}{Q \eif R} \pr{}
+	\open
+	\hypo{as}{Q \eand S} \as{}
+	\have{q}{Q} \ae{as}
+	\have{r}{R} \ce{p1,q}
+	\have{rt}{R \eor T} \oi{r}
+	\close
+	\have{con}{(Q \eand S) \eif (R \eor T)} \ci{as-rt}
+\end{proof}
+\medskip
+
+\item $\enot(P \eif Q) \proves \enot Q$
+\begin{proof}
+	\hypo{p1}{\enot(P \eif Q)} \pr{}
+	\open
+	\hypo{as}{Q} \as{}
+		\open
+		\hypo{as2}{P} \as{}
+		\have{q}{Q} \reit{as}
+		\close
+	\have{pq}{P \eif Q} \ci{as2-q}
+	\have{npq}{\enot(P \eif Q)} \reit{p1}
+	\close
+	\have{con}{\enot Q} \ni{as-npq}
+\end{proof}
+\medskip
+
+
+\filbreak
+\item $S \eiff T \proves S \eiff (T \eor S)$ 
+\begin{proof}
+	\hypo{p1}{S \eiff T} \pr{}
+	\open
+	\hypo{as1}{S} \as{}
+	\have{t}{T} \be{p1,as1}
+	\have{ts}{T \eor S} \oi{t}
+	\close
+	\have{c1}{S \eif (T \eor S)} \ci{as1-ts}
+	\open
+	\hypo{as2}{T \eor S} \as{}
+		\open
+		\hypo{as3}{\enot S} \as{}
+		\have{t2}{T} \oe{as2,as3}
+		\have{s2}{S} \be{p1,t2}
+		\have{ns}{\enot S} \reit{as3}
+		\close
+	\have{s}{S} \ne{as3-ns}
+	\close
+	\have{c2}{(T \eor S) \eif S} \ci{as2-s}
+	\have{con1}{(S \eif (T \eor S)) \eand ((T \eor S) \eif S)} \ai{c1,c2}
+	\have{con2}{S \eiff (T \eor S)} \bex{con1}
+\end{proof}
+\medskip
+
+
+\filbreak
+\item $D \eor F, D \eif G, F \eif H \proves G \eor H$ 
+\begin{proof}
+	\hypo{p1}{D \eor F} \pr{}
+	\hypo{p2}{D \eif G} \pr{}
+	\hypo{p3}{F \eif H} \pr{}
+	\open
+	\hypo{as}{\enot(G \eor H)} \as{}
+		\open
+		\hypo{as2}{\enot D} \as{}
+		\have{f}{F} \oe{p1,as2}
+		\have{h}{H} \ce{p3,f}
+		\have{gh}{G \eor H} \oi{h}
+		\have{ngh}{\enot (G \eor H)} \reit{as}
+		\close
+	\have{d}{D} \ne{as2-ngh}
+	\have{g}{G} \ce{p2,d}
+	\have{gh2}{G \eor H} \oi{g}
+	\have{ngh2}{\enot (G \eor H)} \reit{as}
+	\close
+	\have{con}{G \eor H} \ne{as-ngh2}
+\end{proof}
+\end{earg}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -784,15 +965,13 @@ Knowing that you need to arrive at a conditional, you also know that you need to
 
 You are familiar with arguments that have this form:
 $$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$$
-The assumptions are $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and the conclusion is $\meta{C}$.  
-
-We may also, however, have a sentence for which it is possible to give a proof with no premises: ${} \proves \meta{A}$. In this case, we say that $\meta{A}$ is a \define{theorem}.
+We may also, however, have a sentence for which it is possible to give a proof with no premises: ${} \proves \meta{C}$. In this case, we say that $\meta{C}$ is a \define{theorem}.
 
 \begin{factboxy}{Theorem}\label{def:syntactic_tautology_in_sl}
-		$\meta{A}$ is a \define{theorem} iff ~ $\proves \meta{A}$
+$\meta{C}$ is a \define{theorem} iff ~ $\proves \meta{C}$
 \end{factboxy}
 
-One such sentence is `$\enot (A \eand \enot A)$'. To show that this sentence is a theorem, we give a proof that has no premises and no undischarged assumptions. To get started, we do, however, have to make an assumption. We will assume `$A \eand \enot A$'. Once we show that this assumption leads to contradiction, we can discharge it and we will have `$\enot (A \eand \enot A)$'. This, then, is the proof:
+One such sentence is `$\enot (A \eand \enot A)$'. To show that this sentence is a theorem, we give a proof that has no premises and no undischarged assumptions. To get started, we do, however, have to make an assumption. We will assume `$A \eand \enot A$'. Once we show that this assumption leads to contradiction, we can discharge it and we will have `$\enot (A \eand \enot A)$'. This is the proof:
 	\begin{proof}
 		\open
 			\hypo{con}{A \eand \enot A}
@@ -801,9 +980,9 @@ One such sentence is `$\enot (A \eand \enot A)$'. To show that this sentence is 
 		\close
 		\have{lnc}{\enot (A \eand \enot A)}\ni{con-na}
 	\end{proof}
-This particular theorem is an instance of what is sometimes called \emph{the Law of Non-Contradiction}.
+This theorem, `$\proves \enot (A \eand \enot A)$' is an instance of what is sometimes called \emph{the Law of Non-Contradiction}.
 
-To show that a sentence is a theorem, you just have to find a suitable proof. It is typically much harder to show that a sentence is \emph{not} a theorem. To do this, you would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if you fail in trying to prove a sentence in a thousand different ways, perhaps the proof is just too long and complex for you to make out. Perhaps you just didn't try hard enough.
+To show that a sentence is a theorem, we just have to find a suitable proof. On the other hand, it is not possible to show that a sentence is \emph{not} a theorem this same way. To show that a sentence is not a theorem with our natural deduction system, we would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if we fail in trying to give a proof for a sentence in a thousand different ways, perhaps the proof is just too long and complex for us to figure out. 
 
 \section{Equivalent, consistent, and inconsistent}
 
@@ -814,35 +993,52 @@ Two sentences \meta{A} and \meta{B} are \define{provably equivalent} iff each ca
 (Equivalently, \meta{A} and \meta{B} are \define{provably equivalent} if $\proves \meta{A} \eiff \meta{B}$.)
 \end{factboxy}
         
-As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent would be much harder: it is just as hard as showing that a sentence is not a theorem. 
+As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent is not possible for t he same reason that it isn't possible to show that a sentence is not a theorem. Even if we fail to produce two proofs showing that two sentences are provably equivalent, that doesn't mean that the proofs don't exist. It just means that we've failed to figure out what they are. 
 
 We also, in \S\ref{consistency--tt}, defined \textit{jointly inconsistent} using truth tables: sentences are jointly inconsistent if there is no line on a truth table where they are all true. Again, we can show that two or more sentences are jointly inconsistent with our natural deduction system. 
 
 \begin{factboxy}{Provably inconsistent}
 The sentences $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably inconsistent} iff, from them, a contradiction can be derived. I.e.\ $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n \proves (\meta{B} \eand \enot \meta{B})$.
-\tcblower
-If they are not \define{inconsistent}, then $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably consistent}.
+%\tcblower
+%If they are not \define{inconsistent}, then $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably consistent}.
 \end{factboxy}
         
-If a set of sentences are provably inconsistent, it is easy to show that they are. We just need use the sentences as premises and then derive a contradiction. (Any contradiction will do.) Showing that some set of sentences are not provably inconsistent is much harder. It would require more than just providing a proof or two; it would require showing that no proof ending in a contradiction is possible.
+To show that a set of sentences are provably inconsistent, we use the sentences as premises and then derive a contradiction. (Any contradiction will do.) For instance, this proof demonstrates that $P \eand Q$ and $\enot P \eor \enot Q$ are provably inconsistent.
 
-Table \ref{table.one-mult-proofs} summarizes whether one, two, or all possible proofs (!) are needed to show that a sentence is a theorem, two sentences are equivalent, or two or more sentences are consistent or inconsistent. 
+	\begin{proof}
+	\hypo{p1}{P \eand Q} \pr{}
+	\hypo{p2}{\enot P \eor \enot Q} \pr{}
+	\have{p}{P} \ae{p1}
+	\have{np}{\enot \enot P} \dn{p}
+	\have{nq}{\enot Q} \oe{p2,np}
+	\have{q}{Q} \ae{p1}
+	\end{proof}
+
+Showing that some set of sentences are \textit{not} provably inconsistent is, as you might guess at this point, not possible. Doing so would require showing, not just that we have failed to derive a contradiction from a set a sentences, but that no such derivation is possible.
+
+Table \ref{table.one-mult-proofs} summarizes what we have covered in this chapter. As we will discuss in the next chapter, when the presence (or the absence) of a logical property cannot be demonstrated using our natural deduction system, we have to resort to using a truth table.
 
 \begin{table*}\centering\sffamily\footnotesize
 \ra{1.25}
 \begin{tabular}{@{}l l l@{}}\toprule
 To check & that it is & that it is not\\\midrule
-theorem & one proof & all possible proofs\\
-equivalent & two proofs & all possible proofs\\
-inconsistent &  one proof  & all possible proofs\\
-consistent & all possible proofs & one proof\\
+theorem & one proof & \textit{not possible with proofs}\\
+equivalent & two proofs & \textit{not possible with proofs}\\
+inconsistent &  one proof  & \textit{not possible with proofs}\\
+consistent & \textit{not possible with proofs} & one proof\\
 \bottomrule
 \end{tabular}
 \caption{This table summarizes what is required to check each of these logical notions.}\label{table.one-mult-proofs}
 \end{table*}
 
 
-\practiceproblems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercises for chapter on proof theoretic concepts
+
+\section{Practice exercises}
+\setcounter{ProbPart}{0}
+
+
 \problempart
 Show that each of the following sentences is a theorem:
 \begin{earg}
@@ -875,8 +1071,18 @@ Show that each of the following pairs of sentences are provably equivalent:
 \problempart
 If you know that $\meta{A}\proves\meta{B}$, what can you say about $(\meta{A}\eand\meta{C})\proves\meta{B}$? What about $(\meta{A}\eor\meta{C})\proves\meta{B}$? Explain your answers.
 
-\
 
 \problempart In this chapter, we claimed that it is just as hard to show that two sentences are not provably equivalent, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem iff \meta{A} and \meta{B} were provably equivalent.)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  answers
+
+\section{Answers}
+\setcounter{ProbPart}{0}
+
+\problempart
+
+
 
 
