@@ -96,39 +96,26 @@ Valid 				& proof or a truth table 							& truth table \\
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
 
+\problempart  For each of the following, if the argument is valid, give a proof. If it is not valid, make a truth table showing that it is not. 
+\begin{earg}
+\item $\enot (P \eor Q) \proves P \eand Q$
 
-\problempart Use either a derivation or a truth table for each of the following. 
-\begin{enumerate}%[label=(\arabic*)]
-\item Show that $A \eif [((B \eand C) \eor D) \eif A]$ is a tautology.
-\item Show that $A \eif (A \eif B)$ is not a tautology
-\item Show that the sentence $A \eif \enot{A}$ is not a contradiction.
-\item Show that the sentence $A \eiff \enot A$ is a contradiction. 
-\item Show that the sentence $ \enot (W \eif (J \eor J)) $ is contingent
-\item Show that the sentence $ \enot(X \eor (Y \eor Z)) \eor (X \eor (Y \eor Z))$ is not contingent
- \item Show that the sentence $B \eif \enot S$ is equivalent to the sentence $\enot \enot B \eif \enot S$
-\item Show that the sentence $ \enot (X \eor O) $ is not equivalent to the sentence $X \eand O$
-\item Show that the sentences $\enot(A \eor B)$, $C$, $C \eif A$  are jointly inconsistent.
-\item Show that the sentences $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ are jointly consistent
-\item Show that $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ is valid.
-\item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid. 
-\end{enumerate}
+\item $\enot(A \eor B) \proves C \eif \enot A$
 
+\item $\enot(A \eor B) \proves B \eif A$
 
-\problempart Use either a derivation or a truth table for each of the following. 
-\begin{enumerate}%[label=(\arabic*)]
-\item Show that $A \eif (B \eif A)$ is a tautology
-\item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a tautology
-\item Show that $ Z \eor (\enot Z \eiff Z) $ is contingent
-\item show that $ (L \eiff ((N \eif N) \eif L)) \eor H $ is not contingent
-\item Show that $ (A \eiff A) \eand (B \eand \enot B)$ is a contradiction
-\item Show that $ (B \eiff (C \eor B)) $ is not a contradiction.
-\item Show that $ ((\enot X \eiff X) \eor X) $ is equivalent to $X$
-\item Show that $F \eand (K \eand R) $ is not equivalent to $ (F \eiff (K \eiff R)) $
-\item Show that the sentences $ \enot (W \eif W)$, $(W \eiff W) \eand W$, $E \eor (W \eif \enot (E \eand W))$ are inconsistent.
-\item Show that the sentences  $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor R) \eif R) $ are consistent.
-\item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
-\item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid. 
-\end{enumerate}
+\item $\enot(A \eor (B \eor C)) \proves \enot{C}$
+\item $\enot(A \eand (B \eor C)) \proves \enot{C}$ 
+
+\item $((\enot X \eiff X) \eor X) \proves X$
+\item $F \eand (K \eand R) \proves F \eiff (K \eiff R)$
+
+\item $\enot L,  K \eif \enot L \therefore \enot K$
+\item $L, K \eif \enot L \therefore \enot K$ 
+
+\item $\proves A \eif [((B \eand C) \eor D) \eif A]$
+\item $\proves A \eif (A \eif B)$
+\end{earg}
 
 
 
@@ -139,5 +126,74 @@ Valid 				& proof or a truth table 							& truth table \\
 \setcounter{ProbPart}{0}
 
 \problempart
+\begin{earg}
+\item $\enot (P \eor Q) \proves P \eand Q$ is invalid.
 
+\begin{center}
+\begin{tabular}{c c | d e e f   c 	 d e f}
+P& Q&  $\enot$& (P& $\eor$& Q)& \proves& (P& $\eand$& Q)\\ 
+\hline
+T& T&   \TTbf{F}&   T& T& T&\cm&      T& \TTbf{T}& T\Tstrut\\   
+T& F&   \TTbf{F}&   T& T& F&\cm&      T& \TTbf{F}& F\\   
+F& T&   \TTbf{F}&   F& T& T&\cm&      F& \TTbf{F}& T\\   
+F& F& 	 \TTbf{T}&   F& F& F&\xm&      F& \TTbf{F}& F\\  
+\end{tabular}
+\end{center}
+
+\item $\enot(A \eor B) \proves C \eif \enot A$ is valid.
+
+\item $\enot(A \eor B) \proves B \eif A$ is valid.
+
+\item $\enot(A \eor (B \eor C)) \proves \enot{C}$ is valid.
+\item $\enot(A \eand (B \eor C)) \proves \enot{C}$ is invalid. 
+
+\begin{center}
+\begin{tabular}{c c c | d e e e e f   c 	 d f}
+A& B& C&  \enot& (A& \eand& (B& $\eor$& C))& $\proves$&  $\enot$& C\\ 
+\hline
+T& T& T&  \TTbf{F}&   T& T&   T& T& T&\cm &   \TTbf{F}& T\Tstrut\\ 
+T& T& F&  \TTbf{F}&   T& T&   T& T& F&\cm &     \TTbf{T}& F\\ 
+T& F& T&  \TTbf{F}&   T& T&   F& T& T&\cm &     \TTbf{F}& T\\ 
+T& F& F&  \TTbf{T}&   T& F&   F& F& F& \cm &    \TTbf{T}& F\\\arrayrulecolor{light-gray}\hline 
+F& T& T&  \TTbf{T}&   F& F&   T& T& T&\xm &     \TTbf{F}& T\Tstrut\\ 
+F& T& F&  \TTbf{T}&   F& F&   T& T& F& \cm &    \TTbf{T}& F\\ 
+F& F& T&  \TTbf{T}&   F& F&   F& T& T& \xm &    \TTbf{F}& T\\ 
+F& F& F&  \TTbf{T}&   F& F&   F& F& F& \cm  &   \TTbf{T}& F\\ 
+\end{tabular}
+\end{center}
+
+\item $(\enot X \eiff X) \eor X \proves X$ is valid.
+\item $F \eand (K \eand R) \proves F \eiff (K \eiff R)$ is valid.
+
+\item $\enot L,  K \eif \enot L \proves \enot K$ is invalid. 
+
+\begin{center}
+\begin{tabular}{c c | d f    d e e f   c 	 d f}
+$K$& $L$&  $\enot$& $L$,& ($K$& $\eif$& $\enot$& $L$)& \proves&  $\enot$& $K$\\ 
+\hline
+T& T&  \TTbf{F}& T&    T& \TTbf{F}& F& T&\cm&    \TTbf{F}& T\Tstrut\\
+T& F&  \TTbf{T}& F&    T& \TTbf{T}& T& F&\xm&    \TTbf{F}& T\\ 
+F& T&  \TTbf{F}& T&    F& \TTbf{T}& F& T&\cm&    \TTbf{T}& F\\ 
+F& F&  \TTbf{T}& F&    F& \TTbf{T}& T& F&\cm&    \TTbf{T}& F\\
+\end{tabular}
+\end{center} 
+
+\item $L, K \eif \enot L \proves \enot K$ is valid. 
+
+\item $\proves A \eif [((B \eand C) \eor D) \eif A]$ is theorem.
+\item $\proves A \eif (A \eif B)$ is not a theorem---and so not a tautology.
+
+\begin{center}
+\begin{tabular}{c c | c  d e e e f}
+$A$& $B$&  \proves& $A$& $\eif$& ($A$& $\eif$& $B$)\\ 
+\hline
+T& T&\cm&    T& \TTbf{T}&   T& T& T\Tstrut\\     
+T& F&\xm&    T& \TTbf{F}&   T& F& F\\     
+F& T&\cm&    F& \TTbf{T}&   F& T& T\\     
+F& F&\cm&    F& \TTbf{T}&   F& T& F\\ 
+\end{tabular}
+\end{center}
+
+
+\end{earg}
 
