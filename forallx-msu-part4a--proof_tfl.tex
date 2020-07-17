@@ -616,22 +616,30 @@ In chapter \ref{s:NDVeryIdea}, we discussed some reasons to prefer natural deduc
 \problempart
 Give a proof for each argument.
 \begin{earg}
-\item $\enot P \eif (Q \eor P), \enot P \proves Q$
-\item $D \eand H, H \eiff J  \proves J \eor N$ 
-\item $G \eand (H \eand J), (H \eor J) \eif K \proves K$
-\item $P \eand (Q \eor R), P \eif \enot R \proves Q \eor S$
+\item $\enot P \eif (Q \eor P), \enot P \proves Q$\smallskip
+\item $D \eand H, H \eiff J  \proves J \eor N$\smallskip 
+\item $G \eand (H \eand J), (H \eor J) \eif K \proves K$\smallskip
+\item $P \eand (Q \eor R), P \eif \enot R \proves Q \eor S$\smallskip
 \end{earg}
 
 
 \problempart
 Give a proof for each argument.
 \begin{earg}
-\item $P \eif (Q \eif R) \proves (P \eand Q) \eif R$
-\item $Q \eif R \proves (Q \eand S) \eif (R \eor T)$ 
-\item $\enot(P \eif Q) \proves \enot Q$
-\item $S \eiff T \proves S \eiff (T \eor S)$ 
-\item $D \eor F, D \eif G, F \eif H \proves G \eor H$ 
+\item $P \eif (Q \eif R) \proves (P \eand Q) \eif R$\smallskip
+\item $Q \eif R \proves (Q \eand S) \eif (R \eor T)$\smallskip 
+\item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$\smallskip
+\item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$\smallskip
+\item $C\eif(E\eand G), \enot C \eif G \proves G$\smallskip
+\item $\enot(P \eif Q) \proves \enot Q$\smallskip
+\item $S \eiff T \proves S \eiff (T \eor S)$\smallskip 
+\item $D \eor F, D \eif G, F \eif H \proves G \eor H$\smallskip
+\item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
 \end{earg}
+
+
+\problempart
+If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, you know that the argument is valid), then is it possible to know if $(\meta{A} \eand \meta{C}) \proves \meta{B}$ is valid? Is it possible to know if $(\meta{A} \eif \meta{B}) \eif \meta{B} \proves \meta{B}$ is valid? Explain your answers.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -673,7 +681,7 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
+
 \item $P \eand (Q \eor R), P \eif \enot R \proves Q \eor S$
 \begin{proof}
 	\hypo{p1}{P \eand (Q \eor R)} \pr{}
@@ -704,7 +712,7 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
+
 \item $Q \eif R \proves (Q \eand S) \eif (R \eor T)$ 
 \begin{proof}
 	\hypo{p1}{Q \eif R} \pr{}
@@ -715,6 +723,62 @@ Give a proof for each argument.
 	\have{rt}{R \eor T} \oi{r}
 	\close
 	\have{con}{(Q \eand S) \eif (R \eor T)} \ci{as-rt}
+\end{proof}
+\medskip
+
+
+\item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
+\begin{proof}
+\hypo{MnNnM}{M \eand (\enot N \eif \enot M)} \pr{}
+\have{M}{M}\ae{MnNnM}
+\have{nNnM}{\enot N \eif \enot M}\ae{MnNnM}
+\open
+	\hypo{nN}{\enot N} \as{}
+	\have{nM}{\enot M}\ce{nNnM, nN}
+	\have{M2}{M} \reit{M}
+\close
+\have{N}{N} \ne{nN-M2}
+\have{NM}{N \eand M}\ai{M,N}
+\have{con}{(N \eand M) \eor \enot M}\oi{NM}	
+\end{proof}
+\medskip
+
+\filbreak
+\item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
+\begin{proof}
+\hypo{zkym}{(Z \eand K) \eiff (Y \eand M)} \pr{}
+\hypo{ddm}{D \eand (D \eif M)} \pr{}
+\have{d}{D}\ae{ddm}
+\have{dm}{D \eif M}\ae{ddm}
+\have{m}{M}\ce{d,dm}
+\open
+	\hypo{y}{Y} \as{}
+	\have{ym}{Y \eand M}\ai{m,y}
+	\have{zk}{Z \eand K}\be{zkym, ym}
+	\have{z}{Z}\ae{zk}
+\close
+\have{yz}{Y \eif Z}\ci{y-z}
+\end{proof}
+\medskip
+
+\filbreak
+\item $C\eif(E\eand G), \enot C \eif G \proves G$
+\begin{proof}
+\hypo{ceg}{C \eif (E \eand G)} \pr{}
+\hypo{ncg}{\enot C \eif G} \pr{}
+\open
+        \hypo{ng}{\enot G} \as{}
+        \open
+                \hypo{c}{C} \as{}
+                \have{eg}{E \eand G}\ce{ceg, c}
+                \have{g1}{G}\ae{eg}
+                \have{ng2}{\enot G} \reit{ng}
+        \close
+        \have{nc}{\enot C}\ni{c-ng2}
+        \have{g2}{G}\ce{ncg, nc}
+        \have{ng3}{\enot G} \reit{ng}
+\close
+\have{con}{G}\ip{ng-ng3}
 \end{proof}
 \medskip
 
@@ -784,8 +848,15 @@ Give a proof for each argument.
 	\close
 	\have{con}{G \eor H} \ne{as-ngh2}
 \end{proof}
-\end{earg}
 
+\item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
+\end{earg}
+\bigskip
+
+\problempart
+If $\meta{A} \proves \meta{B}$ is valid, then $(\meta{A} \eand \meta{C})\proves \meta{B}$ is valid. We know this because if $\meta{A} \proves \meta{B}$, then there is some proof with assumption $\meta{A}$ that ends with $\meta{B}$, and no undischarged assumptions other than $\meta{A}$. Now, if we start a proof with assumption $(\meta{A} \eand \meta{C})$, we can obtain $\meta{A}$ by $\eand$E. We can now copy and paste the original proof of $\meta{B}$ from $\meta{A}$, adding 1 to every line number and line number citation. The result will be a proof of $\meta{B}$ from assumption $\meta{A}$.
+
+We also know that $(\meta{A} \eif \meta{B}) \eif \meta{A} \proves \meta{B}$ is valid. Since, there is some proof with assumption $\meta{A}$ that ends with $\meta{B}$, we can assume \meta{A}, derive \meta{B}, and then use the conditional-introduction rule to get $(\meta{A} \eif \meta{B})$. We use the condtional-elimination rule on $(\meta{A} \eif \meta{B})$ and the premise, and get \meta{B}, the conclusion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1040,39 +1111,22 @@ consistent & \textit{not possible with proofs} & one proof\\
 
 
 \problempart
-Show that each of the following sentences is a theorem:
+Give a proof for each of these theorems.
 \begin{earg}
-\item $O \eif O$
-\item $N \eor \enot N$
-\item $J \eiff [J\eor (L\eand\enot L)]$
-\item $((A \eif B) \eif A) \eif A$ 
+\item $\proves O \eif O$\smallskip
+\item $\proves N \eor \enot N$\smallskip
+\item $\proves (P \eif Q) \eor (Q \eif P)$\smallskip
+\item $\proves J \eiff [J\eor (L\eand\enot L)]$\smallskip
+\item $\proves ((A \eif B) \eif A) \eif A$\smallskip 
 \end{earg}
 
+
 \problempart
-Provide proofs to show each of the following:
+Show that each of the following pairs of sentences are provably equivalent. (To indicate that the inference from the premise to the conclusion goes from the first sentence to the second and vice versa, we use the symbols $\leftproves\proves$.)
 \begin{earg}
-\item $C\eif(E\eand G), \enot C \eif G \proves G$
-\item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
-\item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
-\item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
+\item $T\eif S \leftproves\proves \enot S \eif \enot T$
+\item $R \eif Q \leftproves\proves \enot(R \eand \enot Q)$
 \end{earg}
-
-\problempart
-Show that each of the following pairs of sentences are provably equivalent:
-\begin{earg}
-\item $R \eiff E$, $E \eiff R$
-\item $G$, $\enot\enot\enot\enot G$
-\item $T\eif S$, $\enot S \eif \enot T$
-\item $U \eif I$, $\enot(U \eand \enot I)$
-\item $\enot (C \eif D), C \eand \enot D$
-\item $\enot G \eiff H$, $\enot(G \eiff H)$ 
-\end{earg}
-
-\problempart
-If you know that $\meta{A}\proves\meta{B}$, what can you say about $(\meta{A}\eand\meta{C})\proves\meta{B}$? What about $(\meta{A}\eor\meta{C})\proves\meta{B}$? Explain your answers.
-
-
-\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not provably equivalent, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem iff \meta{A} and \meta{B} were provably equivalent.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1081,8 +1135,173 @@ If you know that $\meta{A}\proves\meta{B}$, what can you say about $(\meta{A}\ea
 \section{Answers}
 \setcounter{ProbPart}{0}
 
+
+\problempart
+\begin{earg}
+\item $\proves O \eif O$
+\myanswer{\begin{proof}
+\open
+	\hypo{o}{O} \as{}
+	\have{o2}{O}\by{R}{o}
+\close
+\have{con}{O \eif O}\ci{o-o2}
+\end{proof}}
+\bigskip
+
+\item $\proves N \eor \enot N$
+\begin{proof}
+\open
+        \hypo{ncon}{\enot (N \eor \enot N)} \as{}
+        \open
+                \hypo{n}{N} \as{}
+                \have{nnn1}{N \eor \enot N}\oi{n}
+                \have{ncon2}{\enot (N \eor \enot N)} \reit{ncon}
+        \close
+        \have{nn}{\enot N} \ni{n-ncon2}
+        \have{nnn2}{N \eor \enot N} \oi{nn}
+        \have{ncon3}{\enot (N \eor \enot N)} \reit{ncon}
+\close
+\have{con}{N \eor \enot N} \ne{ncon-ncon3}
+\end{proof}
+\bigskip
+
+\item $\proves (P \eif Q) \eor (Q \eif P)$
+\begin{proof}
+\open
+        \hypo{ncon}{\enot ((P \eif Q) \eor (Q \eif P))} \as{}
+        \open
+        		\hypo{p}{P} \as{}
+        		\open
+        			\hypo{nq}{\enot Q} \as{}
+        			\open
+        				\hypo{q}{Q} \as{}
+        				\have{p2}{P} \reit{p}
+				\close
+				\have{qp}{Q \eif P} \ci{q-p2}
+				\have{pqqp}{(P \eif Q) \eor (Q \eif P)} \oi{qp}
+				\have{ncon2}{\enot ((P \eif Q) \eor (Q \eif P))} \reit{ncon}
+			\close
+			\have{q}{Q} \ne{nq-ncon2}
+		\close
+		\have{pq}{P \eif Q} \ci{p-q}
+		\have{pqqp2}{(P \eif Q) \eor (Q \eif P)} \oi{pq}
+		\have{ncon2}{\enot ((P \eif Q) \eor (Q \eif P))} \reit{ncon}
+\close
+\have{con}{(P \eif Q) \eor (Q \eif P)} \ne{ncon-ncon2}
+\end{proof}
+\bigskip
+
+\item $\proves J \eiff (J\eor (L \eand \enot L))$
+\myanswer{\begin{proof}
+\open
+	\hypo{j1}{J} \as{}
+	\have{jlnl1}{J \eor (L \eand \enot L)}\oi{j1}
+\close
+\have{cond1}{J \eif (J\eor (L \eand \enot L))} \ci{j1-jlnl1}
+\open
+	\hypo{jlnl2}{J \eor (L \eand \enot L)} \as{}
+	\open
+		\hypo{lnl}{L \eand \enot L} \as{}
+		\have{l}{L}\ae{lnl}
+		\have{nl}{\enot L}\ae{lnl}
+	\close
+	\have{nlnl}{\enot (L \eand \enot L)}\ne{lnl-nl}
+	\have{j5}{J}\oe{jlnl2, nlnl}
+\close
+\have{cond2}{(J \eor (L \eand \enot L)) \eif J} \ci{jlnl2-j5}
+\have{conj}{(J \eif (J\eor (L \eand \enot L))) \eand ((J \eor (L \eand \enot L)) \eif J)} \ai{cond1,cond2}
+\have{con}{J \eiff [J\eor (L \eand \enot L)]}\bex{conj}
+\end{proof}}
+\bigskip
+
+\item $((A \eif B) \eif A) \eif A$ 
+\begin{proof}
+\open
+	\hypo{aba}{(A \eif B) \eif A} \as{}
+	\open 
+		\hypo{na}{\enot A} \as{}
+		\open
+		\have{nab}{\enot (A \eif B)} \as{}
+			\open
+				\hypo{a}{A} \as{}
+					\open
+					\hypo{nb}{\enot B} \as{}
+					\have{a2}{A} \reit{a}
+					\have{na2}{\enot A} \reit{na}
+				\close
+				\have{b}{B} \ne{nb-na2}
+			\close
+		\have{ab}{A \eif B}\ci{a-b}
+		\have{nab2}{\enot (A \eif B)}\reit{nab}
+	\close
+	\have{ab2}{A \eif B} \ne{nab-nab2}
+	\have{a}{A} \ce{aba,ab2}
+	\have{na3}{\enot A} \reit{na}
+\close
+\have{a2}{A} \ne{aba-na3}
+\close
+\have{con}{((A \eif B) \eif A) \eif A}\ci{aba-a2}
+\end{proof}
+\end{earg}
+
+
 \problempart
 
+\begin{earg}
+\item $T\eif S \leftproves\proves \enot S \eif \enot T$
+\begin{proof}
+\hypo{ts}{T \eif S} \pr{}
+\open
+	\hypo{ns}{\enot S} \as{}
+		\open
+		\hypo{t}{T} \as{}
+		\have{s}{S} \ce{ts,t}
+		\have{ns2}{\enot S} \reit{ns}
+		\close
+	\have{nt}{\enot T} \ni{ns-ns2}
+\close
+\have{nsnt}{\enot S \eif \enot T}\ci{ns-nt}
+\end{proof}
 
+\begin{proof}
+\hypo{nsnt}{\enot S \eif \enot T} \pr{}
+\open
+	\hypo{t}{T} \as{}
+	\open
+		\hypo{ns}{\enot S} \as{}
+		\have{nt}{\enot T}\ce{nsnt, ns}
+		\have{t2}{T}\reit{t}
+	\close
+	\have{s}{S}\ne{ns-t2}
+\close
+\have{ts}{T \eif S} \ci{t-s}
+\end{proof}
+\medskip
 
+\item $R \eif Q \leftproves\proves \enot(R \eand \enot Q)$
+\begin{proof}
+\hypo{ui}{R \eif Q} \pr{}
+\open
+	\hypo{uni}{R \eand \enot Q} \as{}
+	\have{u}{R}\ae{uni}
+	\have{ni}{\enot Q}\ae{uni}
+	\have{i}{Q}\ce{ui, u}
+\close
+\have{con}{\enot (R \eand \enot Q)}\ni{uni-i}
+\end{proof}
 
+\begin{proof}
+\hypo{con}{\enot (R \eand \enot Q)} \pr{}
+\open
+	\hypo{u}{R} \as{}
+	\open
+		\hypo{ni}{\enot Q} \as{}
+		\have{uni}{R \eand \enot Q}\ai{u, ni}
+		\have{red}{\enot (R \eand \enot Q)}\reit{con}
+	\close
+	\have{i}{Q}\ne{ni-red}
+\close
+\have{ui}{R \eif Q}\ci{u-i}
+\end{proof}
+
+\end{earg}
