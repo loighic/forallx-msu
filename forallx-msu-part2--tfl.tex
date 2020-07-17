@@ -417,13 +417,15 @@ There is a complication with treating `unless' as a disjunction, however. As we 
 		\item[C] Those creatures are centaurs. 
 		\item[V] Those creatures are vampires.
 	\end{ekey}
+Always use capital letters for the atomic sentences, and, in this case, be especially careful to distinguish between $V$ and $\eor$.
+
 \begin{earg}
 \item Those creatures are not aliens.
 \item Those creatures are aliens, or they are not.
 \item Those creatures are either vampires or centaurs.
 \item Those creatures are neither vampires nor centaurs.
-\item If those creatures are centaurs, then they are neither vampires nor aliens.
-\item Unless those creatures are aliens, they are either centaurs or they are vampires.
+\item If those creatures are centaurs, then it is not the case that they are vampires or aliens.
+\item Either those creatures are aliens, or they are either centaurs or they are vampires.
 \end{earg}
 
 \problempart Using the symbolization key given, translate each English sentence into TFL.
@@ -435,21 +437,21 @@ There is a complication with treating `unless' as a disjunction, however. As we 
 \item[E] Mr. Edwards was murdered.
 \item[F] The murder weapon was a frying pan.
 \end{ekey}
+
 \begin{earg}
 \item Either Mr. Adams or Mr. Edwards was murdered.
 \item If Mr. Adams was murdered, then the cook did it.
 \item If Mr. Edwards was murdered, then the cook did not do it.
 \item Either the butler did it, or the Duchess is lying.
-\item The cook did it only if the Duchess is lying.
-\item If the murder weapon was a frying pan, then the culprit must have been the cook.
-\item If the murder weapon was not a frying pan, then the culprit was either the cook or the butler.
+\item The cook did it only if the Duchess is lying. 
+\item If the murder weapon was a frying pan, then the cook did it.
+\item If the murder weapon was not a frying pan, then either the cook or the butler did it.
 \item Mr. Adams was murdered if and only if Mr. Edwards was not murdered.
-\item The Duchess is lying, unless it was Mr. Edwards who was murdered.
-\item If Mr. Adams was murdered, he was done in with a frying pan.
-\item Since the cook did it, the butler did not.
+\item The Duchess is lying, or Mr. Edwards was not murdered.
+\item If Mr. Adams was murdered, he was killed with a frying pan.
+\item The cook did it, and the butler did not.
 \item Of course the Duchess is lying!
 \end{earg}
-
 
 \problempart Using the symbolization key given, translate each English sentence into TFL.\label{pr.avacareer}
 	\begin{ekey}
@@ -466,12 +468,12 @@ There is a complication with treating `unless' as a disjunction, however. As we 
 \item Ava is a firefighter, unless she is an electrician.
 \item Harrison is an unsatisfied electrician.
 \item Neither Ava nor Harrison is an electrician.
-\item Both Ava and Harrison are electricians, but neither of them find it satisfying.
-\item Harrison is satisfied only if he is a firefighter.
+\item Both Ava and Harrison are electricians, but Ava is satisfied with her career and Harrison is not satisfied with his career.
+\item Harrison is satisfied with his career only if he is a firefighter.
 \item If Ava is not an electrician, then neither is Harrison, but if she is, then he is too.
 \item Ava is satisfied with her career if and only if Harrison is not satisfied with his.
-\item If Harrison is both an electrician and a firefighter, then he must be satisfied with his work.
-\item It cannot be that Harrison is both an electrician and a firefighter.
+\item If Harrison is both an electrician and a firefighter, then he is satisfied with his career.
+\item It is not the case that Harrison is both an electrician and a firefighter.
 \item Harrison and Ava are both firefighters if and only if neither of them is an electrician.
 \end{earg}
 
@@ -503,11 +505,11 @@ Using the symbolization key given, translate each English-language sentence into
 \label{pr.spies}
 Give a symbolization key, and then translate the following English sentences into TFL.
 \begin{earg}
-\item Alice and Bob are both spies.
+\item It is not the case that Alice and Bob are both spies.
 \item If either Alice or Bob is a spy, then the code has been broken.
-\item If neither Alice nor Bob is a spy, then the code remains unbroken.
-\item The letter is in German embassy, unless someone has broken the code.
-\item Either the code has been broken or it has not, but the letter is in German embassy.
+\item If neither Alice nor Bob is a spy, then the code has not been unbroken.
+\item The letter is in the German embassy, unless someone has broken the code.
+\item Either the code has been broken or it has not, but the letter is in German embassy regardless.
 \item Either Alice or Bob is a spy, but not both.
 \end{earg}
 
@@ -515,8 +517,10 @@ Give a symbolization key, and then translate the following English sentences int
 \problempart
 For each argument, first, make a symbolization key, and then translate all of the sentences of the argument into TFL.
 \begin{earg}
-\item If Dorothy plays the piano in the morning, then Roger wakes up cranky. Dorothy plays piano in the morning unless she is distracted. So if Roger does not wake up cranky, then Dorothy must be distracted.
+\item If Dorothy plays the piano in the morning, then Roger wakes up cross. Dorothy plays piano in the morning unless she is distracted. So, if Roger does not wake up cross, then Dorothy must be distracted.
+
 \item It will either rain or snow on Tuesday. If it rains, Neville will be gloomy. If it snows, Neville will be cold. Therefore, Neville will either be gloomy or cold on Tuesday.
+
 \item If Zoey remembered to do her chores, then the house is clean but not neat. If she forgot, then the house is neat but not clean. Therefore, the house is either neat or clean; but not both.
 \end{earg}
 
@@ -530,7 +534,7 @@ For each argument, first, make a symbolization key, and then translate all of th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Answers
 
-\section{Practice exercises}
+\section{Answers}
 \setcounter{ProbPart}{0}
 
 \problempart 
@@ -548,9 +552,9 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[] \myanswer{$(V \eor C)$}
 \item Those creatures are neither vampires nor centaurs.
 \item[] \myanswer{$\enot (C \eor V)$}
-\item If those creatures are centaurs, then they are neither vampires nor aliens.
-\item[] \myanswer{$(C \eif \enot(G \eor V))$}
-\item Unless those creatures are aliens, they are either centaurs or they are vampires.
+\item If those creatures are centaurs, then it is not the case that they are vampires or aliens.
+\item[] \myanswer{$(C \eif \enot(V \eor A))$}
+\item Either those creatures are aliens, or they are either centaurs or they are vampires.
 \item[] \myanswer{$(A \eor (C \eor V))$}
 \end{earg}
 
@@ -572,19 +576,19 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[] \myanswer{$(E \eif \enot C)$}
 \item Either the butler did it, or the Duchess is lying.
 \item[] \myanswer{$(B \eor D)$}
-\item The cook did it only if the Duchess is lying.
-\item[] \myanswer{$(C \eif D)$}
-\item If the murder weapon was a frying pan, then the culprit must have been the cook.
+\item The cook did it only if the Duchess is lying. (See table \ref{table.conditional.English}.) 
+\item[] $(C \eif D)$
+\item If the murder weapon was a frying pan, then the cook did it.
 \item[] \myanswer{$(F \eif C)$}
-\item If the murder weapon was not a frying pan, then the culprit was either the cook or the butler.
+\item If the murder weapon was not a frying pan, then either the cook or the butler did it.
 \item[] \myanswer{$(\enot F \eif (C \eor B))$}
 \item Mr. Adams was murdered if and only if Mr. Edwards was not murdered.
 \item[] \myanswer{$(A \eiff \enot E)$}
-\item The Duchess is lying, unless it was Mr. Edwards who was murdered.
-\item[] \myanswer{$(D \eor E)$}
-\item If Mr. Adams was murdered, he was done in with a frying pan.
+\item The Duchess is lying, or Mr. Edwards was not murdered.
+\item[] \myanswer{$(D \eor \enot E)$}
+\item If Mr. Adams was murdered, he was killed with a frying pan.
 \item[] \myanswer{$(A \eif F)$}
-\item Since the cook did it, the butler did not.
+\item The cook did it, and the butler did not.
 \item[] \myanswer{$(C \eand \enot B)$}
 \item Of course the Duchess is lying!
 \item[] \myanswer{$D$}
@@ -611,17 +615,17 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[] \myanswer{$(E_2 \eand \enot S_2)$}
 \item Neither Ava nor Harrison is an electrician.
 \item[] \myanswer{$\enot (E_1 \eor E_2)$}
-\item Both Ava and Harrison are electricians, but neither of them find it satisfying.
-\item[] \myanswer{$((E_1 \eand E_2) \eand \enot (S_1 \eor S_2))$}
-\item Harrison is satisfied only if he is a firefighter.
+\item Both Ava and Harrison are electricians, but Ava is satisfied with her career and Harrison is not satisfied with his career.
+\item[] \myanswer{$((E_1 \eand E_2) \eand (S_1 \eand \enot S_2))$}
+\item Harrison is satisfied with his career only if he is a firefighter.
 \item[] \myanswer{$(S_2 \eif F_2)$}
 \item If Ava is not an electrician, then neither is Harrison, but if she is, then he is too.
 \item[] \myanswer{$((\enot E_1 \eif \enot E_2) \eand (E_1 \eif  E_2))$}
 \item Ava is satisfied with her career if and only if Harrison is not satisfied with his.
 \item[] \myanswer{$(S_1 \eiff \enot S_2)$}
-\item If Harrison is both an electrician and a firefighter, then he must be satisfied with his work.
+\item If Harrison is both an electrician and a firefighter, then he is satisfied with his career.
 \item[] \myanswer{$((E_2 \eand F_2) \eif S_2)$}
-\item It cannot be that Harrison is both an electrician and a firefighter.
+\item It is not the case that Harrison is both an electrician and a firefighter.
 \item[] \myanswer{$\enot (E_2 \eand F_2)$}
 \item Harrison and Ava are both firefighters if and only if neither of them is an electrician.
 \item[] \myanswer{$((F_2 \eand F_1) \eiff \enot(E_2 \eor E_1))$}
@@ -647,11 +651,11 @@ For each argument, first, make a symbolization key, and then translate all of th
 \medskip
 
 \item John Coltrane did not play both tenor sax and tuba. 
-\item[~] \myanswer{$\enot(J_1 \eand J_3)$ or $\enot J_1 \eor \enot J_3$} 
+\item[~] $\enot(J_1 \eand J_3)$ or $\enot J_1 \eor \enot J_3$
 \medskip
 
-\item John Coltrane did not play tenor sax unless he also played soprano sax. 
-\item[~] \myanswer{$\enot J_1 \eor J_2$}
+\item If John Coltrane did not play tenor sax, then he played soprano sax. 
+\item[~] \myanswer{$\enot J_1 \eif J_2$}
 \medskip
 
 \item John Coltrane did not play tuba, but Miles Davis did. 
@@ -666,12 +670,12 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[~] \myanswer{$M_1 \eif (J_1 \eor (J_2 \eor J_3))$} 
 \medskip
 
-\item If John Coltrane played tuba then Miles Davis played neither trumpet nor tuba. 
-\item[~] \myanswer{$J_3 \eif \enot(M_1 \eor M_2)$ or $J_3 \eif (\enot M_1 \eand \enot M_2)$} 
+\item It is not the case that if John Coltrane played tuba, then Miles Davis played trumpet or tuba. 
+\item[~] $\enot(J_3 \eif (M_1 \eor M_2))$
 \medskip
 
 \item Miles Davis and John Coltrane both played tuba if and only if Coltrane did not play tenor sax and Miles Davis did not play trumpet. 
-\item[~] \myanswer{$(J_3 \eand M_2) \eiff (\enot J_1 \wedge \enot M_1)$ or $(J_3 \eand M_2) \eiff \enot (J_1 \eor M_1)$} 
+\item[~] \myanswer{$(J_3 \eand M_2) \eiff (\enot J_1 \eand \enot M_1)$ or $(J_3 \eand M_2) \eiff \enot (J_1 \eor M_1)$} 
 \end{earg}
 
 \problempart
@@ -683,12 +687,12 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[G] The letter is in German embassy.
 \end{ekey}}
 \begin{earg}
-\item Alice and Bob are both spies.
-\item[] \myanswer{$(A \eand B)$}
+\item It is not the case that Alice and Bob are both spies.
+\item[] \myanswer{$\enot(A \eand B)$}
 \item If either Alice or Bob is a spy, then the code has been broken.
 \item[] \myanswer{$((A \eor B) \eif C)$}
-\item If neither Alice nor Bob is a spy, then the code remains unbroken.
-\item[] \myanswer{$(\enot (A \eor B) \eif \enot C)$}
+\item If neither Alice nor Bob is a spy, then the code has not been unbroken.
+\item[] \myanswer{$\enot (A \eor B) \eif \enot C$}
 \item The letter is in the German embassy, unless someone has broken the code.
 \item[] \myanswer{$(G \eor C)$}
 \item Either the code has been broken or it has not, but the letter is in German embassy regardless.
@@ -702,10 +706,10 @@ For each argument, first, make a symbolization key, and then translate all of th
 \problempart
 For each argument, write a symbolization key and symbolize all of the sentences of the argument in TFL.
 \begin{earg}
-\item If Dorothy plays the piano in the morning, then Roger wakes up cranky. Dorothy plays piano in the morning unless she is distracted. So if Roger does not wake up cranky, then Dorothy must be distracted.
+\item If Dorothy plays the piano in the morning, then Roger wakes up cross. Dorothy plays piano in the morning unless she is distracted. So, if Roger does not wake up cross, then Dorothy must be distracted.
 \myanswer{\begin{ekey}
 \item[P] Dorothy plays the piano in the morning.
-\item[C] Roger wakes up cranky.
+\item[C] Roger wakes up cross.
 \item[D] Dorothy is distracted.
 \end{ekey}}
 \item[] \myanswer{$(P \eif C), (P \eor D) \therefore (\enot C \eif D)$}
@@ -972,7 +976,7 @@ $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
 
 \problempart
 \label{pr.wiffTFL}
-For each of the following, (a) is it a sentence of TFL, strictly speaking, and (b) is it a sentence of TFL, allowing for our relaxed bracketing conventions?
+For each of the following, (a) is it a sentence of TFL, strictly speaking, and (b) is it a sentence of TFL, allowing for our relaxed bracketing conventions? If, by either of those standards, it is a sentence of TFL, then (c) what is the main logical operator?
 \begin{earg}
 \item $(A)$\hfill \myanswer{(a) no (b) no}
 \medskip
@@ -1004,13 +1008,17 @@ For each of the following, (a) is it a sentence of TFL, strictly speaking, and (
 %\\\myanswer{No. Atomic sentences contain atomic sentences (trivially). And every more complicated sentence is built up out of less complicated sentences, that were in turn built out of less complicated sentences, \ldots, that were ultimately built out of atomic sentences.}\\
 
 
-\problempart
-$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$\\
-The scope of the left-most `$\eif$' is `$(H \eif I)$'.\\
-The scope of the right-most `$\eif$' is `$(I \eif H)$'.\\
-The scope of the left-most `$\eor$ is `$\bigl[(H \eif I) \eor (I \eif H)\bigr]$'\\
-The scope of the right-most `$\eor$' is `$(J \eor K)$'\\
-The scope of the `$\eand$' is the entire sentence, and so the `$\eand$' is the main logical operator and the sentence is a conjunction.
+\problempart $\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$\medskip
+
+\noindent The scope of the left-most `$\eif$' is `$(H \eif I)$'. 
+
+\noindent The scope of the right-most `$\eif$' is `$(I \eif H)$'. 
+
+\noindent The scope of the left-most `$\eor$ is `$\bigl[(H \eif I) \eor (I \eif H)\bigr]$'.
+
+\noindent The scope of the right-most `$\eor$' is `$(J \eor K)$'.
+
+\noindent The scope of the `$\eand$' is the entire sentence, and so the `$\eand$' is the main logical operator and the sentence is a conjunction.
 
 
 
