@@ -23,6 +23,8 @@
 \colorlet{ltleadbeater}{black!50}
 \colorlet{vltleadbeater}{black!3}
 
+\definecolor{darkred}{rgb}{0.5,0,0} % TB: used to color links in red
+
 
 %RZ: typefaces 
 
@@ -46,7 +48,7 @@
 \usepackage{tabularx}
 \usepackage{colortbl} 		% to color the rows (also requires xcolor)
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
-\newcommand\Tstrut{\rule{0pt}{2.5ex}}         % = `top' strut for truth tables
+
 
 
 %RZ: Make sure we have a copyright symbol
@@ -68,6 +70,25 @@
 \usepackage{graphicx}
 \usepackage{subcaption}					% for placing figures next to each other
 \usepackage{sidecap}						% captions next to figures
+
+
+
+\setcounter{tocdepth}{0} %TB: only chapters and sections to appear
+
+\setlength{\columnsep}{2em} % Sets 2em space between columns when calling multicol 
+
+\newcommand\myanswer[1]{\textcolor{leadbeater}{#1}} % TB: puts model answers in blue
+
+
+% TB: information originally in the main body; but it is style information, so I have included it here.
+\hypersetup{pdfinfo={Title={forall x: MSU edition}, Author={P.D. Magnus, Tim Button, J. Rob Loftis, Aaron Thomas-Bolduc, Richard Zach, Gregory Johnson}, Subject={An open access introductory textbook in formal logic}, Keywords={truth-functional logic, propositional logic, natural deduction, fitch}}, %
+  bookmarks={true}, %
+  bookmarksopen = true,
+	colorlinks={true}, %
+	allcolors={dkleadbeater},
+	pdfdisplaydoctitle={true}}
+\urlstyle{same}
+
 
 
 %    ****************************************
@@ -157,6 +178,7 @@
 \def\ered{\ensuremath{\bot}}		% TB: added to give an absurdity sign
 \def\maththe{\rotatebox[origin=c]{180}{$\iota$}} % TB: added to give definite description operator
 \def\proves{\ensuremath{\vdash}}
+\def\leftproves{\ensuremath{\dashv}}
 \def\entails{\ensuremath{\vDash}}
 \def\nproves{\ensuremath{\nvdash}}
 \def\nentails{\ensuremath{\nvDash}}
@@ -306,6 +328,9 @@ fontupper=\footnotesize
 }
 % This starts a new section which is automatically numbered:
 \newcommand*{\problempart}{\par\noindent\refstepcounter{ProbPart}\textbf{\Alph{ProbPart}. }}
+% \addvspace{\baselineskip} Put after \par to increase space before counter. The problem is this puts to much space before the first one (right after the section title).
+
+
 % This bullet is used to indicate that solutions appear at the end of
 % the book.
 \newcommand*{\solutions}{ 
@@ -371,11 +396,36 @@ fontupper=\footnotesize
 \newcolumntype{d}{ c@{\extracolsep{0.3em}}}
 \newcolumntype{e}{@{\extracolsep{0.3em}}c@{\extracolsep{0.3em}}}
 \newcolumntype{f}{@{\extracolsep{0.3em}}c }
-\newcommand*{\TTbf}[1]{\textbf{#1}}
+\newcommand*{\TTbf}[1]{\textbf{#1}} 
+
+\newcommand\Tstrut{\rule{0pt}{2.5ex}}         % = `top' strut for truth tables
 
 % For checking validity with a truth table
 \def\cm{\checkmark} 
 \def\xm{\ding{55}} 	% X mark
+
+
+
+%    ****************************************
+%    *            DIAGRAMS IN TIKZ           *
+%    ****************************************
+% TB: I use diagrams in a few places, always using Tikz.
+%   A. To illustrate an argument for the truth table of the material conditional
+%   B. To draw graphs illustrating small finite interpretations. 
+% All these drawings are done using tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,shapes} 
+
+\tikzset{phantom_shape/.style={thick, fill=black!0, minimum width=30pt, minimum height=30pt}, % TB: renders the shape invisible
+		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
+		white_shape/.style={thick, fill=black!0, draw, minimum width=30pt, minimum height=30pt} % TB: renders a white shape with a black outline
+		}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}  % for circling letters or numbers. Use \circled{1}
+
+\IfFileExists{forallxyyc-local.sty}{\usepackage{forallxyyc-local}}{}
+
 
 
 %    ****************************************
@@ -731,7 +781,7 @@ fontupper=\footnotesize
 % * * *
 % This block defines the natural deduction rules.
 % Rules designated by ordinary letters may be specified with \by{RULE}
-% the : in the TFL rules is there to match Carnap.io. 
+% the colon in the TFL rules is there to match Carnap.io. 
 % * * *
 
 \def\nd*init{%
@@ -846,40 +896,3 @@ fontupper=\footnotesize
 \newcommand*{\existsE}{\Ee}
 
 
-
-\setcounter{tocdepth}{0} %TB: only chapters and sections to appear
-
-\setlength{\columnsep}{2em} % Sets 2em space between columns when calling multicol 
-
-\definecolor{darkred}{rgb}{0.5,0,0} % TB: used to color links in red
-\newcommand\myanswer[1]{\textcolor{leadbeater}{#1}} % TB: puts model answers in blue
-
-% TB: information originally in the main body; but it is style information, so I have included it here.
-\hypersetup{pdfinfo={Title={forall x: MSU edition}, Author={P.D. Magnus, Tim Button, J. Rob Loftis, Aaron Thomas-Bolduc, Richard Zach, Gregory Johnson}, Subject={An open access introductory textbook in formal logic}, Keywords={truth-functional logic, propositional logic, predicate logic, first-order logic, natural deduction, fitch}}, %
-  bookmarks={true}, %
-  bookmarksopen = true,
-	colorlinks={true}, %
-	allcolors={dkleadbeater},
-	pdfdisplaydoctitle={true}}
-\urlstyle{same}
-
-
-%    ****************************************
-%    *            DIAGRAMS IN TIKZ           *
-%    ****************************************
-% TB: I use diagrams in a few places, always using Tikz.
-%   A. To illustrate an argument for the truth table of the material conditional
-%   B. To draw graphs illustrating small finite interpretations. 
-% All these drawings are done using tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows,positioning,shapes} 
-
-\tikzset{phantom_shape/.style={thick, fill=black!0, minimum width=30pt, minimum height=30pt}, % TB: renders the shape invisible
-		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
-		white_shape/.style={thick, fill=black!0, draw, minimum width=30pt, minimum height=30pt} % TB: renders a white shape with a black outline
-		}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}  % for circling letters or numbers. Use \circled{1}
-
-\IfFileExists{forallxyyc-local.sty}{\usepackage{forallxyyc-local}}{}
