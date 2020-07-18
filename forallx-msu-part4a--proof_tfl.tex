@@ -643,6 +643,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  answers
 
 \section{Answers}
@@ -669,7 +670,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-
+\filbreak
 \item $G \eand (H \eand J), (H \eor J) \eif K \proves K$
 \begin{proof}
 	\hypo{p1}{G \eand (H \eand J)} \pr{}
@@ -695,7 +696,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \medskip
 \end{earg}
 
-
+\filbreak
 \problempart
 \begin{earg}
 \item $P \eif (Q \eif R) \proves (P \eand Q) \eif R$
@@ -726,7 +727,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-
+\filbreak
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
 \begin{proof}
 \hypo{MnNnM}{M \eand (\enot N \eif \enot M)} \pr{}
@@ -778,7 +779,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
         \have{g2}{G}\ce{ncg, nc}
         \have{ng3}{\enot G} \reit{ng}
 \close
-\have{con}{G}\ip{ng-ng3}
+\have{con}{G}\ne{ng-ng3}
 \end{proof}
 \medskip
 
@@ -849,7 +850,36 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 	\have{con}{G \eor H} \ne{as-ngh2}
 \end{proof}
 
+\filbreak
 \item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
+\begin{proof}
+\hypo{p1}{(W \eor X ) \eor (Y \eor Z )} \pr{}
+\hypo{p2}{X \eif Y} \pr{}
+\hypo{p3}{\enot Z} \pr{}
+\open
+	\hypo{nwy}{\enot (W \eor Y)} \as{}
+		\open
+		\hypo{nwx}{\enot (W \eor X)} \as{}
+		\have{yz}{Y \eor Z} \oe{p1,nwx}
+		\have{y}{Y} \oe{p3,yz}
+		\have{wy}{W \eor Y} \oi{y}
+		\have{nwy2}{\enot (W \eor Y)} \reit{nwy}
+		\close
+	\have{wx}{W \eor X} \ne{nwx-nwy2}
+		\open
+		\hypo{x}{X} \as{}
+		\have{y2}{Y} \ce{p2,x}
+		\have{wy}{W \eor Y} \oi{y2}
+		\have{nwy3}{\enot (W \eor Y)} \reit{nwy}
+		\close
+	\have{nx}{\enot X} \ni{x-nwy3}
+	\have{w}{W} \oe{wx,nx}
+	\have{wy2}{W \eor Y} \oi{w}
+	\have{nwy4}{\enot (W \eor Y)} \reit{nwy}
+	\close
+\have{con}{W \eor Y} \ne{nwy-nwy4}
+\end{proof}
+
 \end{earg}
 \bigskip
 
