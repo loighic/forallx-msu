@@ -425,7 +425,7 @@ Always use capital letters for the atomic sentences, and, in this case, be espec
 \item Those creatures are either vampires or centaurs.
 \item Those creatures are neither vampires nor centaurs.
 \item If those creatures are centaurs, then it is not the case that they are vampires or aliens.
-\item Either those creatures are aliens, or they are either centaurs or they are vampires.
+\item Either those creatures are aliens, or they are both centaurs and vampires.
 \end{earg}
 
 \problempart Using the symbolization key given, translate each English sentence into TFL.
@@ -444,10 +444,10 @@ Always use capital letters for the atomic sentences, and, in this case, be espec
 \item If Mr. Edwards was murdered, then the cook did not do it.
 \item Either the butler did it, or the Duchess is lying.
 \item The cook did it only if the Duchess is lying. 
-\item If the murder weapon was a frying pan, then the cook did it.
+\item If the murder weapon was not a frying pan, then the cook did not do it.
 \item If the murder weapon was not a frying pan, then either the cook or the butler did it.
 \item Mr. Adams was murdered if and only if Mr. Edwards was not murdered.
-\item The Duchess is lying, or Mr. Edwards was not murdered.
+\item It is not the case that either the Duchess is lying or Mr. Edwards was not murdered.
 \item If Mr. Adams was murdered, he was killed with a frying pan.
 \item The cook did it, and the butler did not.
 \item Of course the Duchess is lying!
@@ -495,8 +495,11 @@ Using the symbolization key given, translate each English-language sentence into
 \item John Coltrane did not play tenor sax unless he also played soprano sax. 
 \item John Coltrane did not play tuba, but Miles Davis did. 
 \item Miles Davis played trumpet only if he also played tuba. 
+
 \item If Miles Davis played trumpet, then John Coltrane played at least one of these three instruments: tenor sax, soprano sax, or tuba. 
-\item If John Coltrane played tuba then Miles Davis played neither trumpet nor tuba. 
+
+\item It is not the case that if John Coltrane played tuba then Miles Davis played trumpet or tuba. 
+
 \item Miles Davis and John Coltrane both played tuba if and only if Coltrane did not play tenor sax and Miles Davis did not play trumpet. 
 \end{earg}
 
@@ -554,8 +557,8 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[] \myanswer{$\enot (C \eor V)$}
 \item If those creatures are centaurs, then it is not the case that they are vampires or aliens.
 \item[] \myanswer{$(C \eif \enot(V \eor A))$}
-\item Either those creatures are aliens, or they are either centaurs or they are vampires.
-\item[] \myanswer{$(A \eor (C \eor V))$}
+\item Either those creatures are aliens, or they are both centaurs and vampires.
+\item[] \myanswer{$(A \eor (C \eand V))$}
 \end{earg}
 
 \problempart 
@@ -578,14 +581,14 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[] \myanswer{$(B \eor D)$}
 \item The cook did it only if the Duchess is lying. (See table \ref{table.conditional.English}.) 
 \item[] $(C \eif D)$
-\item If the murder weapon was a frying pan, then the cook did it.
-\item[] \myanswer{$(F \eif C)$}
+\item If the murder weapon was not a frying pan, then the cook did not do it.
+\item[] \myanswer{$(\enot F \eif \enot C)$}
 \item If the murder weapon was not a frying pan, then either the cook or the butler did it.
 \item[] \myanswer{$(\enot F \eif (C \eor B))$}
 \item Mr. Adams was murdered if and only if Mr. Edwards was not murdered.
 \item[] \myanswer{$(A \eiff \enot E)$}
-\item The Duchess is lying, or Mr. Edwards was not murdered.
-\item[] \myanswer{$(D \eor \enot E)$}
+\item It is not the case that either the Duchess is lying or Mr. Edwards was not murdered.
+\item[] \myanswer{$\enot(D \eor \enot E)$}
 \item If Mr. Adams was murdered, he was killed with a frying pan.
 \item[] \myanswer{$(A \eif F)$}
 \item The cook did it, and the butler did not.
@@ -667,7 +670,7 @@ For each argument, first, make a symbolization key, and then translate all of th
 \medskip
 
 \item If Miles Davis played trumpet, then John Coltrane played at least one of these three instruments: tenor sax, soprano sax, or tuba. 
-\item[~] \myanswer{$M_1 \eif (J_1 \eor (J_2 \eor J_3))$} 
+\item[~] $M_1 \eif (J_1 \eor (J_2 \eor J_3))$ or $M_1 \eif ((J_1 \eor J_2) \eor J_3)$  
 \medskip
 
 \item It is not the case that if John Coltrane played tuba, then Miles Davis played trumpet or tuba. 
@@ -684,7 +687,7 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item[A] Alice is a spy.
 \item[B] Bob is a spy.
 \item[C] The code has been broken.
-\item[G] The letter is in German embassy.
+\item[L] The letter is in German embassy.
 \end{ekey}}
 \begin{earg}
 \item It is not the case that Alice and Bob are both spies.
@@ -694,9 +697,9 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item If neither Alice nor Bob is a spy, then the code has not been unbroken.
 \item[] \myanswer{$\enot (A \eor B) \eif \enot C$}
 \item The letter is in the German embassy, unless someone has broken the code.
-\item[] \myanswer{$(G \eor C)$}
+\item[] \myanswer{$(L \eor C)$}
 \item Either the code has been broken or it has not, but the letter is in German embassy regardless.
-\item[] \myanswer{$((C \eor \enot C) \eand G)$}
+\item[] \myanswer{$((C \eor \enot C) \eand L)$}
 \item Either Alice or Bob is a spy, but not both.
 \item[] \myanswer{$((A \eor B) \eand \enot (A \eand B))$}
 \end{earg}
