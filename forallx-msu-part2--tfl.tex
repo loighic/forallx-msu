@@ -402,6 +402,18 @@ All three ways of symbolizing sentence \ref{unless1} are correct. Indeed, in cha
 There is a complication with treating `unless' as a disjunction, however. As we said earlier, `or' has an inclusive and an exclusive meaning, but in TFL, `or' is always inclusive. Ordinary speakers of English, however, often use `unless' to mean something more like the exclusive-or. Suppose someone says: `I will go running unless it rains'. They probably mean `either I will go running or it will rain, but not both'. So, it can be argued that the conditional---e.g., `if it does not rain, then I will go running' ($\enot R_a \eif R_u$)---captures the meaning of `unless' better than does the disjunction.
 
 
+\section{The turnstile}
+
+The final symbol that we need in not actually a symbol of TFL, but it is useful symbol for displaying arguments that consist of sentences in TFL. The symbol `\proves' is called the \textit{turnstile}. The purpose of the turnstile is to separate the sentences that are the premises of an argument from the sentence that is the conclusion, and it can be read as \textit{therefore}. Here is an example,
+$$(P \eif C), (P \eor D) \proves (\enot C \eif D)$$
+In this argument, the premises are `$(P \eif C)$' and `$(P \eor D)$', and the conclusion is `$(\enot C \eif D)$'.
+
+
+\begin{notebox}
+Like the metavariables `$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$', `\proves' is a symbol of our metalanguage, augmented English. The difference between the object language and the metalanguage is explained in \S\ref{s:Metalanguage})
+\end{notebox}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Exercises: logical operators chapter
@@ -715,7 +727,7 @@ For each argument, write a symbolization key and symbolize all of the sentences 
 \item[C] Roger wakes up cross.
 \item[D] Dorothy is distracted.
 \end{ekey}}
-\item[] \myanswer{$(P \eif C), (P \eor D) \therefore (\enot C \eif D)$}
+\item[] \myanswer{$(P \eif C), (P \eor D) \proves (\enot C \eif D)$}
 \bigskip
 
 \item It will either rain or snow on Tuesday. If it rains, Neville will be gloomy. If it snows, Neville will be cold. Therefore, Neville will either be gloomy or cold on Tuesday.
@@ -725,7 +737,7 @@ For each argument, write a symbolization key and symbolize all of the sentences 
 \item[G] Neville is gloomy on Tuesday
 \item[C] Neville is cold on Tuesday
 \end{ekey}}
-\item[] \myanswer{$(T_1 \eor T_2), (T_1 \eif G), (T_2 \eif C) \therefore (G \eor C)$}
+\item[] \myanswer{$(T_1 \eor T_2), (T_1 \eif G), (T_2 \eif C) \proves (G \eor C)$}
 \bigskip
 
 \item If Zoey remembered to do her chores, then the house is clean but not neat. If she forgot, then the house is neat but not clean. Therefore, the house is either neat or clean; but not both.
@@ -734,7 +746,7 @@ For each argument, write a symbolization key and symbolize all of the sentences 
 \item[C] The house is clean.
 \item[N] The house is neat.
 \end{ekey}}
-\item[] \myanswer{$(Z \eif (C \eand \enot N)), (\enot Z \eif (N \eand \enot C)) \therefore ((N \eor C) \eand \enot (N \eand C))$.}
+\item[] \myanswer{$(Z \eif (C \eand \enot N)), (\enot Z \eif (N \eand \enot C)) \proves ((N \eor C) \eand \enot (N \eand C))$.}
 \end{earg}
 
 
@@ -1103,9 +1115,9 @@ for `$(P \eor Q)$' or `$((R \eif T) \eand \enot Q)$' or anything else.
 \section{Quotation conventions for arguments}
 
 One of our main purposes for using TFL is to study arguments, and that will be our concern in Parts \ref{ch.TruthTables} and \ref{ch.NDTFL}. In English, the premises of an argument are often expressed by individual sentences, and the conclusion by a further sentence. Since we can symbolize English sentences, we can symbolize English arguments using TFL. Thus we might ask whether the argument whose premises are the TFL sentences `$A$' and `$A \eif C$', and whose conclusion is the TFL sentence `$C$', is valid. However, it is quite a mouthful to write that every time. So instead we will introduce another bit of abbreviation. This:
-	$$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \therefore \meta{C}$$
+	$$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$$
 abbreviates:
 	\begin{quote}
 		the argument with premises $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and conclusion $\meta{C}$
 	\end{quote}
-To avoid unnecessary clutter, we will not regard this as requiring quotation marks around it. (Note, then, that `$\therefore$' is a symbol of our augmented \emph{metalanguage}, and not a new symbol of TFL.)
+To avoid unnecessary clutter, we will not regard this as requiring quotation marks around it. (Note, then, that `$\proves$' is a symbol of our augmented \emph{metalanguage} and not a new symbol of TFL.)
