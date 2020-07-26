@@ -50,7 +50,7 @@ Whereas truth tables set the meaning for each logical operator, a system of natu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\chapter{The rules for truth-functional logic}\label{s:BasicTFL}
+\chapter{The rules of derivation}\label{s:BasicTFL}
 
 \section{Proofs}
 
@@ -265,16 +265,17 @@ The \define{biconditional elimination rule} ({\eiff}E) is similar to the conditi
 \end{proof}
 \end{factboxy}
 
-The \define{biconditional introduction rule} ($\eiff$ex) is based on the fact, mentioned in chapter \ref{s:CharacteristicTruthTables}, that the biconditional is ``the conjunction of a conditional running in each direction.'' The rule then is basically this: from $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$, infer $\meta{A} \eiff \meta{B}$.
+The \define{biconditional introduction rule} ($\eiff$I) is based on the fact, mentioned in chapter \ref{s:CharacteristicTruthTables}, that the biconditional is ``the conjunction of a conditional running in each direction.'' The rule then is basically this: from $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$, infer $\meta{A} \eiff \meta{B}$.
 
 \begin{factboxy}{biconditional introduction rule}
 \begin{proof}\label{eiff-I}
-    \have[m]{ab}{(\meta{A}\eif\meta{B}) \eand (\meta{B}\eif\meta{A})}
-	\have[\ ]{b}{\meta{A}\eiff\meta{B}} \bex{ab}
+    \have[m]{ab}{\meta{A}\eif\meta{B}} 
+    \have[n]{ba}{\meta{B}\eif\meta{A}}
+	\have[\ ]{b}{\meta{A}\eiff\meta{B}} \bi{ab,ba}
 \end{proof}
 \end{factboxy}
 
-The order of the $\meta{A}$ and $\meta{B}$ in $\meta{A}\eiff\meta{B}$ has to match their order in the first conditional in the conjunction, but since, typically, that line will have to be generated using the conjunction introduction rule, those conjuncts  can be put in either order then. \textbf{Also, notice that when we cite the rule, we use $\eiff$ex, not $\eiff$I.}
+%The order of the $\meta{A}$ and $\meta{B}$ in $\meta{A}\eiff\meta{B}$ has to match their order in the first conditional in the conjunction, but since, typically, that line will have to be generated using the conjunction introduction rule, those conjuncts  can be put in either order then. \textbf{Also, notice that when we cite the rule, we use $\eiff$ex, not $\eiff$I.}
 
 
 \section{Some examples}
@@ -317,7 +318,7 @@ We will now review some proofs that use the rules that we have learned so far.
 	\have{c}{R} \be{p1,t}
 \end{proof}\medskip
 
-\item[\ex{14.6.5}] And last, a proof for $$(S \eif T) \eor R, (T \eif S) \eor Q, \enot R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the disjunction elimination rule, and the biconditional introduction rule ($\eiff$ex).
+\item[\ex{14.6.5}] And last, a proof for $$(S \eif T) \eor R, (T \eif S) \eor Q, \enot R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the disjunction elimination rule, and the biconditional introduction rule.
 \begin{proof}
 	\hypo{p1}{(S \eif T) \eor R} \pr{}
 	\hypo{p2}{(T \eif S) \eor Q} \pr{}
@@ -326,8 +327,8 @@ We will now review some proofs that use the rules that we have learned so far.
 	\have{q}{\enot Q} \ae{p3}
 	\have{st}{S \eif T} \oe{p1,r}
 	\have{ts}{T \eif S} \oe{p2,q}
-	\have{con}{(T \eif S) \eand (S \eif T)} \ai{st,ts}
-	\have{c}{T \eiff S} \bex{con}
+%	\have{con}{(T \eif S) \eand (S \eif T)} \ai{st,ts}
+	\have{c}{T \eiff S} \bi{st,ts}
 \end{proof}\medskip
 \end{earg}
 
@@ -821,8 +822,8 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 	\have{s}{S} \ne{as3-ns}
 	\close
 	\have{c2}{(T \eor S) \eif S} \ci{as2-s}
-	\have{con1}{(S \eif (T \eor S)) \eand ((T \eor S) \eif S)} \ai{c1,c2}
-	\have{con2}{S \eiff (T \eor S)} \bex{con1}
+%	\have{con1}{(S \eif (T \eor S)) \eand ((T \eor S) \eif S)} \ai{c1,c2}
+	\have{con2}{S \eiff (T \eor S)} \bi{c1,c2}
 \end{proof}
 \medskip
 
@@ -1195,6 +1196,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{proof}
 \bigskip
 
+\filbreak
 \item $\proves (P \eif Q) \eor (Q \eif P)$
 \begin{proof}
 \open
@@ -1221,6 +1223,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{proof}
 \bigskip
 
+\filbreak
 \item $\proves J \eiff (J\eor (L \eand \enot L))$
 \myanswer{\begin{proof}
 \open
@@ -1239,11 +1242,13 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 	\have{j5}{J}\oe{jlnl2, nlnl}
 \close
 \have{cond2}{(J \eor (L \eand \enot L)) \eif J} \ci{jlnl2-j5}
-\have{conj}{(J \eif (J\eor (L \eand \enot L))) \eand ((J \eor (L \eand \enot L)) \eif J)} \ai{cond1,cond2}
-\have{con}{J \eiff [J\eor (L \eand \enot L)]}\bex{conj}
+%\have{conj}{(J \eif (J\eor (L \eand \enot L))) \eand ((J \eor (L \eand \enot L)) \eif J)} \ai{cond1,cond2}
+\have{con}{J \eiff (J\eor (L \eand \enot L))}\bi{cond1,cond2}
 \end{proof}}
 \bigskip
 
+
+\filbreak
 \item $((A \eif B) \eif A) \eif A$ 
 \begin{proof}
 \open
@@ -1275,6 +1280,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{earg}
 
 
+\filbreak
 \problempart
 
 \begin{earg}
@@ -1308,6 +1314,8 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{proof}
 \medskip
 
+
+\filbreak
 \item $R \eif Q \leftproves\proves \enot(R \eand \enot Q)$
 \begin{proof}
 \hypo{ui}{R \eif Q} \pr{}
