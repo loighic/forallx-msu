@@ -175,8 +175,9 @@ When you have what is in \textcolor{blue}{blue}, then, on a new line, you can pu
 \noindent\textsc{Biconditional Intro}
 
 \begin{proof}
-	\have[m]{a1}{\textcolor{blue}{(\meta{A}\eif\meta{B}) \eand (\meta{B}\eif\meta{A})}}
-	\have[\ ]{b1}{\textcolor{red2}{\meta{A}\eiff\meta{B}} \qquad\qquad :\eiff$ex$~m}  %\bex{ab}
+	\have[m]{a1}{\textcolor{blue}{\meta{A}\eif\meta{B}}} 
+	\have[n]{a2}{\textcolor{blue}{\meta{B}\eif\meta{A}}}
+	\have[\ ]{b1}{\textcolor{red2}{\meta{A}\eiff\meta{B}}} \bi{a1,a2}
 	\end{proof}
 \bigskip
 
@@ -203,7 +204,7 @@ When you have what is in \textcolor{blue}{blue}, then, on a new line, you can pu
 	\have[m]{a}{\textcolor{blue}{\meta{A}}}
 	\have[\ ]{c}{\textcolor{red2}{\meta{A}}} \reit{a}
 \end{proof}
-\bigskip
+%\bigskip
 
 
 
@@ -228,7 +229,7 @@ When you have what is in \textcolor{blue}{blue}, then, on a new line, you can pu
 
 
 
-\noindent\textsc{Negation Introduction}
+\noindent\textsc{Negation Intro}
 
 \begin{proof}
 	\open
@@ -241,7 +242,7 @@ When you have what is in \textcolor{blue}{blue}, then, on a new line, you can pu
 \bigskip
 
 
-\noindent\textsc{Negation Elimination}\label{ProofRules-end}
+\noindent\textsc{Negation Elim}\label{ProofRules-end}
 
 \begin{proof}
 	\open
@@ -265,7 +266,7 @@ When you have what is in \textcolor{blue}{blue}, then, on a new line, you can pu
 	\have[m]{a}{\textcolor{blue}{\enot\enot\meta{A}}}
 	\have[\ ]{c}{\textcolor{red2}{\meta{A}}} \dn{a}
 \end{proof}
-\bigskip
+%\bigskip
 
 
 \vfill\null
