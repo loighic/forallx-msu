@@ -238,7 +238,7 @@ For the conditional, we will begin with the elimination rule since it is simpler
 		Therefore, Jane is fast.
 	\end{quote}
 In this argument---which is valid---we have a conditional and then, on a separate line, the antecedent of that conditional (`Jane is smart'). That allows us to infer the antecedent (`Jane is fast'). In short, if we have a conditional and we know that the antecedent of the conditional is true (or has happened), then we know that the consequent has to be true. (See also the discussion of the conditional on p.~\pageref{characteristic-tt-conditional}.) Deriving the consequent of the conditional in this way is an application of the conditional elimination rule ($\eif$E).
-\begin{factboxy}{conditional elimination rule}
+\begin{factboxy}{conditional elimination rule}\label{ce-rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eif\meta{B}}
 	\have[n]{a}{\meta{A}}
@@ -251,7 +251,7 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 \section{Biconditional introduction and elimination} 
 
 The \define{biconditional elimination rule} ({\eiff}E) is similar to the conditional elimination rule but a bit more flexible. If you have the left-hand subsentence of the biconditional, you can derive the right-hand subsentence. If you have the right-hand subsentence, you can derive the left-hand subsentence.
-\begin{factboxy}{biconditional elimination rule}
+\begin{factboxy}{biconditional elimination rule}\label{be-rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eiff\meta{B}}
 	\have[n]{a}{\meta{A}}
@@ -343,17 +343,17 @@ The \define{conditional introduction rule} is a little bit more complicated than
 And this is our argument: 
 $$T \eand L \proves R \eif L$$
  
-Maybe you can see that this argument is valid. (That is, you can see that if the premise is true, then the conclusion has to be true.) But if you can't right now, that's ok. We will go through the proof for this argument, and in the process explain the \define'{conditional introduction rule}. We start by listing the premise.
+Maybe you can see that this argument is valid. (That is, you can see that if the premise is true, then the conclusion has to be true.) But if you can't right now, that's ok. We will go through the proof for this argument, and in the process explain the conditional introduction rule. We start by listing the premise.
 	\begin{proof}
 		\hypo{r}{T \eand L} \pr{}
 	\end{proof}
-Next, we need to make a new assumption: `It is raining'. (We might say that we're making this assumption ``for the sake of argument'' or to see where it leads). To indicate that this is not our initial assumption (the premise `$T \eand L$') but is an additional assumption that we have supplied, we put `$R$' on line 2 this way:
+Next, we need to make a new assumption: `It is raining'. (We might say that we're making this assumption ``for the sake of argument'' or to see where it leads). To indicate that this is an assumption that we have supplied, we put `$R$' on line 2 this way:
 	\begin{proof}
 		\hypo{r}{T \eand L} \pr{}
 		\open
 			\hypo{l}{R} \as{}
 	\end{proof}
-You will notice right away that the `$R$' is indented (and not against the same vertical line as the `$T \eand L$'). Whenever we make an assumption ourselves, we must indent it and the following lines. This creates a \define{subproof} that is set off from the rest of the proof. The assumption is cited with `AS', and we put a line under the assumption just as we do with the premises.
+You will notice right away that the `$R$' is indented and not against the same vertical line as the `$T \eand L$'. Whenever we make an assumption ourselves, we must indent it and the lines that follow. This creates a \define{subproof} that is set off from the rest of the proof. The assumption is cited with `AS', and we put a line under the assumption just as we do with the premises.
 
 With this extra assumption in place, we next use $\eand$E to get $L$ on a line by itself.
 	\begin{proof}
@@ -362,9 +362,9 @@ With this extra assumption in place, we next use $\eand$E to get $L$ on a line b
 			\hypo{l}{R} \as{}
 			\have{rl}{L}\ae{r}
 	\end{proof}
-The idea for the first three lines of this proof are, first, we know that \textit{today is Tuesday and Kate has logic class today} (or, at least, we are assuming that `$ T \eand L$' is true). Next, on line two, we are in effect saying, ``What if \textit{it is raining} is true? That is, what will follow if we make that assumption?'' Well, one thing that will follow is that Kate still has logic class today. That was true before we made our assumption about it raining. Nothing in our proof tells us that if \textit{it is raining} is true, then Kate won't have logic class today. Hence, \textit{Kate has logic class today} is true and can go on line 3. (Notice that \textit{today is Tuesday} is also true and could go on line 3, but that won't get us any closer to the conclusion that we want.)
+The idea for the first three lines of this proof are, first, we know that \textit{today is Tuesday and Kate has logic class today} (or, at least, we are assuming that `$ T \eand L$' is true). Next, on line two, we are in effect saying, ``What if \textit{it is raining} is true?'' That is, what will follow if we make that assumption? Well, one thing that will follow is that Kate still has logic class today. That was true before we made our assumption about it raining. Nothing in our proof tells us that if \textit{it is raining} is true, then Kate won't have logic class today. Hence, \textit{Kate has logic class today} is true and can go on line 3. (Notice that \textit{today is Tuesday} is also true and could go on line 3, but that won't get us any closer to the conclusion that we want.)
 
-So, again, on line 2, we are, in a sense, asking, What if \textit{it is raining}? On line 3, we have one answer: \textit{Kate has logic class today}. Therefore, on line 4, we can put these two together as `if it is raining, then Kate has logic class' with the conditional introduction rule.
+So, again, on line 2, we are, in a sense, asking, What if \textit{it is raining}? On line 3, we have one answer: \textit{Kate has logic class today}. Therefore, on line 4, we can put these two together as `if it is raining, then Kate has logic class today' with the conditional introduction rule.
 	\begin{proof}
 		\hypo{r}{T \eand L} \pr{}
 		\open
@@ -375,7 +375,7 @@ So, again, on line 2, we are, in a sense, asking, What if \textit{it is raining}
 	\end{proof}
 For this final step, we have dropped back to the original vertical line. When we introduce the conditional, we are \emph{discharging} the assumption that we made (`$R$') and closing the subproof.
 
-That is a simple argument, but it illustrates how we introduce a conditional. When we use the conditional introduction rule, the assumption that make will always be the antecedent of the conditional. The last line of the subproof, meanwhile, will always be the antecedent of the conditional. 
+That is a simple argument, but it illustrates how we create a conditional in a proof. When we use the conditional introduction rule, the assumption that make will always be the antecedent of the conditional. The last line of the subproof, meanwhile, will always be the consequent of the conditional. 
 % Similarly, we could have put `$\enot R$' on line 2, in which case our conditional would have been `if it is not raining, then Kate has logic today'. The point is that, on line 2, we are making an assumption, and then we see what follows. Since `Kate has logic class today' is in the conjunction on line 1, it will follow no matter what the assumption is.
 To summarize, first, we make an assumption, \meta{A}. From that assumption, we derive \meta{B}. Once we've done that, we know that \textit{if} \meta{A}, then \meta{B}, and we have our conditional. 
 \begin{factboxy}{conditional introduction rule}
@@ -396,7 +396,13 @@ Thus, we stipulate the following.
 \item[2.] A proof is not complete until every additional assumption (not counting the premises) is discharged.
 \end{earg}
 
-Let's go through a second example. Suppose we want a proof of this argument:
+
+\section{Some more examples}
+
+Let's go through a few more examples, each of which uses the conditional introduction rule.
+
+\begin{earg}
+\item Suppose we want a proof of this argument:
 	$$P \eif Q, Q \eif R \proves P \eif R$$
 We start by listing both of our premises. Next, since we want ($P \eif R$), we assume the antecedent of that conditional. 
 \begin{proof}
@@ -406,7 +412,7 @@ We start by listing both of our premises. Next, since we want ($P \eif R$), we a
 		\hypo{p}{P} \as{}
 	\close
 \end{proof}
-Now, even though it is an assumption that we've introduced, since `$P$' is on a line by itself (and the subproof has not yet been closed), we can use it for our next step. With `$P$', we can use {\eif}E on the first premise. This gives us `$Q$'. 
+Now, even though it is an assumption that we've introduced, since `$P$' is on a line by itself (and the subproof has not yet been closed), we can use it for our next step. With `$P$' and the `$P \eif Q$' on line 1, we can use {\eif}E to get `$Q$'. 
 \begin{proof}
 	\hypo{pq}{P \eif Q} \pr{}
 	\hypo{qr}{Q \eif R} \pr{}
@@ -417,7 +423,7 @@ Now, even though it is an assumption that we've introduced, since `$P$' is on a 
 	\close
 %	\have{pr}{P \eif R}\ci{p-r}
 \end{proof}
-With the $Q$ on line 4 and $Q \eif R$ on line 2, we can use {\eif}E and get $R$ on line 5. So, by assuming `$P$', we were able to get `$R$'. Last, we apply the {\eif}I rule, which discharges our assumption and completes the proof.
+With the $Q$ on line 4 and $Q \eif R$ on line 2, we can use {\eif}E and get $R$. So, by assuming `$P$', we were able to get `$R$'. Last, we apply the {\eif}I rule, which discharges our assumption and completes the proof.
 \label{HSproof}
 \begin{proof}
 	\hypo{pq}{P \eif Q} \pr{}
@@ -430,7 +436,7 @@ With the $Q$ on line 4 and $Q \eif R$ on line 2, we can use {\eif}E and get $R$ 
 	\have{pr}{P \eif R}\ci{p-r}
 \end{proof}
 
-One more example. Consider how you would prove: $F \eif (G \eand H) \proves F \eif G$. Perhaps it is tempting to write down the premise and then apply the {\eand}E rule to the conjunction $(G \eand H)$. This is not allowed, however. \textbf{The rules of proof can only be applied to the main connective of a sentence.} (That's the `$\eif$' in this sentence, not the `$\eand$'.) To use $\eand$E, we need to get $(G \eand H)$ on a line by itself, and so we proceed this way:
+\item Consider how we would prove: $F \eif (G \eand H) \proves F \eif G$. Perhaps it is tempting to write down the premise and then apply the {\eand}E rule to the conjunction $(G \eand H)$. This is not allowed, however. \textbf{The rules of proof can only be applied to the main connective of a sentence.} (That's the `$\eif$' in this sentence, not the `$\eand$'.) To use $\eand$E, we need to get $(G \eand H)$ on a line by itself, and so we proceed this way:
 
 \begin{proof}
 	\hypo{fgh}{F\eif(G\eand H)} \pr{}
@@ -441,6 +447,30 @@ One more example. Consider how you would prove: $F \eif (G \eand H) \proves F \e
 	\close
 	\have{fg}{F \eif G}\ci{f-g}
 \end{proof}
+
+\item As you know, the biconditional elimination rule is similar to the conditional elimination rule. (But they are not the same. See p.~\pageref{ce-rule} and p.~\pageref{be-rule} to compare them.) We should also, however, be able to go from a biconditional, say `$B \eiff C$', to a conditional: `$B \eif C$' or `$C \eif B$'. This is easily done with the conditional introduction rule.
+\begin{proof}
+	\hypo{bc}{B \eiff C} \pr{}
+	\open
+		\hypo{b}{B}\as{}
+		\have{c}{C}\ce{bc,b}
+	\close
+	\have{bc2}{B \eif C}\ci{b-c}
+\end{proof}
+
+%\begin{notebox}
+%In fact, in some logic textbooks, this is biconditional elimination rule:
+%\begin{proof}\label{eiff-I}
+%    \have[m]{ab}{\meta{A} \eiff \meta{B}} 
+%	\have[\ ]{b}{\meta{A}\eif\meta{B}} \be{ab}
+%\end{proof}
+%\begin{proof}\label{eiff-I}
+%    \have[m]{ab}{\meta{A} \eiff \meta{B}}
+%	\have[\ ]{b}{\meta{B}\eif\meta{A}}\be{ab}
+%\end{proof}
+%\end{notebox}
+
+\end{earg}
 
 
 \section{Negation introduction and elimination}
