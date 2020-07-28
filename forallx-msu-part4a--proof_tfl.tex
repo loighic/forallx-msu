@@ -485,7 +485,7 @@ Here is a simple mathematical argument in English:
 \item[5.] The previous line is a contradiction.
 \item[6.] Therefore, the assumption that we began with is false. There is no greatest natural number.
 \end{earg}
-This argument form is traditionally called a \emph{reductio}. Its full Latin name is \emph{reductio ad absurdum}, which means `reduction to absurdity' (although \textit{absurdity} in the sense that we often use it today isn't part of this). In a reductio, we assume something for the sake of argument---for example, that there is a greatest natural number. Then we show that the assumption leads to two contradictory sentences---for example, that $G$ is the greatest natural number and that it is not. In this way, we show that the original assumption must be false, which means that the denial of the assumption is true. 
+This type of argument is traditionally called a \emph{reductio}. Its full Latin name is \emph{reductio ad absurdum}, which means `reduction to absurdity' (although \textit{absurdity} in the sense that we often use it today isn't part of this). In a reductio, we assume something for the sake of argument---for example, that there is a greatest natural number. Then we show that the assumption leads to two contradictory sentences---for example, that $G$ is the greatest natural number and that it is not. In this way, we show that the original assumption must be false, which means that the denial of the assumption is true. 
 
 Our two negation rules (which are basically the same rule) formalize this reasoning process.
 
@@ -527,7 +527,7 @@ When using either of the negation rules, the last two lines of the subproof must
 %\end{proof}
 
 \section{Reiteration and double negation}
-In addition to the rules for each logical operator, we also have the \define{reiteration rule} and a \define{double negation rule}. These rules, like the other rules, preserve the truth value of the sentences in a proof. (I.e., if the sentence on a certain line is true and you apply either one of these rules to that sentence, what you get on the new line will still be true.) But, compared to the others, these are minor rules. Their purpose is just to help us, in some cases, produce a proof more easily. 
+In addition to the rules for each logical operator, we also have the \define{reiteration rule} and a \define{double negation rule}. These rules, like the other rules, preserve the truth value of the sentences in a proof. (I.e., if the sentence on a certain line is true and you apply either one of these rules to that sentence, what you get on the new line will still be true.) But, compared to the others, these are minor rules. Their purpose is just to help us produce proofs more easily. 
 
  If you already have shown something in the course of a proof, the reiteration rule allows you to repeat it on a new line.  
 
@@ -538,9 +538,9 @@ In addition to the rules for each logical operator, we also have the \define{rei
 \end{proof}
 \end{factboxy}
 
-To demonstrate both the reiteration rule and the negation elimination rule, we will go through the proof for this argument: $\enot P \eif \enot Q, Q \proves P$. Looking at the argument, you'll notice that our conclusion is $P$, but $P$ itself does not occur anywhere in the premises. Hence, we cannot get $P$ by simply using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That tells us that we will need to use one of our negation rules.
+To demonstrate both the reiteration rule and the negation elimination rule, we will go through the proof for this argument: $\enot P \eif \enot Q, Q \proves P$. Looking at the argument, you'll notice that our conclusion is $P$, but $P$ itself does not occur anywhere in the premises. Hence, we cannot get $P$ by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That tells us that we will need to use one of our negation rules.
 
-After the premises, we make the assumption that we need for negation elimination. Since, ultimately, we want `$P$', we will assume `$\enot P$', knowing, of course, that once we discharge that asumption (and close the subproof), we will have `$P$'.
+After the premises, we make the assumption that we need for negation elimination. Since, ultimately, we want `$P$', we will assume `$\enot P$', knowing, of course, that once we discharge that assumption (and close the subproof), we will have `$P$'.
 
 \begin{proof}
 	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
@@ -580,7 +580,7 @@ Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to disc
 	\have{c}{P}\ni{np-ng}
 \end{proof}
 
-Our final rule is the double negation rule. The first version of this rule allows you to add two \textit{not}s (i.e., \textit{not not}) to an atomic sentence---which, of course, will not change the sentence's truth value. This is sometimes useful, especially when you need to use the disjunction elimination rule. The second version of the double negation rule allows you to remove two \textit{not}s, although needing to do this is less common.
+Our final rule is the double negation rule. The first version of this rule allows us to add two \textit{not}s (i.e., \textit{not not}) to an atomic sentence---which, of course, will not change the sentence's truth value. This is sometimes useful, especially when you need to use the disjunction elimination rule. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common.
 
 \begin{factboxy}{double negation rule}
 \begin{proof}
@@ -609,8 +609,7 @@ The next thing that we want is $(R \eand Q)$ on a line by itself. Now, you might
 	\have[\ ]{a}{\meta{A}} \oe{ab,nb}
 \end{proof}
 \end{factboxy}  
-\noindent To use this rule, we need the negation of one of the disjuncts. The negation of `$\meta{B}$' is `$\enot\meta{B}$', and the negation of 
-`$\enot\meta{B}$' is `$\enot\enot\meta{B}$' (and so on by the same pattern). The negation of a sentence is the sentences with one more $\enot$ in front of it. Hence, to use the disjunction elimination rule right now, we need $\enot\enot P$, which we get with the double negation rule.
+\noindent To use this rule, we need the \textit{negation} of one of the disjuncts. The negation of a sentence in TFL is the sentences with a $\enot$ in front of it. The negation of `$\meta{B}$' is `$\enot\meta{B}$', and the negation of `$\enot\meta{B}$' is `$\enot\enot\meta{B}$' (and so on by the same pattern). Hence, to use the disjunction elimination rule right now, we need to transform `$P$' into `$\enot\enot P$' with the double negation rule.
 
 \begin{proof}
 	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
@@ -618,7 +617,7 @@ The next thing that we want is $(R \eand Q)$ on a line by itself. Now, you might
 		\hypo{p}{P}\as{}
 		\have{dn}{\enot\enot P} \dn{p}
 \end{proof}
-Now we can use $\eor$E. Once we have $R \eand Q$, we use $\eand$E to get $Q$. Then we  can use $\eif$I to get the conclusion.
+Once we have $R \eand Q$, we use $\eand$E to get $Q$. Then we  can use $\eif$I to get the conclusion.
 
 \begin{proof}
 	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
@@ -1016,6 +1015,7 @@ Our next example, $(A \eor B) \proves (\enot A \eif B)$, requires a subproof. We
 As I said at the beginning of this chapter, creating proofs in Carnap is not difficult. You do have to be careful, however. Programming a language like TFL is relatively simple because there are only a small number of rules and, to produce proofs of valid arguments, we follow those rules very strictly. But as a consequence, Carnap is not designed to understand what you are trying to do if you deviate from the rules, even if it is a minor deviation or an innocent mistake. So, some reminders:
 \begin{enumerate}
 \itemsep-.3mm
+	\item As long as `$\enot$' is not the main logical operator, you can drop the outermost parentheses. All other parentheses have to be used. 
 	\item Capitalize `PR', `AS',`E', `I' (in the rules), and all atomic sentences.
 	\item Don't forget the `:' right before PR, AS, or the rule that you are citing. 
 	\item There is no space between the $\eand$, $\eor$, $\eif$, $\eiff$, or $\enot$ and the `E' or `I'.  
