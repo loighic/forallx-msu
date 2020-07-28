@@ -54,7 +54,7 @@ Whereas truth tables set the meaning for each logical operator, a system of natu
 
 \section{Proofs}
 
-A \define{proof} is a sequence of sentences. The sentence or sentences at the beginning of the sequence are assumptions. These are the premises of the argument. Every other sentence in the sequence follows from earlier sentences by a specific rule. The final sentence of the sequence is the conclusion of the argument.
+A \define{proof} is a sequence of sentences. The sentence or sentences at the beginning of the sequence are assumptions. These are the premises of the argument. (We call them \textit{assumptions} because, at least within the proof, they do not require any justification. We just state them.) Every other sentence in the sequence follows from earlier sentences by a specific rule. The final sentence of the sequence is the conclusion of the argument.
 
 As an illustration, consider this argument:
 	$$\enot (A \eor B) \proves \enot A \eand \enot B$$
@@ -87,7 +87,7 @@ This, meanwhile, will be the final line of the proof:
 \begin{proof}
 	\have[n]{con}{\enot C \eor D}
 \end{proof}
-Setting up the premises and the conclusion is, however, the easy part. The real task is---which is the interesting part!---explaining each of the steps that get us from the premises to the conclusion. 
+Setting up the premises and the conclusion is, however, the easy part. The real task---and the interesting part---is explaining each of the steps that get us from the premises to the conclusion. 
 
 To construct proofs, we will develop a \define{natural deduction} system. In the natural deduction system, there are two rules for each logical operator: an \define{introduction} rule, which allows us to derive a new sentence that has the logical operator as the main connective, and an \define{elimination} rule, which allows us to extract a subsentence from a sentence that has that logical operator as the main connective. (Table \ref{table.TFL-rules} contains a list of the rules.) These rules can then be combined to demonstrate each step that must be taken to get from the premises to the conclusion. All of the rules introduced in this chapter are also summarized on pp.~\pageref{ProofRules} - \pageref{ProofRules-end}.
 
@@ -601,7 +601,7 @@ To illustrate the double negation rule---and also to review the $\eor$E and $\ei
 	\open
 		\hypo{p}{P}\as{}
 \end{proof}
-The next thing that we want is $(R \eand Q)$ on a line by itself. Now, you might think that, with $\enot P \eor (R \eand Q)$ and $P$, we can use $\eor$E to infer $(R \eand Q)$. After all, $P$ is the \textit{denial} of $\enot P$. Recall, however, the disjunction elimination rule.
+The next thing that we want is `$(R \eand Q)$' on a line by itself. Now, you might think that, with `$\enot P \eor (R \eand Q)$' and `$P$', we can use `$\eor$E' to infer `$(R \eand Q)$'. After all, `$P$' is the \textit{denial} of `$\enot P$'. Recall, however, the disjunction elimination rule.
 \begin{factboxy}{disjunction elimination rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eor\meta{B}}
@@ -609,7 +609,7 @@ The next thing that we want is $(R \eand Q)$ on a line by itself. Now, you might
 	\have[\ ]{a}{\meta{A}} \oe{ab,nb}
 \end{proof}
 \end{factboxy}  
-\noindent To use this rule, we need the \textit{negation} of one of the disjuncts. The negation of a sentence in TFL is the sentences with a $\enot$ in front of it. The negation of `$\meta{B}$' is `$\enot\meta{B}$', and the negation of `$\enot\meta{B}$' is `$\enot\enot\meta{B}$' (and so on by the same pattern). Hence, to use the disjunction elimination rule right now, we need to transform `$P$' into `$\enot\enot P$' with the double negation rule.
+\noindent To use this rule, we need the \textit{negation} of one of the disjuncts. The negation of a sentence in TFL is the sentences with a `$\enot$' in front of it. The negation of `$\meta{B}$' is `$\enot\meta{B}$', and the negation of `$\enot\meta{B}$' is `$\enot\enot\meta{B}$' (and so on by the same pattern). Hence, we need to transform `$P$' into `$\enot\enot P$' with the double negation rule. Then we can use the disjunction elimination rule with `$\enot P \eor (R \eand Q)$' and `$\enot\enot P$'.
 
 \begin{proof}
 	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
@@ -617,7 +617,7 @@ The next thing that we want is $(R \eand Q)$ on a line by itself. Now, you might
 		\hypo{p}{P}\as{}
 		\have{dn}{\enot\enot P} \dn{p}
 \end{proof}
-Once we have $R \eand Q$, we use $\eand$E to get $Q$. Then we  can use $\eif$I to get the conclusion.
+Once we have `$R \eand Q$', we use `$\eand$E' to get `$Q$'. Then we  can use `$\eif$I' to get the conclusion.
 
 \begin{proof}
 	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
