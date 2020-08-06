@@ -108,7 +108,7 @@ In doing this, we are not fixing this symbolization \emph{once and for all}. We 
 
 
 
-\chapter{Logical Operators}
+\chapter{Logical operators}
 \label{s:TFLConnectives}
 
 At this point, we should clarify the task at hand. Truth-functional propositional logic is a branch of logic that focuses on the relationships between atomic sentences. One part of truth-functional propositional logic (or \textit{TFL} for short) is a formal language. This formal language consists of sentence letters, which stand for atomic sentences of English (although we won't always be concerned about the specific English sentences that they might represent), and the \textit{logical operators} `and', `or', `not', `if \ldots, then \ldots' and `if and only if'. A logical operator is a word or phrase that modifies a sentence or connects two sentences to form a more complex sentence. We call these operators \textit{truth-functional} because the truth of the complex sentences depends entirely on the truth of the atomic sentences of which they are composed. (They are also sometimes referred to as \textit{connectives} because, except in the case of `not', these operators connect two simpler sentences.)  
@@ -404,7 +404,7 @@ There is a complication with treating `unless' as a disjunction, however. As we 
 
 \section{The turnstile}
 
-The final symbol that we need in not actually a symbol of TFL, but it is useful symbol for displaying arguments that consist of sentences in TFL. The symbol `\proves' is called the \textit{turnstile}. The purpose of the turnstile is to separate the sentences that are the premises of an argument from the sentence that is the conclusion, and it can be read as \textit{therefore}. Here is an example,
+The final symbol that we need in not actually a symbol of TFL, but it is a useful symbol to have when displaying arguments in TFL. The symbol `\proves' is called the \textit{turnstile}. The purpose of the turnstile is to separate the sentences that are the premises of an argument from the sentence that is the conclusion, and it can be read as \textit{therefore}. Here is an example,
 $$(P \eif C), (P \eor D) \proves (\enot C \eif D)$$
 In this argument, the premises are `$(P \eif C)$' and `$(P \eor D)$', and the conclusion is `$(\enot C \eif D)$'.
 
@@ -425,7 +425,7 @@ $\enot C \eor D$ \qquad \qquad \qquad \qquad  & ``Not $C$ or $D$.''\\
 $(B \eor D) \eif (C \eand F)$ & ``If $B$ or $D$, then $C$ and $F$.''\\
 $P \eiff (R \eand S)$ & ``$P$ if and only if both $R$ and $S$.''\\
 $\enot(Q \eand R)$ & ``It is not the case that both $Q$ and $R$.''\\
-&Or just ``Not both $Q$ and $R$.'' 
+&\textit{or just} ``Not both $Q$ and $R$.'' 
 \end{tabular}
 \end{table*}
 
