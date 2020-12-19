@@ -229,6 +229,55 @@ To make an inference from \textit{Amy is a chef or she is a rock climber}, we al
 \end{proof}
 \end{factboxy}
 
+
+\subsection{Double negation}
+
+The \define{double negation rule} is a rule of convenience that sometimes compliments the disjunction-elimination rule. (There are also times when it will be used in the proofs that are discussed in \ref{s:theorems}, but, for the material in this chapter, it will only be used with the disjunction-elimination rule.) First, notice that the disjunction-elimination rule is very specific. To use this rule, we need, on one line of our proof, a sentence of the form $\meta{A}\eor\meta{B}$, and on another line of our proof we need one side of the disjunction---$\meta{A}$ or $\meta{B}$---with a `$\enot$' in front of it: $\enot\meta{A}$ or $\enot\meta{B}$. 
+
+This presents a problem if we these two sentences somewhere in a proof:
+\begin{proof}
+	\hypo{ab}{\enot P \eor Q} \pr{}
+	\hypo{nb}{P} \pr{}
+\end{proof}
+You might, then, think that we can put `$Q$' on a new line.
+\begin{proof}
+	\hypo{ab}{\enot P \eor Q} \pr{}
+	\hypo{nb}{P} \pr{}
+	\have{q}{Q} \oe{ab,nb}
+\end{proof}
+In a sense, this is the right idea for the disjunction-elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line 4 means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a line by itself. The disjunction-elimination rule, however, do not permit this. As we just said, the rule requires that we have, on a line somewhere, one side of the disjunction with a `$\enot$' before it. The double negation rule helps us with this so that we can use the disjunction-elimination rule more often. 
+
+Before see how the double negation rule can help us with our derivation, let's see the rule. The first version of the double negation rule allows us to add two \textit{not}s (i.e., \textit{not not}) to an atomic sentence---which, of course, will not change the sentence's truth value. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common.
+
+\begin{factboxy}{double negation rule}
+\begin{proof}
+	\have[m]{a1}{\meta{A}}
+	\have[n]{a2}{\enot\enot\meta{A}} \dn{a1}
+\end{proof}
+
+\begin{proof}
+	\have[m]{a1}{\enot\enot\meta{A}}
+	\have[n]{a2}{\meta{A}} \dn{a1}
+\end{proof}
+\end{factboxy}
+
+With this rule, we can derive `$Q$' this way:
+
+\begin{proof}
+	\hypo{ab}{\enot P \eor Q} \pr{}
+	\hypo{nb}{P} \pr{}
+	\have{nnb}{\enot \enot P} \dn{nb}
+	\have{q}{Q} \oe{ab,nnb}
+\end{proof}
+The `$P$' on line 2 and the `$\enot \enot P$' have exactly the same meaning. The only difference between `$P$' and `$\enot \enot P$' is their form. But now that we have `$\enot \enot P$', we have what is on the left side of the disjunction with a `$\enot$' before it.
+\begin{proof}
+	\hypo{ab}{\textbf{\textit{\textcolor{red2}{\enot P}}} \eor Q} \pr{}
+	\hypo{nb}{P} \pr{} 
+	\have{nnb}{ \textbf{\textit{\enot \textcolor{red2}{\enot P}}} } \dn{nb}
+	\have{q}{Q} \oe{ab,nb}
+\end{proof}
+
+
 \section{Conditional elimination}
 
 For the conditional, we will begin with the elimination rule since it is simpler than the conditional introduction rule. Consider the following argument:
@@ -331,6 +380,7 @@ We will now review some proofs that use the rules that we have learned so far.
 	\have{c}{T \eiff S} \bi{st,ts}
 \end{proof}\medskip
 \end{earg}
+
 
 \section{Conditional introduction}
 
@@ -460,6 +510,19 @@ With the $Q$ on line 4 and $Q \eif R$ on line 2, we can use {\eif}E and get $R$.
 \smallskip
 \noindent And, with a similar proof, we can also derive `$C \eif B$'.
 
+\item In the proof for this argument: $\enot P \eor (R \eand Q) \proves P \eif Q$, we will use the conditional introduction rule as well as double negation rule and disjunction-elimination rule. 
+
+\begin{proof}
+	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
+	\open
+		\hypo{p}{P}\as{}
+		\have{dn}{\enot\enot P} \dn{p}
+		\have{rq}{R \eand Q} \oe{p1,dn}
+		\have{q}{Q} \ae{rq}
+	\close
+	\have{c}{P \eif Q}\ci{p-q}
+\end{proof}
+
 %\begin{notebox}
 %In fact, in some logic textbooks, this is biconditional elimination rule:
 %\begin{proof}\label{eiff-I}
@@ -476,6 +539,7 @@ With the $Q$ on line 4 and $Q \eif R$ on line 2, we can use {\eif}E and get $R$.
 
 
 \section{Negation introduction and elimination}
+
 Here is a simple mathematical argument in English:
 \begin{earg}
 \item[1.] Assume that there is some greatest natural number. Call it $G$.
@@ -526,10 +590,9 @@ When using either of the negation rules, the last two lines of the subproof must
 %	\have{ngng}{\enot(G \eand \enot G)}\ni{gng-ng}
 %\end{proof}
 
-\section{Reiteration and double negation}
-In addition to the rules for each logical operator, we also have the \define{reiteration rule} and a \define{double negation rule}. These rules, like the other rules, preserve the truth value of the sentences in a proof. (I.e., if the sentence on a certain line is true and you apply either one of these rules to that sentence, what you get on the new line will still be true.) But, compared to the others, these are minor rules. Their purpose is just to help us produce proofs more easily. 
+\subsection{Reiteration}
 
- If you already have shown something in the course of a proof, the reiteration rule allows you to repeat it on a new line.  
+To get a contradiction on the last two lines of a subproof, you will usually have to move a sentence that is on an earlier line to the last or second-to-last line of the subproof. This is done with the \define{reiteration rule}. Just as the double negation rule is a rule of convenience that sometimes compliments the disjunction-elimination rule, the reiteration rule is a rule of convenience that usually compliments the negation-elimination and negation-introduction rules.  
 
 \begin{factboxy}{reiteration rule}
 \begin{proof}
@@ -580,55 +643,72 @@ Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to disc
 	\have{c}{P}\ni{np-ng}
 \end{proof}
 
-Our final rule is the double negation rule. The first version of this rule allows us to add two \textit{not}s (i.e., \textit{not not}) to an atomic sentence---which, of course, will not change the sentence's truth value. This is sometimes useful, especially when you need to use the disjunction elimination rule. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common.
 
-\begin{factboxy}{double negation rule}
-\begin{proof}
-	\have[m]{a1}{\meta{A}}
-	\have[n]{a2}{\enot\enot\meta{A}} \dn{a1}
-\end{proof}
+\section{Some examples with negative introduction and elimination}
 
-\begin{proof}
-	\have[m]{a1}{\enot\enot\meta{A}}
-	\have[n]{a2}{\meta{A}} \dn{a1}
-\end{proof}
-\end{factboxy}
+\textit{These two are from my week 12 notes. Put a couple from week 11 before them and one from week 12 with a sub-proof within subproof after them.}
 
-To illustrate the double negation rule---and also to review the $\eor$E and $\eif$I rules---we will go through the proof for this argument: $\enot P \eor (R \eand Q) \proves P \eif Q$. We begin by listing the premise and making the assumption for $\eif$I.
+\begin{earg}
+
+\item $\enot P \eif \enot Q, Q \proves P$
 
 \begin{proof}
-	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
+	\hypo{p1}{\enot P \eif \enot Q} \pr{}
+	\hypo{p2}{Q} \pr{}	
 	\open
-		\hypo{p}{P}\as{}
-\end{proof}
-The next thing that we want is `$(R \eand Q)$' on a line by itself. Now, you might think that, with `$\enot P \eor (R \eand Q)$' and `$P$', we can use `$\eor$E' to infer `$(R \eand Q)$'. After all, `$P$' is the \textit{denial} of `$\enot P$'. Recall, however, the disjunction elimination rule.
-\begin{factboxy}{disjunction elimination rule}
-\begin{proof}
-	\have[m]{ab}{\meta{A}\eor\meta{B}}
-	\have[n]{nb}{\enot\meta{B}}
-	\have[\ ]{a}{\meta{A}} \oe{ab,nb}
-\end{proof}
-\end{factboxy}  
-\noindent To use this rule, we need the \textit{negation} of one of the disjuncts. The negation of a sentence in TFL is the sentences with a `$\enot$' in front of it. The negation of `$\meta{B}$' is `$\enot\meta{B}$', and the negation of `$\enot\meta{B}$' is `$\enot\enot\meta{B}$' (and so on by the same pattern). Hence, we need to transform `$P$' into `$\enot\enot P$' with the double negation rule. Then we can use the disjunction elimination rule with `$\enot P \eor (R \eand Q)$' and `$\enot\enot P$'.
-
-\begin{proof}
-	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
-	\open
-		\hypo{p}{P}\as{}
-		\have{dn}{\enot\enot P} \dn{p}
-\end{proof}
-Once we have `$R \eand Q$', we use `$\eand$E' to get `$Q$'. Then we  can use `$\eif$I' to get the conclusion.
-
-\begin{proof}
-	\hypo{p1}{\enot P \eor (R \eand Q)} \pr{}	
-	\open
-		\hypo{p}{P}\as{}
-		\have{dn}{\enot\enot P} \dn{p}
-		\have{rq}{R \eand Q} \oe{p1,dn}
-		\have{q}{Q} \ae{rq}
+		\hypo{np}{\enot P} \as{}
+		\have{nq}{\enot Q} \ce{p1,np}
+		\have{q}{Q} \reit{p2}
 	\close
-	\have{c}{P \eif Q}\ci{p-q}
+	\have{c}{P} \ne{np-q}
 \end{proof}
+
+
+\item $P \eif \enot Q \proves \enot(P \eand Q)$
+
+\begin{proof}
+	\hypo{p1}{P \eif \enot Q} \pr{}	
+	\open
+		\hypo{pq}{P \eand Q} \as{}
+		\have{p}{P} \ae{pq}
+		\have{nq}{\enot Q} \ce{p1,p}
+		\have{q}{Q} \ae{pq}
+	\close
+	\have{c}{\enot(P \eand Q)} \ni{pq-q}
+\end{proof}
+
+
+\item $B \eand C, \enot(B \eand A) \proves \enot A$
+
+\begin{proof}
+	\hypo{p1}{B \enot C} \pr{}	
+	\hypo{p2}{\enot(B \eand A)} \pr{}
+	\open
+		\hypo{a}{A} \as{}
+		\have{b}{B} \ae{p1}
+		\have{ba}{B \eand A} \ai{a,b}
+		\have{p2b}{\enot(B \eand A)} \reit{p2}
+	\close
+	\have{c}{\enot A} \ni{a-p2b}
+\end{proof}
+
+\item A proof for `$\enot P \proves P \eif Q$' requires two subproofs. The first assumption that we make, `$P$', is so that we can use the conditional introduction rule at the end of the proof. The second assumption, `$\enot Q$', is so that we can use the negation elimination rule and get `$Q$' on the last line of the first subproof.
+
+\begin{proof}
+	\hypo{p1}{\enot P} \pr{}	
+	\open
+		\hypo{p}{P}	\as{}
+		\open
+			\hypo{nq}{\enot Q} \as{}
+			\have{p2}{P} \reit{p}
+			\have{np}{\enot P} \reit{p1}
+		\close
+		\have{q}{Q} \ne{nq-np}
+	\have{c}{P \eif Q} \ci{p-q}
+\end{proof}
+
+
+\end{earg}
 
 
 
@@ -1095,7 +1175,7 @@ Knowing that you need to arrive at a conditional, you also know that you need to
 
 \chapter{Proof-theoretic concepts}\label{s:ProofTheoreticConcepts}
 
-\section{Theorems}
+\section{Theorems}\label{s:theorems}
 
 You are familiar with arguments that have this form:
 $$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$$
