@@ -979,28 +979,99 @@ F&  F&  F	&	T		&	F	&	T	&	F	&	F	&	F	&	F	&	T		&	F	&	F	&F	\\
 \chapter{Semantic concepts}
 \label{s:SemanticConcepts}
 
-In the previous section, we introduced the idea of a valuation and showed how to determine the truth value of any TFL sentence, on any valuation, using a truth table. In this section, we will introduce some related ideas, and show how to use truth tables to test whether or not they apply.
+As we did in the previous chapter, we begin with the definition of \define{valuation}.
+
+\begin{factboxy}{Valuation}
+A \textit{valuation} is any assignment of truth values to particular atomic sentences of TFL. Each row of a truth table represents a possible valuation. The entire truth table represents all possible valuations.
+\end{factboxy}
+
+Let's say that we are going to create a truth table for `$P \eor \enot Q$'. On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. That is one valuation. On the second line, we make $P =$ `true' and $Q =$ `false'. That is another valuation. The assignments of `true' and `false' to `$P$` and `$Q$' on lines 3 and 4, then, are the remaining possible valuations, when we have a sentence containing only two atomic sentences. (See figure \ref{fig:valuation}.)
+
+%\begin{center}
+%\begin{tabular}{c c|d e e f }
+%$P$&$Q$& $P$& \eor& \enot& $Q$\\
+%\hline
+% T & T & T & \TTbf{T} & F & T\Tstrut\\
+% T & F & T & \TTbf{T} & T & F \\
+% F & T & F & \TTbf{F} & F & T \\
+% F & F & F & \TTbf{T} & T & F
+%\end{tabular}
+%\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=6.5cm]{this_is_a_valuation.pdf}
+\caption{For the TFL sentence `$P \eor \enot Q$', $P =$ `true' and $Q =$ `true' is one valuation. On this valuation, `$P \eor \enot Q$' is true.
+The other valuations are $P =$ `true' and $Q =$ `false', $P =$ `false' and $Q =$ `true', and $P =$ `false' and $Q =$ `false'.}
+\label{fig:valuation}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+In the previous chapter, we used truth tables to determine the truth value of any TFL sentence---for each possible valuation. In this chapter, we will extend this type of analysis. We will examine six properties that apply (or may apply) to either single TFL sentences (\textit{tautology}, \textit{contradiction}, and \textit{contingent}) or sets of TFL sentences (\textit{equivalent}, \textit{jointly consistent}, and \textit{jointly inconsistent}). For each, we use a truth table to determine which property applies.
 
 
 \section{Tautologies and contradictions}
-In \S\ref{s:nec-truth}, we explained \emph{necessary truth}, \emph{necessary falsity}, and \textit{contingency}. The first two have surrogates in TFL. We will start with a surrogate for necessary truth.
+Recall from \S\ref{s:nec-truth} that a \emph{necessary truth} is a sentence that must be true, a \emph{necessary falsehood} is a sentence that must be false, and a sentence that is neither a necessary truth or a necessary falsehood we call \textit{contingent}. The first two have surrogates in TFL. We will start with a surrogate for necessary truth.
 
 \begin{factboxy}{Tautology}
-$\meta{A}$ is a \define{tautology} if and only if it is true on every valuation.
+$\meta{A}$ (a sentence in TFL) is a \define{tautology} if and only if it is true on every valuation.
+
+\tcblower
+
+\footnotesize{Recall from \ref{s:Metavariables}, that $\meta{A}$ stands for any possible sentence of TFL (as do $\meta{B}$, $\meta{C}$, $\meta{D}$, etc.). Hence, `$\meta{A}$' can stand for `$P \eor Q$' or `$(P \eiff \enot R) \eand T$' or anything else.}
 \end{factboxy}
 
 We can determine whether a sentence is a tautology using a truth table. If the sentence is true on every line of a complete truth table (that is, if there are only `T's under the main connective), then it is true on every valuation. And if it is true on every valuation, it is a tautology. The example in \S\ref{s:tt-example}, `$(H \eand I) \eif H$', for instance, is a tautology. 
 
-\textit{Tautology} is only a surrogate, however, for \textit{necessary truth}. There are some necessary truths that we cannot adequately symbolize in TFL. An example is `$2 + 2 = 4$'. This \emph{must} be true, but if we try to symbolize it in TFL, the best we can offer is an atomic sentence, and no atomic sentence is a tautology. Still, if we can adequately symbolize some English sentence using a TFL sentence which is a tautology, then that English sentence expresses a necessary truth.
+\begin{center}
+\begin{tabular}{c c|d e e e f}
+${H}$&${I}$&$(H$&\eand&$I)$&\eif&$H$\\
+\hline 
+{T} & {T} & {T} & T & {T} & \textbf{T} & T \Tstrut\\
+{T} & {F} & {T} & F & {F} & \textbf{T} & T\\
+{F} & {T} & {F} & F & {T} & \textbf{T} & F\\
+{F} & {F} & {F} & F & {F} & \textbf{T} & F
+\end{tabular}
+\end{center}
 
-We have a similar surrogate for \textit{necessary falsity}.
+
+\textit{Tautology} is only a surrogate, however, for \textit{necessary truth}. There are some necessary truths that we cannot adequately symbolize in TFL. An example is `$2 + 2 = 4$'. This \emph{must} be true, but if we try to symbolize it in TFL, the best we can offer is an atomic sentence, perhaps,
+	\begin{ekey}
+		\item[F] $2 + 2 = 4$ 
+	\end{ekey}
+But an atomic sentence by itself cannot be a tautology. (To see this, try making a truth table for just `$F$'.) Still, if we can adequately symbolize some English sentence using a TFL sentence, and that TFL sentence is a tautology, then the English sentence expresses a necessary truth.
+
+We have a similar surrogate for \textit{necessary falsehood}.
 \begin{factboxy}{Contradiction}
 $\meta{A}$ is a \define{contradiction} if and only if it is false on every valuation.
 \end{factboxy}
 
-\noindent We can determine whether a sentence is a contradiction just by using truth tables. If the sentence is false on every line of a complete truth table, then it is false on every valuation, so it is a contradiction. The example in \S\ref{s:tt-example2}, `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$', is a contradiction.
+\noindent Again, we can determine whether a sentence is a contradiction with a truth table. If the sentence is false on every line of a complete truth table, then it is false on every valuation, and so it is a contradiction. The standard example of a contradiction is `$P \eand \enot P$'. Since we have only one letter in this sentence, it is only a two line truth table, but on each line, the sentence is false. 
 
-In \S\ref{s:nec-truth}, we defined \define{contingent} as ``a sentence that is capable of being true and capable of being false (in different circumstances, of course).'' A truth table, then, provides us with those different circumstances. A sentence that is true on some lines (or even just on one line) and false on the others is contingent. Or, we can also say: any sentence that is neither a tautology nor a contradiction is contingent. $\enot(P \eor Q)$, for instance, is contingent.
+\begin{center}
+\begin{tabular}{c|d e e f }
+$P$& $P$ & $\eand$ &\enot&$P$\\
+\hline
+ T & T & \TTbf{F} & F & T\Tstrut\\
+ F & F & \TTbf{F} & T & F 
+\end{tabular}
+\end{center}
+Similarly, although its truth table has four lines, `$(P \eor Q) \eiff (\enot P \eand \enot Q)$' is a contradiction. 
+\begin{center}
+\begin{tabular}{c c|d e e e e e e e f }
+$P$& $Q$& $(P$ &\eor &$Q)$ &\eiff &(\enot &$P$ &\eand &\enot &$Q)$\\
+\hline
+T &T      &T &T &T   &\TTbf{F}    &F &T &F &F &T\Tstrut\\     
+T &F      &T &T &F   &\TTbf{F}    &F &T &F &T &F\\     
+F &T      &F &T &T   &\TTbf{F}    &T &F &F &F &T\\     
+F &F      &F &F &F   &\TTbf{F}    &T &F &T &T &F  
+\end{tabular}
+\end{center}
+
+In \S\ref{s:nec-truth}, we defined \define{contingent} as ``a sentence that is capable of being true and capable of being false (in different circumstances, of course).'' A truth table, then, provides us with those different circumstances. A sentence that is true on some valuations (or even just on one) and false on the others is contingent. Or, we can also say: any sentence that is neither a tautology nor a contradiction is contingent. $\enot(P \eor Q)$, for instance, is contingent.
 \begin{center}
 \begin{tabular}{c c|d e e f }
 $P$&$Q$&\enot&$(P$&\eor&$Q)$\\
@@ -1018,13 +1089,12 @@ $P$&$Q$&\enot&$(P$&\eor&$Q)$\\
 When we have two sentences, three possible logical relations can exist between the sentences. (Actually, there are more than three, but we'll focus on three.) The first is \define{equivalence}.
 
 \begin{factboxy}{Equivalence}
-$\meta{A}$ and $\meta{B}$ are \define{equivalent} if and only if, for every valuation, their truth values agree, i.e.\ if there is no valuation in which they have opposite truth values. 
+$\meta{A}$ and $\meta{B}$ are \define{equivalent} if and only if, for every valuation, their truth values agree (that is, if and only if there is no valuation for which they have opposite truth values). 
 		
-(Equivalently, if $(\meta{A} \eiff \meta{B})$ is a tautology, then $\meta{A}$ and $\meta{B}$ are \define{equivalent}.)
+Equivalently, if $(\meta{A} \eiff \meta{B})$ is a tautology, then $\meta{A}$ and $\meta{B}$ are \define{equivalent}.
 \end{factboxy}
 
-
-We have already made use of this notion, in effect, in \S\ref{s:MoreBracketingConventions}; the point was that `$(A \eand B) \eand C$' and  `$A \eand (B \eand C)$' are logically equivalent. Again, it is easy to test for equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they logically equivalent? To find out, we construct a truth table containing both sentences.
+Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they logically equivalent? To find out, we construct a truth table containing both sentences.
 \begin{center}
 \begin{tabular}{c c|d e e f |d e e e f}
 $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
@@ -1035,14 +1105,14 @@ $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
  F & F & \TTbf{T} & F & F & F & T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{center}
-Look at the columns for the main logical operators; negation for the first sentence, conjunction for the second. On the first three rows, both are false. On the final row, both are true. Since they match on every row, the two sentences are logically equivalent.
+Looking at the columns for the main logical operators (`\enot' for the first sentence, `\eand' for the second), we see that on the first three rows, both sentences are false. On the final row, both are true. Since they match on every row---that is, on every valuation for `$P$' and `$Q$'---the two sentences are logically equivalent.
 
 
 \section{Consistency}\label{consistency--tt}
 In \S\ref{s:joint-poss}, we said that sentences are jointly possible if and only if it is possible for all of them to be true at once. We have a surrogate for this notion too. 
 
 \begin{factboxy}{Jointly consistent}
-$\meta{A}$ and $\meta{B}$ are \define{jointly consistent} if and only if there is some valuation that makes them both true.
+$\meta{A}$ and $\meta{B}$ are \define{jointly consistent} if and only if there is some valuation that makes them both true and they are not equivalent.
 		\medskip
 		
 Equivalently, if
@@ -1053,8 +1123,7 @@ Equivalently, if
 then $\meta{A}$ and $\meta{B}$ are \define{jointly consistent}.
 \end{factboxy}
 
-
-\noindent The requirement that $(\meta{A} \eiff \meta{B})$ not be a tautology is included to distinguish sentences that are jointly consistent from those that are equivalent. It is acceptable, however, to let the two concepts overlap---that is, allow that some sentences are jointly consistent and equivalent---in which case that requirement should be dropped.
+\noindent The requirement that the two sentences not be equivalent is not always included, but we will distinguish between sentences that are jointly consistent from those that are equivalent. It is acceptable, however, to let the two concepts overlap---that is, allow that some sentences are jointly consistent and equivalent---in which case the definition would drop this requirement about not being equivalent.
 
 This was one of the examples in \S\ref{s:joint-poss}:
 \begin{ebullet}	
@@ -1100,7 +1169,7 @@ F  &	 F & 		\TTbf{F} &	 ~T 		& F	& T 	& F 		& T 		& F 	& \TTbf{T} 		& T 		& F
 \end{tabular}
 \end{center}
 \medskip
-\item[(3)] Both sentences are false on every line. For example, the truth values for $\enot P \eand P$ and $\enot Q \eand Q$ are always the same. On each line, both sentences are false. So, for sentences that are jointly inconsistent in this way, both of these criteria are satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology and $(\meta{A} \eiff \meta{B})$ is a tautology. (And the latter, recall, means that these sentences are equivalent.)
+\item[(3)] Both sentences are false on every line. For example, the truth values for $\enot P \eand P$ and $\enot Q \eand Q$ are always the same. On each line, both sentences are false. So, for sentences that are jointly inconsistent in this way, both of these criteria are satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology and $(\meta{A} \eiff \meta{B})$ is a tautology. (And the latter, recall, means that these sentences are equivalent, and so here we do have two concepts that overlap.) 
 \begin{center}
 \begin{tabular}{c c|d e e f |d e e e f}
 $P$&$Q$&\enot&$P$&\eand&$P$&\enot&$Q$&\eand&&$Q$\\
