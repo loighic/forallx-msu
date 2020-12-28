@@ -73,7 +73,7 @@ The conclusion of this argument is `$\enot A \eand \enot B$'; and so we want our
 	\have[ ]{}{\ldots}
 	\have[n]{con}{\enot A \eand \enot B}
 \end{proof}
-It doesn't matter what line number we end on, but, all things considered, we would prefer a shorter proof to a longer one.
+It doesn't matter how many lines it takes to arrive at the conclusion, but, all things considered, we would prefer a shorter proof to a longer one.
 
 Suppose we have this argument:
 $$A\eor B, \enot (A\eand C), \enot (B \eand \enot D) \proves \enot C\eor D$$
@@ -89,7 +89,7 @@ This, meanwhile, will be the final line of the proof:
 \end{proof}
 Setting up the premises and the conclusion is, however, the easy part. The real task---and the interesting part---is explaining each of the steps that get us from the premises to the conclusion. 
 
-To construct proofs, we will develop a \define{natural deduction} system. In the natural deduction system, there are two rules for each logical operator: an \define{introduction} rule, which allows us to derive a new sentence that has the logical operator as the main connective, and an \define{elimination} rule, which allows us to extract a subsentence from a sentence that has that logical operator as the main connective. (Table \ref{table.TFL-rules} contains a list of the rules.) These rules can then be combined to demonstrate each step that must be taken to get from the premises to the conclusion. All of the rules introduced in this chapter are also summarized on pp.~\pageref{ProofRules} - \pageref{ProofRules-end}.
+To do that, we will use a \define{natural deduction} system. In this system, there are two rules for each logical operator: an \define{introduction} rule, which allows us to derive a new sentence that has the logical operator as the main connective, and an \define{elimination} rule, which allows us to extract a subsentence from a sentence that has that logical operator as the main connective. (Table \ref{table.TFL-rules} contains a list of the rules.) These rules can then be combined to demonstrate each step that must be taken to get from the premises to the conclusion. All of the rules introduced in this chapter are also summarized on pp.~\pageref{ProofRules} - \pageref{ProofRules-end}.
 
 
 \begin{table*}\centering\sffamily\footnotesize
@@ -101,7 +101,7 @@ disjunction introduction rule & disjunction elimination rule \\
 conditional introduction rule & conditional elimination rule \\
 biconditional introduction rule & biconditional elimination rule \\
 negation introduction rule & negation elimination rule \\
-reiteration rule & double negation rule\\
+double negation rule & reiteration rule\\
 \bottomrule
 \end{tabular}
 \caption{}\label{table.TFL-rules}
@@ -111,9 +111,8 @@ reiteration rule & double negation rule\\
 
 \section{Conjunction introduction and elimination}\label{s:conj-rule}
 
-Suppose we want to show that \textit{Sarah is swimming and Amy is reading}. One way to do this would be as follows: first we show that Sarah is swimming; next, we show that Amy is reading; then we put the two together to obtain the conjunction \textit{Sarah is swimming and Amy is reading}.
-
-This reasoning process, which we all do naturally, is part of our natural deduction system. It is implemented with the \define{conjunction introduction rule}. 
+Let's say that we know that Sarah is swimming. We also, as it happens, know that Amy is reading. We are, therefore, justified in stating, ``Sarah is swimming and Amy is reading.'' 
+This reasoning process, which we all do naturally, is part of our natural deduction system, where it is called the \define{conjunction introduction rule}. 
 \begin{factboxy}{conjunction introduction rule}
 \begin{proof}
 	\have[m]{a}{\meta{A}}
@@ -121,10 +120,12 @@ This reasoning process, which we all do naturally, is part of our natural deduct
 	\have[\ ]{c}{\meta{A}\eand\meta{B}} \ai{a, b}
 \end{proof}
 \tcblower
-\footnotesize{Note that `$m$' and `$n$' will never appear in an actual proof. In a proof, the lines are numbered `$1$', `$2$', `$3$', and so forth. When we define the rule, we use variables to emphasize that the $\meta{A}$ and the $\meta{B}$ can be on any lines in the proof (and in any order), as long as they are before the application of the rule.}
+\footnotesize{Note that `$m$' and `$n$' will never appear in an actual proof. In a proof, the lines are numbered $1$, $2$, $3$, etc. We define this rule with `$m$' and `$n$' to emphasize that the $\meta{A}$ and the $\meta{B}$ can be on any lines in the proof (and in any order), as long as they are before the application of the rule.}
 \end{factboxy}
 
-For the example above, we can adopt this symbolization key:
+\noindent The `$\meta{A}$' and `$\meta{B}$' can occur in either order, and the conjunction can be `$\meta{A} \eand \meta{B}$' or `$\meta{B} \eand \meta{A}$'.
+
+For the example about Sarah and Amy, we can use this symbolization key:
 	\begin{ekey}
 		\item[S] Sarah is swimming.
 		\item[R] Amy is reading.
@@ -136,9 +137,9 @@ Although, as you will see, the lines that we use to apply the rules can be anywh
 	\have{c}{S \eand R} \ai{a, b}
 \end{proof}
 
-Every line of our proof must either be an assumption (and a premise is an assumption), or it must be justified by some rule. Therefore, on line 3, we put the citation `$\eand$I 1, 2' to indicate that `$S \eand R$' was obtained by applying the conjunction introduction rule to lines 1 and 2. The `$\meta{A}$' and `$\meta{B}$', which were on lines 1 and 2, can occur in either order, and the conjunction that we derive can be `$\meta{A} \eand \meta{B}$' or `$\meta{B} \eand \meta{A}$'.
+Every line of our proof must either be an assumption (and remember that a premise is an assumption), or it must be justified by some rule. Therefore, on line 3, we put `$\eand$I 1, 2' to indicate that `$S \eand R$' was obtained by applying the conjunction introduction rule to lines 1 and 2. 
 
-As you saw, the conjunction \emph{introduction} rule introduces the connective `$\eand$' into our proof. Correspondingly, we have a rule that \emph{eliminates} that connective.  Suppose you have shown that \textit{Jeff is eating and Mary is sleeping}. You are entitled to conclude that Jeff is eating. Equally, you are entitled to conclude that Mary is sleeping. Putting this together, we obtain our \define{conjunction elimination rule} (which is actually two similar rules).
+The conjunction introduction rule introduces a sentence with `$\eand$' as the main connective. We also have a rule that eliminates that connective. Suppose someone tells you that \textit{Jeff is eating and Mary is sleeping}. Assuming that whoever told you this is reliable, you are entitled to infer simply that \textit{Jeff is eating}. Equally, you are entitled to infer that \textit{Mary is sleeping}. This, in effect, is the \define{conjunction elimination rule} (which is actually two similar rules).
 
 \begin{factboxy}{conjunction elimination rule}
 \begin{proof}
@@ -153,7 +154,7 @@ As you saw, the conjunction \emph{introduction} rule introduces the connective `
 \end{factboxy}
 \noindent When you have a conjunction on some line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$'.
 
-With just these two rules, we can start to see how our formal proof system works. Consider:
+With just these two rules, we can start to see how our natural deduction system works. We will develop a proof for this argument. 
 \begin{earg}
 \item[] $(A\eor B) \eand (G \eand H) \proves (A\eor B)\eand H$
 \end{earg}
@@ -161,22 +162,22 @@ The main logical operator in both the premise and conclusion of this argument is
 \begin{proof}
 	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 \end{proof}
-From the premise, we can eliminate the main connective (and only the main connective) using {\eand}E. Using $\eand$E twice gives us this:
+From the premise, we can eliminate the main connective (and only the main connective) using the conjunction elimination rule. Using this rule twice gives us this:
 \begin{proof}
 	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
 	\have{b}{(G\eand H)} \ae{ab}
 \end{proof}
-Now that $(G\eand H)$ is on its own line, we can use $\eand$E again to get $H$ on a line by itself. 
+Now that $(G\eand H)$ is on its own line, we can use the rule again to get $H$ on a line by itself. 
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eif H)} \pr{}
+	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
 	\have{b}{(G\eand H)} \ae{ab}
 	\have{b2}{H} \ae{b}
 \end{proof}
-In our final step we use the conjunction introduction rule to get the conclusion, $(A\eor B)\eand H$.
+In our final, step we use the conjunction introduction rule to get the conclusion, $(A\eor B)\eand H$.
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eif H)} \pr{}
+	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
 	\have{b}{(G\eand H)} \ae{ab}
 	\have{b2}{H} \ae{b}
@@ -186,34 +187,11 @@ And we're done. Notice that there is nothing in this representation of the proof
  
 
 \section{Disjunction introduction and elimination}\label{s:disj-rule}
-Suppose that Sarah is swimming. Then the sentence `Sarah is swimming or Sarah is working' is true. After all, to say that `Sarah is swimming or she is working' is to say something weaker than `Sarah is swimming'. (For the sentence, `Sarah is swimming' to be true, it must be the case that Sarah is swimming. For the sentence `Sarah is swimming or she is working' to be true, it must be the case that Sarah is swimming \textit{or} it must be the case that Sarah is working. It doesn't have to be the case, although it can be, that she is, somehow, swimming and working.)
 
-Let's emphasize this point. Suppose Sarah is swimming. It follows that \emph{either} Sarah is swimming \emph{or} she is a witch. Equally, it follows that \emph{either} Sarah is swimming \emph{or} the Queen of England is on the moon. These are strange inferences to draw from `Sarah is swimming', but there is nothing logically wrong with them. (They may violate some implicit conversational norms, but they don't violate the truth conditions for `or'. Just check the characteristic truth table for the disjunction.)
-
-The idea is that if we know that a sentence is true, we can create a longer sentence by adding `or \ldots \textit{whatever we want}' and this new sentence will also be true. This feature of the disjunction gives us the \define{disjunction introduction rule} (which, again, is two similar rules).
-
-\begin{factboxy}{disjunction introduction rule}
-\begin{proof}
-	\have[m]{a}{\meta{A}}
-	\have[\ ]{ab}{\meta{A}\eor\meta{B}}\oi{a}
-\end{proof}
-
-\begin{proof}
-	\have[m]{a}{\meta{A}}
-	\have[\ ]{ba}{\meta{B}\eor\meta{A}}\oi{a}
-\end{proof}
-\end{factboxy}
+Hopefully, grasping the conjunction introduction and conjunction elimination rules was not too difficult, and you saw that you already understood the logic of each rule. As we proceed, it may surprise you to be told that you already, more or less, understand the logic of the rest of the rules of derivation (with the possible exception of the biconditional introduction and elimination rules, since the biconditional isn't often used precisely in English). These are, after all, \textit{natural} deduction rules. Seeing them in this context makes it easy to forget this, but you should keep it in mind. We have also, already, discussed the logical operators in chapter \ref{s:TFLConnectives} and chapter \ref{s:CharacteristicTruthTables} and you should to try to integrate what you learned in those chapters with the rules of derivation.
 
 
-\noindent \meta{B} can be \emph{any} sentence whatsoever. The only line that we need before we use this rule is the one containing \meta{A}. Hence, the following is a perfectly acceptable proof:
-\begin{proof}
-	\hypo{m}{M} \pr{}
-	\have{mmm}{M \eor [(A\eiff B) \eif (C \eand D)]}\oi{m}
-\end{proof}
-
-The \define{disjunction elimination rule}, on the other hand, requires citing more than one line. Let's say that this sentence is true: \textit{Amy is a chef or she is a rock climber}. Do we know that Amy is a chef? No. The sentence \textit{Amy is a chef or she is a rock climber} might be true because \textit{Amy is a chef} is true, but it might be true because only \textit{Amy is a rock climber} is true. Or, since this is the inclusive-or, it's also possible that \textit{Amy is a chef} and \textit{Amy is a rock climber} are both true. The problem is that we don't know anything except that Amy is a chef or she is a rock climber. 
-
-To make an inference from \textit{Amy is a chef or she is a rock climber}, we also need the denial of one of the disjuncts---for instance, \textit{Amy is \textbf{not} a chef}. If we know that \textit{Amy is a chef or she is a rock climber} and that \textit{Amy is not a chef}, then we can safely conclude that \textit{Amy is a rock climber}. That is an application of the disjunction elimination rule ({\eor}E).
+For the disjunction rules, let's start with this example: \textit{Sarah is swimming or Jeff is eating a burrito}. When is this true? Recall from section \ref{s:ConnectiveDisjunction} that we are using the inclusive-or. So, \textit{Sarah is swimming or Jeff is eating a burrito} is true when \textit{Sarah is swimming} is true or when \textit{Jeff is eating a burrito} is true or when both are true. That's a lot of options, but if all that we know is that Sarah is swimming or Jeff is eating a burrito, then we don't know precisely what either one of them are doing. But let's say that someone (whom we trust completely) tells us that, actually, Sarah is \textit{not} swimming. That piece of information about Sarah, then, let's us safely infer that Jeff is eating a burrito. This reasoning process is captured by the \define{disjunction elimination rule}.
 
 \begin{factboxy}{disjunction elimination rule}
 \begin{proof}
@@ -229,25 +207,56 @@ To make an inference from \textit{Amy is a chef or she is a rock climber}, we al
 \end{proof}
 \end{factboxy}
 
+\textit{Sarah is swimming or Jeff is eating a burrito} was true when \textit{Sarah is swimming} was false (she wasn't swimming) and \textit{Jeff is eating a burrito} was true. This quality of disjunctions lets us make an inference that we don't use as often in our everyday lives as the one described by the disjunction elimination rule. It is a very simple inference, however. Take any sentence. We'll use \textit{you are studying logic}. That's true (or if, somehow, it's not, let's say that it is). Since \textit{you are studying logic} is true, we can add ``or . . . \textit{any sentence at all}'' and the resulting disjunction will be true. Let's try it.
+
+\begin{ebullet}
+	\item[] You are studying logic, or you are studying German. (\textit{true})
+	\item[] You are studying logic, or your mother is in Fiji. (\textit{true})
+	\item[] You are studying logic, or a dragon is on the moon. (\textit{true})
+\end{ebullet}
+
+\noindent Assuming that \textit{you are studying logic} is true, each of these disjunctions is also true. So, again, the idea is that if we know that a sentence is true, we can create a longer sentence by adding `or \ldots \textit{any sentence}' and the disjunction will also be true. This feature of the disjunction underlies the \define{disjunction introduction rule} (which, again, is two similar rules).
+
+\begin{factboxy}{disjunction introduction rule}
+\begin{proof}
+	\have[m]{a}{\meta{A}}
+	\have[\ ]{ab}{\meta{A}\eor\meta{B}}\oi{a}
+\end{proof}
+
+\begin{proof}
+	\have[m]{a}{\meta{A}}
+	\have[\ ]{ba}{\meta{B}\eor\meta{A}}\oi{a}
+\end{proof}
+\end{factboxy}
+
+
+\noindent \meta{B} can be \emph{any} sentence whatsoever. All that we need to use this rule is the line containing \meta{A}. Hence, the following is a perfectly acceptable proof:
+\begin{proof}
+	\hypo{m}{M} \pr{}
+	\have{mmm}{M \eor [(A\eiff B) \eif (C \eand D)]}\oi{m}
+\end{proof}
+
+
 
 \subsection{Double negation}
 
-The \define{double negation rule} is a rule of convenience that sometimes compliments the disjunction-elimination rule. (There are also times when it will be used in the proofs that are discussed in \ref{s:theorems}, but, for the material in this chapter, it will only be used with the disjunction-elimination rule.) First, notice that the disjunction-elimination rule is very specific. To use this rule, we need, on one line of our proof, a sentence of the form $\meta{A}\eor\meta{B}$, and on another line of our proof we need one side of the disjunction---$\meta{A}$ or $\meta{B}$---with a `$\enot$' in front of it: $\enot\meta{A}$ or $\enot\meta{B}$. 
+The \define{double negation rule} is a rule of convenience that sometimes compliments the disjunction-elimination rule. (There are also times when it will be used in the proofs that are discussed in \ref{s:theorems}, but, for the material in this chapter, it will only be used with the disjunction-elimination rule.) First, notice that the disjunction-elimination rule is very specific. To use this rule, we need, on one line of our proof, a sentence of the form `$\meta{A}\eor\meta{B}$', and on another line of our proof we need one side of the disjunction---either $\meta{A}$ or $\meta{B}$---with a `$\enot$' in front of it---that is, either $\enot\meta{A}$ or $\enot\meta{B}$. 
 
-This presents a problem if we these two sentences somewhere in a proof:
+This presents a problem if we have these two sentences somewhere in a proof:
 \begin{proof}
-	\hypo{ab}{\enot P \eor Q} \pr{}
-	\hypo{nb}{P} \pr{}
+	\have[m]{np}{\enot P \eor Q}
+	\have[n]{p}{P}
 \end{proof}
-You might, then, think that we can put `$Q$' on a new line.
-\begin{proof}
-	\hypo{ab}{\enot P \eor Q} \pr{}
-	\hypo{nb}{P} \pr{}
-	\have{q}{Q} \oe{ab,nb}
-\end{proof}
-In a sense, this is the right idea for the disjunction-elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line 4 means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a line by itself. The disjunction-elimination rule, however, do not permit this. As we just said, the rule requires that we have, on a line somewhere, one side of the disjunction with a `$\enot$' before it. The double negation rule helps us with this so that we can use the disjunction-elimination rule more often. 
 
-Before see how the double negation rule can help us with our derivation, let's see the rule. The first version of the double negation rule allows us to add two \textit{not}s (i.e., \textit{not not}) to an atomic sentence---which, of course, will not change the sentence's truth value. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common.
+You might think that, given those two lines, we can put `$Q$' on a new line.
+\begin{proof}
+	\have[m]{np}{\enot P \eor Q}
+	\have[n]{p}{P}
+	\have[\ ]{q}{Q} \oe{np,p}
+\end{proof}
+In a sense, this is the right idea for the disjunction elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line $n$ means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a line by itself. The disjunction-elimination rule, however, does not permit this. As we just said, the rule requires that we have, on a line somewhere, one side of the disjunction with a `$\enot$' before it. The \define{double negation rule} helps us with this so that we can use the disjunction-elimination rule more often. 
+
+Before we see how the double negation rule can help us with our derivation, let's introduce the rule. The first version of the double negation rule allows us to add two \textit{not}s (i.e., \textit{not not}) to a sentence in TFL---which, of course, will not change the sentence's truth value. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common.
 
 \begin{factboxy}{double negation rule}
 \begin{proof}
@@ -261,7 +270,15 @@ Before see how the double negation rule can help us with our derivation, let's s
 \end{proof}
 \end{factboxy}
 
-With this rule, we can derive `$Q$' this way:
+Let's say that this is the argument for which we need to provide a proof: `$\enot P \eor Q, P \proves Q$'. After the premises, we use the double negation rule to get `$\enot \enot P$' from line 2.
+
+\begin{proof}
+	\hypo{ab}{\enot P \eor Q} \pr{}
+	\hypo{nb}{P} \pr{} 
+	\have{nnb}{\enot\enot P} \dn{nb}
+\end{proof}
+
+The `$P$' on line 2 and the `$\enot \enot P$' on line 3 have exactly the same meaning. The only difference between `$P$' and `$\enot \enot P$' is their form. But now that we have `$\enot \enot P$', we have what is on the left side of the disjunction with a `$\enot$' before it. That allows us to use the disjunction elimination rule, and we can get the conclusion.
 
 \begin{proof}
 	\hypo{ab}{\enot P \eor Q} \pr{}
@@ -269,24 +286,17 @@ With this rule, we can derive `$Q$' this way:
 	\have{nnb}{\enot \enot P} \dn{nb}
 	\have{q}{Q} \oe{ab,nnb}
 \end{proof}
-The `$P$' on line 2 and the `$\enot \enot P$' have exactly the same meaning. The only difference between `$P$' and `$\enot \enot P$' is their form. But now that we have `$\enot \enot P$', we have what is on the left side of the disjunction with a `$\enot$' before it.
-\begin{proof}
-	\hypo{ab}{\textbf{\textit{\textcolor{red2}{\enot P}}} \eor Q} \pr{}
-	\hypo{nb}{P} \pr{} 
-	\have{nnb}{ \textbf{\textit{\enot \textcolor{red2}{\enot P}}} } \dn{nb}
-	\have{q}{Q} \oe{ab,nb}
-\end{proof}
 
 
 \section{Conditional elimination}
 
-For the conditional, we will begin with the elimination rule since it is simpler than the conditional introduction rule. Consider the following argument:
-	\begin{quote}
-		If Jane is smart, then she is fast.\\
-		Jane is smart.\\ 
-		Therefore, Jane is fast.
-	\end{quote}
-In this argument---which is valid---we have a conditional and then, on a separate line, the antecedent of that conditional (`Jane is smart'). That allows us to infer the antecedent (`Jane is fast'). In short, if we have a conditional and we know that the antecedent of the conditional is true (or has happened), then we know that the consequent has to be true. (See also the discussion of the conditional on p.~\pageref{characteristic-tt-conditional}.) Deriving the consequent of the conditional in this way is an application of the conditional elimination rule ($\eif$E).
+For the conditional, we will begin with the elimination rule only because it is simpler than the conditional introduction rule (which we will get to in section \ref{s:CI-rule}). Consider the following argument:
+	\begin{earg}
+	\item	If the envelope is on the table, then Aleksander is in the safe house.
+	\item The envelope is on the table.
+	\item Therefore, Aleksander is in the safe house.
+	\end{earg}
+In this argument---which is valid---we have a conditional and then, on a separate line, the antecedent of that conditional (`the envelope is on the table'). That allows us to infer the antecedent (`Aleksander is in the safe house'). In short, if we have a conditional and we know that the antecedent of the conditional is true (or has happened), then we know that the consequent has to be true. (See also the discussion of the conditional on p.~\pageref{characteristic-tt-conditional}.) Deriving the consequent of the conditional in this way is an application of the \define{conditional elimination rule}.
 \begin{factboxy}{conditional elimination rule}\label{ce-rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eif\meta{B}}
@@ -299,7 +309,7 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 
 \section{Biconditional introduction and elimination} 
 
-The \define{biconditional elimination rule} ({\eiff}E) is similar to the conditional elimination rule but a bit more flexible. If you have the left-hand subsentence of the biconditional, you can derive the right-hand subsentence. If you have the right-hand subsentence, you can derive the left-hand subsentence.
+The \define{biconditional elimination rule} is similar to the conditional elimination rule but a bit more flexible. If you have a biconditional and the left-hand side of the biconditional on another line, you can put the right-hand side on a new line. Similarly, if you have the right-hand side, you can put the left-hand side on a new line.
 \begin{factboxy}{biconditional elimination rule}\label{be-rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eiff\meta{B}}
@@ -314,7 +324,7 @@ The \define{biconditional elimination rule} ({\eiff}E) is similar to the conditi
 \end{proof}
 \end{factboxy}
 
-The \define{biconditional introduction rule} ($\eiff$I) is based on the fact, mentioned in chapter \ref{s:CharacteristicTruthTables}, that the biconditional is ``the conjunction of a conditional running in each direction.'' The rule then is basically this: from $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$, infer $\meta{A} \eiff \meta{B}$.
+In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is ``the conjunction of a conditional running in each direction.'' This is the foundation for the \define{biconditional introduction rule}. If we have both conditionals, $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$, then we can put $\meta{A} \eiff \meta{B}$ on a new line.
 
 \begin{factboxy}{biconditional introduction rule}
 \begin{proof}\label{eiff-I}
@@ -340,13 +350,26 @@ We will now review some proofs that use the rules that we have learned so far.
 	\have{c}{Q \eand \enot R} \ai{p2,q}
 \end{proof}\medskip
 
-\item[\ex{14.6.2}]For a proof of $P \eor Q, R \eand \enot Q \proves P \eor S$, we need the conjunction elimination rule, disjunction introduction rule, and the disjunction elimination rule.
+\item[\ex{14.6.2}] For a proof of $P \eor Q, R \eand \enot Q \proves P \eor S$, we need the conjunction elimination rule, disjunction introduction rule, and the disjunction elimination rule.
 \begin{proof}
 	\hypo{p1}{P \eor Q} \pr{}
 	\hypo{p2}{R \eand \enot Q} \pr{}
 	\have{q}{\enot Q} \ae{p2}
 	\have{p}{P} \oe{p1,q}
 	\have{c}{P \eor S} \oi{p}
+\end{proof}\medskip
+
+\item[\ex{14.6.2b}] For $C \eand (D \eor \enot F), F \eand G \proves C \eand (D \eor H)$, we use all five of the rules introduced in sections \ref{s:conj-rule} and \ref{s:disj-rule}.
+\begin{proof}
+	\hypo{p1}{C \eand (D \eor \enot F)} \pr{}
+	\hypo{p2}{F \eand G} \pr{}
+	\have{c}{C} \ae{p1}
+	\have{dnf}{D \eor \enot F} \ae{p1}
+	\have{f}{F} \ae{p2}
+	\have{nnf}{\enot \enot F} \dn{f}
+	\have{d}{D} \oe{dnf, nnf}
+	\have{dh}{D \eor H} \oi{d}
+	\have{con}{C \eand (D \eor H)} \ai{c,dh}
 \end{proof}\medskip
 
 \item[\ex{14.6.3}] For a proof of $P \eif Q, R \eand P \proves Q \eand R$, we use the conjunction introduction rule, the conjunction elimination rule, and the conditional elimination rule.
@@ -367,14 +390,15 @@ We will now review some proofs that use the rules that we have learned so far.
 	\have{c}{R} \be{p1,t}
 \end{proof}\medskip
 
-\item[\ex{14.6.5}] And last, a proof for $$(S \eif T) \eor R, (T \eif S) \eor Q, \enot R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the disjunction elimination rule, and the biconditional introduction rule.
+\item[\ex{14.6.5}] And last, a proof for $$(S \eif T) \eor \enot R, (T \eif S) \eor Q, R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the double negation rule, the disjunction elimination rule, and the biconditional introduction rule.
 \begin{proof}
-	\hypo{p1}{(S \eif T) \eor R} \pr{}
+	\hypo{p1}{(S \eif T) \eor \enot R} \pr{}
 	\hypo{p2}{(T \eif S) \eor Q} \pr{}
-	\hypo{p3}{\enot R \eand \enot Q} \pr{}
-	\have{r}{\enot R} \ae{p3}
+	\hypo{p3}{R \eand \enot Q} \pr{}
+	\have{r}{R} \ae{p3}
 	\have{q}{\enot Q} \ae{p3}
-	\have{st}{S \eif T} \oe{p1,r}
+	\have{nnr}{\enot \enot R} \dn{r}
+	\have{st}{S \eif T} \oe{p1,nnr}
 	\have{ts}{T \eif S} \oe{p2,q}
 %	\have{con}{(T \eif S) \eand (S \eif T)} \ai{st,ts}
 	\have{c}{T \eiff S} \bi{st,ts}
@@ -383,6 +407,7 @@ We will now review some proofs that use the rules that we have learned so far.
 
 
 \section{Conditional introduction}
+\label{s:CI-rule}
 
 The \define{conditional introduction rule} is a little bit more complicated than the conditional elimination rule, but, with some thought (and maybe some time), it is easily grasped. We'll start with this symbolization key for the sentence letters \textit{L}, \textit{R}, and \textit{T}:
 	\begin{ekey}
@@ -547,7 +572,7 @@ Here is a simple mathematical argument in English:
 \item[3.] $G+1$ is greater than $G$.
 \item[4.] Thus, $G$ is the greatest natural number (accordingt to 1), and there is a natural number greater than $G$ (according to 3).
 \item[5.] The previous line is a contradiction.
-\item[6.] Therefore, the assumption that we began with is false. There is no greatest natural number.
+\item[6.] Therefore, the assumption that we made on line 1 is false. There is no greatest natural number.
 \end{earg}
 This type of argument is traditionally called a \emph{reductio}. Its full Latin name is \emph{reductio ad absurdum}, which means `reduction to absurdity' (although \textit{absurdity} in the sense that we often use it today isn't part of this). In a reductio, we assume something for the sake of argument---for example, that there is a greatest natural number. Then we show that the assumption leads to two contradictory sentences---for example, that $G$ is the greatest natural number and that it is not. In this way, we show that the original assumption must be false, which means that the denial of the assumption is true. 
 
@@ -564,7 +589,7 @@ Our two negation rules (which are basically the same rule) formalize this reason
 \end{proof}
 \end{factboxy}
 
-\noindent Notice that just as we do when using the conditional introduction rule, we begin by making an assumption. The subproof that follows is indented, and the assumption that we made must be discharged by applying either $\enot$I or $\enot$E.
+\noindent Notice that just as we do when using the conditional introduction rule, we begin by making an assumption. The subproof that follows is indented, and the assumption that we made must be discharged by applying either the negation introduction rule or the negation elimination rule. 
 
 \begin{factboxy}{negation elimination rule}
 \begin{proof}
@@ -601,7 +626,7 @@ To get a contradiction on the last two lines of a subproof, you will usually hav
 \end{proof}
 \end{factboxy}
 
-To demonstrate both the reiteration rule and the negation elimination rule, we will go through the proof for this argument: $\enot P \eif \enot Q, Q \proves P$. Looking at the argument, you'll notice that our conclusion is $P$, but $P$ itself does not occur anywhere in the premises. Hence, we cannot get $P$ by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That tells us that we will need to use one of our negation rules.
+To demonstrate both the negation elimination rule and the reiteration rule, we will go through the proof for this argument: $\enot P \eif \enot Q, Q \proves P$. Looking at the argument, you'll notice that our conclusion is $P$, but $P$ itself does not occur anywhere in the premises. Hence, we cannot get $P$ by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That tells us that we will need to use one of our negation rules.
 
 After the premises, we make the assumption that we need for negation elimination. Since, ultimately, we want `$P$', we will assume `$\enot P$', knowing, of course, that once we discharge that assumption (and close the subproof), we will have `$P$'.
 
@@ -620,7 +645,7 @@ We then use the conditional elimination rule to get $\enot Q$ on line 4.
 		\have{nq}{\enot Q}\ce{p1,np}
 %		\have{ng}{Q}\reit{p2}
 \end{proof}
-The $Q$ on line 2 and $\enot Q$ on line 4 are a contradiction, but to use $\enot$E we need to have $Q$ on line 5. To move it down to line 5, we use the reiteration rule. 
+The $Q$ on line 2 and $\enot Q$ on line 4 are a contradiction, but to use the negation elimination rule we need to have $Q$ on line 5. To get it there, we use the reiteration rule. 
 
 \begin{proof}
 	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
@@ -640,27 +665,28 @@ Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to disc
 		\have{nq}{\enot Q}\ce{p1,np}
 		\have{ng}{Q}\reit{p2}
 	\close
-	\have{c}{P}\ni{np-ng}
+	\have{c}{P}\ne{np-ng}
 \end{proof}
+That's an illustration of the negation elimination rule. The negation introduction rule is, essentially, the same. Whether you use the negation introduction rule or negation elimination rule is just a function of whether you want `$\enot \meta{A}$' or `$\meta{A}$' on the line after the subproof.
 
+
+\newpage
 
 \section{Some examples with negative introduction and elimination}
 
-\textit{These two are from my week 12 notes. Put a couple from week 11 before them and one from week 12 with a sub-proof within subproof after them.}
-
 \begin{earg}
 
-\item $\enot P \eif \enot Q, Q \proves P$
+\item $P \eif Q, \enot Q \proves \enot P$
 
 \begin{proof}
-	\hypo{p1}{\enot P \eif \enot Q} \pr{}
-	\hypo{p2}{Q} \pr{}	
+	\hypo{p1}{P \eif Q} \pr{}
+	\hypo{p2}{\enot Q} \pr{}	
 	\open
-		\hypo{np}{\enot P} \as{}
-		\have{nq}{\enot Q} \ce{p1,np}
-		\have{q}{Q} \reit{p2}
+		\hypo{p}{P} \as{}
+		\have{q}{Q} \ce{p1,p}
+		\have{nq}{\enot Q} \reit{p2}
 	\close
-	\have{c}{P} \ne{np-q}
+	\have{c}{\enot P} \ni{p-nq}
 \end{proof}
 
 
@@ -681,7 +707,7 @@ Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to disc
 \item $B \eand C, \enot(B \eand A) \proves \enot A$
 
 \begin{proof}
-	\hypo{p1}{B \enot C} \pr{}	
+	\hypo{p1}{B \eand C} \pr{}	
 	\hypo{p2}{\enot(B \eand A)} \pr{}
 	\open
 		\hypo{a}{A} \as{}
@@ -704,6 +730,7 @@ Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to disc
 			\have{np}{\enot P} \reit{p1}
 		\close
 		\have{q}{Q} \ne{nq-np}
+	\close
 	\have{c}{P \eif Q} \ci{p-q}
 \end{proof}
 
@@ -714,7 +741,7 @@ Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to disc
 
 \section{Invalid arguments}
 
-In this chapter, we have taken it for granted that each argument that we have encountered has been valid. The purpose of providing a proof, then, is (1) to confirm that it is valid and (2) to show why it is valid---that is, to lay out each very simple step that takes us from the premises to the conclusion. If an argument is invalid, however, we are stuck. It is impossible to provide a correct proof of an invalid argument using the rules introduced in this chapter. At the same time, just because we can't provide a proof for an argument doesn't mean that the argument is invalid. Perhaps the proof is just too complicated for us to figure out. 
+In this chapter, we have taken it for granted that each argument that we have encountered has been valid. The purpose of providing a proof, then, is (1) to confirm that it is valid and (2) to show why it is valid---that is, to lay out each step that takes us from the premises to the conclusion. If an argument is invalid, however, we are stuck. It is impossible to provide a correct proof of an invalid argument using the rules introduced in this chapter. At the same time, not being able to provide a proof for an argument doesn't mean that the argument is invalid. Perhaps the proof is just too complicated for us to figure out. 
 
 In chapter \ref{s:NDVeryIdea}, we discussed some reasons to prefer natural deduction to truth tables for checking that an argument is valid. To show that an argument is invalid, however, creating a truth table is not merely a superior method, it is our only option.
 
