@@ -672,7 +672,7 @@ That's an illustration of the negation elimination rule. The negation introducti
 
 \newpage
 
-\section{Some examples with negative introduction and elimination}
+\section{Even more examples}
 
 \begin{earg}
 
@@ -703,7 +703,7 @@ That's an illustration of the negation elimination rule. The negation introducti
 	\have{c}{\enot(P \eand Q)} \ni{pq-q}
 \end{proof}
 
-
+\filbreak
 \item $B \eand C, \enot(B \eand A) \proves \enot A$
 
 \begin{proof}
@@ -1212,18 +1212,19 @@ We may also, however, have a sentence for which it is possible to give a proof w
 $\meta{C}$ is a \define{theorem} iff ~ $\proves \meta{C}$
 \end{factboxy}
 
-One such sentence is `$\enot (A \eand \enot A)$'. To show that this sentence is a theorem, we give a proof that has no premises and no undischarged assumptions. To get started, we do, however, have to make an assumption. We will assume `$A \eand \enot A$'. Once we show that this assumption leads to contradiction, we can discharge it and we will have `$\enot (A \eand \enot A)$'. This is the proof:
+One such sentence is `$\enot (P \eand \enot P)$'. To show that this sentence is a theorem, we give a proof that has no premises and no undischarged assumptions. To get started, we do, however, have to make an assumption. We will assume `$P \eand \enot P$'. Once we show that this assumption leads to contradiction, we can discharge it and we will have `$\enot (P \eand \enot P)$'. This is the proof:
 	\begin{proof}
 		\open
-			\hypo{con}{A \eand \enot A}
-			\have{a}{A}\ae{con}
-			\have{na}{\enot A}\ae{con}
+			\hypo{con}{P \eand \enot P}
+			\have{a}{P}\ae{con}
+			\have{na}{\enot P}\ae{con}
 		\close
-		\have{lnc}{\enot (A \eand \enot A)}\ni{con-na}
+		\have{lnc}{\enot (P \eand \enot P)}\ni{con-na}
 	\end{proof}
-This theorem, `$\proves \enot (A \eand \enot A)$' is an instance of what is sometimes called \emph{the Law of Non-Contradiction}.
+This theorem, `$\proves \enot (P \eand \enot P)$' is an instance of what is sometimes called \emph{the Law of Non-Contradiction}.
 
 To show that a sentence is a theorem, we just have to find a suitable proof. On the other hand, it is not possible to show that a sentence is \emph{not} a theorem this same way. To show that a sentence is not a theorem with our natural deduction system, we would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if we fail in trying to give a proof for a sentence in a thousand different ways, perhaps the proof is just too long and complex for us to figure out. 
+
 
 \section{Equivalent, consistent, and inconsistent}
 
@@ -1275,6 +1276,7 @@ consistent & \textit{not possible with proofs} & one proof\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Exercises for chapter on proof theoretic concepts
+
 
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
@@ -1482,3 +1484,5 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{proof}
 
 \end{earg}
+
+
