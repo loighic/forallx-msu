@@ -674,6 +674,8 @@ That's an illustration of the negation elimination rule. The negation introducti
 
 \section{Even more examples}
 
+Each of these proofs uses the negation introduction or the negation elimination rule. 
+
 \begin{earg}
 
 \item $P \eif Q, \enot Q \proves \enot P$
@@ -688,6 +690,7 @@ That's an illustration of the negation elimination rule. The negation introducti
 	\close
 	\have{c}{\enot P} \ni{p-nq}
 \end{proof}
+\medskip
 
 
 \item $P \eif \enot Q \proves \enot(P \eand Q)$
@@ -717,6 +720,7 @@ That's an illustration of the negation elimination rule. The negation introducti
 	\close
 	\have{c}{\enot A} \ni{a-p2b}
 \end{proof}
+\medskip
 
 \item A proof for `$\enot P \proves P \eif Q$' requires two subproofs. The first assumption that we make, `$P$', is so that we can use the conditional introduction rule at the end of the proof. The second assumption, `$\enot Q$', is so that we can use the negation elimination rule and get `$Q$' on the last line of the first subproof.
 
