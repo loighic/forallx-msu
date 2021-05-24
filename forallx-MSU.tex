@@ -1,0 +1,46 @@
+%\documentclass[openany,11pt,letter]{memoir}
+
+%\setlrmarginsandblock{4.8cm}{*}{1} 	% This is for the left and right margins ({spine}{edge}{ratio}).
+%\setulmarginsandblock{5cm}{*}{1}		% upper, lower, and ratio
+%\checkandfixthelayout 
+
+\documentclass[10pt]{memoir}
+
+% set stock & paper size to Lulu's Royal
+\setstocksize{23.389cm}{15.593cm}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% calculates the line length for 65 characters in \normalfont
+\setlxvchars
+
+% set the size of the type block to calculated width in golden ratio
+
+\settypeblocksize{*}{\lxvchars}{1.7}			%{1.618}
+
+% set spine and and edge maring in golden ratio
+
+\setlrmargins{3.2cm}{*}{*}	% This is for the left and right margins ({spine}{edge}{ratio}). spine = gutter = interior (?)
+
+\setulmargins{2.5cm}{*}{*}	% upper, lower, and ratio
+
+\setheaderspaces{1.25cm}{*}{*} 	% top of pg to header, separation btw header & body, ratio
+
+\checkandfixthelayout
+
+
+\usepackage{forallx-yyc-msu}
+
+
+
+\begin{document}
+
+% discard page after cover
+%\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+\midsloppy
+
+\input{forallx-msu-content}
+
+\end{document}
+\part{title}
