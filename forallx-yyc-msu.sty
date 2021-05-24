@@ -1,11 +1,10 @@
-%!TEX root = forallxyyc.tex
 \NeedsTeXFormat{LaTeX2e}
-%\ProvidesPackage{forallxyyc}[2011/10/29 support for a logic textbook]
 
-\def\forallxversion{Spring 2021}
-\def\forallxshortversion{S21}
 
-\RequirePackage{amssymb,amsmath,hyperref,multicol,ifthen,graphicx,pifont,rotating,xcolor}
+\def\forallxversion{Summer 2021}
+\def\forallxshortversion{Su21}
+
+\RequirePackage{amssymb,amsmath,multicol,ifthen,pifont,rotating,xcolor}
 \usepackage[numbered]{bookmark} %TB: added for speedy navigation
 %\usepackage{mdframed}
 \usepackage[automake=immediate,nonumberlist,toc]{glossaries}  % style=index
@@ -71,6 +70,8 @@
 \usepackage{subcaption}					% for placing figures next to each other
 \usepackage{sidecap}						% captions next to figures
 
+\usepackage[font={small,it}]{caption}
+
 
 
 \setcounter{tocdepth}{0} %TB: only chapters and sections to appear
@@ -79,15 +80,18 @@
 
 \newcommand\myanswer[1]{\textcolor{leadbeater}{#1}} % TB: puts model answers in blue
 
+\usepackage{hyperref}
 
-% TB: information originally in the main body; but it is style information, so I have included it here.
-\hypersetup{pdfinfo={Title={forall x: MSU edition}, Author={P.D. Magnus, Tim Button, J. Rob Loftis, Aaron Thomas-Bolduc, Richard Zach, Gregory Johnson}, Subject={An open access introductory textbook in formal logic}, Keywords={truth-functional logic, propositional logic, natural deduction, fitch}}, %
-  bookmarks={true}, %
-  bookmarksopen = true,
-	colorlinks={true}, %
-	allcolors={dkleadbeater},
-	pdfdisplaydoctitle={true}}
+\hypersetup{pdfinfo={Title={forallx: MSU edition}, Author={Gregory Johnson}, Subject={An open access introductory formal logic textbook}, Keywords={truth-functional logic, propositional logic, natural deduction, fitch}}, 
+  bookmarks=true, 
+  bookmarksopen=true,
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=maroon,
+  pdfdisplaydoctitle=true}
 \urlstyle{same}
+
+% \hypersetup{hidelinks}
 
 
 
@@ -133,19 +137,19 @@
 % \renewcommand{\afterpartskip}{\vspace*{\fill}}
 
 
-%%
+
+%%%%  HEADERS
 
 \copypagestyle{leadbeater}{headings}
 
-\makeoddhead{leadbeater}{\footnotesize\sffamily\color{leadbeater}\rightmark}{}
-            {\color{leadbeater}\footnotesize\sffamily\thepage}
+\makeoddhead{leadbeater}{\footnotesize\sffamily\rightmark}{}{\footnotesize\sffamily\thepage}
 
-\makeevenhead{leadbeater}{\footnotesize\sffamily\color{leadbeater}\leftmark}{}
-            {\color{leadbeater}\footnotesize\sffamily\thepage}  
+\makeevenhead{leadbeater}{\footnotesize\sffamily\thepage}{}{\footnotesize\sffamily\leftmark}
+ 
             
-\usepackage{atbegshi}  % to kill the blank page after the titling page
+%\usepackage{atbegshi}  % to kill the blank page after the titling page
 
-\usepackage[font={small,it}]{caption}
+
 
 
 % The original forallx.sty was written in 2005
@@ -271,7 +275,7 @@
   \begin{tcolorbox}[
       %      leftright skip=.05\textwidth,
       %      sharp corners=downhill,
-     width=.85\linewidth,
+     width=.95\linewidth,
      beforeafter skip=.7em,
      colback=red!5!white,
 	colframe=red!75!black,
@@ -281,7 +285,7 @@
 \end{tcolorbox}}
 
 \newtcolorbox{factboxy}[1]
-{width=.85\linewidth,
+{width=1.0\linewidth,
 colback=red!5!white,
 colframe=red!75!black,
 coltitle = black,
@@ -291,8 +295,20 @@ beforeafter skip=12pt,
 title=#1}
 
 
-\newtcolorbox{factboxy2}[1]  		% A wider box---specifically for the definition of a sentence of TFL.
+\newtcolorbox{factboxyside}[1]			% A box with content on the left and right side of a vertical line.
 {width=.95\linewidth,
+colback=red!5!white,
+colframe=red!75!black,
+coltitle = black,
+colbacktitle= red!23!white,
+fonttitle={\sffamily \footnotesize},
+beforeafter skip=12pt,
+title=#1,
+sidebyside=true}
+
+
+\newtcolorbox{factboxy2}[1]  		% A wider box---specifically for the definition of a sentence of TFL.
+{width=1.0\linewidth,
 colback=red!5!white,
 colframe=red!75!black,
 coltitle = black,
@@ -303,7 +319,8 @@ title=#1}
 
 
 \newtcolorbox{notebox}			% A box for notes---which can be used as an alternative to footnotes.
-{left skip=5.25cm,
+{left skip=1cm,	%5.25cm,
+%width=.95\linewidth,
 colback=green!4!white,
 colframe=blue,
 fontupper=\footnotesize
