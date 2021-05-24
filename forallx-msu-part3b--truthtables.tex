@@ -4,53 +4,83 @@
 
 \chapter{Truth tables and validity}\label{c:tt-validity}
 
-\section{Entailment}\label{s:tt-entailment}
+\section{Validity}\label{s:tt-validity}\label{s:tt-entailment}
 
-Having examined the logical relations between two sentences in \S\ref{equivalence--tt} and \S\ref{consistency--tt}, we can now go a step further and consider the relationship between the premises and the conclusion of an argument. This begins with \define{entailment}.
-
-\begin{factboxy}{Entailment}
-The sentences $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ \define{entail} the sentence $\meta{C}$ if there is no valuation of the atomic sentences that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true and $\meta{C}$ false.
+Having examined the logical relations between two sentences in \S\ref{equivalence--tt} and \S\ref{consistency--tt}, we can now go a step further and consider the relationship between the premises and the conclusion of an argument. 
+%This begins with \define{entailment}.
+%\begin{factboxy}{Entailment}
+%The sentences $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ \define{entail} the sentence $\meta{C}$ if there is no valuation of the atomic sentences that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true and $\meta{C}$ false.
+%\end{factboxy}
+Recall the definition of \define{valid}. 
+\begin{factboxy}{valid}
+An argument is \define{valid} when (and only when) it is the case that if the premises are true, then the conclusion has to be true.
 \end{factboxy}
+
+
+
+% Next is this important observation: if $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$ is valid. 
+% Here's why entailment equals validity. If $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then there is no valuation that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true while making $\meta{C}$ false. This means that it is \emph{impossible} for each of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ to be true and $\meta{C}$ to be false. And that is just what it takes for an argument with premises $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and conclusion $\meta{C}$ to be valid!
+% In short, we have a way to test whether an argument in English is valid. First, we symbolize the premises and conclusion in TFL. Then we test for entailment using truth tables. 
+
+When using a truth table to determine if an argument is valid, we list the premise or premises first, then, the turnstile symbol (`\proves'), and, finally, the conclusion. We will use `$\enot L \eif (M \eor L), \enot L \proves M$' as our example. 
 
 \begin{notebox}
 Recall that `$\proves$' is used to separate the premises from the conclusion in arguments in TFL. It can be read as \textit{therefore}.
 \end{notebox}
- 
-Entailment is easy to check with a truth table. We will use `$\enot L \eif (M \eor L), \enot L \proves M$' as our example. Do `$\enot L \eif (M \eor L)$' and `$\enot L$' entail `$M$'? To find out, we check whether there is any valuation that makes both `$\enot L \eif (M \eor L)$' and `$\enot L$' true while making `$M$' false.  
+
 \begin{center}
-\begin{tabular}{c c|d e e e e f|d f|| c}
-$M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$&$M$\\
+\begin{tabular}{c c|d e e e e f|d f| c | c}
+$M$ & $L$ & \enot&$L$&\eif&$(M$&\eor&$L)$& \enot&$L$& \proves & $M$\\
 \hline
-%J   L   -   L      ->     (J   v   L)
- T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T & \TTbf{T}\Tstrut\\
- T & F & T & F & \circled{\TTbf{T}} & T & T & F & \circled{\TTbf{T}} & F & \TTbf{T}\\
- F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T & \TTbf{F}\\
- F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F & \TTbf{F}
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T && \TTbf{T}\Tstrut\\
+ T & F & T & F & \TTbf{T} & T & T & F & \TTbf{T} & F && \TTbf{T}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T && \TTbf{F}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F && \TTbf{F}
 \end{tabular}
 \end{center}
-There is only one row where both `$\enot L \eif (M \eor L)$' and `$\enot L$' are true---the second row---and so that is the only row that concerns us. On that row, `$M$' is also true. Hence, `$\enot L \eif (M \eor L)$' and `$\enot L$' entail `$M$'. 
 
-Next is this important observation: if $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$ is valid. Just to remind ourselves, an argument is valid when it is the case that if the premises are true, then the conclusion has to be true. A different but equivalent way of wording this definition will be more useful to us here, though. 
-\begin{factboxy}{Valid}
-An argument is \define{valid} if and only if it is impossible for all of the premises to be true and the conclusion false.
-\end{factboxy}
+Now, we want to know whether this argument satisfies or violates the definition of \textit{valid}. So, to begin, ask yourself, ``When both premises are true, is the conclusion true?'' Or ``Is there any scenario (that is, any valuation) where both premises are true and the conclusion is false?'' If the answer to the first question is always ``yes,'' then the argument is valid. If the answer to the second question is ever ``no,'' then the argument is invalid.
 
-Here's why entailment equals validity. If $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then there is no valuation that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true while making $\meta{C}$ false. This means that it is \emph{impossible} for each of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ to be true and $\meta{C}$ to be false. And that is just what it takes for an argument with premises $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and conclusion $\meta{C}$ to be valid!
+As you can see, there is only one row where both `$\enot L \eif (M \eor L)$' and `$\enot L$' are true, and so that is the only row that concerns us. On that row, `$M$' is also true. Hence, `$\enot L \eif (M \eor L), \enot L \proves M$' is valid. 
+\begin{center}
+\begin{tabular}{c c|d e e e e f|d f| c | c}
+$M$ & $L$ & \enot&$L$&\eif&$(M$&\eor&$L)$& \enot&$L$& \proves & $M$\\
+\hline
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T && \TTbf{T}\Tstrut\\
+ T & F & T & F & \circled{\TTbf{T}} & T & T & F & \circled{\TTbf{T}} & F &\cm& \TTbf{T}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T && \TTbf{F}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F && \TTbf{F}
+\end{tabular}
+\end{center}
+When using truth tables to determine if an argument is valid, we will put `\cm' and `\xm' in the column under the turnstile. As just shown, when all of the premises are true and the conclusion is true, we put a `\cm' on that line beneath the turnstile. If, on a line, all of the premise are true and the conclusion is false, then we put a `\xm' beneath the turnstile. 
 
-In short, we have a way to test whether an argument in English is valid. First, we symbolize the premises and conclusion in TFL. Then we test for entailment using truth tables. 
+Also (and \textbf{importantly!}), when there is a line where all of the premises are not true, we put a `\cm' beneath the turnstile (whether the conclusion is true or false). Again, recall that an argument is valid when it is the case that \textit{\textbf{if the premises are true}}, then the conclusion has to be true. In the argument above, the premises are true when `$M$' is true and `$L$' is false. That there are other valuations where both premises are not true doesn't matter. Such lines don't violate our definition of \textit{valid}, and so they get a `\cm'. 
 
+\begin{notebox}
+To see that an argument containing a premise that is false can still be valid, consider this argument (which can't be translated into TFL, so don't try). 
+\begin{earg}
+\item[P1.] City A is larger than city B.
+\item[P2.] City B is larger than city C.
+\item[C.] Therefore, city A is larger than city C.
+\end{earg}
+Even though it can't be represented in TFL, this argument is clearly valid: if the premises are true, then the conclusion has to be true. And that doesn't change if, out there in the world (or in some parallel universe), city B is larger than city A.
+\end{notebox}
 
-\section{Validity}\label{s:tt-validity}
+Completing our truth table we have this:
+\begin{center}
+\begin{tabular}{c c|d e e e e f|d f| c | c}
+$M$ & $L$ & \enot&$L$&\eif&$(M$&\eor&$L)$& \enot&$L$& \proves & $M$\\
+\hline
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T &\cm& \TTbf{T}\Tstrut\\
+ T & F & T & F & \circled{\TTbf{T}} & T & T & F & \circled{\TTbf{T}} & F &\cm& \TTbf{T}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T &\cm& \TTbf{F}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F &\cm& \TTbf{F}
+\end{tabular}
+\end{center}
 
-When using a truth table to determine if an argument is valid, the premise or premises are listed first, the turnstile symbol (`\proves') is next, and then the conclusion is last. Once all of the truth table is completed except for the column under the turnstile, we check for lines that violate the definition of a valid argument. We'll call lines that violate that definition \textit{bad lines}. 
-	\begin{earg}
-		\item[(1)] Any line where all of the premises are true and the conclusion is false \textbf{is a bad line}.
-		\item[(2)] Any line where all of the premises are true and the conclusion is true \textbf{is a good line}.
-		\item[(3)] Any line where the conclusion is true cannot be a bad line. (So, whatever the case may be with the premises, \textbf{it's a good line}.) 
-		\item[(4)] Any line where at least one premise is false cannot be a bad line. (So, whatever the case may be with the other premises and the 			 								conclusion, \textbf{it's a good line}.) 
-	\end{earg}
+%% The `good and bad lines' box could go here.
 
-Let's look at the truth table for our argument with one small (but significant) change: $\enot L \eif (M \eor L)$, $\enot L \proves \enot M$. The premises are the same, but now the conclusion is $\enot M$ instead of $M$. Here is the truth table:
+Now, let's make one small (but significant) change to the argument: $\enot L \eif (M \eor L)$, $\enot L \proves \enot M$. The premises are the same, but now the conclusion is $\enot M$ instead of $M$. Here is the truth table:
 \begin{center}
 \begin{tabular}{c c|d e e e e f|d f| c | c}
 $M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$		&\proves		& $\enot M$\\
@@ -72,7 +102,18 @@ $M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$	&\proves				& $\enot M$\\
  F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F 		&	\cm					& \TTbf{T}
 \end{tabular}
 \end{center}
-This means that $\enot L \eif (M \eor L)$ and $\enot L$ do not entail $\enot M$ and the argument `$\enot L \eif (M \eor L)$, $\enot L \proves \enot M$' is not valid.
+This means that `$\enot L \eif (M \eor L)$, $\enot L \proves \enot M$' is not valid.
+
+\begin{factboxy2}{good and bad lines}
+Let's call lines that violate the definition of \define{valid} \textit{bad lines}.
+	\begin{enumerate}
+		\item[(1)] Any line where all of the premises are true and the conclusion is false \textbf{is a bad line}. Put an `\xm' on that line.
+		\item[(2)] Any line where all of the premises are true and the conclusion is true \textbf{is a good line}. Put a `\cm' on that line.
+		\item[(3)] Any line where the conclusion is true cannot be a bad line. (So, whatever the case may be with the premises, \textbf{it's a good line}.) Put a `\cm' on that line.
+		\item[(4)] Any line where at least one premise is false cannot be a bad line. (So, whatever the case may be with the other premises and the conclusion, \textbf{it's a good line}.) Put a `\cm' on that line.
+	\end{enumerate}
+\end{factboxy2}
+
 
 
 \section{Some examples}
