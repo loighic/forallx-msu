@@ -254,9 +254,18 @@ You might think that, given those two lines, we can put `$Q$' on a new line.
 	\have[n]{p}{P}
 	\have[\ ]{q}{Q} \oe{np,p}
 \end{proof}
-In a sense, this is the right idea for the disjunction elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line $n$ means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a line by itself. The disjunction-elimination rule, however, does not permit this. As we just said, the rule requires that we have, on a line somewhere, one side of the disjunction with a `$\enot$' before it. The \define{double negation rule} helps us with this so that we can use the disjunction-elimination rule more often. 
+In a sense, this is the right idea for the disjunction elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line $n$ means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a line by itself. The disjunction-elimination rule, however, does not permit this. To see why, let's distinguish between \define{negation} and \define{denial}.
 
-Before we see how the double negation rule can help us with our derivation, let's introduce the rule. The first version of the double negation rule allows us to add two \textit{not}s (i.e., \textit{not not}) to a sentence in TFL---which, of course, will not change the sentence's truth value. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common.
+\begin{factboxy}{negation and denial}
+The \define{negation} of a sentence is the sentence with a `not' added to it.\\ 
+The \define{denial} of a sentence is the sentence with either a `not' added or a `not' removed.
+\end{factboxy}
+
+\noindent For example, the negation of \textit{today is Tuesday} is \textit{today is not Tuesday} (or \textit{it is not the case that today is Tuesday}). In TFL, the negation of $\meta{A}$ is $\enot\meta{A}$. Meanwhile, the denial of \textit{it is not raining} is either \textit{it is raining} or \textit{it is not not raining} (or \textit{it is not the case that it is not raining}). In TFL, the denial of $\enot\meta{A}$ is either $\meta{A}$ or $\enot\enot\meta{A}$.
+
+\textbf{To use the disjunction elimination rule, we must have the \textit{negation} of one side of the disjunction on a separate line.} In the example right above, we have, on the second line, the denial of $\enot P$, not its negation. The \define{double negation rule} helps us correct this so that we can use the disjunction-elimination rule more often. 
+
+Before we see how the double negation rule can help us with our derivation, let's introduce the rule. The first version of the double negation rule allows us to add two \textit{not}s (i.e., \textit{not not}) to a sentence in TFL---which, of course, will not change the sentence's truth value. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common. 
 
 \begin{factboxy}{double negation rule}
 \begin{proof}
@@ -278,7 +287,7 @@ Let's say that this is the argument for which we need to provide a proof: `$\eno
 	\have{nnb}{\enot\enot P} \dn{nb}
 \end{proof}
 
-The `$P$' on line 2 and the `$\enot \enot P$' on line 3 have exactly the same meaning. The only difference between `$P$' and `$\enot \enot P$' is their form. But now that we have `$\enot \enot P$', we have what is on the left side of the disjunction with a `$\enot$' before it. That allows us to use the disjunction elimination rule, and we can get the conclusion.
+The `$P$' on line 2 and the `$\enot \enot P$' on line 3 have exactly the same meaning. The only difference between `$P$' and `$\enot \enot P$' is their form. But now that we have `$\enot \enot P$', we have the negation of what is on the left side of the disjunction. That allows us to use the disjunction elimination rule, and we can get the conclusion.
 
 \begin{proof}
 	\hypo{ab}{\enot P \eor Q} \pr{}
@@ -286,6 +295,24 @@ The `$P$' on line 2 and the `$\enot \enot P$' on line 3 have exactly the same me
 	\have{nnb}{\enot \enot P} \dn{nb}
 	\have{q}{Q} \oe{ab,nnb}
 \end{proof}
+
+Remember that, in this chapter, you will only use the double negation rule with the disjunction elimination rule, and you will only use it some of the time with that rule.
+
+\begin{factboxyside}{when to use the double negation rule}
+\begin{proof}
+	\have[m]{ab}{\meta{A}\eor\meta{B}}
+	\have[n]{nb}{\enot\meta{B}}
+	\have[\ ]{a}{\meta{A}} \oe{ab,nb}
+\end{proof}
+~~~~~
+\tcblower
+\begin{proof}
+	\have[m]{ab}{\meta{A}\eor\enot\meta{B}}
+	\have[n]{b}{\meta{B}}
+	\have[p]{nnb}{\enot\enot\meta{B}} \dn{b}
+	\have[\ ]{a}{\meta{A}} \oe{ab,nnb}
+\end{proof}
+\end{factboxyside}
 
 
 \section{Conditional elimination}
