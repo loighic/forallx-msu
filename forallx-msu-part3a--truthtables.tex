@@ -18,7 +18,7 @@ We introduced five connectives in chapter \ref{s:TFLConnectives}, and now we nee
 
 \paragraph{Conjunction.}\label{conjunction-tt}  For any sentences \meta{A} and \meta{B}, the conjunction (\meta{A}\eand\meta{B}) is true if and only if both \meta{A} and \meta{B} are true. If one or both of \meta{A} and \meta{B} are false, then the sentence (\meta{A}\eand\meta{B}) is false. We can summarize this in the {characteristic truth table} for conjunction:
 \begin{center}
-\begin{tabular}{c c |c}
+\begin{tabular}{d d | f}
 \meta{A} & \meta{B} & $\meta{A}\eand\meta{B}$\\
 \hline
 T & T & T\Tstrut\\
@@ -36,7 +36,7 @@ Note that conjunction is \emph{symmetrical}. The truth value for $\meta{A} \eand
 
 \paragraph{Negation.} For any sentence \meta{A}: If \meta{A} is true, then \enot\meta{A} is false. If \meta{A} is false, then \enot\meta{A} is true. We can summarize this in the characteristic truth table for negation:
 \begin{center}
-\begin{tabular}{c|c}
+\begin{tabular}{d | f}
 \meta{A} & \enot\meta{A}\\
 \hline
 T & F\Tstrut\\
@@ -47,7 +47,7 @@ F & T
 
 \paragraph{Disjunction.} Recall that `$\eor$' always represents the inclusive-or. So, for any sentences \meta{A} and \meta{B}, the disjunction $(\meta{A}\eor \meta{B})$ is true when \meta{A} is true or \meta{B} is true or both are true. The only instance when $(\meta{A}\eor \meta{B})$ is false is when both \meta{A} and \meta{B} are false. We can summarize this in the characteristic truth table for disjunction:
 \begin{center}
-\begin{tabular}{c c|c}
+\begin{tabular}{d d | f}
 \meta{A} & \meta{B} & $\meta{A}\eor\meta{B}$ \\
 \hline
 T & T & T\Tstrut\\
@@ -69,7 +69,7 @@ This is a good time to explain another point. We are, in this chapter, simply de
 \noindent This sentence is obviously true when (1) it is Wednesday and I am on campus by 10:00 am. Conversely, this sentence is false when (2) it is Wednesday, but I am not on campus by 10:00 am. (If that happens, the rule has been broken.) Those two scenarios are represented by lines 1 and 2 in the characteristic truth table for the conditional, which is as follows.
 
 \begin{center}\label{characteristic-tt-conditional}
-\begin{tabular}{c c|c}
+\begin{tabular}{d d | f}
 \meta{A} & \meta{B} & $\meta{A}\eif\meta{B}$\\
 \hline
 T & T & T\Tstrut\\
@@ -96,7 +96,7 @@ Finally, notice that, unlike the conjunction and the disjunction, the conditiona
 \paragraph{Biconditional.}\label{biconditional-2} As we said in section \ref{s:biconditional-1}, the biconditional is equivalent to the conjunction of a conditional running in each direction---that is, to $(\meta{A} \eif \meta{B}) \eand (\meta{A}\eif\meta{B})$. Consequently, on every line where both $\meta{A}\eif\meta{B}$ is true and $\meta{B}\eif\meta{A}$ is true, $\meta{A}\eiff\meta{B}$ is true. On every line where either $\meta{A}\eif\meta{B}$ is false or $\meta{B}\eif\meta{A}$ is false, $\meta{A}\eiff\meta{B}$ is false. That yields the following characteristic truth table for the biconditional.
 
 \begin{center}
-\begin{tabular}{c c|c}
+\begin{tabular}{d d | f}
 \meta{A} & \meta{B} & $\meta{A}\eiff\meta{B}$\\
 \hline
 T & T & T\Tstrut\\
@@ -132,7 +132,7 @@ Consider the sentence `$(H\eand I)\eif H$', which contains three atomic sentence
 
 Since we have two atomic sentences on the left, there are four combinations of true and false. For consistency, the Ts and Fs should always be listed this way: (a) in the first column (the one next to the vertical line), they alternate T, F, T, F; (b) in the second column, they alternate in pairs, T, T, F, F; and (c) if there are more than two atomic sentences , then more columns and more rows are needed, but the pattern remains the same. 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 \hline
  T & T\Tstrut\\
@@ -144,7 +144,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 
 Once the left side of the truth table is completed, we begin on the right side. First, we copy the truth values for the atomic sentences to the right-side of the truth table. For the $H$, that gives us:
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 \hline
  T & T & {T} & &  & & {T}\Tstrut\\
@@ -155,7 +155,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 \end{center}
 And then we add the truth values for $I$:
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 \hline
  T & T & {T} & & {T} & & {T}\Tstrut\\
@@ -168,7 +168,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 Now consider the subsentence `$(H\eand I)$'. This is a conjunction, and our next step is to determine the truth values  for just this subsentence. For this, we turn to the characteristic truth table for conjunction (p.~\pageref{conjunction-tt}). On the first line `$H$' and `$I$' are both true, and so we put `T' on the first line below the `$\eand$'. 
 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\textcolor{light-gray}{\eif}&\textcolor{light-gray}{$H$}\\
 \hline
  \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & T & \textbf{\textcolor{red2}{T}} & T & & \textcolor{light-gray}{T}\Tstrut\\
@@ -181,7 +181,7 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\textcol
 \noindent On the second line, `$H$' is true and `$I$' is false. That means that `$(H\eand I)$' is false, and so we put `F' on the second line below the `$\eand$'. 
 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\textcolor{light-gray}{\eif}&\textcolor{light-gray}{$H$}\\
 \hline
  \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & T & \textbf{T} & T & & \textcolor{light-gray}{T}\Tstrut\\
@@ -194,7 +194,7 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\textcol
 \noindent Using to the characteristic truth table for conjunction (p.~\pageref{conjunction-tt}), we fill in the truth values for the third and fourth lines, and that completes the column under the `$\eand$'.
 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\textcolor{light-gray}{\eif}&\textcolor{light-gray}{$H$}\\
 \hline
  \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & T & \textbf{T} & T & & \textcolor{light-gray}{T}\Tstrut\\
@@ -207,7 +207,7 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\textcol
 The full sentence, `$(H\eand I)\eif H$', is a conditional, which means that the `\eif' is the main logical operator and the column under the `\eif' is the one we fill in last. `$(H \eand I)$' is the antecedent and `$H$' is the consequent, and so we need to look at the truth values below the `\eif' and the `$H$' and refer to the characteristic truth table for the conditional (p.~\pageref{characteristic-tt-conditional}). On the first line, `$(H\eand I)$' is true and `$H$' is true, and so we put a `T' beneath the `\eif'.
 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$\\
 \hline
  \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & T & \textcolor{light-gray}{T} & \textbf{\textcolor{red2}{T}} & T\Tstrut\\
@@ -220,7 +220,7 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$
 On the second row, `$(H\eand I)$' is false and `$H$' is true. (That's the scenario on the third line of the characteristic truth table for the conditional (p.~\pageref{characteristic-tt-conditional}), not the second.) A conditional is, actually, always true when the antecedent is false, and so we put a `T' in the second row beneath the conditional symbol. 
 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$\\
 \hline
  \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & T & \textcolor{light-gray}{T} & \textbf{T} & T \Tstrut\\
@@ -233,7 +233,7 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$
 \noindent On the third and fourth rows, `$(H\eand I)$' is false, and so again, we put `T' below the `\eif' on each line. (On both of these lines, the antecedent is false and the consequent is false, and so that corresponds to line four in the characteristic truth table for the conditional.)
 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$\\
 \hline 
  \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & \textcolor{light-gray}{T} & T & \textcolor{light-gray}{T} & \textbf{T} & T \Tstrut\\
@@ -248,20 +248,15 @@ Since the `\eif' is the main logical operator, we've now determine the truth val
 
 Most of the columns underneath the sentence are only there for bookkeeping purposes. Technically, one could skip filling in the columns under the atomic sentences (i.e., the letters) and just consult the columns on the left side of the truth table---although trying that is liable to invite mistakes. In any case, the column that matters most is the column beneath the \emph{main logical operator} for the sentence, since this tells us the truth value of the entire sentence. We have emphasized it in the last truth table above, by putting this column in bold. When you work through truth tables yourself, you should similarly emphasize it (perhaps by underlining or circling it).
 
+
 \section{Building complete truth tables}\label{s:tt-example2}
 A \define{complete truth table} has a line for every possible combination of \textit{true} and \textit{false} for the atomic sentences that compose the full sentence. Each line represents a \emph{valuation}, and a complete truth table has a line for all the different valuations. 
-
-\newglossaryentry{complete truth table}
-{
-name=complete truth table,
-description={A table that gives all the possible \glspl{truth value} for a \gls{sentence of TFL} or sentences in TFL, with a line for every possible \gls{valuation} of all atomic sentences}
-}
 
 The size of the complete truth table depends on the number of different atomic sentences in the table. A sentence that contains only one atomic sentence requires only two rows, as in the characteristic truth table for negation. This is true even if the same letter is repeated many times, as in the sentence
 `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$'.
 The complete truth table requires only two lines because there are only two possibilities: `$C$' can be true or it can be false. The truth table for this sentence looks like this:
 \begin{center}
-\begin{tabular}{c| d e e e e e e e e e e e e e e f}
+\begin{tabular}{d | f e e e e e e e e e e e e e e }
 $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
 \hline
  T &    & T &  T  & T &   & T  & T & &\TTbf{\textcolor{red2}{F}}&  F& &   T &  T  & T & \Tstrut\\
@@ -274,7 +269,7 @@ A sentence that contains two atomic sentences requires four lines for a complete
 
 A sentence that contains three atomic sentences requires eight lines, as  shown in the table right below. Notice that the `T's and `F's in the columns below $N$ and $P$ (on the left side) follow the same pattern as the example in the previous section. The column under the $P$, meanwhile, has four `T's and then four `F's.  
 \begin{center}
-\begin{tabular}{c c c|d e e e f}
+\begin{tabular}{d d d | f e e e e}
 $M$&$N$&$P$&$M$&\eand&$(N$&\eor&$P)$\\
 \hline
 T & T & T & T & \TTbf{\textcolor{red2}{T}} & T & T & T\Tstrut\\
@@ -299,7 +294,7 @@ But whether a truth table has four lines or 64 lines, every truth table for the 
 \begin{earg}
 \item[\ex{9.3.1}] To create a truth table for `$(P \eiff Q) \eif (P \eor Q)$', we first, as always, fill in the columns below each $P$ and $Q$. Next, we fill in the columns under the `$\eiff$' and the `$\eor$' (in either order). 
 \begin{center}
-\begin{tabular}{c c|d e e e e e f}
+\begin{tabular}{d d | f e e e e e e}
 $P$ &$Q$&  ($P$& $\eiff$& $Q$)& $\eif$& ($P$& $\eor$& $Q$)\\
 \hline
 T& T&      \textcolor{light-gray}{T}& T&  \textcolor{light-gray}{T}&   &   \textcolor{light-gray}{T}& T& \textcolor{light-gray}{T}\Tstrut\\  
@@ -310,7 +305,7 @@ F& F&      \textcolor{light-gray}{F}& T&  \textcolor{light-gray}{F}&   &   \text
 \end{center}
 Once we have those columns complete, we finish the truth table by filling in the column under the `$\eif$', which we do by looking at the column under the `$\eiff$' and the column under the `$\eor$'.
 \begin{center}
-\begin{tabular}{c c|d e e e e e f}
+\begin{tabular}{d d | f e e e e e e}
 $P$ &$Q$&  ($P$& $\eiff$& $Q$)& $\eif$& ($P$& $\eor$& $Q$)\\
 \hline
 T& T&      \textcolor{light-gray}{T}& T&  \textcolor{light-gray}{T}&   \TTbf{\textcolor{red2}{T}}&   \textcolor{light-gray}{T}& T& \textcolor{light-gray}{T}\Tstrut\\  
@@ -322,7 +317,7 @@ F& F&      \textcolor{light-gray}{F}& T&  \textcolor{light-gray}{F}&   \TTbf{\te
 
 \item[\ex{9.3.2}]To make a truth table for `$P \eand \enot Q$', we first (after filling in the columns below the $P$ and $Q$) fill in the column under the $\enot$. To do that, we look at the column under the $Q$.
 \begin{center}
-\begin{tabular}{c c|d e e f}
+\begin{tabular}{d d | f e e e}
 $P$& $Q$&  ($P$& $\eand$& $\enot$& $Q$)\\ 
 \hline
 T& T&    \textcolor{light-gray}{T}& & \TTbf{F}& T\Tstrut\\
@@ -333,7 +328,7 @@ F& F&    \textcolor{light-gray}{F}& & \TTbf{T}& F\\
 \end{center}
 Then, to complete the truth table, we fill in the column under the `$\eand$', which we do by looking at the column under the $P$ and the column under the `$\enot$'.
 \begin{center}
-\begin{tabular}{c c|d e e f}
+\begin{tabular}{d d | f e e e}
 $P$& $Q$&  ($P$& $\eand$& $\enot$& $Q$)\\ 
 \hline
 T& T&    T& \TTbf{\textcolor{red2}{F}}& F& \textcolor{light-gray}{T}\Tstrut\\
@@ -345,7 +340,7 @@ F& F&    F& \TTbf{\textcolor{red2}{F}}& T& \textcolor{light-gray}{F}\\
 
 \item[\ex{9.3.3}]For `$\enot(P \eif Q)$', after we have filled in the columns under the `$P$' and the `$Q$', we fill in the column under the `$\eif$'.
 \begin{center}
-\begin{tabular}{c c|d e e f}
+\begin{tabular}{d d | f e e e}
 $P$& $Q$& $\enot$& ($P$& $\eif$& $Q$)\\ 
 \hline
 T& T&  &   \textcolor{light-gray}{T}& T& \textcolor{light-gray}{T}\Tstrut\\   
@@ -356,7 +351,7 @@ F& F&  &   \textcolor{light-gray}{F}& T& \textcolor{light-gray}{F}\\
 \end{center}
 Then, to complete the table, we fill in the column under the `$\enot$'. To fill in that column, we look at the column under the `$\eif$'.
 \begin{center}
-\begin{tabular}{c c|d e e f}
+\begin{tabular}{d d | f e e e}
 $P$& $Q$& $\enot$& ($P$& $\eif$& $Q$)\\ 
 \hline
 T& T&  \TTbf{\textcolor{red2}{F}}&   \textcolor{light-gray}{T}& T& \textcolor{light-gray}{T}\Tstrut\\   
@@ -369,7 +364,7 @@ F& F&  \TTbf{\textcolor{red2}{F}}&   \textcolor{light-gray}{F}& T& \textcolor{li
 
 \item[\ex{9.3.4}]In `$(P \eand \enot Q) \eor Q$', the `$\eor$' is the main logical operator, and so will fill in the column under it last. First (after we have filled in the columns under the `$P$' and the `$Q$'), we fill in the column under the `$\enot$'.
 \begin{center}
-\begin{tabular}{c c|d e e e e f}
+\begin{tabular}{d d | f e e e e e}
 $P$& $Q$&   ($P$& $\eand$& $\enot$& $Q$)& $\eor$& $Q$\\  
 \hline
 T& T&      \textcolor{light-gray}{T}& & F& \textcolor{light-gray}{T}&   & \textcolor{light-gray}{T}\Tstrut\\
@@ -380,7 +375,7 @@ F& F&      \textcolor{light-gray}{F}& & T& \textcolor{light-gray}{F}&   & \textc
 \end{center}
 Next, while looking at the column under the `$P$' and under the `$\enot$', we fill in the column under the `$\eand$'.
 \begin{center}
-\begin{tabular}{c c|d e e e e f}
+\begin{tabular}{d d | f e e e e e}
 $P$& $Q$&   ($P$& $\eand$& $\enot$& $Q$)& $\eor$& $Q$\\  
 \hline
 T& T&      T& \TTbf{F}& F& \textcolor{light-gray}{T}&   & \textcolor{light-gray}{T}\Tstrut\\
@@ -391,7 +386,7 @@ F& F&      F& \TTbf{F}& T& \textcolor{light-gray}{F}&   & \textcolor{light-gray}
 \end{center}
 Then last, we fill in the column under the `$\eor$' while looking at the column under the `$\eand$' and under the `$Q$'.
 \begin{center}
-\begin{tabular}{c c|d e e e e f}
+\begin{tabular}{d d | f e e e e e}
 $P$& $Q$&   ($P$& $\eand$& $\enot$& $Q$)& $\eor$& $Q$\\  
 \hline
 T& T&      \textcolor{light-gray}{T}& F& \textcolor{light-gray}{F}& \textcolor{light-gray}{T}&   \TTbf{\textcolor{red2}{T}}& T\Tstrut\\
@@ -411,14 +406,14 @@ You should practice making truth tables on paper, but you also need to make them
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 %\makebox[\textwidth][l]{		% lets the table go outside the margins
-\begin{subfigure}[t]{0.47\textwidth}
-\includegraphics[width=6.0cm]{tt-1.png}
+\begin{subfigure}[t]{0.48\textwidth}
+\includegraphics[width=5cm]{tt-1.png}
 \subcaption{}
 \label{fig:tt-1}
 \end{subfigure}
 \hspace{.25cm}
-\begin{subfigure}[t]{0.47\textwidth}
-\includegraphics[width=5.95cm]{tt-2.png}
+\begin{subfigure}[t]{0.48\textwidth}
+\includegraphics[width=5cm]{tt-2.png}
 \subcaption{}
 \label{fig:tt-2}
 \end{subfigure}
@@ -432,7 +427,7 @@ Most often (although not always), the problems in Carnap will be set up so that 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{SCfigure}
 \centering
-\includegraphics[width=6.5cm]{tt-6a.png} % 2.5 inches
+\includegraphics[width=5cm]{tt-6a.png}
 \caption{A completed and verified truth table in Carnap.}
 \label{fig:tt-6}
 \end{SCfigure}
@@ -567,7 +562,7 @@ Make truth tables for the following sentences, and mark the column that represen
 
 \item $A \eif A$ %taut
 \myanswer{\begin{center}
-\begin{tabular}{c | def}
+\begin{tabular}{d | f e e}
 $A$ & $A$&$\eif$&$A$\\
 \hline
  T & T&\TTbf{T}&T\Tstrut\\
@@ -578,7 +573,7 @@ F & F&\TTbf{T}&F
 
 \item $C \eif\enot C$ %contingent
 \myanswer{\begin{center}
-\begin{tabular}{c | d e e f}
+\begin{tabular}{d | f e e e}
 $C$ & $C$&$\eif$&$\enot$&$C$\\
 \hline
  T & T & \TTbf{F}& F& T\Tstrut\\
@@ -588,7 +583,7 @@ F & F & \TTbf{T}& T& F\\
 
 \item $(A \eiff B) \eiff \enot(A\eiff \enot B)$ %tautology
 \myanswer{\begin{center}
-\begin{tabular}{c c | d e e e e e e e f}
+\begin{tabular}{d d | f e e e e e e e e}
 $A$ & $B$&$(A$&$\eiff$&$B)$&$\eiff$&$\enot$&$(A$&$\eiff$&$\enot$&$B)$ \\
 \hline
 T & T & T & T & T & \TTbf{T} & T & T & F & F & T\Tstrut\\
@@ -601,7 +596,7 @@ F & F & F & T & F & \TTbf{T} & T & F & F & T & F
 \item $(A \eif B) \eor (B \eif A)$ % taut
 \myanswer{
 \begin{center}
-\begin{tabular}{c c | d e e e e e f}
+\begin{tabular}{d d | f e e e e e e}
 $A$ & $B$&$(A$&$\eif$&$B)$&$\eor$&$(B$&$\eif$&$A)$ \\
 \hline
 T & T & T & T & T & \TTbf{T} & T & T & T\Tstrut\\
@@ -614,7 +609,7 @@ F & F & F & T & F & \TTbf{T} & F & T & F
 \item $(A \eand B) \eif (B \eor A)$  %taut
 \myanswer{
 \begin{center}
-\begin{tabular}{c c | d e e e e e f}
+\begin{tabular}{d d | f e e e e e e}
 $A$ & $B$&$(A$&$\eand$&$B)$&$\eif$&$(B$&$\eor$&$A)$ \\
 \hline
 T & T & T & T & T & \TTbf{T} & T & T & T\Tstrut\\
@@ -626,7 +621,7 @@ F & F & F & F & F & \TTbf{T} & F & F & F
 \item $\enot(A \eor B) \eiff (\enot A \eand \enot B)$ %taut
 
 \myanswer{\begin{center}
-\begin{tabular}{c c | d e e e e e e e e f}
+\begin{tabular}{d d | f e e e e e e e e e}
 $A$ & $B$&$\enot$&$(A$&$\eor$&$B)$&$\eiff$&$(\enot$&$A$&$\eand$&$\enot$&$B)$\\
 \hline
 T & T & F & T & T & T & \TTbf{T} & F & T & F & F & T\Tstrut\\
@@ -639,7 +634,7 @@ F & F & T & F & F & F & \TTbf{T} & T & F & T & T & F
 
 \item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$ %contradiction
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e e e e e e f}
+\begin{tabular}{d d d | f e e e e e e e e e}
 $A$ & $B$&$C$&$\bigl[(A$&$\eand$&$B)$&$ \eand$&$\enot$&$(A$&$\eand$&$B)\bigr]$&$\eand$&$C$\\
 \hline
 T & T & T & T & T & T & F & F & T & T & T & \TTbf{F} & T\Tstrut\\
@@ -655,7 +650,7 @@ F & F & F & F & F & F & F & T & F & F & F & \TTbf{F} & F
 
 \item $[(A \eand B) \eand C] \eif B$ %taut
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e e e f}
+\begin{tabular}{d d d | f e e e e e e}
 $A$ & $B$&$C$&$[(A$&$\eand$&$B)$&$\eand$&$C]$&$\eif$&$B$\\
 \hline
 T & T & T & T & T & T & T & T & \TTbf{T} & T\Tstrut\\
@@ -671,7 +666,7 @@ F & F & F & F & F & F & F & F & \TTbf{T} & F\\
 
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e e f}
+\begin{tabular}{d d d | f e e e e e}
 $A$ & $B$&$C$&$\enot\bigl[($&$C$&$\eor$&$A)$&$\eor$&$B\bigr]$\\
 \hline
 T & T & T & \TTbf{F} & T & T & T & T & T\Tstrut\\
@@ -692,7 +687,7 @@ F & F & F & \TTbf{T} & F & F & F & F & F
 \begin{earg}
 \item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e f | d e e e f }
+\begin{tabular}{d d d | f e e e h | f e e e e }
 $A$ & $B$ & $C$ & $(A$&$\eand$& $B)$ &$ \eand$ & $C$ & $A$ & $\eand$ & $(B$&$\eand$&$C)$\\
 \hline
 T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
@@ -708,7 +703,7 @@ F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 
 \item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e f | d e e e f }
+\begin{tabular}{d d d | f e e e h | f e e e e }
 $A$ & $B$ & $C$ & $(A$&$\eor$& $B)$ &$ \eor$ & $C$ & $A$ & $\eor$ & $(B$&$\eor$&$C)$\\
 \hline
 T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
@@ -724,7 +719,7 @@ F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 
 \item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e f | d e e e f }
+\begin{tabular}{d d d | f e e e h | f e e e e }
 $A$ & $B$ & $C$ & $(A$&$\eor$& $B)$ &$ \eand$ & $C$ & $A$ & $\eor$ & $(B$&$\eand$&$C)$\\
 \hline
 T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
@@ -740,7 +735,7 @@ F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 
 \item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e f | d e e e f }
+\begin{tabular}{d d d | f e e e h | f e e e e }
 $A$ & $B$ & $C$ & $(A$&$\eif$& $B)$ &$ \eif$ & $C$ & $A$ & $\eif$ & $(B$&$\eif$&$C)$\\
 \hline
 T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
@@ -756,7 +751,7 @@ F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{T} &  F& T & F\\
 
 \item `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table.\\
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e f | d e e e f }
+\begin{tabular}{d d d | f e e e h | f e e e e }
 $A$ & $B$ & $C$ & $(A$&$\eiff$& $B)$ &$ \eiff$ & $C$ & $A$ & $\eiff$ & $(B$&$\eiff$&$C)$\\
 \hline
 T & T & T & T & T & T &  \TTbf{T} & T &T & \TTbf{T} & T & T& T \Tstrut\\
@@ -772,22 +767,20 @@ F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{F} &  F& T & F\\
 \end{earg}
 
 \problempart
-Complete truth tables for each sentence with the column that represents the possible truth values for the whole sentence marked.
+Complete truth tables for each sentence with the column that represents the possible truth values for the whole sentence in bold.
 
 \begin{earg}
 
 \item $\enot (N \eiff (P \eif N))$
 \myanswer{
 \begin{center}
-\begin{tabular}{c c | |c|c c c c c c}
-\cline{3-3}
-$N$ & $P$ &	\enot 	&	(N 	&	\eiff	&	(P 	&	\eif	&	N))	\\ 
+\begin{tabular}{d d | f e e e e e}
+$N$ & $P$ &	\TTbf{$\enot$} 	&	$(N$ 	&	$\eiff$	&	$(P$ 	&	$\eif$	&	$N))	$\\ 
 \hline
-T & T	& 	F 		&	T	&	T	&	T	&	T	&	T\Tstrut\\
-T & F	& 	F 		&	T	&	T	&	F	&	T	&	T	\\
-F & T	& 	F 		&	F	&	T	&	T	&	F	&	F	\\
-F & F	& 	T 		&	F	&	F	&	F	&	T	&	F	\\
-\cline{3-3}
+T & T	& 	\TTbf{F} 		&	T	&	T	&	T	&	T	&	T\Tstrut\\
+T & F	& 	\TTbf{F} 		&	T	&	T	&	F	&	T	&	T	\\
+F & T	& 	\TTbf{F} 		&	F	&	T	&	T	&	F	&	F	\\
+F & F	& 	\TTbf{T} 		&	F	&	F	&	F	&	T	&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -796,15 +789,13 @@ F & F	& 	T 		&	F	&	F	&	F	&	T	&	F	\\
 \item $\enot [(X \eand Y) \eor (X \eor Y)]$
 \myanswer{
 \begin{center}
-\begin{tabular}{c c || c |ccccccc}
-\cline{3-3}
+\begin{tabular}{d d | f e e e e e e e}
 $X$ & $Y$	&	\enot	&	 [(X 	&	\eand& 	Y) 	&	\eor 	&	(X 	&	\eor 	&	Y)] \\
 \hline
-T & T	&	F	&	T	&	T	&	T	&	T	&	T	&	T	&	T\Tstrut	\\
-T & F &	F	&	T	&	F	&	F	&	T	&	T	&	T	&	F	\\
-F & T	&	F	&	F	&	F	&	T	&	T	&	F	&	T	&	T	\\
-F & F	&	T	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
-\cline{3-3}
+T & T	&	\TTbf{F}	&	T	&	T	&	T	&	T	&	T	&	T	&	T\Tstrut	\\
+T & F &	\TTbf{F}	&	T	&	F	&	F	&	T	&	T	&	T	&	F	\\
+F & T	&	\TTbf{F}	&	F	&	F	&	T	&	T	&	F	&	T	&	T	\\
+F & F	&	\TTbf{T}	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -813,15 +804,13 @@ F & F	&	T	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
 \item $(A \eif B) \eiff (\enot B\eiff \enot A)$
 \myanswer{
 \begin{center}
-\begin{tabular}{c c | ccc|c|ccccc}
-\cline{6-6}
+\begin{tabular}{d d | f e e e e e e e e}
 $A$ & $B$	&	(A 	&	\eif	&	B)	&	 \eiff 	&	(\enot&	B 	&	\eiff 	&	 \enot 	& 	 A) \\
 \hline
-T & T	&	T	&	T	&	T	&	T		&	F	 &	T	&	T	&	F		&	T\Tstrut	\\	
-T & F	&	T	&	F	&	F	&	T		&	T	 &	F	&	F	&	F		&	T	\\
-F & T	&	F	&	T	&	T	&	F		&	F	 &	T	&	F	&	T		&	F	\\
-F & F	&	F	&	T	&	F	&	T		&	T	 &	F	&	T	&	T		&	F	\\
-\cline{6-6}
+T & T	&	T	&	T	&	T	&	\TTbf{T}		&	F	 &	T	&	T	&	F		&	T\Tstrut	\\	
+T & F	&	T	&	F	&	F	&	\TTbf{T}		&	T	 &	F	&	F	&	F		&	T	\\
+F & T	&	F	&	T	&	T	&	\TTbf{F}		&	F	 &	T	&	F	&	T		&	F	\\
+F & F	&	F	&	T	&	F	&	\TTbf{T}		&	T	 &	F	&	T	&	T		&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -829,19 +818,17 @@ F & F	&	F	&	T	&	F	&	T		&	T	 &	F	&	T	&	T		&	F	\\
 \item $[C \eiff (D \eor E)] \eand \enot C$
 \myanswer{
 \begin{center}
-\begin{tabular}{c c c | ccccc|c|cc}
-\cline{9-9}
+\begin{tabular}{d d d | f e e e e e e e}
 $C$ & $D$ & $E$	&	[C 	&	\eiff 	&	(D 	&	\eor 	&	E)] 	&	\eand 	&	 \enot 	&	 C \\
 \hline
-T& T& T	&	T	&	T	&	T	&	T	&	T	&	F		&	F		&	T\Tstrut\\
-T& T& F	&	T	&	T	&	T	&	T	&	F	&	F		&	F		&	T	\\
-T& F& T	&	T	&	T	&	F	&	T	&	T	&	F		&	F		&	T	\\
-T& F& F	&	T	&	F	&	F	&	F	&	F	&	F		&	F		&	T	\\\arrayrulecolor{light-gray}\hline
-F& T& T	&	F	&	F	&	T	&	T	&	T	&	F		&	T		&	F	\Tstrut\\
-F& T& F	&	F	&	F	&	T	&	T	&	F	&	F		&	T		&	F	\\
-F& F& T	&	F	&	F	&	F	&	T	&	T	&	F		&	T		&	F	\\
-F& F&	 F   &	F	&	T	&	F	&	F	&	F	&	T		&	T		&	F	\\
-\cline{9-9}
+T& T& T	&	T	&	T	&	T	&	T	&	T	&	\TTbf{F}		&	F		&	T\Tstrut\\
+T& T& F	&	T	&	T	&	T	&	T	&	F	&	\TTbf{F}		&	F		&	T	\\
+T& F& T	&	T	&	T	&	F	&	T	&	T	&	\TTbf{F}		&	F		&	T	\\
+T& F& F	&	T	&	F	&	F	&	F	&	F	&	\TTbf{F}		&	F		&	T	\\\arrayrulecolor{light-gray}\hline
+F& T& T	&	F	&	F	&	T	&	T	&	T	&	\TTbf{F}		&	T		&	F	\Tstrut\\
+F& T& F	&	F	&	F	&	T	&	T	&	F	&	\TTbf{F}		&	T		&	F	\\
+F& F& T	&	F	&	F	&	F	&	T	&	T	&	\TTbf{F}		&	T		&	F	\\
+F& F&	 F   &	F	&	T	&	F	&	F	&	F	&	\TTbf{T}		&	T		&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -849,19 +836,17 @@ F& F&	 F   &	F	&	T	&	F	&	F	&	F	&	T		&	T		&	F	\\
 \item $\enot(C \eand (B \eand H)) \eiff (C \eor (B \eor H))$
 \myanswer{
 \begin{center}
-\begin{tabular}{c c c | cccccc|c|ccccc}
-\cline{10-10}
+\begin{tabular}{d d d | f e e e e e e e e e e e}
 $C$& $B$& $H$	&\enot&	(C 	&\eand &	(B 	&	 \eand 	&	 H))	&	\eiff 	&	(C 	& \eor 	& (B 	& \eor	& H))	\\
 \hline
-T& T& T	&F	   &	T	&	  T &	T	&	T		&	T	&	F	&	T	&	T	&	T	&	T	&	T\Tstrut\\
-T& T& F	&T	   &	T	&	  F &	T	&	F		&	F	&	T	&	T	&	T	&	T	&	T	&	F	\\	
-T& F& T	&T	   &	T	&	 F  &	F	&	F		&	T	&	T	&	T	&	T	&	F	&	T	&	T	\\
-T& F& F	&T	   &	T	&	 F  &	F	&	F		&	F	&	T	&	T	&	T	&	F	&	F	&	F	\\\arrayrulecolor{light-gray}\hline
-F& T& T	&T	   &	F	&	F   &	T	&	T		&	T	&	T	&	F	&	T	&	T	&	T	&	T	\Tstrut\\
-F& T& F	&T	   &	F	&	F   &	T	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	F	\\
-F& F& T	&T	   &	F	&	F   &	F	&	F		&	T	&	T	&	F	&	T	&	F	&	T	&	T	\\
-F& F& F	&T	   &	F	&	F   &	F	&	F		&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
-\cline{10-10}
+T& T& T	&F	   &	T	&	  T &	T	&	T		&	T	&	\TTbf{F}	&	T	&	T	&	T	&	T	&	T\Tstrut\\
+T& T& F	&T	   &	T	&	  F &	T	&	F		&	F	&	\TTbf{T}	&	T	&	T	&	T	&	T	&	F	\\	
+T& F& T	&T	   &	T	&	 F  &	F	&	F		&	T	&	\TTbf{T}	&	T	&	T	&	F	&	T	&	T	\\
+T& F& F	&T	   &	T	&	 F  &	F	&	F		&	F	&	\TTbf{T}	&	T	&	T	&	F	&	F	&	F	\\\arrayrulecolor{light-gray}\hline
+F& T& T	&T	   &	F	&	F   &	T	&	T		&	T	&	\TTbf{T}	&	F	&	T	&	T	&	T	&	T	\Tstrut\\
+F& T& F	&T	   &	F	&	F   &	T	&	F		&	F	&	\TTbf{T}	&	F	&	T	&	T	&	T	&	F	\\
+F& F& T	&T	   &	F	&	F   &	F	&	F		&	T	&	\TTbf{T}	&	F	&	T	&	F	&	T	&	T	\\
+F& F& F	&T	   &	F	&	F   &	F	&	F		&	F	&	\TTbf{F}	&	F	&	F	&	F	&	F	&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -872,15 +857,13 @@ F& F& F	&T	   &	F	&	F   &	F	&	F		&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
 %\vspace{1em}
 \myanswer{
 \begin{center}
-\begin{tabular}{c c | cccc|c|c}
-\cline{7-7}
+\begin{tabular}{d d | f e e e e e }
 $D$& $G$	&	(D 	&	 \eand 	& 	 \enot	&	 D) 	&	 \eif 	&	 G \\
  \hline
-T&  T	&	T	&	F		&	F		&	T	&	T	&	T\Tstrut	\\
-T&  F	&	T	&	F		&	F		&	T	&	T	&	F	\\
-F&  T	&	F	&	F		&	T		&	F	&	T	&	T	\\
-F&  F	&	F	&	F		&	T		&	F	&	T	&	F	\\
-\cline{7-7}
+T&  T	&	T	&	F		&	F		&	T	&	\TTbf{T}	&	T\Tstrut	\\
+T&  F	&	T	&	F		&	F		&	T	&	\TTbf{T}	&	F	\\
+F&  T	&	F	&	F		&	T		&	F	&	\TTbf{T}	&	T	\\
+F&  F	&	F	&	F		&	T		&	F	&	\TTbf{T}	&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -890,15 +873,13 @@ F&  F	&	F	&	F		&	T		&	F	&	T	&	F	\\
 \item	$(\enot P \eor \enot R) \eiff R $
 \myanswer{
 \begin{center}
-\begin{tabular}{c  c | ccccc|c|c}
-\cline{8-8}
+\begin{tabular}{d d | f e e e e e e}
 $P$& $R$	&	(\enot 	&	P 	&	\eor 	&	\enot 	& 	 R) 	& 	\eiff 	&	 R \\
 \hline
-T& T	&	F		&	T	&	F	&	F		&	T	&	F	&	T\Tstrut	\\
-T& F	&	F		&	T	&	T	&	T		&	F	&	F	&	F	\\
-F& T	&	T		&	F	&	T	&	F		&	T	&	T	&	T	\\
-F& F	&	T		&	F	&	T	&	T		&	F	&	F	&	F	\\
-\cline{8-8}
+T& T	&	F		&	T	&	F	&	F		&	T	&	\TTbf{F}	&	T\Tstrut	\\
+T& F	&	F		&	T	&	T	&	T		&	F	&	\TTbf{F}	&	F	\\
+F& T	&	T		&	F	&	T	&	F		&	T	&	\TTbf{T}	&	T	\\
+F& F	&	T		&	F	&	T	&	T		&	F	&	\TTbf{F}	&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -908,15 +889,13 @@ F& F	&	T		&	F	&	T	&	T		&	F	&	F	&	F	\\
 \item	$\enot \enot (\enot A \eand \enot B)  $
 \myanswer{
 \begin{center}
-\begin{tabular}{c c | |c|cccccc}
-\cline{3-3}
+\begin{tabular}{d d | f e e e e e e}
 $A$& $B$	&	\enot		&	 \enot 	&	(\enot 	& 	 A 	& \eand 	& 	\enot 	&	 B)  \\
  \hline
-T& T	&	F		&	T		&	F		&	T	&	F	&	F		&	T\Tstrut	\\
-T& F	&	F		&	T		&	F		&	T	&	F	&	T		&	F	\\
-F& T	&	F		&	T		&	T		&	F	&	F	&	F		&	T	\\
-F& F	&	T		&	F		&	T		&	F	&	T	&	T		&	F	\\
-\cline{3-3}
+T& T	&	\TTbf{F}		&	T		&	F		&	T	&	F	&	F		&	T\Tstrut	\\
+T& F	&	\TTbf{F}		&	T		&	F		&	T	&	F	&	T		&	F	\\
+F& T	&	\TTbf{F}		&	T		&	T		&	F	&	F	&	F		&	T	\\
+F& F	&	\TTbf{T}		&	F		&	T		&	F	&	T	&	T		&	F	\\
 \end{tabular}
 \end{center}
 }
@@ -926,19 +905,17 @@ F& F	&	T		&	F		&	T		&	F	&	T	&	T		&	F	\\
 \item 	$[(D \eand H) \eif J] \eif \enot(D \eor H) $
 \myanswer{
 \begin{center}
-\begin{tabular}{c  c  c | ccccc|c|cccc}
-\cline{9-9}
+\begin{tabular}{d d d | f eeeeeeeee}
 $D$& $H$ & $J$ 	&	[(D 	& 	 \eand 	& 	 H)	& 	\eif 	&	J] 	&	\eif 	&	 \enot 	&	(D 	&	 \eor 	& H) \\
 \hline
-T&  T&  T	&	T	&	T		&	T	&	T	&	T	&	F	&	F		&	T	&	T		&T\Tstrut\\
-T&  T&  F	&	T	&	T		&	T	&	F	&	F	&	T	&	F		&	T	&	T		&T	\\
-T&  F&  T	&	T	&	F		&	F	&	T	&	T	&	F	&	F		&	T	&	T		&F	\\
-T&  F&  F	&	T	&	F		&	F	&	T	&	F	&	F	&	F		&	T	&	T		&F	\\\arrayrulecolor{light-gray}\hline
-F&  T&  T	&	F	&	F		&	T	&	T	&	T	&	F	&	F		&	F	&	T		&T	\Tstrut\\
-F&  T&  F	&	F	&	F		&	T	&	T	&	F	&	F	&	F		&	F	&	T		&T	\\
-F&  F&  T	&	F	&	F		&	F	&	T	&	T	&	T	&	T		&	F	&	F		&F	\\
-F&  F&  F	&	F	&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
-\cline{9-9}
+T&  T&  T	&	T	&	T		&	T	&	T	&	T	&	\TTbf{F}	&	F		&	T	&	T		&T\Tstrut\\
+T&  T&  F	&	T	&	T		&	T	&	F	&	F	&	\TTbf{T}	&	F		&	T	&	T		&T	\\
+T&  F&  T	&	T	&	F		&	F	&	T	&	T	&	\TTbf{F}	&	F		&	T	&	T		&F	\\
+T&  F&  F	&	T	&	F		&	F	&	T	&	F	&	\TTbf{F}	&	F		&	T	&	T		&F	\\\arrayrulecolor{light-gray}\hline
+F&  T&  T	&	F	&	F		&	T	&	T	&	T	&	\TTbf{F}	&	F		&	F	&	T		&T	\Tstrut\\
+F&  T&  F	&	F	&	F		&	T	&	T	&	F	&	\TTbf{F}	&	F		&	F	&	T		&T	\\
+F&  F&  T	&	F	&	F		&	F	&	T	&	T	&	\TTbf{T}	&	T		&	F	&	F		&F	\\
+F&  F&  F	&	F	&	F		&	F	&	T	&	F	&	\TTbf{T}	&	T		&	F	&	F		&F	\\
 \end{tabular}
 \end{center}
 }
@@ -949,26 +926,22 @@ F&  F&  F	&	F	&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
 \item	$\enot [(D \eiff F) \eiff G] \eif (\enot D \eand F) $
 \myanswer{
 \begin{center}
-\begin{tabular}{c c  c | cccccc|c|cccc}
-\cline{10-10}
+\begin{tabular}{d d d | feeeeeeeeee}
 $D$& $F$ & $G$ 	&	\enot 	&	[(D 	&	\eiff 	&	F) 	&	\eiff 	&	 G]	& 	\eif 	 &	(\enot 	& 	D 	 & 	 \eand &F) \\ 
 \hline
-T&  T&  T	&	F		&	T	&	T	&	T	&	T	&	T	&	T	&	F		&	T	&	F	&T	\Tstrut\\
-T&  T&  F	&	T		&	T	&	T	&	T	&	F	&	F	&	F	&	F		&	T	&	F	&T	\\
-T&  F&  T	&	T		&	T	&	F	&	F	&	F	&	T	&	F	&	F		&	T	&	F	&F	\\
-T&  F&  F	&	F		&	T	&	F	&	F	&	T	&	F	&	T	&	F		&	T	&	F	&F	\\\arrayrulecolor{light-gray}\hline
-F&  T&  T	&	T		&	F	&	F	&	T	&	F	&	T	&	T	&	T		&	F	&	T	&T	\Tstrut\\
-F&  T&  F	&	F		&	F	&	F	&	T	&	T	&	F	&	T	&	T		&	F	&	T	&T	\\
-F&  F&  T	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	T		&	F	&	F	&F	\\
-F&  F&  F	&	T		&	F	&	T	&	F	&	F	&	F	&	F	&	T		&	F	&	F	&F	\\
-\cline{10-10}
+T&  T&  T	&	F		&	T	&	T	&	T	&	T	&	T	&	\TTbf{T}	&	F		&	T	&	F	&T	\Tstrut\\
+T&  T&  F	&	T		&	T	&	T	&	T	&	F	&	F	&	\TTbf{F}	&	F		&	T	&	F	&T	\\
+T&  F&  T	&	T		&	T	&	F	&	F	&	F	&	T	&	\TTbf{F}	&	F		&	T	&	F	&F	\\
+T&  F&  F	&	F		&	T	&	F	&	F	&	T	&	F	&	\TTbf{T}	&	F		&	T	&	F	&F	\\\arrayrulecolor{light-gray}\hline
+F&  T&  T	&	T		&	F	&	F	&	T	&	F	&	T	&	\TTbf{T}	&	T		&	F	&	T	&T	\Tstrut\\
+F&  T&  F	&	F		&	F	&	F	&	T	&	T	&	F	&	\TTbf{T}	&	T		&	F	&	T	&T	\\
+F&  F&  T	&	F		&	F	&	T	&	F	&	T	&	T	&	\TTbf{T}	&	T		&	F	&	F	&F	\\
+F&  F&  F	&	T		&	F	&	T	&	F	&	F	&	F	&	\TTbf{F}	&	T		&	F	&	F	&F	\\
 \end{tabular}
 \end{center}
 }
 %\vspace{1em}
 \end{earg}
-
-
 
 
 
@@ -988,13 +961,13 @@ A \textit{valuation} is any assignment of truth values to particular atomic sent
 Let's say that we are going to create a truth table for `$P \eor \enot Q$'. On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. That is one valuation. On the second line, we make $P =$ `true' and $Q =$ `false'. That is another valuation. The assignments of `true' and `false' to `$P$` and `$Q$' on lines 3 and 4, then, are the remaining possible valuations, when we have a sentence containing only two atomic sentences. (See figure \ref{fig:valuation}.)
 
 %\begin{center}
-%\begin{tabular}{c c|d e e f }
+%\begin{tabular}{d d | f e e e }
 %$P$&$Q$& $P$& \eor& \enot& $Q$\\
 %\hline
-% T & T & T & \TTbf{T} & F & T\Tstrut\\
-% T & F & T & \TTbf{T} & T & F \\
-% F & T & F & \TTbf{F} & F & T \\
-% F & F & F & \TTbf{T} & T & F
+ %T & T & T & \TTbf{T} & F & T\Tstrut\\
+ %T & F & T & \TTbf{T} & T & F \\
+ %F & T & F & \TTbf{F} & F & T \\
+ %F & F & F & \TTbf{T} & T & F
 %\end{tabular}
 %\end{center}
 
@@ -1024,7 +997,7 @@ $\meta{A}$ (a sentence in TFL) is a \define{tautology} if and only if it is true
 We can determine whether a sentence is a tautology using a truth table. If the sentence is true on every line of a complete truth table (that is, if there are only `T's under the main connective), then it is true on every valuation. And if it is true on every valuation, it is a tautology. The example from \S\ref{s:tt-example}, `$(H \eand I) \eif H$', for instance, is a tautology. 
 
 \begin{center}
-\begin{tabular}{c c|d e e e f}
+\begin{tabular}{d d | f e e e e}
 ${H}$&${I}$&$(H$&\eand&$I)$&\eif&$H$\\
 \hline 
 {T} & {T} & {T} & T & {T} & \textbf{T} & T \Tstrut\\
@@ -1049,7 +1022,7 @@ $\meta{A}$ is a \define{contradiction} if and only if it is false on every valua
 \noindent Again, we can determine whether a sentence is a contradiction with a truth table. If the sentence is false on every line of a complete truth table, then it is false on every valuation, and so it is a contradiction. The standard example of a contradiction is `$P \eand \enot P$'. Since we have only one letter in this sentence, it is only a two line truth table, but on each line, the sentence is false. 
 
 \begin{center}
-\begin{tabular}{c|d e e f }
+\begin{tabular}{d | f e e e}
 $P$& $P$ & $\eand$ &\enot&$P$\\
 \hline
  T & T & \TTbf{F} & F & T\Tstrut\\
@@ -1058,7 +1031,7 @@ $P$& $P$ & $\eand$ &\enot&$P$\\
 \end{center}
 Similarly, although its truth table has four lines, `$(P \eor Q) \eiff (\enot P \eand \enot Q)$' is a contradiction. 
 \begin{center}
-\begin{tabular}{c c|d e e e e e e e f }
+\begin{tabular}{d d | f e e e e e e e e}
 $P$& $Q$& $(P$ &\eor &$Q)$ &\eiff &(\enot &$P$ &\eand &\enot &$Q)$\\
 \hline
 T &T      &T &T &T   &\TTbf{F}    &F &T &F &F &T\Tstrut\\     
@@ -1070,7 +1043,7 @@ F &F      &F &F &F   &\TTbf{F}    &T &F &T &T &F
 
 In \S\ref{s:nec-truth}, we defined \define{contingent} as ``a sentence that is capable of being true and capable of being false (in different circumstances, of course).'' A truth table, then, provides us with those different circumstances. A sentence that is true on some valuations (or even just on one) and false on the others is contingent. Or, we can also say: any sentence that is neither a tautology nor a contradiction is contingent. `$\enot(P \eor Q)$', for instance, is contingent.
 \begin{center}
-\begin{tabular}{c c|d e e f }
+\begin{tabular}{d d | f e e e}
 $P$&$Q$&\enot&$(P$&\eor&$Q)$\\
 \hline
  T & T & \TTbf{F} & T & T & T\Tstrut\\
@@ -1094,7 +1067,7 @@ Equivalently, if $(\meta{A} \eiff \meta{B})$ is a tautology, then $\meta{A}$ and
 
 Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they equivalent? To find out, we construct a truth table containing both sentences.
 \begin{center}
-\begin{tabular}{c c|d e e f |d e e e f}
+\begin{tabular}{d d | f e e h | f e e e e}
 $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
 \hline
  T & T & \TTbf{F} & T & T & T & F & T & \TTbf{F} & F & T\Tstrut\\
@@ -1131,7 +1104,7 @@ This was one of the examples in \S\ref{s:joint-poss}:
 These are jointly possible because it is possible for them both to be true at the same time. It takes nothing away from their joint possibility that they can also be false at the same time or one can be false while the other is true. Applying that same observation to \textit{jointly consistent}, all we need is one line where both sentences are true. (More than one line is fine also, although the truth values for the two sentences shouldn't match on every line. If they do, then the sentences are equivalent.) `$(P \eor Q)$' and `$(P \eand \enot Q)$' have one line where they are both true, and so they are jointly consistent: 
 
 \begin{center}
-\begin{tabular}{c c|d e f |d e e f}
+\begin{tabular}{d d | f e h | f e e e}
 $P$ &$Q$& $P$& ~\eor~ & $Q$& $P$& \eand& \enot& $Q$\\
 \hline
  T & T &  T & \TTbf{T} & T & T & \TTbf{F} & F & T\Tstrut\\
@@ -1145,7 +1118,7 @@ Conversely, sentences are \define{jointly inconsistent} if there is no valuation
 \begin{ebullet}	
 \item[(1)] One each line, the truth value for one sentence is `T' and the truth value for the other sentence is `F'. For instance, the truth values for `$P \eor Q$' and `$\enot P \eand \enot Q$' never match. On each line, one is true and the other is false. Hence, for this relationship between two sentences, all of these criteria are satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology; $\enot(\meta{A} \eiff \meta{B})$ is a tautology; and $(\meta{A} \eor \meta{B})$ is a tautology.
 \begin{center}
-\begin{tabular}{c c|d e f |d e e e f}
+\begin{tabular}{d d | f e h | f e e e e}
 $P$& $Q$& $P$& ~\eor~ & $Q$& \enot& $P$& \eand& \enot& $Q$\\
 \hline
  T & T &		 T & \TTbf{T} & T 		&	 F & T & \TTbf{F} & F & T\Tstrut\\
@@ -1157,7 +1130,7 @@ $P$& $Q$& $P$& ~\eor~ & $Q$& \enot& $P$& \eand& \enot& $Q$\\
 \medskip
 \item[(2)] The truth value for one sentence is `T', then the truth value for the other sentence is `F', but both sentences can be false at the same time. For example, `$\enot(\enot P \eor Q)$' and `$(\enot P \eand \enot Q)$' are never both true on the same line, but they are false on the same line. For two sentences that are jointly inconsistent in this way, only this criterion is satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology.
 \begin{center}
-\begin{tabular}{c c|d e e e f |d e e e f}
+\begin{tabular}{d d | f e e e h | f e e e e}
 $P$& $Q$&	\enot& (\enot	&$P$	&~\eor~	&$Q)$	&\enot 	&$P$ & \eand 	& \enot	& $Q$\\
 \hline
 T  &	 T & 		\TTbf{F} &	 ~F 		& T 	& T 	& T 		& F 		& T 	& \TTbf{F} 		& F 		& T\Tstrut\\
@@ -1169,7 +1142,7 @@ F  &	 F & 		\TTbf{F} &	 ~T 		& F	& T 	& F 		& T 		& F 	& \TTbf{T} 		& T 		& F
 \medskip
 \item[(3)] Both sentences are false on every line. For example, the truth values for `$\enot P \eand P$' and `$\enot Q \eand Q$' are always the same. On each line, both sentences are false. So, for sentences that are jointly inconsistent in this way, both of these criteria are satisfied: $\enot(\meta{A} \eand \meta{B})$ is a tautology and $(\meta{A} \eiff \meta{B})$ is a tautology. (And the latter, recall, means that these sentences are equivalent, and so here \textit{jointly inconsistent} and \textit{equivalent} overlap.) 
 \begin{center}
-\begin{tabular}{c c|d e e f |d e e e f}
+\begin{tabular}{d d | f e e h | f e e e e}
 $P$&$Q$&\enot&$P$&\eand&$P$&\enot&$Q$&\eand&&$Q$\\
 \hline
  T & T &  F & T & \TTbf{F} & T & F & T & \TTbf{F} &  & T\Tstrut\\
@@ -1326,7 +1299,7 @@ Use a truth table to determine whether each set of sentences are jointly consist
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \\
 These sentences are jointly consistent. (See line 1.)
 \myanswer{\begin{center}
-\begin{tabular}{c | d e f | d e e e f | d e f | d e f}
+\begin{tabular}{d | f e h | f e e e h | f e h | f e e}
 $A$ &  $A$&$\eif$&$A$&$\enot$&$A$&$\eif$&$\enot$&$A$&$A$&$\eand$&$A$&$A$&$\eor$&$A$\\
 \hline
 T & T & \TTbf{T} & T& F & T & \TTbf{T} & F & T & T & \TTbf{T} & T & T & \TTbf{T} & T\Tstrut\\
@@ -1337,7 +1310,7 @@ F & F & \TTbf{T} & F& T & F & \TTbf{T} & T & F & F & \TTbf{F} & F & F & \TTbf{F}
 \item $A\eor B$, $A\eif C$, $B\eif C$ \\
 These sentences are jointly consistent. (See line 1.)
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e f | d e f | d e f}
+\begin{tabular}{d d d | f e h | f e h | f e e}
 $A$ & $B$ & $C$ & $A$&$\eor$&$B$&$A$&$\eif$&$C$&$B$&$\eif$&$C$\\
 \hline
 T & T & T & T & \TTbf{T} & T & T & \TTbf{T} & T & T & \TTbf{T} & T\Tstrut\\
@@ -1354,7 +1327,7 @@ F & F & F & F & \TTbf{F} & F & F & \TTbf{T} & F & F & \TTbf{T} & F\\
 \item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$ \\
 These sentences are jointly inconsistent.
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e f | d e f | d e e f}
+\begin{tabular}{d d d | f e e e h | f e h | f e e e}
 $A$ & $B$ & $C$ & $B$&$\eand$&$(C$&$\eor$&$A)$&$A$&$\eif$&$B$&$\enot$&$(B$&$\eor$&$C)$\\
 \hline
 T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T & \TTbf{F} & T & T & T\Tstrut\\
@@ -1371,7 +1344,7 @@ F & F & F & F & \TTbf{F} & F & F & F & F & \TTbf{T} & F & \TTbf{T} & F & F & F\\
 \item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$  
 These sentences are jointly consistent. (See line 8.)
 \myanswer{\begin{center}
-\begin{tabular}{c c c | d e e e f | d e e f | d e e f}
+\begin{tabular}{d d d | f e e e h | f e e h | f e e e}
 $A$ & $B$ & $C$ & $A$&$\eiff$&$(B$&$\eor$&$C)$&$C$&$\eif$&$\enot$&$A$&$A$&$\eif$&$\enot$&$B$\\
 \hline
 T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{F} & F & T & T & \TTbf{F} & F & T\Tstrut\\
@@ -1389,7 +1362,7 @@ F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T & F & F & \TTbf{T} & T &
 These sentences are jointly consistent. (See line 2.)
 \myanswer{
 \begin{center}
-\begin{tabular}{c c | c c c c | c c c c | c c c } 
+\begin{tabular}{d d | f e e h | f e e h | f e e } 
 $A$ & $B$ 	&	A 	& \eand	&  \enot & B &  \enot &  (A &  \eif & B)	 & 	 B	 & 	\eif  & A   \\ 
 \hline
 T  & T	& 	T   & F     &   F	 & T  &  F	& 	T &   T	  & T 	  & 	 T	 & 	 T	  & T\Tstrut\\ 
@@ -1404,7 +1377,7 @@ F  & F	& 	 F	  				& 	 F	 & 	 T	 & 	F&    	 	 F	 & 	 F	 & 	 T	 	 & 	 F	 	  	  & 
 These sentences are jointly inconsistent.
 \myanswer{
 \begin{center}
-\begin{tabular}{cc | ccc | cccc | cccc} 
+\begin{tabular}{d d | f e h | f e e h | f e e e} 
 $A$ & $B$  & A	 & \eor 	 & B 	  	 	 & A 	 & \eif 	 & 	\enot & A 	  	 	 & B 	 & \eif 	 & \enot	 & 	B \\ 
 \hline
 T & T   &	 T	 & 	 T	 &T  	  	 	 & T	 & 	 F	 & 	F 	 & T 	 & 	 	  	T 	 & 	F 	 & 	 F	 & 	T\Tstrut\\
@@ -1418,7 +1391,7 @@ F &  F  &	 F	& 	 F	 & 	 F	  	 	 & 	 F	 & 	 T	 & 	 T	 & 	 F	 & 	 	  	 F	 & 	 T	 &
 \item $\enot(\enot A \eor B) $, $A \eif \enot C$, $A \eif (B \eif C)$\\
 These sentences are jointly consistent.
 \begin{center}
-\begin{tabular}{ccc | ccccc | cccc | ccccc}
+\begin{tabular}{d d d | f e e e h | f e e h | f e e e e}
 $A$ & $B$  & $C$ &   \enot & (\enot & A & \eor & B)  & A  & \eif 	 & \enot 	 & C & 	 A & \eif 	& (B & \eif & C)  \\ 
  \hline
 T&	T&	T&	F 	& 	F	 & 	T & T	 & T  	  & T & F	 & 	 F & T 	  	 & T & T	 & T	 & T 	 & T\Tstrut\\ 
