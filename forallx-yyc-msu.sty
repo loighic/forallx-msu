@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 
 
-\def\forallxversion{Summer 2021}
-\def\forallxshortversion{Su21}
+\def\forallxversion{Fall 2021}
+\def\forallxshortversion{F21}
 
 \RequirePackage{amssymb,amsmath,multicol,ifthen,pifont,rotating,xcolor}
 \usepackage[numbered]{bookmark} %TB: added for speedy navigation
@@ -10,6 +10,7 @@
 \usepackage[automake=immediate,nonumberlist,toc]{glossaries}  % style=index
 \makeglossaries
 \usepackage{tabu}
+
 
 
 % COLORS
@@ -113,16 +114,22 @@
 \renewcommand{\cftchapterpagefont}{\textrm}	% this is just for the page numbers in the TOC??
 
 
-\chapterstyle{ell}
+%\chapterstyle{ell}
+%\chapterstyle{komalike}
+\chapterstyle{tandh}
+
+\renewcommand*{\chaptitlefont}{\sffamily\bfseries\huge}
+\renewcommand*{\chapnumfont}{\sffamily\bfseries\huge}
+\setlength{\afterchapskip}{12mm}
 
 
 % This is the part style (to match the ell chapter style)
-\renewcommand{\midpartskip}{\begingroup
- \vspace*{-.4\beforechapskip}
- \begin{adjustwidth}{}{-.5\chapindent}
- \hrulefill
- \smash{\rule{0.4pt}{15mm}}
- \end{adjustwidth}\endgroup}
+%\renewcommand{\midpartskip}{\begingroup
+% \vspace*{-.4\beforechapskip}
+% \begin{adjustwidth}{}{-.5\chapindent}
+% \hrulefill
+% \smash{\rule{0.4pt}{15mm}}
+% \end{adjustwidth}\endgroup}
 
 % numeric instead of roman numeral for the part num:
 \renewcommand*{\thepart}{\arabic{part}}
@@ -130,9 +137,10 @@
 %
 % ragged left: from http://tex.stackexchange.com/questions/42489/a-modification-of-part-style-in-memoir
 % (moves the text to the right)
-\renewcommand*{\parttitlefont}{\normalfont\huge\sffamily\raggedleft}
-\renewcommand*{\partnumfont}{\normalfont\HUGE\sffamily\raggedleft}
-\renewcommand*{\partnamefont}{\normalfont\HUGE\sffamily\raggedleft}
+\renewcommand*{\parttitlefont}{\normalfont\Huge\ttfamily\raggedleft}		%scshape\sffamily
+\renewcommand*{\partnumfont}{\normalfont\Huge\bfseries\sffamily\raggedleft}
+\renewcommand*{\partnamefont}{\normalfont\Huge\bfseries\sffamily\raggedleft}
+
 % this (without the \beforepartskip of the same form) force the part text higher onto the page.
 % \renewcommand{\afterpartskip}{\vspace*{\fill}}
 
@@ -140,11 +148,54 @@
 
 %%%%  HEADERS
 
-\copypagestyle{leadbeater}{headings}
+\makepagestyle{myheadings}
 
-\makeoddhead{leadbeater}{\footnotesize\sffamily\rightmark}{}{\footnotesize\sffamily\thepage}
+\makepsmarks {myheadings}{
+\nouppercaseheads
 
-\makeevenhead{leadbeater}{\footnotesize\sffamily\thepage}{}{\footnotesize\sffamily\leftmark}
+% remove any marks for sections (might be left over from default pagestyle)
+\clearmark{section}
+\clearmark{subsection}
+\clearmark{subsubsection}
+
+% hand code \chaptermark, the code is taken from the definition of
+% \createmark for the 'both' version, and cleaned a little (by daleif)
+\renewcommand\chaptermark[1]{
+    \@setclcnt{chapter}{@memmarkcntra}%
+    \advance\c@@memmarkcntra\m@ne
+    \markboth{%
+      \memUChead{%
+        \ifnum\c@secnumdepth > \c@@memmarkcntra
+          \if@mainmatter
+            \@chapapp\ \thechapter
+          \fi
+        \fi
+      }%
+    }{%
+      \memUChead{%
+        ##1%
+      }%
+    }%
+  }%
+
+\createplainmark {toc} {both} {\contentsname}
+\createplainmark {lof} {both} {\listfigurename}
+\createplainmark {lot} {both} {\listtablename}
+\createplainmark {bib} {both} {\bibname}
+\createplainmark {index} {both} {\indexname}
+\createplainmark {glossary} {both} {\glossaryname}
+}
+
+\makeatother
+\makeoddhead{myheadings}{\footnotesize\sffamily\rightmark}{}{\footnotesize\sffamily\thepage}
+\makeevenhead{myheadings}{\footnotesize\sffamily\thepage}{}{\footnotesize\sffamily\leftmark}					%{Chapter~\thechapter}
+
+
+%% These are to remove the page numbers at the bottom of the first page of a chapter and the part pages.
+\copypagestyle{chapter}{plain}
+\makeoddfoot{chapter}{}{}{}
+\makeevenfoot{chapter}{}{}{}
+\aliaspagestyle{part}{empty} % change the part pagestyle
  
             
 %\usepackage{atbegshi}  % to kill the blank page after the titling page
@@ -388,31 +439,28 @@ fontupper=\footnotesize
 %    *             TRUTH TABLES             *
 %    ****************************************
 
-% This facilitates the typesetting of truth tables by
-% effectively eliminating the intercolumn space.
-% This allows truth tables with the Ts and Fs immediately
-% below arbitrary connectives.
-% An example follows:
-%\begin{center}
-%\begin{tabular}{c|c|@{\TTon}*{5}{c}@{\TToff}}
-%$A$&$B$&$(A$&\eand&$B)$&\eif&A\\
-%\hline
-% T & T &    &  T  &    &  T & \\
-% T & F &    &  F  &    &  T & \\
-% F & T &    &  F  &    &  T & \\
-% F & F &    &  T  &    &  T &
-%\end{tabular}
-%\end{center}
-%\newcommand*{\TTon}{\hspace{1.5em}\extracolsep{-1em}}
-%\newcommand*{\TToff}{\extracolsep{-1em}\hspace{.3em}}
-% 
-% Moving to Memoir breaks Magnus's elegant macro
-% In the preceding column definition, I would offer instead:
-%\begin{tabular}{c c | d e e e f}
-% d for left-most columns, e for middle ones, f for right-most ones. The ensuing spacing is ok.
-\newcolumntype{d}{ c@{\extracolsep{0.3em}}}
-\newcolumntype{e}{@{\extracolsep{0.3em}}c@{\extracolsep{0.3em}}}
-\newcolumntype{f}{@{\extracolsep{0.3em}}c }
+% To set column spacing,
+
+%\begin{tabular}{d d | f}
+%\begin{tabular}{d d | f e e e e}
+
+%\begin{tabular}{d d d | f e e e h | f e e e e }
+
+%\begin{tabular}{d d | f e h | f h | g | f e}
+
+%\begin{tabular}{d d | f e e 	j e e e  j  j e}    	   The second j is the turnstile and the last one begins the conclusion.	
+
+
+\newcolumntype{d}{@{}c@{\hspace{8pt}}}								% zero space / large space
+\newcolumntype{f}{@{\hspace{8pt}}c@{}}								% large space / zero space
+
+\newcolumntype{e}{@{\hspace{5pt}}c@{}}								% med space / zero space
+
+\newcolumntype{h}{@{\hspace{5pt}}c@{\hspace{8pt}}}		% med space / large space
+
+\newcolumntype{g}{@{\hspace{7pt}}c@{\hspace{7pt}}}				% med space / med space (for the turnstile column)
+\newcolumntype{j}{@{\hspace{8pt}}c@{}}								% large space / zero space   (for the beginning of the second or third premise) 
+
 \newcommand*{\TTbf}[1]{\textbf{#1}} 
 
 \newcommand\Tstrut{\rule{0pt}{2.5ex}}         % = `top' strut for truth tables
