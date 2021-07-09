@@ -131,7 +131,7 @@ Valid 				& proof or a truth table 							& truth table \\
 \item $\enot (P \eor Q) \proves P \eand Q$ is invalid.
 
 \begin{center}
-\begin{tabular}{c c | d e e f   c 	 d e f}
+\begin{tabular}{d d | f e e e   j 	 j e e}
 P& Q&  $\enot$& (P& $\eor$& Q)& \proves& (P& $\eand$& Q)\\ 
 \hline
 T& T&   \TTbf{F}&   T& T& T&\cm&      T& \TTbf{T}& T\Tstrut\\   
@@ -149,7 +149,7 @@ F& F& 	 \TTbf{T}&   F& F& F&\xm&      F& \TTbf{F}& F\\
 \item $\enot(A \eand (B \eor C)) \proves \enot{C}$ is invalid. 
 
 \begin{center}
-\begin{tabular}{c c c | d e e e e f   c 	 d f}
+\begin{tabular}{d d d | f e e e e f   j 	 j e}
 A& B& C&  \enot& (A& \eand& (B& $\eor$& C))& $\proves$&  $\enot$& C\\ 
 \hline
 T& T& T&  \TTbf{F}&   T& T&   T& T& T&\cm &   \TTbf{F}& T\Tstrut\\ 
@@ -169,7 +169,7 @@ F& F& F&  \TTbf{T}&   F& F&   F& F& F& \cm  &   \TTbf{T}& F\\
 \item $\enot L,  K \eif \enot L \proves \enot K$ is invalid. 
 
 \begin{center}
-\begin{tabular}{c c | d f    d e e f   c 	 d f}
+\begin{tabular}{d d | f e    j e e e   j 	 j e}
 $K$& $L$&  $\enot$& $L$,& ($K$& $\eif$& $\enot$& $L$)& \proves&  $\enot$& $K$\\ 
 \hline
 T& T&  \TTbf{F}& T&    T& \TTbf{F}& F& T&\cm&    \TTbf{F}& T\Tstrut\\
@@ -185,7 +185,7 @@ F& F&  \TTbf{T}& F&    F& \TTbf{T}& T& F&\cm&    \TTbf{T}& F\\
 \item $\proves A \eif (A \eif B)$ is not a theorem---and so not a tautology.
 
 \begin{center}
-\begin{tabular}{c c | c  d e e e f}
+\begin{tabular}{d d | f  e e e e e}
 $A$& $B$&  \proves& $A$& $\eif$& ($A$& $\eif$& $B$)\\ 
 \hline
 T& T&\cm&    T& \TTbf{T}&   T& T& T\Tstrut\\     
