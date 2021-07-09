@@ -8,43 +8,49 @@
 
 \section{Natural deduction versus truth tables}
 
-In \S\ref{s:Valid-def}, we said that an argument is valid if and only if it is impossible for all of the premises to be true and the conclusion to be false. 
+In \S\ref{s:Valid-def}, we said that an argument is valid if and only if it is impossible for all of the premises to be true and the conclusion to be false. And we have seen that truth tables can be used to determine whether an argument is valid. In the next chapter, you will learn another method for verifying that an argument is valid. Before we leave truth tables, though, let’s review the strengths and weakness of this method.
 
-In the case of TFL, this led us to develop truth tables. Each line of a complete truth table corresponds to a valuation. So, given an argument in TFL, we have a very direct way to assess whether it is possible to make all of the premises true and the conclusion false: just investigate the truth table.
+\begin{earg}
+\item The truth table method focuses directly on the definition of valid. Each line of a complete truth table corresponds to a valuation. So, given an argument in TFL, truth tables reveal whether or not the conclusion is true when all of the premises true. 
+\medskip
 
-However, truth tables do not necessarily give us much \emph{insight}. Consider this argument:
-%\begin{align*}
-$$(P \eand Q) \eor R, \enot R \proves Q$$
-%W \eif (T \eand S), W & \therefore T
-%\end{align*}
-This is a valid argument, and you can confirm that it is by constructing a four-line truth table. But we might want to know \textit{why} it is valid---that is, why (or how) the conclusion follows from the premises. 
+\item Truth tables also allow us to efficiently set meaning for each logical operator. As we discussed in \S\ref{s:ConnectiveDisjunction}, in English, `or’ can take the inclusive-or meaning (one or the other, or both) or the exclusive-or meaning (one or the other, but not both), and, at different times, both are used in English. We can discuss which is closest to the meaning of `$\eor$’ in TFL (it's the inclusive-or), but, in the end, we just set the meaning of the symbol `$\eor$’ with this truth table:
 
-One aim of a \emph{natural deduction system} is to show that particular arguments are valid and why they are valid. That is to say, the system allows us to make explicit the reasoning process that get us from the premises to the conclusion. We begin with very basic rules of inference. These rules can be combined, and with just a small number of them, we hope to be able to explicate all of the valid arguments that can be represented in TFL. There are different deduction systems that can be used with TFL. A \textit{natural} deduction system is one that, for the most part, reflects the reasoning processes that we all typically use---at least insofar as the reasoning involves`and', `or', `not', `if \ldots, then \ldots', and `if and only if'.
+\begin{center}
+\begin{tabular}{d d | f}
+\meta{A} & \meta{B} & $\meta{A}\eor\meta{B}$ \\
+\hline
+T & T & T\Tstrut\\
+T & F & T\\
+F & T & T\\
+F & F & F
+\end{tabular}
+\end{center}
 
-This is a different way of thinking about arguments. With truth tables, we directly consider different scenarios where the atomic sentences are true or false and see what that means for the premises and conclusion. With natural deduction systems, we manipulate the sentences in accordance with rules that we have set down. This gives us a better insight---or at least, a different insight---into how arguments work.
+The definition of `$\eor$’ is the symbol that connects $\meta{A}$ and $\meta{B}$, with respect to the sentence being true or false, in the ways shown in the truth table. And, then, the same goes for the other connectives. 
+\medskip
 
-In addition to giving us insight, at least some of the time, using a natural deduction system to demonstrate that an argument is valid is much easier than using a truth table. Take, for instance, this argument:
-$$A \eand B \proves (A \eor C) \eand (B \eor D)$$
-To test this argument for validity with a truth table, you need 16 lines. If you do it correctly, then you will see that there is no line on which all the premises are true and on which the conclusion is false. So you will know that the argument is valid. (But, as just mentioned, there is a sense in which you will not know \emph{why} the argument is valid.) On the other hand, using our natural deduction system, you can demonstrate that this argument is valid in six lines. (And after reading \S\ref{s:conj-rule} and \S\ref{s:disj-rule}, you'll be able to do it easily.) 
+\item While the truth table method can be used to determine if any argument is valid or invalid, one of the weakness of this method is that it is difficult to use when the argument contains more than four different sentence letters. Since the number of lines needed is $2^n$ (where \textit{n} = the number of different letters), an argument with four different sentence letters will require 16 lines, one with five letters will require 32 lines, one with six different letters will require 64 lines, and so on. Hence, there are many arguments that, ideally, we don't want to analyze with truth tables.
+\medskip
 
-When an argument contains more letters, it gets even more difficult to use truth tables (since the number of lines needed is $2^{n}$ where $n=$ the number of letters). In principle, we can set a computer to grind through truth tables and report back when it is finished. But, in practice, complicated arguments in TFL can become \emph{intractable} if we use truth tables. %(Naturally, the reverse is also sometimes true. We can show that $\enot(P \eif Q) \therefore (P \eand \enot Q)$ is valid with a four-line truth table, but it takes 17 not-so-easy lines to show that it is valid with our natural deduction system.)
+\item But what is typically seen as the biggest weakness of using truth tables to check whether an argument is valid is that it doesn’t reveal to us \textit{why} the argument is valid. It doesn’t, in other words, lay out the reasoning that will reveal why (and how) the conclusion follows from the premises.
+\end{earg}
+ 
+Using a \textit{natural deduction system} allows us (1) to verify that an argument is valid and (2) to see why it is valid. We do this by making explicit the reasoning process that takes us from the premises to the conclusion. We begin with very basic rules of inference. (For instance, one is this: if we know that \textit{P or Q} is true; and we also know that \textit{not P} is true, then we can infer that \textit{Q} is true.) These rules can be combined, and with just a small number of them, we hope to be able to show how we get from the premises to the conclusion for all of the valid arguments that can be represented in TFL. There are different deduction systems that can be used with TFL. A \textit{natural} deduction system is one that, for the most part, reflects the ways that we naturally reason---at least insofar as the reasoning involves ‘and’, ‘or’, ‘not’, ‘if . . . , then . . . ’, and ‘if and only if’. 
 
 
 \section{Truth functional propositional logic}
 
-As you know, the symbols of TFL are the sentence letters that represent atomic sentences, the logical operators $\enot$, $\eand$, $\eor$, $\eif$, and $\eiff$, and brackets. These, then, can be combined into sentences using the rules given in chapter \ref{s:TFLSentences}. 
+We have reached a point where it is useful to summarize what TFL is. As you know, the symbols of TFL are the sentence letters that represent atomic sentences, the logical operators $\enot$, $\eand$, $\eor$, $\eif$, and $\eiff$, and brackets. These, then, can be combined into sentences using the rules given in chapter \ref{s:TFLSentences}. 
 
-Truth tables are a method for setting the meaning of the logical operators. That begins with the characteristic truth table for each logical operator and then can be expanded for any sentence in TFL. Truth tables, as it works out, also give us a method for verifying that an argument satisfies the definition of \textit{valid}. (\textit{Valid} is a concept and is not, strictly speaking a part of TFL. Rather it is a concept---or a property of arguments---that can, to an extent, be studied and explicated using TFL. Similarly, as you have seen, \textit{tautology}, \textit{contradiction}, \textit{contingent}, \textit{equivalent}, and \textit{jointly consistent} can be explicated using TFL.) 
+Truth tables are a method for setting the meaning of the logical operators. That begins with the characteristic truth table for each logical operator and then can be expanded for any sentence in TFL. Truth tables also give us a method for verifying that an argument satisfies the definition of \textit{valid}. (\textit{Valid} is a concept and is not, strictly speaking a part of TFL. Rather it is a concept---or a property of arguments---that can, to an extent, be studied and explicated using TFL. Similarly, as you have seen, \textit{tautology}, \textit{contradiction}, \textit{contingent}, \textit{equivalent}, and \textit{jointly consistent} can be explicated using TFL.) 
 
 Whereas truth tables set the meaning for each logical operator, a system of natural deduction sets the rules for how sentences containing the logical operators can be combined or taken apart. (This, in effect, establishes the syntax for the logical operators.) This gives us a method for (1) confirming that an argument is valid and (2) showing why it is valid in a manner that, more or less, conforms to our natural reasoning processes. 
 
 
-%\begin{center}
-	%$\diamondsuit\quad\diamondsuit\quad\diamondsuit$
-    %$\blacksquare\quad\blacksquare\quad\blacksquare$
-%\end{center}
+\section{Fitch} 
 
-\section{Fitch} The modern development of natural deduction dates from simultaneous but unrelated papers by Gerhard Gentzen and Stanisław Jaśkowski that were published in 1934. The natural deduction system that we will use, however, is based largely on work by Frederic Fitch, which was first published in 1952. Consequently, the format that we will use for writing proofs is called \textit{Fitch notation}.
+The modern development of natural deduction dates from simultaneous but unrelated papers by Gerhard Gentzen and Stanisław Jaśkowski that were published in 1934. The natural deduction system that we will use, however, is based largely on work by Frederic Fitch, which was first published in 1952. Consequently, the format that we will use for writing proofs is called \textit{Fitch notation}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1097,25 +1103,25 @@ Creating proofs in Carnap is not difficult. To type the connectives, use the sym
 
 Carnap will number the lines automatically. After the sentence on each line, there has to be a colon (`:') before the `PR', `AS', or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put a tab space between the sentence and `:PR', `:AS', or the rule (:$\eif$E, :$\eor$I, etc.). Also indent subproofs with a tab space. (Carnap will let you use more or fewer spaces, but a subproof has to be indented some amount.)
 
-To produce a proof, you are given an interface like the one shown in figure \ref{fig:proof-1a}. As you can see, the argument is given at the top. In this case, the premises are $P \eif Q$ and $R \eand P$, and the conclusion is $Q$. (The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$').)
+To produce a proof, you are given an interface like the one shown in figure \ref{fig:proof-1a}. As you can see, the argument is given at the top. In this case, the premises are $P \eif \enot Q$ and $R \eand P$, and the conclusion is $\enot Q$. (The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$').)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{SCfigure}
-\centering
-\includegraphics[height=4cm]{textbook--1a.PNG}
+\begin{figure}
+%\centering
+\includegraphics[width=9.5cm]{textbook--1a.PNG}
 \caption{}
 \label{fig:proof-1a}
-\end{SCfigure}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 Begin by listing the premises, and don't forget to put `:PR' after each one. If there is a problem with a line---either the sentence isn't formed correctly, the rule you've cited isn't being used correctly, or there's some other mistake---Carnap will put \textsf{?} or {\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}  at the end of the line. When the line is ok, you will get a `+'.
-
-Once you complete each line, Carnap will give you the typographically correct version on the right (figure \ref{fig:proof-1b}). We finish this proof using the $\eand$E and $\eif$E rules (figure \ref{fig:proof-1c}). When the proof is correct, the box containing the argument will turn green, and the proof can be submitted. 
+% Once you complete each line, Carnap will give you the typographically correct version on the right (figure \ref{fig:proof-1b}). 
+We finish this proof using the $\eand$E and $\eif$E rules (figure \ref{fig:proof-1c}). When the proof is correct, the box containing the argument will turn green, and the proof can be submitted. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 %\centering
-\includegraphics[width=13cm]{textbook--1b.PNG}
+\includegraphics[width=9.5cm]{textbook--1b.PNG}
 \caption{}
 \label{fig:proof-1b}
 \end{figure}
@@ -1124,18 +1130,18 @@ Once you complete each line, Carnap will give you the typographically correct ve
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 %\centering
-\includegraphics[width=13cm]{textbook--1c.PNG}
+\includegraphics[width=9.5cm]{textbook--1c.PNG}
 \caption{}
 \label{fig:proof-1c}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Our next example, $(A \eor B) \proves (\enot A \eif B)$, requires a subproof. We begin as before. To create the subproof, put a tab space before $\enot A$ and put `:AS' at the end of the line (figure \ref{fig:proof-2a}). Since the next line is also part of the subproof, we again need a tab before the $B$. We end the subproof (and discharge the assumption) with the $\eif$I rule. $\enot A \eif B$ is not indented (so no tabs or spaces before the $\enot A$). That's the conclusion, and so if everything is correct, Carnap will give you the green bar and you can submit the proof (figure \ref{fig:proof-2b}). 
+Our next example, $(P \eor Q) \proves (\enot P \eif Q)$, requires a subproof. We begin as before. To create the subproof, put a tab space before $\enot P$ and put `:AS' at the end of the line (figure \ref{fig:proof-2a}). Since the next line is also part of the subproof, we again need a tab before the $Q$. We end the subproof (and discharge the assumption) with the $\eif$I rule. $\enot P \eif Q$ is not indented (so no tabs or spaces before the $\enot P$). That's the conclusion, and so if everything is correct, Carnap will give you the green bar and you can submit the proof (figure \ref{fig:proof-2b}). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 %\centering
-\includegraphics[width=13cm]{textbook--2a.PNG}
+\includegraphics[width=9.5cm]{textbook--2a.PNG}
 \caption{}
 \label{fig:proof-2a}
 \end{figure}
@@ -1144,11 +1150,31 @@ Our next example, $(A \eor B) \proves (\enot A \eif B)$, requires a subproof. We
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 %\centering
-\includegraphics[width=13cm]{textbook--2b.PNG}
+\includegraphics[width=9.5cm]{textbook--2b.PNG}
 \caption{}
 \label{fig:proof-2b}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}
+%\begin{subfigure}[hb]{0.5\textwidth}
+%\centering
+%\includegraphics[angle=90, height=13cm]{textbook--2a.PNG}
+%\caption{}
+%\label{fig:proof-2a}
+%\end{subfigure}
+%\begin{subfigure}[hb]{0.5\textwidth}
+%\centering
+%\includegraphics[angle=90, height=13cm]{textbook--2b.PNG}
+%\caption{}
+%\label{fig:proof-2b}
+%\end{subfigure}
+% \caption{}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 As I said at the beginning of this chapter, creating proofs in Carnap is not difficult. You do have to be careful, however. Programming a language like TFL is relatively simple because there are only a small number of rules and, to produce proofs of valid arguments, we follow those rules very strictly. But as a consequence, Carnap is not designed to understand what you are trying to do if you deviate from the rules, even if it is a minor deviation or an innocent mistake. So, some reminders:
 \begin{enumerate}
