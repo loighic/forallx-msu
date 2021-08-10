@@ -4,11 +4,10 @@
 %\setulmarginsandblock{5cm}{*}{1}		% upper, lower, and ratio
 %\checkandfixthelayout 
 
-\documentclass[10pt]{memoir}
+\documentclass[11pt]{memoir}
 
 % set stock & paper size to Lulu's Royal
 % \setstocksize{23.389cm}{15.593cm}
-
 % set stock & paper size to Lulu's US trade
 \setstocksize{229mm}{152mm}
 
@@ -20,17 +19,19 @@
 
 % set the size of the type block to calculated width in golden ratio
 
-\settypeblocksize{*}{\lxvchars}{1.72}			%{1.618}
+\settypeblocksize{*}{.95\lxvchars}{1.62}  %		{1.72}			%{1.618}
 
 % set spine and and edge margin in golden ratio
 
-\setlrmargins{2.8cm}{*}{*}	% This is for the left and right margins ({spine}{edge}{ratio}). spine = gutter = interior (?)
+\setlrmargins{2.5cm}{*}{*}	% This is for the left and right margins ({spine}{edge}{ratio}). spine = gutter = interior (?)
 
-\setulmargins{2.6cm}{*}{*}	% upper, lower, and ratio
+%%\setulmargins{2.6cm}{*}{*}	% upper, lower, and ratio
+\setulmargins{2.7cm}{*}{*}	% upper, lower, and ratio
 
-\setheaderspaces{1.32cm}{*}{*} 	% top of pg to header, separation btw header & body, ratio
 
-\setlength{\footskip}{35pt}    % bottom of text to footer (which is the page number on the first page of a chapter)
+\setheaderspaces{*}{.45cm}{*} 	% top of pg to header, separation btw header & body, ratio
+
+%\setlength{\footskip}{35pt}    % bottom of text to footer (which is the page number on the first page of a chapter)
 
 \checkandfixthelayout
 
