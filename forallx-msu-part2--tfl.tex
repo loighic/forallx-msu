@@ -426,7 +426,7 @@ $\enot C \eor D$ \qquad \qquad \qquad \qquad  & ``Not $C$ or $D$.''\\
 $(B \eor D) \eif (C \eand F)$ & ``If $B$ or $D$, then $C$ and $F$.''\\
 $P \eiff (R \eand S)$ & ``$P$ if and only if both $R$ and $S$.''\\
 $\enot(Q \eand R)$ & ``It is not the case that both $Q$ and $R$.''\\
-&\textit{or just} ``Not both $Q$ and $R$.'' 
+&\textit{or} ``Not both $Q$ and $R$.'' 
 \end{tabular}
 \end{table*}
 
@@ -809,9 +809,10 @@ brackets &( , )\\
 \bottomrule
 \end{tabular}
 \caption{The three types of symbols of TFL}\label{table.symbols-TFL}
+\label{TFL-symbols}
 \end{table*}
 
-We define an \define{expression of TFL} as any string of symbols of TFL. Take any of the symbols of TFL and write them down, in any order, and you have an expression of TFL.
+You have been introduced to the symbols of TFL in the previous two chapters. They are also summarized in table \ref{TFL-symbols}. We define an \define{expression of TFL} as any string of symbols of TFL. Take any of the symbols of TFL and write them down, in any order, and you have an expression of TFL.
 
 
 \section{Sentences}\label{s:Sentences}
@@ -844,14 +845,16 @@ To use 1 -- 7, you have to drill down to each part of the sentence. For instance
 \item[] $(P \eiff T) \eor Q$
 \end{earg}
 
-\noindent According to (4), this is a sentence if `$(P \eiff T)$' is a sentence and if `$Q$' is a sentence. Are they? According to (1), every atomic sentence---that is, every individual capital letter in this font: $A, B, C, \ldots$---is a sentence of TFL, and so `$Q$' is a sentence. Is `$(P \eiff T)$' a sentence of TFL? According to (6), it is as long as `$P$' and `$T$' are both sentences---which they are since both are atomic sentences. Thus, `$(P \eiff T) \eor Q$' is a sentence of TFL. 
+\noindent According to (4), this is a sentence if `$(P \eiff T)$' is a sentence and if `$Q$' is a sentence. Are they? According to (1), every atomic sentence---that is, every individual capital letter in this font: $A, B, C, \ldots$---is a sentence of TFL, and so `$Q$' is a sentence. And according to (6), `$(P \eiff T)$' is as long as `$P$' and `$T$' are both sentences---which they are since both are atomic sentences. Thus, `$(P \eiff T) \eor Q$' is a sentence of TFL. 
 
 Ultimately, you want to be able to just look at an expression and tell whether or not it is a correctly formed sentence of TFL, and with time you will be able to do so. Here are some examples of sentences of TFL:
 \begin{earg}
 \item $((P \eand R) \eif (S \eif T))$
 \item $(P \eand (R \eif (S \eif T)))$
 \item $((P \eiff \enot S) \eor \enot(T \eiff R))$
-\item $(R \eiff T) \eand \enot(P \eor (Q \eor \enot T))$
+\item $((R \eiff T) \eand \enot(P \eor (Q \eor \enot T)))$
+\item $\enot(P \eif \enot(R \eor (S \eiff T)))$
+\item $((S \eor P) \eand \enot(R \eor \enot\enot R))$
 \end{earg}
 These, on the other hand, are \textit{\textbf{not}} sentences of TFL because each violates one or more of 1 -- 7:
 \begin{earg}
@@ -872,24 +875,24 @@ You will learn to recognize sentences of TFL more quickly if you write neatly an
 
 Consider this sentence: 
 \begin{earg}
-\item[] \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office}. 
+\item[] {Dr. Wilson is in his  office, and if she is teaching today, then Dr. Cook is in her office}. 
 \end{earg}
-This sentence contains two connectives, `and' and `not', and one of them is the \define{main logical operator} of the sentence. The main logical operator determines, at the most general level, what kind of sentence it is---a conjunction, a disjunction, a conditional, a biconditional, or a negation. The sentence \textit{Dr. Wilson is in his  office and Dr. Cook is not in her office} is a conjunction. Thus, the `and' is the main logic operator, and the two conjuncts are 
+This sentence contains two logical operators, `and' and `if \ldots, then\ldots', and one of them is the \define{main logical operator} of the sentence. The main logical operator determines, at the most general level, what kind of sentence it is---a conjunction, a disjunction, a conditional, a biconditional, or a negation. The sentence above is a conjunction. Thus, the `and' is the main logic operator, and these are the two conjuncts: 
 \begin{earg}
-\item[1.] \textit{Dr. Wilson is in his office}.
-\item[2.] \textit{Dr. Cook is not in her office}. 
+\item[1.] {Dr. Wilson is in his office}.
+\item[2.] {If she is teaching today, then Dr. Cook is in her office}. 
 \end{earg}
-The second conjunct contains a negation, but that negation only applies to `Dr. Cook is in her office', not to the whole sentence. 
+The second conjunct is a conditional, but the \textit{if\ldots, then\ldots} only applies to \textit{she is teaching today} and \textit{Dr. Cook is in her office}, not to the whole sentence. 
 
 Now let's look at this sentence: 
 \begin{ebullet}
-	\item[] \textit{If today is not Saturday, then Amy is at work and Kate is at school}. 
+	\item[] {If today is not Saturday, then Amy is at work and Kate is at school}. 
 \end{ebullet}
 	
 \noindent This is a conditional. The antecedent is \textit{today is not Saturday}, and the consequent is \textit{Amy is at work and Kate is at school}. So, although there are three logical operators in this sentence, the main one is the \textit{if ..., then ...} (and so if we translated this sentence into TFL, the main logical operator would be the `$\eif$'). 
 
-Even though the sentence is a conditional, the negation and the conjunction each have a role. But their roles are limited to only a part of the sentence. Take the negation. It applies to (i.e., negates) \textit{today is Saturday}.  
-The conjunction's job, meanwhile, is to join \textit{Amy is at work} and \textit{Kate is at school}. 
+Even though the sentence is a conditional, the \textit{not} and the \textit{and} each have a role. But their roles are limited to only a part of the sentence. Take the \textit{not}. It applies to (i.e., negates) \textit{today is Saturday}.  
+The \textit{and}'s job, meanwhile, is to create a conjunction by joining \textit{Amy is at work} and \textit{Kate is at school}. 
 
 Now, let's turn to expressions in TFL. Although identifying the main logical operator in a long expression in TFL can seem confusing at first, because we are using parentheses, you'll find that it's not too difficult. Let's start with this example: $((P \eand Q) \eor R)$. This is a disjunction. One disjunct is $(P \eand Q)$ and the other is $R$. Hence, the main logical operator is the `$\eor$'. 
 
@@ -926,7 +929,7 @@ As we will discuss in the next section, in some cases, it is acceptable to omit 
 
 \subsection{Scope}
 
-Finally, let's define the \define{scope} of a logical operator. Basically, the scope of a logical operator is the part of the sentence to which the operator applies applies (or as Lemmon says, ``what a particular occurrence of a connective controls''). We give the precise definition in terms of the main logical operator for the whole sentence and the main logical operators for any sub-sentences contained therein. 
+Finally, let's define the \define{scope} of a logical operator. Basically, the scope of a logical operator is the part of the sentence to which the operator applies (or as Lemmon says, ``what a particular occurrence of a connective controls''). We give the precise definition in terms of the main logical operator for the whole sentence and the main logical operators for any sub-sentences contained therein. 
 
 \begin{factboxy}{Scope}
 The \define{scope} of a logical operator is the sentence or sub-sentence for which that logical operator is the main logical operator.\\

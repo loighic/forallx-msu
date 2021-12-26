@@ -6,9 +6,67 @@
 
 \chapter{Characteristic truth tables}\label{s:CharacteristicTruthTables}
 
-Any non-atomic sentence of TFL is composed of atomic sentences and one or more logical operators. The truth value of the entire sentence---that is, whether it is true or false---depends on the truth value of the atomic sentences that comprise it. To know the truth value of `$(D \eand E)$', for instance, you need to know the truth value of `$D$', the truth value of `$E$'---that is, you need to know if `$D$' is true or false and if `$E$' is true or false. You also need to know the rule for when a conjunction is true and when it is false. 
+%Any non-atomic sentence of TFL is composed of atomic sentences and one or more logical operators. The truth value of the entire sentence---that is, whether it is true or false---depends on the truth value of the atomic sentences that comprise it. To know the truth value of `$(D \eand E)$', for instance, you need to know the truth value of `$D$', the truth value of `$E$'---that is, you need to know if `$D$' is true or false and if `$E$' is true or false. You also need to know the rule for when a conjunction is true and when it is false. 
 
-We introduced five logical operators in chapter \ref{s:TFLConnectives}, and now we need to explain when sentences using each one are true and when they are false. For convenience, we will abbreviate the two truth values, `true' and `false', with `T' and `F'.
+\section{A quick introduction to truth tables}
+
+Consider this sentence: 
+\begin{earg}
+	\item[] Either the key is on the table, or Jane is on the train and the key is not on the table.
+\end{earg}
+Now, ask yourself, when is this sentence true and when is it false? 
+\begin{earg}
+\item[(a)] If \textit{the key is on the table} is true, then the sentence will be true regardless of whether \textit{Jane is on the train} is true or false. 
+\item[(b)] If \textit{the key is on the table} is false, then the sentence will be true as long as \textit{Jane is on the train} is true. 
+\item[(c)] But if both \textit{the key is on the table} is false and \textit{Jane is on the train} is false, then the sentence will be false. 
+\end{earg}
+We worked that out by thinking about the different possible scenarios, and the logic of `or' and `and'. An alternative, and a somewhat easier method to use for more complex sentences, is to create a truth table. Truth tables tell us when a sentence is true or false, and, as we will see in chapters \ref{s:SemanticConcepts} and \ref{c:tt-validity}, they allow us to perform other analyses as well. 
+
+This is a truth table---in fact, it is the truth table for the above sentence:
+
+\begin{center}
+\begin{tabular}{d d | f e e e e e}
+$J$&$K$&  	$(K$&\eor&$(J$&\eand&\enot&$K)$\\
+\hline
+ T & T & 	{T} &\TTbf{T} & {T} &F &F & {T}\Tstrut\\
+ T & F & 	{F} &\TTbf{T} & {T} &T &T & {F}\\
+ F & T & 	{T} &\TTbf{T} & {F} &F &F & {T}\\
+ F & F & 	{F} &\TTbf{F} & {F} &F &T & {F}
+\end{tabular}
+\end{center}
+To begin thinking about truth tables, notice the following features of this table.
+\begin{earg}
+\item[1.] The sentence for which we are creating the truth table, in this case, `$K \eor (J \eand \enot K)$', is at the top of the truth table, to the right of the vertical line.
+\item[2.] The atomic sentences that are in `$K \eor (J \eand \enot K)$' are at the top of the truth table to the left of the vertical line, and they are in alphabetical order there. 
+\item[3.] The `T's and `F's below the horizontal line stand for `true' and `false'. (See the definition of \define{truth values} at the beginning of the next section.)
+\item[4.] Below the `$J$' and `$K$' on the left are the different possible combinations of true and false. Below the `$J$', each `T’ is a scenario where $J$ is true, and each `F’ is a scenario where $J$ is false. (And likewise for $K$.) So, on the first line (right below the horizontal line), $J$ is true, and $K$ is true. On the second line, $J$ is true, and $K$ is false. On the third line, $J$ is false, and $K$ is true. And on the fourth line, $J$ is false, and $K$ is false. 
+\item[5.] The columns of Ts and Fs that are to the left of the vertical line are repeated on the right side of the table under each `$J$' and `$K$', respectively. (See figure \ref{fig:tt-intro}.)
+\end{earg}
+
+%\begin{center}
+%\begin{tabular}{d d | f e e e e e}
+%$J$&$K$&  	$(K$&\eor&$(J$&\eand&\enot&$K)$\\
+%\hline
+% T & T & 	{T} &\TTlg{T} & {T} &\TTlg{F} &\TTlg{F} & {T}\Tstrut\\
+% T & F & 	{F} &\TTlg{T} & {T} &\TTlg{T} &\TTlg{T} & {F}\\
+% F & T & 	{T} &\TTlg{T} & {F} &\TTlg{F} &\TTlg{F} & {T}\\
+% F & F & 	{F} &\TTlg{F} & {F} &\TTlg{F} &\TTlg{T} & {F}
+%\end{tabular}
+%\end{center}
+
+\begin{SCfigure}
+\centering
+\includegraphics[width=6cm]{tt--intro.pdf}
+\caption{In a truth table, the columns under the atomic sentences on the right are copied from the columns on the far left.}
+\label{fig:tt-intro}
+\end{SCfigure}
+
+Those are the basic features of every truth table. The task when creating a truth table is knowing how, and in what order, to fill in the columns under the logical operators. In this chapter, we will examine simple sentences containing only one logic operator. These truth tables are the ``characteristic truth tables'' for each logical operator. In the next chapter, we will explore how to create truth tables for more complex sentences. 
+
+
+\section{The characteristic truth tables}
+
+You were introduced five logical operators in chapter \ref{s:TFLConnectives}, and now we need to explain when sentences using each one are true and when they are false. 
 
 \begin{factboxy}{Truth values}
 \textit{Truth values} are the logical values that a sentence can have: \textit{true} and \textit{false}.
@@ -17,45 +75,43 @@ We introduced five logical operators in chapter \ref{s:TFLConnectives}, and now 
 
 \paragraph{Conjunction}\label{conjunction-tt}  For any sentences \meta{A} and \meta{B}, the conjunction $(\meta{A} \eand \meta{B})$ is true if and only if both \meta{A} and \meta{B} are true. If one or both of \meta{A} and \meta{B} are false, then the sentence $(\meta{A} \eand \meta{B})$ is false. We can summarize this in the \textit{characteristic truth table for conjunction}:
 \begin{center}
-\begin{tabular}{d d | f}
-\meta{A} & \meta{B} & $\meta{A}\eand\meta{B}$\\
+\begin{tabular}{d d | f e e}
+\meta{A} & \meta{B} & $\meta{A}$&\eand&$\meta{B}$\\
 \hline
-T & T & T\Tstrut\\
-T & F & F\\
-F & T & F\\
-F & F & F
+T & T &\TTlg{T}& T &\TTlg{T}\Tstrut\\
+T & F &\TTlg{T}& F &\TTlg{F}\\
+F & T &\TTlg{F}& F &\TTlg{T}\\
+F & F &\TTlg{F}& F &\TTlg{F}
 \end{tabular}
 \end{center}
 
-Let's go over what is in a truth table. Above the horizontal line on the right is the sentence we are analyzing . On the left, in alphabetical order, are all of the atomic sentences that appear in the sentence on the right. 
-
-Below the horizontal line on the left are different combinations of \textit{true} and \textit{false} for the atomic sentences. On the first line, there is a `T' below \meta{A} and a `T' below \meta{B}. So, this line represents the situation where \meta{A} is true and \meta{B} is true. When \meta{A} is true and \meta{B} is true, $(\meta{A} \eand \meta{B})$ is true, which is given under the `$\eand$' on the right (on line 1). 
-On line 2, meanwhile, there is a `T' below \meta{A} and an `F' below \meta{B}. Checking the right side, we see that when \meta{A} is true and \meta{B} is false, $(\meta{A}\eand\meta{B})$ is false. 
+Looking at line 1, we see that, when \meta{A} is true and \meta{B} is true, there is a `T' under the `$\eand$', which indicates that  $(\meta{A} \eand \meta{B})$ is true. 
+On line 2, meanwhile, \meta{A} is true and \meta{B} is false, which means that $(\meta{A}\eand\meta{B})$ is false. 
 
 Lines 3 and 4 represent the final two combinations of `true' and `false' for \meta{A} and \meta{B}. On line 3, \meta{A} is false and \meta{B} is true. When that is the case, $(\meta{A} \eand \meta{B})$ is false. And then on line 4, \meta{A} and \meta{B} are both false. In that scenario, $(\meta{A} \eand \meta{B})$ is, again, false.
 
-Note that conjunction is \emph{symmetrical}. The truth value for $\meta{A} \eand \meta{B}$ is always the same as the truth value for $\meta{B} \eand \meta{A}$.  
+Note that conjunction is \emph{symmetrical}. The truth value for $(\meta{A} \eand \meta{B})$ is always the same as the truth value for $(\meta{B} \eand \meta{A})$.  
 
 \paragraph{Negation} For any sentence \meta{A}, if \meta{A} is true, then \enot\meta{A} is false. And likewise, if \meta{A} is false, then \enot\meta{A} is true. This is represented in the \textit{characteristic truth table for negation}:
 \begin{center}
-\begin{tabular}{d | f}
-\meta{A} & \enot\meta{A}\\
+\begin{tabular}{d | f e}
+\meta{A} & \enot &\meta{A}\\
 \hline
-T & F\Tstrut\\
-F & T 
+T & F & \TTlg{T}\Tstrut\\
+F & T & \TTlg{F}
 \end{tabular}
 \end{center}
 
 
 \paragraph{Disjunction} Recall that `$\eor$' always represents the inclusive-or. So, for any sentences \meta{A} and \meta{B}, the disjunction $(\meta{A}\eor \meta{B})$ is true when \meta{A} is true or \meta{B} is true or both are true. The only instance when $(\meta{A}\eor \meta{B})$ is false is when both \meta{A} and \meta{B} are false. This is represented in the \textit{characteristic truth table for disjunction}:
 \begin{center}
-\begin{tabular}{d d | f}
-\meta{A} & \meta{B} & $\meta{A}\eor\meta{B}$ \\
+\begin{tabular}{d d | f e e}
+\meta{A} & \meta{B} & \meta{A} &\eor &\meta{B} \\
 \hline
-T & T & T\Tstrut\\
-T & F & T\\
-F & T & T\\
-F & F & F
+T & T & \TTlg{T}& T& \TTlg{T}\Tstrut\\
+T & F & \TTlg{T}& T& \TTlg{F}\\
+F & T & \TTlg{F}& T& \TTlg{T}\\
+F & F & \TTlg{F}& F& \TTlg{F}
 \end{tabular}
 \end{center}
 
@@ -74,13 +130,13 @@ Conceivably, we could say that $(\meta{A}\eor \meta{B})$ is false when \meta{A} 
 \noindent This sentence is obviously true when (1) it is Wednesday and I am on campus by 10:00 am. Conversely, this sentence is false when (2) it is Wednesday, but I am not on campus by 10:00 am. (If that happens, the rule has been broken.) Those two scenarios are represented by lines 1 and 2 in the characteristic truth table for the conditional, which is as follows.
 
 \begin{center}\label{characteristic-tt-conditional}
-\begin{tabular}{d d | f}
-\meta{A} & \meta{B} & $\meta{A}\eif\meta{B}$\\
+\begin{tabular}{d d | f e e}
+\meta{A} & \meta{B} & \meta{A} &\eif &\meta{B}\\
 \hline
-T & T & T\Tstrut\\
-T & F & F\\
-F & T & T\\
-F & F & T
+T & T & \TTlg{T}& T& \TTlg{T}\Tstrut\\
+T & F & \TTlg{T}& F& \TTlg{F}\\
+F & T & \TTlg{F}& T& \TTlg{T}\\
+F & F & \TTlg{F}& T& \TTlg{F}
 \end{tabular}
 \end{center}
 
@@ -98,16 +154,16 @@ Sometimes the truth values for the antecedent, the consequent, and the whole con
 Finally, notice that, unlike the conjunction and the disjunction, the conditional is \emph{asymmetrical}. You cannot switch the antecedent and consequent without changing the meaning of the sentence. This is because $\meta{A}\eif\meta{B}$ (`if it is Wednesday, then I am on campus by 10:00 am') has a different truth table than $\meta{B}\eif\meta{A}$ (`if I am on campus by 10:00 am, then it is Wednesday').
 
 
-\paragraph{Biconditional}\label{biconditional-2} As we said in section \ref{s:biconditional-1}, the biconditional is equivalent to the conjunction of a conditional running in each direction---that is, to $(\meta{A} \eif \meta{B}) \eand (\meta{A}\eif\meta{B})$. Consequently, on every line where both $\meta{A}\eif\meta{B}$ is true and $\meta{B}\eif\meta{A}$ is true, $\meta{A}\eiff\meta{B}$ is true. On every line where either $\meta{A}\eif\meta{B}$ is false or $\meta{B}\eif\meta{A}$ is false, $\meta{A}\eiff\meta{B}$ is false. That yields the following characteristic truth table for the biconditional.
+\paragraph{Biconditional}\label{biconditional-2} As we said in \S \ref{s:biconditional-1}, the biconditional is equivalent to the conjunction of a conditional running in each direction---that is, to $(\meta{A} \eif \meta{B}) \eand (\meta{A}\eif\meta{B})$. Consequently, on every line where both $\meta{A}\eif\meta{B}$ is true and $\meta{B}\eif\meta{A}$ is true, $\meta{A}\eiff\meta{B}$ is true. On every line where either $\meta{A}\eif\meta{B}$ is false or $\meta{B}\eif\meta{A}$ is false, $\meta{A}\eiff\meta{B}$ is false. That yields the following characteristic truth table for the biconditional.
 
 \begin{center}
-\begin{tabular}{d d | f}
-\meta{A} & \meta{B} & $\meta{A}\eiff\meta{B}$\\
+\begin{tabular}{d d | f e e}
+\meta{A} & \meta{B} & \meta{A} &\eiff &\meta{B}\\
 \hline
-T & T & T\Tstrut\\
-T & F & F\\
-F & T & F\\
-F & F & T
+T & T & \TTlg{T}& T& \TTlg{T}\Tstrut\\
+T & F & \TTlg{T}& F& \TTlg{F}\\
+F & T & \TTlg{F}& F& \TTlg{T}\\
+F & F & \TTlg{F}& T& \TTlg{F}
 \end{tabular}
 \end{center}
 
@@ -122,7 +178,7 @@ F & F & T
 \chapter{Complete truth tables}
 \label{s:CompleteTruthTables}
 
-In chapter \ref{s:CharacteristicTruthTables}, we examined the characteristic truth table for each connective. Those truth tables show us when a sentence with the logical operator as the main connective is true and when it is false. That, in effect, is a definition for each logical operator. Now that we have those definitions, we can investigate when other, more complex sentences are true and false---for instance, ones like `$(H\eand I)\eif H$' and `$(M \eand (N \eor P))$', which we will go through in this chapter. Once we understand how to create truth tables, we can investigate other properties of sentences of TFL, which we will do in chapters \ref{s:SemanticConcepts} and \ref{c:tt-validity}. 
+In chapter \ref{s:CharacteristicTruthTables}, we examined the characteristic truth tables for the logical operators of TFL. The characteristic truth tables show us when a sentence with only one of the logical operators is true and when it is false. That, in effect, is a definition for each logical operator. Now that we have those definitions, we can investigate when other, more complex sentences are true and false---for instance, ones like `$(H\eand I)\eif H$' and `$(M \eand (N \eor P))$', which we will go through in this chapter. Once we understand how to create truth tables, we can investigate other properties of sentences of TFL, which we will do in chapters \ref{s:SemanticConcepts} and \ref{c:tt-validity}. 
 
 Before we begin, we will define \define{valuation}.
 
@@ -135,7 +191,7 @@ A \textit{valuation} is any assignment of truth values to particular atomic sent
 \section{An example}\label{s:tt-example}
 Consider the sentence `$(H\eand I)\eif H$', which contains three atomic sentences, although only two different ones. We set up the truth table for this sentence by putting $H$ and $I$ on the left side of the vertical line and `$(H\eand I)\eif H$' on the right. (Although $H$ appears twice in `$(H\eand I)\eif H$', we only need one $H$ on the left.) Below the $H$ and $I$ on the left side, we put every combination of `T' and `F'.  
 
-Since we have two atomic sentences on the left, there are four combinations of true and false. For consistency, the Ts and Fs should always be listed this way: (a) in the column next to the vertical line, they alternate T, F, T, F; (b) in the next column (to the left), they alternate in pairs: T, T, F, F; and (c) if there are more than two atomic sentences, then more columns and more rows are needed, but the pattern remains the same. 
+Since we have two atomic sentences on the left, there are four combinations of true and false. For consistency, the Ts and Fs should always be listed this way: (a) in the column next to the vertical line, they alternate T, F, T, F; (b) in the next column (to the left), they alternate in pairs: T, T, F, F; and (c) if there are more than two atomic sentences, then more columns and more rows are needed, but the pattern remains the same. (See table \ref{TFTF-order}.)
 \begin{center}
 \begin{tabular}{d d | f e e e e}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -271,7 +327,7 @@ $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
 Looking at the column underneath the main logical operator, we see that the sentence is false on both rows of the table; i.e., the sentence is false regardless of whether `$C$' is true or false. In other words, it is false on every valuation.
 
 A sentence that contains two atomic sentences requires four lines for a complete truth table.
-A sentence that contains three atomic sentences requires eight lines, as  shown in the table right below. Notice that the `T's and `F's in the columns below `$N$' and `$P$' (on the left side) follow the same pattern as the example in the previous section. The column under the `$M$', meanwhile, has four `T's and then four `F's.
+A sentence that contains three atomic sentences requires eight lines, as shown in the truth table for `$M \eand (N \eor P)$'. Notice that the `T's and `F's in the columns below `$N$' and `$P$' (on the left side) follow the same pattern as the example in the previous section. The column under the `$M$', meanwhile, has four `T's and then four `F's.
 \begin{center}
 \begin{tabular}{d d d | f e e e e}
 $M$&$N$&$P$&$M$&\eand&$(N$&\eor&$P)$\\
@@ -303,6 +359,7 @@ fifth		& 16 Ts, 16 Fs, \dots \\
 \bottomrule
 \end{tabular}
 \caption{Every truth table for the same sentence should be the same. To ensure that they are, the columns on the left side of the truth table should be filled in using the patterns given in this table. The first column is the one closest to the vertical line.}\label{xxx}
+\label{TFTF-order}
 \end{table*}
 
 % But whether a truth table has four lines or 64 lines, every truth table for the same sentence should be the same. Hence, the columns on the left side have to be set as follows. Below the last letter (the one next to the vertical line), alternate between `T' and `F'. In the next column to the left, write two `T's, then two `F's, and repeat. For the third atomic sentence, write four `T's followed by four `F's. This yields an eight line truth table like the one above. For a 16 line truth table, the next column of atomic sentences should have eight `T's followed by eight `F's. For a 32 line table, the next column would have 16 `T's followed by 16 `F's, and so on.
@@ -444,12 +501,12 @@ You should practice making truth tables on paper, but you also need to make them
 Most often (although not always), the problems in Carnap will be set up so that you will only be able to submit your answers when they are correct. At those times, once the truth table is complete, you will select `Check'. Carnap will tell you ``Success!'' or ``Something's not quite right.'' It is easy to make a mistake when filling in a truth table, and so if something is not quite right, then you have to inspect every truth value until you find the mistake. Then select `Check' again. Once Carnap confirms that the truth table is correct, select `Submit'. \textbf{Don't forget to submit after you complete every truth table correctly.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{SCfigure}
+\begin{figure}[h]	%\begin{SCfigure}
 \centering
 \includegraphics[width=5cm]{tt-6a.png}
 \caption{A completed and verified truth table in Carnap.}
 \label{fig:tt-6}
-\end{SCfigure}
+\end{figure}	%\end{SCfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -463,7 +520,7 @@ Most often (although not always), the problems in Carnap will be set up so that 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\newpage
 
 %\practiceproblems
 \section{Practice exercises}\label{pr.TT.TTorC}
@@ -484,16 +541,13 @@ Make a complete truth table for each sentence.
 \end{earg}
 
 \problempart
-Check all the claims made in \S\ref{s:MoreBracketingConventions}. That is, show that each of these statements is true.
+Check whether each of these statements is true.
 \begin{earg}
 	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
 	\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
 	\item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
 	\item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
-\end{earg}
-Also, check whether:
-\begin{earg}
-	\item[5.] `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table
+	\item `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table
 \end{earg}
 
 \problempart
@@ -611,10 +665,10 @@ F & F & T & F & F & F & \TTbf{T} & T & F & T & T & F
 \end{center}}
 
 
-\item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$ %contradiction
+\item $[(A\eand B) \eand\enot(A\eand B)] \eand C$ %contradiction
 \myanswer{\begin{center}
 \begin{tabular}{d d d | f e e e e e e e e e}
-$A$ & $B$&$C$&$\bigl[(A$&$\eand$&$B)$&$ \eand$&$\enot$&$(A$&$\eand$&$B)\bigr]$&$\eand$&$C$\\
+$A$ & $B$&$C$&$[(A$&$\eand$&$B)$&$ \eand$&$\enot$&$(A$&$\eand$&$B)]$&$\eand$&$C$\\
 \hline
 T & T & T & T & T & T & F & F & T & T & T & \TTbf{F} & T\Tstrut\\
 T & T & F & T& T & T & F & F & T & T & T & \TTbf{F}& F\\
@@ -643,10 +697,10 @@ F & F & F & F & F & F & F & F & \TTbf{T} & F\\
 \end{tabular}
 \end{center}}
 
-\item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
+\item $\enot[(C\eor A) \eor B]$ %contingent
 \myanswer{\begin{center}
 \begin{tabular}{d d d | f e e e e e}
-$A$ & $B$&$C$&$\enot\bigl[($&$C$&$\eor$&$A)$&$\eor$&$B\bigr]$\\
+$A$ & $B$&$C$&$\enot[($&$C$&$\eor$&$A)$&$\eor$&$B]$\\
 \hline
 T & T & T & \TTbf{F} & T & T & T & T & T\Tstrut\\
 T & T & F & \TTbf{F} & F & T & T & T & T\\
@@ -1238,13 +1292,13 @@ For each pair of sentences, create a truth table and then determine whether the 
 \problempart
 \label{pr.TT.concepts}
 \begin{earg}
-\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $\meta{A}\eiff\meta{B}$?
+\item Suppose that \meta{A} and \meta{B} are equivalent. What can you say about $\meta{A}\eiff\meta{B}$?
 
-\item Suppose that $\meta{A}$, $\meta{B}$ and $\meta{C}$  are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B}\eand\meta{C})$?
+\item Suppose that $\meta{A}$ and $\meta{B}$ are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B})$?
 
-\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+\item Suppose that \meta{A} and \meta{B} are equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
 
-\item Suppose that \meta{A} and \meta{B} are \emph{not} logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+\item Suppose that \meta{A} and \meta{B} are \emph{not} equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
 
 \item Consider this principle:
 	\begin{ebullet}
@@ -1438,22 +1492,22 @@ Use a truth table to determine whether each set of sentences are equivalent or n
 \problempart
 \label{pr.TT.concepts}
 \begin{earg}
-\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $\meta{A}\eiff\meta{B}$?
+\item Suppose that \meta{A} and \meta{B} are equivalent. What can you say about $\meta{A}\eiff\meta{B}$?
 \begin{ebullet}
 \item[] \myanswer{\meta{A} and \meta{B} have the same truth value on every line of a complete truth table, so $\meta{A}\eiff\meta{B}$ is true on every line. It is a tautology.}
 \end{ebullet}
 
-\item Suppose that $\meta{A}$, $\meta{B}$ and $\meta{C}$  are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B}\eand\meta{C})$?
+\item Suppose that $\meta{A}$ and $\meta{B}$ are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B})$?
 \begin{ebullet}
-\item[] \myanswer{Since the sentences are jointly inconsistent, there is no valuation on which they are all true. So their conjunction is false on every valuation. It is a contradiction}
+\item[] \myanswer{Since the sentences are jointly inconsistent, there is no valuation on which they are both true. So their conjunction is false on every valuation. It is a contradiction}
 \end{ebullet}
 
-\item Suppose that \meta{A} and \meta{B} are logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+\item Suppose that \meta{A} and \meta{B} are equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
 \begin{ebullet}
-\item[] \myanswer{Not much. Since $\meta{A}$ and $\meta{B}$ are true on exactly the same lines of the truth table, their disjunction is true on exactly the same lines. So, their disjunction is logically equivalent to them.}
+\item[] \myanswer{Not much. Since $\meta{A}$ and $\meta{B}$ are true on exactly the same lines of the truth table, their disjunction is true on exactly the same lines. So, their disjunction is equivalent to them.}
 \end{ebullet}
 
-\item Suppose that \meta{A} and \meta{B} are \emph{not} logically equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
+\item Suppose that \meta{A} and \meta{B} are \emph{not} equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
 \begin{ebullet}
 \item[] \myanswer{\meta{A} and \meta{B} have different truth values on at least one line of a complete truth table, and $(\meta{A}\eor\meta{B})$ will be true on that line. On other lines, it might be true or false. So $(\meta{A}\eor\meta{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.}
 \end{ebullet}
