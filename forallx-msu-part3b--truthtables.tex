@@ -360,33 +360,33 @@ Create a truth table for each argument and then determine if the argument is val
 
 \problempart
 \label{pr.TT.valid}
-Use truth tables to determine whether each argument is valid or invalid.
+
 \begin{earg}
 \item $A\eif A \proves A$\\
 This argument is invalid.
-\myanswer{\begin{center}
+\myanswer{\begin{flushleft}
 \begin{tabular}{d | f e e   j  j}
 $A$ &$A$&$\eif$&$A$& \proves   &$A$\\
 \hline
  T & T & \TTbf{T} & T& \cm  & T\Tstrut\\
  F & F & \TTbf{T} & F& \xm  & F
  \end{tabular}
-\end{center}}
+\end{flushleft}}\medskip
 
 \item $A\eif(A\eand\enot A) \proves \enot A$\\
 This argument is valid.
-\myanswer{\begin{center}
+\myanswer{\begin{flushleft}
 \begin{tabular}{d | f e e e e e   j  j e}
 $A$&$A$&$\eif$&$(A$&$\eand$&$\enot$&$A)$& \proves &$\enot$&$A$\\
 \hline
  T & T & \TTbf{F} & T & F& F&T&\cm  &\TTbf{F}&T\Tstrut\\
  F & F & \TTbf{T} & F & F&T&F&\cm  &\TTbf{T}&F
 \end{tabular}
-\end{center}}
+\end{flushleft}}\medskip
 
 \item $A\eor(B\eif A) \proves \enot A \eif \enot B$\\
 This argument is valid.
-\myanswer{\begin{center}
+\myanswer{\begin{flushleft}
 \begin{tabular}{d d | f e e e e    j   j e e e e}
 $A$ & $B$ & $A$&$\eor$&$(B$&$\eif$&$A)$& \proves &$\enot$&$A$&$\eif$&$\enot$&$B$\\
 \hline
@@ -395,11 +395,13 @@ T & F & T & \TTbf{T} & F & T & T &\cm& F & T & \TTbf{T} & T & F \\
 F & T & F & \TTbf{F} & T & F & F &\cm& T & F & \TTbf{F} & F & T \\
 F & F & F & \TTbf{T} & F & T & F &\cm& T & F & \TTbf{T} & T & F
 \end{tabular}
-\end{center}}
+\end{flushleft}}\medskip
+
+\filbreak
 
 \item $A\eor B, B\eor C, \enot A \proves B \eand C$\\
 This argument is invalid.
-\myanswer{\begin{center}
+\myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e   j e e   j e   j  j e e}
 $A$ & $B$ & $C$ & $A$&$\eor$&$B$,&$B$&$\eor$&$C$,&$\enot$&$A$& \proves &$B$&$\eand$&$C$\\
 \hline
@@ -412,11 +414,11 @@ T & T & F & F & \TTbf{T} & T & T & \TTbf{T} & F & \TTbf{T} & F &\xm& T &\TTbf{F}
 T & F & T & F & \TTbf{F} & F & F & \TTbf{T} & T & \TTbf{T} & F &\cm& F & \TTbf{F} & T \\
 T & F & F & F & \TTbf{F} & F & F & \TTbf{F} & F & \TTbf{T} & F &\cm& F & \TTbf{F} & F
 \end{tabular}
-\end{center}}
+\end{flushleft}}\medskip
 
 \item $(B\eand A)\eif C, (C\eand A)\eif B \proves (C\eand B)\eif A$\\
 This argument is invalid.
-%\myanswer{\begin{center}
+%\myanswer{\begin{flushleft}
 %\begin{tabular}{d d d | f e e e e   j e e e e   j   j e e e e}
 %$A$ & $B$ & $C$ & $(B$&$\eand$&$A)$&$\eif$&$C$,&$(C$&$\eand$&$A)$&$\eif$&$B$& \proves &$(C$&$\eand$&$ B)$&$\eif$&$A$\\
 %\hline
@@ -429,12 +431,12 @@ This argument is invalid.
 %F & F & T & F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F &\cm& T & F & F & \TTbf{T} & F\\
 %F & F & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & F
 %\end{tabular}
-%\end{center}}
+%\end{flushleft}}
 
 
 %% This one leaves out the left side of the truth table to save space:
 
-\myanswer{\begin{center}
+\myanswer{\begin{flushleft}
 \begin{tabular}{| f e e e e   j e e e e   j   j e e e e}
 $(B$&$\eand$&$A)$&$\eif$&$C$,&$(C$&$\eand$&$A)$&$\eif$&$B$& \proves &$(C$&$\eand$&$ B)$&$\eif$&$A$\\
 \hline
@@ -447,23 +449,162 @@ T & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} &
 F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F &\cm& T & F & F & \TTbf{T} & F\\
 F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & F
 \end{tabular}
-\end{center}}
+\end{flushleft}}
+\medskip
 
 
+\item $A\eif B$, $B \proves  A$\\ 
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j  j  j }
+$A$ & $B$ & $A$ & $\eif$ & $B$, & $B$ & $\proves$ & $A$\\
+\hline
+T & T &    T & T & T &    T &\cm& T\Tstrut\\
+T & F &    T & F & F &    F &\cm& T\\
+F & T &    F & T & T &    T &\xm& F\\
+F & F &    F & T & F &    F &\cm& F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\filbreak
+
+\item $A\eiff B$, $B\eiff C \proves A\eiff C$\\ 
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d d | f e e  j e e   j   j e e }
+$A$ & $B$ & $C$ & $A$ & $\eiff$ & $B$, & $B$ & $\eiff$ & $C$ & $\proves$ & $A$ & $\eiff$ & $C$\\
+\hline
+T & T & T &    T & T &  T &      T & T &  T   &\cm&   T & T &  T\Tstrut\\
+T & T & F &    T & T &  T &      T & F &  F   &\cm&   T & F &  F\\
+T & F & T &    T & F &  F &      F & F &  T   &\cm&   T  &T &  T\\
+T & F & F &    T & F &  F &      F & T &  F   &\cm&   T  &F &  F\\\arrayrulecolor{light-gray}\hline
+F & T & T &    F & F &  T &      T & T &  T   &\cm&   F & F &  T\Tstrut\\
+F & T & F &    F & F &  T &      T & F &  F   &\cm&   F & T &  F\\
+F & F & T &    F & T &  F &      F & F &  T   &\cm&   F & F &  T\\
+F & F & F &    F & T &  F &      F & T &  F   &\cm&   F & T &  F 
+\end{tabular}
+\end{flushleft}
+\medskip
 
 
-\item $A\eif B$, $B \proves  A$ \hfill \myanswer{Invalid}
-\item $A\eiff B$, $B\eiff C \proves A\eiff C$ \hfill \myanswer{Valid}
-\item $A \eif B$, $A \eif C\proves B \eif C$ \hfill \myanswer{Invalid} 
-\item $A \eif B$, $B \eif A\proves A \eiff B$ \hfill \myanswer{Valid} 
+\item $A \eif B$, $A \eif C\proves B \eif C$\\ 
+This argument is invalid. 
+\begin{flushleft}
+\begin{tabular}{d d d | f e e  j e e   j   j e e }
+$A$ & $B$ & $C$ & $A$ & $\eif$ & $B$, & $A$ & $\eif$ & $C$ & $\proves$ & $B$ & $\eif$ & $C$\\
+\hline
+T & T & T &    T & T & T &      T & T & T   &\cm&   T & T & T\Tstrut\\
+T & T & F &    T & T & T &      T & F & F   &\cm&   T & F & F\\  
+T & F & T &    T & F & F &      T & T & T   &\cm&   F & T & T\\
+T & F & F &    T & F & F &      T & F & F   &\cm&   F & T & F\\\arrayrulecolor{light-gray}\hline
+F & T & T &    F & T & T &      F & T & T   &\cm&   T & T & T\Tstrut\\ 
+F & T & F &    F & T & T &      F & T & F   &\xm&   T & F & F\\
+F & F & T &    F & T & F &      F & T & T   &\cm&   F & T & T\\
+F & F & F &    F & T & F &      F & T & F   &\cm&   F & T & F
+\end{tabular}
+\end{flushleft}
+\medskip
 
-\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \proves  A $\vspace{.5ex} \hfill \myanswer{Invalid}
-\item $A\eor B$, $B\eor C$, $\enot B \proves A \eand C$\vspace{.5ex} \hfill \myanswer{Valid}
-\item $A \eif B$, $\enot A\proves \enot B$ \vspace{.5ex} \hfill \myanswer{Invalid}
-\item $A$, $B\proves \enot(A\eif \enot B)$ \vspace{.5ex} \hfill \myanswer{Valid}
-\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\proves C$ \vspace{.5ex} \hfill \myanswer{Valid}
+
+\item $A \eif B$, $B \eif A\proves A \eiff B$\\ 
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j e e  j  j e e }
+$A$ & $B$ & $A$ & $\eif$ & $B$, & $B$ & $\eif$ & $A$ & $\proves$ & $A$ & $\eiff$ & $B$\\
+\hline
+T & T &    T & T & T &     T & T & T  &\cm&   T & T &  T\Tstrut\\
+T & F &    T & F & F &     F & T & T   &\cm&   T & F &  F\\  
+F & T &    F & T & T &     T & F & F   &\cm&   F & F &  T\\
+F & F &    F & T & F &     F & T & F   &\cm&   F & T &  F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\filbreak
+
+\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \proves  A$\\ 
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d | f e e e e e e  j  j }
+$A$ & $A$ & $\eor$ & $\bigl[A$ & $\eif$ & $(A$ & $\eiff$ & $A)\bigr]$ & $\proves$ & $A$\\
+\hline
+T &    T & T &   T & T &   T & T &  T     &\cm& T\Tstrut\\
+F &    F & T &   F & T &   F & T &  F      &\xm& F
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A\eor B$, $B\eor C$, $\enot B \proves A \eand C$\\
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d d | f e e  j e e  j e  j  j e e }
+$A$ & $B$ & $C$ & $A$ & $\eor$ & $B$, & $B$ & $\eor$ & $C$, & $\enot$ & $B$ & $\proves$ & $A$ & $\eand$ & $C$\\
+\hline
+T & T & T &    T & T & T &      T & T & T &    F & T &\cm&   T & T & T\Tstrut\\
+T & T & F &    T & T & T &      T & T & F &    F & T &\cm&   T & F & F\\
+T & F & T &    T & T & F &      F & T & T &    T & F &\cm&   T & T & T\\
+T & F & F &    T & T & F &      F & F & F &    T & F &\cm&  T & F & F\\\arrayrulecolor{light-gray}\hline
+F & T & T &    F & T & T &      T & T & T &   F & T &\cm&   F & F & T\Tstrut\\
+F & T & F &    F & T & T &      T & T & F &   F & T &\cm&   F & F & F\\
+F & F & T &    F & F & F &      F & T & T &    T & F &\cm&   F & F & T\\
+F & F & F &    F & F & F &      F & F & F &    T & F &\cm&    F & F & F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A \eif B$, $\enot A\proves \enot B$\\
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j e   j   j e }
+$A$ & $B$ & $A$ & $\eif$ & $B$, & $\enot$ & $A$ & $\proves$ & $\enot$ & $B$\\
+\hline
+T & T &    T & T & T &    F & T &\cm& F & T\Tstrut\\
+T & F &    T & F & F &    F & T &\cm& T & F\\ 
+F & T &    F & T & T &    T & F &\xm& F & T\\ 
+F & F &    F & T & F &    T & F  &\cm&T & F
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A$, $B\proves \enot(A\eif \enot B)$\\
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d | f  j   j   j e e e e }
+$A$ & $B$ & $A$,& $B$ & $\proves$ & $\enot$ & $(A$ & $\eif$ & $\enot$ & $B)$\\
+\hline
+T & T &  T &  T &\cm& T &   T & F & F & T\Tstrut\\
+T & F &  T &  F &\cm& F &   T & T & T & F\\
+F & T &  F &  T &\cm& F &   F & T & F & T\\
+F & F &  F &  F &\cm&F  &  F & T & T & F
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\filbreak
+
+\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\proves C$\\
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d d | f e e e  j e e  j e e  j  f }
+$A$ & $B$ & $C$ & $\enot$ & $(A$ & $\eand$ & $B)$, & $A$ & $\eor$ & $B$, & $A$ & $\eiff$ & $B$ & $\proves$ & $C$\\
+\hline
+T & T & T &  F &   T & T & T &      T & T & T &      T & T &  T   &\cm& T\Tstrut\\
+T & T & F &  F &   T & T & T &      T & T & T &      T & T &  T   &\cm& F\\
+T & F & T &  T &   T & F & F &      T & T & F &      T & F &  F   &\cm& T\\
+T & F & F &  T &   T & F & F &      T & T & F  &     T & F &  F   &\cm& F\\\arrayrulecolor{light-gray}\hline
+F & T & T &  T &   F & F & T &      F & T & T &      F & F &  T   &\cm& T\Tstrut\\
+F & T & F &  T &   F & F & T &      F & T & T &      F & F &  T   &\cm& F\\ 
+F & F & T &  T &   F & F & F &      F & F & F &      F & T &  F   &\cm& T\\
+F & F & F &  T &   F & F & F &      F & F & F  &     F & T &  F   &\cm& F
+\end{tabular}
+\end{flushleft}
 \end{earg}
 
+\filbreak
 
 \problempart
 \begin{earg}

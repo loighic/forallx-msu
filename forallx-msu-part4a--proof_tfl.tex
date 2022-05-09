@@ -125,12 +125,16 @@ This reasoning process, which we all do naturally, is part of our natural deduct
 	\have[n]{b}{\meta{B}}
 	\have[\ ]{c}{\meta{A}\eand\meta{B}} \ai{a, b}
 \end{proof}
-\tcblower
-\footnotesize{The `$m$' and `$n$' will never appear in an actual proof. In a proof, the lines are numbered $1$, $2$, $3$, etc. 
-The `$m$' and `$n$' are used here to indicate that $\meta{A}$ and $\meta{B}$ can be on any lines in the proof.}
+
+\footnotesize{If we have $\meta{A}$ on a line and $\meta{B}$ on a line, then we can, on a new line, put $\meta{A}\eand\meta{B}$. The `$\meta{A}$' and `$\meta{B}$' can occur in either order, and the conjunction can be `$\meta{A} \eand \meta{B}$' or `$\meta{B} \eand \meta{A}$'.}
 \end{factboxy}
 
-\noindent The `$\meta{A}$' and `$\meta{B}$' can occur in either order, and the conjunction can be `$\meta{A} \eand \meta{B}$' or `$\meta{B} \eand \meta{A}$'.
+%\tcblower
+
+The `$m$' and `$n$' will never appear in an actual proof. In a proof, the lines are numbered $1$, $2$, $3$, etc.  The `$m$' and `$n$' are used here to indicate that $\meta{A}$ and $\meta{B}$ can be on any lines in the proof.
+
+Notice that some of rules given in \S \ref{s:conj-rule} - \ref{s:bi-rules} have three lines and some have two. For each of these rules, you can add what is on the last line (of the rule) to your proof when you have what is given on the line or lines above the last line (of the rule). 
+
 
 For the example about Sarah and Amy, we can use this symbolization key:
 	\begin{ekey}
@@ -144,21 +148,25 @@ Let's say that `$S$' and `$R$' are our premises (although they don't have to be 
 	\have{c}{S \eand R} \ai{a, b}
 \end{proof}
 
-Every line of our proof must either be an assumption (and remember that a premise is an assumption), or it must be justified by some rule. Therefore, on line 3, we put `$\eand$I 1, 2' to indicate that `$S \eand R$' was obtained by applying the conjunction introduction rule to lines 1 and 2. 
+Every line of our proof must either be a premise or it must be justified by some rule (or, as we will see in \S \ref{s:CI-rule} - \ref{s:neg-rules}, we can, in certain circumstances, introduce a new assumption). Therefore, on line 3, we put `$\eand$I 1, 2' to indicate that `$S \eand R$' was obtained by applying the conjunction introduction rule to the `$S$' on line 1 and the `$R$' on line 2. 
 
 The conjunction introduction rule introduces a sentence with `$\eand$' as the main connective. We also have a rule that eliminates that connective. Suppose someone tells you that \textit{Jeff is eating and Mary is sleeping}. Assuming that whoever told you this is reliable, you are entitled to infer simply that \textit{Jeff is eating}. You are also entitled to infer that \textit{Mary is sleeping}. These are applications of the \define{conjunction elimination rule} (which is actually two similar rules).
 
-\begin{factboxy-width}[width=7.5cm]{conjunction elimination rule}
+\begin{factboxy}{conjunction elimination rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eand\meta{B}}
 	\have[\ ]{a}{\meta{A}} \ae{ab}
 \end{proof}
-\textit{and equally:}
+
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eand\meta{B}}
 	\have[\ ]{b}{\meta{B}} \ae{ab}
 \end{proof}
-\end{factboxy-width}
+
+\footnotesize{If we have $\meta{A} \eand \meta{B}$ on a line, then, on a new line, we can put either $\meta{A}$ by itself or $\meta{B}$ by itself.}
+
+\end{factboxy}
+
 \noindent When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$'. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}
 
 With just these two rules, we can undertake the proof for this argument, which requires more steps than did the previous example: 
@@ -211,7 +219,7 @@ When is this true? Recall from \S \ref{s:ConnectiveDisjunction} that we are usin
 That's a lot of options, but if all we know is that Sarah is swimming or Jeff is eating a burrito, then we don't know precisely what either one of them are doing. But let's say that someone (whom we trust completely) tells us that, actually, Sarah is \textit{not} swimming. That piece of information about Sarah, then, let's us safely infer that Jeff is eating a burrito. This reasoning process is captured by the \define{disjunction elimination rule}.
 
 \medskip
-\begin{tcbraster}[raster columns=2, raster valign=top]
+% \begin{tcbraster}[raster columns=2, raster valign=top]
 \begin{factboxy}{disjunction elimination rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eor\meta{B}}
@@ -224,7 +232,11 @@ That's a lot of options, but if all we know is that Sarah is swimming or Jeff is
 	\have[n]{na}{\enot\meta{A}}
 	\have[\ ]{b}{\meta{B}} \oe{ab,nb}
 \end{proof}
-\end{factboxy}					% Don't put a blank line after this.
+
+\footnotesize{If we have `$\meta{A}\eor\meta{B}$' on a line and, on another line, we have what is either before or after the `$\eor$' with a `$\enot$' before it (i.e., `$\enot\meta{B}$' or `$\enot\meta{A}$'), then, on a new line, we can put what is on the other side of the `$\eor$'.}
+
+\end{factboxy}					% Don't put a blank line after this if the boxes are supposed to be next to each other.
+
 \begin{factboxy}{disjunction introduction rule}
 \begin{proof}
 	\have[m]{a}{\meta{A}}
@@ -235,8 +247,11 @@ That's a lot of options, but if all we know is that Sarah is swimming or Jeff is
 	\have[m]{a}{\meta{A}}
 	\have[\ ]{ba}{\meta{B}\eor\meta{A}}\oi{a}
 \end{proof}
+
+\footnotesize{If we have `$\meta{A}$' on a line, then on a new line we can repeat the `$\meta{A}$' and add `$\eor$' and anything else.}
+
 \end{factboxy}
-\end{tcbraster}
+% \end{tcbraster}
 
 
 \paragraph{Disjunction introduction}
@@ -409,14 +424,20 @@ In this argument---which is valid---we have a conditional and then, on a separat
 This rule is also sometimes called \emph{modus ponens}. When we use the rule, the conditional and the antecedent of the conditional can be separated from one another, and they can appear in any order.
 
 \medskip
-\begin{tcbraster}[raster columns=2, raster valign=top]
+
+%\begin{tcbraster}[raster columns=2, raster valign=top]
+
 \begin{factboxy}{conditional elimination rule}\label{ce-rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eif\meta{B}}
 	\have[n]{a}{\meta{A}}
 	\have[\ ]{b}{\meta{B}} \ce{ab,a}
 \end{proof}
+
+\footnotesize{If we have `$\meta{A}\eif\meta{B}$' on a line and, on a separate line, we have just `$\meta{A}$' (i.e., the antecedent of the conditional), then, on a new line, we can put `$\meta{B}$' (i.e., the consequent of the conditional).} 
+
 \end{factboxy}
+
 \begin{factboxy}{biconditional elimination rule}\label{be-rule}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eiff\meta{B}}
@@ -429,23 +450,30 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 	\have[n]{a}{\meta{B}}
 	\have[\ ]{b}{\meta{A}} \be{ab,a}
 \end{proof}
+
+\footnotesize{If we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{A}$', then, on a new line, we can put `$\meta{B}$'.  Or, if we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{B}$', then, on a new line, we can put `$\meta{A}$'.} 
+
 \end{factboxy}
-\end{tcbraster}
+
+%\end{tcbraster}
 
 
 \section{Biconditional intro and elim}\label{s:bi-rules}
 
-The \define{biconditional elimination rule} is similar to the conditional elimination rule but a bit more flexible. If you have a biconditional and the left side of the biconditional on another line, you can put the right side on a new line. Similarly, if you have the right side, you can put the left side on a new line. Notice the difference between the conditional elimination and the biconditional elimination rule. There are two ways to use the biconditional elimination rule. There is only one way to use the conditional elimination rule.
+The \define{biconditional elimination rule} is similar to the conditional elimination rule but a bit more flexible. If you have a biconditional on one line and the left side of the biconditional on another line, you can put the right side on a new line. Similarly, if you have the right side, you can put the left side on a new line. Notice the difference between the conditional elimination rule and the biconditional elimination rule. There are two ways to use the biconditional elimination rule. There is only one way to use the conditional elimination rule.
 
-In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is ``the conjunction of a conditional running in each direction.'' This is the foundation for the \define{biconditional introduction rule}. If we have both conditionals, $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$, then we can put $\meta{A} \eiff \meta{B}$ on a new line.
+In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is ``the conjunction of a conditional running in each direction.'' This is the foundation for the \define{biconditional introduction rule}. If we have both conditionals, $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$ on separate lines in our proof, then we can put $\meta{A} \eiff \meta{B}$ on a new line.
 
-\begin{factboxy-width}[width=7.5cm]{biconditional introduction rule}
+\begin{factboxy}{biconditional introduction rule}
 \begin{proof}\label{eiff-I}
     \have[m]{ab}{\meta{A}\eif\meta{B}} 
     \have[n]{ba}{\meta{B}\eif\meta{A}}
 	\have[\ ]{b}{\meta{A}\eiff\meta{B}} \bi{ab,ba}
 \end{proof}
-\end{factboxy-width}
+
+\footnotesize{If we have `$\meta{A}\eif\meta{B}$' and `$\meta{B}\eif\meta{A}$' on two lines of our proof, then, on a new line, we can put `$\meta{A}\eiff\meta{B}$'.}
+
+\end{factboxy}
 
 
 
@@ -473,6 +501,8 @@ We will now review some proofs that use the rules that are covered in \S\S \ref{
 	\have{p}{P} \oe{p1,q}
 	\have{c}{P \eor S} \oi{p}
 \end{proof}\medskip
+
+%\pagebreak
 
 \item[\ex{14.6.2b}] For `$C \eand (D \eor \enot F), F \eand G \proves C \eand (D \eor H)$', we use all five of the rules introduced in \S\S \ref{s:conj-rule} and \ref{s:disj-rule}.
 \begin{proof}
@@ -568,7 +598,6 @@ For this final step, we have gone back to the original vertical line of the proo
 When we use the conditional introduction rule, the assumption that we make will always be the antecedent of the conditional. The last line of the subproof, meanwhile, will always be the consequent of the conditional.
 
 \begin{factboxy}{conditional introduction rule}
-\footnotesize{Begin by making an assumption, \meta{A}. From that assumption, derive \meta{B}. Once that is done, you know that \textit{if} \meta{A}, then \meta{B}, and you can put the conditional on the line after the subproof.} 
 	\begin{proof}
 		\open
 			\hypo[i]{a}{\meta{A}} \as{}
@@ -576,7 +605,10 @@ When we use the conditional introduction rule, the assumption that we make will 
 		\close
 		\have[\ ]{ab}{\meta{A}\eif\meta{B}}\ci{a-b}
 	\end{proof}
-\footnotesize{There can be as many or as few lines as needed between lines $i$ and $j$.} 
+
+\footnotesize{We begin by making an assumption: `$\meta{A}$'. We then derive `$\meta{B}$'. Once that is done, we know that \textit{if} $\meta{A}$, \textit{then} $\meta{B}$, and we can put the conditional on the line after the subproof.
+
+There can be as many or as few lines as needed between lines $i$ and $j$.} 
 \end{factboxy}
 
 \paragraph{Subproofs} Lines $i$ through $j$ are called a \define{subproof}. These are the rules for subproofs:
@@ -680,7 +712,7 @@ With the $Q$ on line 4 and $Q \eif R$ on line 2, we can use {\eif}E and get $R$.
 \end{earg}
 
 
-\section{Negation introduction and elimination}
+\section{Negation introduction and elimination}\label{s:neg-rules}
 
 Here is a simple mathematical argument in English:
 \begin{earg}
@@ -696,7 +728,9 @@ This type of argument is traditionally called a \emph{reductio}. Its full Latin 
 Our two negation rules (which are basically the same rule) formalize this reasoning process.
 
 \medskip
-\begin{tcbraster}[raster columns=2, raster valign=top]
+
+%\begin{tcbraster}[raster columns=2, raster valign=top]
+
 \begin{factboxy}{negation introduction rule}
 \begin{proof}
 \open
@@ -706,7 +740,14 @@ Our two negation rules (which are basically the same rule) formalize this reason
 \close
 \have[\ ]{a}{\enot\meta{A}}\ni{na-nb}
 \end{proof}
+
+\footnotesize{Assume $\meta{A}$. Derive a contradiction. (That is, get $\meta{B}$ and $\enot\meta{B}$ on the last two lines of the subproof). Exit the subproof, and put $\enot\meta{A}$ on the first line after the subproof.
+\smallskip
+
+There can be as many or as few lines as needed between lines $m$ and $n$, but $n$ and $p$ have to be consecutive lines. $\meta{B}$ and $\enot\meta{B}$ can be any contradiction that it is possible to derive, and $\meta{A}$ can be one half of the contradiction.}
+
 \end{factboxy}
+
 \begin{factboxy}{negation elimination rule}
 \begin{proof}
 \open
@@ -716,8 +757,12 @@ Our two negation rules (which are basically the same rule) formalize this reason
 \close
 \have[\ ]{a}{\meta{A}}\ne{na-nb}
 \end{proof}
+
+\footnotesize{Assume $\enot\meta{A}$. Derive a contradiction. (That is, get $\meta{B}$ and $\enot\meta{B}$ on the last two lines of the subproof). Exit the subproof, and put $\meta{A}$ on the first line after the subproof.}
+
 \end{factboxy}
-\end{tcbraster}
+
+%\end{tcbraster}
 \medskip
 
 \noindent Notice that, just as we do when using the conditional introduction rule, we begin by making an assumption. The subproof that follows is indented, and the assumption that we made must be discharged by applying either the negation introduction rule or the negation elimination rule. 
@@ -814,6 +859,7 @@ The negation introduction rule or the negation elimination rule is used in each 
 \medskip
 
 
+
 \item $P \eif \enot Q \proves \enot(P \eand Q)$
 
 \begin{proof}
@@ -826,8 +872,8 @@ The negation introduction rule or the negation elimination rule is used in each 
 	\close
 	\have{c}{\enot(P \eand Q)} \ni{pq-q}
 \end{proof}
+\medskip
 
-\filbreak
 \item $B \eand C, \enot(B \eand D) \proves \enot D$
 
 \begin{proof}
@@ -843,7 +889,9 @@ The negation introduction rule or the negation elimination rule is used in each 
 \end{proof}
 \medskip
 
-\item A proof for `$\enot P \proves P \eif Q$' requires two subproofs. First, we assume `$P$' so that we can use the conditional introduction rule at the end of the proof. Then, we assume `$\enot Q$' so that we can use the negation elimination rule and get `$Q$' on the last line of the first subproof.
+\filbreak
+
+\item The proof for `$\enot P \proves P \eif Q$' requires two subproofs. First, we assume `$P$' so that we can use the conditional introduction rule at the end of the proof. Then, we assume `$\enot Q$' so that we can use the negation elimination rule and get `$Q$' on the last line of the first subproof.
 
 \begin{proof}
 	\hypo{p1}{\enot P} \pr{}	
@@ -858,7 +906,29 @@ The negation introduction rule or the negation elimination rule is used in each 
 	\close
 	\have{c}{P \eif Q} \ci{p-q}
 \end{proof}
+\medskip
 
+\item The proof for  `$Q \eor S, Q \eif T, S \eif T \proves T$' also requires two subproofs. 
+
+\begin{proof}
+	\hypo{p1}{Q \eor S} \pr{}
+	\hypo{p2}{Q \eif T} \pr{}
+	\hypo{p3}{S \eif T} \pr{}
+	\open
+		\hypo{nt}{\enot T} \as{}
+			\open
+				\hypo{nq}{\enot Q} \as{}
+				\have{s}{S} \oe{p1,nq}
+				\have{t}{T} \ce{p3,s}
+				\have{nt2}{\enot T} \reit{nt}
+			\close
+		\have{q}{Q} \ne{nq-nt2}
+		\have{t2}{T} \ce{p2,q}
+		\have{nt3}{\enot T} \reit{nt}
+	\close
+	\have{c}{T} \ne{nt-nt3}
+\end{proof}
+\medskip
 
 \end{earg}
 
@@ -928,6 +998,8 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
+\filbreak
+
 \item $D \eand H, H \eiff J  \proves J \eor N$ 
 \begin{proof}
 	\hypo{p1}{D \eand H} \pr{}
@@ -938,7 +1010,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+
 \item $G \eand (H \eand J), (H \eor J) \eif K \proves K$
 \begin{proof}
 	\hypo{p1}{G \eand (H \eand J)} \pr{}
@@ -963,6 +1035,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
+\filbreak
 
 \item $(P \eor \enot Q) \eiff R, R \eand Q \proves P \eand R$\smallskip
 \begin{proof}
@@ -977,7 +1050,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+
 \item $(R \eand T) \eif Q, R \eor \enot P, P \eand T \proves Q$\smallskip
 \begin{proof}
 \hypo{p1}{(R \eand T) \eif Q} \pr{}
@@ -992,6 +1065,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
+\filbreak
 
 \item $S \eif T, Q \eand \enot R, \enot R \eiff (T \eif S) \proves S \eiff T $\smallskip
 \begin{proof}
@@ -1053,7 +1127,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+%\filbreak
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
 \begin{proof}
 \hypo{MnNnM}{M \eand (\enot N \eif \enot M)} \pr{}
@@ -1088,7 +1162,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \begin{proof}
 \hypo{ceg}{C \eif (E \eand G)} \pr{}
@@ -1108,6 +1182,8 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \have{con}{G}\ne{ng-ng3}
 \end{proof}
 \medskip
+
+\filbreak
 
 \item $\enot(P \eif Q) \proves \enot Q$
 \begin{proof}

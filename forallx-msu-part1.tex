@@ -381,7 +381,7 @@ For each statement, determine whether or not it is possible. If it is possible, 
 \item A jointly possible collection of sentences that contains a necessary falsehood
 \item A jointly impossible set of sentences that contains a necessary truth
 
-\item A valid argument, whose premises are all necessary truths, and whose conclusion is contingent
+\item A valid argument with premises that are all necessary truths and with a conclusion that is contingent
 \item A valid argument with true premises and a false conclusion
 \item A jointly possible collection of sentences that contains two sentences that are not necessarily equivalent
 \item A jointly possible collection of sentences, all of which are contingent
@@ -516,11 +516,14 @@ For each of the following: Is it necessarily true, necessarily false, or conting
 \label{pr.EnglishCombinations2}
 \begin{earg}
 \item A valid argument that has one false premise and one true premise
-\item[] \myanswer{Yes, this is possible.\\ `All whales are mammals (\emph{true}).  All mammals are plants (\emph{false}). Therefore, all whales are plants.' }\smallskip
+\item[] \myanswer{Yes, this is possible.\\ P1. All whales are mammals (\emph{true}).\\ P2. All mammals are plants (\emph{false}).\\ C. Therefore, all whales are plants.}\smallskip
 \item A valid argument that has a false conclusion
 \item[] \myanswer{Yes, this is possible. See example from previous exercise.}\smallskip
 \item A valid argument, the conclusion of which is a necessary falsehood
-\item[] \myanswer{Yes, this is possible. `$1+1=3$. Therefore, $1+2=4$.'}\smallskip
+\item[] \myanswer{Yes, this is possible. This is a valid argument, and the conclusion is a necessary falsehood:\\
+P1. If today is Tuesday, then $1+1 = 3$.\\ 
+P2. Today is Tuesday.\\
+C. Therefore, $1+ 1= 3$.}\smallskip
 \item An invalid argument, the conclusion of which is a necessary truth
 \item[] \myanswer{No, this is not possible. If the conclusion is necessarily true, then there is no way to make it false, and hence no way to make it false whilst making all the premises true.}\smallskip 
 \item A necessary truth that is contingent
@@ -540,13 +543,36 @@ For each of the following: Is it necessarily true, necessarily false, or conting
 \item A jointly impossible set of sentences that contains a necessary truth
 \item[] \myanswer{Yes, this is possible. `$1+1=4$' and `$1+1=2$'.}\smallskip
 
-\item A valid argument, whose premises are all necessary truths, and whose conclusion is contingent
+\item A valid argument with premises that are all necessary truths and with a conclusion that is contingent *
+\item[] \myanswer{This is not possible. In a deductively valid argument, the information contained in the conclusion is information that is in the premises. If all of the premises are necessary truths, then the conclusion will be as well.}\smallskip
+
 \item A valid argument with true premises and a false conclusion
+\item[] \myanswer{This is not possible. A valid argument is one where if the premises are true, then the conclusion has to be true. Thus, if the premises are true, the conclusion has to be as well.}\smallskip
+
 \item A jointly possible collection of sentences that contains two sentences that are not necessarily equivalent
+\item[] \myanswer{Yes, this is possible. G1 and G2 on p.~\pageref{s:joint-poss} are jointly possible, but they are not necessarily equivalent.}\smallskip
+
 \item A jointly possible collection of sentences, all of which are contingent
+\item[] \myanswer{Yes, this is possible. G1 and G2 on p.~\pageref{s:joint-poss} are both contingent.}\smallskip
+
 \item A false necessary truth
+\item[] \myanswer{This is not possible. A necessary truth is a sentence that has to be true, and so it could not be false.}\smallskip
+
 \item A valid argument with false premises
+\item[] \myanswer{Yes, this is possible. This argument has false premises, and it is valid:\\ 
+P1. Mississippi is in Canada.\\ P2. New York City is in Mississippi.\\ C. Therefore, New York City is in Canada.}
+\smallskip
+
 \item A necessarily equivalent pair of sentences that are not jointly possible
+\item[] \myanswer{Yes, this is possible (although it isn't the standard case). These two sentences are both necessary falsehoods:\\
+(a) It is November and it is not November.\\
+(b) Jeff is in Texas and he is not in North America.\\ 
+Since they are both always false, they are necessarily equivalent. But, at the same time, since they are both always false, they cannot be jointly possible.
+ }\smallskip
+
 \item A necessary truth that is also a necessary falsehood
+\item[] \myanswer{This is not possible. A necessary truth is a sentence that must be (and is always) true. A necessary falsehood is a sentence that must be (and is always) false. Consequently, one sentence cannot be both.}\smallskip
+
 \item A jointly possible collection of sentences that are all necessary falsehoods
+\item[] \myanswer{This is not possible. See the answer to question 17.}\smallskip
 \end{earg}
