@@ -1,5 +1,6 @@
 # forallx-msu
 This is the Mississippi State version of forallx.
 
-This textbook covers truth functional propositional logic only. The rules of derivation are similar to those in Allen and Hand’s Logic Primer. Proofs
-are constructed using Fitch notation, not the Lemmon-style system used by Allen and Hand.
+This textbook covers truth functional propositional logic only. Proofs are constructed using Fitch notation.
+
+A paperback version of the textbook is available <a href="https://www.lulu.com/en/us/shop/gregory-johnson/forallx/paperback/product-4emmmj.html?page=1&pageSize=4">here</a>.
