@@ -11,7 +11,7 @@
 An argument is valid when (and only when) it is impossible for all of the premises to be true and the conclusion to be false. And we have seen that truth tables can be used to determine whether an argument is valid. In the next chapter, you will learn another method for verifying that an argument is valid. Before we turn to this new method, however, let’s review the strengths and weakness of truth tables.
 
 \begin{earg}
-\item The truth table method for determining if an argument is valid focuses directly on the definition of \textit{valid}. Each line of a complete truth table corresponds to a valuation. So, given an argument in TFL, truth tables reveal whether or not the conclusion is true when all of the premises true. 
+\item The truth table method for determining if an argument is valid focuses directly on the definition of \textit{valid}. Each line of a complete truth table corresponds to a valuation. Thus, given an argument in TFL, truth tables reveal whether or not the conclusion is true when all of the premises true. 
 \medskip
 
 \item Truth tables also allow us to easily and rigorously set the meaning for each logical operator. As we discussed in \S\ref{s:ConnectiveDisjunction}, in English, `or’ can take the inclusive-or meaning (one or the other, or both) or the exclusive-or meaning (one or the other, but not both), and, at different times, both meanings are used in English. We can discuss which English meaning is closest to the meaning of `$\eor$’ in TFL (it's the inclusive-or), but, in the end, we just set the meaning of the symbol `$\eor$’ with this truth table:
@@ -27,7 +27,7 @@ F & F & F
 \end{tabular}
 \end{center}
 
-Hence, this is the definition for this logical operator: `$\eor$’ is the symbol that connects $\meta{A}$ and $\meta{B}$ in the ways shown in the truth table. And, then, the same goes for the other logical operators. 
+Hence, the definition for the `$\eor$’ is simple this: the operator that connects $\meta{A}$ and $\meta{B}$ to yield the truth values shown in this truth table. And, then, the same goes for the other logical operators. 
 \medskip
 
 \item To create a truth table, the number of lines needed is $2^n$, where \textit{n} is the number of different letters in the argument. So, an argument with four different sentence letters will require a 16 line truth table, one with five letters will require 32 lines, one with six different letters will require 64 lines, and so on. Hence, while a truth table can be used to determine if any argument is valid or invalid, one of the weakness of this method is that it is difficult to use when the argument contains more than four different sentence letters.
@@ -36,16 +36,18 @@ Hence, this is the definition for this logical operator: `$\eor$’ is the symbo
 \item But what is typically seen as the biggest weakness of using truth tables to determine if an argument is valid is that it doesn't reveal to us \textit{why} the argument is valid. It doesn’t, in other words, lay out the reasoning that demonstrates why (and how) the conclusion follows from the premises.
 \end{earg}
  
-As an alternative to truth tables, we can use a \textit{natural deduction system}. Such a system allows us to verify that an argument is valid and to see why it is valid. We do this by making explicit the reasoning process that takes us from the premises to the conclusion. We begin with twelve basic rules. (For instance, this is one of the rules: if we know that `\textit{P or Q}' is true; and we also know that `\textit{not P}' is true, then we can assert that `\textit{Q}' is true.) The rules can be combined, and with just a small number of them, we hope to be able to show how we get from the premises to the conclusion for all of the valid arguments that can be represented in TFL. There are different deduction systems that can be used with TFL. A \textit{natural} deduction system is one that, for the most part, reflects the ways that we naturally reason---at least insofar as the reasoning involves ‘and’, ‘or’, ‘not’, ‘if \ldots, then \ldots’, and ‘if and only if’. 
+As an alternative to truth tables, we have a \textit{natural deduction system}. Such a system allows us to verify that an argument is valid and to see why it is valid. We do this by making explicit the reasoning process that takes us from the premises to the conclusion. We begin with twelve basic rules---which we call \textit{rules of derivation}. (For instance, this is one of the rules: if we know that `$P \eor Q$' is true; and we also know that `\enot P' is true, then we can assert that `\textit{Q}' is true.) The rules can be combined, and with just these twelve, we hope to be able to show how we get from the premises to the conclusion for all of the valid arguments that can be represented in TFL. 
+
+There are different natural deduction systems that can be used with TFL. But all, for the most part, reflect the ways that we naturally reason---at least insofar as the reasoning involves ‘and’, ‘or’, ‘not’, ‘if \ldots, then \ldots’, and ‘if and only if’. 
 
 
 \section{Truth functional propositional logic}
 
-We have reached a point where it is useful to summarize what TFL is. As you know, the symbols of TFL are the sentence letters that represent atomic sentences, the logical operators $\enot$, $\eand$, $\eor$, $\eif$, and $\eiff$, and brackets. These, then, can be combined into sentences using the rules given in chapter \ref{s:TFLSentences}. And, then, in chapter \ref{s:CharacteristicTruthTables}, truth tables were used to set the meaning of the logical operators. 
+We have reached a point where it is useful to summarize what TFL is. As you know, the symbols of TFL are the sentence letters that represent atomic sentences, the logical operators $\enot$, $\eand$, $\eor$, $\eif$, and $\eiff$, and parentheses. These, then, can be combined into sentences using the rules given in chapter \ref{s:TFLSentences}. And, then, in chapter \ref{s:CharacteristicTruthTables}, truth tables were used to set the meaning of the logical operators. 
 
 Truth tables also give us a method for verifying that an argument satisfies the definition of \textit{valid}. \textit{Valid} is a concept and is not, strictly speaking a part of TFL. Rather it is a property of some arguments that can, to an extent, be studied and explicated using TFL. Similarly, as you have seen, \textit{tautology}, \textit{contradiction}, \textit{contingent}, \textit{equivalent},  \textit{jointly consistent}, and \textit{jointly inconsistent} are concepts that can be explained using TFL.
 
-The final part of TFL is a system of natural deduction, which sets the rules for how sentences containing the logical operators can be combined or taken apart. The natural deduction system introduced in the next chapter consists of twelve rules of derivation. (That is, twelve rules for deriving new statements from those that we already have.)
+The final part of TFL is the system of natural deduction, which sets the rules for how sentences containing the logical operators can be combined or taken apart. 
 % This, in effect, establishes the syntax for sentences in TFL.
 
 \section{Fitch} 
@@ -58,9 +60,9 @@ The modern development of natural deduction dates from simultaneous but unrelate
 
 \chapter{The rules of derivation}\label{s:BasicTFL}
 
-\section{Proofs}
+\section{Proofs}\label{intro-proofs}
 
-A \define{proof} is a list of sentences. The sentence or sentences at the beginning of the list are assumptions. These are the premises of the argument. (We call them \textit{assumptions} because, at least within the proof, they do not require any justification. We just state them.) Every other sentence in the list follows from earlier sentences by a specific rule. The final sentence is the conclusion of the argument.
+As was explained in the previous chapter, creating a \define{proof} is one way of demonstrating that an argument is valid. (And, as you know, using a truth table is the  other way.) A proof is a list of sentences. The sentence or sentences at the beginning of the list are the premises of the argument. Every other sentence in the list follows from earlier sentences by a specific rule (with one exception, which we will get to in \S \ref{s:CI-rule}). The final sentence is the conclusion of the argument.
 
 As an illustration, consider this argument:
 	$$\enot (A \eor B) \proves \enot A \eand \enot B$$
@@ -68,7 +70,7 @@ We start the proof by numbering the line and writing the premise:
 \begin{proof}
 	\hypo{a1}{\enot (A \eor B)} \pr{}
 \end{proof}
-Every line in a proof is numbered so that we can refer to it later if we need to do so. We have also indicated that this is a premise by putting `PR' at the end of the line. And we have drawn a line underneath the premise. Everything written above the line is an \emph{initial assumption} (i.e., a premise). Everything written below the line will either be a sentence that can be derived from that assumption, or it will be a new assumption that we introduce. The colon that is right before `PR' is, technically, optional, but it has to be used in Carnap to separate the TFL sentence from the `PR' (or the rule) that is written at the end of each line.
+Every line in a proof is numbered so that we can refer to it later if we need to do so. We have also indicated that this is a premise by putting `PR' at the end of the line. And we have drawn a line underneath the premise. Everything written below the line will either be a sentence that can be derived from that premise, or it will be a new assumption that we introduce. The colon that is right before `PR' is, technically, optional, but it has to be used in Carnap to separate the TFL sentence from the `PR' (or the rule) that is written at the end of each line.
 
 The conclusion of this argument is `$\enot A \eand \enot B$'; and so we want our proof to end---on some line, we'll call it $n$---with that sentence:
 \begin{proof}
@@ -78,9 +80,9 @@ The conclusion of this argument is `$\enot A \eand \enot B$'; and so we want our
 	\have[ ]{}{\ldots}
 	\have[n]{con}{\enot A \eand \enot B}
 \end{proof}
-It doesn't matter how many lines it takes to arrive at the conclusion, although, generally, we would prefer a shorter proof over a longer one.
+It doesn't matter how many lines it takes to arrive at the conclusion, although, generally, we prefer a shorter proof over a longer one.
 
-Suppose we have this argument:
+Now, suppose we have this argument:
 $$A\eor B, \enot (A\eand C), \enot (B \eand \enot D) \proves \enot C\eor D$$
 This argument has three premises, and so we start by listing them, numbering each line, and drawing a line under the final premise:
 \begin{proof}
@@ -126,31 +128,33 @@ This reasoning process, which we all do naturally, is part of our natural deduct
 	\have[\ ]{c}{\meta{A}\eand\meta{B}} \ai{a, b}
 \end{proof}
 
-\footnotesize{If we have $\meta{A}$ on a line and $\meta{B}$ on a line, then we can, on a new line, put $\meta{A}\eand\meta{B}$. The `$\meta{A}$' and `$\meta{B}$' can occur in either order, and the conjunction can be `$\meta{A} \eand \meta{B}$' or `$\meta{B} \eand \meta{A}$'.}
+\small{If we have $\meta{A}$ on a line and $\meta{B}$ on a line, then we can put $\meta{A}\eand\meta{B}$ on a new line. The `$\meta{A}$' and `$\meta{B}$' can occur in either order, and the conjunction can be `$\meta{A} \eand \meta{B}$' or `$\meta{B} \eand \meta{A}$'.}
 \end{factboxy}
 
 %\tcblower
 
-The `$m$' and `$n$' will never appear in an actual proof. In a proof, the lines are numbered $1$, $2$, $3$, etc.  The `$m$' and `$n$' are used here to indicate that $\meta{A}$ and $\meta{B}$ can be on any lines in the proof.
+The `$m$' and `$n$' will never appear in an actual proof. In a proof, the lines are numbered $1$, $2$, $3$, etc.  The `$m$' and `$n$' are used in the statement of the rule to indicate that $\meta{A}$ and $\meta{B}$ can be on any lines in the proof.
+If you look ahead, you will see that some of rules given in \S \ref{s:conj-rule} - \ref{s:bi-rules} consist of three lines and some have two. 
+\begin{earg}
+\item[(a)] For each of the rules that consist of three lines, you can add what is on the last line (of the rule) to your proof when, and only when, you have what is given on the first two lines (of the rule).
+\item[(b)] For each of the rules that consist of two lines, you can add what is on the last line (of the rule) to your proof when, and only when, you have what is given on the first line (of the rule).
+\end{earg}
 
-Notice that some of rules given in \S \ref{s:conj-rule} - \ref{s:bi-rules} have three lines and some have two. For each of these rules, you can add what is on the last line (of the rule) to your proof when you have what is given on the line or lines above the last line (of the rule). 
-
-
-For the example about Sarah and Amy, we can use this symbolization key:
+Returning to the example about Sarah and Amy, we can use this symbolization key:
 	\begin{ekey}
 		\item[S] Sarah is swimming.
 		\item[R] Amy is reading.
 	\end{ekey}
-Let's say that `$S$' and `$R$' are our premises (although they don't have to be to use the conjunction introduction rule), and so they are on lines 1 and 2. Then on any subsequent line---but, in this case, it will be line 3---we can get `$S \eand R$' by using the conjunction introduction rule ($\eand$I).
+Let's say that `$S$' and `$R$' are our premises (although they don't have to be to use the conjunction introduction rule), and so they are on lines 1 and 2. Then on any subsequent line---but, in this case, it will be line 3---we can get `$S \eand R$' by using the conjunction introduction rule.
 \begin{proof}
 	\hypo{a}{S} \pr{}
 	\hypo{b}{R} \pr{}
 	\have{c}{S \eand R} \ai{a, b}
 \end{proof}
+%Every line of our proof must either be a premise or it must be justified by some rule (or, as we will see in \S \ref{s:CI-rule} - \ref{s:neg-rules}, we can, in certain circumstances, introduce a new assumption). 
+To show that this application of the conjunction introduction rule is our justification for the new `$S \eand R$' on line 3, we put `$\eand$I 1, 2' on the far right. This indicate that `$S \eand R$' was obtained by applying the conjunction introduction rule to the `$S$' on line 1 and the `$R$' on line 2. 
 
-Every line of our proof must either be a premise or it must be justified by some rule (or, as we will see in \S \ref{s:CI-rule} - \ref{s:neg-rules}, we can, in certain circumstances, introduce a new assumption). Therefore, on line 3, we put `$\eand$I 1, 2' to indicate that `$S \eand R$' was obtained by applying the conjunction introduction rule to the `$S$' on line 1 and the `$R$' on line 2. 
-
-The conjunction introduction rule introduces a sentence with `$\eand$' as the main connective. We also have a rule that eliminates that connective. Suppose someone tells you that \textit{Jeff is eating and Mary is sleeping}. Assuming that whoever told you this is reliable, you are entitled to infer simply that \textit{Jeff is eating}. You are also entitled to infer that \textit{Mary is sleeping}. These are applications of the \define{conjunction elimination rule} (which is actually two similar rules).
+The conjunction introduction rule introduces a sentence with `$\eand$' as the main connective. We also have a rule that let's us extract what is on one side of a conjunction and put it on a new line. Suppose someone tells you that \textit{Jeff is eating and Mary is sleeping}. Assuming that whoever told you this is reliable, you are entitled to infer simply that \textit{Jeff is eating}. You are also entitled to infer that \textit{Mary is sleeping}. These are applications of the \define{conjunction elimination rule} (which is actually two similar rules).
 
 \begin{factboxy}{conjunction elimination rule}
 \begin{proof}
@@ -163,13 +167,13 @@ The conjunction introduction rule introduces a sentence with `$\eand$' as the ma
 	\have[\ ]{b}{\meta{B}} \ae{ab}
 \end{proof}
 
-\footnotesize{If we have $\meta{A} \eand \meta{B}$ on a line, then, on a new line, we can put either $\meta{A}$ by itself or $\meta{B}$ by itself.}
+\small{If we have $\meta{A} \eand \meta{B}$ on a line, then, on a new line, we can put either $\meta{A}$ by itself or $\meta{B}$ by itself.}
 
 \end{factboxy}
 
-\noindent When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$'. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}
+When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$'. The same holds for all of the other rules. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}
 
-With just these two rules, we can undertake the proof for this argument, which requires more steps than did the previous example: 
+Next, we can undertake the proof for this argument, which requires more steps than did the previous example: 
 \begin{earg}
 \item[] $(A\eor B) \eand (G \eand H) \proves (A\eor B)\eand H$
 \end{earg}
@@ -177,7 +181,7 @@ The main logical operator in both the premise and conclusion of this argument is
 \begin{proof}
 	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 \end{proof}
-From the premise, we can eliminate the main connective (and only the main connective) using the conjunction elimination rule. Using this rule twice gives us this:
+From the premise, we can use the conjunction elimination rule to take what is before the `$\eand$' or after it, and put that subsentence on a new line. Using this rule twice gives us this:
 \begin{proof}
 	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
@@ -216,7 +220,7 @@ When is this true? Recall from \S \ref{s:ConnectiveDisjunction} that we are usin
 	\item[(b)] \textit{Jeff is eating a burrito} is true, or 
 	\item[(c)] both are true. 
 \end{ebullet}
-That's a lot of options, but if all we know is that Sarah is swimming or Jeff is eating a burrito, then we don't know precisely what either one of them are doing. But let's say that someone (whom we trust completely) tells us that, actually, Sarah is \textit{not} swimming. That piece of information about Sarah, then, let's us safely infer that Jeff is eating a burrito. This reasoning process is captured by the \define{disjunction elimination rule}.
+That's a lot of options, but if all we know is that Sarah is swimming or Jeff is eating a burrito, then we don't know precisely what either one of them is doing. But let's say that someone (whom we trust completely) tells us that, actually, Sarah is \textit{not} swimming. That piece of information about Sarah, then, let's us safely infer that Jeff is eating a burrito. This reasoning process is captured by the \define{disjunction elimination rule}.
 
 \medskip
 % \begin{tcbraster}[raster columns=2, raster valign=top]
@@ -233,9 +237,24 @@ That's a lot of options, but if all we know is that Sarah is swimming or Jeff is
 	\have[\ ]{b}{\meta{B}} \oe{ab,nb}
 \end{proof}
 
-\footnotesize{If we have `$\meta{A}\eor\meta{B}$' on a line and, on another line, we have what is either before or after the `$\eor$' with a `$\enot$' before it (i.e., `$\enot\meta{B}$' or `$\enot\meta{A}$'), then, on a new line, we can put what is on the other side of the `$\eor$'.}
+\small{If we have `$\meta{A}\eor\meta{B}$' on a line and, on another line, we have what is either before or after the `$\eor$' with a `$\enot$' before it (i.e., `$\enot\meta{B}$' or `$\enot\meta{A}$'), then, on a new line, we can put what is on the other side of the `$\eor$'.}
 
 \end{factboxy}					% Don't put a blank line after this if the boxes are supposed to be next to each other.
+
+
+% \end{tcbraster}
+
+
+\paragraph{Disjunction introduction}
+\textit{Sarah is swimming or Jeff is eating a burrito} is true when \textit{Sarah is swimming} is false (she isn't swimming) and \textit{Jeff is eating a burrito} is true. In other words, the disjunction will be true as long as one of the disjuncts is true. This feature of disjunctions lets us make an inference that we don't use often in our everyday lives. It is a very simple inference, however. Take any sentence. We'll use \textit{you are studying logic}. That's true. Since \textit{you are studying logic} is true, each one of these sentences is also true:
+
+\begin{ebullet}
+	\item[] You are studying logic, {or} you are studying German.
+	\item[] You are studying logic, {or} your mother is in Fiji.
+	\item[] You are studying logic, {or} a dragon is on the moon.
+\end{ebullet}
+
+\noindent The idea is that, if we know that a sentence is true, we can create a longer sentence by adding `or \textit{any sentence whatsoever}' and the disjunction will also be true. This feature of the disjunction underlies the \define{disjunction introduction rule} (which, again, is two similar rules).
 
 \begin{factboxy}{disjunction introduction rule}
 \begin{proof}
@@ -248,22 +267,10 @@ That's a lot of options, but if all we know is that Sarah is swimming or Jeff is
 	\have[\ ]{ba}{\meta{B}\eor\meta{A}}\oi{a}
 \end{proof}
 
-\footnotesize{If we have `$\meta{A}$' on a line, then on a new line we can repeat the `$\meta{A}$' and add `$\eor$' and anything else.}
+\small{If we have `$\meta{A}$' on a line, then on a new line we can repeat the `$\meta{A}$' and add `$\eor$' and anything else.}
 
 \end{factboxy}
-% \end{tcbraster}
 
-
-\paragraph{Disjunction introduction}
-\textit{Sarah is swimming or Jeff is eating a burrito} is true when \textit{Sarah is swimming} is false (she isn't swimming) and \textit{Jeff is eating a burrito} is true. In other words, the disjunction will be true as long as one of the disjuncts is true. This feature of disjunctions lets us make an inference that we don't use often in our everyday lives. It is a very simple inference, however. Take any sentence. We'll use \textit{you are studying logic}. That's true. Since \textit{you are studying logic} is true, each one of these sentences is also true:
-
-\begin{ebullet}
-	\item[] You are studying logic, or you are studying German.
-	\item[] You are studying logic, or your mother is in Fiji.
-	\item[] You are studying logic, or a dragon is on the moon.
-\end{ebullet}
-
-\noindent The idea is that, if we know that a sentence is true, we can create a longer sentence by adding `or \textit{any sentence whatsoever}' and the disjunction will also be true. This feature of the disjunction underlies the \define{disjunction introduction rule} (which, again, is two similar rules).
 
 %\meta{B} can be any sentence whatsoever. All that we need to use this rule is the line containing \meta{A} on some earlier line of the proof. Hence, the following is a perfectly acceptable:
 %\begin{proof}
@@ -272,16 +279,16 @@ That's a lot of options, but if all we know is that Sarah is swimming or Jeff is
 %\end{proof}
 
 \subsection{Introduction and elimination}
-When you use the rules that are given in this chapter, you are applying the \textit{patterns} given in the definition of each rule. Every pattern is different, and so you have make sure that you understand each one. But you don't, actually, have to think beyond the patterns---although you can, and some people find it helpful to think about how the rules of derivation conform to what you learned about each type of TFL sentence in the chapter on characteristic truth tables (chapter \ref{s:CharacteristicTruthTables}).
+When you use the rules that are given in this chapter, you are applying the \textit{patterns} given in the definition of each rule. Every pattern is different, and so you have make sure that you understand each one. But you don't, actually, have to think beyond the patterns---although you can, and some people find it helpful to think about how the rules of derivation conform to what you learned about each logical operator in the chapter on the characteristic truth tables (chapter \ref{s:CharacteristicTruthTables}).
 
-It can also be useful to understand why we call these \textit{introduction} and \textit{elimination} rules. (Or, at least, it's useful to not misunderstand why we use these terms.) The introduction rules are given that name because, in each case, we introduce a logical operator. For instance, if a proof begins this way: 
+It can also be useful to understand why we call these \textit{introduction} and \textit{elimination} rules. (Or, at least, it's useful not to misunderstand why we use these terms.) The introduction rules are given that name because, in each case, we introduce a logical operator. For instance, if a proof begins this way: 
 
 \begin{proof}
 	\hypo{p}{P} \pr{}
 	\hypo{q}{Q} \pr{}
 \end{proof}
 
-\noindent then, clearly, there is not a `$\eand$' in the proof yet. The conjunction introduction rule, however, lets us introduce one:
+\noindent then, clearly, there is not an `$\eand$' in the proof yet. The conjunction introduction rule, however, lets us introduce one:
 
 \begin{proof}
 	\have[3]{pq}{P\eand Q} \ai{p,q}
@@ -317,7 +324,7 @@ You might think that, given those two lines, we can put `$Q$' on a new line like
 	\have[n]{p}{P}
 	\have[\ ]{q}{Q} \oe{np,p}
 \end{proof}
-In a sense, this is the right idea for the disjunction elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line $n$ means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a new line. The disjunction-elimination rule, however, does not permit this. To see why, let's distinguish between \define{negation} and \define{denial}.
+In a sense, this is the right idea for the disjunction elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line $n$ means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a new line. The disjunction elimination rule, however, does not permit this. To see why, let's distinguish between \define{negation} and \define{denial}.
 
 \begin{factboxy}{negation and denial}
 The \define{negation} of a sentence is the sentence with a `not' added to it.\\ 
@@ -363,7 +370,7 @@ Let's say that this is the argument for which we need to provide a proof: `$\eno
 	\hypo{nb}{P} \pr{} 
 	\have{nnb}{\enot\enot P} \dn{nb}
 \end{proof}
-The `$P$' on line 2 and the `$\enot \enot P$' on line 3 have exactly the same meaning. The only difference between `$P$' and `$\enot \enot P$' is their form. But now that we have `$\enot \enot P$', we have the negation of what is on the left side of the disjunction (i.e., `$\enot P$'). That allows us to use the disjunction elimination rule, and we can get the conclusion.
+The `$P$' on line 2 and the `$\enot \enot P$' on line 3 have exactly the same meaning. The only difference between `$P$' and `$\enot \enot P$' is their form. But now that we have `$\enot \enot P$', we have the negation of what is on the left side of the disjunction (which is `$\enot P$'). That allows us to use the disjunction elimination rule, and we can get the conclusion.
 
 \begin{proof}
 	\hypo{ab}{\enot P \eor Q} \pr{}
@@ -420,7 +427,7 @@ For the conditional, we will cover the elimination rule now and the introduction
 	\item The envelope is on the table.
 	\item Therefore, Aleksander is in the safe house.
 	\end{earg}
-In this argument---which is valid---we have a conditional and then, on a separate line, the antecedent of that conditional (`the envelope is on the table'). That allows us to safely infer the antecedent (`Aleksander is in the safe house'). In short, if we have a conditional and we know that the antecedent of the conditional is true, then we know that the consequent has to be true. (See also the discussion of the conditional on p.~\pageref{characteristic-tt-conditional}.) Deriving the consequent of the conditional in this way is an application of the \define{conditional elimination rule}.
+In this argument---which is valid---we have a conditional and then, on a separate line, the antecedent of that conditional (`the envelope is on the table'). This allows us to safely infer the consequent (`Aleksander is in the safe house'). In short, if we have a conditional and we know that the antecedent of the conditional is true, then we know that the consequent has to be true. (See also the discussion of the conditional on p.~\pageref{characteristic-tt-conditional}.) Deriving the consequent of the conditional in this way is an application of the \define{conditional elimination rule}.
 This rule is also sometimes called \emph{modus ponens}. When we use the rule, the conditional and the antecedent of the conditional can be separated from one another, and they can appear in any order.
 
 \medskip
@@ -434,24 +441,27 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 	\have[\ ]{b}{\meta{B}} \ce{ab,a}
 \end{proof}
 
-\footnotesize{If we have `$\meta{A}\eif\meta{B}$' on a line and, on a separate line, we have just `$\meta{A}$' (i.e., the antecedent of the conditional), then, on a new line, we can put `$\meta{B}$' (i.e., the consequent of the conditional).} 
+\small{If we have `$\meta{A}\eif\meta{B}$' on a line and, on a separate line, we have just `$\meta{A}$' (i.e., the antecedent of the conditional), then, on a new line, we can put `$\meta{B}$' (i.e., the consequent of the conditional).} 
 
 \end{factboxy}
 
+
 \begin{factboxy}{biconditional elimination rule}\label{be-rule}
+\small{If we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{A}$', then, on a new line, we can put `$\meta{B}$'.}
+
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eiff\meta{B}}
 	\have[n]{a}{\meta{A}}
 	\have[\ ]{b}{\meta{B}} \be{ab,a}
 \end{proof}
 
+\small{Or, if we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{B}$', then, on a new line, we can put `$\meta{A}$'.} 
+
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eiff\meta{B}}
 	\have[n]{a}{\meta{B}}
 	\have[\ ]{b}{\meta{A}} \be{ab,a}
 \end{proof}
-
-\footnotesize{If we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{A}$', then, on a new line, we can put `$\meta{B}$'.  Or, if we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{B}$', then, on a new line, we can put `$\meta{A}$'.} 
 
 \end{factboxy}
 
@@ -460,9 +470,9 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 
 \section{Biconditional intro and elim}\label{s:bi-rules}
 
-The \define{biconditional elimination rule} is similar to the conditional elimination rule but a bit more flexible. If you have a biconditional on one line and the left side of the biconditional on another line, you can put the right side on a new line. Similarly, if you have the right side, you can put the left side on a new line. Notice the difference between the conditional elimination rule and the biconditional elimination rule. There are two ways to use the biconditional elimination rule. There is only one way to use the conditional elimination rule.
+The \define{biconditional elimination rule} is similar to the conditional elimination rule but a bit more flexible. If you have a biconditional on one line and the left side of the biconditional on another line, you can put the right side on a new line. Or, if you have the right side, you can put the left side on a new line. Notice the difference between the conditional elimination rule and the biconditional elimination rule. There are two ways to use the biconditional elimination rule. There is only one way to use the conditional elimination rule.
 
-In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is ``the conjunction of a conditional running in each direction.'' This is the foundation for the \define{biconditional introduction rule}. If we have both conditionals, $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$ on separate lines in our proof, then we can put $\meta{A} \eiff \meta{B}$ on a new line.
+In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is ``the conjunction of a conditional running in each direction.'' This is the basis for the \define{biconditional introduction rule}. If we have both conditionals, $\meta{A} \eif \meta{B}$ and $\meta{B} \eif \meta{A}$ on separate lines in our proof, then we can put $\meta{A} \eiff \meta{B}$ on a new line.
 
 \begin{factboxy}{biconditional introduction rule}
 \begin{proof}\label{eiff-I}
@@ -471,7 +481,7 @@ In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is 
 	\have[\ ]{b}{\meta{A}\eiff\meta{B}} \bi{ab,ba}
 \end{proof}
 
-\footnotesize{If we have `$\meta{A}\eif\meta{B}$' and `$\meta{B}\eif\meta{A}$' on two lines of our proof, then, on a new line, we can put `$\meta{A}\eiff\meta{B}$'.}
+\small{If we have `$\meta{A}\eif\meta{B}$' and `$\meta{B}\eif\meta{A}$' on two lines of our proof, then, on a new line, we can put `$\meta{A}\eiff\meta{B}$'.}
 
 \end{factboxy}
 
@@ -536,7 +546,28 @@ We will now review some proofs that use the rules that are covered in \S\S \ref{
 	\have{c}{R} \be{p1,t}
 \end{proof}\medskip
 
-\item[\ex{14.6.5}] And last, a proof for $$(S \eif T) \eor \enot R, (T \eif S) \eor Q, R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the double negation rule, the disjunction elimination rule, and the biconditional introduction rule.
+\item[\ex{14.6.5}] For a proof of `$(R \eand T) \eif Q, T \eand S, R \proves Q$', we use the conjunction elimination, conjunction introduction, and conditional elimination rules.
+\begin{proof}
+	\hypo{p1}{(R \eand T) \eif Q} \pr{}
+	\hypo{p2}{T \eand S} \pr{}
+	\hypo{p3}{R} \pr{}
+	\have{t}{T} \ae{p2}
+	\have{rt}{R \eand T} \ai{p3,t}
+	\have{c}{Q} \ce{p1,rt}
+\end{proof}\medskip
+
+\item[\ex{14.6.6}] For a proof of `$P \eiff (R \eor S), T \eif R, Q \eand T \proves P$', we use the conjunction elimination, conditional elimination, disjunction introduction, and biconditional introduction rules.
+\begin{proof}
+	\hypo{p1}{P \eiff (R \eor S)} \pr{}
+	\hypo{p2}{T \eif R} \pr{}
+	\hypo{p3}{Q \eand T} \pr{}
+	\have{t}{T} \ae{p3}
+	\have{r}{R} \ce{p2,t}
+	\have{rs}{R \eor S} \oi{r}
+	\have{c}{P} \ce{p1,r}
+\end{proof}\medskip
+
+\item[\ex{14.6.7}] And last, a proof for $$(S \eif T) \eor \enot R, (T \eif S) \eor Q, R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the double negation rule, the disjunction elimination rule, and the biconditional introduction rule.
 \begin{proof}
 	\hypo{p1}{(S \eif T) \eor \enot R} \pr{}
 	\hypo{p2}{(T \eif S) \eor Q} \pr{}
@@ -561,11 +592,10 @@ The \define{conditional introduction rule} is a little bit more complicated than
 	\end{ekey}
 And this is our argument: 
 $$G \eor L \proves \enot G \eif L$$
-Maybe you can see that this argument is valid. But if you can't right now, that's fine. We will go through the proof for this argument, and in the process explain the conditional introduction rule. We start by listing the premise.
+We will go through the proof for this argument, and in the process explain the conditional introduction rule. We start by listing the premise.
 	\begin{proof}
 		\hypo{r}{G \eor L} \pr{}
 	\end{proof}
-
 Next, we need to make a new assumption: `Kate's German class is \textit{not} meeting today'. We might say that we're making this assumption ``for the sake of argument'' or to see where it leads. To indicate that this is an assumption that we have supplied, we put `$\enot G$' on line 2 this way:
 	\begin{proof}
 		\hypo{r}{G \eor L} \pr{}
@@ -573,7 +603,7 @@ Next, we need to make a new assumption: `Kate's German class is \textit{not} mee
 			\hypo{l}{\enot G} \as{}
 	\end{proof}
 You will notice right away that the `$\enot G$' is indented. Whenever we make an assumption ourselves, we must indent it and the lines that follow. This creates a \define{subproof} that is set off from the rest of the proof. The assumption is cited with `AS', and we put a line under the assumption just as we do with the final premise.
-With this extra assumption in place, we next use the disjunction elimination rule to get $L$ on line 3.
+With this assumption in place, we next use the disjunction elimination rule to get $L$ on line 3.
 	\begin{proof}
 		\hypo{r}{G \eor L} \pr{}
 		\open
@@ -581,7 +611,7 @@ With this extra assumption in place, we next use the disjunction elimination rul
 			\have{rl}{L}\oe{r,l}
 	\end{proof}
 
-The idea for the first three lines of this proof are, first, we know that \textit{Kate's German class meets today or her logic class meets today}. (Or, at least, we are assuming that `$ G \eor L$' is true because that is the premise that we were given). Next, on line 2, we are, in effect, asking, ``What if her German class is not meeting today?'' That is, what will follow if we make this assumption? Well, one thing that will follow is that Kate's logic class must be meeting.  
+The idea for the first three lines of this proof are, first, we know that \textit{Kate's German class meets today or her logic class meets today}. (Or, at least, we are assuming that `$ G \eor L$' is true because that is the premise that we were given). Next, on line 2, we are, in effect, asking, ``What if her German class is not meeting today?'' That is, what will follow if we make this assumption? Well, one thing that will follow is that Kate's logic class must be meeting today.  
 %In other words, using the disjunction elimination rule, we can put `$L$' on line 3. 
 
 So, on line 2, we have asked, What if \textit{Kate's German class is not meeting today}? On line 3, we have one answer: \textit{Kate's logic class is meeting today}. Therefore, on line 4, we can use the conditional introduction rule to put these two together as \textit{if Kate's German class is not meeting today, then Kate's logic class is meeting today}.
@@ -606,10 +636,18 @@ When we use the conditional introduction rule, the assumption that we make will 
 		\have[\ ]{ab}{\meta{A}\eif\meta{B}}\ci{a-b}
 	\end{proof}
 
-\footnotesize{We begin by making an assumption: `$\meta{A}$'. We then derive `$\meta{B}$'. Once that is done, we know that \textit{if} $\meta{A}$, \textit{then} $\meta{B}$, and we can put the conditional on the line after the subproof.
+\small{We begin by making an assumption: `$\meta{A}$'. We then derive `$\meta{B}$'. Once that is done, we know that \textit{if} $\meta{A}$, \textit{then} $\meta{B}$, and we can put the conditional on the line after the subproof.
 
-There can be as many or as few lines as needed between lines $i$ and $j$.} 
+There can be as many or as few lines as needed between lines $i$ and $j$.
+
+The lines cited are the range for the subproof, beginning with the line where the assumption is.} 
 \end{factboxy}
+
+
+\begin{notebox}
+To simplify matters at the beginning of section \ref{intro-proofs}, I only use the term \textit{premises} to refer to the premises of an argument. A premise, however, is just a type of assumption. It is an assumption because we are taking it as given, and so it requires no justification---just like the assumption that we make at the beginning of a subproof. 
+\end{notebox}
+
 
 \paragraph{Subproofs} Lines $i$ through $j$ are called a \define{subproof}. These are the rules for subproofs:
 
@@ -623,12 +661,12 @@ There can be as many or as few lines as needed between lines $i$ and $j$.}
 
 \section{Some more examples}
 
-Let's go through a few more examples, each of which uses the conditional introduction rule.
+Each of these examples uses the conditional introduction rule.
 
 \begin{earg}
-\item Suppose we want a proof of this argument:
+\item We will start with a proof for this argument:
 	$$P \eif Q, Q \eif R \proves P \eif R$$
-We start by listing both of our premises. Next, since we want ($P \eif R$), we assume the antecedent of that conditional. 
+We start by listing both of our premises. Next, since we want `($P \eif R$)', we assume the antecedent of that conditional. 
 \begin{proof}
 	\hypo{pq}{P \eif Q} \pr{}
 	\hypo{qr}{Q \eif R} \pr{}
@@ -636,7 +674,7 @@ We start by listing both of our premises. Next, since we want ($P \eif R$), we a
 		\hypo{p}{P} \as{}
 	\close
 \end{proof}
-Now, even though it is an assumption that we've introduced, since `$P$' is on a line by itself (and the subproof has not yet been closed), we can use it for our next step. With `$P$' and the `$P \eif Q$' on line 1, we can use {\eif}E to get `$Q$'. 
+Now, even though it is an assumption that we've introduced, since `$P$' is on a line by itself (and the subproof has not yet been closed), we can use it for our next step. With `$P$' and the `$P \eif Q$' on line 1, we can use the conditional elimination rule to get `$Q$'. 
 \begin{proof}
 	\hypo{pq}{P \eif Q} \pr{}
 	\hypo{qr}{Q \eif R} \pr{}
@@ -647,7 +685,7 @@ Now, even though it is an assumption that we've introduced, since `$P$' is on a 
 	\close
 %	\have{pr}{P \eif R}\ci{p-r}
 \end{proof}
-With the $Q$ on line 4 and $Q \eif R$ on line 2, we can use {\eif}E and get $R$. So, by assuming `$P$', we were able to get `$R$'. Last, we apply the {\eif}I rule, which discharges our assumption and completes the proof.
+With the `$Q$' on line 4 and `$Q \eif R$' on line 2, we can use the conditional elimination rule again; this time to get `$R$'. So, by assuming `$P$', we were able to get `$R$'. Last, we apply the conditional introduction rule, which discharges our assumption and completes the proof.
 \label{HSproof}
 \begin{proof}
 	\hypo{pq}{P \eif Q} \pr{}
@@ -741,7 +779,7 @@ Our two negation rules (which are basically the same rule) formalize this reason
 \have[\ ]{a}{\enot\meta{A}}\ni{na-nb}
 \end{proof}
 
-\footnotesize{Assume $\meta{A}$. Derive a contradiction. (That is, get $\meta{B}$ and $\enot\meta{B}$ on the last two lines of the subproof). Exit the subproof, and put $\enot\meta{A}$ on the first line after the subproof.
+\small{Assume $\meta{A}$. Derive a contradiction. (That is, get $\meta{B}$ and $\enot\meta{B}$ on the last two lines of the subproof). Exit the subproof, and put $\enot\meta{A}$ on the first line after the subproof.
 \smallskip
 
 There can be as many or as few lines as needed between lines $m$ and $n$, but $n$ and $p$ have to be consecutive lines. $\meta{B}$ and $\enot\meta{B}$ can be any contradiction that it is possible to derive, and $\meta{A}$ can be one half of the contradiction.}
@@ -758,7 +796,7 @@ There can be as many or as few lines as needed between lines $m$ and $n$, but $n
 \have[\ ]{a}{\meta{A}}\ne{na-nb}
 \end{proof}
 
-\footnotesize{Assume $\enot\meta{A}$. Derive a contradiction. (That is, get $\meta{B}$ and $\enot\meta{B}$ on the last two lines of the subproof). Exit the subproof, and put $\meta{A}$ on the first line after the subproof.}
+\small{Assume $\enot\meta{A}$. Derive a contradiction. (That is, get $\meta{B}$ and $\enot\meta{B}$ on the last two lines of the subproof). Exit the subproof, and put $\meta{A}$ on the first line after the subproof.}
 
 \end{factboxy}
 
@@ -782,7 +820,7 @@ When using either of the negation rules, the last two lines of the subproof must
 
 \subsection{Reiteration}
 
-To get a contradiction on the last two lines of a subproof, you will usually have to move a sentence that is on an earlier line to the last or second-to-last line of the subproof. This is done with the \define{reiteration rule}. Just as the double negation rule is a rule of convenience that sometimes compliments the disjunction-elimination rule, the reiteration rule is a rule of convenience that compliments the negation elimination and negation introduction rules.  
+To get a contradiction on the last two lines of a subproof, you will usually have to move a sentence that is on an earlier line to the last or second-to-last line of the subproof. This is done with the \define{reiteration rule}. Just as the double negation rule is a rule of convenience that sometimes compliments the disjunction elimination rule, the reiteration rule is a rule of convenience that compliments the negation elimination and negation introduction rules.  
 
 \begin{factboxy-width}[width=7.5cm]{reiteration rule}
 \begin{proof}
@@ -791,7 +829,7 @@ To get a contradiction on the last two lines of a subproof, you will usually hav
 \end{proof}
 \end{factboxy-width}
 
-To demonstrate both the negation elimination rule and the reiteration rule, we will go through the proof for this argument: `$\enot P \eif \enot Q, Q \proves P$'. Looking at the argument, you'll notice that our conclusion is `$P$', but we cannot get `$P$' by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. That tells us that we will need to use one of our negation rules.
+To demonstrate both the negation elimination rule and the reiteration rule, we will go through the proof for this argument: `$\enot P \eif \enot Q, Q \proves P$'. Looking at the argument, you'll notice that our conclusion is `$P$', but we cannot get `$P$' by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. This means that we will need to use one of our negation rules.
 
 After the premises, we make the assumption that we need for negation elimination. Since, ultimately, we want `$P$', we will assume `$\enot P$' so that, once we discharge that assumption (and close the subproof), we will have the `$P$' that we are after.
 
@@ -810,7 +848,7 @@ We then use the conditional elimination rule to get $\enot Q$ on line 4.
 		\have{nq}{\enot Q}\ce{p1,np}
 %		\have{ng}{Q}\reit{p2}
 \end{proof}
-The $Q$ on line 2 and $\enot Q$ on line 4 are a contradiction, but to use the negation elimination rule we need to have $Q$ on line 5. To get it there, we use the reiteration rule. 
+The $Q$ on line 2 and $\enot Q$ on line 4 are a contradiction, but to use the negation elimination rule we need to have `$Q$' on line 5. To get it there, we use the reiteration rule. 
 
 \begin{proof}
 	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
@@ -820,7 +858,7 @@ The $Q$ on line 2 and $\enot Q$ on line 4 are a contradiction, but to use the ne
 		\have{nq}{\enot Q}\ce{p1,np}
 		\have{ng}{Q}\reit{p2}
 \end{proof}
-Now that $\enot Q$ and $Q$ are on consecutive lines, we can use $\enot$E to discharge the assumption that we made, and that gives us the conclusion we are after: $P$.
+Now that `$\enot Q$' and `$Q$' are on consecutive lines, we can use the negation elimination rule to discharge the assumption that we made, and that gives us the conclusion we are after: `$P$'.
 
 \begin{proof}
 	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
@@ -998,7 +1036,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+%\filbreak
 
 \item $D \eand H, H \eiff J  \proves J \eor N$ 
 \begin{proof}
@@ -1010,6 +1048,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
+\filbreak
 
 \item $G \eand (H \eand J), (H \eor J) \eif K \proves K$
 \begin{proof}
