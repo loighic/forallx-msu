@@ -171,23 +171,43 @@ The conjunction introduction rule introduces a sentence with `$\eand$' as the ma
 
 \end{factboxy}
 
-When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$'. The same holds for all of the other rules. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}
+When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$' (because `$\eor$' is the main logical operator). The same holds for all of the other rules. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}
+\bigskip
 
-Next, we can undertake the proof for this argument, which requires more steps than did the previous example: 
-\begin{earg}
-\item[] $(A\eor B) \eand (G \eand H) \proves (A\eor B)\eand H$
-\end{earg}
-The main logical operator in both the premise and conclusion of this argument is `$\eand$', and so we will use both of our conjunction rules in the proof. We begin by writing down the premise, and we put a line below it. Everything after this line must follow from our premise by the application of our rules. 
+\noindent We will now construct a couple of proofs using the two rules just introduced.  First, one for this argument: `$P \eand Q, \enot R \proves Q \eand \enot R$'.
+
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
-\end{proof}
-From the premise, we can use the conjunction elimination rule to take what is before the `$\eand$' or after it, and put that subsentence on a new line. Using this rule twice gives us this:
+	\hypo{p1}{P \eand Q} \pr{}
+	\hypo{p2}{\enot R} \pr{}
+\end{proof}\medskip
+
+\noindent After we have listed the premises, we use the conjunction elimination rule to get `$Q$' on a line by itself.
+
+\begin{proof}
+	\hypo{p1}{P \eand Q} \pr{}
+	\hypo{p2}{\enot R} \pr{}
+	\have{q}{Q} \ae{p1}
+\end{proof}\medskip
+
+\noindent And then, to finish the proof, we use the conjunction introduction rule to get `$Q \eand \enot R$'.
+
+\begin{proof}
+	\hypo{p1}{P \eand Q} \pr{}
+	\hypo{p2}{\enot R} \pr{}
+	\have{q}{Q} \ae{p1}
+	\have{c}{Q \eand \enot R} \ai{p2,q}
+\end{proof}\medskip
+Notice that there is nothing in this representation of the proof to indicate that the last line is the conclusion. It's only because we began with `$P \eand Q, \enot R \proves Q \eand \enot R$' that we know that we have arrived at the conclusion that we want.
+
+Next, we will take up the proof for this argument: `$(A\eor B) \eand (G \eand H) \proves (A\eor B)\eand H$'. After listing the premise, we can use the conjunction elimination rule twice to get `$A\eor B$' and `$G\eand H$' on lines by themselves.
 \begin{proof}
 	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
 	\have{b}{(G\eand H)} \ae{ab}
 \end{proof}
-Now that `$G\eand H$' is on its own line, we can use the conjunction elimination rule again to get $H$ on a line by itself. 
+
+\noindent Now that `$G\eand H$' is on its own line, we can use the conjunction elimination rule again to get $H$ on a line by itself. 
+
 \begin{proof}
 	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
 	\have{a}{(A\eor B)} \ae{ab}
@@ -202,7 +222,6 @@ In our final step, we use the conjunction introduction rule to get the conclusio
 	\have{b2}{H} \ae{b}
 	\have{c}{(A\eor B)\eand H} \ai{a,b2}
 \end{proof}
-And we're done. Notice that there is nothing in this representation of the proof to indicate that the last line is the conclusion. It's only because we began with `$(A\eor B) \eand (G \eand H) \proves (A\eor B)\eand H$' that we know that we have arrived at the conclusion that we wanted.
  
 
 \section{Disjunction intro and elim}\label{s:disj-rule}
@@ -270,6 +289,31 @@ That's a lot of options, but if all we know is that Sarah is swimming or Jeff is
 \small{If we have `$\meta{A}$' on a line, then on a new line we can repeat the `$\meta{A}$' and add `$\eor$' and anything else.}
 
 \end{factboxy}
+\bigskip
+
+\noindent Now, we will construct a proof for `$P \eor Q, R \eand \enot Q \proves P \eor S$'. In this proof, we will use the conjunction elimination rule, disjunction introduction rule, and the disjunction elimination rule.
+
+After listing the premises, we use the conjunction elimination rule to get `$\enot Q$' on a line by itself. 
+\begin{proof}
+	\hypo{p1}{P \eor Q} \pr{}
+	\hypo{p2}{R \eand \enot Q} \pr{}
+	\have{q}{\enot Q} \ae{p2}
+\end{proof}
+Once we have the `$\enot Q$' on a line, we can (with the `$P \eor Q$' on line 1) use the disjunction elimination rule to get `$P$' on line 4.
+\begin{proof}
+	\hypo{p1}{P \eor Q} \pr{}
+	\hypo{p2}{R \eand \enot Q} \pr{}
+	\have{q}{\enot Q} \ae{p2}
+	\have{p}{P} \oe{p1,q}
+\end{proof}
+And then last, we use the disjunction introduction rule to get the conclusion.
+\begin{proof}
+	\hypo{p1}{P \eor Q} \pr{}
+	\hypo{p2}{R \eand \enot Q} \pr{}
+	\have{q}{\enot Q} \ae{p2}
+	\have{p}{P} \oe{p1,q}
+	\have{c}{P \eor S} \oi{p}
+\end{proof}
 
 
 %\meta{B} can be any sentence whatsoever. All that we need to use this rule is the line containing \meta{A} on some earlier line of the proof. Hence, the following is a perfectly acceptable:
@@ -492,40 +536,11 @@ In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is 
 
 \section{Some examples}
 
-We will now review some proofs that use the rules that are covered in \S\S \ref{s:conj-rule} -- \ref{s:bi-rules}. 
+We will now look at some proofs that use the rules that are covered in \S\S \ref{s:conj-rule} -- \ref{s:bi-rules}. 
 
 \begin{earg}
-\item[\ex{14.6.1}] A proof of `$P \eand Q, \enot R \proves Q \eand \enot R$' requires the conjunction introduction rule and the conjunction elimination rule.
-\begin{proof}
-	\hypo{p1}{P \eand Q} \pr{}
-	\hypo{p2}{\enot R} \pr{}
-	\have{q}{Q} \ae{p1}
-	\have{c}{Q \eand \enot R} \ai{p2,q}
-\end{proof}\medskip
-
-\item[\ex{14.6.2}] For a proof of `$P \eor Q, R \eand \enot Q \proves P \eor S$', we need the conjunction elimination rule, disjunction introduction rule, and the disjunction elimination rule.
-\begin{proof}
-	\hypo{p1}{P \eor Q} \pr{}
-	\hypo{p2}{R \eand \enot Q} \pr{}
-	\have{q}{\enot Q} \ae{p2}
-	\have{p}{P} \oe{p1,q}
-	\have{c}{P \eor S} \oi{p}
-\end{proof}\medskip
 
 %\pagebreak
-
-\item[\ex{14.6.2b}] For `$C \eand (D \eor \enot F), F \eand G \proves C \eand (D \eor H)$', we use all five of the rules introduced in \S\S \ref{s:conj-rule} and \ref{s:disj-rule}.
-\begin{proof}
-	\hypo{p1}{C \eand (D \eor \enot F)} \pr{}
-	\hypo{p2}{F \eand G} \pr{}
-	\have{c}{C} \ae{p1}
-	\have{dnf}{D \eor \enot F} \ae{p1}
-	\have{f}{F} \ae{p2}
-	\have{nnf}{\enot \enot F} \dn{f}
-	\have{d}{D} \oe{dnf, nnf}
-	\have{dh}{D \eor H} \oi{d}
-	\have{con}{C \eand (D \eor H)} \ai{c,dh}
-\end{proof}\medskip
 
 \item[\ex{14.6.3}] For a proof of `$P \eif Q, R \eand P \proves Q \eand R$', we use the conjunction introduction rule, the conjunction elimination rule, and the conditional elimination rule.
 \begin{proof}
@@ -544,6 +559,19 @@ We will now review some proofs that use the rules that are covered in \S\S \ref{
 	\hypo{p3}{\enot P} \pr{}
 	\have{t}{T} \oe{p2,p3}
 	\have{c}{R} \be{p1,t}
+\end{proof}\medskip
+
+\item[\ex{14.6.2b}] For `$C \eand (D \eor \enot F), F \eand G \proves C \eand (D \eor H)$', we use all five of the rules introduced in \S\S \ref{s:conj-rule} and \ref{s:disj-rule}.
+\begin{proof}
+	\hypo{p1}{C \eand (D \eor \enot F)} \pr{}
+	\hypo{p2}{F \eand G} \pr{}
+	\have{c}{C} \ae{p1}
+	\have{dnf}{D \eor \enot F} \ae{p1}
+	\have{f}{F} \ae{p2}
+	\have{nnf}{\enot \enot F} \dn{f}
+	\have{d}{D} \oe{dnf, nnf}
+	\have{dh}{D \eor H} \oi{d}
+	\have{con}{C \eand (D \eor H)} \ai{c,dh}
 \end{proof}\medskip
 
 \item[\ex{14.6.5}] For a proof of `$(R \eand T) \eif Q, T \eand S, R \proves Q$', we use the conjunction elimination, conjunction introduction, and conditional elimination rules.
