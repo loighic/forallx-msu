@@ -197,7 +197,7 @@ When you have a conjunction on one line of a proof, you can use the conjunction 
 	\have{q}{Q} \ae{p1}
 	\have{c}{Q \eand \enot R} \ai{p2,q}
 \end{proof}\medskip
-Notice that there is nothing in this representation of the proof to indicate that the last line is the conclusion. It's only because we began with `$P \eand Q, \enot R \proves Q \eand \enot R$' that we know that we have arrived at the conclusion that we want.
+Notice that there is nothing in this representation of the proof to indicate that the last line is the conclusion. It's only because we began with `$P \eand Q, \enot R \proves Q \eand \enot R$' that we know that, on line 4, we have arrived at the conclusion that we want.
 
 Next, we will take up the proof for this argument: `$(A\eor B) \eand (G \eand H) \proves (A\eor B)\eand H$'. After listing the premise, we can use the conjunction elimination rule twice to get `$A\eor B$' and `$G\eand H$' on lines by themselves.
 \begin{proof}
@@ -1102,7 +1102,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+%\filbreak
 
 \item $(P \eor \enot Q) \eiff R, R \eand Q \proves P \eand R$\smallskip
 \begin{proof}
@@ -1117,6 +1117,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
+\filbreak
 
 \item $(R \eand T) \eif Q, R \eor \enot P, P \eand T \proves Q$\smallskip
 \begin{proof}
@@ -1132,7 +1133,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+%\filbreak
 
 \item $S \eif T, Q \eand \enot R, \enot R \eiff (T \eif S) \proves S \eiff T $\smallskip
 \begin{proof}
@@ -1194,7 +1195,8 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-%\filbreak
+\filbreak
+
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
 \begin{proof}
 \hypo{MnNnM}{M \eand (\enot N \eif \enot M)} \pr{}
@@ -1211,7 +1213,8 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+%\filbreak
+
 \item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
 \begin{proof}
 \hypo{zkym}{(Z \eand K) \eiff (Y \eand M)} \pr{}
@@ -1229,6 +1232,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
+\filbreak
 
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \begin{proof}
