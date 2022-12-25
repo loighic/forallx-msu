@@ -275,7 +275,7 @@ That's a lot of options, but if all we know is that Sarah is swimming or Jeff is
 
 \noindent The idea is that, if we know that a sentence is true, we can create a longer sentence by adding `or \textit{any sentence whatsoever}' and the disjunction will also be true. This feature of the disjunction underlies the \define{disjunction introduction rule} (which, again, is two similar rules).
 
-\begin{factboxy}{disjunction introduction rule}
+\begin{factboxy}{disjunction introduction rule}\label{di-rule-box}
 \begin{proof}
 	\have[m]{a}{\meta{A}}
 	\have[\ ]{ab}{\meta{A}\eor\meta{B}}\oi{a}
@@ -353,7 +353,7 @@ The elimination rules, meanwhile, all, in a way, eliminate a logical operator. T
 \noindent The `$R \eand T$' is still on line 1 and can be used again in the proof, and so it definitely hasn't been eliminated.  Hence, we might think of the elimination rules as \textit{extraction} rules rather than elimination rules, but \textit{elimination} is the commonly used term, and so we will stick with it. 
 
 
-\subsection{Double negation}
+\subsection{Double negation}\label{subsection-DN}
 
 The \define{double negation rule} is a rule of convenience that sometimes compliments the disjunction-elimination rule. (There are also times when it will be used in the proofs that are discussed in \ref{s:theorems}, but, for the material in this chapter, it will only be used with the disjunction-elimination rule.) First, notice that the disjunction-elimination rule is very specific. To use it, we need, on one line of our proof, a sentence with the form `$\meta{A}\eor\meta{B}$', and on another line of our proof, we need one side of the disjunction (either $\meta{A}$ or $\meta{B}$) with a `$\enot$' in front of it---that is, either $\enot\meta{A}$ or $\enot\meta{B}$. 
 
@@ -425,7 +425,7 @@ The `$P$' on line 2 and the `$\enot \enot P$' on line 3 have exactly the same me
 
 Remember that, in this chapter, you will only use the double negation rule right before you use the disjunction elimination rule, and you will only use it some of the time with the disjunction elimination rule.
 
-\begin{factboxy-side}{when not to use (left) and when to use (right) the double negation rule}
+\begin{factboxy-side}{when not to use (left) and when to use (right) the double negation rule}\label{DN-box}
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eor\meta{B}}
 	\have[n]{nb}{\enot\meta{B}}
@@ -536,7 +536,7 @@ In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is 
 
 \section{Some examples}
 
-We will now look at some proofs that use the rules that are covered in \S\S \ref{s:conj-rule} -- \ref{s:bi-rules}. 
+We will now look at some proofs that use the rules that are covered in \S\S \ref{s:conj-rule} -- \ref{s:bi-rules}. There are also practice exercises using these rules on p.~\pageref{practice-proofs-1}. 
 
 \begin{earg}
 
@@ -1013,17 +1013,32 @@ In chapter \ref{s:NDVeryIdea}, we discussed some reasons to prefer natural deduc
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
 
-\problempart
-Give a proof for each argument.
+\problempart\label{practice-proofs-1}
+Give a proof for each argument using the rules from \S\S \ref{s:conj-rule} -- \ref{s:bi-rules}.
 \begin{earg}
-\item $\enot P \eif (Q \eor P), \enot P \proves Q$\smallskip
+\item $\enot P \eif (Q \eor P), \enot P \proves Q$\\
+\textit{Note:} After you list the premises on lines 1 and 2, notice that $\enot P$ is the antecedent of the sentence on line 1 and $\enot P$ is by itself on line 2. This means using the conditional elimination rule is an option.
+\medskip
+\item $P \eif (Q \eor \enot P), \enot P \proves Q$\\
+\textit{Note:} This problem is similar to the one right above, but it's not exactly the same. If you're not sure how to do this one, look at the subsection on the double negation rule (pp.~\pageref{subsection-DN} - \pageref{DN-box}).
+\medskip
 \item $D \eand H, H \eiff J  \proves J \eor N$\smallskip 
-\item $G \eand (H \eand J), (H \eor J) \eif K \proves K$\smallskip
-\item $P \eand (Q \eor R), P \eif \enot R \proves Q \eor S$\smallskip
+
+\item $R \eand S, (S \eor Q) \eif T \proves T$\\
+\textit{Note:} Since $(S \eor Q)$ is the antecedent of the conditional on line 2, to use the conditional elimination rule, you need to have $(S \eor Q)$ on a line by itself. Since $(S \eor Q)$ is a disjunction, you will need to use the disjunction introduction rule to get it. (Check how that rule works if you don't remember: p.~\pageref{di-rule-box}.)
+\medskip
+
+\item $G \eand (H \eand J), (H \eor M) \eif K \proves K$\smallskip
+\item $P \eand (Q \eor R), P \eif \enot R \proves Q$\smallskip
 \item $(P \eor \enot Q) \eiff R, R \eand Q \proves P \eand R$\smallskip
-\item $(R \eand T) \eif Q, R \eor \enot P, P \eand T \proves Q$\smallskip
+\item $(R \eand T) \eif Q, R \eor \enot P, P \eand T \proves Q$\\
+\textit{Note:} After you list the premises for this proof, you'll see that the conclusion is the consequent of the conditional on line 1. To use the conditional elimination rule, you need to use the two other sentences (on lines 2 and 3) to get the antecedent on a line by itself. That will take several steps. Think about whether you need to use the double negation rule for one of those steps. 
+\medskip
+
 \item $S \eif T, Q \eand \enot R, \enot R \eiff (T \eif S) \proves S \eiff T $\smallskip
 \item $(L \eor M) \eif N, P \eiff N, L \proves L \eand P$\smallskip
+\item $(P \eand R) \eiff (S \eor T), P \eif Q, T \proves Q$\smallskip
+\item $S \eif T, T \eif S, T \eiff (T \eiff S) \proves S$\smallskip
 \end{earg}
 
 
@@ -1042,13 +1057,15 @@ Give a proof for each argument.
 \end{earg}
 
 
-\problempart
-If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, you know that the argument is valid), then is it possible to know if $(\meta{A} \eand \meta{C}) \proves \meta{B}$ is valid? Is it possible to know if $(\meta{A} \eif \meta{B}) \eif \meta{B} \proves \meta{B}$ is valid? Explain your answers.
+%\problempart
+%If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, you know that the argument is valid), then is it possible to know if $(\meta{A} \eand \meta{C}) \proves \meta{B}$ is valid? Is it possible to know if $(\meta{A} \eif \meta{B}) \eif \meta{B} \proves \meta{B}$ is valid? Explain your answers.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  answers
+
+\newpage
 
 \section{Answers}
 \setcounter{ProbPart}{0}
@@ -1061,6 +1078,16 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 	\hypo{p2}{\enot P} \pr{}
 	\have{qp}{Q \eor P} \ce{p1,p2}
 	\have{q}{Q} \oe{p2,qp}
+\end{proof}
+\medskip
+
+\item $P \eif (Q \eor \enot P), \enot P \proves Q$\\
+\begin{proof}
+	\hypo{p1}{P \eif (Q \eor \enot P)} \pr{}
+	\hypo{p2}{P} \pr{}
+	\have{qp}{Q \eor \enot P} \ce{p1,p2}
+	\have{nnp}{\enot\enot P} \dn{p2} 
+	\have{q}{Q} \oe{qp,nnp}
 \end{proof}
 \medskip
 
@@ -1078,19 +1105,31 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 
 \filbreak
 
-\item $G \eand (H \eand J), (H \eor J) \eif K \proves K$
+\item $R \eand S, (S \eor Q) \eif T \proves T$
+\begin{proof}
+	\hypo{p1}{R \eand S} \pr{}
+	\hypo{p2}{(S \eor Q) \eif T} \pr{}
+	\have{s}{S} \ae{p1}
+	\have{svq}{S \eor Q} \oi{s}
+	\have{t}{T} \ce{p2,svq}
+\end{proof}
+\medskip
+%\filbreak
+
+\item $G \eand (H \eand J), (H \eor M) \eif K \proves K$\\
+\textit{Note:} In this proof, just like in the previous one, you need to use the disjunction introduction rule to get an antecedent---in this case, `$(H \eor M)$'---on a line by itself (so that you can then use the conditional elimination rule). This is a good trick to remember. 
 \begin{proof}
 	\hypo{p1}{G \eand (H \eand J)} \pr{}
-	\hypo{p2}{(H \eor J) \eif K} \pr{}
+	\hypo{p2}{(H \eor M) \eif K} \pr{}
 	\have{hj}{H \eand J} \ae{p1}
 	\have{h}{H} \ae{hj}
-	\have{hj2}{H \eor J} \oi{h}
+	\have{hj2}{H \eor M} \oi{h}
 	\have{k}{K} \ci{p2,hj2}
 \end{proof}
 \medskip
 
 
-\item $P \eand (Q \eor R), P \eif \enot R \proves Q \eor S$
+\item $P \eand (Q \eor R), P \eif \enot R \proves Q$
 \begin{proof}
 	\hypo{p1}{P \eand (Q \eor R)} \pr{}
 	\hypo{p2}{P \eif \enot R} \pr{}
@@ -1098,11 +1137,11 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 	\have{nr}{\enot R} \ci{p2,p}
 	\have{qr}{Q \eor R} \ae{p1}
 	\have{q}{Q} \oe{nr,qr}
-	\have{qs}{Q \eor S} \oi{q}
 \end{proof}
 \medskip
 
-%\filbreak
+
+\filbreak
 
 \item $(P \eor \enot Q) \eiff R, R \eand Q \proves P \eand R$\smallskip
 \begin{proof}
@@ -1117,7 +1156,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-\filbreak
+%\filbreak
 
 \item $(R \eand T) \eif Q, R \eor \enot P, P \eand T \proves Q$\smallskip
 \begin{proof}
@@ -1133,7 +1172,7 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{proof}
 \medskip
 
-%\filbreak
+\filbreak
 
 \item $S \eif T, Q \eand \enot R, \enot R \eiff (T \eif S) \proves S \eiff T $\smallskip
 \begin{proof}
@@ -1157,6 +1196,32 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \have{p}{P} \be{p2,n}
 \have{con}{L \eand P} \ai{p3,p}
 \end{proof}
+\medskip
+
+\item $(P \eand R) \eiff (S \eor T), P \eif Q, T \proves Q$
+\begin{proof}
+\hypo{p1}{(P \eand R) \eiff (S \eor T)} \pr{}
+\hypo{p2}{P \eif Q} \pr{}
+\hypo{p3}{T} \pr{}
+\have{svt}{S \eor T} \oi{p3}
+\have{pr}{P \eand R} \be{p1,svt}
+\have{p}{P} \ae{pr}
+\have{q}{Q} \ce{p2,p}
+\end{proof}
+\medskip
+
+\filbreak
+
+\item $S \eif T, T \eif S, T \eiff (T \eiff S) \proves S$
+\begin{proof}
+\hypo{p1}{S \eif T} \pr{}
+\hypo{p2}{T \eif S} \pr{}
+\hypo{p3}{T \eiff (T \eiff S)} \pr{}
+\have{ts}{T \eiff S} \bi{p1,p2}
+\have{t}{T} \be{p3,ts}
+\have{s}{S} \ce{p2,t}
+\end{proof}
+
 \medskip
 
 \end{earg}
@@ -1356,10 +1421,10 @@ If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, yo
 \end{earg}
 \bigskip
 
-\problempart
-If $\meta{A} \proves \meta{B}$ is valid, then $(\meta{A} \eand \meta{C})\proves \meta{B}$ is valid. We know this because if $\meta{A} \proves \meta{B}$, then there is some proof with assumption $\meta{A}$ that ends with $\meta{B}$, and no undischarged assumptions other than $\meta{A}$. Now, if we start a proof with assumption $(\meta{A} \eand \meta{C})$, we can obtain $\meta{A}$ by $\eand$E. We can now copy and paste the original proof of $\meta{B}$ from $\meta{A}$, adding 1 to every line number and line number citation. The result will be a proof of $\meta{B}$ from assumption $\meta{A}$.
+%\problempart
+%If $\meta{A} \proves \meta{B}$ is valid, then $(\meta{A} \eand \meta{C})\proves \meta{B}$ is valid. We know this because if $\meta{A} \proves \meta{B}$, then there is some proof with assumption $\meta{A}$ that ends with $\meta{B}$, and no undischarged assumptions other than $\meta{A}$. Now, if we start a proof with assumption $(\meta{A} \eand \meta{C})$, we can obtain $\meta{A}$ by $\eand$E. We can now copy and paste the original proof of $\meta{B}$ from $\meta{A}$, adding 1 to every line number and line number citation. The result will be a proof of $\meta{B}$ from assumption $\meta{A}$.
 
-We also know that $(\meta{A} \eif \meta{B}) \eif \meta{A} \proves \meta{B}$ is valid. Since, there is some proof with assumption $\meta{A}$ that ends with $\meta{B}$, we can assume \meta{A}, derive \meta{B}, and then use the conditional-introduction rule to get $(\meta{A} \eif \meta{B})$. We use the condtional-elimination rule on $(\meta{A} \eif \meta{B})$ and the premise, and get \meta{B}, the conclusion.
+%We also know that $(\meta{A} \eif \meta{B}) \eif \meta{A} \proves \meta{B}$ is valid. Since, there is some proof with assumption $\meta{A}$ that ends with $\meta{B}$, we can assume \meta{A}, derive \meta{B}, and then use the conditional-introduction rule to get $(\meta{A} \eif \meta{B})$. We use the condtional-elimination rule on $(\meta{A} \eif \meta{B})$ and the premise, and get \meta{B}, the conclusion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
