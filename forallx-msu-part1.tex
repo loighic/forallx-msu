@@ -20,13 +20,13 @@ An \define{argument} is a set of sentences. One or more of the sentences provide
 We can also say that, in an argument, the conclusion follows from the premises.\\
 \end{factboxy}
 
-That's the definition, but a broader analysis of arguments must include that they can be good or bad---or  somewhere inbetween. A good argument is one in which the premises do, in fact, support the conclusion. For such an argument, if the premises are true, then we have good reason to believe that the conclusion is true. On the other hand, a bad (or a weak) argument is still an argument. It is just one in which the premises provide little support for the conclusion.
+That's the definition of an argument, but a broader analysis must include that arguments can be good or bad---or  somewhere inbetween. A good argument is one in which the premises do, in fact, support the conclusion. For such an argument, if the premises are true, then we have good reason to believe that the conclusion is true. On the other hand, a bad (or a weak) argument is still an argument. It is just one in which the premises provide little support for the conclusion.
 
 In the definition of an argument, we said that each premise and the conclusion is a sentence. And, as we saw, both premises and the conclusion in the example are individual sentences. All arguments can be expressed this way and many are, but a single sentence can also contain a complete argument, as is shown here:
 	\begin{quote}
 		 Joan was wearing sunglasses, and so it must have been sunny.
 	\end{quote}
-This argument has one premise and a conclusion. The premise and the conclusion could both be individual sentences, but here they are just clauses separated by the `and'. (The premise is before the `and', and the conclusion is after it.)
+This argument has one premise and a conclusion. The premise and the conclusion could both be individual sentences, but here they are just independent clauses separated by the `and'. (The premise is before the `and', and the conclusion is after it.)
 
 Many arguments also start with premises and end with a conclusion. But not all arguments are expressed in this order. For instance, here we have our first argument again, but the conclusion is at the beginning:
 	\begin{quote}
@@ -46,23 +46,21 @@ By contrast, these expressions often indicate that we are dealing with a premise
 		since, because, given that
 	\end{quote}
 
-Chapters \ref{ch.intro} - \ref{s:BasicNotions} cover some basic logical notions that apply to arguments in a natural language like English. It is important to begin with a clear understanding of what arguments are and of what it means for an argument to be valid. Later, we will translate arguments from English into a formal language. We want formal validity, as defined in the formal language, to have at least some of the important features of natural-language validity.
+Chapters \ref{ch.intro} through \ref{s:BasicNotions} cover some basic logical notions that apply to arguments in a natural language like English. It is important to begin with a clear understanding of what arguments are and of what it means for an argument to be valid. Later, we will translate arguments from English into a formal language. We want formal validity, as defined in the formal language, to have at least some of the important features of natural-language validity.
 
 \section{Sentences}
 \label{intro.sentences}
 
-To be a premise or conclusion of an argument, it must possible for the sentence to be true or false. So, for our purposes, by \define{sentence}, we mean a declarative sentence. In contrast to declarative sentences, the following are types of sentences that cannot be true or false, and so they cannot be part of an argument.
+Only sentences that can be true or false can be the premises or the conclusion of an argument. The following types of sentences cannot be true or false, and so they cannot be part of an argument.
 
 \paragraph{Questions} `Are you sleepy yet?' is, obviously, a question. Although you might be sleepy or you might be alert, the question itself is neither true nor false. For this reason, questions will not count as sentences in logic. Suppose you answer the question: `I am not sleepy.' This is either true or false, and so it is a sentence in the logical sense. Generally, \emph{questions} will not count as sentences, but \emph{answers} will. 
 
-\paragraph{Imperatives} Imperative sentences are, essentially, commands (although they can be nicer than what we usually think of as a command). For instance, `Wake up!', `Sit up straight', and `Tell me how to set the table' are imperatives. Although it might be good for you to sit up straight or it might not, and you may or may not do it, the command is neither true nor false. Note, however, that commands are not always phrased as imperatives.  As Cartman might say,``You will respect my authority.'' This is a command, but it is also true or false--- either you will or you will not--- and so it counts as a sentence in the logical sense.
+\paragraph{Imperatives} Imperative sentences are, essentially, commands (although they can be nicer than what we usually think of as a command). For instance, `Wake up!', `Sit up straight', and `Please, tell me how to set the table' are imperatives. Although it might be good for you to sit up straight or it might not, and you may or may not do it, the command is neither true nor false. Note, however, that commands are not always phrased as imperatives.  As Cartman might say,``You will respect my authority.'' This is a command, but it is also true or false--- either you will or you will not--- and so it counts as a sentence in the logical sense.
 
-\paragraph{Exclamations} Some exclamatory sentences can be true or false (and so they are also declarative sentences) and some cannot be. `It's Friday!' is an exclamation, and it is true or false. So, it can be part of an argument. On the other hand, a sentence such as `Ouch!' is neither true nor false, and so it cannot. 
+\paragraph{Exclamations} Some exclamatory sentences can be true or false (and so they are also declarative sentences) and some cannot be. `It's Friday!' is an exclamation, and it is true or false. So, it can be part of an argument. On the other hand, a sentence such as `Ouch!' is neither true nor false, and so it cannot be part of an argument. 
 
 \section{Truth values}
-The kinds of sentences that cannot be part of an argument are not \emph{assertoric}: they cannot be true or false. For instance, it does not even make sense to ask whether a question is true. It only makes sense to ask whether it is true that someone asked the question or whether the answer is true.
-
- The premises and conclusion of an argument, meanwhile, must be capable of having a \define{truth value}. That is, we must be able to assign a value about its truth to each sentence in an argument. The two truth values that concern us are `true' and `false'. 
+Going forward, by \define{sentence}, we will mean a declarative sentence. We impose this restriction because the premises and conclusion of an argument must be capable of having a \define{truth value}. That is, we must be able to assign a value about its truth to each sentence in an argument. Although more advanced ``non-classical'' logic systems introduce more options, the two truth values that concern us are just `true' and `false'. 
 
 
 \practiceproblems
@@ -109,7 +107,7 @@ Here is another example,
 		\item[2.] Oranges are not insects.
 		\item[3.] Therefore, oranges are fish.
 	\end{earg}
-Although this argument might strike you as a little bit odd, we can say almost the exact same thing about this one as we did for the previous one:
+Although this argument might strike you as a bit odd, we can say almost the exact same thing about this one as we did for the previous one:
 \begin{quote}
 In this argument, if the premises are true, then the conclusion has to be true. There is no way for the premises to be true and the conclusion to be false. 
 \end{quote}
@@ -124,11 +122,11 @@ Every argument that does not satisfy this definition is \define{invalid} (or \de
 
 So, we want to know whether, if all the premises \textit{were} true, would the conclusion also have to be true? Consider this argument:
 	\begin{earg}
-		\item[1.] Oranges are either fruits or aliens from another galaxy.
+		\item[1.] Oranges are either fruits, or they are aliens from another galaxy.
 		\item[2.] Oranges are not fruits.
 		\item[3.] Therefore, oranges are aliens from another galaxy.
 	\end{earg}
-This argument is valid. \emph{If} both premises are true, \emph{then} the conclusion has to be true. Now, let's think about this argument:
+This argument is valid. \emph{If} both premises are true (they're not, but if they were), then the conclusion has to be true. Now, let's think about this argument:
 	\begin{earg}
 		\item[1.] London is in England.
 		\item[2.] Beijing is in China.
@@ -136,7 +134,7 @@ This argument is valid. \emph{If} both premises are true, \emph{then} the conclu
 	\end{earg}
 The premises and conclusion of this argument are all true, but the argument is invalid. If Paris were to declare independence from the rest of France, then the conclusion would be false, even though both of the premises would remain true. Thus, it is \emph{possible} for the premises of this argument to be true and the conclusion false. Hence, the argument is invalid.
 
-The important thing to remember is that validity is not about the actual truth or falsity of the sentences in the argument. It is about whether it is \emph{possible} for all the premises to be true and the conclusion false. (Or, to say the same thing in a different way, whether, the conclusion has to be true \textit{if} all of the premises are true.)
+The important point to remember is that validity is not about the actual truth or falsity of the sentences in the argument. It is about whether or not it is \emph{possible} for all the premises to be true and the conclusion false. (Or, to say the same thing in a different way, whether, the conclusion has to be true \textit{if} all of the premises are true.)
 
 We can, however, classify the arguments that are valid and have all true premises. These we call \define{sound}\label{def-sound-arg}. The second argument on p.~\pageref{valid-oranges} is sound.
 
@@ -231,9 +229,11 @@ Logic alone cannot tell us which, if either, of these sentences is true. Yet we 
 		\item[G2.] There are exactly seven gorillas at the wild animal park.
 	\end{ebullet}
 One of these sentences may be false and the other true, but it  is \textit{possible} that they are both true at the same time. These observations motivate the following definitions.
-\begin{factboxy}{jointly possible and jointly impossible}
-Sentences are \define{jointly possible} when, and only when, it is possible for them all to be true together.\\
-Sentences are \define{jointly impossible} when, and only when, it is \textit{not} possible for them all to be true together.
+\begin{factboxy}{jointly possible and impossible}
+Sentences are \define{jointly possible} when, and only when, it is possible for them all to be true at the same time.
+\medskip
+
+Sentences are \define{jointly impossible} when, and only when, it is \textit{not} possible for them all to be true at the same time.
 \end{factboxy}
 \noindent So, G1 and G2 are \textit{jointly possible} while B1 and B2 are \emph{jointly impossible}.
 
@@ -254,7 +254,7 @@ Consider these sentences:
 		\item[\textit{b.}] Either it is raining here, or it is not.
 		\item[\textit{c.}] It is both raining here and not raining here.
 	\end{earg}
-In order to know if sentence \textit{a} is true, you would need to look outside or check the weather channel. It might be true; it might be false. A sentence which is capable of being true and capable of being false (in different circumstances, of course) is \define{contingent}.
+In order to know if sentence \textit{a} is true, you would need to look outside or check the weather channel. It might be true; it might be false. A sentence that is capable of being true and capable of being false (in different circumstances, of course) is \define{contingent}.
 
 Sentence \textit{b} is different. You do not need to look outside to know that it is true. Regardless of what the weather is like, it is either raining or it is not. Thus, this sentence is a \define{necessary truth}. 
 
@@ -270,7 +270,7 @@ We can also ask about the logical relations \emph{between} two sentences. For ex
 \item[] John went to the store after he washed the dishes.
 \item[] John washed the dishes before he went to the store.
 \end{earg}
-These two sentences are both contingent, since John might not have gone to the store or washed dishes at all. Yet they must have the same truth-value. That is, they must either both be true or both be false. When two sentences necessarily have the same truth value, we say that they are \define{necessarily equivalent}.
+These two sentences are both contingent, since John might not have gone to the store or even washed dishes. Yet they must have the same truth value. That is, they must either both be true or both be false. When two sentences necessarily have the same truth value, we say that they are \define{necessarily equivalent}.
 
 
 \section*{Summary of logical notions}
