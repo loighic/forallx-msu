@@ -3,90 +3,79 @@
 \label{ch.TFL}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{Form and symbolization}
+\chapter{Form and symbolization}\label{symbolization}
 
 \section{Validity in virtue of form}\label{s:ValidityInVirtueOfForm}
-Consider this argument:
+Consider the following two arguments. First this one:
 	\begin{earg}
 		\item[1.] If it is raining outside, then Mary is miserable.
 		\item[2.] It is raining outside.
 		\item[3.] Therefore, Mary is miserable.
 	\end{earg}
-and this one:
+and then this one:
 	\begin{earg}
 		\item[1.] If Mary is a student, then Leiser is a spy.
 		\item[2.] Mary is a student.
 		\item[3.] Therefore, Leiser is a spy.
 	\end{earg}
-Both arguments are valid, and, as perhaps you  can see, they share a common form. We can represent the form by itself this way:
+Both arguments are valid, and, as perhaps you  can see, they share a common \textit{form}. We can represent the form by itself this way:
 	\begin{earg}
-		\item[1.] If A, then C
+		\item[1.] If A, then B
 		\item[2.] A
-		\item[3.] Therefore, C
+		\item[3.] Therefore, B
 	\end{earg}
-Any argument with this form will be valid. It doesn't matter what English sentences are put in the places of A and C. 
-Now, let's look at this argument:
+Any argument with this form will be valid. It doesn't matter what English sentences are put in the places of A and B. 
+
+Here is another valid argument:
+	\begin{earg}
+		\item[1.] Seoul is larger than London.
+		\item[2.] London is larger than Chicago.
+		\item[3.] Therefore, Seoul is larger than Chicago. 
+	\end{earg}
+This argument also has a particular form that makes it valid, and we can represent its form like this:
+	\begin{earg}
+		\item[1.] C is larger than D.
+		\item[2.] D is larger than F.
+		\item[3.] Therefore, C is larger than F. 
+	\end{earg}
+For the first argument form that we examined, A and B could be an sentences. Here, C, D, and F are names (not full sentences), and we can put any names (for anything) in the places of C, D, and F, and the argument will be valid.
+
+In contrast, this argument is valid, but there is no particular form that makes it so.
+	\begin{earg}
+		\item[1.] Juanita is a vixen.
+		\item[2.] Therefore, Juanita is a fox.
+	\end{earg}
+Unlike the previous three examples, this argument is valid, not because of the form of the argument, but because of the particular meanings of \textit{fox} and \textit{vixen}. 
+
+These examples illustrate what we can call \emph{validity in virtue of form}. The arguments about Mary, Leiser, Seoul, London, and Chicago are valid, but---unlike the argument about Juanita---their being valid has nothing to do with the specific meaning of `Mary is miserable', `Leiser is a spy', `Seoul', `London', or `Chicago.' (Whether the arguments are sound depends on these meanings, but not whether the arguments are valid.) Instead, these arguments are valid in virtue of the meanings of just these words: \textit{if, then} and \textit{is larger than}.
+
+Valid for reasons other than the argument's form is an interesting topic, but our focus will be on arguments that are valid because of their form---and in fact, only valid in virtue of some forms. In part 5, we will broaden the analysis a bit, but in parts  \ref{ch.TFL}, \ref{ch.TruthTables}, and \ref{ch.NDTFL} of this textbook, we will be interested in arguments where the form is set by the use of  \textit{if-then}, \textit{and}, \textit{or}, \textit{not}, and \textit{if and only if}. 
+
+So, we will leave behind arguments that are valid in virtue of using \textit{is larger than}. Here are some examples that are valid in virtue of \textit{or}, \textit{not}, and \textit{and}.
+This one:
 	\begin{earg}
 		\item[1.] Claire is either a student, or she is a spy.
 		\item[2.] Claire is not a student.
 		\item[3.] Therefore, Claire is a spy.
 	\end{earg}
-Again, this argument is valid, and this is its form:
+has this form:
 	\begin{earg}
-		\item[1.] F or G
-		\item[2.] not F
-		\item[3.] Therefore, G
+		\item[1.] G or H
+		\item[2.] not G
+		\item[3.] Therefore, H
 	\end{earg}
-Here is another example:
+And this argument:
 	\begin{earg}
 		\item[1.] It's not the case that Jeff both studies often and acts in lots of plays.
 		\item[2.] Jeff acts in lots of plays.
 		\item[3.] Therefore, Jeff does not study often.
 	\end{earg}
-This argument is also valid, and it has a form that we can represent like this:
+has a form that we can represent like this:
 	\begin{earg}
-		\item[1.] not (S and P)
-		\item[2.] P
-		\item[3.] Therefore, not S
+		\item[1.] not (K and L)
+		\item[2.] L
+		\item[3.] Therefore, not K
 	\end{earg}
-	
-These examples illustrate what we can call \emph{validity in virtue of form}. The four arguments about Mary, Jeff, Leiser, and Claire are valid, but their being valid has nothing to do with the specific meaning of `Mary is miserable', `Leiser is a spy', or `Jeff acts in lots of plays'. Instead, these arguments are valid in virtue of the meanings of just these words: \textit{and}, \textit{or}, \textit{not}, and \textit{if\ldots, then\ldots}. 
-
-
-\section{Validity for special reasons}
-There are plenty of arguments that are valid, but not because of the argument's form. This an example:
-	\begin{earg}
-		\item[1.] Juanita is a vixen.
-		\item[2.] Therefore, Juanita is a fox.
-	\end{earg}
-It is impossible for the premise to be true and the conclusion to be false, and so the argument is valid. But when we specify this argument's form, we have just this: 
-	\begin{earg}
-		\item[1.] A
-		\item[2.] Therefore, B
-	\end{earg}
-And this is not a form that will always yeild a valid argument. This argument, for instance, which is not valid, has the same form:
-
-\newpage
-
-	\begin{earg}
-		\item[1.] Jos\'e is a spy.
-		\item[2.] Therefore, Jos\'e is 10,000 years old.
-	\end{earg}
-Now, the premise can be true while the conclusion is false, and so the argument is invalid. Hence, it is not the form that makes the first argument valid but rather the meaning of the words `vixen' and `fox'. 
-
-Here is another example:
-	\begin{earg}
-		\item[1.] The sculpture is green all over.
-		\item[2.] Therefore, the sculpture is not red all over. 
-	\end{earg}
-Again, it is impossible for the premise to be true and the conclusion false, for nothing can be both green all over and red all over. So, the argument is valid. Here, however, is an argument with the same form that is not valid:
-	\begin{earg}
-		\item[1.] The sculpture is green all over.
-		\item[2.] Therefore, the sculpture is not shiny all over.
-	\end{earg}
-But a sculpture (or any object) can be green all over and shiny all over, and so this argument is not valid. 
-
-Much more can be said about arguments that are valid but not because of their form. That will not be our focus in this book, however. From this point forward, we will be interested only in arguments that are valid or invalid because of their form.
 
 
 \section{Atomic sentences and symbolization}\label{s:atomic}
@@ -95,28 +84,28 @@ Consider this sentence again:
 	\begin{earg}
 		\item[(a)] If it is raining outside, then Mary is miserable.
 	\end{earg}
-We call `It is raining outside' and `Mary is miserable' \textit{subsentences} of sentence (a). To specify the structure of the arguments in \S\ref{s:ValidityInVirtueOfForm}, we replaced the sentences and subsentences in each argument with individual letters. For instance, `It is raining outside' was replaced with `A'. This kind of representation---letters standing for sentences or subsentences---is central to the formal language that we develop in this book.
+`It is raining outside' and `Mary is miserable' are \textit{subsentences} of sentence (a). To specify the structure of the first argument in \S\ref{s:ValidityInVirtueOfForm}, we replaced the sentences and subsentences in it with individual letters. For instance, `It is raining outside' was replaced with `A'. This kind of representation---letters standing for sentences or subsentences---is one important part of the formal language that we develop in this book.
 
 \begin{factboxy}{Atomic sentences}
-An \define{atomic sentence} is a sentence that (1) can be true or false and (2) cannot be broken down into smaller sentences.\medskip
+An \define{atomic sentence} is a sentence that (1) can be true or false and (2) cannot be broken into smaller sentences.\medskip
 
 In English, an atomic sentence is a declarative sentence that does not contain any subsentences.\smallskip
 
 In our logic system, an atomic sentence is a single capital letter in this font: $A, B, C, . . .$.
 \end{factboxy}
 
-Atomic sentences are the basic building blocks used to form more complex sentences. We will use uppercase Roman letters for atomic sentences in our logic system. There are only twenty-six letters of the alphabet, but there is no limit to the number of atomic sentences that we might want to have. By adding subscripts to letters, we obtain new atomic sentences. Here, for instance, are five different atomic sentences:
-	$$A, R, R_1, R_2, A_{234}$$
+Atomic sentences are the basic building blocks used to form more complex sentences. We will use uppercase Roman letters for atomic sentences in our logic system. If, by chance, we ever need more than twenty-six different atomic sentences, we can obtain additional ones by adding subscripts to letters. Here, for instance, are five different atomic sentences:
+	$$M, P, P_{\text{\tiny 1}}, P_{\text{\tiny 2}}, M_{\text{\tiny 17}}$$
 
 We will use atomic sentences to represent, or \emph{symbolize}, certain English sentences. To do this, we provide a \define{symbolization key}, such as the following.
 	\begin{ekey}
 		\item[A] It is raining outside
-		\item[C] Mary is miserable
+		\item[B] Mary is miserable
 	\end{ekey}
-When we do this, we are not fixing this symbolization once and for all. We are just saying that, for the time being, we will think of the atomic sentence `$A$' as symbolizing the English sentence `It is raining outside', and the atomic sentence, `$C$', as symbolizing the English sentence `Mary is miserable'. Later, when we are dealing with different sentences or different arguments, we can provide a new symbolization key; for instance, 
+When we do this, we are not fixing this symbolization once and for all. We are just saying that, for the time being, we will think of the atomic sentence `$A$' as symbolizing the English sentence `It is raining outside', and the atomic sentence, `$B$', as symbolizing the English sentence `Mary is miserable'. Later, when we are dealing with different sentences or different arguments, we can provide a new symbolization key; for instance, 
 	\begin{ekey}
-		\item[A] Jeff studies often.
-		\item[C] Jeff acts in lots of plays.
+		\item[A] Jeff stole the document.
+		\item[B] Jeff is in the safe house.
 	\end{ekey}
 
 
@@ -244,7 +233,7 @@ We will use this symbolization key:
 		\item[K] Kate is at school.
 		\item[S] Sarah is sleeping.
 	\end{ekey}
-When we symbolize these sentences we will use `$K$', `$S$', `$\enot$', and `$\eand$', but the two sentences do not have the same meaning, and so we can't symbolize them in exactly the same way.
+When we symbolize these sentences, we will use the same `$K$', `$S$', `$\enot$', and `$\eand$' for both. But,  since the two sentences do not have the same meaning, we can't symbolize them in exactly the same way.
 
 In sentence \ref{par1}, the `not' only applies to `Kate is at school.' Thus, this sentence becomes `$(\enot K \eand S)$'. In sentence \ref{par2}, the `it is not the case that' applies to the whole `Kate is at school and Sarah is sleeping'. We can tell this because the `it is not the case that' is before the `both', which signals the beginning of the conjunction. Hence, for this sentence, we need to put the `$\enot$' outside the parentheses like this: `$\enot (K \eand S)$'.
 
@@ -814,8 +803,8 @@ For each argument, write a symbolization key and symbolize all of the sentences 
 \ra{1.25}
 \begin{tabular}{@{}l l@{}}\toprule
 atomic sentences & $A,B,C,\ldots,Z$\\
-\enspace \textit{with subscripts if needed} & $A_1, A_2, A_3,A_4, \ldots, J_{10}, J_{11}, \ldots$\\
-logical operators & $\enot,\eand,\eor,\eif,\eiff$\\
+\enspace {with subscripts if needed} & $A_1, A_2, A_3,A_4, \ldots, J_{10}, J_{11}, \ldots$\\
+logical operators & $\enot, \eand, \eor, \eif, \eiff$\\
 parentheses &( , )\\
 \bottomrule
 \end{tabular}
@@ -844,17 +833,39 @@ Many expressions of TFL will be total gibberish. We want to know when an express
 		\item If \meta{A} and \meta{B} are sentences, then $(\meta{A}\eiff\meta{B})$ is a sentence.
 		\item Nothing else is a sentence.
 	\end{enumerate}
-\tcblower
+%\tcblower
+\hrule
+\medskip
 \footnotesize{Notice that \meta{A} and $A$ are different fonts. $A$ is an atomic sentence in TFL. \meta{A} is not, actually, part of TFL. Rather, it stands for any sentence in TFL. That sentence could be $A$ or it could be $(B \eif D)$ or anything else. This use of \textit{metavariables} is explained more fully in \S\ref{s:Metavariables}.}
 \end{factboxy}
 
-To use 1 -- 7, we have to examine each part of the TFL sentence before us. Let's take this one:
-
+From the previous chapter, you have the basic idea about how the logical operators are used. The simplest cases are when `$\eand$', `$\eor$', `$\eif$', or `$\eiff$' only connect two atomic sentences or when `$\enot$' is before a single atomic sentence, as we find here:  
 \begin{earg}
-\item[] $(P \eiff T) \eor Q$
+\item[] $(P \eiff Q)$
+\item[] $\enot R$
+\end{earg}
+But our logic system must be more complex than this to be useful. To see how we can create more complex sentences in TFL, we will start with these two sentences:
+\begin{earg}
+\item[] $(P \eand S)$
+\item[] $(R \eif T)$
+\end{earg}
+Now, let’s see how we would express ``$(P \eand S)$ \textit{or} $(R \eif T)$.'' Although 
+`$(P \eand S)$' and
+`$(R \eif T)$'
+are both composed of two atomic sentences and a logical operator, we can treat each as a unit and combine them with a `$\eor$’ like this:
+\begin{earg}
+\item[]$((P \eand S) \eor (R \eif T))$
+\end{earg}
+\noindent Similarly, we can express ``\textit{not} $(P \eand S)$'' by treating the `$(P \eand S)$' as a unit and adding a `$\enot$’:
+\begin{earg}
+\item[] $\enot(P \eand S)$
+\end{earg}
+We can even, if we need to do so, express ``\textit{not} $\enot(P \eand S)$'' by implementing the same procedure again. Now, `$\enot(P \eand S)$' is the unit and we add a `$\enot$’ to it:
+\begin{earg}
+\item[] $\enot\enot(P \eand S)$
 \end{earg}
 
-\noindent Rule (4) states that $\meta{A} \eor \meta{B}$ is a sentence if \meta{A} and \meta{B} are sentences. Here, `$(P \eiff T)$' is `$\meta{A}$', and `$Q$' is `$\meta{B}$'. So, now we have to determine if each of them is a sentence of TFL. According to (1), every atomic sentence---that is, every individual capital letter in this font: $A, B, C, \ldots$---is a sentence of TFL, and so `$Q$' is a sentence. And according to (6), `$(P \eiff T)$' is a sentence as long as `$P$' and `$T$' are both sentences---which they are since both are atomic sentences. Thus, `$(P \eiff T) \eor Q$' is a sentence of TFL. 
+These procedures can be used to form an infinite number of sentences of TFL. We just have to be sure that we are following rules 1 -- 7, given above.  And when following these rules, we must remember that $\meta{A}$ and $\meta{B}$ are units that can stand for either single atomic sentences or longer sentences. In fact, they can stand for sentences of any length.
 
 Ultimately, you want to be able to just look at an expression and tell whether or not it is a correctly formed sentence of TFL, and with time you will be able to do so. Here are some examples of sentences of TFL:
 \begin{earg}
@@ -875,15 +886,22 @@ These, on the other hand, are \textit{\textbf{not}} sentences of TFL because eac
 \item $(P \eand Q \eand R)$
 \end{earg}
 
-You will learn to recognize sentences of TFL more quickly if you write neatly and space the atomic sentences, logical operators, and parentheses as is shown in this textbook. Spaces are not actually part of TFL, and so technically, you don't need to use them. But just as you would never add or drop spaces when writing sentences in English, you should always do the same when using TFL.
+You will learn to recognize sentences of TFL more quickly if you write neatly and space the atomic sentences, logical operators, and parentheses as is shown in this textbook. Spaces are not actually part of TFL, and so technically, you don't need to use them. But just as you would never add or drop spaces when writing sentences in English, you should not add or drop spaces when using TFL.
 
 
 \section{The main logical operator}
 \label{main_logical_operator}
 
-Setting aside the `$\enot$' for a moment, each of the other logical operators, as you know, combine two sentences (which may, themselves, be composed of multiple sentences). The two sentences that are being combined by a logical operator comprise (with the operator itself) that operator's \define{scope}. 
+Setting aside the `$\enot$' for a moment, each of the other logical operators, as you know, combine two sentences (which may, themselves, be composed of multiple sentences). The two sentences that are being combined by a logical operator comprise that operator's \define{scope}. 
 
-So, the scope of the `$\eand$' in `$(P \eand Q)$' is the whole `$(P \eand Q)$'. And the scope of the `$\eand$' in `$((P \eand Q) \eif T)$' is still just the `$(P \eand Q)$'. The scope of the `$\eif$' in `$((P \eand Q) \eif T)$', meanwhile, is the whole `$((P \eand Q) \eif T)$'.
+\begin{factboxy}{Scope}
+For `$\eand$', `$\eor$', `$\eif$', and `$\eiff$', the \define{scope} of the logical operator is the two sentences that the logical operator is conjoining. 
+\smallskip
+
+For `\enot', the \define{scope} is the sentence being negated by this operator.
+\end{factboxy}
+
+So, the scope of the `$\eand$' in `$(P \eand Q)$' is the `$P$' and the `$Q$'. And the scope of the `$\eand$' in `$((P \eand Q) \eif T)$' is still just the `$P$' and the `$Q$'. The scope of the `$\eif$' in `$((P \eand Q) \eif T)$', meanwhile, is `$((P \eand Q)$' and `$T$'.
 
 
 
@@ -915,13 +933,13 @@ Here is a more complex example:
 $$(((T \eif P) \eand R) \eor (S \eiff Q))$$
 
 \begin{ebullet}
-	\item[] The scope of the `$\eif$' is $(T \eif P)$. 
-	\item[] The scope of the `$\eand$' is $((T \eif P) \eand R)$.
-	\item[] The scope of the `$\eiff$' is $(S \eiff Q)$.
-	\item[] The scope of the `$\eor$' is the whole $(((T \eif P) \eand R) \eor (S \eiff Q))$.
+	\item[] The scope of the `$\eif$' is `$T$' and `$P$'. 
+	\item[] The scope of the `$\eand$' is `$(T \eif P)$' and `$R$'.
+	\item[] The scope of the `$\eiff$' is `$S$' and `$Q$'.
+	\item[] The scope of the `$\eor$' is `$((T \eif P) \eand R)$' and `$(S \eiff Q)$'.
 \end{ebullet}
 
-When the scope of a logical operator is the entire sentence, then that logical operator is the \define{main logical operator}. So, in the previous example, the `$\eor$' is the main logical operator, and consequently, the sentence is a disjunction. (The subsentences are different kinds of sentences, but the whole sentence is a disjunction.)
+When the scope of a logical operator is the whole sentence (besides that operator itself), then that logical operator is the \define{main logical operator} for the sentence. So, in the previous example, the `$\eor$' is the main logical operator. This means that the sentence is a disjunction. (The subsentences are different kinds of sentences, but the whole sentence is a disjunction.)
 
 Being able to identify the main logical operator is very important for what you will be learning in parts 3 and 4 of this textbook, and so when you see a sentence of TFL, you always want to determine the scope of each logical operator and the identify the main logical operator. 
 
@@ -953,7 +971,11 @@ Unlike the other operators, the `$\enot$', doesn't connect two sentences; it jus
 And since, in each of these examples, the scope of the `$\enot$' is the whole sentence, the `$\enot$' is the main logical operator in each case.
 
 
-Ultimately, you want to be able to identify the main logical operator by just looking at a sentence and seeing what kind of sentence it is. If it is a conjunction, then part of the sentence will be one conjunct and the rest will be the other conjunct (and nothing will be left over). If it's a disjunction, then part of the sentence will be one disjunct and the rest will the other disjunct, again with nothing left over. If it's a conditional, then part of the sentence will be the antecedent and the rest will be the consequent. And if it's a negation, then the whole sentence (minus the `not' itself) is being negated.
+Once the main logical operator has been identified, we know what kind of sentence we have and what its components are. (This will be super important when we get to chapter \ref{s:BasicTFL}.)
+If it is a conjunction, then part of the sentence will be one conjunct and the rest will be the other conjunct (and nothing will be left over). If it's a disjunction, then part of the sentence will be one disjunct and the rest will the other disjunct, again with nothing left over. If it's a conditional, then part of the sentence will be the antecedent and the rest will be the consequent. And if it's a negation, then the whole sentence (minus the `not' itself) is being negated.
+
+
+\subsection{another way of indentifying the main logical operator}
 
 Alternatively, when the sentence includes the outermost brackets, you can find the main logical operator by using this method:
 \begin{ebullet}
@@ -1008,7 +1030,7 @@ Combining these two conventions, we can rewrite
 $$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
 this way:
 $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
-The scope of each connective is now much easier to identify.
+The scope of each logical operator is now much easier to identify.
 
 
 
@@ -1016,7 +1038,7 @@ The scope of each connective is now much easier to identify.
 % Exercises for sentences of TFL chapter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\filbreak
+%\filbreak
 
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
