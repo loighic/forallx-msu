@@ -25,22 +25,41 @@
 
 
 % FONTS
+\usepackage{fontspec}	% required for LuaLaTeX
 
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{fourier}
 
-\usepackage{fourier}
+\setromanfont[Mapping={tex-text}, 
+ 	Numbers={OldStyle},
+ 	Ligatures={Common},
+ 	ItalicFont={YaleNew-Italic.otf},
+ 	BoldFont={YaleNew-Bold.otf}]{YaleNew-Roman.otf}
+
+% 	ItalicFont={MinionPro-IT.otf},  %{YaleNew-Italic.otf},
+% 	BoldFont={MinionPro-Bold.otf}]{MinionPro-Regular.otf} 
+
+
+\setsansfont[Mapping=tex-text,
+	Ligatures={Common},
+	Numbers={OldStyle},
+	Scale=0.98,
+	BoldFont={lmsans10-bold.otf}]{lmsans10-regular.otf}  %     lmsansdemicond10-regular.otf  
+	%{Dubai-Light.ttf}			%{Montserrat-regular.ttf}		%BoldFont={Montserrat-semibold.ttf} {Dubai-regular.ttf} lmsans10-regular.otf
+%{Euphemia.ttf}  %{Trebuchet MS}1  {Arial Rounded MT Bold}  {Myriad Pro}??  {Unit-Medium} {Lucida Sans}  {Corbel}     
+
+\setmonofont[Mapping=tex-text,Scale=0.84]{Consola.ttf}  %{DejaVuSansMono} {PragmataPro} 		% Change the scale here as needed to match address.
+
+%% for math mode
+\usepackage{unicode-math}
+\setmathfont{Asana Math} % for math symbols, can be any other OpenType math font
+\setmathfont[range=\mathup]{YaleNew-Roman.otf}
+\setmathfont[range=\mathbfup]{YaleNew-Bold.otf}
+%\setmathfont[range=\mathbfit]{Minion Pro Bold Italic}
+\setmathfont[range=\mathit]  {YaleNew-Italic.otf}
+
 
 %\usepackage{mathpazo}  % math & text
-
-%----------------------------------------------------------
-%\usepackage[full]{textcomp}
-%\usepackage[sups,osf]{fbb} % osf (or tosf) for text, not math
-%%\usepackage[scaled=.95]{cabin} % sans serif
-%\usepackage[varqu,varl]{inconsolata} % sans serif typewriter
-%\usepackage[libertine,bigdelims,vvarbb]{newtxmath} % bb from STIX
-%\usepackage[cal=boondoxo]{mathalfa} % mathcal
-%----------------------------------------------------------
-
 
 %\usepackage[fulloldstylenums]{kpfonts}
 
