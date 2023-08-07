@@ -26,25 +26,24 @@
 
 % FONTS
 \usepackage{fontspec}	% required for LuaLaTeX
+\usepackage{hologo} % for \LuaLaTeX symbol
 
-%\usepackage[T1]{fontenc}
-%\usepackage{fourier}
 
-\setromanfont[Ligatures=TeX, 
+\setmainfont{YaleNew-Roman.otf}[Ligatures=TeX, 
  	Numbers={OldStyle},
  	Ligatures={Common},
  	ItalicFont={YaleNew-Italic.otf},
- 	BoldFont={YaleNew-Bold.otf}]{YaleNew-Roman.otf}
+ 	BoldFont={YaleNew-Bold.otf}]
 
 % 	ItalicFont={MinionPro-IT.otf},  %{YaleNew-Italic.otf},
 % 	BoldFont={MinionPro-Bold.otf}]{MinionPro-Regular.otf} 
 
 
-\setsansfont[Ligatures=TeX,
+\setsansfont{lmsans10-regular.otf}[Ligatures=TeX,
 	Ligatures={Common},
 	Numbers={OldStyle},
-	Scale=0.99,
-	BoldFont={lmsansdemicond10-regular.otf}]{lmsans10-regular.otf}
+	Scale=1.0,
+	BoldFont={lmsansdemicond10-regular.otf}]
 	
 	%{Montserrat-medium.ttf}]{Montserrat-regular.ttf}
 	%{Nunito-SemiBold.ttf}]{Nunito-Regular.ttf}
@@ -52,7 +51,7 @@
 	%{Dubai-Light.ttf}			%{Montserrat-regular.ttf}		%BoldFont={Montserrat-semibold.ttf} {Dubai-regular.ttf} lmsans10-regular.otf
 %{Euphemia.ttf}  %{Trebuchet MS}1  {Arial Rounded MT Bold}  {Myriad Pro}??  {Unit-Medium} {Lucida Sans}  {Corbel}     
 
-\setmonofont[Ligatures=TeX,Scale=0.84]{Consola.ttf}  %{DejaVuSansMono} {PragmataPro} 
+\setmonofont{Consola.ttf}[Ligatures=TeX,Scale=0.84]  %{DejaVuSansMono} {PragmataPro} 
 
 %% for math mode
 \usepackage{unicode-math}
@@ -63,17 +62,6 @@
 \setmathfont[range=\mathit]  {YaleNew-Italic.otf}
 
 
-%\usepackage{mathpazo}  % math & text
-
-%\usepackage[fulloldstylenums]{kpfonts}
-
-%\usepackage{cabin}									% default sans serif font
-
-
-%%% \usepackage[osf]{mathpazo} 							% Palatino with smallcaps and oldstyle numbers. This sets the serif font for the document.
-%\usepackage[osf]{Baskervaldx} 						% oldstyle figures
-%%% \usepackage[bigdelims,baskervaldx]{newtxmath} 
-%%%  \usepackage[cal=rsfso]{mathalpha}					% script for meta-variables ??
 
 % This allows spacing between letters (for the all caps subtitle and small caps). Use with \textls{letter-spaced text}
 \usepackage[tracking=smallcaps, letterspace=70]{microtype}
@@ -83,10 +71,18 @@
 % This is for the font for table headers. (Originally, I had san serif small caps, but fourier doesn't have that font, and so this is what I came up with.)
 \newcommand{\textth}[1]{\uppercase{\textls{\scriptsize{\textbf{#1}}}}}
 
-
 \usepackage[hang,flushmargin]{footmisc}   	% To prevent the first line of footnotes from being indented.
 
-% TABLES
+
+% This def is for the \Lua\LaTeX symbol. 
+\def\logosmaller#1{%
+  \hbox{\sbox\z@ L%
+    \vbox to\ht\z@{\hbox{\check@mathfonts
+      \fontsize\sf@size\z@
+      \math@fontsfalse\selectfont #1}\vss}}}
+
+
+%%%%%%%%%%%%%%%  TABLES
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{colortbl} 		% to color the rows (also requires xcolor)
@@ -152,7 +148,7 @@
 \setlength{\cftpartnumwidth}{3em}
 \setlength{\cftchapternumwidth}{2.2em}
 \setlength{\cftsectionnumwidth}{3.3em}
-\setlength{\cftbeforechapterskip}{1.9pt} %TB: to leave no gap between sections (which LaTeX regards as chapters) in the TOC. Tweak this if the items in the toc need a different page break.
+\setlength{\cftbeforechapterskip}{1.24pt} %TB: to leave no gap between sections (which LaTeX regards as chapters) in the TOC. Tweak this if the items in the toc need a different page break.
 \renewcommand{\cftpartfont}{\sffamily\bfseries}
 \renewcommand{\cftchapterfont}{\textsf}			%{\textrm}
 \renewcommand{\cftchapterpagefont}{\textrm}	% this is just for the page numbers in the TOC??
@@ -437,11 +433,11 @@ sidebyside,
 sidebyside align=top seam,
 bicolor,
 righthand width=4.33cm,
-colback=blue!4!white,
-colbacklower=blue!6!white,
+colback=blue!6!white,
+colbacklower=blue!14!white,
 colframe=blue!75!black,
-coltitle = black,
-colbacktitle= blue!23!white,
+coltitle = white,
+colbacktitle= blue!70!white,
 fonttitle={\sffamily \footnotesize},
 beforeafter skip=12pt,
 title=#1}

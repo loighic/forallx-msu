@@ -1,0 +1,631 @@
+\graphicspath{{figures--tt/}}
+
+%%%%%%%%%%%%%%%%% CHAPTER 11
+
+\chapter{Truth tables and validity}\label{c:tt-validity}
+
+\section{Validity}\label{s:tt-validity}
+
+Having examined the logical relations between two sentences in \S\ref{equivalence--tt} and \S\ref{consistency--tt}, we can now go a step further and consider the relationship between the premises and the conclusion of an argument. 
+%This begins with \define{entailment}.
+%\begin{factboxy}{Entailment}
+%The sentences $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ \define{entail} the sentence $\meta{C}$ if there is no valuation of the atomic sentences that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true and $\meta{C}$ false.
+%\end{factboxy}
+Recall the definition of \define{valid}. 
+\begin{factboxy}{valid}
+An argument is \define{valid} when (and only when) it is the case that if the premises are true, then the conclusion has to be true.
+\end{factboxy}
+
+
+
+% Next is this important observation: if $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$ is valid. 
+% Here's why entailment equals validity. If $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ entail $\meta{C}$, then there is no valuation that makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true while making $\meta{C}$ false. This means that it is \emph{impossible} for each of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ to be true and $\meta{C}$ to be false. And that is just what it takes for an argument with premises $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and conclusion $\meta{C}$ to be valid!
+% In short, we have a way to test whether an argument in English is valid. First, we symbolize the premises and conclusion in TFL. Then we test for entailment using truth tables. 
+
+When using a truth table to determine if an argument is valid, we list the premise or premises first, then, the turnstile symbol (`\proves'), and, finally, the conclusion. We will use `$\enot L \eif (M \eor L), \enot L \proves M$' as our example. 
+
+\begin{notebox}
+The symbol `$\proves$' is used to separate the premises from the conclusion in arguments in TFL. It can be read as \textit{therefore}.
+\end{notebox}
+
+\begin{center}
+\begin{tabular}{d d | f e e e e h | f h | g | f}
+$M$ & $L$ & \enot&$L$&\eif&$(M$&\eor&$L)$& \enot&$L$& \proves & $M$\\
+\hline
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T && \TTbf{T}\Tstrut\\
+ T & F & T & F & \TTbf{T} & T & T & F & \TTbf{T} & F && \TTbf{T}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T && \TTbf{F}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F && \TTbf{F}
+\end{tabular}
+\end{center}
+
+Once the truth table is completed for `$\enot L \eif (M \eor L), \enot L \proves M$', we investigate whether this argument satisfies (or violates) the definition of \textit{valid}. Ask yourself, ``When both premises are true, is the conclusion true?'' And ``Is there any line (that is, any valuation) where both premises are true and the conclusion is false?'' If the answer to the first question is always ``yes,'' then the argument is valid. If the answer to the second question is ever ``no,'' then the argument is invalid.
+
+As you can see, there is only one row where both `$\enot L \eif (M \eor L)$' and `$\enot L$' are true, and so that is the row that mainly concerns us. On that row, the conclusion is also true. Hence, `$\enot L \eif (M \eor L), \enot L \proves M$' is valid. 
+\begin{center}
+\begin{tabular}{d d | f e e e e h | f h | g | f}
+$M$ & $L$ & \enot&$L$&\eif&$(M$&\eor&$L)$& \enot&$L$& \proves & $M$\\
+\hline
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T && \TTbf{T}\Tstrut\\
+ T & F & T & F & \circled{\TTbf{T}} & T & T & F & \circled{\TTbf{T}} & F &\cm& \TTbf{T}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T && \TTbf{F}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F && \TTbf{F}
+\end{tabular}
+\end{center}
+
+When using truth tables to determine if an argument is valid, we will put `\cm' and `\xm' in the column under the turnstile. As just shown, when all of the premises are true and the conclusion is true, we put a `\cm' on that line beneath the turnstile. If, on a line, all of the premise are true and the conclusion is false, then we put a `\xm' beneath the turnstile. 
+
+Also (and \textbf{importantly!}), when there is a line where one or more of the premises are false, we put a `\cm' beneath the turnstile---whether the conclusion is true or false. An argument is valid when it is the case that \textit{if the premises are true}, then the conclusion has to be true. It doesn't matter if there are valuations (i.e., lines) where both premises are not true. Such lines don't violate our definition of \textit{valid}, and so they get a `\cm'. 
+
+% \begin{notebox}
+% To see that an argument containing a premise that is false can still be valid, consider this argument (which can't be translated into TFL, so don't try). 
+% \begin{earg}
+% \item[P1.] City A is larger than city B.
+% \item[P2.] City B is larger than city C.
+% \item[C.] Therefore, city A is larger than city C.
+% \end{earg}
+% Even though it can't be represented in TFL, this argument is clearly valid: if the premises are true, then the conclusion has to be true. And that doesn't change if, out there in the world (or in some parallel universe), city B is larger than city A.
+% \end{notebox}
+
+Completing our truth table we have this:
+\begin{center}
+\begin{tabular}{d d | f e e e e h | f h | g | f}
+$M$ & $L$ & \enot&$L$&\eif&$(M$&\eor&$L)$& \enot&$L$& \proves & $M$\\
+\hline
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T &\cm& \TTbf{T}\Tstrut\\
+ T & F & T & F & \circled{\TTbf{T}} & T & T & F & \circled{\TTbf{T}} & F &\cm& \TTbf{T}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T &\cm& \TTbf{F}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F &\cm& \TTbf{F}
+\end{tabular}
+\end{center}
+
+%% The `good and bad lines' box could go here.
+
+Now, let's make one small (but significant) change to the argument: $\enot L \eif (M \eor L)$, $\enot L \proves \enot M$. The premises are the same, but now the conclusion is $\enot M$ instead of $M$. 
+%Here is the truth table:
+%\begin{center}
+%\begin{tabular}{c c|d e e e e f|d f| c | c}
+%$M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$		&\proves		& $\enot M$\\
+%\hline
+% T & T & F & T & \TTbf{T} & T & T & T 	& \TTbf{F} 	& T 		&	& \TTbf{F}\Tstrut\\
+% T & F & T & F & \TTbf{T} & T & T & F 	& \TTbf{T} 	& F		&	& 	\TTbf{F}\\
+% F & T & F & T & \TTbf{T} & F & T & T 	& \TTbf{F} 	& T 		&	& \TTbf{T}\\
+% F & F & T & F & \TTbf{F} & F & F & F 	& \TTbf{T} 	& F 		&	& \TTbf{T}
+%\end{tabular}
+%\end{center}
+
+The truth values for the premises are the same, and the truth values for the conclusion have, on each line, flipped from T to F or vice versa. Now, when we evaluate each line, what do we find? As before, on lines 1, 3, and 4, one of the premises is false, and so they get a `\cm'. On line 2, the premises are true and the conclusion is false. That line gets a `\xm'! Because there is a line where the premises are true and the conclusion is false, `$\enot L \eif (M \eor L)$, $\enot L \proves \enot M$' is not valid. 
+\begin{center}
+\begin{tabular}{d d | f e e e e h | f h | g | f}
+$M$&$L$&\enot&$L$&\eif&$(M$&\eor&$L)$&\enot&$L$	&\proves				& $\enot M$\\
+\hline
+ T & T & F & T & \TTbf{T} & T & T & T & \TTbf{F} & T 		&	\cm					& \TTbf{F}\Tstrut\\
+ T & F & T & F & \circled{\TTbf{T}} & T & T & F & \circled{\TTbf{T}} & F 	& \xm	& \circled{\TTbf{F}}\\
+ F & T & F & T & \TTbf{T} & F & T & T & \TTbf{F} & T 		&	\cm					& \TTbf{T}\\
+ F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F 		&	\cm					& \TTbf{T}
+\end{tabular}
+\end{center}
+
+
+\begin{factboxy}{good and bad lines}\label{s:tt-good-lines}
+Let's call lines that violate the definition of \define{valid} \textit{bad lines} and the lines that do not \textit{good lines}.
+	\begin{enumerate}
+		\item[(1)] Any line where all of the premises are true and the conclusion is false \textbf{is a bad line}. Put an `\xm' on that line.
+		\item[(2)] Any line where all of the premises are true and the conclusion is true \textbf{is a good line}. Put a `\cm' on that line.
+		\item[(3)] Any line where the conclusion is true cannot be a bad line. (So, whatever the case may be with the premises, \textbf{it's a good line}.) Put a `\cm' on that line.
+		\item[(4)] Any line where at least one premise is false cannot be a bad line. So, \textbf{it's a good line}. Put a `\cm' on that line.
+	\end{enumerate}
+\end{factboxy}
+
+
+\section{Some examples}
+
+Here are some examples using truth tables to determine whether an argument is valid. As a reminder, the definition of valid is given in \S\ref{s:tt-validity}, and we can also use 1 -- 4 on p.~\pageref{s:tt-good-lines} (which are consequences of the definition). We will begin with arguments that have only one premise and then do some with multiple premises.
+
+\begin{earg}
+\item[\ex{1P-1}] First we will determine if `$P \eand Q \proves Q$' is valid. The premise, `$P \eand Q$', is only true on line 1. Since it is false on lines 2 -- 4, we know that those are good lines. (See guideline 4.) On line 1, `$P \eand Q$' is true and the conclusion, `$Q$', is true, and so that is also a good line. (See guideline 2.) Since every line is a good line, this argument is valid.
+\begin{center}
+\begin{tabular}{d d | f e h | g | f}
+$P$& $Q$& 	$P$& $\eand$& $Q$& $\proves$& $Q$\\
+\hline
+ T & T 	&   T& \TTbf{T} & T & \cm & \TTbf{T}\Tstrut\\
+ T & F 	&   T& \TTbf{F} & F & \cm & \TTbf{F}\\
+ F & T 	&   F& \TTbf{F} & T & \cm & \TTbf{T}\\
+ F & F 	&   F& \TTbf{F} & F & \cm & \TTbf{F} 
+\end{tabular}
+\end{center}
+
+\item[\ex{1P-2}]
+In `$\enot (P\eor Q) \proves \enot P \eand Q$', the premise is false on lines 1 -- 3, and so we know that those are good lines. On line 4, the premise is true and the conclusion is false, which means that line 4 is a bad line. (See guideline 1.) Since it has at least one bad line, this argument is not valid. 
+\begin{center}
+\begin{tabular}{d d | f e e h | g | f e e e}
+$P$& $Q$& 	$\enot$& $(P$& $\eor$& $Q)$& $\proves$& $\enot$& $P$& $\eand$& $Q$\\
+\hline
+ T & T 	&   \TTbf{F} & T & T& T& 	\cm & F& T& \TTbf{F}& T\Tstrut\\
+ T & F 	&   \TTbf{F} & T & T& F&	\cm & F& T& \TTbf{F}& F\\
+ F & T 	&   \TTbf{F} & F & T& T&	\cm & T& F& \TTbf{T}& T\\
+ F & F 	&   \TTbf{T} & F & F& F&	\xm & T& F& \TTbf{F}& F
+\end{tabular}
+\end{center}
+
+\item[\ex{2P-1}]Now an argument with two premises: `$P \eif Q, \enot Q \proves \enot P$'. Since both premise are not true on lines 1, 2, and 3, those are all good lines. On line 4, both premises are true and the conclusion is true, and so that is a good line. Since every line is a good line, this argument is valid.
+\begin{center}
+\begin{tabular}{d d | f e h | f h | g | f e}
+$P$ & $Q$ & $P$ & $\eif$ & $Q$ & $\enot$ & $Q$ & \proves & $\enot$ &$P$\\ 
+\hline
+T & T &   T &   \TTbf{T} &T   & \TTbf{F} &T & \cm &\TTbf{ F } &T\Tstrut\\ 
+T & F &   T &   \TTbf{F} &F   & \TTbf{T} &F & \cm & \TTbf{F } &T\\ 
+F & T &   F &   \TTbf{T} &T   & \TTbf{F} &T & \cm & \TTbf{T } &F\\ 
+F & F &   F &   \TTbf{T} &F   & \TTbf{T} &F & \cm & \TTbf{T } &F\\ 
+\end{tabular}
+\end{center}
+
+
+\item[\ex{2P-2}]
+Next, consider `$P\eif Q, P \eif \enot Q \proves P$'. Since the second premise is false on line 1 and the first premise is false on line 2, those are good lines. On line 3, both of the premises are true and the conclusion is false. That's a bad line. And then the same is also the case on line 4, and so that is a bad line also. Since two of the lines in this truth table are bad lines, the argument is invalid.
+\begin{center}
+\begin{tabular}{d d | f e e 	j e e e 	   j	  j }
+$P$ &$Q$ 	&$P$ & $\eif$ &$Q$,  	& $P$ & $\eif$ & $\enot$ &$Q$ & \proves	& $P$\\ 
+\hline
+T &T   &T &\TTbf{T} &T   &T &\TTbf{F} &F  &T & \cm &\TTbf{T}\Tstrut\\ 
+T &F   &T &\TTbf{F} &F    &T &\TTbf{T} &T &F  & \cm &\TTbf{T}\\ 
+F &T   &F &\TTbf{T} &T    &F &\TTbf{T} &F &T  & \xm &\TTbf{F}\\ 
+F &F   &F &\TTbf{T} &F    &F &\TTbf{T} &T &F  & \xm &\TTbf{F}\\ 
+\end{tabular}
+\end{center}
+
+\item[\ex{3P-1}] In the last argument, we have three premises. One of the premises is false on each of lines 1, 2, 4, 5, 7, and 8, and so those are all good lines. On line 3, all of the premises are true and the conclusion is true, and so that is a good line. On line 6, all of the premises are true but the conclusion is false, and so that is a bad line. Since one of the lines is a bad line, this argument is invalid. 
+\begin{center}
+\begin{tabular}{d d d | f e e     j e e		 j e e e 	   j 	  j }
+$P$& $Q$& $R$&  $P$& 	$\eor$& 	$Q$,&   $P$		&$\eif$	&$R$,		&$Q$		&$\eif$	&$\enot$	&$R$	&$\proves$& $R$\\ 
+\hline
+T& T& T &   T &\TTbf{T}& T   &   T &\TTbf{T}& T   &   T& \TTbf{F}& F& T&\cm   & \TTbf{T}\Tstrut\\ 
+T& T& F &   T &\TTbf{T}& T   &   T &\TTbf{F}& F   &   T& \TTbf{T}& T& F&\cm   & \TTbf{F}\\ 
+T& F& T &   T &\TTbf{T}& F   &   T &\TTbf{T}& T   &   F& \TTbf{T}& F& T&\cm   & \TTbf{T}\\ 
+T& F& F &   T &\TTbf{T}& F   &   T &\TTbf{F}& F   &   F& \TTbf{T}& T& F &\cm  & \TTbf{F}\\\arrayrulecolor{light-gray}\hline
+F& T& T &   F &\TTbf{T}& T   &   F &\TTbf{T}& T   &   T& \TTbf{F}& F& T&\cm   & \TTbf{T}\Tstrut\\ 
+F& T& F &   F &\TTbf{T}& T   &   F &\TTbf{T}& F   &   T& \TTbf{T}& T& F &\xm & \TTbf{F}\\ 
+F& F& T &   F &\TTbf{F}& F   &   F &\TTbf{T}& T   &   F& \TTbf{T}& F& T &\cm  & \TTbf{T}\\ 
+F& F& F &   F &\TTbf{F}& F   &   F &\TTbf{T}& F   &   F& \TTbf{T}& T& F &\cm  & \TTbf{F}\\
+\end{tabular}
+\end{center}
+
+\end{earg}
+
+
+\section{`$\proves$' versus `$\eif$'}
+
+When using truth tables to determine whether an argument is valid, it may help you to notice a similarity between `$\proves$' and `$\eif$'. As you know, a conditional is true under every circumstance except when the antecedent is true and the consequent if false. (So, when we have a `T' under the antecedent and an `F' under the consequent, we put an `F' under the `$\eif$'.) Meanwhile, in an argument, when all of  the premises are true and the conclusion is false, the argument is invalid. (So, for a specific line, when we have a `T' under every premise and an `F' under the conclusion, we put a `\xm' under the `$\proves$'.) 
+
+The reasoning here is similar. In both cases, we are violating the principle---of either the conditional or of a valid argument---when we have a false sentence that follows from a sentence or a set of sentences that are all true. Thus, if $\meta{A} \eif \meta{C}$ is false, then $\meta{A} \proves \meta{C}$ is invalid (and if $\meta{A} \proves \meta{C}$ is invalid, then $\meta{A} \eif \meta{C}$ is false). Conversely, whenever $\meta{A} \eif \meta{C}$ is true, then $\meta{A} \proves \meta{C}$ is valid (and vice versa). 
+
+
+
+\section{The limits of this type of analysis}\label{s:ParadoxesOfMaterialConditional}
+
+We have seen in chapters \ref{s:SemanticConcepts} and \ref{c:tt-validity} that truth tables are a useful tool for analyzing sentences---whether those are individual sentences, pairs of sentences, or arguments. There are limitations to this type of analysis, however, and it worth understanding some of those limitations.
+
+First, consider this argument:
+	\begin{earg}
+		\item Daisy has four legs.\\ 
+		Therefore, Daisy has more than two legs.
+	\end{earg}
+To symbolize this argument in TFL, we would have to use two different atomic sentences---perhaps `$F$' for the premise  and `$T$' for the conclusion. The English version of this argument is clearly valid, but `$F \proves T$' is just as clearly invalid. 
+\begin{center}
+\begin{tabular}{d d | f e e}
+$F$& $T$&  $T$& $\proves$& $F$\\ 
+\hline
+T& T& T&\cm&  T\Tstrut\\ 
+T& F& F&\cm&  T\\ 
+F& T& T&\xm&  F\\ 
+F& F& F&\cm&  F\\
+\end{tabular}
+\end{center} 
+Hence, we should keep in mind that while some English sentences can be effectively translated into TFL, not all can be.
+
+Next, consider this sentence:
+\begin{earg}
+\setcounter{eargnum}{1}
+\item\label{n:JohnBald} John is neither bald nor not-bald.
+\end{earg}
+This is symbolized in TFL as `$\enot(B \eor \enot B)$', and, as you can see  from the truth table, it is a contradiction. 
+\begin{center}
+\begin{tabular}{d | f e e e e}
+$B$&  $\enot$& ($B$& $\eor$& $\enot$& $B$)\\ 
+\hline
+T&  \TTbf{F}&   T& T& F& T\Tstrut\\ 
+F&  \TTbf{F}&   F& T& T& F\\  
+\end{tabular}
+\end{center} 
+But sentence \ref{n:JohnBald} does not seem like a contradiction. After all, someone could very well add ``John is on the borderline of baldness,'' which would (it seems) mean that sentence \ref{n:JohnBald} is true. But since TFL cannot represent a place between `$B$' and `$\enot B$', it cannot treat \textit{John is neither bald nor not-bald} as true.
+
+Third, let's think about this statement:
+\begin{earg}
+\setcounter{eargnum}{2}	
+\item\label{n:GodParadox}	It's not the case that, if God exists, he answers evil prayers.
+\end{earg}
+Symbolizing this in TFL, we have `$\enot (G \eif E)$'. As we can see from the truth table, `$\enot (G \eif E)$' \proves `$G$' is valid. 
+\begin{center}
+\begin{tabular}{d d | f e e e j j}
+$E$& $G$&  $\enot$& ($G$& $\eif$& $E$)& $\proves$& $G$\\ 
+\hline
+T& T&  \TTbf{F}&   T& T& T&\cm&    \TTbf{T}\Tstrut\\ 
+T& F&  \TTbf{F}&   F& T& T&\cm&    \TTbf{F}\\ 
+F& T&  \TTbf{T}&   T& F& F&\cm&    \TTbf{T}\\ 
+F& F&  \TTbf{F}&   F& T& F&\cm&   \TTbf{F}\\ 
+\end{tabular}
+\end{center} 
+So sentence \ref{n:GodParadox} seems to entail that God exists. But that's not what we expect. An atheist could believe that `It's not the case that, if God exists, he answers evil prayers' without accepting that God does, in fact, exist.
+
+It might be that sentence \ref{n:GodParadox}, despite appearances, does not express what we mean. We can try rephrasing it this way: 
+\begin{earg}
+\setcounter{eargnum}{3}	
+\item\label{n:GodParadox2} If God exists, he does not answer evil prayers.
+\end{earg}
+This we symbolize as `$G \eif \enot E$'. Now, as shown in the truth table on the left, `$G$' does not follow from this premise. (That is, the argument `$G \eif \enot E \proves G$' is invalid.) But, at the same time, from the premise `$\enot G$' (i.e., `God does not exist'), it follows that `if God exists, he answers evil prayers'.
+
+\bigskip 
+\noindent\begin{minipage}{.50\linewidth}
+\begin{center}
+\begin{tabular}{d d | f e e e j j} 
+$E$& $G$&  ($G$& $\eif$& $\enot$& $E$)& \proves& $G$\\ 
+\hline
+T& T&    T& \TTbf{F}& F& T&\cm&    \TTbf{T}\Tstrut\\ 
+T& F&    F& \TTbf{T}& F& T&\xm&    \TTbf{F}\\ 
+F& T&    T& \TTbf{T}& T& F&\cm&    \TTbf{T}\\ 
+F& F&    F& \TTbf{T}& T& F&\xm&    \TTbf{F}\\ 
+\end{tabular}
+\end{center} 
+%\medskip
+\end{minipage}
+\begin{minipage}{.50\linewidth}
+\begin{center}
+\begin{tabular}{d d | f e j j e e} 
+$E$& $G$&  $\enot$& $G$& $\proves$& ($G$& $\eif$& $E$)\\ 
+\hline
+T& T&  \TTbf{F}& T&\cm&    T& \TTbf{T}& T\Tstrut\\   
+T& F&  \TTbf{T}& F&\cm&    F& \TTbf{T}& T\\   
+F& T&  \TTbf{F}& T&\cm&    T& \TTbf{F}& F\\   
+F& F&  \TTbf{T}& F&\cm&    F& \TTbf{T}& F\\   
+\end{tabular}
+\end{center}  
+\end{minipage}
+\bigskip
+
+(We can also put these final two points as follows. When `$G$' is false, `$G \eif \enot E$' is true, and so we don't have to be committed to the existence of God to accept that `If God exists, he does not answer evil prayers'. But if `$G$' is false, then `$G \eif E$'---i.e., `If God exists, he answers evil prayers'---is true.)
+  
+In different ways, these three examples illustrate some of the limitations of using a language like TFL that can only handle truth-functional connectives. These limitations give rise to some interesting questions in philosophical logic, however. The case of John's baldness (or non-baldness) raises the general question of what logic we should use when dealing with \emph{vague} discourse. The case of God answering evil prayers illustrates some of the \emph{paradoxes of material implication}. 
+
+Part of the purpose of studying truth-functional propositional logic is to equip ourselves with the tools to explore these questions of philosophical logic. But we have to walk before we can run; and  so we have to become proficient using TFL before we can adequately discuss its limits and consider alternatives. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  exercises for `truth tables and validity'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\practiceproblems
+\section{Practice exercises}
+\setcounter{ProbPart}{0}
+
+\problempart
+\label{pr.TT.valid}
+Create a truth table for each argument and then determine if the argument is valid or invalid.
+\begin{earg}
+\item $A\eif A \proves A$\vspace{.5ex} %invalid
+\item $A\eif(A\eand\enot A) \proves \enot A$\vspace{.5ex} %valid
+\item $A\eor(B\eif A) \proves \enot A \eif \enot B$\vspace{.5ex} %valid
+\item $A\eor B, B\eor C, \enot A \proves B \eand C$\vspace{.5ex} %invalid
+\item $(B\eand A)\eif C, (C\eand A)\eif B \proves (C\eand B)\eif A$\vspace{.5ex} %invalid
+
+
+\item $A\eif B$, $B \proves  A$\vspace{.5ex} %invalid
+\item $A\eiff B$, $B\eiff C \proves A\eiff C$\vspace{.5ex} %valid
+\item $A \eif B$, $A \eif C\proves B \eif C$\vspace{.5ex} %invalid. 
+\item $A \eif B$, $B \eif A\proves A \eiff B$\vspace{.5ex} %valid. 
+
+
+\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \proves  A $\vspace{.5ex}%invalid
+\item $A\eor B$, $B\eor C$, $\enot B \proves A \eand C$\vspace{.5ex} %valid
+\item $A \eif B$, $\enot A\proves \enot B$ \vspace{.5ex}%invalid
+\item $A$, $B\proves \enot(A\eif \enot B)$ \vspace{.5ex}%valid
+\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\proves C$ \vspace{.5ex}%valid 
+\end{earg}
+
+
+\problempart
+\begin{earg}
+\item Suppose that $(\meta{A}\eand\meta{B})\eif\meta{C}$ is neither a tautology nor a contradiction. Is it possible to determine if $\meta{A}, \meta{B} \proves \meta{C}$ is valid or not? Explain.
+\item Suppose that \meta{A} is a contradiction. Is $\meta{A}, \meta{B} \proves \meta{C}$ valid or invalid? Explain.
+\item Suppose that \meta{C} is a tautology. Is $\meta{A}, \meta{B}\proves \meta{C}$ valid or invalid? Explain.
+\end{earg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  answers for `truth tables and validity'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Answers}
+\setcounter{ProbPart}{0}
+
+
+\problempart
+\label{pr.TT.valid}
+
+\begin{earg}
+\item $A\eif A \proves A$\\
+This argument is invalid.
+\myanswer{\begin{flushleft}
+\begin{tabular}{d | f e e   j  j}
+$A$ &$A$&$\eif$&$A$& \proves   &$A$\\
+\hline
+ T & T & \TTbf{T} & T& \cm  & T\Tstrut\\
+ F & F & \TTbf{T} & F& \xm  & F
+ \end{tabular}
+\end{flushleft}}\medskip
+
+\item $A\eif(A\eand\enot A) \proves \enot A$\\
+This argument is valid.
+\myanswer{\begin{flushleft}
+\begin{tabular}{d | f e e e e e   j  j e}
+$A$&$A$&$\eif$&$(A$&$\eand$&$\enot$&$A)$& \proves &$\enot$&$A$\\
+\hline
+ T & T & \TTbf{F} & T & F& F&T&\cm  &\TTbf{F}&T\Tstrut\\
+ F & F & \TTbf{T} & F & F&T&F&\cm  &\TTbf{T}&F
+\end{tabular}
+\end{flushleft}}\medskip
+
+\item $A\eor(B\eif A) \proves \enot A \eif \enot B$\\
+This argument is valid.
+\myanswer{\begin{flushleft}
+\begin{tabular}{d d | f e e e e    j   j e e e e}
+$A$ & $B$ & $A$&$\eor$&$(B$&$\eif$&$A)$& \proves &$\enot$&$A$&$\eif$&$\enot$&$B$\\
+\hline
+T & T & T & \TTbf{T} & T & T & T &\cm& F & T & \TTbf{T} & F & T\Tstrut\\
+T & F & T & \TTbf{T} & F & T & T &\cm& F & T & \TTbf{T} & T & F \\
+F & T & F & \TTbf{F} & T & F & F &\cm& T & F & \TTbf{F} & F & T \\
+F & F & F & \TTbf{T} & F & T & F &\cm& T & F & \TTbf{T} & T & F
+\end{tabular}
+\end{flushleft}}\medskip
+
+\filbreak
+
+\item $A\eor B, B\eor C, \enot A \proves B \eand C$\\
+This argument is invalid.
+\myanswer{\begin{flushleft}
+\begin{tabular}{d d d | f e e   j e e   j e   j  j e e}
+$A$ & $B$ & $C$ & $A$&$\eor$&$B$,&$B$&$\eor$&$C$,&$\enot$&$A$& \proves &$B$&$\eand$&$C$\\
+\hline
+T & T & T & T & \TTbf{T} & T & T & \TTbf{T} & T & \TTbf{F} & T &\cm& T & \TTbf{T} & T\Tstrut\\
+T & T & F & T & \TTbf{T} & T & T & \TTbf{T} & F & \TTbf{F} & T &\cm& T &\TTbf{F} & F \\
+T & F & T & T & \TTbf{T} & F & F & \TTbf{T} & T & \TTbf{F} & T &\cm& F & \TTbf{F} & T \\
+T & F & F & T & \TTbf{T} & F & F & \TTbf{F} & F & \TTbf{F} & T &\cm& F & \TTbf{F} & F\\\arrayrulecolor{light-gray}\hline
+T & T & T & F & \TTbf{T} & T & T & \TTbf{T} & T & \TTbf{T} & F &\cm& T & \TTbf{T} & T\Tstrut\\
+T & T & F & F & \TTbf{T} & T & T & \TTbf{T} & F & \TTbf{T} & F &\xm& T &\TTbf{F} & F \\
+T & F & T & F & \TTbf{F} & F & F & \TTbf{T} & T & \TTbf{T} & F &\cm& F & \TTbf{F} & T \\
+T & F & F & F & \TTbf{F} & F & F & \TTbf{F} & F & \TTbf{T} & F &\cm& F & \TTbf{F} & F
+\end{tabular}
+\end{flushleft}}\medskip
+
+\item $(B\eand A)\eif C, (C\eand A)\eif B \proves (C\eand B)\eif A$\\
+This argument is invalid.
+%\myanswer{\begin{flushleft}
+%\begin{tabular}{d d d | f e e e e   j e e e e   j   j e e e e}
+%$A$ & $B$ & $C$ & $(B$&$\eand$&$A)$&$\eif$&$C$,&$(C$&$\eand$&$A)$&$\eif$&$B$& \proves &$(C$&$\eand$&$ B)$&$\eif$&$A$\\
+%\hline
+%T & T & T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T &\cm& T & T & T & \TTbf{T} & T\Tstrut\\
+%T & T & F & T & T & T & \TTbf{F} & F & F & F & T & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & T\\
+%T & F & T & F & F & T & \TTbf{T} & T & T & T & T & \TTbf{F} & F &\cm& T & F & F & \TTbf{T} & T\\
+%T & F & F & F & F & T & \TTbf{T} & F & F & F & T & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & T\\\arrayrulecolor{light-gray}\hline
+%F & T & T & T & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & T &\xm& T & T & T & \TTbf{F} & F\Tstrut\\
+%F & T & F & T & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & F\\
+%F & F & T & F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F &\cm& T & F & F & \TTbf{T} & F\\
+%F & F & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & F
+%\end{tabular}
+%\end{flushleft}}
+
+
+%% This one leaves out the left side of the truth table to save space:
+
+\myanswer{\begin{flushleft}
+\begin{tabular}{| f e e e e   j e e e e   j   j e e e e}
+$(B$&$\eand$&$A)$&$\eif$&$C$,&$(C$&$\eand$&$A)$&$\eif$&$B$& \proves &$(C$&$\eand$&$ B)$&$\eif$&$A$\\
+\hline
+T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T &\cm& T & T & T & \TTbf{T} & T\Tstrut\\
+T & T & T & \TTbf{F} & F & F & F & T & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & T\\
+F & F & T & \TTbf{T} & T & T & T & T & \TTbf{F} & F &\cm& T & F & F & \TTbf{T} & T\\
+F & F & T & \TTbf{T} & F & F & F & T & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & T\\\arrayrulecolor{light-gray}\hline
+T & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & T &\xm& T & T & T & \TTbf{F} & F\Tstrut\\
+T & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & F\\
+F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F &\cm& T & F & F & \TTbf{T} & F\\
+F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & F
+\end{tabular}
+\end{flushleft}}
+\medskip
+
+
+\item $A\eif B$, $B \proves  A$\\ 
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j  j  j }
+$A$ & $B$ & $A$ & $\eif$ & $B$, & $B$ & $\proves$ & $A$\\
+\hline
+T & T &    T & T & T &    T &\cm& T\Tstrut\\
+T & F &    T & F & F &    F &\cm& T\\
+F & T &    F & T & T &    T &\xm& F\\
+F & F &    F & T & F &    F &\cm& F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\filbreak
+
+\item $A\eiff B$, $B\eiff C \proves A\eiff C$\\ 
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d d | f e e  j e e   j   j e e }
+$A$ & $B$ & $C$ & $A$ & $\eiff$ & $B$, & $B$ & $\eiff$ & $C$ & $\proves$ & $A$ & $\eiff$ & $C$\\
+\hline
+T & T & T &    T & T &  T &      T & T &  T   &\cm&   T & T &  T\Tstrut\\
+T & T & F &    T & T &  T &      T & F &  F   &\cm&   T & F &  F\\
+T & F & T &    T & F &  F &      F & F &  T   &\cm&   T  &T &  T\\
+T & F & F &    T & F &  F &      F & T &  F   &\cm&   T  &F &  F\\\arrayrulecolor{light-gray}\hline
+F & T & T &    F & F &  T &      T & T &  T   &\cm&   F & F &  T\Tstrut\\
+F & T & F &    F & F &  T &      T & F &  F   &\cm&   F & T &  F\\
+F & F & T &    F & T &  F &      F & F &  T   &\cm&   F & F &  T\\
+F & F & F &    F & T &  F &      F & T &  F   &\cm&   F & T &  F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A \eif B$, $A \eif C\proves B \eif C$\\ 
+This argument is invalid. 
+\begin{flushleft}
+\begin{tabular}{d d d | f e e  j e e   j   j e e }
+$A$ & $B$ & $C$ & $A$ & $\eif$ & $B$, & $A$ & $\eif$ & $C$ & $\proves$ & $B$ & $\eif$ & $C$\\
+\hline
+T & T & T &    T & T & T &      T & T & T   &\cm&   T & T & T\Tstrut\\
+T & T & F &    T & T & T &      T & F & F   &\cm&   T & F & F\\  
+T & F & T &    T & F & F &      T & T & T   &\cm&   F & T & T\\
+T & F & F &    T & F & F &      T & F & F   &\cm&   F & T & F\\\arrayrulecolor{light-gray}\hline
+F & T & T &    F & T & T &      F & T & T   &\cm&   T & T & T\Tstrut\\ 
+F & T & F &    F & T & T &      F & T & F   &\xm&   T & F & F\\
+F & F & T &    F & T & F &      F & T & T   &\cm&   F & T & T\\
+F & F & F &    F & T & F &      F & T & F   &\cm&   F & T & F
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A \eif B$, $B \eif A\proves A \eiff B$\\ 
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j e e  j  j e e }
+$A$ & $B$ & $A$ & $\eif$ & $B$, & $B$ & $\eif$ & $A$ & $\proves$ & $A$ & $\eiff$ & $B$\\
+\hline
+T & T &    T & T & T &     T & T & T  &\cm&   T & T &  T\Tstrut\\
+T & F &    T & F & F &     F & T & T   &\cm&   T & F &  F\\  
+F & T &    F & T & T &     T & F & F   &\cm&   F & F &  T\\
+F & F &    F & T & F &     F & T & F   &\cm&   F & T &  F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\filbreak
+
+\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \proves  A$\\ 
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d | f e e e e e e  j  j }
+$A$ & $A$ & $\eor$ & $\bigl[A$ & $\eif$ & $(A$ & $\eiff$ & $A)\bigr]$ & $\proves$ & $A$\\
+\hline
+T &    T & T &   T & T &   T & T &  T     &\cm& T\Tstrut\\
+F &    F & T &   F & T &   F & T &  F      &\xm& F
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A\eor B$, $B\eor C$, $\enot B \proves A \eand C$\\
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d d | f e e  j e e  j e  j  j e e }
+$A$ & $B$ & $C$ & $A$ & $\eor$ & $B$, & $B$ & $\eor$ & $C$, & $\enot$ & $B$ & $\proves$ & $A$ & $\eand$ & $C$\\
+\hline
+T & T & T &    T & T & T &      T & T & T &    F & T &\cm&   T & T & T\Tstrut\\
+T & T & F &    T & T & T &      T & T & F &    F & T &\cm&   T & F & F\\
+T & F & T &    T & T & F &      F & T & T &    T & F &\cm&   T & T & T\\
+T & F & F &    T & T & F &      F & F & F &    T & F &\cm&  T & F & F\\\arrayrulecolor{light-gray}\hline
+F & T & T &    F & T & T &      T & T & T &   F & T &\cm&   F & F & T\Tstrut\\
+F & T & F &    F & T & T &      T & T & F &   F & T &\cm&   F & F & F\\
+F & F & T &    F & F & F &      F & T & T &    T & F &\cm&   F & F & T\\
+F & F & F &    F & F & F &      F & F & F &    T & F &\cm&    F & F & F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A \eif B$, $\enot A\proves \enot B$\\
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j e   j   j e }
+$A$ & $B$ & $A$ & $\eif$ & $B$, & $\enot$ & $A$ & $\proves$ & $\enot$ & $B$\\
+\hline
+T & T &    T & T & T &    F & T &\cm& F & T\Tstrut\\
+T & F &    T & F & F &    F & T &\cm& T & F\\ 
+F & T &    F & T & T &    T & F &\xm& F & T\\ 
+F & F &    F & T & F &    T & F  &\cm&T & F
+\end{tabular}
+\end{flushleft}
+\medskip
+
+
+\item $A$, $B\proves \enot(A\eif \enot B)$\\
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d | f  j   j   j e e e e }
+$A$ & $B$ & $A$,& $B$ & $\proves$ & $\enot$ & $(A$ & $\eif$ & $\enot$ & $B)$\\
+\hline
+T & T &  T &  T &\cm& T &   T & F & F & T\Tstrut\\
+T & F &  T &  F &\cm& F &   T & T & T & F\\
+F & T &  F &  T &\cm& F &   F & T & F & T\\
+F & F &  F &  F &\cm&F  &  F & T & T & F
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\filbreak
+
+\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\proves C$\\
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d d | f e e e  j e e  j e e  j  f }
+$A$ & $B$ & $C$ & $\enot$ & $(A$ & $\eand$ & $B)$, & $A$ & $\eor$ & $B$, & $A$ & $\eiff$ & $B$ & $\proves$ & $C$\\
+\hline
+T & T & T &  F &   T & T & T &      T & T & T &      T & T &  T   &\cm& T\Tstrut\\
+T & T & F &  F &   T & T & T &      T & T & T &      T & T &  T   &\cm& F\\
+T & F & T &  T &   T & F & F &      T & T & F &      T & F &  F   &\cm& T\\
+T & F & F &  T &   T & F & F &      T & T & F  &     T & F &  F   &\cm& F\\\arrayrulecolor{light-gray}\hline
+F & T & T &  T &   F & F & T &      F & T & T &      F & F &  T   &\cm& T\Tstrut\\
+F & T & F &  T &   F & F & T &      F & T & T &      F & F &  T   &\cm& F\\ 
+F & F & T &  T &   F & F & F &      F & F & F &      F & T &  F   &\cm& T\\
+F & F & F &  T &   F & F & F &      F & F & F  &     F & T &  F   &\cm& F
+\end{tabular}
+\end{flushleft}
+\end{earg}
+
+\filbreak
+
+\problempart
+\begin{earg}
+\item Suppose that $(\meta{A}\eand\meta{B})\eif\meta{C}$ is neither a tautology nor a contradiction. Is it possible to determine if $\meta{A}, \meta{B} \proves \meta{C}$ is valid or not?
+\begin{ebullet}
+\item[] \myanswer{Since the sentence $(\meta{A}\eand\meta{B})\eif\meta{C}$ is not a tautology, there is some line on which it is false. Since it is a conditional, on that line, \meta{A} and \meta{B} are true and \meta{C} is false. Hence, the argument, `$\meta{A}, \meta{B} \proves\meta{C}$', is invalid.}
+\end{ebullet}
+
+\item Suppose that \meta{A} is a contradiction. Is $\meta{A}, \meta{B} \proves \meta{C}$ valid or invalid?
+\begin{ebullet}
+\item[] \myanswer{Since \meta{A} is false on every line of a truth table, there is no line on which \meta{A} and \meta{B} are true and \meta{C} is false. Hence, the argument is  valid. (Although that would be kind of an odd argument since we know that one of the premises is a contradiction.)}
+\end{ebullet}
+
+\item Suppose that \meta{C} is a tautology. Is $\meta{A}, \meta{B} \proves \meta{C}$ valid or invalid?
+\begin{ebullet}
+\item[] \myanswer{Since \meta{C} is true on every line of a complete truth table, there is no line on which \meta{A} and \meta{B} are true and \meta{C} is false. Hence, the argument is valid.}
+\end{ebullet}
+\end{earg}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

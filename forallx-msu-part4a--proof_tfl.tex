@@ -171,7 +171,7 @@ The conjunction introduction rule introduces a sentence with `$\eand$' as the ma
 
 \end{factboxy}
 
-When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$' (because `$\eor$' is the main logical operator). The same holds for all of the other rules. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}
+When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$' (because `$\eor$' is the main logical operator). The same holds for all of the other rules. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}\label{rule-proofs-main-operator}
 \bigskip
 
 \noindent We will now construct a couple of proofs using the two rules just introduced.  First, one for this argument: `$P \eand Q, \enot R \proves Q \eand \enot R$'.
@@ -239,7 +239,7 @@ When is this true? Recall from \S \ref{s:ConnectiveDisjunction} that we are usin
 	\item[(b)] \textit{Jeff is eating a burrito} is true, or 
 	\item[(c)] both are true. 
 \end{ebullet}
-That's a lot of options, but if all we know is that Sarah is swimming or Jeff is eating a burrito, then we don't know precisely what either one of them is doing. But let's say that someone (whom we trust completely) tells us that, actually, Sarah is \textit{not} swimming. That piece of information about Sarah, then, let's us safely infer that Jeff is eating a burrito. This reasoning process is captured by the \define{disjunction elimination rule}.
+That's a lot of options, but if all we know is that Sarah is swimming \textit{or} Jeff is eating a burrito, then we don't know precisely what either one of them is doing. But let's say that someone (whom we trust completely) tells us that, actually, Sarah is \textit{not} swimming. This piece of information about Sarah, then, let's us safely infer that Jeff is eating a burrito. This reasoning process is an example of the \define{disjunction elimination rule}.
 
 \medskip
 % \begin{tcbraster}[raster columns=2, raster valign=top]
@@ -323,9 +323,9 @@ And then last, we use the disjunction introduction rule to get the conclusion.
 %\end{proof}
 
 \subsection{Introduction and elimination}
-When you use the rules that are given in this chapter, you are applying the \textit{patterns} given in the definition of each rule. Every pattern is different, and so you have make sure that you understand each one. But you don't, actually, have to think beyond the patterns---although you can, and some people find it helpful to think about how the rules of derivation conform to what you learned about each logical operator in the chapter on the characteristic truth tables (chapter \ref{s:CharacteristicTruthTables}).
+When you use the rules that are in this chapter, you are applying the \textit{patterns} given in the definition of each rule. Every pattern is different, and so you have to make sure that you understand each one. But you don't, actually, have to think beyond the patterns---although you can, and some people find it helpful to think about how the rules of derivation conform to what you learned about each logical operator in the chapter on the characteristic truth tables (chapter \ref{s:CharacteristicTruthTables}).
 
-It can also be useful to understand why we call these \textit{introduction} and \textit{elimination} rules. (Or, at least, it's useful not to misunderstand why we use these terms.) The introduction rules are given that name because, in each case, we introduce a logical operator. For instance, if a proof begins this way: 
+It can also be useful to understand why we call these \textit{introduction} and \textit{elimination} rules. (Or, at least, it's useful not to misunderstand why we use these terms.) The introduction rules are given this name because, in each case, we introduce a logical operator. For instance, if a proof begins this way: 
 
 \begin{proof}
 	\hypo{p}{P} \pr{}
@@ -338,19 +338,19 @@ It can also be useful to understand why we call these \textit{introduction} and 
 	\have[3]{pq}{P\eand Q} \ai{p,q}
 \end{proof}
 
-The elimination rules, meanwhile, all, in a way, eliminate a logical operator. That's not a perfect explanation, however, because the TFL sentence containing the logical operator still exists (and can be used). But, nonetheless, when we use an elimination rule we take a subsentence that is on one side of a logical operator and put it on a line by itself---so the logical operator (and the other side of the sentence) is gone from what's on the new line. For instance, if we have this:
+The elimination rules, meanwhile, all, in a way, eliminate a logical operator. It might, however, be more useful to think of these as \textit{extraction} rules because, really, what they do is allow us to extract a part of a sentence and put it on a new line. For instance, if we have this:
 
 \begin{proof}
 	\hypo{rt}{R \eand T} \pr{}
 \end{proof}
 
-\noindent then we can put the `$R$' on a new line by itself:
+\noindent then we can use the \&E rule to take the `$R$' and put it on a line by itself:
 
 \begin{proof}
 	\have[2]{r}{R} \ae{rt}
 \end{proof}
 
-\noindent The `$R \eand T$' is still on line 1 and can be used again in the proof, and so it definitely hasn't been eliminated.  Hence, we might think of the elimination rules as \textit{extraction} rules rather than elimination rules, but \textit{elimination} is the commonly used term, and so we will stick with it. 
+\noindent We might think of this as having eliminated the `$\eand$', and, in a way, that's what we have done. But the `$R \eand T$' is still on line 1 and can be used again in the proof. Hence, \textit{extraction rules} is a little more accurate than \textit{elimination rules}, but \textit{elimination} is the commonly used term, and so we will stick with it. 
 
 
 \subsection{Double negation}\label{subsection-DN}
@@ -552,6 +552,9 @@ We will now look at some proofs that use the rules that are covered in \S\S \ref
 	\have{c}{Q \eand R} \ai{r,q}
 \end{proof}\medskip
 
+
+%\pagebreak
+
 \item[\ex{14.6.4}] For a proof of `$R \eiff T, P \eor T, \enot P \proves R$', we use the disjunction elimination rule and the biconditional elimination rule.
 \begin{proof}
 	\hypo{p1}{R \eiff T} \pr{}
@@ -560,6 +563,7 @@ We will now look at some proofs that use the rules that are covered in \S\S \ref
 	\have{t}{T} \oe{p2,p3}
 	\have{c}{R} \be{p1,t}
 \end{proof}\medskip
+
 
 \item[\ex{14.6.2b}] For `$C \eand (D \eor \enot F), F \eand G \proves C \eand (D \eor H)$', we use all five of the rules introduced in \S\S \ref{s:conj-rule} and \ref{s:disj-rule}.
 \begin{proof}
@@ -574,6 +578,8 @@ We will now look at some proofs that use the rules that are covered in \S\S \ref
 	\have{con}{C \eand (D \eor H)} \ai{c,dh}
 \end{proof}\medskip
 
+
+\begin{minipage}{10cm}
 \item[\ex{14.6.5}] For a proof of `$(R \eand T) \eif Q, T \eand S, R \proves Q$', we use the conjunction elimination, conjunction introduction, and conditional elimination rules.
 \begin{proof}
 	\hypo{p1}{(R \eand T) \eif Q} \pr{}
@@ -583,6 +589,7 @@ We will now look at some proofs that use the rules that are covered in \S\S \ref
 	\have{rt}{R \eand T} \ai{p3,t}
 	\have{c}{Q} \ce{p1,rt}
 \end{proof}\medskip
+\end{minipage}
 
 \item[\ex{14.6.6}] For a proof of `$P \eiff (R \eor S), T \eif R, Q \eand T \proves P$', we use the conjunction elimination, conditional elimination, disjunction introduction, and biconditional introduction rules.
 \begin{proof}
@@ -595,7 +602,7 @@ We will now look at some proofs that use the rules that are covered in \S\S \ref
 	\have{c}{P} \ce{p1,r}
 \end{proof}\medskip
 
-\item[\ex{14.6.7}] And last, a proof for $$(S \eif T) \eor \enot R, (T \eif S) \eor Q, R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the double negation rule, the disjunction elimination rule, and the biconditional introduction rule.
+\item[\ex{14.6.7}] And last, a proof for this argument: $$(S \eif T) \eor \enot R, (T \eif S) \eor Q, R \eand \enot Q \proves T \eiff S$$ requires the conjunction elimination rule, the double negation rule, the disjunction elimination rule, and the biconditional introduction rule.
 \begin{proof}
 	\hypo{p1}{(S \eif T) \eor \enot R} \pr{}
 	\hypo{p2}{(T \eif S) \eor Q} \pr{}
@@ -725,6 +732,7 @@ With the `$Q$' on line 4 and `$Q \eif R$' on line 2, we can use the conditional 
 	\close
 	\have{pr}{P \eif R}\ci{p-r}
 \end{proof}
+\bigskip
 
 \item Next, let's construct a proof for this argument: `$F \eif (G \eand H) \proves F \eif G$'. We proceed this way:
 
@@ -737,6 +745,7 @@ With the `$Q$' on line 4 and `$Q \eif R$' on line 2, we can use the conditional 
 	\close
 	\have{fg}{F \eif G}\ci{f-g}
 \end{proof}
+\bigskip
 
 \item As you know, the biconditional elimination rule is similar to the conditional elimination rule. (But they are not the same. See p.~\pageref{ce-rule} to compare them.) We should also, however, be able to start with a biconditional, say `$B \eiff C$' and derive either of the conditionals: `$B \eif C$' or `$C \eif B$'. This is easily done with the conditional introduction rule.
 \begin{proof}
@@ -749,6 +758,7 @@ With the `$Q$' on line 4 and `$Q \eif R$' on line 2, we can use the conditional 
 \end{proof}
 \smallskip
 \noindent And, with a similar proof, we can also derive `$C \eif B$'.
+\bigskip
 
 \item In the proof for `$\enot P \eor (R \eand Q) \proves P \eif Q$', we will use the conditional introduction rule as well as double negation rule and disjunction-elimination rule. 
 
@@ -848,7 +858,7 @@ When using either of the negation rules, the last two lines of the subproof must
 
 \subsection{Reiteration}
 
-To get a contradiction on the last two lines of a subproof, you will usually have to move a sentence that is on an earlier line to the last or second-to-last line of the subproof. This is done with the \define{reiteration rule}. Just as the double negation rule is a rule of convenience that sometimes compliments the disjunction elimination rule, the reiteration rule is a rule of convenience that compliments the negation elimination and negation introduction rules.  
+To get a contradiction on the last two lines of a subproof, we will usually have to move a sentence that is on an earlier line to the last or second-to-last line of the subproof. This is done with the \define{reiteration rule}. Just as the double negation rule is a rule of convenience that sometimes compliments the disjunction elimination rule, the reiteration rule is a rule of convenience that compliments the negation elimination and negation introduction rules.  
 
 \begin{factboxy-width}[width=7.5cm]{reiteration rule}
 \begin{proof}
@@ -925,7 +935,6 @@ The negation introduction rule or the negation elimination rule is used in each 
 \medskip
 
 
-
 \item $P \eif \enot Q \proves \enot(P \eand Q)$
 
 \begin{proof}
@@ -940,6 +949,7 @@ The negation introduction rule or the negation elimination rule is used in each 
 \end{proof}
 \medskip
 
+\begin{minipage}{10cm}
 \item $B \eand C, \enot(B \eand D) \proves \enot D$
 
 \begin{proof}
@@ -954,8 +964,8 @@ The negation introduction rule or the negation elimination rule is used in each 
 	\have{c}{\enot D} \ni{a-p2b}
 \end{proof}
 \medskip
+\end{minipage}
 
-\filbreak
 
 \item The proof for `$\enot P \proves P \eif Q$' requires two subproofs. First, we assume `$P$' so that we can use the conditional introduction rule at the end of the proof. Then, we assume `$\enot Q$' so that we can use the negation elimination rule and get `$Q$' on the last line of the first subproof.
 
@@ -974,6 +984,8 @@ The negation introduction rule or the negation elimination rule is used in each 
 \end{proof}
 \medskip
 
+
+\begin{minipage}{10cm}
 \item The proof for  `$Q \eor S, Q \eif T, S \eif T \proves T$' also requires two subproofs. 
 
 \begin{proof}
@@ -994,7 +1006,7 @@ The negation introduction rule or the negation elimination rule is used in each 
 	\close
 	\have{c}{T} \ne{nt-nt3}
 \end{proof}
-\medskip
+\end{minipage}
 
 \end{earg}
 
@@ -1053,7 +1065,7 @@ Give a proof for each argument.
 \item $\enot(P \eif Q) \proves \enot Q$\smallskip
 \item $S \eiff T \proves S \eiff (T \eor S)$\smallskip 
 \item $D \eor F, D \eif G, F \eif H \proves G \eor H$\smallskip
-\item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
+%\item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
 \end{earg}
 
 
@@ -1365,7 +1377,7 @@ Give a proof for each argument.
 \medskip
 
 
-\filbreak
+\begin{minipage}{10cm}
 \item $D \eor F, D \eif G, F \eif H \proves G \eor H$ 
 \begin{proof}
 	\hypo{p1}{D \eor F} \pr{}
@@ -1387,7 +1399,9 @@ Give a proof for each argument.
 	\close
 	\have{con}{G \eor H} \ne{as-ngh2}
 \end{proof}
+\end{minipage}
 
+\begin{comment}
 \filbreak
 \item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
 \begin{proof}
@@ -1417,6 +1431,7 @@ Give a proof for each argument.
 	\close
 \have{con}{W \eor Y} \ne{nwy-nwy4}
 \end{proof}
+\end{comment}
 
 \end{earg}
 \bigskip
@@ -1741,12 +1756,17 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  answers
 
+\newpage
+
 \section{Answers}
 \setcounter{ProbPart}{0}
 
-
 \problempart
+
+
 \begin{earg}
+
+\begin{minipage}{10cm}
 \item $\proves O \eif O$
 \begin{proof}
 \open
@@ -1756,6 +1776,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \have{con}{O \eif O}\ci{o-o2}
 \end{proof}
 \bigskip
+\end{minipage}
 
 
 \item $\proves S \eif (S \eor R)$
@@ -1788,6 +1809,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \bigskip
 
 
+\begin{minipage}{10cm}
 \item $\proves \enot((R \eor T) \eand (\enot R  \eand \enot T))$
 \begin{proof}
 \open
@@ -1801,6 +1823,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \have{con}{\enot((R \eor T) \eand (\enot R  \eand \enot T))} \ni{ncon-t}
 \end{proof}
 \bigskip
+\end{minipage}
 
 \item $\proves (R \eiff M) \eif (M \eif R)$
 \begin{proof}
@@ -1816,9 +1839,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{proof}
 \bigskip
 
-
-
-\filbreak
+\begin{minipage}{10cm}
 \item $\proves J \eiff (J\eor (L \eand \enot L))$
 \myanswer{\begin{proof}
 \open
@@ -1841,10 +1862,10 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \have{con}{J \eiff (J\eor (L \eand \enot L))}\bi{cond1,cond2}
 \end{proof}}
 \bigskip
+\end{minipage}
 
 
-\filbreak
-
+\begin{minipage}{10cm}
 \item $\proves (P \eif Q) \eor (Q \eif P)$
 \begin{proof}
 \open
@@ -1870,7 +1891,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \have{con}{(P \eif Q) \eor (Q \eif P)} \ne{ncon-ncon2}
 \end{proof}
 \bigskip
-
+\end{minipage}
 
 %\filbreak
 %\item $((A \eif B) \eif A) \eif A$ 

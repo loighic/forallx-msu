@@ -154,9 +154,9 @@ To begin, we need an atomic sentence. This will be our symbolization key:
 	\begin{ekey}
 		\item[B] Mary is in Barcelona.
 	\end{ekey}
-$B$ is the first sentence listed above, and so that is all that we need to symbolize that English sentence. 
-
-The second sentence is partially symbolized as `It is not the case that $B$'. In order to complete the symbolization, we need a symbol for `it is not the case that'. Or, put differently, a symbol that, when added to $B$ will express `the negation of $B$'. We will use `\enot' and symbolize sentence \ref{not2} as `$\enot B$'.
+	
+$B$ is sentence \ref{not1}, and so we don't need to do anything else there. 
+The second sentence is partially symbolized as `It is not the case that $B$'. In order to complete the symbolization, we need a symbol for `it is not the case that'. Or, put differently, we need a symbol that, when added to $B$, will express `the negation of $B$'. We will use `\enot' and symbolize sentence \ref{not2} as `$\enot B$'.
 
 Sentence \ref{not3} also contains the word `not', and it is equivalent to sentence \ref{not2}. As such, we can also symbolize it as `$\enot B$'.
 
@@ -205,7 +205,7 @@ Sentence \ref{and1} can be partially symbolized as `A and B'. To symbolize the `
 Although it is worded differently, sentence \ref{and2} has the same meaning as sentence \ref{and1}. Thus, it is also symbolized as `$(A\eand B)$'.
 Notice that we don't symbolize the word `also' in sentence \ref{and1} or `both' in \ref{and2}. Words like `both' and `also' function to draw our attention to the fact that two sentences are being joined to form a conjunction. They may affect the emphasis of a sentence in English, but we don't (and can't) symbolize such terms in TFL. 
 
-For sentence \ref{and3}, let's first symbolize `Adam is not athletic' as `$\enot A$'. `Barbara is' means `Barbara is athletic', and so that subsentence is symbolized as `$B$'. \textit{But} may have a slightly different meaning in English than \textit{and}, but, grammatically, they serve the same role: to join two sentences to form a conjunction. Putting this altogether, sentence \ref{and3} is symbolized as `$(\enot A \eand B)$'.
+For sentence \ref{and3}, let's first symbolize `Adam is not athletic' as `$\enot A$'. `Barbara is' means `Barbara is athletic', and so that subsentence is symbolized as `$B$'. `But' may have a slightly different meaning in English than `and', but, grammatically, they serve the same role: to join two sentences to form a conjunction. Putting this altogether, sentence \ref{and3} is symbolized as `$(\enot A \eand B)$'.
 
 
 \begin{factboxy}{Conjunction}
@@ -222,21 +222,19 @@ A sentence can be symbolized as $(\meta{A}\eand\meta{B})$ if it can be paraphras
 	
 \subsection{Parentheses}
 
-Although we will relax this requirement later, a conjunction in TFL should be enclosed in parentheses. (A negation like `$\enot B$' should not, though.) The purpose of the parentheses is to let us be perfectly explicit about how each logical operator is related to each sentence letter. We will see more illustrations of this once we have introduced all of the logical operators, but consider these two English sentences:
+Although we will relax this requirement later, a conjunction in TFL should be enclosed in parentheses. (A negation---for instance, `$\enot P$'---should not, though.) The purpose of the parentheses is to let us be perfectly explicit about how each logical operator is related to each sentence letter. We will see more illustrations of this once we have introduced all of the logical operators, but consider these two English sentences, and think about whether they have the same or different meanings:
 \begin{earg}
 	\item[\ex{par1}] Kate is not at school, and Sarah is sleeping.
 	\item[\ex{par2}] It is not the case that both Kate is at school and Sarah is sleeping.
 \end{earg}
-
 We will use this symbolization key:
 	\begin{ekey}
 		\item[K] Kate is at school.
 		\item[S] Sarah is sleeping.
 	\end{ekey}
-When we symbolize these sentences, we will use the same `$K$', `$S$', `$\enot$', and `$\eand$' for both. But,  since the two sentences do not have the same meaning, we can't symbolize them in exactly the same way.
+Sentences \ref{par1} and \ref{par2} do not have the same meaning, and so we can't symbolize them in exactly the same way.
 
 In sentence \ref{par1}, the `not' only applies to `Kate is at school.' Thus, this sentence becomes `$(\enot K \eand S)$'. In sentence \ref{par2}, the `it is not the case that' applies to the whole `Kate is at school and Sarah is sleeping'. We can tell this because the `it is not the case that' is before the `both', which signals the beginning of the conjunction. Hence, for this sentence, we need to put the `$\enot$' outside the parentheses like this: `$\enot (K \eand S)$'.
-
 
 
 \section{Disjunction}
@@ -258,10 +256,10 @@ To represent the `or' in sentences \ref{or1} and \ref{or2}, we will use the symb
 Sentence \ref{or2} is only slightly more complicated. We can paraphrase it as `Either Amy is at the train station, or Sarah is at the train station', and then we symbolize it as `$(A \eor S)$'.
 
 \begin{factboxy}{Disjunction}
-		A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.' Each of the disjuncts must be a sentence.
+A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.' Each of the disjuncts must be a sentence.
 \end{factboxy}
 
-\subsection{The inclusive or}
+\subsection{The inclusive or}\label{inclusive-or-1}
 
 Sometimes in English, the word `or' is used in a way that excludes the possibility that both disjuncts are true. This is called an \define{exclusive or}.  An \emph{exclusive or} is clearly intended when it says on a restaurant menu ``Entrees come with either soup or salad.'' This means that, with your entree, you may have soup or you may have salad, but you cannot have both.
 
@@ -279,15 +277,17 @@ Think about these sentences:
 	\end{earg}
 Sentence \ref{or3} is symbolized as `$(\enot A \eor \enot S)$'. Sentences \ref{or4} and \ref{or.xor} are a little trickier. 
 
-According to \ref{or4} will either one be at the train station? The answer is `no'. If we paraphrase this sentence, then, we get this: 
+According to \ref{or4}, is either one at the train station? No. So, when when we paraphrase it we get this: 
 \begin{ebullet}
 	\item[] It is not the case that either Amy is at the train station or Sarah is at the train station. 
 \end{ebullet}
 As our paraphrased sentence shows, we are negating the entire disjunction. Hence, we symbolize sentence \ref{or4} as `$\enot (A \eor S)$'. 
 
-Sentence \ref{or.xor} expresses the meaning of the exclusive-or: one or the other, but not both. But our symbol, `$\eor$', represents the inclusive-or. So, how do we express this sentence in TFL? We break the sentence into two parts. The first part, `Amy is at the train station or Sarah is at the train station', is symbolized as `$(A \eor S)$'. The second part, which states that both won't be there, is paraphrased this way: `It is not the case that both Amy is at the train station and Sarah is at the train station'. This, we symbolize as `$\enot(A \eand S)$'. Now, we just need to put the two parts together. As we saw above, `but' can usually be symbolized with `$\eand$'. Therefore, sentence \ref{or.xor} is `$((A \eor S) \eand  \enot(A \eand S))$'.
+Sentence \ref{or.xor} expresses the meaning of the \textit{exclusive-or}: one or the other, but not both. The `$\eor$', however, represents the \textit{inclusive-or}: one or the other, or both. Therefore, to represent \ref{or.xor} in TFL, we need to break the sentence into two parts. 
 
-These last two examples demonstrate that we can symbolize English sentences that, at first, appear not to be using the logical operators of TFL. We can do this as long as we can paraphrase the English sentences so that they are using the logical operators that we have. 
+The first part, `Amy is at the train station or Sarah is at the train station', is symbolized as `$(A \eor S)$'. The second part, which states that both won't be there, is paraphrased this way: `It is not the case that both Amy is at the train station and Sarah is at the train station'. This, we symbolize as `$\enot(A \eand S)$'. We put the two parts together with an `and', and sentence \ref{or.xor} becomes `$((A \eor S) \eand  \enot(A \eand S))$'.
+
+These last two examples demonstrate that we can sometimes symbolize English sentences that, at first, appear not to be using the logical operators of TFL. We can do this as long as we can figure out a way to paraphrase the English sentence so that it is using some combination of `\textit{and}', `\textit{or}' (i.e., the inclusive-or), `\textit{not}', `\textit{if \ldots, then \ldots}', and `\textit{if and only if}'. 
 
 
 \section{Conditional}
@@ -306,7 +306,7 @@ Sentence \ref{if1} has this form: `if P, then F', and we call this type of sente
 In a conditional, what goes before the `$\eif$'  is called the \define{antecedent}, and what comes after the `$\eif$' is called the \define{consequent}. So, in sentence \ref{if1}, `Jean is in Paris' is the antecedent, and `Jean is in France' is the consequent.
 
 \begin{factboxy}{Conditional}
-		A sentence can be symbolized as $\meta{A} \eif \meta{B}$ if it can be paraphrased in English as `If A, then B'.
+A sentence can be symbolized as $\meta{A} \eif \meta{B}$ if it can be paraphrased in English as `If A, then B'.
 \end{factboxy}
 
 Many English expressions can be represented using the conditional, and the most common alternatives to `if $\meta{A}$, then $\meta{B}$' are listed in table \ref{table.conditional.English}. If you think about it, you'll see that all six of the sentences in the table have the same meaning, and so they can all be symbolized as `($\meta{A} \eif \meta{B}$)'. (Or, in this case, as `($P \eif F$)'.)
@@ -350,7 +350,7 @@ Now, let's probe a little further into the meaning of `if and only if' with a di
 We will use this symbolization key:
 	\begin{ekey}
 		\item[S] Mary has a sunburn.
-		\item[B] Mary wen to the beach.
+		\item[B] Mary went to the beach.
 	\end{ekey}
 From the previous section, you know that we symbolize sentences \ref{iff2} and \ref{iff3} like this:
 	\begin{earg}
@@ -359,7 +359,7 @@ From the previous section, you know that we symbolize sentences \ref{iff2} and \
 	\end{earg}
 Sentence \ref{iff4}, then, is a conjunction created by combining \ref{iff2} and \ref{iff3}: 
 	\begin{earg}
-		\item[\ref{iff4}.] $(S \eif B) \eand (B \eif S)$
+		\item[\ref{iff4}.] $((S \eif B) \eand (B \eif S))$
  	\end{earg}
 And sentence \ref{iff5}, is symbolized with the `$\eiff$':
 	\begin{earg}
@@ -396,7 +396,7 @@ All three ways of symbolizing sentence \ref{unless1} are correct. Indeed, in cha
 % here, since the point is not discussed in the main text
 	
 \begin{factboxy}{Unless}
-		If a sentence can be paraphrased as `A unless B,' then it can be symbolized as `$\meta{A}\eor\meta{B}$'.
+If a sentence can be paraphrased as `A unless B,' then it can be symbolized as `$\meta{A}\eor\meta{B}$'.
 \end{factboxy}
 
 There is a complication with treating `unless' as a disjunction, however. As we said earlier, `or' has an inclusive and an exclusive meaning, but in TFL, `or' is always inclusive. Speakers of English, however, often use `unless' to mean something more like the exclusive-or. Suppose someone says: `I will go running unless it snows'. They probably mean `either I will go running or it will snow, but not both'. So, it can be argued that the conditional---i.e., `if it does not snow, then I will go running' ($\enot S \eif R$)---captures the meaning of `unless' better than does the disjunction.
@@ -404,7 +404,7 @@ There is a complication with treating `unless' as a disjunction, however. As we 
 
 \section{The turnstile}
 
-The final symbol that we need is not actually a symbol of TFL, but it is a useful symbol to have when displaying arguments in TFL. The symbol `\proves' is called the \textit{turnstile}. The purpose of the turnstile is to separate the sentences that are the premises of an argument from the sentence that is the conclusion, and it can be read as \textit{therefore}. Here is an example,
+The final symbol that we need is, technically, not a symbol of TFL, but it is useful to have when displaying arguments in TFL. The symbol `\proves' is called the \textit{turnstile}. The purpose of the turnstile is to separate the sentences that are the premises of an argument from the sentence that is the conclusion, and it can be read as \textit{therefore}. Here is an example,
 $$(P \eif C), (P \eor D) \proves (\enot C \eif D)$$
 In this argument, the premises are `$(P \eif C)$' and `$(P \eor D)$', and the conclusion is `$(\enot C \eif D)$'.
 
@@ -1026,10 +1026,10 @@ That said, there are some convenient conventions that we can use as long as we a
 
 Second, it can be a bit difficult to stare at long sentences with many nested pairs of parentheses. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and `]', in addition to rounded ones. So, there is no logical difference, for example, between `$(P\eor Q)$' and `$[P\eor Q]$'. 
 
-Combining these two conventions, we can rewrite 
+Combining these two conventions, we can rewrite this sentence:
 $$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
-this way:
-$$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
+like this:
+$$[(H \eif I) \eor (I \eif H)] \eand (J \eor K)$$
 The scope of each logical operator is now much easier to identify.
 
 

@@ -9,15 +9,15 @@
 \label{app.CharacteristicTTs}
 \bigskip
 
-\hfill
-\begin{tabular}{d | f}
+%\hfill
+\begin{tabular}[t]{d | f}
 \meta{A} & \enot\meta{A}\\
 \hline
 T & F\Tstrut\\
 F & T 
 \end{tabular}
-\hfill
-\begin{tabular}{d d | g | g | g | f}
+\hspace{1cm}
+\begin{tabular}[t]{d d | g | g | g | f}
 \meta{A} & \meta{B} & \meta{A}~\eand~\meta{B} & \meta{A}~\eor~\meta{B} & \meta{A}~\eif~\meta{B} & \meta{A}~\eiff~\meta{B}\\
 \hline
 T & T & T & T & T & T\Tstrut\\
@@ -25,20 +25,42 @@ T & F & F & T & F & F\\
 F & T & F & T & T & F\\
 F & F & F & F & T & T
 \end{tabular}
-\hfill
+%\hfill
 
 \vspace{4em}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\hfill
-\begin{tabular}{d | f}
+%\hfill
+\noindent\begin{tabular}[t]{d | f}
+\meta{A} & \enot\meta{A}\\
+\hline
+$\top$ & $\bot$\Tstrut\\
+$\bot$ & $\top$ 
+\end{tabular}
+\hspace{1cm}
+\begin{tabular}[t]{d d | g | g | g | f}
+\meta{A} & \meta{B} & \meta{A}~\eand~\meta{B} & \meta{A}~\eor~\meta{B} & \meta{A}~\eif~\meta{B} & \meta{A}~\eiff~\meta{B}\\
+\hline
+$\top$ & $\top$ & $\top$ & $\top$ & $\top$ & $\top$\Tstrut\\
+$\top$ & $\bot$ & $\bot$ & $\top$ & $\bot$ & $\bot$\\
+$\bot$ & $\top$ & $\bot$ & $\top$ & $\top$ & $\bot$\\
+$\bot$ & $\bot$ & $\bot$ & $\bot$ & $\top$ & $\top$
+\end{tabular}
+%\hfill
+
+\vspace{4em}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\hfill
+\noindent\begin{tabular}[t]{d | f}
 \meta{A} & \enot\meta{A}\\
 \hline
 1 & 0\Tstrut\\
 0 & 1 
 \end{tabular}
-\hfill
-\begin{tabular}{d d | g | g | g | f}
+\hspace{1cm}
+\begin{tabular}[t]{d d | g | g | g | f}
 \meta{A} & \meta{B} & \meta{A}~\eand~\meta{B} & \meta{A}~\eor~\meta{B} & \meta{A}~\eif~\meta{B} & \meta{A}~\eiff~\meta{B}\\
 \hline
 1 & 1 & 1 & 1 & 1 & 1\Tstrut\\
@@ -46,28 +68,28 @@ F & F & F & F & T & T
 0 & 1 & 0 & 1 & 1 & 0\\
 0 & 0 & 0 & 0 & 1 & 1
 \end{tabular}
-\hfill
+%\hfill
 
 \vfill
 
 
-\section{Symbolization}
-\medskip
+%\section{Symbolization}
+%\medskip
 
-\begin{center}
-\label{app.symbolization}
-\begin{tabular*}{\textwidth}{rl}
-\multicolumn{2}{c}{\textsc{Sentential Connectives}}\\ \\
-It is not the case that $P$. & $\enot P$\\
-Either $P$, or $Q$. & $(P \eor Q)$\\
-Neither $P$, nor $Q$. & $\enot(P \eor Q)$\ or \ $(\enot P \eand \enot Q)$\\
-Both $P$, and $Q$. & $(P \eand Q)$\\
-If $P$, then $Q$. & $(P \eif Q)$\\
-$P$ only if $Q$. & $(P \eif Q)$\\
-$P$ if and only if $Q$. & $(P \eiff Q)$\\
-$P$ unless $Q$. & $(P \eor Q)$\\
-\end{tabular*}
-\end{center}
+%\begin{center}
+%\label{app.symbolization}
+%\begin{tabular*}{\textwidth}{rl}
+%\multicolumn{2}{c}{\textsc{Sentential Connectives}}\\ \\
+%It is not the case that $P$. & $\enot P$\\
+%Either $P$, or $Q$. & $(P \eor Q)$\\
+%Neither $P$, nor $Q$. & $\enot(P \eor Q)$\ or \ $(\enot P \eand \enot Q)$\\
+%Both $P$, and $Q$. & $(P \eand Q)$\\
+%If $P$, then $Q$. & $(P \eif Q)$\\
+%$P$ only if $Q$. & $(P \eif Q)$\\
+%$P$ if and only if $Q$. & $(P \eiff Q)$\\
+%$P$ unless $Q$. & $(P \eor Q)$\\
+%\end{tabular*}
+%\end{center}
 
 
 %  BEGIN: Rules of proof

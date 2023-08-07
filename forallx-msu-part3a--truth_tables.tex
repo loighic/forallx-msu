@@ -103,7 +103,7 @@ F & T & \TTlg{F}
 \end{center}
 
 
-\paragraph{Disjunction} Recall that `$\eor$' always represents the inclusive-or. So, for any sentences \meta{A} and \meta{B}, the disjunction $(\meta{A}\eor \meta{B})$ is true when \meta{A} is true or \meta{B} is true or both are true. The only instance when $(\meta{A}\eor \meta{B})$ is false is when both \meta{A} and \meta{B} are false. This is represented in the \textit{characteristic truth table for disjunction}:
+\paragraph{Disjunction}\label{tt-disjunction} Recall that `$\eor$' always represents the inclusive-or. So, for any sentences \meta{A} and \meta{B}, the disjunction $(\meta{A}\eor \meta{B})$ is true when \meta{A} is true or \meta{B} is true or both are true. The only instance when $(\meta{A}\eor \meta{B})$ is false is when both \meta{A} and \meta{B} are false. This is represented in the \textit{characteristic truth table for disjunction}:
 \begin{center}
 \begin{tabular}{d d | f e e}
 \meta{A} & \meta{B} & \meta{A} &\eor &\meta{B} \\
@@ -147,11 +147,11 @@ For the other two scenarios, we have to concentrate a bit.
 \item[(4)] Similarly, when it is not Wednesday and I am not on campus by 10:00 am, the rule hasn't been broken. It is still in force. It just hasn't been invoked at all. So even though the antecedent didn't happen and the consequent didn't happen, the conditional is still true. (In other words, let's say, it's Saturday and, at 10:00 am, I am at home in bed. It's false that `it is Wednesday' and it's false that `I am on campus by 10:00 am', but it's still true that \textit{if it is Wednesday, then I am on campus by 10:00 am}.) This scenario is represented on line 4 of the characteristic truth table.
 \end{ebullet}
 
-Those four scenarios are pretty straightforward. The conditional is philosophically contentious, however, because every conditional is not as simple as `if it is Wednesday, then I am on campus by 10:00 am'. Take a conditional where the antecedent is always false: `if the queen of England is on the moon, then Mississippi State University is in Starkville.' This isn't much of a rule, but it is a conditional. And since the antecedent is false and the consequent is true, the sentence is true. Even stranger, consider this conditional: `if the queen of England is on the moon, then pigs can fly.' Now, the antecedent is always false and the consequent is always false (at least in our world), but, as is shown on line 4 of the characteristic truth table, the sentence is true. 
+Those four scenarios are pretty straightforward. The conditional is philosophically contentious, however, because every conditional is not as simple as `if it is Wednesday, then I am on campus by 10:00 am'. Take a conditional where the antecedent is always false: `if the King of England is on the moon, then Mississippi State University is in Starkville.' This isn't much of a rule, but it is a conditional. And since, in our current world, the antecedent is false and the consequent is true, the sentence is true. Even stranger, consider this conditional: `if the King of England is on the moon, then pigs can fly.' Now, the antecedent is always false and the consequent is always false (at least in our world), but, as is shown on line 4 of the characteristic truth table, the sentence is true. 
 
-Sometimes the truth values for the antecedent, the consequent, and the whole conditional make sense (as in our first example) and sometimes they seem odd. That has generated philosophical debate, but it actually does not present a problem for us. The conditional is precisely defined by its characteristic truth table. We, then, simply use that definition, and we don't have to make any decisions about whether a particular conditional is odd or should really be true or false. 
+Sometimes the truth values for the antecedent, the consequent, and the whole conditional make sense (as in our first example) and sometimes they seem odd. That has generated philosophical debate, but it actually does not present a problem for us. The conditional is precisely defined by its characteristic truth table. We, then, simply use that definition, and we don't have to make any decisions about whether a particular conditional is odd or should really be considered true or false. 
 
-Finally, notice that, unlike the conjunction and the disjunction, the conditional is \emph{asymmetrical}. You cannot switch the antecedent and consequent without changing the meaning of the sentence. This is because $\meta{A}\eif\meta{B}$ (`if it is Wednesday, then I am on campus by 10:00 am') has a different truth table than $\meta{B}\eif\meta{A}$ (`if I am on campus by 10:00 am, then it is Wednesday').
+Finally, notice that, unlike the conjunction and the disjunction, the conditional is \emph{asymmetrical}. You cannot switch the antecedent and consequent without changing the meaning of the sentence. This is because $\meta{A}\eif\meta{B}$ (e.g., `if it is Wednesday, then I am on campus by 10:00 am') has a different truth table than $\meta{B}\eif\meta{A}$ (e.g., `if I am on campus by 10:00 am, then it is Wednesday').
 
 
 \paragraph{Biconditional}\label{biconditional-2} As we said in \S \ref{s:biconditional-1}, the biconditional is equivalent to the conjunction of a conditional running in each direction---that is, to $(\meta{A} \eif \meta{B}) \eand (\meta{A}\eif\meta{B})$. Consequently, on every line where both $\meta{A}\eif\meta{B}$ is true and $\meta{B}\eif\meta{A}$ is true, $\meta{A}\eiff\meta{B}$ is true. On every line where either $\meta{A}\eif\meta{B}$ is false or $\meta{B}\eif\meta{A}$ is false, $\meta{A}\eiff\meta{B}$ is false. That yields the following characteristic truth table for the biconditional.
@@ -166,6 +166,27 @@ F & T & \TTlg{F}& F& \TTlg{T}\\
 F & F & \TTlg{F}& T& \TTlg{F}
 \end{tabular}
 \end{center}
+
+
+\section{The counterfactual conditional}
+
+As we have seen, in English, \textit{or} can be used as the \textit{inclusive or} or as the \textit{exclusive or}, but in TFL we have only the \textit{inclusive or} (pp.~\pageref{inclusive-or-1},~\pageref{tt-disjunction}). The conditional is in a somewhat similar situation. In the section on the conditional in this chapter, I used the example `If it is Wednesday, then I am on campus by 10:00 am’ to illustrate that the characteristic truth table for the conditional fits with the way that we treat conditional statements in English. This is only partially true. `If it is Wednesday, then I am on campus by 10:00 am’ is an \textit{indicative conditional}, which is the type of conditional that is often, although not always, used in English.
+
+\begin{factboxy}{indicative conditional}
+An \define{indicative conditional} has indicative sentences as the antecedent and the consequent. Truth-functional logic uses the indicative conditional. 
+
+An \textit{indicative sentence} is one that expresses a fact---or expresses what seems to be the case, e.g., `today is Wednesday' or `Jones is at the train station’.
+\end{factboxy} 
+
+By way of introducing the other type of conditional (which is not a part of TFL), consider these two sentences:
+
+\begin{ebullet}
+\item[1.] If Theodore Roosevelt had won the 1912 presidential election, he would have become the first person to serve a third term as president of the United States. \smallskip
+\item[2.] If Theodore Roosevelt had won the 1912 presidential election, he would have transformed into an adult male moose.
+\end{ebullet}
+One would assume (correctly) that the first sentence is true and the second one is false. But if we evaluate them using the characteristic truth table for the conditional (p.~\pageref{characteristic-tt-conditional}), we find that both are true. Both have false antecedents---Theodore Roosevelt did not win the 1912 presidential election---and both have false consequents. (He didn’t become the first person to serve a third term, and he also didn’t transform into a moose.)
+
+So, what is going on here? These are \textit{counterfactual conditionals} (also called \textit{subjunctive conditionals}), not indicative conditionals. They ask us to treat a statement that is false (because it didn’t happen) as if it had happened (i.e., to treat something as counter to the facts). Then, once we’ve made this move---in this case, we are imagining that Teddy Roosevelt did win the 1912 election---we can evaluate whether the consequent would have happened or not. For sentence 1, it would have, and so this sentence is true. (But notice that the reason why this sentence is true is different than the reason that we get from consulting the characteristic truth table for the conditional.) Sentence 2, on the other hand, is false because if Roosevelt had won, he would not have transformed into a moose.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
