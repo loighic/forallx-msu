@@ -201,13 +201,13 @@ So, what is going on here? These are \textit{counterfactual conditionals} (also 
 
 In chapter \ref{s:CharacteristicTruthTables}, we examined the characteristic truth tables for the logical operators of TFL. The characteristic truth tables show us when a sentence with only one of the logical operators is true and when it is false. That, in effect, is a definition for each logical operator. Now that we have those definitions, we can investigate when other, more complex sentences are true and false---for instance, ones like `$(H\eand I)\eif H$' and `$(M \eand (N \eor P))$', which we will go through in this chapter. Once we understand how to create truth tables, we can investigate other properties of sentences of TFL, which we will do in chapters \ref{s:SemanticConcepts} and \ref{c:tt-validity}. 
 
-Before we begin, we will define \define{valuation}.
+Before we begin, we will define \define{truth-value assignment}.
 
-\begin{factboxy}{Valuation}
-A \textit{valuation} is any assignment of truth values to particular atomic sentences of TFL. Each row of a truth table represents a possible valuation. The entire truth table represents all possible valuations.
+\begin{factboxy}{Truth-value assignment}
+A \textit{truth-value assignment} is any assignment of truth values to particular atomic sentences of TFL. \textbf{Each row of a truth table represents a possible truth-value assignment.} The entire truth table represents all possible truth-value assignments.
 \end{factboxy}
 
-\noindent Thus, the truth table provides us with a way of finding the truth values of complex sentences on each possible valuation---that is, for every combination of `true' and `false' for every atomic sentence. 
+\noindent Thus, the truth table provides us with a way of finding the truth values of complex sentences on each possible truth-value assignment---that is, for every combination of `true' and `false' for every atomic sentence. 
 
 \section{An example}\label{s:tt-example}
 Consider the sentence `$(H\eand I)\eif H$', which contains three atomic sentences, although only two different ones. We set up the truth table for this sentence by putting $H$ and $I$ on the left side of the vertical line and `$(H\eand I)\eif H$' on the right. (Although $H$ appears twice in `$(H\eand I)\eif H$', we only need one $H$ on the left.) Below the $H$ and $I$ on the left side, we put every combination of `T' and `F'.  
@@ -326,13 +326,13 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$
 \end{center}
 
 
-Since the `\eif' is the main logical operator, we've now determine the truth values for this sentence. The column of `T's beneath the `\eif' tells us that the sentence `$(H \eand I)\eif H$' is true regardless of the truth values of `$H$' and `$I$'. Those atomic sentences can be true or false in any combination, and the full sentence, `$(H \eand I)\eif H$', remains true. Since we have considered all four possible assignments of truth and falsity to `$H$' and `$I$', we can say that `$(H \eand I)\eif H$' is true on every \textit{valuation}.
+Since the `\eif' is the main logical operator, we've now determine the truth values for this sentence. The column of `T's beneath the `\eif' tells us that the sentence `$(H \eand I)\eif H$' is true regardless of the truth values of `$H$' and `$I$'. Those atomic sentences can be true or false in any combination, and the full sentence, `$(H \eand I)\eif H$', remains true. Since we have considered all four possible assignments of truth and falsity to `$H$' and `$I$', we can say that `$(H \eand I)\eif H$' is true on every \textit{truth-value assignment}.
 
 In the truth table for any sentence, the most important column is the one beneath the \emph{main logical operator} for the sentence, since this tells us the truth value of the entire sentence. We have emphasized it in the last truth table above by putting this column in bold. When you work through truth tables yourself, you should similarly emphasize it underlining or circling it.
 
 
 \section{Building complete truth tables}\label{s:tt-example2}
-A \define{complete truth table} has a line for every possible combination of \textit{true} and \textit{false} for the atomic sentences that compose the full sentence. Each line represents a \emph{valuation}, and a complete truth table has a line for all the different valuations. 
+A \define{complete truth table} has a line for every possible combination of \textit{true} and \textit{false} for the atomic sentences that compose the full sentence. Each line represents a \emph{truth-value assignment}, and a complete truth table has a line for all of the different truth-value assignments. 
 
 The size of the complete truth table depends on the number of different atomic sentences in the table. A sentence that contains only one atomic sentence requires only two rows, even if the same letter is repeated many times, as in the sentence
 `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$'.
@@ -345,7 +345,7 @@ $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
  F &    & F &  T  & F &   & F  & F & &\TTbf{\textcolor{red2}{F}}&  F& &   F &  T  & F &   \\
 \end{tabular}
 \end{center}
-Looking at the column underneath the main logical operator, we see that the sentence is false on both rows of the table; i.e., the sentence is false regardless of whether `$C$' is true or false. In other words, it is false on every valuation.
+Looking at the column underneath the main logical operator, we see that the sentence is false on both rows of the table; i.e., the sentence is false regardless of whether `$C$' is true or false. In other words, it is false on every truth-value assignment.
 
 A sentence that contains two atomic sentences requires four lines for a complete truth table.
 A sentence that contains three atomic sentences requires eight lines, as shown in the truth table for `$M \eand (N \eor P)$'. Notice that the `T's and `F's in the columns below `$N$' and `$P$' (on the left side) follow the same pattern as the example in the previous section. The column under the `$M$', meanwhile, has four `T's and then four `F's.
@@ -493,9 +493,10 @@ F& F&      \textcolor{light-gray}{F}& F& \textcolor{light-gray}{T}& \textcolor{l
 \end{tabular}
 \end{center}
 
+
 \end{earg}
 
-\pagebreak
+%\pagebreak
 
 \section{Truth tables in Carnap}\label{s:ttCarnap-intro}
 
@@ -518,14 +519,14 @@ You should practice making truth tables on paper, but you also need to make them
 % \end{figure} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
 \includegraphics[width=6.3cm]{tt-1.png}
 \caption{}
 \label{fig:tt-1}
 \end{figure}
 
-\begin{figure}[b]
+\begin{figure} [h]
 \centering
 \includegraphics[width=6.3cm]{tt-2.png}
 \caption{}
@@ -535,7 +536,7 @@ You should practice making truth tables on paper, but you also need to make them
 Most often (although not always), the problems in Carnap will be set up so that you will only be able to submit your answers when they are correct. At those times, once the truth table is complete, you will select `Check'. Carnap will tell you ``Success!'' or ``Something's not quite right.'' It is easy to make a mistake when filling in a truth table, and so if something is not quite right, then you have to inspect every truth value until you find the mistake. Then select `Check' again. Once Carnap confirms that the truth table is correct, select `Submit'. \textbf{Don't forget to submit after you complete every truth table correctly.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]	%\begin{SCfigure}
+\begin{figure}%[h]	%\begin{SCfigure}
 \centering
 \includegraphics[width=6.3cm]{tt-6a.png}
 \caption{A completed and verified truth table in Carnap.}
@@ -554,7 +555,7 @@ Most often (although not always), the problems in Carnap will be set up so that 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+%\newpage
 
 %\practiceproblems
 \section{Practice exercises}\label{pr.TT.TTorC}
@@ -574,6 +575,7 @@ Make a complete truth table for each sentence.
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \end{earg}
 
+\newpage
 \problempart
 Check whether each of these statements is true.
 \begin{earg}
@@ -639,6 +641,7 @@ F & F&\TTbf{T}&F
 }
 \vspace{1em}
 
+\begin{minipage}{10cm}
 \item $C \eif\enot C$ %contingent
 \myanswer{\begin{flushleft}
 \begin{tabular}{d | f e e e}
@@ -649,6 +652,7 @@ F & F & \TTbf{T}& T& F\\
 \end{tabular}
 \end{flushleft}}
 \vspace{1em}
+\end{minipage}
 
 \item $(A \eiff B) \eiff \enot(A\eiff \enot B)$ %tautology
 \myanswer{\begin{flushleft}
@@ -722,6 +726,7 @@ F & F & F & F & F & F & F & T & F & F & F & \TTbf{F} & F
 \end{flushleft}}
 \vspace{1em}
 
+\begin{minipage}{10cm}
 \item $[(A \eand B) \eand C] \eif B$ %taut
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e e e e e}
@@ -738,9 +743,10 @@ F & F & F & F & F & F & F & F & \TTbf{T} & F\\
 \end{tabular}
 \end{flushleft}}
 \vspace{1em}
+\end{minipage}
 
-\filbreak
 
+\begin{minipage}{10cm}
 \item $\enot[(C\eor A) \eor B]$ %contingent
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e e e e}
@@ -756,8 +762,10 @@ F & F & T & \TTbf{F} & T & T & F & T & F\\
 F & F & F & \TTbf{T} & F & F & F & F & F
 \end{tabular}
 \end{flushleft}}
+\end{minipage}
 \end{earg}
 \vspace{1em}
+
 
 \problempart
 
@@ -779,6 +787,7 @@ F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 \end{flushleft}}
 \vspace{1em}
 
+\begin{minipage}{10cm}
 \item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e }
@@ -795,8 +804,8 @@ F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 \end{tabular}
 \end{flushleft}}
 \vspace{1em}
+\end{minipage}
 
-\filbreak
 
 \item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
 \myanswer{\begin{flushleft}
@@ -815,6 +824,7 @@ F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 \end{flushleft}}
 \vspace{1em}
 
+\begin{minipage}{10cm}
 \item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e }
@@ -831,6 +841,7 @@ F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{T} &  F& T & F\\
 \end{tabular}
 \end{flushleft}}
 \vspace{1em}
+\end{minipage}
 
 \item `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table.\\
 \myanswer{\begin{flushleft}
@@ -1040,13 +1051,13 @@ F&  F&  F	&	T		&	F	&	T	&	F	&	F	&	F	&	\TTbf{F}	&	T		&	F	&	F	&F	\\
 \chapter{Six concepts}
 \label{s:SemanticConcepts}
 
-As we did in the previous chapter, we begin with the definition of \define{valuation}.
+As we did in the previous chapter, we begin with the definition of \define{truth-value assignment}.
 
-\begin{factboxy}{Valuation}
-A \textit{valuation} is any assignment of truth values to particular atomic sentences of TFL. Each row of a truth table represents a possible valuation. The entire truth table represents all possible valuations.
+\begin{factboxy}{truth-value assignment}
+A \textit{truth-value assignment} is any assignment of truth values to particular atomic sentences of TFL. Each row of a truth table represents a possible truth-value assignment. The entire truth table represents all possible truth-value assignments.
 \end{factboxy}
 
-Let's say that we are going to create a truth table for `$P \eor \enot Q$'. (See figure \ref{fig:valuation}.) On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. That is one valuation. On the second line, we make $P =$ `true' and $Q =$ `false'. That is another valuation. The assignments of `true' and `false' to `$P$` and `$Q$' on lines 3 and 4, then, are the remaining possible valuations, when we have a sentence containing only two atomic sentences.
+Let's say that we are going to create a truth table for `$P \eor \enot Q$'. (See figure \ref{fig:truth-value assignment}.) On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. That is one truth-value assignment. On the second line, we make $P =$ `true' and $Q =$ `false'. That is another truth-value assignment. The assignments of `true' and `false' to `$P$` and `$Q$' on lines 3 and 4, then, are the remaining possible truth-value assignments, when we have a sentence containing only two atomic sentences.
 
 %\begin{center}
 %\begin{tabular}{d d | f e e e }
@@ -1064,23 +1075,23 @@ Let's say that we are going to create a truth table for `$P \eor \enot Q$'. (See
 \begin{figure}
 \centering
 \includegraphics[width=6.5cm]{this_is_a_valuation.pdf}
-\caption{$P =$ `true' and $Q =$ `true' is one valuation. On this valuation, `$P \eor \enot Q$' is true. $P =$ `true' and $Q =$ `false' is another valuation. `$P \eor \enot Q$' is also true on this valuation. $P =$ `false' and $Q =$ `true' (line 3), and $P =$ `false' and $Q =$ `false' (line 4) are the other two valuations in this truth table.}
-\label{fig:valuation}
+\caption{$P =$ `true' and $Q =$ `true' is one truth-value assignment. On this truth-value assignment, `$P \eor \enot Q$' is true. $P =$ `true' and $Q =$ `false' is another truth-value assignment. `$P \eor \enot Q$' is also true on this truth-value assignment. $P =$ `false' and $Q =$ `true' (line 3), and $P =$ `false' and $Q =$ `false' (line 4) are the other two truth-value assignments in this truth table.}
+\label{fig:truth-value assignment}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In the previous chapter, we used truth tables to determine---for each possible valuation---the truth value of any TFL sentence. In this chapter, we will extend this type of analysis. We will examine six properties that apply (or may apply) to either single TFL sentences (\textit{tautology}, \textit{contradiction}, and \textit{contingent}) or sets of TFL sentences (\textit{equivalent}, \textit{jointly consistent}, and \textit{jointly inconsistent}). For each, we use a truth table to determine which property applies.
+In the previous chapter, we used truth tables to determine---for each possible truth-value assignment---the truth value of any TFL sentence. In this chapter, we will extend this type of analysis. We will examine six properties that apply (or may apply) to either single TFL sentences (\textit{tautology}, \textit{contradiction}, and \textit{contingent}) or sets of TFL sentences (\textit{equivalent}, \textit{jointly consistent}, and \textit{jointly inconsistent}). For each, we use a truth table to determine which property the sentence or set of sentences has.
 
 
 \section{Tautologies and contradictions}
 In \S\ref{s:nec-truth}, we said that a \emph{necessary truth} is a sentence that must be true, a \emph{necessary falsehood} is a sentence that must be false, and a sentence that is neither a necessary truth or a necessary falsehood is \textit{contingent}. The first two, \textit{necessary truth} and \textit{necessary falsehood}, have surrogates in TFL. We will start with the surrogate for necessary truth.
 
 \begin{factboxy}{Tautology}
-A sentence of TFL is a \define{tautology} if and only if it is true on every valuation.
+A sentence of TFL is a \define{tautology} if and only if it is true on every truth-value assignment.
 \end{factboxy}
 
-We can determine whether a sentence is a tautology using a truth table. If the sentence is true on every line of a complete truth table (that is, if there is a `T' on every line under the main connective), then it is true on every valuation. And if it is true on every valuation, it is a tautology. The example from \S\ref{s:tt-example}, `$(H \eand I) \eif H$', for instance, is a tautology. 
+We can determine whether a sentence is a tautology using a truth table. If the sentence is true on every line of a complete truth table (that is, if there is a `T' on every line under the main connective), then it is true on every truth-value assignment. And if it is true on every truth-value assignment, it is a tautology. The example from \S\ref{s:tt-example}, `$(H \eand I) \eif H$', for instance, is a tautology. 
 
 \begin{center}
 \begin{tabular}{d d | f e e e e}
@@ -1102,10 +1113,10 @@ But an atomic sentence by itself cannot be a tautology. (To see this, try making
 
 We have a similar surrogate for \textit{necessary falsehood}.
 \begin{factboxy}{Contradiction}
-A sentence of TFL is a \define{contradiction} if and only if it is false on every valuation.
+A sentence of TFL is a \define{contradiction} if and only if it is false on every truth-value assignment.
 \end{factboxy}
 
-\noindent Again, we can determine whether a sentence is a contradiction with a truth table. If the sentence is false on every line of a complete truth table, then it is false on every valuation, and so it is a contradiction. The standard example of a contradiction is `$P \eand \enot P$'. Since we have only one letter in this sentence, it is only a two line truth table, but on each line, the sentence is false. 
+\noindent Again, we can determine whether a sentence is a contradiction with a truth table. If the sentence is false on every line of a complete truth table, then it is false on every truth-value assignment, and so it is a contradiction. The standard example of a contradiction is `$P \eand \enot P$'. Since we have only one letter in this sentence, it is only a two line truth table, but on each line, the sentence is false. 
 
 \begin{center}
 \begin{tabular}{d | f e e e}
@@ -1130,7 +1141,7 @@ F &F      &F &F &F   &\TTbf{F}    &T &F &T &T &F
 In \S\ref{s:nec-truth}, we defined \define{contingent} as ``a sentence that is capable of being true and capable of being false (in different circumstances, of course).'' A truth table, then, provides us with those different circumstances. 
 
 \begin{factboxy}{Contingent}
-A sentence that is true on at least one valuation and false on at least one valuation is contingent. 
+A sentence that is true on at least one truth-value assignment and false on at least one truth-value assignment is contingent. 
 \medskip
 
 Or, we can also say: any sentence that is neither a tautology nor a contradiction is contingent. 
@@ -1153,7 +1164,7 @@ $P$&$Q$&\enot&$(P$&\eor&$Q)$\\
 There are several possible logical relationships that can exist between two or more sentences of TFL. We we examine three relationships, and we will focus on pairs of sentences. The first logical relationship is \define{equivalence}.
 
 \begin{factboxy}{Equivalent}
-$\meta{A}$ and $\meta{B}$ are \define{equivalent} if and only if, for every valuation, their truth values agree (that is, if and only if there is no valuation for which they have opposite truth values). 
+$\meta{A}$ and $\meta{B}$ are \define{equivalent} if and only if, for every truth-value assignment, their truth values agree (that is, if and only if there is no truth-value assignment for which they have opposite truth values). 
 \medskip
 
 Equivalently, if $(\meta{A} \eiff \meta{B})$ is a tautology, then $\meta{A}$ and $\meta{B}$ are \define{equivalent}.
@@ -1172,20 +1183,20 @@ $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
  F & F & \TTbf{T} & F & F & F & T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{center}
-Looking at the columns for the main logical operators (`\enot' for the first sentence, `\eand' for the second), we see that on the first three rows, both sentences are false. On the final row, both are true. Since they match on every row---that is, on every valuation for `$P$' and `$Q$'---the two sentences are equivalent.
+Looking at the columns for the main logical operators (`\enot' for the first sentence, `\eand' for the second), we see that on the first three rows, both sentences are false. On the final row, both are true. Since they match on every row---that is, on every truth-value assignment for `$P$' and `$Q$'---the two sentences are equivalent.
 
 
 \section{Consistency}\label{consistency--tt}
 In \S\ref{s:joint-poss}, we said that sentences are \textit{jointly possible} if and only if it is possible for all of them to be true at once. The surrogate for this concept in TFL is \define{jointly consistent}. 
 
 \begin{factboxy}{Jointly consistent}
-$\meta{A}$ and $\meta{B}$ are \define{jointly consistent} if and only if there is some valuation that makes them both true \textit{and} they are not equivalent.
+$\meta{A}$ and $\meta{B}$ are \define{jointly consistent} if and only if there is some truth-value assignment that makes them both true \textit{and} they are not equivalent.
 \medskip
 		
 Equivalently, if
 \begin{earg}
 \vspace{-2mm}
-	\item[(1)] there is at least one valuation that makes ($\meta{A}\eand\meta{B}$) true, and
+	\item[(1)] there is at least one truth-value assignment that makes ($\meta{A}\eand\meta{B}$) true, and
 	\item[(2)] $(\meta{A} \eiff \meta{B})$ is \textit{not} a tautology,
 \vspace{-2mm}
 \end{earg}		
@@ -1215,7 +1226,7 @@ $P$ &$Q$& $P$& ~\eor~ & $Q$& $P$& \eand& \enot& $Q$\\
 And finally, in \S\ref{s:joint-poss}, we also said that sentences are \textit{jointly impossible} if and only if it is \textit{not} possible for all of them to be true at once. The surrogate for this concept in TFL is \define{jointly inconsistent}. 
 
 \begin{factboxy}{Jointly inconsistent}
-$\meta{A}$ and $\meta{B}$ are \define{jointly inconsistent} if and only if there is no valuation that makes them both true. 
+$\meta{A}$ and $\meta{B}$ are \define{jointly inconsistent} if and only if there is no truth-value assignment that makes them both true. 
 %\textit{and} they are not equivalent.
 \end{factboxy}
 
@@ -1529,6 +1540,7 @@ F & F & F & F & \TTbf{F} & F & F & F & F & \TTbf{T} & F & \TTbf{T} & F & F & F\\
 \end{tabular}
 \end{flushleft}}\medskip
 
+\begin{minipage}{10cm}
 \item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$  \\
 These sentences are jointly consistent. (See line 8.)
 \myanswer{\begin{flushleft}
@@ -1545,6 +1557,7 @@ F & F & T & F & \TTbf{F} & F & T & T & T & \TTbf{T} & T & F & F & \TTbf{T} &T & 
 F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T & F & F & \TTbf{T} & T & F
 \end{tabular}
 \end{flushleft}}\medskip
+\end{minipage}
 
 \item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$\\
 These sentences are jointly consistent. (See line 2.)
@@ -1574,6 +1587,7 @@ F &  F  &	 F	& 	 F	 & 	 F	  	 	 & 	 F	 & 	 T	 & 	 T	 & 	 F	 & 	 	  	 F	 & 	 T	 &
 \end{tabular}
 \end{flushleft}}\medskip
 
+\begin{minipage}{10cm}
 \item $\enot(\enot A \eor B) $, $A \eif \enot C$, $A \eif (B \eif C)$\\
 These sentences are jointly consistent.
 \begin{flushleft}
@@ -1590,7 +1604,7 @@ F&	F&	T&	   	 F	& 	 T	& 	F & T	 & 	F   & 	F & T	 & 	F & T	  	 & F	 & T	 & F	 & T
 F&	F&	F&	   	 F	& 	 T	& 	F & T	 & 	F   & 	F & T	 & 	T & F	  	 & F	 & T	 & F	 & T	 & F 	\\ 
 \end{tabular}
 \end{flushleft}\medskip
-
+\end{minipage}
 
 \item $A \eif B$, $A \eand \enot B$ \\
 These sentences are jointly inconsistent.
@@ -1721,6 +1735,7 @@ F & F &    F & \TTbf{F} & T & F &      T & F & \TTbf{F} &  F
 \end{tabular}
 \end{flushleft}\medskip
 
+\begin{minipage}{10cm}
 \item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$ are equivalent.
 \begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e}
@@ -1736,6 +1751,7 @@ F & F & T &      F & F & F &   \TTbf{T} & T &      F & \TTbf{T} &   F & T & T\\
 F & F & F &      F & F & F &   \TTbf{F} & F &     F & \TTbf{F} &   F & F & F
 \end{tabular}
 \end{flushleft}\medskip
+\end{minipage}
 
 \item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$ are equivalent.
 \begin{flushleft}
@@ -1819,6 +1835,7 @@ F & F & F &      F & T & F &   F & F &      F & T &   F & T & F
 \end{tabular}
 \end{flushleft}\medskip
 
+\begin{minipage}{10cm}
 \item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$ are not equivalent.
 \begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e}
@@ -1834,6 +1851,7 @@ F & F & T &    F & T &    F & F &  T &        F & F &   F & F & T\\
 F & F & F &    F & F &    F & T &  F &        F & F &   F & F & F
 \end{tabular}
 \end{flushleft}\medskip
+\end{minipage}
 
 \end{earg}
 
@@ -1848,7 +1866,7 @@ F & F & F &    F & F &    F & T &  F &        F & F &   F & F & F
 
 \item Suppose that $\meta{A}$ and $\meta{B}$ are jointly inconsistent. What can you say about $(\meta{A}\eand\meta{B})$?
 \begin{ebullet}
-\item[] \myanswer{Since the sentences are jointly inconsistent, there is no valuation on which they are both true. So their conjunction is false on every valuation. It is a contradiction}
+\item[] \myanswer{Since the sentences are jointly inconsistent, there is no truth-value assignment on which they are both true. So their conjunction is false on every truth-value assignment. It is a contradiction}
 \end{ebullet}
 
 \item Suppose that \meta{A} and \meta{B} are equivalent. What can you say about $(\meta{A}\eor\meta{B})$?
@@ -1868,7 +1886,7 @@ F & F & F &    F & F &    F & T &  F &        F & F &   F & F & F
 Is this principle correct? Explain your answer.
 
 \begin{ebullet}
-\item[] The principle is correct. Since $\meta{A}$ and $\meta{B}$ are logically equivalent, they have the same truth table. So every valuation that makes $\meta{A}$ true also makes $\meta{B}$ true, and every valuation that makes $\meta{A}$ false also makes $\meta{B}$ false. So if no valuation makes all the premises true and the conclusion false, when $\meta{A}$ was among the premises or the conclusion, then no valuation makes all the premises true and the conclusion false, when we replace $\meta{A}$ with $\meta{B}$.
+\item[] The principle is correct. Since $\meta{A}$ and $\meta{B}$ are logically equivalent, they have the same truth table. So every truth-value assignment that makes $\meta{A}$ true also makes $\meta{B}$ true, and every truth-value assignment that makes $\meta{A}$ false also makes $\meta{B}$ false. So if no truth-value assignment makes all the premises true and the conclusion false, when $\meta{A}$ was among the premises or the conclusion, then no truth-value assignment makes all the premises true and the conclusion false, when we replace $\meta{A}$ with $\meta{B}$.
 \end{ebullet}
 
 \end{earg}

@@ -11,7 +11,7 @@
 An argument is valid when (and only when) it is impossible for all of the premises to be true and the conclusion to be false. And we have seen that truth tables can be used to determine whether an argument is valid. In the next chapter, you will learn another method for verifying that an argument is valid. Before we turn to this new method, however, let’s review the strengths and weakness of truth tables.
 
 \begin{earg}
-\item The truth table method for determining if an argument is valid focuses directly on the definition of \textit{valid}. Each line of a complete truth table corresponds to a valuation. Thus, given an argument in TFL, truth tables reveal whether or not the conclusion is true when all of the premises true. 
+\item The truth table method for determining if an argument is valid focuses directly on the definition of \textit{valid}. Each line of a complete truth table corresponds to a truth-value assignment. Thus, given an argument in TFL, truth tables reveal whether or not the conclusion is true when all of the premises true. 
 \medskip
 
 \item Truth tables also allow us to easily and rigorously set the meaning for each logical operator. As we discussed in \S\ref{s:ConnectiveDisjunction}, in English, `or’ can take the inclusive-or meaning (one or the other, or both) or the exclusive-or meaning (one or the other, but not both), and, at different times, both meanings are used in English. We can discuss which English meaning is closest to the meaning of `$\eor$’ in TFL (it's the inclusive-or), but, in the end, we just set the meaning of the symbol `$\eor$’ with this truth table:
@@ -1031,7 +1031,7 @@ Give a proof for each argument using the rules from \S\S \ref{s:conj-rule} -- \r
 \item $\enot P \eif (Q \eor P), \enot P \proves Q$\\
 \textit{Note:} After you list the premises on lines 1 and 2, notice that $\enot P$ is the antecedent of the sentence on line 1 and $\enot P$ is by itself on line 2. This means using the conditional elimination rule is an option.
 \medskip
-\item $P \eif (Q \eor \enot P), \enot P \proves Q$\\
+\item $P \eif (Q \eor \enot P), P \proves Q$\\
 \textit{Note:} This problem is similar to the one right above, but it's not exactly the same. If you're not sure how to do this one, look at the subsection on the double negation rule (pp.~\pageref{subsection-DN} - \pageref{DN-box}).
 \medskip
 \item $D \eand H, H \eiff J  \proves J \eor N$\smallskip 
@@ -1093,7 +1093,7 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\item $P \eif (Q \eor \enot P), \enot P \proves Q$\\
+\item $P \eif (Q \eor \enot P), P \proves Q$\\
 \begin{proof}
 	\hypo{p1}{P \eif (Q \eor \enot P)} \pr{}
 	\hypo{p2}{P} \pr{}
