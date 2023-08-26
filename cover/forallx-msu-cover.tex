@@ -1,0 +1,82 @@
+
+%% USE LUALATEX!!!
+
+\documentclass[coverheight=229mm, coverwidth=152mm, spinewidth=15.09mm]{bookcover}
+\usepackage{GS1,qrcode}   % for the barcode
+\usepackage{xcolor}
+
+\definecolor{forallx-orange}{RGB}{254, 102, 1}
+
+
+% FONTS
+\usepackage{fontspec}	% required for LuaLaTeX
+\usepackage[letterspace=87]{microtype}  % to space caps with \textls{...}
+
+\setmainfont{YaleNew-Roman.otf}[Ligatures=TeX, 
+ 	Numbers={OldStyle},
+ 	Ligatures={Common},
+ 	ItalicFont={YaleNew-Italic.otf},
+ 	BoldFont={YaleNew-Bold.otf}]
+
+\setsansfont{lato-regular.ttf}[Ligatures=TeX,  
+	Ligatures={Common},
+	Numbers={OldStyle},
+	Scale=1.0,
+	ItalicFont={Lato-Italic.ttf},
+	BoldFont={Lato-Bold.ttf}]
+	
+%% for math mode
+\usepackage{unicode-math}
+\setmathfont{Asana Math} % for math symbols, can be any other OpenType math font
+\setmathfont[range=\mathup]{lato-regular.ttf}
+\setmathfont[range=\mathbfup]{lato-regular.ttf}
+%\setmathfont[range=\mathbfit]{Minion Pro Bold Italic}
+\setmathfont[range=\mathit]{Lato-Italic.ttf}
+
+
+% line spacing
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.25} 
+
+
+\begin{document}
+\begin{bookcover}
+\bookcovercomponent{color}{bg whole}{color=forallx-orange}
+
+%TITLE
+\bookcovercomponent{normal}{front}[20mm,,10mm,110mm]{\sffamily   %spacing: left, bottom, right, top 
+\fontsize{44}{44}\selectfont\hfill \textbf{forall\textcolor{white}{x}}} 		% Baseline skip (the second value) isn't being used, and so I just made it the same as the font size.
+
+% subtitle
+\bookcovercomponent{normal}{front}[20mm,,10mm,128mm]{\sffamily
+\fontsize{20}{20}\selectfont\hfill \textbf{\textls{\textcolor{white}{THE MISSISSIPPI STATE EDITION}}}}  
+
+
+% Title on the spine
+\bookcovercomponent{center}{spine}{
+\rotatebox[origin=c]{-90}{\sffamily\LARGE \textbf{\textls{FORALL\textcolor{white}{X}~~~THE ~MISSISSIPPI ~STATE ~EDITION~~~~~\textcolor{white}{JOHNSON}}}}}
+
+
+% back cover text
+\bookcovercomponent{normal}{back}[20mm,,20mm,60mm]{\sffamily    %spacing: left, bottom, right, top 
+\textcolor{white}{\textls{\small THIS INTRODUCTION TO FORMAL LOGIC}}~ covers truth-functional logic (which is also often called \textit{propositional logic}) and introduces first-order logic.
+
+\quad The title \textit{forallx} (i.e., ``for all x'') is a reference to first-order logic. This is a symbolic expression in first-order logic: $\forall x(Kx \rightarrow Gx)$, and it is read, ``for all x, if x is K, then x is G.'' Hence, the name of the textbook. And if, for instance, we have \textit{K} stand for ``is a king,'' and \textit{G} stand for ``is greedy,'' then ``$\forall x(Kx \rightarrow Gx)$'' means ``for all x, if x is a king, then x is greedy,'' or ``everyone who is a king is greedy.''
+
+\quad This book is based on a text---the original \textit{forallx}---written by P. D. Magnus and then revised and expanded by Tim Button, J. Robert Loftis, Aaron Thomas-Bolduc, and Richard Zach. It has been further revised specifically for the 1000-level logic course at Mississippi State University.
+
+\quad This textbook is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.  
+}
+
+
+%ISBN
+\bookcovercomponent{normal}{back}[,1cm,,]{
+\vfill
+\centering
+\savebox0{\EANBarcode[module_height=10mm]{ISBN 978-1-716-84837-7}}
+\colorbox{white}{%
+\usebox0
+\raisebox{\depth}{\qrcode[height=\ht0]{https://www.lulu.com/shop/gregory-johnson/forallx/paperback/product-4emmmj.html?q=&page=1&pageSize=4}}}}
+
+\end{bookcover}
+\end{document}
