@@ -55,7 +55,7 @@ Let us define \define{structure words} as \textit{if-then}, \textit{and}, \texti
 An argument is \define{valid in virtue its form} when it remains valid under these conditions: (1) structure words are always part of the argument and (2) with those words in place, sentences or names can be freely substituted into the argument and it will remain valid. 
 \end{factboxy}
 
-\noindent This is not a perfect definition. \textit{Form} in formal logic is much broader than just the use of those ``structure words.'' This is a good definition with which to start, however.
+\noindent This is not a perfect definition. \textit{Form} in formal logic is much broader than just the use of these ``structure words.'' This is a good definition with which to start, however.
 
 And, although valid for reasons \textit{other than} the argument's form is an interesting topic, our focus will be on arguments that are valid because of their form---and in fact, only valid in virtue of some forms. In part 5, we will broaden the analysis a bit, but in parts  \ref{ch.TFL}, \ref{ch.TruthTables}, and \ref{ch.NDTFL} of this textbook, we will be interested in arguments where the form is set by the use of  \textit{if-then}, \textit{and}, \textit{or}, \textit{not}, and \textit{if and only if}. 
 
@@ -99,7 +99,7 @@ Consider this sentence again:
 `It is raining outside' and `Mary is miserable' are \textit{subsentences} of sentence (a). To specify the structure of the first argument in \S\ref{s:ValidityInVirtueOfForm}, we replaced the sentences and subsentences in it with individual letters. `It is raining outside' was replaced with `A', and `Mary is miserable' was replaced with `B'. This kind of representation---letters standing for sentences or subsentences---is one important part of the formal language that we develop in this book.
 
 \begin{factboxy}{Atomic sentences}
-An \define{atomic sentence} is a sentence that (1) can be true or false and (2) cannot be broken into smaller sentences.\medskip
+An \define{atomic sentence} is a sentence that (1) can be true or false and (2) no smaller complete sentence can be extracted from it.\medskip
 
 In English, an atomic sentence is a declarative sentence that does not contain any subsentences.\smallskip
 
@@ -1032,9 +1032,9 @@ The `$\eif$' is the main logical operator for `$(P \eif \enot Q)$'. And the `$\e
 \section{Using parentheses}
 \label{TFLconventions}
 
-Parentheses are required for any sentence of TFL containing two or more atomic sentences. For instance, even in a simple sentence such as `$(Q \eand R)$', they are required. One reason for this is because the rules given in \S\ref{s:Sentences} require it. Those rules don't make a distinction between sentences containing only two atomic sentences and sentences containing more than two. They just tell us to use parentheses in any sentence containing a `$\eand$', `$\eor$', `$\eif$', or `$\eiff$'. Another reason for using parentheses is that we might make `$(Q \eand R)$' a sub-sentence in a more complex sentence. For example, we might want to negate `$(Q \eand R)$', which would give us `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the parentheses and put a `$\enot$' in front of it, we would have `$\enot Q \eand R$'. But `$\enot Q \eand R$' is different than `$\enot(Q\eand R)$'. 
+Parentheses are required for any sentence of TFL containing two or more atomic sentences. For instance, even in a simple sentence such as `$(Q \eand R)$', they are required. One reason for this is because the rules given in \S\ref{s:Sentences} require it. Those rules don't make a distinction between sentences containing only two atomic sentences and sentences containing more than two. They just tell us to use parentheses in any sentence containing a `$\eand$', `$\eor$', `$\eif$', or `$\eiff$'. Another reason for using parentheses is that we might make `$(Q \eand R)$' a sub-sentence in a more complex sentence. For example, we might want to negate `$(Q \eand R)$', which would give us `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the parentheses and put a `$\enot$' in front of it, we would have `$\enot Q \eand R$', which has a different meaning than `$\enot(Q\eand R)$'. 
 
-That said, there are some convenient conventions that we can use as long as we are careful. First, as long as the entire sentence is not being negated,  we can omit the \emph{outermost} parentheses of a sentence. Thus, we allow ourselves to write `$Q \eand R$' instead of `$(Q \eand R)$' when `$Q \eand R$' is the whole sentence. We must remember, however, to put parentheses around it when we want to embed the sentence into a more complex sentence.
+That said, there are some convenient conventions that we can use as long as we are careful. First, as long as the entire sentence is not about to become a sub-sentence,  we can omit the sentence's \emph{outermost} parentheses. Thus, we allow ourselves to write `$Q \eand R$' instead of `$(Q \eand R)$' when `$Q \eand R$' is the whole sentence. We must remember, however, to put parentheses around it when we want to embed the sentence into a more complex one.
 
 Second, it can be a bit difficult to stare at long sentences with many nested pairs of parentheses. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and `]', in addition to rounded ones. So, there is no logical difference, for example, between `$(P\eor Q)$' and `$[P\eor Q]$'. 
 
@@ -1044,6 +1044,65 @@ like this:
 $$[(H \eif I) \eor (I \eif H)] \eand (J \eor K)$$
 The scope of each logical operator is now much easier to identify.
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Use and mention
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\begin{minipage}{1.0\textwidth}
+\section{Object language and metalanguage}\label{s:Metalanguage}
+
+Consider these two sentences:
+	\begin{earg}
+		\item[\ex{JT1}] Justin Trudeau is a Prime Minister.
+		\item[\ex{JT2}] \textit{Justin Trudeau} is the Canadian Prime Minister's name.
+	\end{earg}
+When we want to talk about the Prime Minister of Canada, which we are doing in sentence \ref{JT1}, we \textit{use} his name. When we want to talk about the Prime Minister's name, as we are in sentence \ref{JT2} we \emph{mention} the name.
+\end{minipage}
+\vspace{-3pt}
+
+Since we are describing a formal language, truth-functional logic, we often \emph{mention} sentences of TFL. For example, we are mentioning `$P \eif Q$' in sentence \ref{TFL1}:
+\begin{earg}
+		\item[\ex{TFL1}] `$P \eif Q$' is a conditional.
+\end{earg}
+
+\noindent And likewise, we are mentioning TFL sentences in \ref{obj1} and \ref{obj2}. 
+\begin{earg}
+		\item[\ex{obj1}] `$D$' is an atomic sentence of TFL.
+		\item[\ex{obj2}] `$\enot (\enot Q \eor R)$' is a sentence of TFL if `$(\enot Q \eor R)$' is a sentence of TFL.
+\end{earg}
+
+When we talk about a language (i.e., mention it), the language about which we are talking is called the \define{object language}. The language that we use to talk about the object language is called the \define{metalanguage}.\label{def.metalanguage} 
+
+The object language that concerns us right now is TFL, but any language can be an object language. If, for instance, we want to talk about German, then German is the object language, and English---the language we are using to talk about German---is the metalanguage. Here is an example:
+	\begin{earg}
+		\item[\ex{Ger2}]`Schnee ist wei\ss' is a German sentence.
+	\end{earg}
+In sentence \ref{Ger2}, we are saying that the clause at the beginning of the sentence is a German sentence. 
+
+Whenever we want to talk, in English, about some specific expression of TFL, we need to indicate that we are \textit{mentioning} the expression, rather than \textit{using} it. We can do this by using single quotation marks or italics (although italics are also sometimes used simply for emphasis and not to indicate that we are mentioning a term or sentence). In this textbook, we will also indicate that we are mentioning an expression by placing it centered on the page like this:
+\vspace{-2mm}
+$$\enot(\enot Q \eor R)$$
+
+\section{Metavariables}\label{s:Metavariables}
+
+Sometimes we refer to specific expressions of TFL like `$D$' and `$\enot (\enot Q \eor R)$'. Other times, however, we want to say something about an arbitrary expression of TFL, not a specific one. To do this, we use these uppercase letters:
+\vspace{-2mm}
+	$$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$$
+	
+You probably noticed that we used these letters in our definition of a sentence of TFL in \S\ref{s:Sentences}. For instance, this is one rule in that definition:
+\begin{earg}
+\item[3.] If \meta{A} and \meta{B} are sentences of TFL, then $(\meta{A}\eand\meta{B})$ is a sentence of TFL.
+\end{earg}
+We use `$\meta{A}$' and `$\meta{B}$' (and other capital letters in this font) when we want the letter to stand for any possible sentence of TFL. Hence, `$\meta{A}$' can stand for `$A$' (or `$B$') or for `$(P \eor Q)$' or `$((R \eif T) \eand \enot Q)$' or anything else. 
+
+`$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$' are not actually part of TFL. Rather, they are part of the metalanguage---that is, English---that we use to talk about expressions of TFL. 
+	
+	\factoidbox{
+	  A \define{metavariable} is a variable in the metalanguage (i.e., English) that represents any sentence in our formal language of TFL. The symbols $\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$ are used for the metavariables.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1074,7 +1133,7 @@ For each of the following, (a) is it a sentence of TFL, strictly speaking, and (
 
 \problempart
 What is the scope of each connective in this sentence?
-$$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
+$$[(H \eif I) \eor (I \eif H)] \eand (J \eor K)$$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1117,101 +1176,16 @@ For each of the following, (a) is it a sentence of TFL, strictly speaking, and (
 %\\\myanswer{No. Atomic sentences contain atomic sentences (trivially). And every more complicated sentence is built up out of less complicated sentences, that were in turn built out of less complicated sentences, \ldots, that were ultimately built out of atomic sentences.}\\
 
 
-\problempart $\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$\medskip
+\problempart $[(H \eif I) \eor (I \eif H)] \eand (J \eor K)$\medskip
 
 \noindent The scope of the left-most `$\eif$' is `$(H \eif I)$'. 
 
 \noindent The scope of the right-most `$\eif$' is `$(I \eif H)$'. 
 
-\noindent The scope of the left-most `$\eor$ is `$\bigl[(H \eif I) \eor (I \eif H)\bigr]$'.
+\noindent The scope of the left-most `$\eor$ is `$[(H \eif I) \eor (I \eif H)]$'.
 
 \noindent The scope of the right-most `$\eor$' is `$(J \eor K)$'.
 
 \noindent The scope of the `$\eand$' is the entire sentence, and so the `$\eand$' is the main logical operator and the sentence is a conjunction.
 
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapter: Use and mention
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\chapter{Use and mention}\label{s:UseMention}
-
-\section{Quotation conventions}
-Consider these two sentences:
-	\begin{earg}
-		\item[\ex{JT1}] Justin Trudeau is the Prime Minister.
-		\item[\ex{JT2}] `Justin Trudeau' is composed of two uppercase letters and eleven lowercase letters
-	\end{earg}
-When we want to talk about the Prime Minister of Canada, which we are doing in sentence \ref{JT1}, we \textit{use} his name. When we want to talk about the Prime Minister's name, as we are in sentence \ref{JT2} we \emph{mention} that name.
-
-There is a general point here. When we want to talk about things in the world, we just \emph{use} words. When we want to talk about words, we have to \emph{mention} those words. To indicate that we are mentioning them rather than using them, we put them in single quotation marks, or use italics. 
-
-Let's compare sentences \ref{JT1} and \ref{JT2} to sentences \ref{JT1b} and \ref{JT2b}:
-	\begin{earg}
-		\item[\ex{JT1b}] `Justin Trudeau' is the Prime Minister.
-		\item[\ex{JT2b}] Justin Trudeau is composed of two uppercase letters and eleven lowercase letters.
-	\end{earg}
-Sentence \ref{JT1} is correct. Justin Trudeau, the man, is the Prime Minister of Canada. According to sentence \ref{JT1b}, the phrase `Justin Trudeau' is the Prime Minister, which is false. The same problem is illustrated by sentences \ref{JT2} and \ref{JT2b}. Sentence \ref{JT2} is fine. According to \ref{JT2b}, however, Justin Trudeau (the man) is made of letters, which is false. 
-
-%For those who aren't feint of heart, one more example:
-%	\begin{ebullet}
-%		\item ``\,`Justin Trudeau'\,'' is the name of `Justin Trudeau'.
-%	\end{ebullet} 
-%On the left-hand-side, here, we have the name of a name. On the right hand side, we have a name. Perhaps this kind of sentence only occurs in logic textbooks, but it is true nonetheless. 
-
-
-\section{Object language and metalanguage}\label{s:Metalanguage}
-Since we are describing a formal language, we are often \emph{mentioning} expressions from TFL. When we talk about a language, the language that we are talking about is called the \define{object language}. The language that we use to talk about the object language is called the \define{metalanguage}.\label{def.metalanguage} 
-
-Imagine for a moment that we are talking about German. In that case, German is our object language, and English---the language we are using to talk about German---is the metalanguage.
-	\begin{earg}
-		\item[\ex{Ger1}] Schnee ist wei\ss\ is a German sentence.
-		\item[\ex{Ger2}]`Schnee ist wei\ss' is a German sentence.
-	\end{earg}
-Sentence \ref{Ger2} is correct. There were are saying that the clause at the beginning of the sentence is a German sentence. You can probably tell that sentence \ref{Ger1} is attempting to express the same idea, but, as it is, it is just a sentence stating `Snow is white is a German sentence'---in two different languages, no less. 
-
-Of course, we aren't concerned with German here. For the most part, the object language in this chapter has been the formal language of TFL. The metalanguage is English. And just as we saw with sentence \ref{Ger2}, when we are referring to a sentence in the object language, we need to indicate that we are mentioning it, not using it. 
-	\begin{earg}
-		\item[\ex{obj1}] `$D$' is an atomic sentence of TFL.
-		\item[\ex{obj2}] `$\enot (\enot Q \eor R)$' is a sentence of TFL \textit{\textbf{if}} `$(\enot Q \eor R)$' is a sentence of TFL.
-	\end{earg}
-
-The general point is that, whenever we want to talk in English about some specific expression of TFL, we need to indicate that we are \emph{mentioning} the expression, rather than \emph{using} it. We can either deploy quotation marks, or we can adopt some similar convention, such as  placing it centrally in the page. 
-
-
-\section{Metavariables}\label{s:Metavariables}
-
-Sometimes we discuss specific expressions of TFL like `$D$' and `$\enot (\enot Q \eor R)$'. Other times, however, we want to say something about an arbitrary expression of TFL, not a specific one. To do that, we use these uppercase letters:
-	
-	$$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$$
-	
-You probably noticed that we used these letters in our definition of a sentence of TFL in \S\ref{s:Sentences}. For instance, this is one rule in that definition:
-
-\begin{earg}
-\item[3.] If \meta{A} and \meta{B} are sentences of TFL, then $(\meta{A}\eand\meta{B})$ is a sentence of TFL.
-\end{earg}
-
-We used `$\meta{A}$' and `$\meta{B}$' because those symbols must stand for any possible sentence of TFL, not just `$A$' and `$B$'. For instance, `$\meta{A}$' might stand 
-for `$(P \eor Q)$' or `$((R \eif T) \eand \enot Q)$' or anything else.
-
-`$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$' do not belong to TFL. Rather, they are part of the metalanguage---that is, English---that we use to talk about expressions of TFL. 
-	
-	\factoidbox{
-	  A \define{metavariable} is a variable in the metalanguage (i.e., English) that represents any sentence in our formal language of TFL. The symbols $\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$ are used for the metavariables.}
-
-
-\section{Quotation conventions for arguments}
-
-One of our main purposes for using TFL is to study arguments, and that will be our concern in Parts \ref{ch.TruthTables} and \ref{ch.NDTFL}. In English, the premises of an argument are often expressed by individual sentences, and the conclusion by a further sentence. Since we can symbolize English sentences, we can symbolize English arguments using TFL. Thus we might ask whether the argument whose premises are the TFL sentences `$A$' and `$A \eif C$', and whose conclusion is the TFL sentence `$C$', is valid. However, it is quite a mouthful to write that every time. So instead we will introduce another bit of abbreviation. This:
-	$$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$$
-abbreviates:
-	\begin{quote}
-		the argument with premises $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and conclusion $\meta{C}$
-	\end{quote}
-To avoid unnecessary clutter, we will not regard this as requiring quotation marks around it. (Note, then, that `$\proves$' is a symbol of our augmented \emph{metalanguage} and not a new symbol of TFL.)

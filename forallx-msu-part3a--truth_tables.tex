@@ -212,7 +212,7 @@ A \textit{truth-value assignment} is any assignment of truth values to particula
 \section{An example}\label{s:tt-example}
 Consider the sentence `$(H\eand I)\eif H$', which contains three atomic sentences, although only two different ones. We set up the truth table for this sentence by putting $H$ and $I$ on the left side of the vertical line and `$(H\eand I)\eif H$' on the right. (Although $H$ appears twice in `$(H\eand I)\eif H$', we only need one $H$ on the left.) Below the $H$ and $I$ on the left side, we put every combination of `T' and `F'.  
 
-Since we have two atomic sentences on the left, there are four combinations of true and false. For consistency, the Ts and Fs should always be listed this way: (a) in the column next to the vertical line, they alternate T, F, T, F; (b) in the next column (to the left), they alternate in pairs: T, T, F, F; and (c) if there are more than two atomic sentences, then more columns and more rows are needed, but the pattern remains the same. (See table \ref{TFTF-order}.)
+Since we have two atomic sentences on the left, there are four combinations of true and false. For consistency, the Ts and Fs should always be listed this way: (a) in the column next to the vertical line, they alternate T, F, T, F; (b) in the next column (to the left), they alternate in pairs: T, T, F, F; and (c) if there are more than two atomic sentences, then more columns and more rows are needed, but the pattern remains the same. (See table \ref{TFTF-order} on p. \pageref{TFTF-order}.)
 \begin{center}
 \begin{tabular}{d d | f e e e e}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -247,7 +247,16 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 \end{tabular}
 \end{center}
 
-Now , there are two  columns that remain. The one under the `$\eand$' and the one under the `$\eif$'. `$(H\eand I)\eif H$', is a conditional. Therefore, the `\eif' is the main logical operator, and the column under the `\eif' will be filled in last. So, right now, we focus on `$(H\eand I)$'. This is a conjunction, and to determine the truth values  for just this sub-sentence, we turn to the characteristic truth table for conjunction. As is shown on p.~\pageref{conjunction-tt}, when `$H$' and `$I$' are both true, we put a `T' below the `$\eand$'. 
+
+\section{Truth tables and scope}
+
+Now , there are two  columns that remain. The one under the `$\eand$' and the one under the `$\eif$'.  You may have thought that a logical operator's scope was of only passing importance when we discussed it in \S \ref{main_logical_operator}. It is, however, extremely important for understanding how to complete truth tables for sentences that contain more than one logical operator.
+
+To determine the order in which we complete a truth table, we follow this rule:
+\begin{earg}
+\item[1.] We can only fill in the column under a logical operator when the columns for everything in that logical operator's scope are complete. 
+\end{earg}
+In `$(H\eand I)\eif H$', the scope of the `$\eand$' is the `$H$' and the `$I$' inside the parentheses.  Since the columns under the `$H$' and the `$I$' are complete, we can fill in the column under the `$\eand$'. To do this, we turn to the characteristic truth table for the conjunction. As is shown on p.~\pageref{conjunction-tt}, when `$H$' and `$I$' are both true, we put a `T' below the `$\eand$'.  
 
 \begin{center}
 \begin{tabular}{d d | f e e e e}
@@ -286,7 +295,17 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\textcol
 \end{tabular}
 \end{center}
 
-Now, we complete the truth table by filling in the column under the `$\eif$'. In this conditional, `$(H \eand I)$' is the antecedent and the `$H$' after the `$\eif$' is the consequent. Therefore, we need to look at the truth values below the `\eand' and the `$H$', and we need to refer to the characteristic truth table for the conditional (p.~\pageref{characteristic-tt-conditional}). On the first line, `$(H\eand I)$' is true and `$H$' is true, and so we put a `T' beneath the `\eif'.
+The scope of the `$\eif$' is the `$(H \eand I)$' and the `$H$'. Since the columns under both are complete, we can finish the truth table by filling in the column under the `$\eif$'. But first, we need a second rule.
+\begin{earg}
+\item[2.] For any sentence or sub-sentence (other than an atomic sentence), the column under its main logical operator represents the truth value for the sentence. 
+(For an atomic sentence, the column under the letter represents its truth value.)
+\end{earg}
+
+Since the `$\eand$' is the main logical operator in `$(H \eand I)$', the column below the `$\eand$' is one of the columns that we must consult to fill in the column under the `$\eif$'.
+The other is the column below the `$H$' after the `$\eif$'.
+Using the truth values in those two columns, we then refer to the characteristic truth table for the conditional on p.~\pageref{characteristic-tt-conditional}. 
+
+On the first line, `$(H\eand I)$' is true and `$H$' is true, and so we put a `T' beneath the `\eif'.
 
 \begin{center}
 \begin{tabular}{d d | f e e e e}
@@ -299,7 +318,7 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$
 \end{tabular}
 \end{center}
 
-On the second row, `$(H\eand I)$' is false and `$H$' is true. (That's the scenario on the third line of the characteristic truth table for the conditional (p.~\pageref{characteristic-tt-conditional}), not the second.) A conditional is true when the antecedent is false and  the consequent is true, and so we put a `T' in the second row beneath the `$\eif$'. 
+On the second row, `$(H\eand I)$' is false and `$H$' is true. (That's the truth-value assignment given on the third line of the characteristic truth table for the conditional, not the second.) A conditional is true when the antecedent is false and  the consequent is true, and so we put a `T' in the second row beneath the `$\eif$'. 
 
 \begin{center}
 \begin{tabular}{d d | f e e e e}
@@ -325,30 +344,30 @@ $\textcolor{light-gray}{H}$&$\textcolor{light-gray}{I}$&$(H$&\eand&$I)$&\eif&$H$
 \end{tabular}
 \end{center}
 
+Since the `\eif' is the main logical operator for `$(H \eand I) \eif H$', we've now determine the truth values for this sentence. The column of `T's beneath the `\eif' tells us that `$(H \eand I)\eif H$' is true regardless of the truth values of `$H$' and `$I$'. Those atomic sentences can be true or false in any combination, and the full sentence, `$(H \eand I)\eif H$', remains true. Since we have considered all four possible assignments of truth and falsity to `$H$' and `$I$', we can say that `$(H \eand I)\eif H$' is true on every \textit{truth-value assignment}.
 
-Since the `\eif' is the main logical operator, we've now determine the truth values for this sentence. The column of `T's beneath the `\eif' tells us that the sentence `$(H \eand I)\eif H$' is true regardless of the truth values of `$H$' and `$I$'. Those atomic sentences can be true or false in any combination, and the full sentence, `$(H \eand I)\eif H$', remains true. Since we have considered all four possible assignments of truth and falsity to `$H$' and `$I$', we can say that `$(H \eand I)\eif H$' is true on every \textit{truth-value assignment}.
-
-In the truth table for any sentence, the most important column is the one beneath the \emph{main logical operator} for the sentence, since this tells us the truth value of the entire sentence. We have emphasized it in the last truth table above by putting this column in bold. When you work through truth tables yourself, you should similarly emphasize it underlining or circling it.
+In the truth table for any sentence, the most important column is the one beneath the main logical operator for the sentence because this column tells us the truth value of the entire sentence. We have emphasized it in the last truth table above by putting this column in bold. When you work through truth tables yourself, you should similarly emphasize it with underlining or circling.
 
 
 \section{Building complete truth tables}\label{s:tt-example2}
 A \define{complete truth table} has a line for every possible combination of \textit{true} and \textit{false} for the atomic sentences that compose the full sentence. Each line represents a \emph{truth-value assignment}, and a complete truth table has a line for all of the different truth-value assignments. 
 
-The size of the complete truth table depends on the number of different atomic sentences in the table. A sentence that contains only one atomic sentence requires only two rows, even if the same letter is repeated many times, as in the sentence
-`$[(C\eiff C) \eif C] \eand \enot(C \eif C)$'.
-The complete truth table requires only two lines because there are only two possibilities: `$C$' can be true or it can be false. The truth table for this sentence looks like this:
+The size of the complete truth table depends on the number of \textit{different} atomic sentences in the table. The truth table for a TFL sentence that contains only one atomic sentence, perhaps repeated multiple times, needs only two rows. Here is an example of such a sentence:
+\vspace{-2mm}
+$$((P \eand \enot P) \eif P)$$
+The truth table for this---or any sentence containing only one atomic sentence---is only two lines because there are only two possibilities: `$P$' can be true or it can be false. 
 \begin{center}
-\begin{tabular}{d | f e e e e e e e e e e e e e e }
-$C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
+\begin{tabular}{d | f e e e e e}
+$P$& (($P$& $\eand$& $\enot$& $P$)& $\eif$& $P$)\\
 \hline
- T &    & T &  T  & T &   & T  & T & &\TTbf{\textcolor{red2}{F}}&  F& &   T &  T  & T & \Tstrut\\
- F &    & F &  T  & F &   & F  & F & &\TTbf{\textcolor{red2}{F}}&  F& &   F &  T  & F &   \\
+T&      T& F& F& T&   \TTbf{\textcolor{red2}{T}}& T\Tstrut\\
+F&      F& F& T& F&   \TTbf{\textcolor{red2}{T}}& F \\
 \end{tabular}
 \end{center}
-Looking at the column underneath the main logical operator, we see that the sentence is false on both rows of the table; i.e., the sentence is false regardless of whether `$C$' is true or false. In other words, it is false on every truth-value assignment.
 
-A sentence that contains two atomic sentences requires four lines for a complete truth table.
-A sentence that contains three atomic sentences requires eight lines, as shown in the truth table for `$M \eand (N \eor P)$'. Notice that the `T's and `F's in the columns below `$N$' and `$P$' (on the left side) follow the same pattern as the example in the previous section. The column under the `$M$', meanwhile, has four `T's and then four `F's.
+As we have seen, for a sentence that contains two different atomic sentences, we need four lines for a complete truth table.
+
+The complete truth table for a sentence that contains three different atomic sentences, meanwhile, needs eight lines, as shown right below. Notice that the `T's and `F's in the columns below `$N$' and `$P$' (on the left side) follow the same pattern as the example in the previous section. The column under the `$M$', meanwhile, has four `T's and then four `F's.
 \begin{center}
 \begin{tabular}{d d d | f e e e e}
 $M$&$N$&$P$&$M$&\eand&$(N$&\eor&$P)$\\
@@ -363,9 +382,8 @@ F & F & T & F & \TTbf{\textcolor{red2}{F}} & F & T & T\\
 F & F & F & F & \TTbf{\textcolor{red2}{F}} & F & F & F
 \end{tabular}
 \end{center}
-By inspecting this truth table, we can see that `$M\eand (N \eor P)$' can be true or false, depending on the truth values of `$M$', `$N$', and `$P$'.
 
-A complete truth table for a sentence that contains four different atomic sentences requires 16 lines. If the sentence has five different letters, the truth table will have 32 lines. If it has six letters, it will have 64 lines, and so on. The rule here is this: for $n$ different atomic sentences, the truth table for the sentence must have $2^n$ lines.
+A complete truth table for a sentence that contains four different atomic sentences has to have 16 lines. If the sentence has five different letters, the truth table must have 32 lines. If it has six letters, it will have 64 lines, and so on. This is the rule for the number of rows that a truth table must have: for $n$ different atomic sentences, the truth table for the sentence must have $2^n$ rows.
 
 \begin{table*}\centering\sffamily\footnotesize
 \ra{1.4}
@@ -383,13 +401,11 @@ fifth		& 16 Ts, 16 Fs, \dots \\
 \label{TFTF-order}
 \end{table*}
 
-% But whether a truth table has four lines or 64 lines, every truth table for the same sentence should be the same. Hence, the columns on the left side have to be set as follows. Below the last letter (the one next to the vertical line), alternate between `T' and `F'. In the next column to the left, write two `T's, then two `F's, and repeat. For the third atomic sentence, write four `T's followed by four `F's. This yields an eight line truth table like the one above. For a 16 line truth table, the next column of atomic sentences should have eight `T's followed by eight `F's. For a 32 line table, the next column would have 16 `T's followed by 16 `F's, and so on.
-
 
 \section{Some more examples}
 
 \begin{earg}
-\item[\ex{9.3.1}] To create a truth table for `$(P \eiff Q) \eif (P \eor Q)$', first, we fill in the columns below each $P$ and $Q$. Next, we fill in the columns under the `$\eiff$' and the `$\eor$' (in either order). 
+\item[\ex{9.3.1}] To create a truth table for `$(P \eiff Q) \eif (P \eor Q)$', first, we fill in the columns below each $P$ and $Q$. Next, since the truth values for everything in the scope of the `$\eiff$' and the `$\eor$' are complete, we can fill in the columns below those two logical operators (in either order). 
 \begin{center}
 \begin{tabular}{d d | f e e e e e e}
 $P$ &$Q$&  ($P$& $\eiff$& $Q$)& $\eif$& ($P$& $\eor$& $Q$)\\
@@ -412,6 +428,7 @@ F& F&      \textcolor{light-gray}{F}& T&  \textcolor{light-gray}{F}&   \TTbf{\te
 \end{tabular}
 \end{center}
 
+\noindent\begin{minipage}{1.0\textwidth}
 \item[\ex{9.3.2}]To make a truth table for `$P \eand \enot Q$', after we have filled in the columns below the $P$ and $Q$, we fill in the column under the $\enot$. To do that, we look at the column under the $Q$.
 \begin{center}
 \begin{tabular}{d d | f e e e}
@@ -423,6 +440,7 @@ F& T&    \textcolor{light-gray}{F}& & \TTbf{F}& T\\
 F& F&    \textcolor{light-gray}{F}& & \TTbf{T}& F\\
 \end{tabular}
 \end{center}
+\end{minipage}\vspace{3mm}
 Then, to complete the truth table, we fill in the column under the `$\eand$'---which we do by looking at the column under the $P$ and the column under the `$\enot$'.
 \begin{center}
 \begin{tabular}{d d | f e e e}
@@ -458,7 +476,7 @@ F& F&  \TTbf{\textcolor{red2}{F}}&   \textcolor{light-gray}{F}& T& \textcolor{li
 \end{tabular}
 \end{center}
 
-
+\noindent\begin{minipage}{1.0\textwidth}
 \item[\ex{9.3.4}]In `$(P \eand \enot Q) \eor Q$', the `$\eor$' is the main logical operator, and so we will fill in the column under it last. First (after we have filled in the columns under the `$P$' and the `$Q$'), we fill in the column under the `$\enot$'.
 \begin{center}
 \begin{tabular}{d d | f e e e e e}
@@ -470,6 +488,7 @@ F& T&      \textcolor{light-gray}{F}& & F& \textcolor{light-gray}{T}&   & \textc
 F& F&      \textcolor{light-gray}{F}& & T& \textcolor{light-gray}{F}&   & \textcolor{light-gray}{F}\\ 
 \end{tabular}
 \end{center}
+\end{minipage}\vspace{3mm}
 Next, while looking at the column under the `$P$' and under the `$\enot$', we fill in the column under the `$\eand$'.
 \begin{center}
 \begin{tabular}{d d | f e e e e e}
@@ -500,7 +519,7 @@ F& F&      \textcolor{light-gray}{F}& F& \textcolor{light-gray}{T}& \textcolor{l
 
 \section{Truth tables in Carnap}\label{s:ttCarnap-intro}
 
-You should practice making truth tables on paper, but you also need to make them using the software package Carnap (https://carnap.io/). Using Carnap is pretty straightforward, and it's made easier because the left side of the truth table is completed for you. (See figure \ref{fig:tt-1}.) On the right side, below each atomic sentence and connective, you have the option of selecting a `T' or an `F'. (See figure \ref{fig:tt-2}.)  
+You should practice making truth tables on paper, but you also need to make them on the online site Carnap (https://carnap.io/). Using Carnap is pretty straightforward, and it's made easier because the left side of the truth table is completed for you. (See figure \ref{fig:tt-1}.) On the right side, below each atomic sentence and connective, you have the option of selecting a `T' or an `F'. (See figure \ref{fig:tt-2}.)  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -535,6 +554,7 @@ You should practice making truth tables on paper, but you also need to make them
 
 Most often (although not always), the problems in Carnap will be set up so that you will only be able to submit your answers when they are correct. At those times, once the truth table is complete, you will select `Check'. Carnap will tell you ``Success!'' or ``Something's not quite right.'' It is easy to make a mistake when filling in a truth table, and so if something is not quite right, then you have to inspect every truth value until you find the mistake. Then select `Check' again. Once Carnap confirms that the truth table is correct, select `Submit'. \textbf{Don't forget to submit after you complete every truth table correctly.}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}%[h]	%\begin{SCfigure}
 \centering
@@ -543,7 +563,6 @@ Most often (although not always), the problems in Carnap will be set up so that 
 \label{fig:tt-6}
 \end{figure}	%\end{SCfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 
@@ -575,7 +594,7 @@ Make a complete truth table for each sentence.
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \end{earg}
 
-\newpage
+%\newpage
 \problempart
 Check whether each of these statements is true.
 \begin{earg}
@@ -766,6 +785,7 @@ F & F & F & \TTbf{T} & F & F & F & F & F
 \end{earg}
 \vspace{1em}
 
+\newpage
 
 \problempart
 
@@ -806,7 +826,7 @@ F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 \vspace{1em}
 \end{minipage}
 
-
+\noindent\begin{minipage}{1.0\textwidth}
 \item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e }
@@ -822,9 +842,10 @@ F & F & T & F & F & F & \TTbf{F} & T & F& \TTbf{F} & F& F & T\\
 F & F & F & F & F & F & \TTbf{F} & F & F& \TTbf{F} &  F& F & F\\
 \end{tabular}
 \end{flushleft}}
-\vspace{1em}
+\end{minipage}
+\vspace{.5em}
 
-\begin{minipage}{10cm}
+\noindent\begin{minipage}{1.0\textwidth}
 \item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e }
@@ -840,8 +861,8 @@ F & F & T & F & T & F & \TTbf{T} & T & F& \TTbf{T} & F& T & T\\
 F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{T} &  F& T & F\\
 \end{tabular}
 \end{flushleft}}
-\vspace{1em}
 \end{minipage}
+\vspace{.5em}
 
 \item `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table.\\
 \myanswer{\begin{flushleft}
@@ -1041,6 +1062,15 @@ F&  F&  F	&	T		&	F	&	T	&	F	&	F	&	F	&	\TTbf{F}	&	T		&	F	&	F	&F	\\
 }
 %\vspace{1em}
 \end{earg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{SCfigure}[1.9] %The [#] adjusts the width of the caption.
+\includegraphics[width=.25\textwidth]{i_falsed-2.jpg}
+\caption{Mistakes happen. Try to minimize them by not rushing and always consulting the characteristic truth tables in chapter \ref{s:CharacteristicTruthTables}. \tiny{Peanuts $\textcopyright$ 1969}}
+\label{fig:falsed}
+\end{SCfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
