@@ -185,17 +185,19 @@ So, consider a sentence like this one:
 \begin{ebullet}
 \item[] $\forall x[B(x) \eand N(x)]$
 \end{ebullet}
-The scope of the universal quantifier is the whole sentence. Therefore, we treat it as the main logical operator. As such, we can use the universal elimination rule on this sentence, but we can't use the conjunction elimination rule. If we apply the universal elimination rule, then we have a sentence like this one:
+The scope of the universal quantifier is the whole sentence. Therefore, we treat it as the main logical operator. As such, we can use the universal elimination rule on this sentence, and we can't use the conjunction elimination rule. If we apply the universal elimination rule, then we have a sentence like this one:
 \begin{ebullet}
 \item[] $B(c) \eand N(c)$
 \end{ebullet}
-Now, we can use the conjunction elimination rule to get either `$B(c)$' or `$N(c)$' on a line by itself. But, again, we \textit{cannot} use the conjunction elimination rule with $\forall x[B(x) \eand N(x)]$ because the universal quantifier is the main logical operator.
+Now, we can use the conjunction elimination rule to get either `$B(c)$' or `$N(c)$' on a new line. %But, again, we \textit{cannot} use the conjunction elimination rule with `$\forall x[B(x) \eand N(x)]$' because the universal quantifier is the main logical operator.
 
-Here are some examples of proofs that use the rules introduced in this chapter, along with the rules of derivation introduced for TFL.
+Here are some examples of proofs that use the rules introduced in this chapter, along with the rules of derivation from chapter \ref{s:BasicTFL}.
 
 \begin{earg}
 \begin{minipage}{10cm}
 \item $\forall xF(x) \proves \forall yF(y)$
+
+%\noindent \textit{universal elimination and universal introduction rules}
 
 \begin{proof}
 	\hypo{p1}{\forall xF(x)} \pr{}
@@ -205,10 +207,10 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \bigskip
 \end{minipage}
 
-\item $\forall x(G(x) \eif H(x)), \forall xG(x) \proves \forall xH(x)$
+\item $\forall x[G(x) \eif H(x)], \forall xG(x) \proves \forall xH(x)$
 
 \begin{proof}
-	\hypo{p1}{\forall x(G(x) \eif H(x))} \pr{}
+	\hypo{p1}{\forall x[G(x) \eif H(x)]} \pr{}
 	\hypo{p2}{\forall xG(x)} \pr{}
 	\have{GH}{G(a) \eif H(a)} \Ae{p1}
 	\have{G}{G(a)} \Ae{p2}
@@ -218,40 +220,40 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \bigskip
 
 \begin{minipage}{10cm}
-\item $\forall x(F(x) \eif G(x)), F(a) \proves \exists x(F(x) \eand G(x))$
+\item $\forall x[F(x) \eif G(x)], F(a) \proves \exists x[F(x) \eand G(x)]$
 
 \begin{proof}
-	\hypo{p1}{\forall x(F(x) \eif G(x))} \pr{}
+	\hypo{p1}{\forall x[F(x) \eif G(x)]} \pr{}
 	\hypo{p2}{F(a)} \pr{}
 	\have{fg}{F(a) \eif G(a)} \Ae{p1}
 	\have{g}{G(a)} \ce{p2,fg}
 	\have{fg2}{F(a) \eand G(a)} \ai{p2,g}
-	\have{c}{\exists x(F(x) \eand G(x))} \Ei{fg2}	
+	\have{c}{\exists x[F(x) \eand G(x)]} \Ei{fg2}	
 \end{proof}
 \bigskip
 \end{minipage}
 
 \begin{minipage}{10cm}
-\item $\exists xM(x) \proves \exists x(M(x) \eor N(x))$
+\item $\exists xM(x) \proves \exists x[M(x) \eor N(x)]$
 
 \begin{proof}
 	\hypo{p1}{\exists xM(x)} \pr{}
 	\open
 		\hypo{m}{M(a)} \as{}
 		\have{mn}{M(a) \eor N(a)} \oi{m}
-		\have{mn2}{\exists x(M(x) \eor N(x))} \Ei{mn}
+		\have{mn2}{\exists x[M(x) \eor N(x)]} \Ei{mn}
 	\close
-	\have{c}{\exists x(M(x) \eor N(x))} \Ee{p1,m-mn2}
+	\have{c}{\exists x[M(x) \eor N(x)]} \Ee{p1,m-mn2}
 \end{proof}
 \bigskip
 \end{minipage}
 
 
-\item $\exists x \enot F(x), \forall x(F(x) \eor G(x)) \proves \exists xG(x)$
+\item $\exists x \enot F(x), \forall x[F(x) \eor G(x)] \proves \exists xG(x)$
 
 \begin{proof}
 	\hypo{p1}{\exists x \enot F(x)} \pr{}
-	\hypo{p2}{\forall x(F(x) \eor G(x))} \pr{}
+	\hypo{p2}{\forall x[F(x) \eor G(x)]} \pr{}
 	\open
 		\hypo{nf}{\enot F(a)} \as{}
 		\have{fg}{F(a) \eor G(a)} \Ae{p2}
@@ -263,10 +265,10 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \bigskip
 
 \begin{minipage}{10cm}
-\item $\exists x(B(x) \eif D(x)), \forall xB(x) \proves \exists xD(x)$
+\item $\exists x[B(x) \eif D(x)], \forall xB(x) \proves \exists xD(x)$
 
 \begin{proof}
-	\hypo{p1}{\exists x(B(x) \eif D(x))} \pr{}
+	\hypo{p1}{\exists x[B(x) \eif D(x)]} \pr{}
 	\hypo{p2}{\forall xD(x)} \pr{}
 	\open
 		\hypo{bd}{B(a) \eif D(a)} \as{}
@@ -312,6 +314,47 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \bigskip
 
 
+\item $\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))\textcolor{magenta}{,}~ L(a,b)\textcolor{magenta}{,}~ L(b,c) \proves L(a,c)$
 \end{earg}
+
+\noindent This is one of the examples of an arguments is that is valid in virtue of its from chapter \ref{symbolization}:
+
+	\begin{earg}
+		\item[1.] Seoul is larger than London.
+		\item[2.] London is larger than Chicago.
+		\item[3.] Therefore, Seoul is larger than Chicago. 
+	\end{earg}
+
+\noindent We couldn't, however, represent such an argument in TFL. Now, we can do so with FOL. 
+We will use this two-place predicate: 
+\begin{ekey}
+	\item[L] \rule{1cm}{0.15mm} is larger than \rule{1cm}{0.15mm}
+\end{ekey}
+
+For this argument, this predicate must have the \textit{transitive relation}. This relation is defined with this sentence, which will be a premise in the argument:
+\vspace{-3mm}
+$$\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))$$
+In English, this is `for all \textit{x}, for all \textit{y}, and for all \textit{z}, if \textit{x} is larger than \textit{y} and \textit{y} is larger than \textit{z}, then \textit{x} is larger than \textit{z}'. 
+(Not all two-place predicates are transitive, which is why we need this premise. You can see this by thinking about a different two-place that `$L$' might represent: `\rule{1cm}{0.15mm} loves \rule{1cm}{0.15mm}'.)
+ 
+This is the argument:
+\medskip
+
+$\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))\textcolor{magenta}{,}~ L(a,b)\textcolor{magenta}{,}~ L(b,c) \proves L(a,c)$
+\medskip
+
+\noindent We use the universal elimination rule three times to remove each of the universal quantifiers. Then, it is a simple matter of using the conjunction introduction and conditional elimination rules to get the conclusion `$a$ is larger than $c$'.
+
+\begin{proof}
+	\hypo{p1}{\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))} \pr{}
+	\hypo{p2}{L(a,b)} \pr{}
+	\hypo{p3}{L(b,c)} \pr{}
+	\have{p4}{\forall y \forall z([L(a,y) \eand L(y,z)] \eif L(a,z))} \Ae{p1}
+	\have{p5}{\forall z([L(a,b) \eand L(b,z)] \eif L(a,z))} \Ae{p4}
+	\have{p6}{(L(a,b) \eand L(b,c)) \eif L(a,c)} \Ae{p5}
+	\have{p7}{L(a,b) \eand L(b,c)} \ai{p2,p3}
+	\have{c}{L(a,c)} \ce{p6,p7}
+\end{proof}
+
 
 
