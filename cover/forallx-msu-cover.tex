@@ -1,7 +1,7 @@
 
 %% USE LUALATEX!!!
 
-\documentclass[coverheight=229mm, coverwidth=152mm, spinewidth=15.09mm]{bookcover}
+\documentclass[bleedwidth=6.35mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=13.9mm]{bookcover}
 \usepackage{GS1,qrcode}   % for the barcode
 \usepackage{xcolor}
 
@@ -51,6 +51,16 @@
 \bookcovercomponent{normal}{front}[20mm,,10mm,128mm]{\sffamily
 \fontsize{20}{20}\selectfont\hfill \textbf{\textls{\textcolor{white}{THE MISSISSIPPI STATE EDITION}}}}  
 
+% sub-subtitle
+%\bookcovercomponent{normal}{front}[20mm,,10mm,139mm]{\sffamily
+%\fontsize{18}{18}\selectfont\hfill{An Introduction to Formal Logic}}
+
+% edition
+\bookcovercomponent{normal}{front}[20mm,,10mm,204mm]{\sffamily
+\fontsize{16}{16}\selectfont\hfill{Spring 2024}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Title on the spine
 \bookcovercomponent{center}{spine}{
@@ -69,14 +79,16 @@
 }
 
 
-%ISBN
+%ISBN [module_height=9mm]{ISBN 978-1-716-84837-7}
 \bookcovercomponent{normal}{back}[,1cm,,]{
 \vfill
-\centering
-\savebox0{\EANBarcode[module_height=10mm]{ISBN 978-1-716-84837-7}}
+\centering\textcolor{forallx-orange}{
+\savebox0{\EANBarcode[module_height=12mm]{ISBN 9798865977643}}
 \colorbox{white}{%
 \usebox0
-\raisebox{\depth}{\qrcode[height=\ht0]{https://www.lulu.com/shop/gregory-johnson/forallx/paperback/product-4emmmj.html?q=&page=1&pageSize=4}}}}
+\raisebox{\depth}{\qrcode[height=\ht0]{https://loighic.net}}
+}}}
+
 
 \end{bookcover}
 \end{document}
