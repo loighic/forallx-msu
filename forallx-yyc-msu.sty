@@ -15,6 +15,7 @@
 \definecolor{maroon}{RGB}{102,0,0}
 \definecolor{light-gray}{gray}{0.80}
 \definecolor{red2}{RGB}{192,0,0}
+\definecolor{darkgreen}{RGB}{34,139,34}
  
 \colorlet{leadbeater}{black} 
 \colorlet{dkleadbeater}{black}
@@ -538,8 +539,12 @@ fontupper=\footnotesize
 \newcolumntype{g}{@{\hspace{7pt}}c@{\hspace{7pt}}}				% med space / med space (for the turnstile column)
 \newcolumntype{j}{@{\hspace{8pt}}c@{}}								% large space / zero space   (for the beginning of the second or third premise) 
 
+
+%% COLORS
 \newcommand*{\TTbf}[1]{\textbf{#1}} 
-\newcommand*{\TTlg}[1]{\textcolor{light-gray}{#1}}		
+\newcommand*{\TTlg}[1]{\textcolor{light-gray}{#1}}
+\newcommand*{\TTv}[1]{\textcolor{violet}{#1}}
+\newcommand*{\TTdg}[1]{\textcolor{darkgreen}{#1}}
 
 \newcommand\Tstrut{\rule{0pt}{2.5ex}}         % = `top' strut for truth tables
 
@@ -557,7 +562,7 @@ fontupper=\footnotesize
 %   B. To draw graphs illustrating small finite interpretations. 
 % All these drawings are done using tikz
 \usepackage{tikz}
-\usetikzlibrary{arrows,positioning,shapes} 
+\usetikzlibrary{arrows.meta,positioning,shapes,calc} 
 
 \tikzset{phantom_shape/.style={thick, fill=black!0, minimum width=30pt, minimum height=30pt}, % TB: renders the shape invisible
 		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
@@ -567,7 +572,24 @@ fontupper=\footnotesize
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}  % for circling letters or numbers. Use \circled{1}
 
-\IfFileExists{forallxyyc-local.sty}{\usepackage{forallxyyc-local}}{}
+
+%% This is for the first truth table in the chapter on the characteristic truth table.
+\newcommand{\tikzmark}[2][-3pt]{\tikz[remember picture, overlay, baseline=-0.5ex]\node[#1](#2){};}
+
+\newcounter{arrow}
+\setcounter{arrow}{0}
+\newcommand{\drawcurvedarrow}[3][]{%
+\refstepcounter{arrow}
+ \tikz[remember picture, overlay]\draw (#2.center)edge[#1]node[coordinate,pos=0.5, name=arrow-\thearrow]{}(#3.center);
+}
+
+% #1 options, #2 position, #3 text 
+%\newcommand{\annote}[3][]{%
+% \tikz[remember picture, overlay]\node[#1] at (#2) {#3};
+%}
+
+
+%\IfFileExists{forallxyyc-local.sty}{\usepackage{forallxyyc-local}}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

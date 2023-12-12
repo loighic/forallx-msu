@@ -52,7 +52,7 @@ These examples illustrate \emph{validity in virtue of form}. The arguments about
 \begin{factboxy}{valid in virtue of form}
 Let us define \define{structure words} as \textit{if-then}, \textit{and}, \textit{or}, \textit{not}, \textit{if and only if}, and comparative adjectives followed by \textit{than} (e.g., \textit{larger than}, \textit{faster faster than}, \textit{older than}).
 
-An argument is \define{valid in virtue its form} when it remains valid under these conditions: (1) structure words are always part of the argument and (2) with those words in place, sentences or names can be freely substituted into the argument and it will remain valid. 
+An argument is \define{valid in virtue its form} when the argument contains properly organized structure words. When it does, any sentences or names can be substituted into the argument and it will remain valid. 
 \end{factboxy}
 
 \noindent This is not a perfect definition. \textit{Form} in formal logic is much broader than just the use of these ``structure words.'' This is a good definition with which to start, however.
@@ -103,7 +103,7 @@ An \define{atomic sentence} is a sentence that (1) can be true or false and (2) 
 
 In English, an atomic sentence is a declarative sentence that does not contain any subsentences.\smallskip
 
-In our logic system, an atomic sentence is a single capital letter in this font: $A, B, C, . . .$.
+In our logic system, an atomic sentence is a single capital letter in this font: $A, B, C, D, E . . .$.
 \end{factboxy}
 
 Atomic sentences are the basic building blocks used to form more complex sentences. We will use uppercase Roman letters for atomic sentences in our logic system. If, by chance, we ever need more than twenty-six different atomic sentences, we can obtain additional ones by adding subscripts to letters. Here, for instance, are five different atomic sentences:
@@ -164,13 +164,13 @@ Consider how we might symbolize these sentences:
 	\end{earg}
 To begin, we need an atomic sentence. This will be our symbolization key:
 	\begin{ekey}
-		\item[B] Mary is in Barcelona.
+		\item[M] Mary is in Barcelona.
 	\end{ekey}
 	
-$B$ is sentence \ref{not1}, and so we don't need to do anything else there. 
-The second sentence is partially symbolized as `It is not the case that $B$'. In order to complete the symbolization, we need a symbol for `it is not the case that'. Or, put differently, we need a symbol that, when added to $B$, will express `the negation of $B$'. We will use `\enot' and symbolize sentence \ref{not2} as `$\enot B$'.
+`$M$' is sentence \ref{not1}, and so we don't need to do anything else there. 
+The second sentence is partially symbolized as `It is not the case that $M$'. In order to complete the symbolization, we need a symbol for `it is not the case that'. Or, put differently, we need a symbol that, when added to $M$, will express `the negation of $M$'. We will use `\enot' and symbolize sentence \ref{not2} as `$\enot M$'.
 
-Sentence \ref{not3} also contains the word `not', and it is equivalent to sentence \ref{not2}. As such, we can also symbolize it as `$\enot B$'.
+Sentence \ref{not3} also contains the word `not', and it is equivalent to sentence \ref{not2}. As such, we can also symbolize it as `$\enot M$'.
 
 \begin{factboxy}{Negation}
 A sentence can be symbolized as $\enot\meta{A}$ if it can be paraphrased in English as `It is not the case that \ldots'
@@ -194,7 +194,7 @@ Finally, consider these English sentences:
 		\item[\ex{not6}] Jane is happy.
 		\item[\ex{not7}] Jane is unhappy.
 	\end{earg}
-If we use`$H$' stand for `Jane is happy', then we can symbolize sentence \ref{not6} as `$H$'. It would be a mistake, however, to symbolize sentence \ref{not7} with `$\enot{H}$'. 
+If we use `$H$' stand for `Jane is happy', then we can symbolize sentence \ref{not6} as `$H$'. It would be a mistake, however, to symbolize sentence \ref{not7} with `$\enot{H}$'. 
 `$\enot{H}$' means `Jane is not happy', but `Jane is not happy' does not have the same meaning as `Jane is unhappy'. After all, Jane might be neither happy nor unhappy; her mood might just be neutral. In order to symbolize sentence \ref{not7}, we would need a different sentence letter.
 
 
@@ -203,21 +203,21 @@ If we use`$H$' stand for `Jane is happy', then we can symbolize sentence \ref{no
 
 Let's start with these sentences:
 	\begin{earg}
-		\item[\ex{and1}] Adam is athletic, and Barbara is also athletic.
-		\item[\ex{and2}] Barbara and Adam are both athletic.
-		\item[\ex{and3}] Adam is not athletic, but Barbara is.
+		\item[\ex{and1}] Jeff is athletic, and Mary is also athletic.
+		\item[\ex{and2}] Mary and Jeff are both athletic.
+		\item[\ex{and3}] Jeff is not athletic, but Mary is.
 	\end{earg}
 We will need separate sentence letters to symbolize sentences \ref{and1} and \ref{and2}, and so we will use this symbolization key:
 	\begin{ekey}
-		\item[A] Adam is athletic.
-		\item[B] Barbara is athletic.
+		\item[J] Jeff is athletic.
+		\item[M] Mary is athletic.
 	\end{ekey}
-Sentence \ref{and1} can be partially symbolized as `A and B'. To symbolize the `and'. We will use `\eand', which is called the \textit{ampersand}. Thus, sentence \ref{and1} becomes `$(A\eand B)$'. When two sentences are connected with an `$\eand$', the resulting sentence is called a \define{conjunction}. The two sentences that are combined with the `$\eand$' are the \define{conjuncts} of the conjunction. So, `$A$' and `$B$' are the conjuncts of the conjunction `$(A\eand B)$'.
+Sentence \ref{and1} can be partially symbolized as `$J$ and $M$'. To symbolize the `and'. We will use `\eand', which is called the \textit{ampersand}. Thus, sentence \ref{and1} becomes `$(J\eand M)$'. When two sentences are connected with an `$\eand$', the resulting sentence is called a \define{conjunction}. The two sentences that are combined with the `$\eand$' are the \define{conjuncts} of the conjunction. So, `$J$' and `$M$' are the conjuncts of the conjunction `$(J\eand M)$'.
 
-Although it is worded differently, sentence \ref{and2} has the same meaning as sentence \ref{and1}. Thus, it is also symbolized as `$(A\eand B)$'.
-Notice that we don't symbolize the word `also' in sentence \ref{and1} or `both' in \ref{and2}. Words like `both' and `also' function to draw our attention to the fact that two sentences are being joined to form a conjunction. They may affect the emphasis of a sentence in English, but we don't (and can't) symbolize such terms in TFL. 
+Although it is worded differently, sentence \ref{and2} has the same meaning as sentence \ref{and1}. Thus, it is also symbolized as `$(J\eand M)$'.
+Notice that we don't symbolize the word `also' in sentence \ref{and1} or `both' in \ref{and2}. Words like `both' and `also' alert us when two sentences are being joined to form a conjunction. And they may affect the emphasis of a sentence in English, but we don't (and can't) symbolize such terms in TFL. 
 
-For sentence \ref{and3}, let's first symbolize `Adam is not athletic' as `$\enot A$'. `Barbara is' means `Barbara is athletic', and so that subsentence is symbolized as `$B$'. `But' may have a slightly different meaning in English than `and', but, grammatically, they serve the same role: to join two sentences to form a conjunction. Putting this altogether, sentence \ref{and3} is symbolized as `$(\enot A \eand B)$'.
+For sentence \ref{and3}, let's first symbolize `Jeff is not athletic' as `$\enot J$'. `Mary is' means `Mary is athletic', and so that subsentence is symbolized as `$M$'. `But' may have a slightly different meaning in English than `and', but, grammatically, they serve the same role: to join two sentences as a conjunction. Putting this altogether, sentence \ref{and3} is symbolized as `$(\enot J \eand M)$'.
 
 
 \begin{factboxy}{Conjunction}
@@ -254,18 +254,18 @@ In sentence \ref{par1}, the `not' only applies to `Kate is at school.' Thus, thi
 
 We will start with these sentences:
 	\begin{earg}
-		\item[\ex{or1}] Either Amy is at the train station, or Kate driving to Santa Fe.
-		\item[\ex{or2}] Amy or Sarah is at the train station. 
+		\item[\ex{or1}] Either Jeff is at the train station, or Kate driving to Santa Fe.
+		\item[\ex{or2}] Jeff or Sarah is at the train station. 
 	\end{earg}
 And we will use this symbolization key:
 	\begin{ekey}
-		\item[A] Amy is at the train station.
+		\item[J] Jeff is at the train station.
 		\item[K] Kate is driving to Santa Fe.
 		\item[S] Sarah is at the train station.
 	\end{ekey}
-To represent the `or' in sentences \ref{or1} and \ref{or2}, we will use the symbol `$\eor$' (which we call the \textit{wedge}, not \textit{v}). Sentence \ref{or1}, then, is written as `$(A \eor K)$'. When two sentences are connected with an `$\eor$', the resulting sentence is called a \define{disjunction}. `$A$' and `$K$' are the \define{disjuncts} of the disjunction `$(A \eor K)$'.
+To represent the `or' in sentences \ref{or1} and \ref{or2}, we will use the symbol `$\eor$' (which we call the \textit{wedge}, not \textit{v}). Sentence \ref{or1}, then, is written as `$(J \eor K)$'. When two sentences are connected with an `$\eor$', the resulting sentence is called a \define{disjunction}. `$J$' and `$K$' are the \define{disjuncts} of the disjunction `$(J \eor K)$'.
 
-Sentence \ref{or2} is only slightly more complicated. We can paraphrase it as `Either Amy is at the train station, or Sarah is at the train station', and then we symbolize it as `$(A \eor S)$'.
+Sentence \ref{or2} is only slightly more complicated. We can paraphrase it as `Either Jeff is at the train station, or Sarah is at the train station', and then we symbolize it as `$(J \eor S)$'.
 
 \begin{factboxy}{Disjunction}
 A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.' Each of the disjuncts must be a sentence.
@@ -283,21 +283,21 @@ When we mean that \textit{one} or the \textit{other} or \textit{both} of the dis
 
 Think about these sentences:
 	\begin{earg}
-		\item[\ex{or3}] Either Amy is not at the train station, or Sarah is not at the train station.
-		\item[\ex{or4}] Neither Amy nor Sarah is at the train station.
-		\item[\ex{or.xor}] Either Amy is at the train station or Sarah is at the train station, but both are not.
+		\item[\ex{or3}] Either Kate is not at the train station, or Sarah is not at the train station.
+		\item[\ex{or4}] Neither Kate nor Sarah is at the train station.
+		\item[\ex{or.xor}] Either Kate is at the train station or Sarah is at the train station, but both are not.
 	\end{earg}
-Sentence \ref{or3} is symbolized as `$(\enot A \eor \enot S)$'. Sentences \ref{or4} and \ref{or.xor} are a little trickier. 
+Sentence \ref{or3} is symbolized as `$(\enot K \eor \enot S)$'. Sentences \ref{or4} and \ref{or.xor} are a little trickier. 
 
-According to \ref{or4}, is either one at the train station? No. So, when when we paraphrase it we get this: 
+Sentences \ref{or3} and \ref{or4} are different, and they have different meanings. Consequently, they need to be translated into TFL differently. According to sentence \ref{or4}, neither one is at the train station. Therefore, we can paraphrase it like this:
 \begin{ebullet}
 	\item[] It is not the case that either Amy is at the train station or Sarah is at the train station. 
 \end{ebullet}
-As our paraphrased sentence shows, we are negating the entire disjunction. Hence, we symbolize sentence \ref{or4} as `$\enot (A \eor S)$'. 
+As our paraphrased sentence shows, we are negating the entire disjunction. Hence, we symbolize sentence \ref{or4} as `$\enot (K \eor S)$'. 
 
 Sentence \ref{or.xor} expresses the meaning of the \textit{exclusive-or}: one or the other, but not both. The `$\eor$', however, represents the \textit{inclusive-or}: one or the other, or both. Therefore, to represent \ref{or.xor} in TFL, we need to break the sentence into two parts. 
 
-The first part, `Amy is at the train station or Sarah is at the train station', is symbolized as `$(A \eor S)$'. The second part, which states that both won't be there, is paraphrased this way: `It is not the case that both Amy is at the train station and Sarah is at the train station'. This, we symbolize as `$\enot(A \eand S)$'. We put the two parts together with an `and', and sentence \ref{or.xor} becomes `$((A \eor S) \eand  \enot(A \eand S))$'.
+The first part, `Kate is at the train station or Sarah is at the train station', is symbolized as `$(K \eor S)$'. The second part, which states that both won't be there, is paraphrased this way: `It is not the case that both Kate is at the train station and Sarah is at the train station'. This, we symbolize as `$\enot(K \eand S)$'. We put the two parts together with an `and', and sentence \ref{or.xor} becomes `$((K \eor S) \eand  \enot(K \eand S))$'.
 
 These last two examples demonstrate that we can sometimes symbolize English sentences that, at first, appear not to be using the logical operators of TFL. We can do this as long as we can figure out a way to paraphrase the English sentence so that it is using some combination of `\textit{and}', `\textit{or}' (i.e., the inclusive-or), `\textit{not}', `\textit{if \ldots, then \ldots}', and `\textit{if and only if}'. 
 
@@ -343,43 +343,48 @@ Jean is in Paris only if she is in France. 	&	$\meta{A}$ only if $\meta{B}$.\\
 
 All of the logical operators that we have discussed so far are ones with which you were already familiar because you are an English speaker. The biconditional, which is mostly commonly expressed as `\textit{\ldots if and only if \ldots}', is one that you might not have really noticed before---even if you have used it on occasion. We'll start with the basic case.
 	\begin{earg}
-		\item[\ex{iff1}] The Bearcats won if and only if they scored more points than the Razorbacks.
+		\item[\ex{iff1}] The Bulldogs won if and only if they scored more points than the Razorbacks.
 	\end{earg}
 And this will be our symbolization key:
 	\begin{ekey}
-		\item[B] The Bearcats won.
-		\item[R] The Bearcats scored more points than the Razorbacks.
+		\item[W] The Bulldogs won.
+		\item[P] The Bulldogs scored more points than the Razorbacks.
 	\end{ekey}
-The symbol `\eiff' will stand for `if and only if', and so we can symbolize sentence \ref{iff1} as `$B \eiff R$'.
+The symbol `\eiff' will stand for `if and only if', and so we can symbolize sentence \ref{iff1} as `$W \eiff P$'.
 
-Now, let's probe a little further into the meaning of `if and only if' with a different example.
+That's how we translate an English sentence containing \textit{if and only if} into TFL. But let's think about what \textit{if and only if} means. Here's another set of sentences.
 	\begin{earg}
-		\item[\ex{iff2}] If Mary has a sunburn, then she went to the beach.
-		\item[\ex{iff3}] If she went to the beach, then Mary has a sunburn. 
-		\item[\ex{iff4}] If Mary has a sunburn, then she went to the beach, and if she went to the beach, then Mary has a sunburn.
-		\item[\ex{iff5}] Mary has a sunburn if and only if she went to the beach.
+		\item[\ex{iff2}] If Jeff went to the doctor, then he is very sick.
+		\item[\ex{iff3}] If Jeff is very sick, then he went to the doctor. 
 	\end{earg}
 We will use this symbolization key:
 	\begin{ekey}
-		\item[S] Mary has a sunburn.
-		\item[B] Mary went to the beach.
+		\item[D] Jeff went to the doctor.
+		\item[S] Jeff is very sick.
 	\end{ekey}
+	
 From the previous section, you know that we symbolize sentences \ref{iff2} and \ref{iff3} like this:
 	\begin{earg}
-		\item[\ref{iff2}.] $(S \eif B)$
-		\item[\ref{iff3}.] $(B \eif S)$ 
+		\item[\ref{iff2}.] $(D \eif S)$
+		\item[\ref{iff3}.] $(S \eif D)$ 
 	\end{earg}
-Sentence \ref{iff4}, then, is a conjunction created by combining \ref{iff2} and \ref{iff3}: 
+Before going any further, think about the meanings of sentences \ref{iff2} and \ref{iff3}, and how they are different. 
+
+Now, consider these two:
+\begin{earg}
+\item[\ex{iff4}] If Jeff went to the doctor, then he is very sick, and if Jeff is very sick, then he went to the doctor.
+\item[\ex{iff5}] Jeff went to the doctor if and only if he is very sick.
+\end{earg}
+Sentences \ref{iff4} and \ref{iff5} have the same meaning. Sentence \ref{iff4}, as you can see, is a conjunction created by combining \ref{iff2} and \ref{iff3}: 
 	\begin{earg}
-		\item[\ref{iff4}.] $((S \eif B) \eand (B \eif S))$
+		\item[\ref{iff4}.] $((D \eif S) \eand (S \eif D))$
  	\end{earg}
 And sentence \ref{iff5}, is symbolized with the `$\eiff$':
 	\begin{earg}
-		\item[\ref{iff5}.] $(S \eiff B)$
+		\item[\ref{iff5}.] $D \eiff S)$
 	\end{earg}
 
-
-Sentence \ref{iff4}, it turns out, has the same meaning as sentence \ref{iff5}. `$(S \eif B) \eand (B \eif S)$' is equivalent to `$(S \eiff B)$'. We call `$(S \eiff B)$' a \define{biconditional}, because it is equivalent to the two conditionals that have their antecedent and the consequent switched.
+We call `$(D \eiff S)$' a \define{biconditional}, because it is equivalent to the two conditionals that have their antecedent and the consequent switched (as in sentence \ref{iff4}).
 
 The expression `if and only if' occurs frequently in philosophy, mathematics, and logic, and sometimes you will see it abbreviated `iff'. (Although even when `iff' is written, we still say `if and only if.') 
 
@@ -416,9 +421,9 @@ There is a complication with treating `unless' as a disjunction, however. As we 
 
 \section{The turnstile}
 
-The final symbol that we need is, technically, not a symbol of TFL, but it is useful to have when displaying arguments in TFL. The symbol `\proves' is called the \textit{turnstile}. The purpose of the turnstile is to separate the sentences that are the premises of an argument from the sentence that is the conclusion, and it can be read as \textit{therefore}. Here is an example,
-$$(P \eif C), (P \eor D) \proves (\enot C \eif D)$$
-In this argument, the premises are `$(P \eif C)$' and `$(P \eor D)$', and the conclusion is `$(\enot C \eif D)$'.
+The final symbol that we need is, technically, not a symbol of TFL, but it is useful to have when stating an argument. The symbol `\proves' is called the \textit{turnstile}. The purpose of the turnstile is to separate the sentences that are the premises of an argument from the sentence that is the conclusion, and it can be read as \textit{therefore}. Here is an example,
+$$(P \eif Q), (P \eor S) \proves (\enot Q \eif S)$$
+In this argument, the premises are `$(P \eif Q)$' and `$(P \eor S)$', and the conclusion is `$(\enot Q \eif S)$'.
 
 
 %\begin{notebox}
@@ -987,46 +992,25 @@ Once the main logical operator has been identified, we know what kind of sentenc
 If it is a conjunction, then part of the sentence will be one conjunct and the rest will be the other conjunct (and nothing will be left over). If it's a disjunction, then part of the sentence will be one disjunct and the rest will the other disjunct, again with nothing left over. If it's a conditional, then part of the sentence will be the antecedent and the rest will be the consequent. And if it's a negation, then the whole sentence (minus the `not' itself) is being negated.
 
 
-\subsection{another way of indentifying the main logical operator}
+%\subsection{another way of indentifying the main logical operator}
 
-Alternatively, when the sentence includes the outermost brackets, you can find the main logical operator by using this method:
-\begin{ebullet}
-	\item[(1)] If the first symbol in the sentence is `$\enot$', then that is the main logical operator.
-	\item[(2)] Otherwise, start counting the brackets by following one of these two procedures. (The open-bracket is `(' and the closed bracket is `)'.) 
-	\begin{earg}
-	\item[(2a)] Start from the left, and begin counting. For each open-bracket add $1$, and for each closing-bracket, subtract $1$. When your count is at exactly $1$, the next operator you come to (\emph{apart} from a `$\enot$') is the main logical operator. 
-	\item[(2b)] If starting at the left-side of the sentence doesn't seem to work, follow the same procedure, but begin at the far right and work left. % Is working in this direction the only way that an `$\enot$' would be the next logical operator, but not the main one?
-	\end{earg}
-\end{ebullet}
+%Alternatively, when the sentence includes the outermost brackets, you can find the main logical operator by using this method:
+%\begin{ebullet}
+%	\item[(1)] If the first symbol in the sentence is `$\enot$', then that is the main logical operator.
+%	\item[(2)] Otherwise, start counting the brackets by following one of these two procedures. (The open-bracket is `(' and the closed bracket is `)'.) 
+%	\begin{earg}
+%	\item[(2a)] Start from the left, and begin counting. For each open-bracket add $1$, and for each closing-bracket, subtract $1$. When your count is at exactly $1$, the next operator you come to (\emph{apart} from a `$\enot$') is the main logical operator. 
+%	\item[(2b)] If starting at the left-side of the sentence doesn't seem to work, follow the same procedure, but begin at the far right and work left. % Is working in this direction the only way that an `$\enot$' would be the next logical operator, but not the main one?
+%	\end{earg}
+%\end{ebullet}
 
-As we will discuss in the next section, in some cases, it is acceptable to omit the outermost brackets in a sentence of TFL. For instance, although it is not strictly allowable according to the rules given in \S\ref{s:Sentences}, because it will not introduce any confusion or ambiguity, we can write `$(P \eand R) \eif Q$' instead of `$((P \eand R) \eif Q)$'. When the outermost brackets are dropped, we add (3) and (4) to our method.
+%As we will discuss in the next section, in some cases, it is acceptable to omit the outermost brackets in a sentence of TFL. For instance, although it is not strictly allowable according to the rules given in \S\ref{s:Sentences}, because it will not introduce any confusion or ambiguity, we can write `$(P \eand R) \eif Q$' instead of `$((P \eand R) \eif Q)$'. When the outermost brackets are dropped, we add (3) and (4) to our method.
 
-\begin{ebullet}
-\item[(3)] When the outermost brackes are omitted, (2a) and (2b) can still be used, but stop when your count gets to zero instead of $1$.
-\item[(4)] For sentences that contain two or more atomic sentences, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. (When `$\enot$' is the main logical operator---as it is in this example: $\enot((P \eand Q) \eor R)$---the `$\enot$' will be outside the outermost brackets.) 
-\item[(5)] For sentences that contain two or more atomic sentences, when the outermost brackets are omitted, (1) no longer applies and `$\enot$' won't be the main logical operator. 
-\end{ebullet}
-
-\begin{comment}
-\subsection{Scope}
-
-Finally, let's define the \define{scope} of a logical operator. Basically, the scope of a logical operator is the part of the sentence to which the operator applies (or as Lemmon says, ``what a particular occurrence of a connective controls''). We give the precise definition in terms of the main logical operator for the whole sentence and the main logical operators for any sub-sentences contained therein. 
-
-\begin{factboxy}{Scope}
-The \define{scope} of a logical operator is the sentence or sub-sentence for which that logical operator is the main logical operator.\\
-Alternatively, Lemmon defines the \textit{scope of a logical operator} as `the shortest sentence in which the logical operator appears'.
-\end{factboxy}
-
-The scope of the main logical operator is always the entire sentence. The scope of every other logical operator is a sub-sentence. Consider this sentence:
-
-$$(\enot(R \eand T) \eiff (P \eif \enot Q))$$
-
-The main logical operator is the `$\eiff$'. Therefore, the scope of `$\eiff$' is the entire sentence. 
-The scope of the `$\enot$' is `$\enot(R \eand T)$', which means that `$\enot$' is the main logical operator for that sub-sentence. 
-Similarly, the `$\eand$' is the main logical operator for just the `$(R \eand T)$', and so the scope of the `$\eand$' is `$(R \eand T)$'. 
-The `$\eif$' is the main logical operator for `$(P \eif \enot Q)$'. And the `$\enot$' is the main logical operator for `$\enot Q$'. Hence, the scope of each are those respective sub-sentences. 
-
-\end{comment}
+%\begin{ebullet}
+%\item[(3)] When the outermost brackes are omitted, (2a) and (2b) can still be used, but stop when your count gets to zero instead of $1$.
+%\item[(4)] For sentences that contain two or more atomic sentences, if `$\enot$' is the main logical operator, then the outermost brackets have to be used. (When `$\enot$' is the main logical operator---as it is in this example: $\enot((P \eand Q) \eor R)$---the `$\enot$' will be outside the outermost brackets.) 
+%\item[(5)] For sentences that contain two or more atomic sentences, when the outermost brackets are omitted, (1) no longer applies and `$\enot$' won't be the main logical operator. 
+%\end{ebullet}
 
 
 \section{Using parentheses}
@@ -1089,7 +1073,7 @@ $$\enot(\enot Q \eor R)$$
 
 \section{Metavariables}\label{s:Metavariables}
 
-Sometimes we refer to specific expressions of TFL like `$D$' and `$\enot (\enot Q \eor R)$'. Other times, however, we want to say something about an arbitrary expression of TFL, not a specific one. To do this, we use these uppercase letters:
+Sometimes we refer to specific expressions of TFL like `$P$' and `$\enot (\enot Q \eor R)$'. Other times, however, we want to say something about an arbitrary expression of TFL, not a specific one. To do this, we use these uppercase letters:
 \vspace{-2mm}
 	$$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$$
 	
