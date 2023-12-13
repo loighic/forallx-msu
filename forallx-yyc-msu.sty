@@ -525,6 +525,8 @@ fontupper=\footnotesize
 %    *             TRUTH TABLES             *
 %    ****************************************
 
+\usepackage{multirow}
+
 % To set column spacing,
 
 %\begin{tabular}{d d | f}
@@ -547,6 +549,7 @@ fontupper=\footnotesize
 \newcolumntype{g}{@{\hspace{7pt}}c@{\hspace{7pt}}}				% med space / med space (for the turnstile column)
 \newcolumntype{j}{@{\hspace{8pt}}c@{}}								% large space / zero space   (for the beginning of the second or third premise) 
 
+\newcolumntype{k}{@{}c@{\hspace{3pt}}}				% zero space / small space   (This is just for the table at the beginning of the chapter on semeantic concepts.) 
 
 %% COLORS
 \newcommand*{\TTbf}[1]{\textbf{#1}} 

@@ -1095,21 +1095,30 @@ As we did in the previous chapter, we begin with the definition of \define{truth
 A \textit{truth-value assignment} is any assignment of truth values to particular atomic sentences of TFL. Each row of a truth table represents a possible truth-value assignment. The entire truth table represents all possible truth-value assignments.
 \end{factboxy}
 
-Let's say that we are going to create a truth table for `$P \eor \enot Q$'. On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. This is one truth-value assignment (and it is purple on the first line of the truth table below). 
+Let's say that we are going to create a truth table for `$P \eor \enot Q$'. On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. This is one truth-value assignment (and it is dark purple on the first line of the truth table below). 
 
 On the second line, we make $P =$ `true' and $Q =$ `false'. This is another truth-value assignment (lighter purple). The assignments of `true' and `false' to `$P$` and `$Q$' on lines 3 and 4, then, are the remaining possible truth-value assignments (the darker and lighter pink respectively), when we have a sentence containing only two atomic sentences.
 
-\begin{center}
-\begin{tabular}{d d | f e e e }
-$P$ & $Q$& $P$& \eor& \enot& $Q$\\
-\hline
-\TTbf{\TTp{T}} & \TTbf{\TTp{T}} & T & {T} & F & T\Tstrut\\
-\TTbf{\TTlp{T}} & \TTbf{\TTlp{F}} & T & {T} & T & F \\
-\TTbf{\TTdp{F}} & \TTbf{\TTdp{T}} & F & {F} & F & T \\
-\TTbf{\TTmp{F}} & \TTbf{\TTmp{F}} & F & {T} & T & F
+\bigskip
+%\begin{center}
+\begin{tabular}{p{3.67cm} k d d | f e e e }
+&&$P$ & $Q$& $P$& \eor& \enot& $Q$\\
+\cmidrule{3-8}
+&&\TTbf{\TTp{T}} & \TTbf{\TTp{T}} & T & \textbf{T} & F & T\\   %\Tstrut\\
+{\footnotesize{\textsf{one truth-value assignment}}} &\large{\textbf{\rightarrow}} &\tabnode{\TTbf{\TTlp{T}}} &\tabnode{\TTbf{\TTlp{F}}} & T & \textbf{T} & T & F \\
+&&\TTbf{\TTdp{F}} & \TTbf{\TTdp{T}} & F & \textbf{F} & F & T \\
+&&\TTbf{\TTmp{F}} & \TTbf{\TTmp{F}} & F & \textbf{T} & T & F
 \end{tabular}
-\end{center}
+%\end{center}
 
+%\multirow{3}{3.6cm}{\footnotesize{\textsf{one truth-value assignment}}}&&\TTbf{\TTp{T}} & \TTbf{\TTp{T}} & T & {T} & F & T\\   %\Tstrut\\
+ %&\large{\textbf{\rightarrow}} &\tabnode{\TTbf{\TTlp{T}}} & \tabnode{\TTbf{\TTlp{F}}} & T & {T} & T & F \\
+
+\begin{tikzpicture}[overlay]
+% Define the circle paths
+\node[draw=blue,rounded corners = .5ex,fit=(1)(2),inner sep = 3.5pt] {};
+\end{tikzpicture}
+\bigskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}
