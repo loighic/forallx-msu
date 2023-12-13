@@ -16,6 +16,12 @@
 \definecolor{light-gray}{gray}{0.80}
 \definecolor{red2}{RGB}{192,0,0}
 \definecolor{darkgreen}{RGB}{34,139,34}
+
+
+\definecolor{purple}{RGB}{100,44,169}
+\definecolor{lightpurple}{RGB}{173,21,224}
+\definecolor{darkpink}{RGB}{225,54,171}
+\definecolor{medpink}{RGB}{225,115,248}
  
 \colorlet{leadbeater}{black} 
 \colorlet{dkleadbeater}{black}
@@ -333,6 +339,8 @@
 % definitions
 \newcommand*{\define}[1]{\textsc{\lowercase{\color{leadbeater}#1}}}
 
+
+
 %    ****************************************
 %    *          LIST  ENVIRONMENTS          *
 %    ****************************************
@@ -546,6 +554,12 @@ fontupper=\footnotesize
 \newcommand*{\TTv}[1]{\textcolor{violet}{#1}}
 \newcommand*{\TTdg}[1]{\textcolor{darkgreen}{#1}}
 
+\newcommand*{\TTp}[1]{\textcolor{purple}{#1}}
+\newcommand*{\TTlp}[1]{\textcolor{lightpurple}{#1}}
+\newcommand*{\TTdp}[1]{\textcolor{darkpink}{#1}}
+\newcommand*{\TTmp}[1]{\textcolor{medpink}{#1}}
+
+
 \newcommand\Tstrut{\rule{0pt}{2.5ex}}         % = `top' strut for truth tables
 
 % For checking validity with a truth table
@@ -562,7 +576,7 @@ fontupper=\footnotesize
 %   B. To draw graphs illustrating small finite interpretations. 
 % All these drawings are done using tikz
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,shapes,calc} 
+\usetikzlibrary{arrows.meta,positioning,shapes,calc,fit,tikzmark} 
 
 \tikzset{phantom_shape/.style={thick, fill=black!0, minimum width=30pt, minimum height=30pt}, % TB: renders the shape invisible
 		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
@@ -574,7 +588,7 @@ fontupper=\footnotesize
 
 
 %% This is for the first truth table in the chapter on the characteristic truth table.
-\newcommand{\tikzmark}[2][-3pt]{\tikz[remember picture, overlay, baseline=-0.5ex]\node[#1](#2){};}
+\newcommand{\tikzmarks}[2][-3pt]{\tikz[remember picture, overlay, baseline=-0.5ex]\node[#1](#2){};}
 
 \newcounter{arrow}
 \setcounter{arrow}{0}
@@ -582,6 +596,21 @@ fontupper=\footnotesize
 \refstepcounter{arrow}
  \tikz[remember picture, overlay]\draw (#2.center)edge[#1]node[coordinate,pos=0.5, name=arrow-\thearrow]{}(#3.center);
 }
+
+% This is for the truth table at the beginning of the chapter on semantic concepts.
+
+% Introduce a new counter for counting the nodes needed for circling
+\newcounter{nodecount}
+% Command for making a new node and naming it according to the nodecount     counter
+\newcommand\tabnode[1]{\addtocounter{nodecount}{1} \tikz \node  (\arabic{nodecount}) {#1};}
+
+% Some options common to all the nodes and paths
+\tikzstyle{every picture}+=[remember picture,baseline]
+\tikzstyle{every node}+=[anchor=base, align=center, text depth=0ex, inner sep=0pt, outer sep=0pt]
+\tikzstyle{every path}+=[thick, rounded corners] 
+
+
+ 
 
 % #1 options, #2 position, #3 text 
 %\newcommand{\annote}[3][]{%

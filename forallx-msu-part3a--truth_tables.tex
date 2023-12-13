@@ -50,7 +50,7 @@ $J$&$K$&  	$K$&\eor&$(J$&\eand&\enot&$K)$\\
  \TTdg{T} & \TTv{T} & 	\TTv{T} &\TTlg{T} & \TTdg{T} &\TTlg{F} &\TTlg{F} & \TTv{T}\Tstrut\\
  \TTdg{T} & \TTv{F} & 	\TTv{F} &\TTlg{T} & \TTdg{T} &\TTlg{T} &\TTlg{T} & \TTv{F}\\
  \TTdg{F} & \TTv{T} & 	\TTv{T} &\TTlg{T} & \TTdg{F} &\TTlg{F} &\TTlg{F} & \TTv{T}\\
- \TTdg{F}\tikzmark[xshift=-2.75pt, yshift=-5pt]{d} & \TTv{F}\tikzmark[xshift=-2.75pt, yshift=-5pt]{a} & \TTv{F}\tikzmark[xshift=-2.25pt, yshift=-4.5pt]{b} &\TTlg{F} & \TTdg{F}\tikzmark[xshift=-2.75pt, yshift=-5pt]{f} &\TTlg{F} &\TTlg{T} & \TTv{F}\tikzmark[xshift=-2.25pt, yshift=-4.5pt]{c}
+ \TTdg{F}\tikzmarks[xshift=-2.75pt, yshift=-5pt]{d} & \TTv{F}\tikzmarks[xshift=-2.75pt, yshift=-5pt]{a} & \TTv{F}\tikzmarks[xshift=-2.25pt, yshift=-4.5pt]{b} &\TTlg{F} & \TTdg{F}\tikzmarks[xshift=-2.75pt, yshift=-5pt]{f} &\TTlg{F} &\TTlg{T} & \TTv{F}\tikzmarks[xshift=-2.25pt, yshift=-4.5pt]{c}
 \end{tabular}
 \drawcurvedarrow[bend right=90, -{Latex[round, length=2.25mm, width=1.1mm]}, thick, violet, looseness=1.7]{a}{b}
 \drawcurvedarrow[bend right=90,-{Latex[round, length=2.25mm, width=1.1mm]}, thick, violet, looseness=.8]{a}{c}
@@ -1095,27 +1095,29 @@ As we did in the previous chapter, we begin with the definition of \define{truth
 A \textit{truth-value assignment} is any assignment of truth values to particular atomic sentences of TFL. Each row of a truth table represents a possible truth-value assignment. The entire truth table represents all possible truth-value assignments.
 \end{factboxy}
 
-Let's say that we are going to create a truth table for `$P \eor \enot Q$'. (See figure \ref{fig:truth-value assignment}.) On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. That is one truth-value assignment. On the second line, we make $P =$ `true' and $Q =$ `false'. That is another truth-value assignment. The assignments of `true' and `false' to `$P$` and `$Q$' on lines 3 and 4, then, are the remaining possible truth-value assignments, when we have a sentence containing only two atomic sentences.
+Let's say that we are going to create a truth table for `$P \eor \enot Q$'. On the first line of the truth table, you may recall, we make $P =$ `true' and $Q =$ `true'. This is one truth-value assignment (and it is purple on the first line of the truth table below). 
 
-%\begin{center}
-%\begin{tabular}{d d | f e e e }
-%$P$&$Q$& $P$& \eor& \enot& $Q$\\
-%\hline
- %T & T & T & \TTbf{T} & F & T\Tstrut\\
- %T & F & T & \TTbf{T} & T & F \\
- %F & T & F & \TTbf{F} & F & T \\
- %F & F & F & \TTbf{T} & T & F
-%\end{tabular}
-%\end{center}
+On the second line, we make $P =$ `true' and $Q =$ `false'. This is another truth-value assignment (lighter purple). The assignments of `true' and `false' to `$P$` and `$Q$' on lines 3 and 4, then, are the remaining possible truth-value assignments (the darker and lighter pink respectively), when we have a sentence containing only two atomic sentences.
+
+\begin{center}
+\begin{tabular}{d d | f e e e }
+$P$ & $Q$& $P$& \eor& \enot& $Q$\\
+\hline
+\TTbf{\TTp{T}} & \TTbf{\TTp{T}} & T & {T} & F & T\Tstrut\\
+\TTbf{\TTlp{T}} & \TTbf{\TTlp{F}} & T & {T} & T & F \\
+\TTbf{\TTdp{F}} & \TTbf{\TTdp{T}} & F & {F} & F & T \\
+\TTbf{\TTmp{F}} & \TTbf{\TTmp{F}} & F & {T} & T & F
+\end{tabular}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centering
-\includegraphics[width=6.5cm]{this_is_a_valuation.pdf}
-\caption{$P =$ `true' and $Q =$ `true' is one truth-value assignment. On this truth-value assignment, `$P \eor \enot Q$' is true. $P =$ `true' and $Q =$ `false' is another truth-value assignment. `$P \eor \enot Q$' is also true on this truth-value assignment. $P =$ `false' and $Q =$ `true' (line 3), and $P =$ `false' and $Q =$ `false' (line 4) are the other two truth-value assignments in this truth table.}
-\label{fig:truth-value assignment}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=6.5cm]{this_is_a_valuation.pdf}
+%\caption{$P =$ `true' and $Q =$ `true' is one truth-value assignment. On this truth-value assignment, `$P \eor \enot Q$' is true. $P =$ `true' and $Q =$ `false' is another truth-value assignment. `$P \eor \enot Q$' is also true on this truth-value assignment. $P =$ `false' and $Q =$ `true' (line 3), and $P =$ `false' and $Q =$ `false' (line 4) are the other two truth-value assignments in this truth table.}
+%\label{fig:truth-value assignment}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
