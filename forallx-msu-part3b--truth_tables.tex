@@ -200,7 +200,7 @@ When using truth tables to determine whether an argument is valid, it may help y
 The reasoning here is similar. In both cases, we are violating the principle---of either the conditional or of a valid argument---when we have a false sentence that follows from a sentence or a set of sentences that are all true. Thus, if $\meta{A} \eif \meta{C}$ is false, then $\meta{A} \proves \meta{C}$ is invalid (and if $\meta{A} \proves \meta{C}$ is invalid, then $\meta{A} \eif \meta{C}$ is false). Conversely, whenever $\meta{A} \eif \meta{C}$ is true, then $\meta{A} \proves \meta{C}$ is valid (and vice versa). 
 
 
-
+\begin{comment}
 \section{The limits of this type of analysis}\label{s:ParadoxesOfMaterialConditional}
 
 We have seen in chapters \ref{s:SemanticConcepts} and \ref{c:tt-validity} that truth tables are a useful tool for analyzing sentences---whether those are individual sentences, pairs of sentences, or arguments. There are limitations to this type of analysis, however, and it worth understanding some of those limitations.
@@ -298,6 +298,8 @@ In different ways, these three examples illustrate some of the limitations of us
 
 Part of the purpose of studying truth-functional propositional logic is to equip ourselves with the tools to explore these questions of philosophical logic. But we have to walk before we can run; and  so we have to become proficient using TFL before we can adequately discuss its limits and consider alternatives. 
 
+\end{comment}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -307,34 +309,34 @@ Part of the purpose of studying truth-functional propositional logic is to equip
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
 
 %\practiceproblems
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
 
+\begin{small}
 \problempart
 \label{pr.TT.valid}
 Create a truth table for each argument and then determine if the argument is valid or invalid.
 \begin{earg}
-\item $A\eif A \proves A$\vspace{.5ex} %invalid
-\item $A\eif(A\eand\enot A) \proves \enot A$\vspace{.5ex} %valid
-\item $A\eor(B\eif A) \proves \enot A \eif \enot B$\vspace{.5ex} %valid
-\item $A\eor B, B\eor C, \enot A \proves B \eand C$\vspace{.5ex} %invalid
-\item $(B\eand A)\eif C, (C\eand A)\eif B \proves (C\eand B)\eif A$\vspace{.5ex} %invalid
+\item $P\eif P \proves P$\vspace{.5ex} %invalid
+\item $P\eif(P\eand\enot P) \proves \enot P$\vspace{.5ex} %valid
+\item $P\eor(Q\eif P) \proves \enot P \eif \enot Q$\vspace{.5ex} %valid
+\item $P\eor Q, Q\eor S, \enot P \proves Q \eand S$\vspace{.5ex} %invalid
+\item $(Q\eand P)\eif S, (S\eand P)\eif Q \proves (S\eand Q)\eif P$\vspace{.5ex} %invalid
 
 
-\item $A\eif B$, $B \proves  A$\vspace{.5ex} %invalid
-\item $A\eiff B$, $B\eiff C \proves A\eiff C$\vspace{.5ex} %valid
-\item $A \eif B$, $A \eif C\proves B \eif C$\vspace{.5ex} %invalid. 
-\item $A \eif B$, $B \eif A\proves A \eiff B$\vspace{.5ex} %valid. 
+\item $P\eif Q$, $Q \proves  P$\vspace{.5ex} %invalid
+\item $P\eiff Q$, $Q\eiff S \proves P\eiff S$\vspace{.5ex} %valid
+\item $P \eif Q$, $P \eif S\proves Q \eif S$\vspace{.5ex} %invalid. 
+\item $P \eif Q$, $Q \eif P\proves P \eiff Q$\vspace{.5ex} %valid. 
 
 
-\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \proves  A $\vspace{.5ex}%invalid
-\item $A\eor B$, $B\eor C$, $\enot B \proves A \eand C$\vspace{.5ex} %valid
-\item $A \eif B$, $\enot A\proves \enot B$ \vspace{.5ex}%invalid
-\item $A$, $B\proves \enot(A\eif \enot B)$ \vspace{.5ex}%valid
-\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\proves C$ \vspace{.5ex}%valid 
+\item $P\eor[P\eif(P\eiff P)] \proves  P $\vspace{.5ex}%invalid
+\item $P\eor Q$, $Q\eor S$, $\enot Q \proves P \eand S$\vspace{.5ex} %valid
+\item $P \eif Q$, $\enot P\proves \enot Q$ \vspace{.5ex}%invalid
+\item $P$, $Q\proves \enot(P\eif \enot Q)$ \vspace{.5ex}%valid
+\item $\enot(P \eand Q)$, $P \eor Q$, $P \eiff Q\proves S$ \vspace{.5ex}%valid 
 \end{earg}
 
 
@@ -364,33 +366,33 @@ Create a truth table for each argument and then determine if the argument is val
 \label{pr.TT.valid}
 
 \begin{earg}
-\item $A\eif A \proves A$\\
+\item $P\eif P \proves P$\\
 This argument is invalid.
 \myanswer{\begin{flushleft}
 \begin{tabular}{d | f e e   j  j}
-$A$ &$A$&$\eif$&$A$& \proves   &$A$\\
+$P$ &$P$&$\eif$&$P$& \proves   &$P$\\
 \hline
  T & T & \TTbf{T} & T& \cm  & T\Tstrut\\
  F & F & \TTbf{T} & F& \xm  & F
  \end{tabular}
 \end{flushleft}}\medskip
 
-\item $A\eif(A\eand\enot A) \proves \enot A$\\
+\item $P\eif(P\eand\enot P) \proves \enot P$\\
 This argument is valid.
 \myanswer{\begin{flushleft}
 \begin{tabular}{d | f e e e e e   j  j e}
-$A$&$A$&$\eif$&$(A$&$\eand$&$\enot$&$A)$& \proves &$\enot$&$A$\\
+$P$&$P$&$\eif$&$(P$&$\eand$&$\enot$&$P)$& \proves &$\enot$&$P$\\
 \hline
  T & T & \TTbf{F} & T & F& F&T&\cm  &\TTbf{F}&T\Tstrut\\
  F & F & \TTbf{T} & F & F&T&F&\cm  &\TTbf{T}&F
 \end{tabular}
 \end{flushleft}}\medskip
 
-\item $A\eor(B\eif A) \proves \enot A \eif \enot B$\\
+\item $P\eor(Q\eif P) \proves \enot P \eif \enot Q$\\
 This argument is valid.
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d | f e e e e    j   j e e e e}
-$A$ & $B$ & $A$&$\eor$&$(B$&$\eif$&$A)$& \proves &$\enot$&$A$&$\eif$&$\enot$&$B$\\
+$P$ & $Q$ & $P$&$\eor$&$(Q$&$\eif$&$P)$& \proves &$\enot$&$P$&$\eif$&$\enot$&$Q$\\
 \hline
 T & T & T & \TTbf{T} & T & T & T &\cm& F & T & \TTbf{T} & F & T\Tstrut\\
 T & F & T & \TTbf{T} & F & T & T &\cm& F & T & \TTbf{T} & T & F \\
@@ -399,13 +401,12 @@ F & F & F & \TTbf{T} & F & T & F &\cm& T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{flushleft}}\medskip
 
-\filbreak
 
-\item $A\eor B, B\eor C, \enot A \proves B \eand C$\\
+\item $P\eor Q, Q\eor S, \enot P \proves Q \eand S$\\
 This argument is invalid.
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e   j e e   j e   j  j e e}
-$A$ & $B$ & $C$ & $A$&$\eor$&$B$,&$B$&$\eor$&$C$,&$\enot$&$A$& \proves &$B$&$\eand$&$C$\\
+$P$ & $Q$ & $S$ & $P$&$\eor$&$Q$,&$Q$&$\eor$&$S$,&$\enot$&$P$& \proves &$Q$&$\eand$&$S$\\
 \hline
 T & T & T & T & \TTbf{T} & T & T & \TTbf{T} & T & \TTbf{F} & T &\cm& T & \TTbf{T} & T\Tstrut\\
 T & T & F & T & \TTbf{T} & T & T & \TTbf{T} & F & \TTbf{F} & T &\cm& T &\TTbf{F} & F \\
@@ -418,11 +419,12 @@ T & F & F & F & \TTbf{F} & F & F & \TTbf{F} & F & \TTbf{T} & F &\cm& F & \TTbf{F
 \end{tabular}
 \end{flushleft}}\medskip
 
-\item $(B\eand A)\eif C, (C\eand A)\eif B \proves (C\eand B)\eif A$\\
+\noindent\begin{minipage}{0.99\textwidth}
+\item $(Q\eand P)\eif S, (S\eand P)\eif Q \proves (S\eand Q)\eif P$\\
 This argument is invalid.
 %\myanswer{\begin{flushleft}
 %\begin{tabular}{d d d | f e e e e   j e e e e   j   j e e e e}
-%$A$ & $B$ & $C$ & $(B$&$\eand$&$A)$&$\eif$&$C$,&$(C$&$\eand$&$A)$&$\eif$&$B$& \proves &$(C$&$\eand$&$ B)$&$\eif$&$A$\\
+%$P$ & $Q$ & $S$ & $(Q$&$\eand$&$P)$&$\eif$&$S$,&$(S$&$\eand$&$P)$&$\eif$&$Q$& \proves &$(S$&$\eand$&$ Q)$&$\eif$&$P$\\
 %\hline
 %T & T & T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T &\cm& T & T & T & \TTbf{T} & T\Tstrut\\
 %T & T & F & T & T & T & \TTbf{F} & F & F & F & T & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & T\\
@@ -440,7 +442,7 @@ This argument is invalid.
 
 \myanswer{\begin{flushleft}
 \begin{tabular}{| f e e e e   j e e e e   j   j e e e e}
-$(B$&$\eand$&$A)$&$\eif$&$C$,&$(C$&$\eand$&$A)$&$\eif$&$B$& \proves &$(C$&$\eand$&$ B)$&$\eif$&$A$\\
+$(Q$&$\eand$&$P)$&$\eif$&$S$,&$(S$&$\eand$&$P)$&$\eif$&$Q$& \proves &$(S$&$\eand$&$ Q)$&$\eif$&$P$\\
 \hline
 T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T &\cm& T & T & T & \TTbf{T} & T\Tstrut\\
 T & T & T & \TTbf{F} & F & F & F & T & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & T\\
@@ -453,13 +455,13 @@ F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} &
 \end{tabular}
 \end{flushleft}}
 \medskip
+\end{minipage}
 
-
-\item $A\eif B$, $B \proves  A$\\ 
+\item $P\eif Q$, $Q \proves  P$\\ 
 This argument is invalid.
 \begin{flushleft}
 \begin{tabular}{d d | f e e  j  j  j }
-$A$ & $B$ & $A$ & $\eif$ & $B$, & $B$ & $\proves$ & $A$\\
+$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $Q$ & $\proves$ & $P$\\
 \hline
 T & T &    T & T & T &    T &\cm& T\Tstrut\\
 T & F &    T & F & F &    F &\cm& T\\
@@ -469,13 +471,12 @@ F & F &    F & T & F &    F &\cm& F
 \end{flushleft}
 \medskip
 
-\filbreak
 
-\item $A\eiff B$, $B\eiff C \proves A\eiff C$\\ 
+\item $P\eiff Q$, $Q\eiff S \proves P\eiff S$\\ 
 This argument is valid.
 \begin{flushleft}
 \begin{tabular}{d d d | f e e  j e e   j   j e e }
-$A$ & $B$ & $C$ & $A$ & $\eiff$ & $B$, & $B$ & $\eiff$ & $C$ & $\proves$ & $A$ & $\eiff$ & $C$\\
+$P$ & $Q$ & $S$ & $P$ & $\eiff$ & $Q$, & $Q$ & $\eiff$ & $S$ & $\proves$ & $P$ & $\eiff$ & $S$\\
 \hline
 T & T & T &    T & T &  T &      T & T &  T   &\cm&   T & T &  T\Tstrut\\
 T & T & F &    T & T &  T &      T & F &  F   &\cm&   T & F &  F\\
@@ -489,12 +490,12 @@ F & F & F &    F & T &  F &      F & T &  F   &\cm&   F & T &  F
 \end{flushleft}
 \medskip
 
-
-\item $A \eif B$, $A \eif C\proves B \eif C$\\ 
+\noindent\begin{minipage}{0.99\textwidth}
+\item $P \eif Q$, $P \eif S\proves Q \eif S$\\ 
 This argument is invalid. 
 \begin{flushleft}
 \begin{tabular}{d d d | f e e  j e e   j   j e e }
-$A$ & $B$ & $C$ & $A$ & $\eif$ & $B$, & $A$ & $\eif$ & $C$ & $\proves$ & $B$ & $\eif$ & $C$\\
+$P$ & $Q$ & $S$ & $P$ & $\eif$ & $Q$, & $P$ & $\eif$ & $S$ & $\proves$ & $Q$ & $\eif$ & $S$\\
 \hline
 T & T & T &    T & T & T &      T & T & T   &\cm&   T & T & T\Tstrut\\
 T & T & F &    T & T & T &      T & F & F   &\cm&   T & F & F\\  
@@ -507,13 +508,13 @@ F & F & F &    F & T & F &      F & T & F   &\cm&   F & T & F
 \end{tabular}
 \end{flushleft}
 \medskip
+\end{minipage}
 
-
-\item $A \eif B$, $B \eif A\proves A \eiff B$\\ 
+\item $P \eif Q$, $Q \eif P\proves P \eiff Q$\\ 
 This argument is valid.
 \begin{flushleft}
 \begin{tabular}{d d | f e e  j e e  j  j e e }
-$A$ & $B$ & $A$ & $\eif$ & $B$, & $B$ & $\eif$ & $A$ & $\proves$ & $A$ & $\eiff$ & $B$\\
+$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $Q$ & $\eif$ & $P$ & $\proves$ & $P$ & $\eiff$ & $Q$\\
 \hline
 T & T &    T & T & T &     T & T & T  &\cm&   T & T &  T\Tstrut\\
 T & F &    T & F & F &     F & T & T   &\cm&   T & F &  F\\  
@@ -523,13 +524,12 @@ F & F &    F & T & F &     F & T & F   &\cm&   F & T &  F
 \end{flushleft}
 \medskip
 
-\filbreak
 
-\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \proves  A$\\ 
+\item $P\eor[P\eif(P\eiff P)] \proves  P$\\ 
 This argument is invalid.
 \begin{flushleft}
 \begin{tabular}{d | f e e e e e e  j  j }
-$A$ & $A$ & $\eor$ & $\bigl[A$ & $\eif$ & $(A$ & $\eiff$ & $A)\bigr]$ & $\proves$ & $A$\\
+$P$ & $P$ & $\eor$ & $[P$ & $\eif$ & $(P$ & $\eiff$ & $P)]$ & $\proves$ & $P$\\
 \hline
 T &    T & T &   T & T &   T & T &  T     &\cm& T\Tstrut\\
 F &    F & T &   F & T &   F & T &  F      &\xm& F
@@ -538,11 +538,11 @@ F &    F & T &   F & T &   F & T &  F      &\xm& F
 \medskip
 
 
-\item $A\eor B$, $B\eor C$, $\enot B \proves A \eand C$\\
+\item $P\eor Q$, $Q\eor S$, $\enot Q \proves P \eand S$\\
 This argument is valid.
 \begin{flushleft}
 \begin{tabular}{d d d | f e e  j e e  j e  j  j e e }
-$A$ & $B$ & $C$ & $A$ & $\eor$ & $B$, & $B$ & $\eor$ & $C$, & $\enot$ & $B$ & $\proves$ & $A$ & $\eand$ & $C$\\
+$P$ & $Q$ & $S$ & $P$ & $\eor$ & $Q$, & $Q$ & $\eor$ & $S$, & $\enot$ & $Q$ & $\proves$ & $P$ & $\eand$ & $S$\\
 \hline
 T & T & T &    T & T & T &      T & T & T &    F & T &\cm&   T & T & T\Tstrut\\
 T & T & F &    T & T & T &      T & T & F &    F & T &\cm&   T & F & F\\
@@ -557,11 +557,11 @@ F & F & F &    F & F & F &      F & F & F &    T & F &\cm&    F & F & F
 \medskip
 
 
-\item $A \eif B$, $\enot A\proves \enot B$\\
+\item $P \eif Q$, $\enot P\proves \enot Q$\\
 This argument is invalid.
 \begin{flushleft}
 \begin{tabular}{d d | f e e  j e   j   j e }
-$A$ & $B$ & $A$ & $\eif$ & $B$, & $\enot$ & $A$ & $\proves$ & $\enot$ & $B$\\
+$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $\enot$ & $P$ & $\proves$ & $\enot$ & $Q$\\
 \hline
 T & T &    T & T & T &    F & T &\cm& F & T\Tstrut\\
 T & F &    T & F & F &    F & T &\cm& T & F\\ 
@@ -572,11 +572,11 @@ F & F &    F & T & F &    T & F  &\cm&T & F
 \medskip
 
 
-\item $A$, $B\proves \enot(A\eif \enot B)$\\
+\item $P$, $Q\proves \enot(P\eif \enot Q)$\\
 This argument is valid.
 \begin{flushleft}
 \begin{tabular}{d d | f  j   j   j e e e e }
-$A$ & $B$ & $A$,& $B$ & $\proves$ & $\enot$ & $(A$ & $\eif$ & $\enot$ & $B)$\\
+$P$ & $Q$ & $P$,& $Q$ & $\proves$ & $\enot$ & $(P$ & $\eif$ & $\enot$ & $Q)$\\
 \hline
 T & T &  T &  T &\cm& T &   T & F & F & T\Tstrut\\
 T & F &  T &  F &\cm& F &   T & T & T & F\\
@@ -588,11 +588,11 @@ F & F &  F &  F &\cm&F  &  F & T & T & F
 
 \filbreak
 
-\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\proves C$\\
+\item $\enot(P \eand Q)$, $P \eor Q$, $P \eiff Q\proves S$\\
 This argument is valid.
 \begin{flushleft}
 \begin{tabular}{d d d | f e e e  j e e  j e e  j  f }
-$A$ & $B$ & $C$ & $\enot$ & $(A$ & $\eand$ & $B)$, & $A$ & $\eor$ & $B$, & $A$ & $\eiff$ & $B$ & $\proves$ & $C$\\
+$P$ & $Q$ & $S$ & $\enot$ & $(P$ & $\eand$ & $Q)$, & $P$ & $\eor$ & $Q$, & $P$ & $\eiff$ & $Q$ & $\proves$ & $S$\\
 \hline
 T & T & T &  F &   T & T & T &      T & T & T &      T & T &  T   &\cm& T\Tstrut\\
 T & T & F &  F &   T & T & T &      T & T & T &      T & T &  T   &\cm& F\\
@@ -626,7 +626,7 @@ F & F & F &  T &   F & F & F &      F & F & F  &     F & T &  F   &\cm& F
 \end{ebullet}
 \end{earg}
 
-
+\end{small}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

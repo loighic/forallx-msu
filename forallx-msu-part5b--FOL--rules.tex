@@ -5,19 +5,19 @@
 
 \section{New rules for FOL}
 
-We retain the TFL rules that are given in chapter 14, and now we add introduction and elimination rules for the universal and existential quantifiers and the identity elimination rule.
+We retain the TFL rules that are given in chapter \ref{s:BasicTFL}, and now we add introduction and elimination rules for the universal and existential quantifiers and the identity operator.
 
 \section{Universal elimination}
 
-If we know, for instance, that everyone in some domain likes chocolate, then we know that a specific individual in this domain---let's say, Carol---likes chocolate. The universal elimination rule captures this reasoning process. 
+If we know that everyone in some domain likes chocolate, then we know that a specific individual in this domain---let's say, Carol---likes chocolate. The universal elimination rule captures this reasoning process. 
 
 \begin{factboxy}{universal elimination rule}
 \begin{proof}
-	\have[m]{a}{\forall \meta{x A(x)}}
-	\have[\ ]{c}{\meta{A(c)}} \Ae{a}
+	\have[m]{a}{\forall \meta{x Ax}}
+	\have[\ ]{c}{\meta{Ac}} \Ae{a}
 \end{proof}
 
-\small{If we have $\forall \meta{x A(x)}$ on a line, then we can put $\meta{A(c)}$ on a new line.\\ 
+\small{If we have $\forall \meta{x Ax}$ on a line, then we can put $\meta{Ac}$ on a new line.\\ 
 Any predicate can  be used in the place of `\meta{A}', any variable can occur in place of `\meta{x}', and any name can be used in place of `\meta{c}'.}
 \end{factboxy}
 
@@ -28,120 +28,141 @@ If we know, for instance, that David is on the train, then we know that someone 
 
 \begin{factboxy}{existential introduction rule}
 \begin{proof}
-	\have[m]{a}{\meta{A(c)}}
-	\have[\ ]{c}{\exists \meta{x A(x)}} \Ei{a}
+	\have[m]{a}{\meta{Ac}}
+	\have[\ ]{c}{\exists \meta{x Ax}} \Ei{a}
 \end{proof}
 
-\small{If we have $\meta{A(c)}$ on a line, then we can put $\exists \meta{x A(x)}$ on a new line.}
+\small{If we have $\meta{Ac}$ on a line, then we can put $\exists \meta{x Ax}$ on a new line.}
 \end{factboxy}
 
 The universal elimination and existential introduction rules are straightforward. It's obvious that if \textit{everyone} has some property, then any particular individual (in that group) has it. It's equally clear that if a particular individual has a property, then \textit{someone} has it.
 
-The universal introduction rule and existential elimination rule are less intuitive---although when we think about them, we'll see that they ``logically’’ make sense. 
+Matters aren't quite that simple for the universal introduction and existential elimination rules, and consequently, these rules are a little more complex. 
 
 
 \section{Universal introduction}
 
-We'll take up the universal introduction rule first. What would it take to introduce the claim that everyone likes chocolate [i.e., $\forall x C(x)$]? One method would be to check that every single individual in the domain likes chocolate. This, however, isn’t practical for our purposes since a domain can have an infinite number of members.
+We'll take up the universal introduction rule first. What would it take to introduce the claim that everyone likes chocolate (i.e., $\forall x Cx$)? One method would be to check that every single individual in the domain likes chocolate. This, however, isn’t practical for our purposes since a domain can have an infinite number of members.
 We need a different way of introducing a universal quantifier.
 
 To begin thinking about the method that we will use, consider this argument:
-$$\forall x (F(x) \eand G(x)) \proves \forall x F(x)$$
+$$\forall x (Fx \eand Gx) \proves \forall x Fx$$
 
 \noindent This argument is valid. If everything is both $F$ \emph{and} $G$, then everything is $F$.  But how do we show this?  We begin the proof this way:
 
 \begin{proof}
-	\hypo{x}{\forall x (F(x) \eand G(x))} \pr{}
-	\have{a}{F(a) \eand G(a)} \Ae{x}
-	\have{b}{F(a)} \ae{a}
+	\hypo{x}{\forall x (Fx \eand Gx)} \pr{}
+	\have{a}{Fa \eand Ga} \Ae{x}
+	\have{b}{Fa} \ae{a}
 \end{proof}
-We have derived `$F(a)$'. This is an \textit{instance} of the conclusion that we are after: `$\forall xF(x)$'. (For example, `Albert is fast' is one \textit{instance} of `everyone is fast'.) 
-Alternatively, on lines 2 and 3 (and using the universal elimination and conjunction elimination rules), we could have put `$F(b)$', `$F(c)$', `$F(m_2)$', `$F(r_{791}$'), or anything else until we run out of space, time, or patience.   
+We have derived `$Fa$'. This is an \textit{instance} of the conclusion that we are after: `$\forall xFx$'. (For example, `Albert is fast' is one \textit{instance} of `everyone is fast'.) 
+Alternatively, on lines 2 and 3 (and using the universal elimination and conjunction elimination rules), we could have put `$Fb$', `$Fc$', `$Fm_2$', `$Fr_{791}$', or anything else until we run out of space, time, or patience.   
 
-So, from the premise $\forall x (F(x) \eand G(x))$, we could, in principle, get $F(\meta{\ldots})$ for any name. That is, we could, {in principle}, use the name of every individual in the domain. (In reality, we can't do this, however, because our proof might never end.)
-Therefore, because we just arbitrarily chose `$a$' for the $F(a) \eand G(a)$---and then derived $F(a)$---we should be allowed to infer $\forall x F(x)$ from the $F(a)$.  
+So, from the premise `$\forall x (Fx \eand Gx)$', we could, in principle, use the name of any and every individual in the domain for `$(F\rule{1.7mm}{0.15mm} \eand G\rule{1.7mm}{0.15mm})$'.
+Therefore, because we arbitrarily chose `$a$' for the `$(Fa \eand Ga)$'---and then derived `$Fa$'---we should be allowed to infer `$\forall x Fx$' from the `$Fa$'.  
 
-This brings us to the following idea. We can use the \define{universal introduction rule} to get `$\forall x F(x)$' when the `$\meta{c}$' in `$F(\meta{c})$' is arbitrarily chosen from the names of everyone or everything in the domain. And therefore, in this situation, we can complete the proof with this rule.
+This brings us to the following idea. We can use the \define{universal introduction rule} to get `$\forall x Fx$' from `$Fa$' as long as the `$a$' in `$Fa$' is arbitrarily chosen from the names of everyone or everything in the domain. And therefore, in this situation, we can complete the proof with this rule.
 
 \begin{proof}
-	\hypo{x}{\forall x (F(x) \eand G(x))} \pr{}
-	\have{a}{F(a) \eand G(a)} \Ae{x}
-	\have{b}{F(a)} \ae{a}
-	\have{c}{\forall x F(x)} \Ai{b}
+	\hypo{x}{\forall x (Fx \eand Gx)} \pr{}
+	\have{a}{Fa \eand Ga} \Ae{x}
+	\have{b}{Fa} \ae{a}
+	\have{c}{\forall x Fx} \Ai{b}
 \end{proof}
 
 \begin{factboxy}{universal introduction rule}
 \begin{proof}
-	\have[m]{a}{\meta{A(c)}}
-	\have[\ ]{c}{\forall \meta{xA(x)}} \Ai{a}
+	\have[m]{a}{\meta{Ac}}
+	\have[\ ]{c}{\forall \meta{xAx}} \Ai{a}
 \end{proof}
 
-\small{If we have $\meta{A(c)}$ on a line, then we can put $\forall \meta{xA(x)}$ on a new line provided these conditions are met:\\
+\small{If we have $\meta{Ac}$ on a line, then we can put $\forall \meta{xAx}$ on a new line provided these conditions are met:\\
 1. $\meta{c}$ must not occur in any premise or undischarged assumption.\\
-2. $\meta{x}$ must not occur in $\meta{A(c}$, \ldots).
+2. When $\meta{A}$ is a multi-place predicate, $\meta{x}$ must not occur in $\meta{A(\ldots c\ldots)}$.
 }
 \end{factboxy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\filbreak
+
 \section{Existential elimination}
 
-The first thing to note about the existential elimination rule is that when we use it, we begin with and usually end with an existentially quantified sentence. A typical way to use the rule is as follows. 
+The first thing to note about the \define{existential elimination rule} is that when we use it, we begin with and usually end with an existentially quantified sentence. A typical way to use the rule is as follows. 
 
 \begin{ebullet}
 \item[(1)] Begin with an existentially quantified sentence. 
 \item[(2)] As an assumption, state a possible instance of this existentially quantified sentence. 
-\item[(3)] Inside the sub-proof, derive another existentially quantified sentence.
-\item[(4)] Close the sub-proof and put the sentence from 3 on the next line. 
+\item[(3)] Inside the subproof, derive another existentially quantified sentence.
+\item[(4)] Close the subproof and put the sentence from 3 on the next line. 
 \end{ebullet}
 
 \noindent Hence, we shouldn't get hung up on the word \textit{elimination}. We do eliminate the existential quantifier for the second step, but, in the end, we're right back to having an existentially quantified sentence---albeit a different one than the one with which we began.
 
-Now, let's think about how this rule works a little more carefully, suppose that we know that \emph{something} is $F$. The problem is that simply knowing this does not tell us which particular thing is F. So from `$\exists x F(x)$' we cannot immediately infer `$F(a)$', or `$F(d)$', or any other instance of the sentence. What can we do?  How can we derive anything from an existentially quantified premise?
+Now, let's think about how this rule works in a little more detail. Suppose that we know that \emph{someone} is $F$ (say ``fast''). The problem is that simply knowing this doesn't tell us which particular person is $F$. (Abigail? Carol? David? Who?) So from `$\exists x Fx$' we cannot immediately infer `$Fa$', or `$Fc$', or `$Fd$',  or any other instance of the sentence. What can we do?  How can we derive anything from an existentially quantified premise?
 
-Suppose we know that something is $F$. Furthermore, we know that everything that is $F$ is $G$. In English, we might pursue the following line of reasoning:
-	\begin{quote}
-Since something is $F$, there is some particular thing that is $F$. We do not know anything about it, other than that it's $F$, but for convenience, let's call it ``Oby''. So, Oby is $F$. Since everything that is $F$ is $G$, it follows that ``Oby'' is $G$. And since Oby is $G$, it follows that \emph{something} is $G$. Nothing depends on who or what, exactly, our ``Oby'' is. But something is $G$.
-	\end{quote}
-We can capture this reasoning pattern in a proof as follows:
+We will examine how our existential elimination rule works with this argument:
+$$\exists x Fx, \forall x(Fx \eif Gx) \proves \exists x Gx$$
+After the premises, we make an assumption.
 \begin{proof}
-	\hypo{es}{\exists x F(x)} \pr{}
-	\hypo{ast}{\forall x(F(x) \eif G(x))} \pr{}
+	\hypo{es}{\exists x Fx} \pr{}
+	\hypo{ast}{\forall x(Fx \eif Gx)} \pr{}
 	\open
-		\hypo{s}{F(o)} \as{}
-		\have{st}{F(o) \eif G(o)}\Ae{ast}
-		\have{t}{G(o)} \ce{s, st}
-		\have{et1}{\exists x G(x)}\Ei{t}
-	\close
-	\have{et2}{\exists x G(x)}\Ee{es,s-et1}
+		\hypo{s}{Fe} \as{}
 \end{proof}
+Premise 1 tell us that \emph{someone} is an $F$.  So, on line 3, we introduce an arbitrary name for this someone: `$e$'. Essentially, we are saying, ``let's call this individual who is fast \textit{Eddie}.'' And we are assuming nothing about ``Eddie'' other than that the predicate `$F$' is true of true of him or her. (I.e., he or she is fast.) Now that have `$Fe$', we proceed as follows. 
+%Other than removing the existential quantifier and replacing the variable with a name, our assumption must match the sentence in premise 1. 
+\begin{proof}
+	\hypo{es}{\exists x Fx} \pr{}
+	\hypo{ast}{\forall x(Fx \eif Gx)} \pr{}
+	\open
+		\hypo{s}{Fe} \as{}
+		\have{st}{Fe \eif Ge}\Ae{ast}
+		\have{t}{Ge} \ce{s, st}
+\end{proof}
+So far, so good. Because `$e$' was just a randomly chosen name and we do know if there is, in fact, an `$e$' that is `$F$', we cannot take the `$e$' outside the subproof. But we don't need to do so anyway. We can use the existential introduction rule to get `$\exists xGx$' on line 6. Then, we can exit the subproof and, using the \define{existential elimination rule}, repeat `$\exists xGx$' on the next line.
+%\noindent\begin{minipage}{0.99\textwidth}
+\begin{proof}
+	\hypo{es}{\exists x Fx} \pr{}
+	\hypo{ast}{\forall x(Fx \eif Gx)} \pr{}
+	\open
+		\hypo{s}{Fo} \as{}
+		\have{st}{Fo \eif Go}\Ae{ast}
+		\have{t}{Go} \ce{s, st}
+		\have{et1}{\exists x Gx}\Ei{t}
+	\close
+	\have{et2}{\exists x Gx}\Ee{es,s-et1}
+\end{proof}
+%\end{minipage}\bigskip
 
-$\exists x F(x)$ is one of the premises. After the premises, on line 3, we made an assumption: `$F(o)$'. The idea here is that premise 1 tell us that \emph{something} is an $F$.  So, on line 3 we introduce some arbitrary name for it: `$o$'. (Other than removing the existential quantifier and replacing the variable with a name, our assumption must match the sentence in premise 1.)
-The name we picked is arbitrary. We've assumed nothing about the object named by `$o$' other than that the predicate `$F$' is true of it.  On the basis of the assumption $F(o)$, we can, in a few steps, get `$\exists xG(x)$'.  Since nothing depended on which specific object `$o$' names, our reasoning pattern is perfectly general. We could equally well have arrived at `$\exists xG(x)$'  by using any other name on line 3. We can therefore discharge the assumption `$F(o)$' on line 3 and put `$\exists x G(x)$' on line 7 using the \define{existential elimination rule}.
+	\begin{quote}
+%Since somone is $F$, there is some particular individual who is $F$. We do not know anything about this individual, other than that he or she is $F$, but for convenience, let's call this individual ``Oby''. So, Oby is $F$. Since everyone who is $F$ is $G$, it follows that ``Oby'' is $G$. And since Oby is $G$, it follows that \emph{someone} is $G$. Nothing depends on who, exactly, our ``Oby'' is. But someone is $G$.
+	\end{quote}
 
 \begin{factboxy}{existential elimination rule}
 \begin{proof}
-	\have[m]{a}{\exists \meta{x}\meta{A}(\meta{x \ldots})}
+	\have[m]{a}{\exists \meta{x}\meta{Ax}}
 	\open
-		\hypo[i]{b}{\meta{A}(\meta{c})} \as{}
+		\hypo[i]{b}{\meta{Ac}} \as{}
 		%\have[ \ ]{es}{\vdots}
 		\have[j]{c}{\meta{B}}
 	\close
 	\have[\ ]{d}{\meta{B}} \Ee{a,b-c}
 \end{proof}
 
-\small{The name \meta{c} may not occur outside the subproof (including in the original existential $\exists \meta{x}\meta{A}(\meta{x})$ or in \meta{B}).}
+\small{The name \meta{c} may not occur outside the subproof.\smallskip
+
+Given an existentially quantified sentence in one premise, assume an instance of that sentence. Proceed until the desired sentence $\meta{B}$ is reached. $\meta{B}$ cannot contain the name used in the assumption. Exit the subproof, and put $\meta{B}$ on the next line.
+}
 \end{factboxy}
 
-The name that is in the assumption cannot occur outside the sub-proof. This means that we could not have ended the sub-proof with line 5, where we have `$G(o)$'. We can, however, easily get from `$G(o)$' to `$\exists G(x)$' with the existential introduction rule. And since the name that is in the assumption doesn't occur in `$\exists G(x)$', this can be the last line of the sub-proof.
+The name that is in the assumption cannot occur outside the subproof. So, the \meta{B} in the rule might often be an existentially quantified sentence. But \meta{B} can any sentence as long as it doesn't contain the name introduced in the assumption that begins the subproof.
 
-So, the \meta{B} in the rule will often be an existentially quantified sentence. But \meta{B} can any sentence as long as it doesn't contain the name introduced in the assumption that begins the subproof.
-
-One more thing to note about this rule is that the only time when we are really eliminating an existential quantifier is when we make our assumption. And that sentence, $\meta{A(c)}$, cannot appear outside of the subproof. This elimination step is still significant, however, because it provides a sentence that can be used with the rules that were introduced for TFL.
+%One more thing to note about this rule is that the only time when we are really eliminating an existential quantifier is when we make our assumption. And that sentence, $\meta{Ac}$, cannot appear outside of the subproof. This elimination step is still significant, however, when it provides a sentence that is needed to use the rules that were introduced in chapter \ref{s:BasicTFL}.
 
 \begin{notebox}
-The constraint that we have on the existential elimination rule is more restrictive than strictly necessary. The name $\meta{c}$ that we assumed can occur outside the subproof, as long as it doesn't occur in $\exists \meta{x}\meta{A}(\meta{x \ldots})$, in an earlier undischarged assumption, or in $\meta{B}$.
+The constraint that we have on the existential elimination rule is more restrictive than strictly necessary. The name $\meta{c}$ that we assumed can occur outside the subproof, as long as it doesn't occur in $\exists \meta{x}\meta{Ax}$ (when $\meta{A}$ it is a multi-place predicate), in an earlier undischarged assumption, or in $\meta{B}$.
 \end{notebox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,11 +185,11 @@ When thinking about identities, however, the more interesting assertion is one l
 \begin{factboxy}{identity elimination rule}
 \begin{proof}
 	\have[m]{ab}{\meta{a = b}}
-	\have[n]{a}{\meta{A(a)}}
-	\have[\ ]{b}{\meta{A(b)}} \ie{ab,a}
+	\have[n]{a}{\meta{Aa}}
+	\have[\ ]{b}{\meta{Ab}} \ie{ab,a}
 \end{proof}
 
-\small{If you have \meta{a = b} on one line and \meta{A(a)} on another line, you can put \meta{A(b)} on a new line.}
+\small{If you have \meta{a = b} on one line and \meta{Aa} on another line, you can put \meta{Ab} on a new line.}
 \end{factboxy}
 
 
@@ -178,118 +199,120 @@ When thinking about identities, however, the more interesting assertion is one l
 
 \section{Some examples}
 
-Although the quantifiers aren't logical operators, when thinking about how we use these rules, it is useful to treat them as if they are. If we count them as logical operators, then we can continue to follow this guideline (from p.~\pageref{rule-proofs-main-operator}): \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence}. And as we said in \S \ref{main_logical_operator}, the main logical operator is the one that's scope is the entire sentence. 
+The existential quantifier and the universal quantifier are logical operators, and so we have to continue to follow this guideline from p.~\pageref{rule-proofs-main-operator}: {Each of the rules of derivation can only be applied to the main logical operator of a sentence}. And as we said in \S \ref{main_logical_operator}, the main logical operator is the one that's scope is the entire sentence. 
 
 So, consider a sentence like this one:
 
 \begin{ebullet}
-\item[] $\forall x[B(x) \eand N(x)]$
+\item[] $\forall x(Bx \eand Nx)$
 \end{ebullet}
-The scope of the universal quantifier is the whole sentence. Therefore, we treat it as the main logical operator. As such, we can use the universal elimination rule on this sentence, and we can't use the conjunction elimination rule. If we apply the universal elimination rule, then we have a sentence like this one:
+The scope of the universal quantifier is the whole sentence. Therefore, it is the main logical operator. As such, for this sentence, we can use the universal elimination rule, and we can't use the conjunction elimination rule. If we use the universal elimination rule, we get a sentence like this one:
 \begin{ebullet}
-\item[] $B(c) \eand N(c)$
+\item[] $Bc \eand Nc$
 \end{ebullet}
-Now, we can use the conjunction elimination rule to get either `$B(c)$' or `$N(c)$' on a new line. %But, again, we \textit{cannot} use the conjunction elimination rule with `$\forall x[B(x) \eand N(x)]$' because the universal quantifier is the main logical operator.
+Now, we can use the conjunction elimination rule to get either `$Bc$' or `$Nc$' on a new line. %But, again, we \textit{cannot} use the conjunction elimination rule with `$\forall x[Bx \eand Nx]$' because the universal quantifier is the main logical operator.
 
-Here are some examples of proofs that use the rules introduced in this chapter, along with the rules of derivation from chapter \ref{s:BasicTFL}.
+Here are some examples of proofs that use the rules introduced in this chapter, along with the rules from chapter \ref{s:BasicTFL}.
+\bigskip
 
 \begin{earg}
-\begin{minipage}{10cm}
-\item $\forall xF(x) \proves \forall yF(y)$
+%\noindent\begin{minipage}{0.99\textwidth}
+%\item $\forall xFx \proves \forall yFy$
 
-%\noindent \textit{universal elimination and universal introduction rules}
+%\begin{proof}
+%	\hypo{p1}{\forall xFx} \pr{}
+%	\have{f}{Fa} \Ae{p1}
+%	\have{c}{\forall yFy} \Ai{f}
+%\end{proof}
+%\bigskip
+%\end{minipage}
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\forall x(Fx \eif Gx), Fa \proves \exists x(Fx \eand Gx)$
 
 \begin{proof}
-	\hypo{p1}{\forall xF(x)} \pr{}
-	\have{f}{F(a)} \Ae{p1}
-	\have{c}{\forall yF(y)} \Ai{f}
+	\hypo{p1}{\forall x(Fx \eif Gx)} \pr{}
+	\hypo{p2}{Fa} \pr{}
+	\have{fg}{Fa \eif Ga} \Ae{p1}
+	\have{g}{Ga} \ce{p2,fg}
+	\have{fg2}{Fa \eand Ga} \ai{p2,g}
+	\have{c}{\exists x(Fx \eand Gx)} \Ei{fg2}	
 \end{proof}
 \bigskip
 \end{minipage}
 
-\item $\forall x[G(x) \eif H(x)], \forall xG(x) \proves \forall xH(x)$
+
+\item $\forall x(Gx \eif Hx), \forall xGx \proves \forall xHx$
 
 \begin{proof}
-	\hypo{p1}{\forall x[G(x) \eif H(x)]} \pr{}
-	\hypo{p2}{\forall xG(x)} \pr{}
-	\have{GH}{G(a) \eif H(a)} \Ae{p1}
-	\have{G}{G(a)} \Ae{p2}
-	\have{H}{H(a)} \ce{GH,G}
-	\have{c}{\forall xH(x)} \Ai{H}
+	\hypo{p1}{\forall x(Gx \eif Hx)} \pr{}
+	\hypo{p2}{\forall xGx} \pr{}
+	\have{GH}{Ga \eif Ha} \Ae{p1}
+	\have{G}{Ga} \Ae{p2}
+	\have{H}{Ha} \ce{GH,G}
+	\have{c}{\forall xHx} \Ai{H}
 \end{proof}
 \bigskip
 
-\begin{minipage}{10cm}
-\item $\forall x[F(x) \eif G(x)], F(a) \proves \exists x[F(x) \eand G(x)]$
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\exists xMx \proves \exists x(Mx \eor Nx)$
 
 \begin{proof}
-	\hypo{p1}{\forall x[F(x) \eif G(x)]} \pr{}
-	\hypo{p2}{F(a)} \pr{}
-	\have{fg}{F(a) \eif G(a)} \Ae{p1}
-	\have{g}{G(a)} \ce{p2,fg}
-	\have{fg2}{F(a) \eand G(a)} \ai{p2,g}
-	\have{c}{\exists x[F(x) \eand G(x)]} \Ei{fg2}	
-\end{proof}
-\bigskip
-\end{minipage}
-
-\begin{minipage}{10cm}
-\item $\exists xM(x) \proves \exists x[M(x) \eor N(x)]$
-
-\begin{proof}
-	\hypo{p1}{\exists xM(x)} \pr{}
+	\hypo{p1}{\exists xMx} \pr{}
 	\open
-		\hypo{m}{M(a)} \as{}
-		\have{mn}{M(a) \eor N(a)} \oi{m}
-		\have{mn2}{\exists x[M(x) \eor N(x)]} \Ei{mn}
+		\hypo{m}{Ma} \as{}
+		\have{mn}{Ma \eor Na} \oi{m}
+		\have{mn2}{\exists x(Mx \eor Nx)} \Ei{mn}
 	\close
-	\have{c}{\exists x[M(x) \eor N(x)]} \Ee{p1,m-mn2}
+	\have{c}{\exists x(Mx \eor Nx)} \Ee{p1,m-mn2}
 \end{proof}
 \bigskip
 \end{minipage}
 
 
-\item $\exists x \enot F(x), \forall x[F(x) \eor G(x)] \proves \exists xG(x)$
+\item $\exists x \enot Fx, \forall x(Fx \eor Gx) \proves \exists xGx$
 
 \begin{proof}
-	\hypo{p1}{\exists x \enot F(x)} \pr{}
-	\hypo{p2}{\forall x[F(x) \eor G(x)]} \pr{}
+	\hypo{p1}{\exists x \enot Fx} \pr{}
+	\hypo{p2}{\forall x(Fx \eor Gx)} \pr{}
 	\open
-		\hypo{nf}{\enot F(a)} \as{}
-		\have{fg}{F(a) \eor G(a)} \Ae{p2}
-		\have{g}{G(a)} \oe{nf,fg}
-		\have{Eg}{\exists G(x)} \Ei{g}
+		\hypo{nf}{\enot Fa} \as{}
+		\have{fg}{Fa \eor Ga} \Ae{p2}
+		\have{g}{Ga} \oe{nf,fg}
+		\have{Eg}{\exists Gx} \Ei{g}
 	\close
-	\have{c}{\exists G(x)} \Ee{p1,nf-Eg}
+	\have{c}{\exists Gx} \Ee{p1,nf-Eg}
 \end{proof}
 \bigskip
 
-\begin{minipage}{10cm}
-\item $\exists x[B(x) \eif D(x)], \forall xB(x) \proves \exists xD(x)$
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\exists x(Bx \eif Dx), \forall xBx \proves \exists xDx$
 
 \begin{proof}
-	\hypo{p1}{\exists x[B(x) \eif D(x)]} \pr{}
-	\hypo{p2}{\forall xD(x)} \pr{}
+	\hypo{p1}{\exists x(Bx \eif Dx)} \pr{}
+	\hypo{p2}{\forall xDx} \pr{}
 	\open
-		\hypo{bd}{B(a) \eif D(a)} \as{}
-		\have{b}{B(a)} \Ae{p2}
-		\have{d}{D(a)} \ce{bd,b}
-		\have{d2}{\exists xD(x)} \Ei{d}
+		\hypo{bd}{Ba \eif Da} \as{}
+		\have{b}{Ba} \Ae{p2}
+		\have{d}{Da} \ce{bd,b}
+		\have{d2}{\exists xDx} \Ei{d}
 	\close
-	\have{c}{\exists xD(x)} \Ee{p1,bd-d2}
+	\have{c}{\exists xDx} \Ee{p1,bd-d2}
 \end{proof}
 \bigskip
 \end{minipage}
 
-\item $G(a) \eiff H(a), a=d \proves G(d) \eiff H(d)$
+\item $Ga \eiff Ha, a=d \proves Gd \eiff Hd$
 
 \begin{proof}
-	\hypo{p1}{G(a) \eiff H(a)} \pr{}
+	\hypo{p1}{Ga \eiff Ha} \pr{}
 	\hypo{p2}{a=d} \pr{}
-	\have{c}{G(d) \eiff H(d)} \ie{p1,p2}
+	\have{c}{Gd \eiff Hd} \ie{p1,p2}
 \end{proof}
 \bigskip
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $a=b, M(b,a) \proves \exists xM(x,x)$
 
 \begin{proof}
@@ -298,63 +321,80 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 	\have{m}{M(a,a)} \ie{p1,p2}
 	\have{c}{\exists xM(x,x)} \Ei{m}
 \end{proof}
-\bigskip
+\smallskip
+\end{minipage}
 
-
-\item $M(a) \eor N(b)\textcolor{magenta}{,}~ N(b) \eif b=d\textcolor{magenta}{,}~ \enot M(a)  \proves N(d)$
+\item $Ma \eor Nb\textcolor{magenta}{,}~ Nb \eif b=d\textcolor{magenta}{,}~ \enot Ma  \proves Nd$
 
 \begin{proof}
-	\hypo{p1}{M(a) \eor N(b)} \pr{}
-	\hypo{p2}{N(b) \eif b=d} \pr{}
-	\hypo{p3}{\enot M(a)} \pr{}
-	\have{n}{N(b)} \oe{p1,p3}
+	\hypo{p1}{Ma \eor Nb} \pr{}
+	\hypo{p2}{Nb \eif b=d} \pr{}
+	\hypo{p3}{\enot Ma} \pr{}
+	\have{n}{Nb} \oe{p1,p3}
 	\have{bd}{b=d} \ce{p2,n}
-	\have{c}{N(d)} \ie{n,bd}
+	\have{c}{Nd} \ie{n,bd}
 \end{proof}
-\bigskip
+\medskip
+
+\item $\exists y \forall xLxy \proves \forall x \exists yLxy$
+
+\begin{proof}
+	\hypo{p1}{\exists y \forall xLxy} \pr{}
+	\open
+		\hypo{lxc}{\forall xLxc} \as{}
+		\have{lac}{Lac} \Ae{lxc}
+		\have{lay}{\exists yLay} \Ei{lac}
+		\have{c1}{\forall x \exists yLxy} \Ai{lay}
+	\close
+	\have{c2}{\forall x \exists yLxy} \Ee{p1,lxc-c1}
+\end{proof}
+\smallskip
+On p.~\pageref{quantifier-order}, we said that `$\forall x \exists yLxy$' and `$\exists y \forall xLxy$' have different meanings. One consequence of this is that $\exists y \forall xLxy \proves \forall x \exists yLxy$ is valid (as just shown), but $\forall x \exists yLxy \proves \exists y \forall xLxy$ is not. \medskip
 
 
-\item $\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))\textcolor{magenta}{,}~ L(a,b)\textcolor{magenta}{,}~ L(b,c) \proves L(a,c)$
-\end{earg}
+\item $\forall x \forall y \forall z((Lxy \eand Lyz) \eif Lxz)\textcolor{magenta}{,}~ Lab\textcolor{magenta}{,}~ Lbc \proves Lac$
+\end{earg}  % This is here, rather than at the end, so that the text that follows will be more properly formatted.
 
-\noindent This is one of the examples of an arguments is that is valid in virtue of its from chapter \ref{symbolization}:
-
+\noindent\begin{minipage}{0.99\textwidth}
+This is one of the examples from chapter \ref{symbolization} of an argument that is valid in virtue of its form:
 	\begin{earg}
 		\item[1.] Seoul is larger than London.
 		\item[2.] London is larger than Chicago.
 		\item[3.] Therefore, Seoul is larger than Chicago. 
 	\end{earg}
+\end{minipage}\bigskip
 
-\noindent We couldn't, however, represent such an argument in TFL. Now, we can do so with FOL. 
-We will use this two-place predicate: 
+\noindent We couldn't, however, represent such an argument in TFL. Now, we can with this two-place predicate: 
 \begin{ekey}
-	\item[L] \rule{1cm}{0.15mm} is larger than \rule{1cm}{0.15mm}
+	\item[L] \rule{1cm}{0.15mm} is larger than \rule{1cm}{0.15mm} .
 \end{ekey}
-
-For this argument, this predicate must have the \textit{transitive relation}. This relation is defined with this sentence, which will be a premise in the argument:
-\vspace{-3mm}
-$$\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))$$
-In English, this is `for all \textit{x}, for all \textit{y}, and for all \textit{z}, if \textit{x} is larger than \textit{y} and \textit{y} is larger than \textit{z}, then \textit{x} is larger than \textit{z}'. 
+Comparative adjectives like \textit{larger than} are transitive. In FOL, the \textit{transitive relation} is defined with a sentence like this one, which will be a premise in the argument:
+%\vspace{-2mm}
+$$\forall x \forall y \forall z((Lxy \eand Lyz) \eif Lxz)$$
+%\vspace{-2mm}
+In English, this is read, `for all \textit{x}, for all \textit{y}, and for all \textit{z}, if \textit{x} is larger than \textit{y} and \textit{y} is larger than \textit{z}, then \textit{x} is larger than \textit{z}'. 
 (Not all two-place predicates are transitive, which is why we need this premise. You can see this by thinking about a different two-place that `$L$' might represent: `\rule{1cm}{0.15mm} loves \rule{1cm}{0.15mm}'.)
  
-This is the argument:
-\medskip
+%This is the argument:
+%\medskip
 
-$\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))\textcolor{magenta}{,}~ L(a,b)\textcolor{magenta}{,}~ L(b,c) \proves L(a,c)$
-\medskip
+%$\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))\textcolor{magenta}{,}~ L(a,b)\textcolor{magenta}{,}~ L(b,c) \proves L(a,c)$
+%\medskip
 
-\noindent We use the universal elimination rule three times to remove each of the universal quantifiers. Then, it is a simple matter of using the conjunction introduction and conditional elimination rules to get the conclusion `$a$ is larger than $c$'.
+\smallskip
+In the proof, we use the universal elimination rule three times to remove each of the universal quantifiers. Then, it is a simple matter of using the conjunction introduction and conditional elimination rules to get the conclusion `$a$ is larger than $c$'.
 
+
+%\newpage
 \begin{proof}
-	\hypo{p1}{\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))} \pr{}
-	\hypo{p2}{L(a,b)} \pr{}
-	\hypo{p3}{L(b,c)} \pr{}
-	\have{p4}{\forall y \forall z([L(a,y) \eand L(y,z)] \eif L(a,z))} \Ae{p1}
-	\have{p5}{\forall z([L(a,b) \eand L(b,z)] \eif L(a,z))} \Ae{p4}
-	\have{p6}{(L(a,b) \eand L(b,c)) \eif L(a,c)} \Ae{p5}
-	\have{p7}{L(a,b) \eand L(b,c)} \ai{p2,p3}
-	\have{c}{L(a,c)} \ce{p6,p7}
+	\hypo{p1}{\forall x \forall y \forall z((Lxy \eand Lyz) \eif Lxz)} \pr{}
+	\hypo{p2}{Lab} \pr{}
+	\hypo{p3}{Lbc} \pr{}
+	\have{p4}{\forall y \forall z((Lay \eand Lyz) \eif Laz)} \Ae{p1}
+	\have{p5}{\forall z((Lab \eand Lbz) \eif Laz)} \Ae{p4}
+	\have{p6}{(Lab \eand Lbc) \eif Lac} \Ae{p5}
+	\have{p7}{Lab \eand Lbc} \ai{p2,p3}
+	\have{c}{Lac} \ce{p6,p7}
 \end{proof}
-
 
 

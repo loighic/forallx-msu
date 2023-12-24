@@ -100,25 +100,27 @@ Valid 				& proof or a truth table 							& truth table \\
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
 
+\begin{small}
+
 \problempart  For each of the following, if the argument is valid, give a proof. If it is not valid, make a truth table showing that it is not. 
 \begin{earg}
 \item $\enot (P \eor Q) \proves P \eand Q$
 
-\item $\enot(A \eor B) \proves C \eif \enot A$
+\item $\enot(M \eor P) \proves Q \eif \enot M$
 
-\item $\enot(A \eor B) \proves B \eif A$
+\item $\enot(M \eor P) \proves P \eif M$
 
-\item $\enot(A \eor (B \eor C)) \proves \enot{C}$
-\item $\enot(A \eand (B \eor C)) \proves \enot{C}$ 
+\item $\enot(M \eor (P \eor Q)) \proves \enot{Q}$
+\item $\enot(M \eand (P \eor Q)) \proves \enot{Q}$ 
 
-\item $((\enot X \eiff X) \eor X) \proves X$
+\item $((\enot R \eiff R) \eor R) \proves R$
 \item $F \eand (K \eand R) \proves F \eiff (K \eiff R)$
 
 \item $\enot L,  K \eif \enot L \proves \enot K$
 \item $L, K \eif \enot L \proves \enot K$ 
 
-\item $\proves A \eif [((B \eand C) \eor D) \eif A]$
-\item $\proves A \eif (A \eif B)$
+\item $\proves M \eif [((P \eand Q) \eor D) \eif M]$
+\item $\proves M \eif (M \eif P)$
 \end{earg}
 
 
@@ -126,7 +128,6 @@ Valid 				& proof or a truth table 							& truth table \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
 
 \section{Answers}
 \setcounter{ProbPart}{0}
@@ -146,16 +147,34 @@ F& F& 	 \TTbf{T}&   F& F& F&\xm&      F& \TTbf{F}& F\\
 \end{tabular}
 \end{center}
 
-\item $\enot(A \eor B) \proves C \eif \enot A$ is valid.
 
-\item $\enot(A \eor B) \proves B \eif A$ is valid.
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\enot(M \eor P) \proves Q \eif \enot M$ is valid.
+\begin{proof}
+\hypo{p1}{\enot(M \eor P)} \pr{}
+\open
+	\hypo{as}{Q} \as{}
+	\open
+		\hypo{as2}{M} \as{}
+		\have{mvp}{M \eor P} \oi{as2}
+		\have{nmvp}{\enot(M \eor P)} \reit{p1}
+		\close
+	\have{nm}{\enot M} \ni{as2-nmvp}
+    	\close
+\have{con}{Q \eif \enot M} \ci{as-nm}
+\end{proof}
+\medskip
+\end{minipage}
 
-\item $\enot(A \eor (B \eor C)) \proves \enot{C}$ is valid.
-\item $\enot(A \eand (B \eor C)) \proves \enot{C}$ is invalid. 
+
+\item $\enot(M \eor P) \proves P \eif M$ is valid.
+
+\item $\enot(M \eor (P \eor Q)) \proves \enot{Q}$ is valid.
+\item $\enot(M \eand (P \eor Q)) \proves \enot{Q}$ is invalid. 
 
 \begin{center}
 \begin{tabular}{d d d | f e e e e f   j 	 j e}
-A& B& C&  \enot& (A& \eand& (B& $\eor$& C))& $\proves$&  $\enot$& C\\ 
+M& P& Q&  \enot& (M& \eand& (P& $\eor$& Q))& $\proves$&  $\enot$& Q\\ 
 \hline
 T& T& T&  \TTbf{F}&   T& T&   T& T& T&\cm &   \TTbf{F}& T\Tstrut\\ 
 T& T& F&  \TTbf{F}&   T& T&   T& T& F&\cm &     \TTbf{T}& F\\ 
@@ -168,7 +187,7 @@ F& F& F&  \TTbf{T}&   F& F&   F& F& F& \cm  &   \TTbf{T}& F\\
 \end{tabular}
 \end{center}
 
-\item $(\enot X \eiff X) \eor X \proves X$ is valid.
+\item $(\enot R \eiff R) \eor R \proves R$ is valid.
 \item $F \eand (K \eand R) \proves F \eiff (K \eiff R)$ is valid.
 
 \item $\enot L,  K \eif \enot L \proves \enot K$ is invalid. 
@@ -186,12 +205,14 @@ F& F&  \TTbf{T}& F&    F& \TTbf{T}& T& F&\cm&    \TTbf{T}& F\\
 
 \item $L, K \eif \enot L \proves \enot K$ is valid. 
 
-\item $\proves A \eif ([(B \eand C) \eor D] \eif A)$ is theorem.
-\item $\proves A \eif (A \eif B)$ is not a theorem, and so it is not a tautology.
+\item $\proves M \eif ([(P \eand Q) \eor D] \eif M)$ is theorem.
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\proves M \eif (M \eif P)$ is not a theorem, and so it is not a tautology.
 
 \begin{center}
 \begin{tabular}{d d | f  e e e e e}
-$A$& $B$&  \proves& $A$& $\eif$& ($A$& $\eif$& $B$)\\ 
+$M$& $P$&  \proves& $M$& $\eif$& ($M$& $\eif$& $P$)\\ 
 \hline
 T& T&\cm&    T& \TTbf{T}&   T& T& T\Tstrut\\     
 T& F&\xm&    T& \TTbf{F}&   T& F& F\\     
@@ -199,7 +220,7 @@ F& T&\cm&    F& \TTbf{T}&   F& T& T\\
 F& F&\cm&    F& \TTbf{T}&   F& T& F\\ 
 \end{tabular}
 \end{center}
-
+\end{minipage}
 
 \end{earg}
-
+\end{small}

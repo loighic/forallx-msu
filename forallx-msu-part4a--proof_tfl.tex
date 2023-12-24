@@ -45,15 +45,15 @@ There are different natural deduction systems that can be used with TFL. But all
 
 We have reached a point where it is useful to summarize what TFL is. As you know, the symbols of TFL are the sentence letters that represent atomic sentences, the logical operators $\enot$, $\eand$, $\eor$, $\eif$, and $\eiff$, and parentheses. These, then, can be combined into sentences using the rules given in chapter \ref{s:TFLSentences}. And, then, in chapter \ref{s:CharacteristicTruthTables}, truth tables were used to set the meaning of the logical operators. 
 
-Truth tables also give us a method for verifying that an argument satisfies the definition of \textit{valid}. \textit{Valid} is a concept and is not, strictly speaking a part of TFL. Rather it is a property of some arguments that can, to an extent, be studied and explicated using TFL. Similarly, as you have seen, \textit{tautology}, \textit{contradiction}, \textit{contingent}, \textit{equivalent},  \textit{jointly consistent}, and \textit{jointly inconsistent} are concepts that can be explained using TFL.
+Truth tables also give us a method for determining if an argument is \textit{valid}. \textit{Valid} is a concept and is not, strictly speaking a part of TFL. Rather it is a property of some arguments that can, to an extent, be studied and explicated using TFL. Similarly, as you have seen, \textit{tautology}, \textit{contradiction}, \textit{contingent}, \textit{equivalent},  \textit{jointly consistent}, and \textit{jointly inconsistent} are concepts that can be explained using TFL.
 
 The final part of TFL is the system of natural deduction, which sets the rules for how sentences containing the logical operators can be combined or taken apart. 
 % This, in effect, establishes the syntax for sentences in TFL.
 
 \section{Fitch} 
 
-The modern development of natural deduction dates from simultaneous but unrelated papers by Gerhard Gentzen and Stanisław Jaśkowski that were published in 1934. The natural deduction system that we will use, however, is based largely on work by Frederic Fitch that was first published in 1952. Consequently, the format that is used in the next chapter for writing proofs is called \textit{Fitch notation}.
-
+The modern development of natural deduction dates from simultaneous but unrelated papers by Gerhard Gentzen and Stanisław Jaskowski that were published in 1934. The natural deduction system that we will use, however, is based largely on work by Frederic Fitch that was first published in 1952. Consequently, the format that is used in the next chapter for writing proofs is called \textit{Fitch notation}.
+% The second name should be `Stanisław Jasśkowski,' but Yale New doesn't have the accented `s'. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -65,34 +65,34 @@ The modern development of natural deduction dates from simultaneous but unrelate
 As was explained in the previous chapter, creating a \define{proof} is one way of demonstrating that an argument is valid. (And, as you know, using a truth table is the  other way.) A proof is a list of sentences. The sentence or sentences at the beginning of the list are the premises of the argument. Every other sentence in the list follows from earlier sentences by a specific rule (with one exception, which we will get to in \S \ref{s:CI-rule}). The final sentence is the conclusion of the argument.
 
 As an illustration, consider this argument:
-	$$\enot (A \eor B) \proves \enot A \eand \enot B$$
+	$$\enot (P \eor Q) \proves \enot P \eand \enot Q$$
 We start the proof by numbering the line and writing the premise:
 \begin{proof}
-	\hypo{a1}{\enot (A \eor B)} \pr{}
+	\hypo{a1}{\enot (P \eor Q)} \pr{}
 \end{proof}
 Every line in a proof is numbered so that we can refer to it later if we need to do so. We have also indicated that this is a premise by putting `PR' at the end of the line. And we have drawn a line underneath the premise. Everything written below the line will either be a sentence that can be derived from that premise, or it will be a new assumption that we introduce. The colon that is right before `PR' is, technically, optional, but it has to be used in Carnap to separate the TFL sentence from the `PR' (or the rule) that is written at the end of each line.
 
-The conclusion of this argument is `$\enot A \eand \enot B$'; and so we want our proof to end---on some line, we'll call it $n$---with that sentence:
+The conclusion of this argument is `$\enot P \eand \enot Q$'; and so we want our proof to end---on some line, we'll call it $n$---with that sentence:
 \begin{proof}
-	\hypo{a1}{\enot (A \eor B)} \pr{}
+	\hypo{a1}{\enot (P \eor Q)} \pr{}
 	\have{a2}{\ldots}
 	\have[ ]{}{\ldots}
 	\have[ ]{}{\ldots}
-	\have[n]{con}{\enot A \eand \enot B}
+	\have[n]{con}{\enot P \eand \enot Q}
 \end{proof}
 It doesn't matter how many lines it takes to arrive at the conclusion, although, generally, we prefer a shorter proof over a longer one.
 
 Now, suppose we have this argument:
-$$A\eor B, \enot (A\eand C), \enot (B \eand \enot D) \proves \enot C\eor D$$
+$$P\eor Q, \enot (P\eand S), \enot (Q \eand \enot T) \proves \enot S\eor T$$
 This argument has three premises, and so we start by listing them, numbering each line, and drawing a line under the final premise:
 \begin{proof}
-	\hypo{a1}{A \eor B} \pr{}
-	\hypo{a2}{\enot (A\eand C)} \pr{}
-	\hypo{a3}{\enot (B \eand \enot D)} \pr{}
+	\hypo{a1}{P \eor Q} \pr{}
+	\hypo{a2}{\enot (P\eand S)} \pr{}
+	\hypo{a3}{\enot (Q \eand \enot T)} \pr{}
 \end{proof}
 This, meanwhile, will be the final line of the proof:
 \begin{proof}
-	\have[n]{con}{\enot C \eor D}
+	\have[n]{con}{\enot S \eor T}
 \end{proof}
 Setting up the premises and the conclusion is, however, the easy part. The real task---and the interesting part---is determining each of the steps that get us from the premise or premises to the conclusion. 
 
@@ -171,7 +171,7 @@ The conjunction introduction rule introduces a sentence with `$\eand$' as the ma
 
 \end{factboxy}
 
-When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$D$' from `$C \eor (D \eand E)$' (because `$\eor$' is the main logical operator). The same holds for all of the other rules. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}\label{rule-proofs-main-operator}
+When you have a conjunction on one line of a proof, you can use the conjunction elimination rule to obtain either of the conjuncts on a new line. You can only, however, apply this rule when the `$\eand$' is the main logical operator. So, for instance, you cannot use the conjunction elimination rule to obtain `$T$' from `$S \eor (T \eand W)$' (because `$\eor$' is the main logical operator). The same holds for all of the other rules. \textbf{Each of the rules of derivation can only be applied to the main logical operator of a sentence.}\label{rule-proofs-main-operator}
 \bigskip
 
 \noindent We will now construct a couple of proofs using the two rules just introduced.  First, one for this argument: `$P \eand Q, \enot R \proves Q \eand \enot R$'.
@@ -197,30 +197,32 @@ When you have a conjunction on one line of a proof, you can use the conjunction 
 	\have{q}{Q} \ae{p1}
 	\have{c}{Q \eand \enot R} \ai{p2,q}
 \end{proof}\medskip
-Notice that there is nothing in this representation of the proof to indicate that the last line is the conclusion. It's only because we began with `$P \eand Q, \enot R \proves Q \eand \enot R$' that we know that, on line 4, we have arrived at the conclusion that we want.
+Notice that there is nothing in this representation of the proof to indicate that the last line is the conclusion. It's only because we began with `$P~\eand~Q, \enot R \proves Q \eand \enot R$' that we know that, on line 4, we have arrived at the conclusion that we want.
 
-Next, we will take up the proof for this argument: `$(A\eor B) \eand (G \eand H) \proves (A\eor B)\eand H$'. After listing the premise, we can use the conjunction elimination rule twice to get `$A\eor B$' and `$G\eand H$' on lines by themselves.
+Next, we will take up the proof for this argument: 
+$$(N\eor P) \eand (Q \eand S) \proves (N\eor P)\eand S$$ 
+After listing the premise, we can use the conjunction elimination rule twice to get `$N\eor P$' and `$Q\eand S$' on lines by themselves.
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
-	\have{a}{(A\eor B)} \ae{ab}
-	\have{b}{(G\eand H)} \ae{ab}
+	\hypo{ab}{(N\eor P) \eand (Q\eand S)} \pr{}
+	\have{a}{(N\eor P)} \ae{ab}
+	\have{b}{(Q\eand S)} \ae{ab}
 \end{proof}
 
-\noindent Now that `$G\eand H$' is on its own line, we can use the conjunction elimination rule again to get $H$ on a line by itself. 
+\noindent Now that `$Q\eand S$' is on its own line, we can use the conjunction elimination rule again to get $S$ on a line by itself. 
 
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
-	\have{a}{(A\eor B)} \ae{ab}
-	\have{b}{(G\eand H)} \ae{ab}
-	\have{b2}{H} \ae{b}
+	\hypo{ab}{(N\eor P) \eand (Q\eand S)} \pr{}
+	\have{a}{(N\eor P)} \ae{ab}
+	\have{b}{(Q\eand S)} \ae{ab}
+	\have{b2}{S} \ae{b}
 \end{proof}
-In our final step, we use the conjunction introduction rule to get the conclusion, `$(A\eor B)\eand H$'.
+In our final step, we use the conjunction introduction rule to get the conclusion, `$(N\eor P)\eand S$'.
 \begin{proof}
-	\hypo{ab}{(A\eor B) \eand (G\eand H)} \pr{}
-	\have{a}{(A\eor B)} \ae{ab}
-	\have{b}{(G\eand H)} \ae{ab}
-	\have{b2}{H} \ae{b}
-	\have{c}{(A\eor B)\eand H} \ai{a,b2}
+	\hypo{ab}{(N\eor P) \eand (Q\eand S)} \pr{}
+	\have{a}{(N\eor P)} \ae{ab}
+	\have{b}{(Q\eand S)} \ae{ab}
+	\have{b2}{S} \ae{b}
+	\have{c}{(N\eor P)\eand S} \ai{a,b2}
 \end{proof}
  
 
@@ -235,8 +237,8 @@ For the disjunction rules, let's start with this example:
 \end{ebullet}
 When is this true? Recall from \S \ref{s:ConnectiveDisjunction} that we are using the inclusive-or. So, \textit{Sarah is swimming or Jeff is eating a burrito} is true when either
 \begin{ebullet}
-	\item[(a)] \textit{Sarah is swimming} is true, or 
-	\item[(b)] \textit{Jeff is eating a burrito} is true, or 
+	\item[(a)] only \textit{Sarah is swimming} is true, or 
+	\item[(b)] only \textit{Jeff is eating a burrito} is true, or 
 	\item[(c)] both are true. 
 \end{ebullet}
 That's a lot of options, but if all we know is that Sarah is swimming \textit{or} Jeff is eating a burrito, then we don't know precisely what either one of them is doing. But let's say that someone (whom we trust completely) tells us that, actually, Sarah is \textit{not} swimming. This piece of information about Sarah, then, let's us safely infer that Jeff is eating a burrito. This reasoning process is an example of the \define{disjunction elimination rule}.
@@ -355,7 +357,7 @@ The elimination rules, meanwhile, all, in a way, eliminate a logical operator. I
 
 \subsection{Double negation}\label{subsection-DN}
 
-The \define{double negation rule} is a rule of convenience that sometimes compliments the disjunction-elimination rule. (There are also times when it will be used in the proofs that are discussed in \ref{s:theorems}, but, for the material in this chapter, it will only be used with the disjunction-elimination rule.) First, notice that the disjunction-elimination rule is very specific. To use it, we need, on one line of our proof, a sentence with the form `$\meta{A}\eor\meta{B}$', and on another line of our proof, we need one side of the disjunction (either $\meta{A}$ or $\meta{B}$) with a `$\enot$' in front of it---that is, either $\enot\meta{A}$ or $\enot\meta{B}$. 
+The \define{double negation rule} is a rule of convenience that sometimes compliments the disjunction-elimination rule. (There are also times when it will be used in the proofs that are discussed in \ref{s:theorems}, but, for the material in this chapter, it will only be used with the disjunction-elimination rule.) First, notice that the disjunction-elimination rule is very specific. To use it, we need, on one line of our proof, a sentence with the form `$\meta{A}\eor\meta{B}$', and on another line of our proof, we need one side of the disjunction (either $\meta{A}$ or $\meta{B}$) with a `$\enot$' in front of it; that is, either $\enot\meta{A}$ or $\enot\meta{B}$. 
 
 This presents a problem if we have these two sentences somewhere in a proof:
 \begin{proof}
@@ -368,7 +370,7 @@ You might think that, given those two lines, we can put `$Q$' on a new line like
 	\have[n]{p}{P}
 	\have[\ ]{q}{Q} \oe{np,p}
 \end{proof}
-In a sense, this is the right idea for the disjunction elimination rule---one side of the disjunction `$\enot P \eor Q$' has to be true and the `$P$' on line $n$ means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a new line. The disjunction elimination rule, however, does not permit this. To see why, let's distinguish between \define{negation} and \define{denial}.
+In a sense, this is the right idea for the disjunction elimination rule. One side of the disjunction `$\enot P \eor Q$' has to be true, and the `$P$' on line $n$ means that `$\enot P$' is false. Hence, we should be allowed to put `$Q$' on a new line. The disjunction elimination rule, however, does not permit this. To see why, let's distinguish between \define{negation} and \define{denial}.
 
 \begin{factboxy}{negation and denial}
 The \define{negation} of a sentence is the sentence with a `not' added to it.\\ 
@@ -381,7 +383,8 @@ The \define{denial} of a sentence is the sentence with either a `not' added or a
 \end{earg}
 In TFL, 
 \begin{earg}
-\item[2.] the negation of $\meta{A}$ is $\enot\meta{A}$. The negation of $\enot\meta{A}$ is $\enot\enot\meta{A}$.
+%\item[2.] the negation of $\meta{A}$ is $\enot\meta{A}$. The negation of $\enot\meta{A}$ is $\enot\enot\meta{A}$.
+\item[2.] the negation of $P$ is $\enot P$. The negation of $\enot P$ is $\enot\enot P$.
 \end{earg}
 Meanwhile,
 \begin{earg}
@@ -389,9 +392,10 @@ Meanwhile,
 \end{earg}
 In TFL,
 \begin{earg}
-\item[4.] the denial of $\enot\meta{A}$ is either $\meta{A}$ or $\enot\enot\meta{A}$.
+%\item[4.] the denial of $\enot\meta{A}$ is either $\meta{A}$ or $\enot\enot\meta{A}$.
+\item[4.] the denial of $\enot P$ is either $P$ or $\enot\enot P$.
 \end{earg}
-To use the disjunction elimination rule, we must have the \textbf{\textit{negation}} of one side of the disjunction on another line. In the example above, we have the denial of $\enot P$, not its negation on line \textit{n}. The \define{double negation rule} helps us correct this so that we can use the disjunction elimination rule more often. 
+To use the disjunction elimination rule, we must have the \textbf{\textit{negation}} of one side of the disjunction on another line. In the example above, we have the denial of $\enot P$, not its negation, on line \textit{n}. The \define{double negation rule} helps us correct this so that we can use the disjunction elimination rule more often. 
 
 Before we see how the double negation rule can help us with our derivation, let's introduce the rule. The first version of the double negation rule allows us to add two \textit{not}s (i.e., \textit{not not}) to a sentence in TFL---which, of course, will not change the sentence's truth value. The second version of the double negation rule allows us to remove two \textit{not}s, although needing to do this is less common. 
 
@@ -485,13 +489,13 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 	\have[\ ]{b}{\meta{B}} \ce{ab,a}
 \end{proof}
 
-\small{If we have `$\meta{A}\eif\meta{B}$' on a line and, on a separate line, we have just `$\meta{A}$' (i.e., the antecedent of the conditional), then, on a new line, we can put `$\meta{B}$' (i.e., the consequent of the conditional).} 
+\small{If we have `$\meta{A}\eif\meta{B}$' on a line and, on a different line, we have just `$\meta{A}$' (i.e., the antecedent of the conditional), then, on a new line, we can put `$\meta{B}$' (i.e., the consequent of the conditional).} 
 
 \end{factboxy}
 
 
 \begin{factboxy}{biconditional elimination rule}\label{be-rule}
-\small{If we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{A}$', then, on a new line, we can put `$\meta{B}$'.}
+\small{If we have `$\meta{A}\eiff\meta{B}$' on a line and, on a different line, we have `$\meta{A}$', then, on a new line, we can put `$\meta{B}$'.}
 
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eiff\meta{B}}
@@ -499,7 +503,7 @@ This rule is also sometimes called \emph{modus ponens}. When we use the rule, th
 	\have[\ ]{b}{\meta{B}} \be{ab,a}
 \end{proof}
 
-\small{Or, if we have `$\meta{A}\eiff\meta{B}$' on a line and, on a separate line, we have `$\meta{B}$', then, on a new line, we can put `$\meta{A}$'.} 
+\small{Or, if we have `$\meta{A}\eiff\meta{B}$' on a line and, on a different line, we have `$\meta{B}$', then, on a new line, we can put `$\meta{A}$'.} 
 
 \begin{proof}
 	\have[m]{ab}{\meta{A}\eiff\meta{B}}
@@ -524,8 +528,13 @@ In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is 
     \have[n]{ba}{\meta{B}\eif\meta{A}}
 	\have[\ ]{b}{\meta{A}\eiff\meta{B}} \bi{ab,ba}
 \end{proof}
+\begin{proof}
+    \have[m]{ab}{\meta{A}\eif\meta{B}} 
+    \have[n]{ba}{\meta{B}\eif\meta{A}}
+	\have[\ ]{b}{\meta{B}\eiff\meta{A}} \bi{ab,ba}
+\end{proof}
 
-\small{If we have `$\meta{A}\eif\meta{B}$' and `$\meta{B}\eif\meta{A}$' on two lines of our proof, then, on a new line, we can put `$\meta{A}\eiff\meta{B}$'.}
+\small{If we have `$\meta{A}\eif\meta{B}$' and `$\meta{B}\eif\meta{A}$' on two lines of our proof, then, on a new line, we can put either `$\meta{A}\eiff\meta{B}$' or `$\meta{B}\eiff\meta{A}$'.}
 
 \end{factboxy}
 
@@ -747,17 +756,17 @@ With the `$Q$' on line 4 and `$Q \eif R$' on line 2, we can use the conditional 
 \end{proof}
 \bigskip
 
-\item As you know, the biconditional elimination rule is similar to the conditional elimination rule. (But they are not the same. See p.~\pageref{ce-rule} to compare them.) We should also, however, be able to start with a biconditional, say `$B \eiff C$' and derive either of the conditionals: `$B \eif C$' or `$C \eif B$'. This is easily done with the conditional introduction rule.
+\item As you know, the biconditional elimination rule is similar to the conditional elimination rule. (But they are not the same. See p.~\pageref{ce-rule} to compare them.) We should also, however, be able to start with a biconditional, say `$M \eiff P$' and derive either of the conditionals: `$M \eif P$' or `$P \eif M$'. This is easily done with the conditional introduction rule.
 \begin{proof}
-	\hypo{bc}{B \eiff C} \pr{}
+	\hypo{bc}{M \eiff P} \pr{}
 	\open
-		\hypo{b}{B}\as{}
-		\have{c}{C}\be{bc,b}
+		\hypo{b}{M}\as{}
+		\have{c}{P}\be{bc,b}
 	\close
-	\have{bc2}{B \eif C}\ci{b-c}
+	\have{bc2}{M \eif P}\ci{b-c}
 \end{proof}
 \smallskip
-\noindent And, with a similar proof, we can also derive `$C \eif B$'.
+\noindent And, with a similar proof, we can also derive `$P \eif M$'.
 \bigskip
 
 \item In the proof for `$\enot P \eor (R \eand Q) \proves P \eif Q$', we will use the conditional introduction rule as well as double negation rule and disjunction-elimination rule. 
@@ -820,7 +829,7 @@ Our two negation rules (which are basically the same rule) formalize this reason
 \small{Assume $\meta{A}$. Derive a contradiction. (That is, get $\meta{B}$ and $\enot\meta{B}$ on the last two lines of the subproof). Exit the subproof, and put $\enot\meta{A}$ on the first line after the subproof.
 \smallskip
 
-There can be as many or as few lines as needed between lines $m$ and $n$, but $n$ and $p$ have to be consecutive lines. $\meta{B}$ and $\enot\meta{B}$ can be any contradiction that it is possible to derive, and $\meta{A}$ can be one half of the contradiction.}
+There can be as many or as few lines as needed between lines $m$ and $n$, but $n$ and $p$ have to be consecutive lines. $\meta{B}$ and $\enot\meta{B}$ can be any contradiction that it is possible to derive; they can be in either order; and $\meta{A}$ can be one half of the contradiction (although it doesn't have to be).}
 
 \end{factboxy}
 
@@ -950,18 +959,18 @@ The negation introduction rule or the negation elimination rule is used in each 
 \medskip
 
 \begin{minipage}{10cm}
-\item $B \eand C, \enot(B \eand D) \proves \enot D$
+\item $Q \eand R, \enot(Q \eand S) \proves \enot S$
 
 \begin{proof}
-	\hypo{p1}{B \eand C} \pr{}	
-	\hypo{p2}{\enot(B \eand D)} \pr{}
+	\hypo{p1}{Q \eand R} \pr{}	
+	\hypo{p2}{\enot(Q \eand S)} \pr{}
 	\open
-		\hypo{a}{D} \as{}
-		\have{b}{B} \ae{p1}
-		\have{ba}{B \eand D} \ai{a,b}
-		\have{p2b}{\enot(B \eand D)} \reit{p2}
+		\hypo{a}{S} \as{}
+		\have{b}{Q} \ae{p1}
+		\have{ba}{Q \eand S} \ai{a,b}
+		\have{p2b}{\enot(Q \eand S)} \reit{p2}
 	\close
-	\have{c}{\enot D} \ni{a-p2b}
+	\have{c}{\enot S} \ni{a-p2b}
 \end{proof}
 \medskip
 \end{minipage}
@@ -1025,6 +1034,8 @@ In chapter \ref{s:NDVeryIdea}, we discussed some reasons to prefer natural deduc
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
 
+\begin{small}
+
 \problempart\label{practice-proofs-1}
 Give a proof for each argument using the rules from \S\S \ref{s:conj-rule} -- \ref{s:bi-rules}.
 \begin{earg}
@@ -1070,14 +1081,13 @@ Give a proof for each argument.
 
 
 %\problempart
-%If you know that a proof can be given for $\meta{A}\proves\meta{B}$ (that is, you know that the argument is valid), then is it possible to know if $(\meta{A} \eand \meta{C}) \proves \meta{B}$ is valid? Is it possible to know if $(\meta{A} \eif \meta{B}) \eif \meta{B} \proves \meta{B}$ is valid? Explain your answers.
+%If you know that a proof can be given for $\meta{A}\proves\meta{Q}$ (that is, you know that the argument is valid), then is it possible to know if $(\meta{A} \eand \meta{C}) \proves \meta{B}$ is valid? Is it possible to know if $(\meta{A} \eif \meta{B}) \eif \meta{B} \proves \meta{B}$ is valid? Explain your answers.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  answers
 
-\newpage
 
 \section{Answers}
 \setcounter{ProbPart}{0}
@@ -1115,7 +1125,6 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
 
 \item $R \eand S, (S \eor Q) \eif T \proves T$
 \begin{proof}
@@ -1152,9 +1161,7 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-
-\filbreak
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $(P \eor \enot Q) \eiff R, R \eand Q \proves P \eand R$\smallskip
 \begin{proof}
 \hypo{p1}{(P \eor \enot Q) \eiff R} \pr{}
@@ -1167,8 +1174,8 @@ Give a proof for each argument.
 \have{con}{P \eand R} \ai{r,p}
 \end{proof}
 \medskip
+\end{minipage}
 
-%\filbreak
 
 \item $(R \eand T) \eif Q, R \eor \enot P, P \eand T \proves Q$\smallskip
 \begin{proof}
@@ -1184,7 +1191,6 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
 
 \item $S \eif T, Q \eand \enot R, \enot R \eiff (T \eif S) \proves S \eiff T $\smallskip
 \begin{proof}
@@ -1222,7 +1228,6 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
 
 \item $S \eif T, T \eif S, T \eiff (T \eiff S) \proves S$
 \begin{proof}
@@ -1241,7 +1246,8 @@ Give a proof for each argument.
 
 %%% Part B
 
-%\filbreak
+\filbreak
+
 \problempart
 \begin{earg}
 \item $P \eif (Q \eif R) \proves (P \eand Q) \eif R$
@@ -1272,7 +1278,7 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
+
 
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
 \begin{proof}
@@ -1309,7 +1315,6 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
 
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \begin{proof}
@@ -1331,8 +1336,7 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\filbreak
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\enot(P \eif Q) \proves \enot Q$
 \begin{proof}
 	\hypo{p1}{\enot(P \eif Q)} \pr{}
@@ -1348,9 +1352,8 @@ Give a proof for each argument.
 	\have{con}{\enot Q} \ni{as-npq}
 \end{proof}
 \medskip
+\end{minipage}
 
-
-\filbreak
 \item $S \eiff T \proves S \eiff (T \eor S)$ 
 \begin{proof}
 	\hypo{p1}{S \eiff T} \pr{}
@@ -1377,7 +1380,7 @@ Give a proof for each argument.
 \medskip
 
 
-\begin{minipage}{10cm}
+\noindent\begin{minipage}{0.99\textwidth}
 \item $D \eor F, D \eif G, F \eif H \proves G \eor H$ 
 \begin{proof}
 	\hypo{p1}{D \eor F} \pr{}
@@ -1434,7 +1437,8 @@ Give a proof for each argument.
 \end{comment}
 
 \end{earg}
-\bigskip
+
+\end{small}
 
 %\problempart
 %If $\meta{A} \proves \meta{B}$ is valid, then $(\meta{A} \eand \meta{C})\proves \meta{B}$ is valid. We know this because if $\meta{A} \proves \meta{B}$, then there is some proof with assumption $\meta{A}$ that ends with $\meta{B}$, and no undischarged assumptions other than $\meta{A}$. Now, if we start a proof with assumption $(\meta{A} \eand \meta{C})$, we can obtain $\meta{A}$ by $\eand$E. We can now copy and paste the original proof of $\meta{B}$ from $\meta{A}$, adding 1 to every line number and line number citation. The result will be a proof of $\meta{B}$ from assumption $\meta{A}$.
@@ -1627,7 +1631,7 @@ Knowing that you need to arrive at a conditional, you also know these three thin
 	\have[\ ]{con}{(P \eand \enot Q) \eif R}\ci{}
 \end{proof}
 
-Sketching out a proof in this way is easy to do when you are writing on paper. If you are doing it in Carnap, be careful of the spacing that you put on each blank line.
+Sketching out a proof in this way is easy to do when you are writing on paper. If you are doing it in Carnap, be careful about the spacing that you put on each blank line.
 
 \medskip
 
@@ -1700,6 +1704,7 @@ To show that a set of sentences are provably inconsistent, we use the sentences 
 	\have{np}{\enot \enot P} \dn{p}
 	\have{nq}{\enot Q} \oe{p2,np}
 	\have{q}{Q} \ae{p1}
+	\have{con}{Q \eand \enot Q} \ai{nq,q}
 	\end{proof}
 
 Showing that some set of sentences are \textit{not} provably inconsistent is, as you might guess at this point, not possible. Doing so would require showing, not just that we have failed to derive a contradiction from a set a sentences, but that no such derivation is possible.
@@ -1728,6 +1733,7 @@ consistent & \textit{not possible with proofs} & one proof\\
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
 
+\begin{small}
 
 \problempart
 Give a proof for each of these theorems.
@@ -1737,10 +1743,7 @@ Give a proof for each of these theorems.
 \item $\proves N \eor \enot N$\smallskip
 \item $\proves \enot((R \eor T) \eand (\enot R  \eand \enot T))$\smallskip
 \item $\proves (R \eiff M) \eif (M \eif R)$\smallskip
-\item $\proves J \eiff [J\eor (L\eand\enot L)]$\smallskip
-\item $\proves (P \eif Q) \eor (Q \eif P)$\smallskip
-
-
+%\item $\proves (P \eif Q) \eor (Q \eif P)$\smallskip
 % \item $\proves ((A \eif B) \eif A) \eif A$\smallskip 
 \end{earg}
 
@@ -1756,7 +1759,6 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  answers
 
-\newpage
 
 \section{Answers}
 \setcounter{ProbPart}{0}
@@ -1766,7 +1768,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 
 \begin{earg}
 
-\begin{minipage}{10cm}
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\proves O \eif O$
 \begin{proof}
 \open
@@ -1778,7 +1780,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \bigskip
 \end{minipage}
 
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\proves S \eif (S \eor R)$
 \begin{proof}
 \open
@@ -1788,7 +1790,8 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \close
 \have{con}{S \eif (S \eor R)}\ci{s-sr}
 \end{proof}
-\bigskip
+\medskip
+\end{minipage}
 
 
 \item $\proves N \eor \enot N$
@@ -1806,10 +1809,10 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \close
 \have{con}{N \eor \enot N} \ne{ncon-ncon3}
 \end{proof}
-\bigskip
+\medskip
 
 
-\begin{minipage}{10cm}
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\proves \enot((R \eor T) \eand (\enot R  \eand \enot T))$
 \begin{proof}
 \open
@@ -1822,9 +1825,10 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \close
 \have{con}{\enot((R \eor T) \eand (\enot R  \eand \enot T))} \ni{ncon-t}
 \end{proof}
-\bigskip
+\medskip
 \end{minipage}
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\proves (R \eiff M) \eif (M \eif R)$
 \begin{proof}
 \open
@@ -1837,34 +1841,10 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \close
 \have{con}{(R \eiff M) \eif (M \eif R)} \ci{rm-mr}
 \end{proof}
-\bigskip
-
-\begin{minipage}{10cm}
-\item $\proves J \eiff (J\eor (L \eand \enot L))$
-\myanswer{\begin{proof}
-\open
-	\hypo{j1}{J} \as{}
-	\have{jlnl1}{J \eor (L \eand \enot L)}\oi{j1}
-\close
-\have{cond1}{J \eif (J\eor (L \eand \enot L))} \ci{j1-jlnl1}
-\open
-	\hypo{jlnl2}{J \eor (L \eand \enot L)} \as{}
-	\open
-		\hypo{lnl}{L \eand \enot L} \as{}
-		\have{l}{L}\ae{lnl}
-		\have{nl}{\enot L}\ae{lnl}
-	\close
-	\have{nlnl}{\enot (L \eand \enot L)}\ne{lnl-nl}
-	\have{j5}{J}\oe{jlnl2, nlnl}
-\close
-\have{cond2}{(J \eor (L \eand \enot L)) \eif J} \ci{jlnl2-j5}
-%\have{conj}{(J \eif (J\eor (L \eand \enot L))) \eand ((J \eor (L \eand \enot L)) \eif J)} \ai{cond1,cond2}
-\have{con}{J \eiff (J\eor (L \eand \enot L))}\bi{cond1,cond2}
-\end{proof}}
-\bigskip
+\medskip
 \end{minipage}
 
-
+\begin{comment}
 \begin{minipage}{10cm}
 \item $\proves (P \eif Q) \eor (Q \eif P)$
 \begin{proof}
@@ -1892,6 +1872,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{proof}
 \bigskip
 \end{minipage}
+\end{comment}
 
 %\filbreak
 %\item $((A \eif B) \eif A) \eif A$ 
@@ -1959,7 +1940,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \end{proof}
 \bigskip
 
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $R \eif Q \leftproves\proves \enot(R \eand \enot Q)$
 \begin{proof}
 \hypo{ui}{R \eif Q} \pr{}
@@ -1971,6 +1952,7 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 \close
 \have{con}{\enot (R \eand \enot Q)}\ni{uni-i}
 \end{proof}
+\end{minipage}
 
 \begin{proof}
 \hypo{con}{\enot (R \eand \enot Q)} \pr{}
@@ -1988,4 +1970,4 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 
 \end{earg}
 
-
+\end{small}

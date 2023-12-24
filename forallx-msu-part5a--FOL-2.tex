@@ -8,9 +8,9 @@ Here is a translation scheme.
 
 \begin{ekey}
 	\item[\textrm{domain}] people in Starkville
-	\item[B] \rule{1cm}{0.15mm} ate a burrito
-	\item[N] \rule{1cm}{0.15mm} took a nap
-	\item[L] \rule{1cm}{0.15mm} loves \rule{1cm}{0.15mm}
+	\item[B] \rule{1cm}{0.15mm} ate a burrito.
+	\item[N] \rule{1cm}{0.15mm} took a nap.
+	\item[L] \rule{1cm}{0.15mm} loves \rule{1cm}{0.15mm} .
 	\item[a] Abigail
 	\item[c] Carol
 	\item[d] David
@@ -19,65 +19,92 @@ Here is a translation scheme.
 \noindent We can then translate the following sentences from first-order logic to English as is shown. First, here are some sentences composed of predicates and names.
 
 \begin{ebullet}
-	\item[]$B(a) $: Abigail ate a burrito.\smallskip
-	\item[]$N(d) $: David took a nap.\smallskip
-	\item[]$\enot N(c)$: Carol did not take a nap.\smallskip
-	\item[]$N(d) \eand B(a) $: David took a nap and Abigail ate a burrito.\smallskip
-	\item[]$B(a) \eif N(a)$: If Abigail ate a burrito, then Abigail took a nap.\smallskip
-	\item[]$L(d,c) \eand B(c)$: David loves Carol, and Carol ate a burrito.
+	\item[]$Ba $: Abigail ate a burrito.\smallskip
+	\item[]$Nd $: David took a nap.\smallskip
+	\item[]$\enot Nc$: Carol did not take a nap.\smallskip
+	\item[]$Nd \eand Ba $: David took a nap and Abigail ate a burrito.\smallskip
+	\item[]$Ba \eif Na$: If Abigail ate a burrito, then Abigail took a nap.\smallskip
+	\item[]$Ldc \eand Bc$: David loves Carol, and Carol ate a burrito.
 \end{ebullet}
 
 \noindent Here are some quantified expressions.
 
 \begin{ebullet}
-	\item[] $\forall y N(y)$: Everyone took a nap.\smallskip
-	\item[] $\exists x B(x)$: Someone ate a burrito.\smallskip
-	\item[] $\enot\forall xN(x)$: It is not the case that everyone took a nap.\smallskip
-	\item[]$\forall x \enot N(x)$: Everyone did not take a nap.\smallskip
-	\item[]$\enot\exists yB(y)$: It is not the case that someone ate a burrito.\smallskip
-	\item[]$\exists y \enot B(y)$: Someone did not eat a burrito.\smallskip
-	\item[]$\exists x[B(x) \eand N(x)]$: Someone ate a burrito and took a nap.\smallskip
+	\item[] $\forall y Ny$: Everyone took a nap.\smallskip
+	\item[] $\exists x Bx$: Someone ate a burrito.\smallskip
+	\item[] $\enot\forall xNx$: It is not the case that everyone took a nap.\smallskip
+	\item[]$\forall x \enot Nx$: Everyone did not take a nap.\smallskip
+	\item[]$\enot\exists yBy$: It is not the case that someone ate a burrito.\smallskip
+	\item[]$\exists y \enot By$: Someone did not eat a burrito.\smallskip
+	\item[]$\exists x(Bx \eand Nx)$: Someone ate a burrito and took a nap.\smallskip
 \end{ebullet}
 	
 If you are stuck on a translation, you can always just translate $\forall x$ and $\exists x$ like this:
 \begin{ebullet}
 \item[] For all \textit{x}, \textit{x} is \ldots
 \item[] There exists an \textit{x} such that \textit{x} is \ldots
-\end{ebullet} 
-So, to translate the expression, proceed this way. (1) Begin reading from the left. (2) Read the universal or existential quantifier and variable as ``For all \ldots'' or ``There exists \ldots''. (3) Read the predicates as is given in the translation scheme. (4) Read the logical operators as we did in TFL. (5) If there is a `not' sign somewhere, translate it right where it is as `it is not the case that'. Once you've translated the sentence this way, you may want to word it more naturally using `someone', `everyone', and just `not'.
+\end{ebullet}
+
+\begin{notebox}
+The ``such that'' in `There exists an \textit{x} such that \textit{x} is \ldots' means roughly ``with the property that.''  
+\end{notebox} 
+
+%So, to translate the expression, proceed this way. (1) Begin reading from the left. (2) Read the universal or existential quantifier and variable as ``For all \ldots'' or ``There exists \ldots''. (3) Read the predicates as is given in the translation scheme. (4) Read the logical operators as we did in TFL. (5) If there is a `not' sign somewhere, translate it right where it is as `it is not the case that'. Once you've translated the sentence this way, you may want to word it more naturally using `someone', `everyone', and just `not'.
 
 These sentences contain either both a name and a variable or both of the quantifiers (and two different variables).
 \begin{ebullet}
-	\item[]$\exists x[B(x) \eand N(c)]$: Someone ate a burrito, and Carol took a nap.\smallskip
-	\item[]$\exists xL(x,c)$: Someone loves Carol.\smallskip
-	\item[]$\exists x \forall y[B(x) \eand N(y)]$: Someone ate a burrito and everyone took a nap.\smallskip
-	\item[]$\forall x \exists yL(x,y)$: Everyone loves someone.\smallskip
-	\item[]$\exists x \exists yL(x,y)$: Someone loves someone.
+	\item[1.]$\exists xBx \eand Nc$: Someone ate a burrito, and Carol took a nap.\smallskip
+	\item[2.]$\exists xBx \eand \exists yNy$: Someone ate a burrito and someone took a nap.\smallskip
+	\item[3.]$\exists x(Bx \eand Nx)$: Someone ate a burrito and took a nap.\smallskip
+%	\item[]$\exists x \exists yLxy$: Someone loves someone.\smallskip
+	\item[4.]$\exists xLxc$: Someone loves Carol.\smallskip
+	\item[5.]$\forall x \exists yLxy$: Everyone loves someone.\smallskip
+	\item[6.]$\exists y \forall xLxy$: Someone is loved by everyone.
 \end{ebullet}
-\noindent And these are the formats for common expressions that are translated into first-order logic as conditionals or conjunctions: 
-\begin{ebullet}
-\item[]$\forall x[F(x) \eif G(x)]$: For all $x$, if $x$ is an $F$, then $x$ is a $G$’ \textbf{or}%\smallskip 
-\item[]\hspace{29mm}`Every $F$ is $G$.’\smallskip
-\item[]$\exists x[F(x) \eand G(x)]$:`There exists an $x$, such that $x$ is an $F$ and a $G$’ \textbf{or}%\smallskip
-\item[]\hspace{29mm} Some $F$ is $G$’.\smallskip
-\item[]`No $F$ is $G$’: $¬\exists x[F(x) \eand G(x)] $ \textbf{or} $\forall x[F(x) \eif ¬G(x)]$\smallskip
-\item[] ‘Only $F$s are $G$s’: $\enot \exists x[G(x) \eand \enot F(x)]$ \textbf{or} $\forall x[G(x) \eif F(x)]$\smallskip
-\end{ebullet}
+According to the second sentence, maybe different people ate the burrito and took the nap, or maybe the same person did both. The third sentence, however, means that the same person did both.
 
-Finally, these existentially and universally quanitfied sentences are equivalent.
-\begin{factboxy-width}[width=8cm]{equivalent quantified expressions}
-$\exists \meta{x} ¬\meta{B(x)} $ is equivalent to $¬\forall \meta{x B(x)}$.\medskip
+\label{quantifier-order} In the final two sentences, the `$Lxy$' is the same, but the order of the `$\forall x$' and `$\exists y$' is switched. And, although it's not exactly apparent in the English translations given there, the two FOL sentences have different meanings. `$\forall x \exists yLxy$' means that everyone loves someone, but the someone who is loved can be different for different people. Meanwhile, `$\exists y \forall xLxy$' means that there is one particular someone who is loved by everyone.
 
-$\forall \meta{x} ¬\meta{D(x)}$ is equivalent to $¬\exists \meta{x D(x)}$.
+%\begin{notebox}
+%From the point of view of our study of logic, it is, perhaps, easier to grasp the idea that `$\forall x \exists yLxy$' and `$\exists y \forall xLxy$' have different meanings by noting that this first argument is valid and the second one is not.
+%\begin{earg}
+%\item[1.] $\exists y \forall xLxy \proves \forall x \exists yLxy$
+%\item[2.] $\forall x \exists yLxy \proves \exists y \forall xLxy$
+%\end{earg} 
+%\end{notebox} 
+
+\begin{factboxy-width}[width=9.6cm]{The formats for common expressions that are translated into first-order logic as conditionals or conjunctions}
+\begin{small}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+  \setlength{\itemindent}{-1cm}
+\item[] $\forall x(Fx \eif Gx)$: For all $x$, if $x$ is an $F$, then $x$ is a $G$ \textbf{or} %Every $F$ is $G$.\medskip
+\item[] \hspace{24mm}Every $F$ is $G$.\medskip
+\item[] $\exists x(Fx \eand Gx)$: There exists an $x$, such that $x$ is an $F$ and a $G$ \textbf{or}
+\item[] \hspace{24mm}Some $F$ is $G$.\medskip
+\item[] No $F$ is $G$: $¬\exists x(Fx \eand Gx) $ \textbf{or} $\forall x(Fx \eif ¬Gx)$\medskip
+\item[] Only $F$s are $G$s: $\enot \exists x(Gx \eand \enot Fx)$ \textbf{or} $\forall x(Gx \eif Fx)$
+\end{itemize}
+\end{small}
+\end{factboxy-width}
+
+%Finally, these existentially and universally quanitfied sentences are equivalent.
+\begin{factboxy-width}[width=7cm]{equivalent quantified expressions}
+$\exists \meta{x} ¬\meta{Bx} $ is equivalent to $¬\forall \meta{x Bx}$.\medskip
+
+$\forall \meta{x} ¬\meta{Dx}$ is equivalent to $¬\exists \meta{x Dx}$.
 \end{factboxy-width}
 
 
 \section{Scope}
 
-Just like the logical operators, the universal quantifier (`$\forall$’) and the existential quantifier (`$\exists$’) have a scope. For both, their scope is the part of the expression to which the quantifier applies---or, as we often say, the part of the sentence that it \textit{ranges over}. Basically, the scope of the quantifiers works like the scope of the negation (i.e., the `$\enot$’). 
+Just like the `$\eand$', `$\eor$', `$\eif$', `$\eiff$', and `$\enot$', the universal quantifier (`$\forall$’) and the existential quantifier (`$\exists$’) have a scope. For both, their scope is the part of the expression to which the quantifier applies---or, as we often say, the part of the sentence that it \textit{ranges over}. Basically, the scope of the quantifiers works like the scope of the negation operator (i.e., the `$\enot$’). 
 
 \begin{ebullet}
-\item[(1)] If there is \textit\textbf{not} a parenthesis between the quantifier and a predicate---e.g., `$\forall xF(x)$’ or `$\forall x \enot F(x)$’---then the scope of the quantifier is that predicate (or the predicate and a $\enot$) and its variable or variables.\smallskip
-\item[(2)] If there is a parenthesis between the quantifier and the first predicate---e.g., `$\forall x[F(x) \eor G(x)]$’---then the scope of the quantifier is everything inside the parentheses.\smallskip
-\item[] Notice that this is all the same as the scope of the `$\enot$’.
+\item[(1)] If there is \textit\textbf{not} a parenthesis between the quantifier and a predicate---e.g., `$\forall xFx$’ or `$\forall x \enot Fx$’---then the scope of the quantifier is that predicate (or the predicate and a $\enot$) and its variable or variables.\smallskip
+\item[(2)] If there is a parenthesis between the quantifier and the first predicate---e.g., `$\forall x(Fx \eor Gx)$’---then the scope of the quantifier is everything inside the parentheses.\smallskip
+\item[(3)] If there is a second quantifier between the quantifier and a predicate or a parenthesis---e.g., `$\forall x \exists yLxy$' or `$\forall x \exists y(Fx \eif Gy)$'---then the scope of the first quantifier includes the second quantifier. And likewise if there are more than two quantifiers.\smallskip
+\item[] \textit{Notice that this is all the same as the scope of the} `$\enot$’.
 \end{ebullet}

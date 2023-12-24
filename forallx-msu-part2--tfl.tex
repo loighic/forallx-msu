@@ -141,11 +141,11 @@ In addition to symbolizing English sentences with sentence letters, we also want
 \ra{1.25}
 \begin{tabular}{@{}l l l@{}}\toprule
 \textth{symbol} & \textth{the sentence's name} & \textth{its meaning}\\\midrule
-	\enot&negation&`It is not the case that$\ldots$'\\
-	\eand&conjunction&`Both$\ldots$\ and $\ldots$'\\
-	\eor&disjunction&`Either$\ldots$\ or $\ldots$'\\
-	\eif&conditional&`If $\ldots$\ then $\ldots$'\\
-	\eiff&biconditional&`$\ldots$ if and only if $\ldots$'\\
+	\enot&negation&`It is not the case that $\ldots$.'\\
+	\eand&conjunction&`Both $\ldots$, and $\ldots$.'\\
+	\eor&disjunction&`Either $\ldots$, or $\ldots$.'\\
+	\eif&conditional&`If $\ldots$, then $\ldots$.'\\
+	\eiff&biconditional&`$\ldots$ if and only if $\ldots$.'\\
 \bottomrule
 \end{tabular}
 \caption{The logical operators of truth functional logic}\label{table.connectives}
@@ -173,7 +173,7 @@ The second sentence is partially symbolized as `It is not the case that $M$'. In
 Sentence \ref{not3} also contains the word `not', and it is equivalent to sentence \ref{not2}. As such, we can also symbolize it as `$\enot M$'.
 
 \begin{factboxy}{Negation}
-A sentence can be symbolized as $\enot\meta{A}$ if it can be paraphrased in English as `It is not the case that \ldots'
+A sentence can be symbolized as $\enot\meta{A}$ if it can be paraphrased in English as `It is not the case that \ldots'.
 \end{factboxy}
 
 Here are a few more examples:
@@ -203,32 +203,32 @@ If we use `$H$' stand for `Jane is happy', then we can symbolize sentence \ref{n
 
 Let's start with these sentences:
 	\begin{earg}
-		\item[\ex{and1}] Jeff is athletic, and Mary is also athletic.
-		\item[\ex{and2}] Mary and Jeff are both athletic.
-		\item[\ex{and3}] Jeff is not athletic, but Mary is.
+		\item[\ex{and1}] Sam is athletic, and Kate is also athletic.
+		\item[\ex{and2}] Both Sam is athletic, and Kate is athletic.
+		\item[\ex{and3}] Sam is not athletic, but Kate is athletic.
 	\end{earg}
 We will need separate sentence letters to symbolize sentences \ref{and1} and \ref{and2}, and so we will use this symbolization key:
 	\begin{ekey}
-		\item[J] Jeff is athletic.
-		\item[M] Mary is athletic.
+		\item[S] Sam is athletic.
+		\item[K] Kate is athletic.
 	\end{ekey}
-Sentence \ref{and1} can be partially symbolized as `$J$ and $M$'. To symbolize the `and'. We will use `\eand', which is called the \textit{ampersand}. Thus, sentence \ref{and1} becomes `$(J\eand M)$'. When two sentences are connected with an `$\eand$', the resulting sentence is called a \define{conjunction}. The two sentences that are combined with the `$\eand$' are the \define{conjuncts} of the conjunction. So, `$J$' and `$M$' are the conjuncts of the conjunction `$(J\eand M)$'.
+Sentence \ref{and1} can be partially symbolized as `$S$ and $K$'. To symbolize the `and'. We will use `\eand', which is called the \textit{ampersand}. Thus, sentence \ref{and1} becomes `$(S\eand K)$'. When two sentences are connected with an `$\eand$', the resulting sentence is called a \define{conjunction}. The two sentences that are combined with the `$\eand$' are the \define{conjuncts} of the conjunction. So, `$S$' and `$K$' are the conjuncts of the conjunction `$(S\eand K)$'.
 
-Although it is worded differently, sentence \ref{and2} has the same meaning as sentence \ref{and1}. Thus, it is also symbolized as `$(J\eand M)$'.
+Although it is worded slightly differently, sentence \ref{and2} has the same meaning as sentence \ref{and1}. Thus, it is also symbolized as `$(S\eand K)$'.
 Notice that we don't symbolize the word `also' in sentence \ref{and1} or `both' in \ref{and2}. Words like `both' and `also' alert us when two sentences are being joined to form a conjunction. And they may affect the emphasis of a sentence in English, but we don't (and can't) symbolize such terms in TFL. 
 
-For sentence \ref{and3}, let's first symbolize `Jeff is not athletic' as `$\enot J$'. `Mary is' means `Mary is athletic', and so that subsentence is symbolized as `$M$'. `But' may have a slightly different meaning in English than `and', but, grammatically, they serve the same role: to join two sentences as a conjunction. Putting this altogether, sentence \ref{and3} is symbolized as `$(\enot J \eand M)$'.
+For sentence \ref{and3}, let's first symbolize `Sam is not athletic' as `$\enot S$'. `But' may have a slightly different meaning in English than `and', but, grammatically, they serve the same role: to join two sentences as a conjunction. Thus, sentence \ref{and3} is symbolized as `$(\enot S \eand K)$'.
 
 
 \begin{factboxy}{Conjunction}
 A sentence can be symbolized as $(\meta{A}\eand\meta{B})$ if it can be paraphrased any of these ways in English:
 \vspace{-2mm}
 \begin{earg}
-\item[] `Both\ldots, and\ldots',
-\item[] `\ldots, and\ldots',
-\item[] `\ldots, but \ldots', 
-\item[] `\ldots, although \ldots',
-\item[] `\ldots, as well as \ldots'
+\item[] `Both \ldots, and\ldots.'
+\item[] `\ldots, and \ldots.'
+\item[] `\ldots, but \ldots.' 
+\item[] `\ldots, although \ldots.'
+\item[] `\ldots, as well as \ldots.'
 \end{earg}
 \end{factboxy}
 	
@@ -254,18 +254,19 @@ In sentence \ref{par1}, the `not' only applies to `Kate is at school.' Thus, thi
 
 We will start with these sentences:
 	\begin{earg}
-		\item[\ex{or1}] Either Jeff is at the train station, or Kate driving to Santa Fe.
-		\item[\ex{or2}] Jeff or Sarah is at the train station. 
+		\item[\ex{or1}] Tom is at the train station, or Kate driving to Santa Fe.
+		\item[\ex{or2}] Kate is driving to Santa Fe, and either Tom is at the train station or Sarah is at the train station. 
 	\end{earg}
 And we will use this symbolization key:
 	\begin{ekey}
-		\item[J] Jeff is at the train station.
+		\item[T] Tom is at the train station.
 		\item[K] Kate is driving to Santa Fe.
 		\item[S] Sarah is at the train station.
 	\end{ekey}
-To represent the `or' in sentences \ref{or1} and \ref{or2}, we will use the symbol `$\eor$' (which we call the \textit{wedge}, not \textit{v}). Sentence \ref{or1}, then, is written as `$(J \eor K)$'. When two sentences are connected with an `$\eor$', the resulting sentence is called a \define{disjunction}. `$J$' and `$K$' are the \define{disjuncts} of the disjunction `$(J \eor K)$'.
+To represent the `or' in sentences \ref{or1} and \ref{or2}, we will use the symbol `$\eor$' (which we call the \textit{wedge}, not \textit{v}). Sentence \ref{or1}, then, is written as `$(T \eor K)$'. When two sentences are connected with an `$\eor$', the resulting sentence is called a \define{disjunction}. `$T$' and `$K$' are the \define{disjuncts} of the disjunction `$(T \eor K)$'.
 
-Sentence \ref{or2} is only slightly more complicated. We can paraphrase it as `Either Jeff is at the train station, or Sarah is at the train station', and then we symbolize it as `$(J \eor S)$'.
+In sentence \ref{or2}, we have an \textit{and} and an \textit{or}. This, however, is wrong: `$(K \eand T \eor S)$'. We have to determine, and reveal in our TFL sentence, if the `$T$' goes with the `$(K \eand \ldots)$' or with the `$(\dots \eor S)$'. In the English sentence, we can see that the disjunction begins with `either'. Hence, `$(T \eor S)$' is the disjunction, and `$K \eand \ldots$' precedes it, giving us this: `$(K \eand (T \eor S))$.'
+
 
 \begin{factboxy}{Disjunction}
 A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.' Each of the disjuncts must be a sentence.
@@ -273,7 +274,7 @@ A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrase
 
 \subsection{The inclusive or}\label{inclusive-or-1}
 
-Sometimes in English, the word `or' is used in a way that excludes the possibility that both disjuncts are true. This is called an \define{exclusive or}.  An \emph{exclusive or} is clearly intended when it says on a restaurant menu ``Entrees come with either soup or salad.'' This means that, with your entree, you may have soup or you may have salad, but you cannot have both.
+Sometimes in English, the word `or' is used in a way that excludes the possibility that both disjuncts are true. This is called the \define{exclusive or}.  An \emph{exclusive or} is clearly intended when it says on a restaurant menu ``Entrees come with either soup or salad.'' This means that, with your entree, you may have soup or you may have salad, but you cannot have both.
 
 At other times, the word `or' allows for the possibility that both disjuncts might be true. For instance, Amy might say, ``I am going to get an A in Logic or an A in German III.'' She probably means that she will get an A in one or both of those courses. (After all, if she did end up getting an A in both, we wouldn't insist that she was wrong when she said, ``I am going to get an A in Logic or an A in German III.'')
 
@@ -289,7 +290,7 @@ Think about these sentences:
 	\end{earg}
 Sentence \ref{or3} is symbolized as `$(\enot K \eor \enot S)$'. Sentences \ref{or4} and \ref{or.xor} are a little trickier. 
 
-Sentences \ref{or3} and \ref{or4} are different, and they have different meanings. Consequently, they need to be translated into TFL differently. According to sentence \ref{or4}, neither one is at the train station. Therefore, we can paraphrase it like this:
+According to sentence \ref{or4}, neither one is at the train station. Therefore, we can paraphrase it like this:
 \begin{ebullet}
 	\item[] It is not the case that either Amy is at the train station or Sarah is at the train station. 
 \end{ebullet}
@@ -313,7 +314,7 @@ And we will use this symbolization key:
 		\item[P] Jean is in Paris.
 		\item[F] Jean is in France
 	\end{ekey}
-Sentence \ref{if1} has this form: `if P, then F', and we call this type of sentence a \define{conditional}. We will use `\eif' to symbolize `if \ldots, then \ldots'. Thus, sentence \ref{if1} becomes `$(P\eif F)$'. 
+Sentence \ref{if1} has this form: `if P, then F', and we call this type of sentence a \define{conditional}. We will use `\eif' to symbolize `if \ldots, then \ldots.' Thus, sentence \ref{if1} becomes `$(P\eif F)$'. 
 
 In a conditional, what goes before the `$\eif$'  is called the \define{antecedent}, and what comes after the `$\eif$' is called the \define{consequent}. So, in sentence \ref{if1}, `Jean is in Paris' is the antecedent, and `Jean is in France' is the consequent.
 
@@ -381,7 +382,7 @@ Sentences \ref{iff4} and \ref{iff5} have the same meaning. Sentence \ref{iff4}, 
  	\end{earg}
 And sentence \ref{iff5}, is symbolized with the `$\eiff$':
 	\begin{earg}
-		\item[\ref{iff5}.] $D \eiff S)$
+		\item[\ref{iff5}.] $(D \eiff S)$
 	\end{earg}
 
 We call `$(D \eiff S)$' a \define{biconditional}, because it is equivalent to the two conditionals that have their antecedent and the consequent switched (as in sentence \ref{iff4}).
@@ -502,6 +503,7 @@ Always use capital letters for the atomic sentences, and, in this case, be espec
 \item Of course the Duchess is lying!
 \end{earg}
 
+\begin{comment}
 \problempart Using the symbolization key given, translate each English sentence into TFL.\label{pr.avacareer}
 	\begin{ekey}
 		\item[E_1] Ava is an electrician.
@@ -525,6 +527,7 @@ Always use capital letters for the atomic sentences, and, in this case, be espec
 \item It is not the case that Harrison is both an electrician and a firefighter.
 \item Harrison and Ava are both firefighters if and only if neither of them is an electrician.
 \end{earg}
+
 
 \problempart
 Using the symbolization key given, translate each English-language sentence into TFL.
@@ -551,18 +554,18 @@ Using the symbolization key given, translate each English-language sentence into
 
 \item Miles Davis and John Coltrane both played tuba if and only if Coltrane did not play tenor sax and Miles Davis did not play trumpet. 
 \end{earg}
-
+\end{comment}
 
 \problempart
 \label{pr.spies}
 Give a symbolization key, and then translate the following English sentences into TFL.
 \begin{earg}
-\item It is not the case that Alice and Bob are both spies.
-\item If either Alice or Bob is a spy, then the code has been broken.
-\item If neither Alice nor Bob is a spy, then the code has not been unbroken.
+\item It is not the case that Gorka and Lena are both spies.
+\item If either Gorka or Lena is a spy, then the code has been broken.
+\item If neither Gorka nor Lena is a spy, then the code has not been unbroken.
 \item The letter is in the German embassy, unless someone has broken the code.
 \item Either the code has been broken or it has not, but the letter is in German embassy regardless.
-\item Either Alice or Bob is a spy, but not both.
+\item Either Gorka or Lena is a spy, but not both.
 \end{earg}
 
 
@@ -647,6 +650,7 @@ For each argument, first, make a symbolization key, and then translate all of th
 \end{earg}
 
 
+\begin{comment}
 \problempart\label{pr.avacareer}
 	\begin{ekey}
 		\item[E_1] Ava is an electrician.
@@ -729,28 +733,29 @@ For each argument, first, make a symbolization key, and then translate all of th
 \item Miles Davis and John Coltrane both played tuba if and only if Coltrane did not play tenor sax and Miles Davis did not play trumpet. 
 \item[~] \myanswer{$(J_3 \eand M_2) \eiff (\enot J_1 \eand \enot M_1)$ or $(J_3 \eand M_2) \eiff \enot (J_1 \eor M_1)$} 
 \end{earg}
+\end{comment}
 
 \problempart
 \label{pr.spies}
 \myanswer{\begin{ekey}
-\item[A] Alice is a spy.
-\item[B] Bob is a spy.
+\item[G] Gorka is a spy.
+\item[L] Lena is a spy.
 \item[C] The code has been broken.
 \item[L] The letter is in German embassy.
 \end{ekey}}
 \begin{earg}
-\item It is not the case that Alice and Bob are both spies.
-\item[] \myanswer{$\enot(A \eand B)$}
-\item If either Alice or Bob is a spy, then the code has been broken.
-\item[] \myanswer{$((A \eor B) \eif C)$}
-\item If neither Alice nor Bob is a spy, then the code has not been unbroken.
-\item[] \myanswer{$\enot (A \eor B) \eif \enot C$}
+\item It is not the case that Gorka and Lena are both spies.
+\item[] \myanswer{$\enot(G \eand L)$}
+\item If either Gorka or Lena is a spy, then the code has been broken.
+\item[] \myanswer{$((G \eor L) \eif C)$}
+\item If neither Gorka nor Lena is a spy, then the code has not been unbroken.
+\item[] \myanswer{$\enot (G \eor L) \eif \enot C$}
 \item The letter is in the German embassy, unless someone has broken the code.
 \item[] \myanswer{$(L \eor C)$}
 \item Either the code has been broken or it has not, but the letter is in German embassy regardless.
 \item[] \myanswer{$((C \eor \enot C) \eand L)$}
-\item Either Alice or Bob is a spy, but not both.
-\item[] \myanswer{$((A \eor B) \eand \enot (A \eand B))$}
+\item Either Gorka or Lena is a spy, but not both.
+\item[] \myanswer{$((G \eor L) \eand \enot (G \eand L))$}
 \end{earg}
 
 
@@ -882,7 +887,7 @@ We can even, if we need to do so, express ``\textit{not} $\enot(P \eand S)$'' by
 \item[] $\enot\enot(P \eand S)$
 \end{earg}
 
-These procedures can be used to form an infinite number of sentences of TFL. We just have to be sure that we are following rules 1 -- 7, given above.  And when following these rules, we must remember that $\meta{A}$ and $\meta{B}$ are units that can stand for either single atomic sentences or longer sentences. In fact, they can stand for sentences of any length.
+These procedures can be used to form an infinite number of sentences of TFL. We just have to be sure that we are following rules 1 -- 7, given on p.~\pageref{TFLsentences}.  And when following these rules, we must remember that $\meta{A}$ and $\meta{B}$ are units that can stand for either single atomic sentences or longer sentences. In fact, they can stand for sentences of any length.
 
 Ultimately, you want to be able to just look at an expression and tell whether or not it is a correctly formed sentence of TFL, and with time you will be able to do so. Here are some examples of sentences of TFL:
 \begin{earg}
@@ -911,7 +916,7 @@ You will learn to recognize sentences of TFL more quickly if you write neatly an
 
 Setting aside the `$\enot$' for a moment, each of the other logical operators, as you know, combine two sentences (which may, themselves, be composed of multiple sentences). The two sentences that are being combined by a logical operator comprise that operator's \define{scope}. 
 
-\begin{factboxy}{Scope}
+\begin{factboxy}{scope}
 For `$\eand$', `$\eor$', `$\eif$', and `$\eiff$', the \define{scope} of the logical operator is the two sentences that the logical operator is conjoining. 
 \smallskip
 
@@ -919,31 +924,6 @@ For `\enot', the \define{scope} is the sentence being negated by this operator.
 \end{factboxy}
 
 So, the scope of the `$\eand$' in `$(P \eand Q)$' is the `$P$' and the `$Q$'. And the scope of the `$\eand$' in `$((P \eand Q) \eif T)$' is still just the `$P$' and the `$Q$'. The scope of the `$\eif$' in `$((P \eand Q) \eif T)$', meanwhile, is `$((P \eand Q)$' and `$T$'.
-
-
-
-\begin{comment}
-Consider this sentence: 
-\begin{earg}
-\item[] {Dr. Wilson is in his  office, and if she is teaching today, then Dr. Cook is in her office}. 
-\end{earg}
-This sentence contains two logical operators, `and' and `if \ldots, then\ldots', and one of them is the \define{main logical operator} of the sentence. The main logical operator determines, at the most general level, what kind of sentence it is---a conjunction, a disjunction, a conditional, a biconditional, or a negation. The sentence above is a conjunction. Thus, the `and' is the main logic operator, and these are the two conjuncts: 
-\begin{earg}
-\item[1.] {Dr. Wilson is in his office}.
-\item[2.] {If she is teaching today, then Dr. Cook is in her office}. 
-\end{earg}
-The second conjunct is a conditional, but the \textit{if\ldots, then\ldots} only applies to \textit{she is teaching today} and \textit{Dr. Cook is in her office}, not to the whole sentence. 
-
-Now let's look at this sentence: 
-\begin{ebullet}
-	\item[] {If today is not Saturday, then Amy is at work and Kate is at school}. 
-\end{ebullet}
-	
-\noindent This is a conditional. The antecedent is \textit{today is not Saturday}, and the consequent is \textit{Amy is at work and Kate is at school}. So, although there are three logical operators in this sentence, the main one is the \textit{if ..., then ...} (and so if we translated this sentence into TFL, the main logical operator would be the `$\eif$'). 
-
-Even though the sentence is a conditional, the \textit{not} and the \textit{and} each have a role. But their roles are limited to only a part of the sentence. Take the \textit{not}. It applies to (i.e., negates) \textit{today is Saturday}.  
-The \textit{and}'s job, meanwhile, is to create a conjunction by joining \textit{Amy is at work} and \textit{Kate is at school}. 
-\end{comment}
 
 Here is a more complex example:
 
@@ -958,13 +938,11 @@ $$(((T \eif P) \eand R) \eor (S \eiff Q))$$
 
 When the scope of a logical operator is the whole sentence (besides that operator itself), then that logical operator is the \define{main logical operator} for the sentence. So, in the previous example, the `$\eor$' is the main logical operator. This means that the sentence is a disjunction. (The subsentences are different kinds of sentences, but the whole sentence is a disjunction.)
 
+\begin{factboxy}{the main logical operator}
+The \define{main logical operator} is the logical operator whose scope is the entire sentence. 
+\end{factboxy}
+
 Being able to identify the main logical operator is very important for what you will be learning in parts 3 and 4 of this textbook, and so when you see a sentence of TFL, you always want to determine the scope of each logical operator and the identify the main logical operator. 
-
-\begin{comment}
-Now, let's turn to expressions in TFL. Although identifying the main logical operator in a long expression in TFL can seem confusing at first, because we are using parentheses, you'll find that it's not too difficult. Let's start with this example: $((P \eand Q) \eor R)$. This is a disjunction. One disjunct is $(P \eand Q)$ and the other is $R$. Hence, the main logical operator is the `$\eor$'. 
-
-Let's change the expression to $\enot((P \eand Q) \eor R)$. This is a negation, and so the main logical operator is the `$\enot$'. Notice that the `$\enot$' is outside of the brackets that enclose the entire `$(P \eand Q) \eor R$'. That means that the `$\enot$' applies to the entire sentence. Hence, it is the main logical operator. 
-\end{comment}
 
 Here are some more examples:
 \begin{earg}
@@ -1085,9 +1063,9 @@ We use `$\meta{A}$' and `$\meta{B}$' (and other capital letters in this font) wh
 
 `$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$' are not actually part of TFL. Rather, they are part of the metalanguage---that is, English---that we use to talk about expressions of TFL. 
 	
-	\factoidbox{
-	  A \define{metavariable} is a variable in the metalanguage (i.e., English) that represents any sentence in our formal language of TFL. The symbols $\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$ are used for the metavariables.}
-
+\begin{factboxy}{metavariable}
+A \define{metavariable} is a variable in the metalanguage (i.e., English) that represents any sentence in TFL. The symbols $\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$ are used for the metavariables.
+\end{factboxy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Exercises for sentences of TFL chapter

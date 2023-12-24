@@ -9,9 +9,20 @@
 
 We have mastered truth functional logic. There may be difficult proofs that still confound us, but we have covered everything that there is to cover in this branch of logic. We now move on to the logic system that is typically studied immediately after truth functional logic: first-order logic (which is also called \textit{predicate logic}). 
 
-As you know, the study of truth functional logic is based on the relationships between atomic sentences and sentences that contain \textit{and}, \textit{or}, \textit{if \ldots then \ldots}, \textit{if and only if} and the negation. 
-
-Hence, if we know this: \textit{if Mary was arrested, then Peter when to the police}, and we know that \textit{Mary was arrested}, then we know that it must follow that \textit{Peter went to the police}. If we chose to symbolize this in TFL, we can easily do so:
+As you know, the study of truth functional logic is based on the relationships between atomic sentences and sentences that contain \textit{and}, \textit{or}, \textit{if \ldots then \ldots}, \textit{if and only if}, and \textit{not}. 
+Hence, if we know this: 
+	\begin{earg}
+		\item[1.] If Mary was arrested, then Peter when to the police. 
+	\end{earg}
+and this: 
+	\begin{earg}
+		\item[2.] Mary was arrested. 
+	\end{earg}
+Then, we know that this can safely be inferred:  
+	\begin{earg}
+		\item[3.] Peter went to the police.
+	\end{earg} 
+And if we want to symbolize this in TFL, we can easily do so:
 \begin{earg}
 \item[1.] $M \eif P$
 \item[2.] $M$
@@ -40,11 +51,11 @@ Since there are no logical operators in any of these three sentences, if we trie
 
 \section{The content of first-order logic}
 
-In first-order logic (FOL), we still use the logical operators from TFL, the rules of derivation given in chapter \ref{s:BasicTFL}, and parentheses. We will, however, replace the atomic sentences of TFL with formulas composed of the following.
+In first-order logic (FOL), we still use the logical operators from TFL, the rules of derivation given in chapter \ref{s:BasicTFL}, and parentheses. We will, however, replace the atomic sentences of TFL with sentences composed of the following.
 
 \begin{ebullet}
 	\item[(\textit{a})] predicates
-	\item[(\textit{b})] names for specifical individuals or things 
+	\item[(\textit{b})] names for specific individuals or things 
 	\item[(\textit{c})] variables 
 	\item[(\textit{d})] quantifiers
 \end{ebullet}
@@ -53,7 +64,7 @@ We also add the identity symbol, ‘=’, to the symbols from TFL.
 
 \paragraph{Names}
 
-Names are simple. They designate specific individuals (or any specific entity). We represent them with the lowercase letters \textit{a} -- \textit{r}.
+Names are simple. They designate specific individuals (or any specific object). We represent them with the lowercase letters \textit{a} -- \textit{t}.
 
 \paragraph{Predicates}
 
@@ -69,9 +80,9 @@ As you can see, we need to add a name to the predicate to form a complete Englis
 Predicates are symbolized with uppercase letters, and we can use any letter $A$ through $Z$. Symbolizing `is tall' as $T$, `is a mammal' as $M$, `ate dinner' as $D$, and `Carol' as $c$, we combine this name and these predicate in FOL this way:
 
 \begin{ebullet}
-	\item[] $T(c)$
-	\item[] $M(c)$
-	\item[] $D(c)$
+	\item[] $Tc$
+	\item[] $Mc$
+	\item[] $Dc$
 \end{ebullet}
 
 Those are \textit{one-place predicates} because each takes only one name. These are \textit{two-place predicates} because each takes two names:
@@ -84,10 +95,10 @@ Those are \textit{one-place predicates} because each takes only one name. These 
 With names added, we can symbolize these sentences as is shown here. Notice that the order of the names matters.
 
 \begin{ebullet}
-	\item[] Abby is the sister of Carol: $S(a,c)$
-	\item[] Carol is the sister of Abby: $S(c,a)$
-	\item[] David is in love with Carol: $L(d,c)$
-	\item[] Carol is not in love with David: $\enot L(c,d)$
+	\item[] Abby is the sister of Carol: $Sac$
+	\item[] Carol is the sister of Abby: $Sca$
+	\item[] David is in love with Carol: $Ldc$
+	\item[] Carol is not in love with David: $\enot Lcd$
 \end{ebullet}
 And likewise, we can have three- or four- (or more) place predicates. 
 
@@ -97,30 +108,30 @@ And likewise, we can have three- or four- (or more) place predicates.
 The most notable feature of first-order logic is the use of what are called \textit{quantifiers}. There are two in this logic system:
 
 \begin{ebullet}
-	\item[(\textit{a})] The universal quantifier, which is symbolized with `$\forall$' and can be translated as ``every'' or ``all.''
+	\item[(\textit{a})] The universal quantifier, which is symbolized with `$\forall$' and can be translated as ``every'' or ``for all.''
 	\item[(\textit{b})] The existential quantifier, which is symbolized with `$\exists$' and can be translated as ``some'' or ``there exists.''
 \end{ebullet}
 
-When we use these quantifiers, we are not designating a specific individual and so, with them, we must use variables. Variables work with predicates the same way as names do, but when we have a variable, we generally (although not always) have a quantifier. We represent variables with the lowercase letters \textit{s} -- \textit{z}.
+When we use these quantifiers, we are not designating a specific individual and so, with them, we must use \define{variables}. Whereas names identify specific individuals, variables stand for an individual (or individuals), but not any specific one. Variables work with predicates the same way as names do. When we have a variable, however, we will always, in this textbook, also have a quantifier. (It is possible to have a variable that is not associated with a quantifier, but that won't be covered here.) We represent variables with the lowercase letters \textit{u} -- \textit{z}.
 
 Here are two English sentences that are each translated to FOL with a quantifier, a predicate, and a variable:
 
 \begin{ebullet}
-	\item[] Everyone ate dinner: $\forall x D(x)$. 
-	\item[] Someone ate dinner: $\exists x D(x)$.
+	\item[] Everyone ate dinner: $\forall x Dx$. 
+	\item[] Someone ate dinner: $\exists x Dx$.
 \end{ebullet}
 
-As we did with TFL, there will be a point where we won’t be as concerned with the English sentence that is represented by an expression in FOL. So, reading the first one, as an expression in FOL (and without a specific English translation for $D$), we say, ``for all $x, D(x)$ or ``all $x$ are D.'' And for the second one: ``there exists an $x$ such that $D(x)$” or ``some $x$ is $D$.'' 
+As we did with TFL, there will be a point where we won’t be as concerned with the English sentence that is represented by an expression in FOL. So, reading the first one, as an expression in FOL (and without a specific English translation for $D$), we say, ``for all $x, Dx$ or ``all $x$ are D.'' And for the second one: ``there exists an $x$ such that $Dx$” or ``some $x$ is $D$.'' 
 
 
 \paragraph{Identity}
 
-The identity symbol, `=’, is used to signify that two things are the same; that is, not just similar or equivalent, but the same. So, while two graduate students who both teach German I might---as far as the students care---be equivalent, we wouldn't use the identity symbol to indicate that they are. Rather, we use the identity symbol for cases such as `Peter Parker is identical to Spider-Man.’ 
+The identity symbol, `=’, is used to signify that two things are the same; that is, not just similar or equivalent, but the same. So, while two objects might be what we would call ``the same''---two of the same sized wrenches, for instance---we wouldn't use the identity symbol to indicate that they are. Rather, we use the identity symbol for cases such as `Peter Parker \textit{is} Spider-Man.’ 
 
 
 \paragraph{Domains}
 
-A logic system must be precise. But `all’ or `every’, when taken literally and without any qualification, refer to a vast set of individuals or things. For instance, if `$H$' represents `is happy’, then ‘$\forall x H(x)$’ represents ‘Everyone is happy’. But when we say this in English, we are not referring to everyone now alive on Earth or everyone who ever was alive or who ever will be alive. Rather, we mean something like `everyone now in the room is happy,’ or `everyone enrolled in this course is happy’.
+A logic system must be precise. But `all’ or `every’, when taken literally and without any qualification, refer to a vast set of individuals or things. For instance, if `$H$' represents `is happy’, then ‘$\forall x Hx$’ represents ‘Everyone is happy’. But when we say this in English, we are not referring to everyone now alive on Earth or everyone who ever was alive or who ever will be alive. Rather, we mean something like `everyone now in the room is happy,’ or `everyone enrolled in this course is happy’.
  
 So, to be precise when we use quantified expressions in FOL, we need to specify a \define{domain}. The domain is the collection of things about which we want to refer. If we want to talk about people in Starkville, we define the domain as \textit{people in Starkville}. We write this at the beginning of the symbolization key, like this:
 
@@ -129,7 +140,7 @@ So, to be precise when we use quantified expressions in FOL, we need to specify 
 \end{earg}
 The quantifiers, then, apply to (or range over) the domain. Given this domain, ‘$\forall x$’ is to be read roughly as ‘Every person in Starkville \ldots ’, and ‘$\exists x$’ is to be read roughly as ‘Some person in Starkville, \ldots ’.
 
-In FOL, the domain must always include at least one thing. Moreover, in English we can legitimately infer ‘someone is angry’ from ‘David is angry’. Likewise in FOL, we will want to be able to infer ‘$\exists xA(x)$’ from ‘$A(d)$’. So, when we are using a name (and not a quantifier), it still must be the case that each name picks out exactly one thing in the domain. (Although there can be members of a domain that don’t have names or have more than one name.)
+In FOL, the domain must always include at least one thing. Moreover, in English we can legitimately infer ‘someone is angry’ from ‘David is angry’. Likewise in FOL, we will want to be able to infer ‘$\exists xAx$’ from ‘$Ad$’. So, when we use a name, it still be the case that each name picks out exactly one thing in the domain. (Although there can be members of a domain that don’t have names or have more than one name.)
 
 
 
