@@ -111,7 +111,7 @@ After the premises, we make an assumption.
 	\open
 		\hypo{s}{Fe} \as{}
 \end{proof}
-Premise 1 tell us that \emph{someone} is an $F$.  So, on line 3, we introduce an arbitrary name for this someone: `$e$'. Essentially, we are saying, ``let's call this individual who is fast \textit{Eddie}.'' And we are assuming nothing about ``Eddie'' other than that the predicate `$F$' is true of true of him or her. (I.e., he or she is fast.) Now that have `$Fe$', we proceed as follows. 
+Premise 1 tell us that \emph{someone} is an $F$.  So, on line 3, we introduce an arbitrary name for this someone: `$e$'. Essentially, we are saying, ``let's call this individual who is fast \textit{Eddie}.'' And we are assuming nothing about ``Eddie'' other than that the predicate `$F$' is true of true of him or her. (I.e., he or she is fast.) Now that we have `$Fe$', we proceed as follows. 
 %Other than removing the existential quantifier and replacing the variable with a name, our assumption must match the sentence in premise 1. 
 \begin{proof}
 	\hypo{es}{\exists x Fx} \pr{}
@@ -153,11 +153,11 @@ So far, so good. Because `$e$' was just a randomly chosen name and we do know if
 
 \small{The name \meta{c} may not occur outside the subproof.\smallskip
 
-Given an existentially quantified sentence in one premise, assume an instance of that sentence. Proceed until the desired sentence $\meta{B}$ is reached. $\meta{B}$ cannot contain the name used in the assumption. Exit the subproof, and put $\meta{B}$ on the next line.
+Given an existentially quantified sentence as a premise, assume an instance of that sentence. Proceed until the desired sentence $\meta{B}$ is reached. $\meta{B}$ cannot contain the name that was used in the assumption. Exit the subproof, and put $\meta{B}$ on the next line.
 }
 \end{factboxy}
 
-The name that is in the assumption cannot occur outside the subproof. So, the \meta{B} in the rule might often be an existentially quantified sentence. But \meta{B} can any sentence as long as it doesn't contain the name introduced in the assumption that begins the subproof.
+%The name that is in the assumption cannot occur outside the subproof. So, the \meta{B} in the rule might often be an existentially quantified sentence. But \meta{B} can any sentence as long as it doesn't contain the name introduced in the assumption that begins the subproof.
 
 %One more thing to note about this rule is that the only time when we are really eliminating an existential quantifier is when we make our assumption. And that sentence, $\meta{Ac}$, cannot appear outside of the subproof. This elimination step is still significant, however, when it provides a sentence that is needed to use the rules that were introduced in chapter \ref{s:BasicTFL}.
 
@@ -270,7 +270,7 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \bigskip
 \end{minipage}
 
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\exists x \enot Fx, \forall x(Fx \eor Gx) \proves \exists xGx$
 
 \begin{proof}
@@ -285,6 +285,7 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 	\have{c}{\exists Gx} \Ee{p1,nf-Eg}
 \end{proof}
 \bigskip
+\end{minipage}
 
 \noindent\begin{minipage}{0.99\textwidth}
 \item $\exists x(Bx \eif Dx), \forall xBx \proves \exists xDx$

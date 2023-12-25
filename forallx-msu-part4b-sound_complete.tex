@@ -40,10 +40,13 @@ How do we know that the truth table method and the natural deduction method will
 \end{earg}
 First, it must be the case that every argument that is p-valid is tt-valid. This property is called \define{soundness}.
 
-\begin{factboxy}{Soundness}\label{def:Soundness}
+\begin{factboxy}{soundness}\label{def:Soundness}
 \define{Soundness} is a property of a logic system iff, for any argument, if the argument is p-valid, then the argument tt-valid.
-\tcblower
-Equivalently, \define{soundness} is a property of a logic system iff, for any sentence, if a sentence is a theorem, then it is a tautology. 
+%\tcblower
+\medskip
+\hrule
+\medskip
+Equivalently, \define{soundness} is a property of a logic system iff, for any sentence, if the sentence is a theorem, then it is a tautology. 
 \end{factboxy}
 
 \noindent Soundness is a property of TFL because every argument for which we can give a proof (and hence show that it is valid that way) will also be valid by the truth table method.
@@ -62,9 +65,12 @@ Like `$\eif$', `$\Rightarrow$' can be read as `if \ldots, then \ldots'.
 Since `p-valid $\Rightarrow$ tt-valid' is not an expression in TFL, we shouldn't use the `$\eif$' symbol in it. Instead, we are using the \textit{metalogical arrow} to express the relationship between \textit{p-valid} and \textit{tt-valid}.
 \end{notebox}
 
-\begin{factboxy}{Completeness}\label{def:completeness}
+\begin{factboxy}{completeness}\label{def:completeness}
 \define{Completeness} is a property of a logic system iff, for any argument, if the argument is tt-valid, the the argument is p-valid.
-\tcblower
+%\tcblower
+\medskip
+\hrule
+\medskip
 Equivalently, \define{completeness} is a property of a logic system iff, for any sentence, if the sentence is a tautology, then it is a theorem.
 \end{factboxy}
 
