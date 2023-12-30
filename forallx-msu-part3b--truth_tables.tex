@@ -319,23 +319,22 @@ Part of the purpose of studying truth-functional propositional logic is to equip
 \label{pr.TT.valid}
 Create a truth table for each argument and then determine if the argument is valid or invalid.
 \begin{earg}
-\item $P\eif P \proves P$\vspace{.5ex} %invalid
-\item $P\eif(P\eand\enot P) \proves \enot P$\vspace{.5ex} %valid
+%\item $P\eif P \proves P$\vspace{.5ex} %invalid
+%\item $P\eif(P\eand\enot P) \proves \enot P$\vspace{.5ex} %valid
 \item $P\eor(Q\eif P) \proves \enot P \eif \enot Q$\vspace{.5ex} %valid
+\item $P\eif Q$, $Q \proves  P$\vspace{.5ex} %invalid
+\item $P \eif Q$, $Q \eif P\proves P \eiff Q$\vspace{.5ex} %valid.
+\item $P \eif Q$, $\enot P\proves \enot Q$ \vspace{.5ex}%invalid
+
 \item $P\eor Q, Q\eor S, \enot P \proves Q \eand S$\vspace{.5ex} %invalid
 \item $(Q\eand P)\eif S, (S\eand P)\eif Q \proves (S\eand Q)\eif P$\vspace{.5ex} %invalid
-
-
-\item $P\eif Q$, $Q \proves  P$\vspace{.5ex} %invalid
 \item $P\eiff Q$, $Q\eiff S \proves P\eiff S$\vspace{.5ex} %valid
 \item $P \eif Q$, $P \eif S\proves Q \eif S$\vspace{.5ex} %invalid. 
-\item $P \eif Q$, $Q \eif P\proves P \eiff Q$\vspace{.5ex} %valid. 
 
-
-\item $P\eor[P\eif(P\eiff P)] \proves  P $\vspace{.5ex}%invalid
+%\item $P\eor[P\eif(P\eiff P)] \proves  P $\vspace{.5ex}%invalid
 \item $P\eor Q$, $Q\eor S$, $\enot Q \proves P \eand S$\vspace{.5ex} %valid
-\item $P \eif Q$, $\enot P\proves \enot Q$ \vspace{.5ex}%invalid
-\item $P$, $Q\proves \enot(P\eif \enot Q)$ \vspace{.5ex}%valid
+
+%\item $P$, $Q\proves \enot(P\eif \enot Q)$ \vspace{.5ex}%valid
 \item $\enot(P \eand Q)$, $P \eor Q$, $P \eiff Q\proves S$ \vspace{.5ex}%valid 
 \end{earg}
 
@@ -356,7 +355,6 @@ Create a truth table for each argument and then determine if the argument is val
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
 
 \section{Answers}
 \setcounter{ProbPart}{0}
@@ -366,6 +364,8 @@ Create a truth table for each argument and then determine if the argument is val
 \label{pr.TT.valid}
 
 \begin{earg}
+
+\begin{comment}
 \item $P\eif P \proves P$\\
 This argument is invalid.
 \myanswer{\begin{flushleft}
@@ -376,7 +376,9 @@ $P$ &$P$&$\eif$&$P$& \proves   &$P$\\
  F & F & \TTbf{T} & F& \xm  & F
  \end{tabular}
 \end{flushleft}}\medskip
+\end{comment}
 
+\begin{comment}
 \item $P\eif(P\eand\enot P) \proves \enot P$\\
 This argument is valid.
 \myanswer{\begin{flushleft}
@@ -387,6 +389,7 @@ $P$&$P$&$\eif$&$(P$&$\eand$&$\enot$&$P)$& \proves &$\enot$&$P$\\
  F & F & \TTbf{T} & F & F&T&F&\cm  &\TTbf{T}&F
 \end{tabular}
 \end{flushleft}}\medskip
+\end{comment}
 
 \item $P\eor(Q\eif P) \proves \enot P \eif \enot Q$\\
 This argument is valid.
@@ -401,6 +404,49 @@ F & F & F & \TTbf{T} & F & T & F &\cm& T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{flushleft}}\medskip
 
+\item $P\eif Q$, $Q \proves  P$\\ 
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j  j  j }
+$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $Q$ & $\proves$ & $P$\\
+\hline
+T & T &    T & T & T &    T &\cm& T\Tstrut\\
+T & F &    T & F & F &    F &\cm& T\\
+F & T &    F & T & T &    T &\xm& F\\
+F & F &    F & T & F &    F &\cm& F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\item $P \eif Q$, $Q \eif P\proves P \eiff Q$\\ 
+This argument is valid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j e e  j  j e e }
+$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $Q$ & $\eif$ & $P$ & $\proves$ & $P$ & $\eiff$ & $Q$\\
+\hline
+T & T &    T & T & T &     T & T & T  &\cm&   T & T &  T\Tstrut\\
+T & F &    T & F & F &     F & T & T   &\cm&   T & F &  F\\  
+F & T &    F & T & T &     T & F & F   &\cm&   F & F &  T\\
+F & F &    F & T & F &     F & T & F   &\cm&   F & T &  F 
+\end{tabular}
+\end{flushleft}
+\medskip
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $P \eif Q$, $\enot P\proves \enot Q$\\
+This argument is invalid.
+\begin{flushleft}
+\begin{tabular}{d d | f e e  j e   j   j e }
+$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $\enot$ & $P$ & $\proves$ & $\enot$ & $Q$\\
+\hline
+T & T &    T & T & T &    F & T &\cm& F & T\Tstrut\\
+T & F &    T & F & F &    F & T &\cm& T & F\\ 
+F & T &    F & T & T &    T & F &\xm& F & T\\ 
+F & F &    F & T & F &    T & F  &\cm&T & F
+\end{tabular}
+\end{flushleft}
+\medskip
+\end{minipage}
 
 \item $P\eor Q, Q\eor S, \enot P \proves Q \eand S$\\
 This argument is invalid.
@@ -422,22 +468,22 @@ T & F & F & F & \TTbf{F} & F & F & \TTbf{F} & F & \TTbf{T} & F &\cm& F & \TTbf{F
 \noindent\begin{minipage}{0.99\textwidth}
 \item $(Q\eand P)\eif S, (S\eand P)\eif Q \proves (S\eand Q)\eif P$\\
 This argument is invalid.
-%\myanswer{\begin{flushleft}
-%\begin{tabular}{d d d | f e e e e   j e e e e   j   j e e e e}
-%$P$ & $Q$ & $S$ & $(Q$&$\eand$&$P)$&$\eif$&$S$,&$(S$&$\eand$&$P)$&$\eif$&$Q$& \proves &$(S$&$\eand$&$ Q)$&$\eif$&$P$\\
-%\hline
-%T & T & T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T &\cm& T & T & T & \TTbf{T} & T\Tstrut\\
-%T & T & F & T & T & T & \TTbf{F} & F & F & F & T & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & T\\
-%T & F & T & F & F & T & \TTbf{T} & T & T & T & T & \TTbf{F} & F &\cm& T & F & F & \TTbf{T} & T\\
-%T & F & F & F & F & T & \TTbf{T} & F & F & F & T & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & T\\\arrayrulecolor{light-gray}\hline
-%F & T & T & T & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & T &\xm& T & T & T & \TTbf{F} & F\Tstrut\\
-%F & T & F & T & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & F\\
-%F & F & T & F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F &\cm& T & F & F & \TTbf{T} & F\\
-%F & F & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & F
-%\end{tabular}
-%\end{flushleft}}
+\myanswer{\begin{flushleft}
+\begin{tabular}{d d d | f e e e e   j e e e e   j   j e e e e}
+$P$ & $Q$ & $S$ & $(Q$&$\eand$&$P)$&$\eif$&$S$,&$(S$&$\eand$&$P)$&$\eif$&$Q$& \proves &$(S$&$\eand$&$ Q)$&$\eif$&$P$\\
+\hline
+T & T & T & T & T & T & \TTbf{T} & T & T & T & T & \TTbf{T} & T &\cm& T & T & T & \TTbf{T} & T\Tstrut\\
+T & T & F & T & T & T & \TTbf{F} & F & F & F & T & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & T\\
+T & F & T & F & F & T & \TTbf{T} & T & T & T & T & \TTbf{F} & F &\cm& T & F & F & \TTbf{T} & T\\
+T & F & F & F & F & T & \TTbf{T} & F & F & F & T & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & T\\\arrayrulecolor{light-gray}\hline
+F & T & T & T & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & T &\xm& T & T & T & \TTbf{F} & F\Tstrut\\
+F & T & F & T & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T &\cm& F & F & T & \TTbf{T} & F\\
+F & F & T & F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F &\cm& T & F & F & \TTbf{T} & F\\
+F & F & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & F
+\end{tabular}
+\end{flushleft}}
 
-
+\begin{comment}
 %% This one leaves out the left side of the truth table to save space:
 
 \myanswer{\begin{flushleft}
@@ -454,24 +500,12 @@ F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F &\cm& T & F & F & \TTbf{T} &
 F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F &\cm& F & F & F & \TTbf{T} & F
 \end{tabular}
 \end{flushleft}}
+\end{comment}
 \medskip
 \end{minipage}
 
-\item $P\eif Q$, $Q \proves  P$\\ 
-This argument is invalid.
-\begin{flushleft}
-\begin{tabular}{d d | f e e  j  j  j }
-$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $Q$ & $\proves$ & $P$\\
-\hline
-T & T &    T & T & T &    T &\cm& T\Tstrut\\
-T & F &    T & F & F &    F &\cm& T\\
-F & T &    F & T & T &    T &\xm& F\\
-F & F &    F & T & F &    F &\cm& F 
-\end{tabular}
-\end{flushleft}
-\medskip
 
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $P\eiff Q$, $Q\eiff S \proves P\eiff S$\\ 
 This argument is valid.
 \begin{flushleft}
@@ -489,6 +523,7 @@ F & F & F &    F & T &  F &      F & T &  F   &\cm&   F & T &  F
 \end{tabular}
 \end{flushleft}
 \medskip
+\end{minipage}
 
 \noindent\begin{minipage}{0.99\textwidth}
 \item $P \eif Q$, $P \eif S\proves Q \eif S$\\ 
@@ -510,21 +545,8 @@ F & F & F &    F & T & F &      F & T & F   &\cm&   F & T & F
 \medskip
 \end{minipage}
 
-\item $P \eif Q$, $Q \eif P\proves P \eiff Q$\\ 
-This argument is valid.
-\begin{flushleft}
-\begin{tabular}{d d | f e e  j e e  j  j e e }
-$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $Q$ & $\eif$ & $P$ & $\proves$ & $P$ & $\eiff$ & $Q$\\
-\hline
-T & T &    T & T & T &     T & T & T  &\cm&   T & T &  T\Tstrut\\
-T & F &    T & F & F &     F & T & T   &\cm&   T & F &  F\\  
-F & T &    F & T & T &     T & F & F   &\cm&   F & F &  T\\
-F & F &    F & T & F &     F & T & F   &\cm&   F & T &  F 
-\end{tabular}
-\end{flushleft}
-\medskip
 
-
+\begin{comment}
 \item $P\eor[P\eif(P\eiff P)] \proves  P$\\ 
 This argument is invalid.
 \begin{flushleft}
@@ -536,8 +558,9 @@ F &    F & T &   F & T &   F & T &  F      &\xm& F
 \end{tabular}
 \end{flushleft}
 \medskip
+\end{comment}
 
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $P\eor Q$, $Q\eor S$, $\enot Q \proves P \eand S$\\
 This argument is valid.
 \begin{flushleft}
@@ -555,23 +578,10 @@ F & F & F &    F & F & F &      F & F & F &    T & F &\cm&    F & F & F
 \end{tabular}
 \end{flushleft}
 \medskip
+\end{minipage}
 
 
-\item $P \eif Q$, $\enot P\proves \enot Q$\\
-This argument is invalid.
-\begin{flushleft}
-\begin{tabular}{d d | f e e  j e   j   j e }
-$P$ & $Q$ & $P$ & $\eif$ & $Q$, & $\enot$ & $P$ & $\proves$ & $\enot$ & $Q$\\
-\hline
-T & T &    T & T & T &    F & T &\cm& F & T\Tstrut\\
-T & F &    T & F & F &    F & T &\cm& T & F\\ 
-F & T &    F & T & T &    T & F &\xm& F & T\\ 
-F & F &    F & T & F &    T & F  &\cm&T & F
-\end{tabular}
-\end{flushleft}
-\medskip
-
-
+\begin{comment}
 \item $P$, $Q\proves \enot(P\eif \enot Q)$\\
 This argument is valid.
 \begin{flushleft}
@@ -585,8 +595,7 @@ F & F &  F &  F &\cm&F  &  F & T & T & F
 \end{tabular}
 \end{flushleft}
 \medskip
-
-\filbreak
+\end{comment}
 
 \item $\enot(P \eand Q)$, $P \eor Q$, $P \eiff Q\proves S$\\
 This argument is valid.
@@ -606,7 +615,7 @@ F & F & F &  T &   F & F & F &      F & F & F  &     F & T &  F   &\cm& F
 \end{flushleft}
 \end{earg}
 
-\filbreak
+
 
 \problempart
 \begin{earg}
@@ -617,7 +626,7 @@ F & F & F &  T &   F & F & F &      F & F & F  &     F & T &  F   &\cm& F
 
 \item Suppose that \meta{A} is a contradiction. Is $\meta{A}, \meta{B} \proves \meta{C}$ valid or invalid?
 \begin{ebullet}
-\item[] \myanswer{Since \meta{A} is false on every line of a truth table, there is no line on which \meta{A} and \meta{B} are true and \meta{C} is false. Hence, the argument is  valid. (Although that would be kind of an odd argument since we know that one of the premises is a contradiction.)}
+\item[] \myanswer{Since \meta{A} is false on every line of a truth table, there is no line on which \meta{A} and \meta{B} are true and \meta{C} is false. Hence, the argument is  valid. (This would be an odd argument, however, since we know that one of the premises is a contradiction.)}
 \end{ebullet}
 
 \item Suppose that \meta{C} is a tautology. Is $\meta{A}, \meta{B} \proves \meta{C}$ valid or invalid?

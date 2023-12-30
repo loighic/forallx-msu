@@ -85,7 +85,7 @@ This brings us to the following idea. We can use the \define{universal introduct
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\filbreak
+%\filbreak
 
 \section{Existential elimination}
 
@@ -241,7 +241,7 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \bigskip
 \end{minipage}
 
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\forall x(Gx \eif Hx), \forall xGx \proves \forall xHx$
 
 \begin{proof}
@@ -253,7 +253,7 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 	\have{c}{\forall xHx} \Ai{H}
 \end{proof}
 \bigskip
-
+\end{minipage}
 
 \noindent\begin{minipage}{0.99\textwidth}
 \item $\exists xMx \proves \exists x(Mx \eor Nx)$
@@ -325,6 +325,7 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \smallskip
 \end{minipage}
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $Ma \eor Nb\textcolor{magenta}{,}~ Nb \eif b=d\textcolor{magenta}{,}~ \enot Ma  \proves Nd$
 
 \begin{proof}
@@ -336,6 +337,7 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 	\have{c}{Nd} \ie{n,bd}
 \end{proof}
 \medskip
+\end{minipage}
 
 \item $\exists y \forall xLxy \proves \forall x \exists yLxy$
 
@@ -350,8 +352,8 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 	\have{c2}{\forall x \exists yLxy} \Ee{p1,lxc-c1}
 \end{proof}
 \smallskip
-On p.~\pageref{quantifier-order}, we said that `$\forall x \exists yLxy$' and `$\exists y \forall xLxy$' have different meanings. One consequence of this is that $\exists y \forall xLxy \proves \forall x \exists yLxy$ is valid (as just shown), but $\forall x \exists yLxy \proves \exists y \forall xLxy$ is not. \medskip
-
+On p.~\pageref{quantifier-order}, we said that `$\forall x \exists yLxy$' and `$\exists y \forall xLxy$' have different meanings. One consequence of this is that $\exists y \forall xLxy \proves \forall x \exists yLxy$ is valid (as just shown), but $\forall x \exists yLxy \proves \exists y \forall xLxy$ is not. 
+\bigskip
 
 \item $\forall x \forall y \forall z((Lxy \eand Lyz) \eif Lxz)\textcolor{magenta}{,}~ Lab\textcolor{magenta}{,}~ Lbc \proves Lac$
 \end{earg}  % This is here, rather than at the end, so that the text that follows will be more properly formatted.

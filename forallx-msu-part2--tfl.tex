@@ -33,12 +33,17 @@ Here is another valid argument:
 		\item[3.] Therefore, Seoul is larger than Chicago. 
 	\end{earg}
 This argument also has a particular form that makes it valid, and we can represent its form like this:
+\bigskip
+
+	\noindent\begin{minipage}{0.99\textwidth}
 	\begin{earg}
 		\item[1.] C is larger than D.
 		\item[2.] D is larger than F.
 		\item[3.] Therefore, C is larger than F. 
 	\end{earg}
-For the first argument form that we examined, A and B could be any sentences. Here, C, D, and F are names (not full sentences), and we can put any names (for anything) in the places of C, D, and F, and the argument will be valid.
+	\end{minipage}
+
+\noindent For the first argument form that we examined, A and B could be any sentences. Here, C, D, and F are names (not full sentences), and we can put any names (for anything) in the places of C, D, and F, and the argument will be valid.
 
 In contrast, this argument is valid, but there is no particular form that makes it so.
 	\begin{earg}
@@ -50,7 +55,7 @@ Unlike the previous three examples, this argument is valid, not because of the f
 These examples illustrate \emph{validity in virtue of form}. The arguments about Mary, Leiser, Seoul, London, and Chicago are valid, but---unlike the argument about Juanita---their being valid has nothing to do with the specific meaning of `Mary is miserable', `Leiser is a spy', `Seoul', `London', or `Chicago.' (Whether the arguments are sound depends on these meanings, but not whether the arguments are valid.) Instead, these arguments are valid in virtue of the meanings of just these words: \textit{if, then} and \textit{is larger than}.
 
 \begin{factboxy}{valid in virtue of form}
-Let us define \define{structure words} as \textit{if-then}, \textit{and}, \textit{or}, \textit{not}, \textit{if and only if}, and comparative adjectives followed by \textit{than} (e.g., \textit{larger than}, \textit{faster faster than}, \textit{older than}).
+Let us define \define{structure words} as \textit{if-then}, \textit{and}, \textit{or}, \textit{not}, \textit{if and only if}, and comparative adjectives followed by \textit{than} (e.g., \textit{larger than}, \textit{faster than}, \textit{older than}).
 
 An argument is \define{valid in virtue its form} when the argument contains properly organized structure words. When it does, any sentences or names can be substituted into the argument and it will remain valid. 
 \end{factboxy}
@@ -89,7 +94,7 @@ has a form that we can represent like this:
 		\item[3.] Therefore, not K
 	\end{earg}
 
-
+\filbreak
 \section{Atomic sentences and symbolization}\label{s:atomic}
 
 Consider this sentence again:
@@ -558,17 +563,23 @@ Using the symbolization key given, translate each English-language sentence into
 
 \problempart
 \label{pr.spies}
-Give a symbolization key, and then translate the following English sentences into TFL.
+Using this symbolization key, translate each English sentence into TFL.
+\begin{ekey}
+\item[C] The code has been broken.
+\item[E] The letter is in German embassy.
+\item[G] Gorka is a spy.
+\item[L] Lena is a spy.
+\end{ekey}
 \begin{earg}
 \item It is not the case that Gorka and Lena are both spies.
 \item If either Gorka or Lena is a spy, then the code has been broken.
-\item If neither Gorka nor Lena is a spy, then the code has not been unbroken.
+\item If neither Gorka nor Lena is a spy, then the code has not been broken.
 \item The letter is in the German embassy, unless someone has broken the code.
 \item Either the code has been broken or it has not, but the letter is in German embassy regardless.
 \item Either Gorka or Lena is a spy, but not both.
 \end{earg}
 
-
+\begin{comment}
 \problempart
 For each argument, first, make a symbolization key, and then translate all of the sentences of the argument into TFL.
 \begin{earg}
@@ -578,7 +589,7 @@ For each argument, first, make a symbolization key, and then translate all of th
 
 \item If Zoey remembered to do her chores, then the house is clean but not neat. If she forgot, then the house is neat but not clean. Therefore, the house is either neat or clean; but not both.
 \end{earg}
-
+\end{comment}
 
 %\problempart
 %We symbolized an \emph{exclusive or} using `$\eor$', `$\eand$', and `$\enot$'. How could you symbolize an \emph{exclusive or} using only two operators? Is there any way to symbolize an \emph{exclusive or} using only one operator?
@@ -593,11 +604,11 @@ For each argument, first, make a symbolization key, and then translate all of th
 \setcounter{ProbPart}{0}
 
 \problempart 
-	\begin{ekey}
-		\item[A] Those creatures are aliens. 
-		\item[C] Those creatures are centaurs. 
-		\item[V] Those creatures are vampires.
-	\end{ekey}
+%	\begin{ekey}
+%		\item[A] Those creatures are aliens. 
+%		\item[C] Those creatures are centaurs. 
+%		\item[V] Those creatures are vampires.
+%	\end{ekey}
 \begin{earg}
 \item Those creatures are not aliens.
 \item[] \myanswer{$\enot A$}
@@ -614,14 +625,14 @@ For each argument, first, make a symbolization key, and then translate all of th
 \end{earg}
 
 \problempart 
-\begin{ekey}
-\item[A] Mr. Adams was murdered.
-\item[B] The butler did it.
-\item[C] The cook did it.
-\item[D] The Duchess is lying.
-\item[E] Mr. Edwards was murdered.
-\item[F] The murder weapon was a frying pan.
-\end{ekey}
+%\begin{ekey}
+%\item[A] Mr. Adams was murdered.
+%\item[B] The butler did it.
+%\item[C] The cook did it.
+%\item[D] The Duchess is lying.
+%\item[E] Mr. Edwards was murdered.
+%\item[F] The murder weapon was a frying pan.
+%\end{ekey}
 \begin{earg}
 \item Either Mr. Adams or Mr. Edwards was murdered.
 \item[] \myanswer{$(A \eor E)$}
@@ -737,29 +748,35 @@ For each argument, first, make a symbolization key, and then translate all of th
 
 \problempart
 \label{pr.spies}
-\myanswer{\begin{ekey}
-\item[G] Gorka is a spy.
-\item[L] Lena is a spy.
-\item[C] The code has been broken.
-\item[L] The letter is in German embassy.
-\end{ekey}}
+%\myanswer{\begin{ekey}
+%\item[C] The code has been broken.
+%\item[E] The letter is in German embassy.
+%\item[G] Gorka is a spy.
+%\item[L] Lena is a spy.
+%\end{ekey}}
 \begin{earg}
 \item It is not the case that Gorka and Lena are both spies.
-\item[] \myanswer{$\enot(G \eand L)$}
+\item[] \myanswer{$\enot(G \eand L)$}\smallskip
+
 \item If either Gorka or Lena is a spy, then the code has been broken.
-\item[] \myanswer{$((G \eor L) \eif C)$}
-\item If neither Gorka nor Lena is a spy, then the code has not been unbroken.
-\item[] \myanswer{$\enot (G \eor L) \eif \enot C$}
+\item[] \myanswer{$((G \eor L) \eif C)$}\smallskip
+
+\item If neither Gorka nor Lena is a spy, then the code has not been broken.
+\item[] \myanswer{$\enot (G \eor L) \eif \enot C$}\smallskip
+
 \item The letter is in the German embassy, unless someone has broken the code.
-\item[] \myanswer{$(L \eor C)$}
+\item[] \myanswer{$(E \eor C)$}\smallskip
+
+\noindent\begin{minipage}{0.88\textwidth}
 \item Either the code has been broken or it has not, but the letter is in German embassy regardless.
-\item[] \myanswer{$((C \eor \enot C) \eand L)$}
+\item[] \myanswer{$((C \eor \enot C) \eand E)$}\medskip
+\end{minipage}
+
 \item Either Gorka or Lena is a spy, but not both.
 \item[] \myanswer{$((G \eor L) \eand \enot (G \eand L))$}
 \end{earg}
 
-
-
+\begin{comment}
 \problempart
 For each argument, write a symbolization key and symbolize all of the sentences of the argument in TFL.
 \begin{earg}
@@ -790,7 +807,7 @@ For each argument, write a symbolization key and symbolize all of the sentences 
 \end{ekey}}
 \item[] \myanswer{$(Z \eif (C \eand \enot N)), (\enot Z \eif (N \eand \enot C)) \proves ((N \eor C) \eand \enot (N \eand C))$.}
 \end{earg}
-
+\end{comment}
 
 %\problempart
 %We symbolized an \emph{exclusive or} using `$\eor$', `$\eand$', and `$\enot$'. How could you symbolize an \emph{exclusive or} using only two connectives? Is there any way to symbolize an \emph{exclusive or} using only one connective?

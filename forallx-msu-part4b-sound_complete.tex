@@ -125,7 +125,7 @@ Valid 				& proof or a truth table 							& truth table \\
 \item $\enot L,  K \eif \enot L \proves \enot K$
 \item $L, K \eif \enot L \proves \enot K$ 
 
-\item $\proves M \eif [((P \eand Q) \eor D) \eif M]$
+\item $\proves M \eif [((P \eand Q) \eor S) \eif M]$
 \item $\proves M \eif (M \eif P)$
 \end{earg}
 
@@ -174,8 +174,24 @@ F& F& 	 \TTbf{T}&   F& F& F&\xm&      F& \TTbf{F}& F\\
 
 
 \item $\enot(M \eor P) \proves P \eif M$ is valid.
+\begin{proof}
+\hypo{p1}{\enot(M \eor P)} \pr{}
+\open
+	\hypo{as}{P} \as{}
+	\open
+		\hypo{as2}{\enot M} \as{}
+		\have{mvp}{M \eor P} \oi{as}
+		\have{nmvp}{\enot(M \eor P)} \reit{p1}
+		\close
+	\have{nm}{M} \ne{as2-nmvp}
+    	\close
+\have{con}{Q \eif \enot M} \ci{as-nm}
+\end{proof}
+\medskip
 
-\item $\enot(M \eor (P \eor Q)) \proves \enot{Q}$ is valid.
+
+\item $\enot(M \eor (P \eor Q)) \proves \enot{Q}$ is valid.\smallskip
+
 \item $\enot(M \eand (P \eor Q)) \proves \enot{Q}$ is invalid. 
 
 \begin{center}
@@ -192,12 +208,14 @@ F& F& T&  \TTbf{T}&   F& F&   F& T& T& \xm &    \TTbf{F}& T\\
 F& F& F&  \TTbf{T}&   F& F&   F& F& F& \cm  &   \TTbf{T}& F\\ 
 \end{tabular}
 \end{center}
+\medskip
 
-\item $(\enot R \eiff R) \eor R \proves R$ is valid.
-\item $F \eand (K \eand R) \proves F \eiff (K \eiff R)$ is valid.
+\item $(\enot R \eiff R) \eor R \proves R$ is valid.\smallskip
 
+\item $F \eand (K \eand R) \proves F \eiff (K \eiff R)$ is valid.\smallskip
+
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\enot L,  K \eif \enot L \proves \enot K$ is invalid. 
-
 \begin{center}
 \begin{tabular}{d d | f e    j e e e   j 	 j e}
 $K$& $L$&  $\enot$& $L$,& ($K$& $\eif$& $\enot$& $L$)& \proves&  $\enot$& $K$\\ 
@@ -208,10 +226,25 @@ F& T&  \TTbf{F}& T&    F& \TTbf{T}& F& T&\cm&    \TTbf{T}& F\\
 F& F&  \TTbf{T}& F&    F& \TTbf{T}& T& F&\cm&    \TTbf{T}& F\\
 \end{tabular}
 \end{center} 
+\medskip
+\end{minipage}
 
-\item $L, K \eif \enot L \proves \enot K$ is valid. 
+\item $L, K \eif \enot L \proves \enot K$ is valid.\smallskip 
 
-\item $\proves M \eif ([(P \eand Q) \eor D] \eif M)$ is theorem.
+\item $\proves M \eif ([(P \eand Q) \eor S] \eif M)$ is a theorem.\smallskip
+\begin{proof}
+\open
+	\hypo{as}{M} \as{}
+	\open
+		\hypo{as2}{(P \eand Q) \eor S} \as{}
+		\have{m}{M} \reit{as}
+		\close
+	\have{p}{((P \eand Q) \eor S) \eif M} \ci{as2-m}
+	\close
+\have{con}{M \eif (((P \eand Q) \eor S) \eif M)} \ci{as-p}
+\end{proof}
+\medskip
+
 
 \noindent\begin{minipage}{0.99\textwidth}
 \item $\proves M \eif (M \eif P)$ is not a theorem, and so it is not a tautology.

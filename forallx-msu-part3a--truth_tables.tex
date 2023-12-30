@@ -486,14 +486,15 @@ F& F&  \TTbf{\textcolor{red2}{F}}&   \textcolor{light-gray}{F}& T& \textcolor{li
 \end{tabular}
 \end{center}
 
-%\noindent\begin{minipage}{1.0\textwidth}
+\filbreak
 \item[\ex{9.3.4}] $(P \eand \enot Q) \eor Q$
 %In `$(P \eand \enot Q) \eor Q$', the `$\eor$' is the main logical operator, and so we will fill in the column under it last. First (after we have filled in the columns under the `$P$' and the `$Q$'), we fill in the column under the `$\enot$'.
 \begin{earg}
-\item[] The scope of the `$\eand$':\hspace*{3mm} `$P$' and `$\enot Q$'.  \hfill Order: 2nd.
-\item[] The scope of the $\enot$:\hspace*{5mm} `$Q$'. \hfill Order: 1st.
-\item[] The scope of the $\eor$:\hspace*{5mm} `$(P \eand \enot Q)$' and `$Q$'. \hfill Order: 3rd.
-\end{earg}\smallskip
+\item[] The scope of the `$\eand$':\hspace*{1mm} `$P$' and `$\enot Q$'.\hspace*{9.7mm} Order: 2nd.
+\item[] The scope of the $\enot$:\hspace*{1mm} `$Q$'.\hspace*{26.5mm} Order: 1st.
+\item[] The scope of the $\eor$:\hspace*{1mm} `$(P \eand \enot Q)$' and `$Q$'.\hspace*{2mm} Order: 3rd.
+\end{earg}
+%\smallskip
 
 %\begin{table*}
 %\centering\sffamily\footnotesize
@@ -519,7 +520,7 @@ F& T&      \textcolor{light-gray}{F}& & F& \textcolor{light-gray}{T}&   & \textc
 F& F&      \textcolor{light-gray}{F}& & T& \textcolor{light-gray}{F}&   & \textcolor{light-gray}{F}\\ 
 \end{tabular}
 \end{center}
-%\end{minipage}\vspace{3mm}
+
 Next, while looking at the column under the `$P$' and under the `$\enot$', we fill in the column under the `$\eand$'.
 \begin{center}
 \begin{tabular}{d d | f e e e e e}
@@ -615,13 +616,13 @@ Most often (although not always), the problems in Carnap will be set up so that 
 \problempart
 Make a complete truth table for each sentence.
 \begin{earg}
-\item $P \eif P$ %taut
+%\item $P \eif P$ %taut
 \item $S \eif\enot S$ %contingent
-\item $(P \eiff Q) \eiff \enot(P\eiff \enot Q)$ %tautology
-\item $(P \eif Q) \eor (Q \eif P)$ % taut
+\item $\enot(P\eiff \enot Q)$ %contingent
+%\item $(P \eif Q) \eor (Q \eif P)$ % taut
 \item $(P \eand Q) \eif (Q \eor P)$  %taut
 \item $\enot(P \eor Q) \eiff (\enot P \eand \enot Q)$ %taut
-\item $[(P\eand Q) \eand\enot(P\eand Q)] \eand S$ %contradiction
+%\item $[(P\eand Q) \eand\enot(P\eand Q)] \eand S$ %contradiction
 \item $[(P \eand Q) \eand S] \eif Q$ %taut
 \item $\enot[(S\eor P) \eor Q]$ %contingent
 \end{earg}
@@ -641,27 +642,18 @@ Check whether each of these statements is true.
 Make truth tables for the following sentences, and mark the column that represents the possible truth values for the whole sentence.
 
 \begin{earg}
-
+\item	$(D \eand \enot D) \eif G $
 \item $\enot (N \eiff (P \eif N))$
-
-\item $\enot [(X \eand Y) \eor (X \eor Y)]$
-
-\item $(P \eif Q) \eiff (\enot Q\eiff \enot P)$
+\item	$\enot \enot (\enot P \eand \enot Q)  $
+%\item $\enot [(X \eand Y) \eor (X \eor Y)]$
+%\item $(P \eif Q) \eiff (\enot Q\eiff \enot P)$
 
 \item $[R \eiff (S \eor W)] \eand \enot R$
-
-\item $\enot(S \eand (Q \eand H)) \eiff (S \eor (Q \eor H))$
-
-\item	$(D \eand \enot D) \eif G $
-
-\item	$(\enot P \eor \enot R) \eiff R $
-
-\item	$\enot \enot (\enot P \eand \enot Q)  $
-
-\item 	$[(D \eand H) \eif J] \eif \enot(D \eor H) $
+\item $\enot(P \eand (Q \eand S)) \eiff (P \eor (Q \eor S))$
+%\item	$(\enot P \eor \enot R) \eiff R $
+%\item 	$[(D \eand H) \eif J] \eif \enot(D \eor H) $
 
 \item	$\enot [(D \eiff F) \eiff G] \eif (\enot D \eand F) $
-
 \end{earg}
 
 
@@ -680,6 +672,7 @@ Make truth tables for the following sentences, and mark the column that represen
 
 \begin{earg}
 
+\begin{comment}
 \item $P \eif P$ %taut
 \myanswer{\begin{flushleft}
 \begin{tabular}{d | f e e}
@@ -691,6 +684,7 @@ F & F&\TTbf{T}&F
 \end{flushleft}
 }
 \vspace{1em}
+\end{comment}
 
 \noindent\begin{minipage}{0.99\textwidth}
 \item $S \eif\enot S$ %contingent
@@ -705,20 +699,20 @@ F & F & \TTbf{T}& T& F\\
 \vspace{1em}
 \end{minipage}
 
-\item $(P \eiff Q) \eiff \enot(P\eiff \enot Q)$ %tautology
+\item $\enot(P\eiff \enot Q)$ %tautology
 \myanswer{\begin{flushleft}
-\begin{tabular}{d d | f e e e e e e e e}
-$P$ & $Q$&$(P$&$\eiff$&$Q)$&$\eiff$&$\enot$&$(P$&$\eiff$&$\enot$&$Q)$ \\
+\begin{tabular}{d d | f e e e e}
+$P$ & $Q$ & $\enot$&$(P$&$\eiff$&$\enot$&$Q)$ \\
 \hline
-T & T & T & T & T & \TTbf{T} & T & T & F & F & T\Tstrut\\
-T & F & T & F & F & \TTbf{T} & F & T & T & T & F\\
-F & T & F & F & T & \TTbf{T} & F & F & T & F & T\\
-F & F & F & T & F & \TTbf{T} & T & F & F & T & F
+T & T & \TTbf{T} & T & F & F & T\Tstrut\\
+T & F & \TTbf{F} & T & T & T & F\\
+F & T & \TTbf{F} & F & T & F & T\\
+F & F & \TTbf{T} & F & F & T & F
  \end{tabular}
 \end{flushleft}}
 \vspace{1em}
 
-
+\begin{comment}
 \item $(P \eif Q) \eor (Q \eif P)$ % taut
 \myanswer{
 \begin{flushleft}
@@ -732,6 +726,7 @@ F & F & F & T & F & \TTbf{T} & F & T & F
  \end{tabular}
 \end{flushleft}}
 \vspace{1em}
+\end{comment}
 
 \noindent\begin{minipage}{0.99\textwidth}
 \item $(P \eand Q) \eif (Q \eor P)$  %taut
@@ -749,6 +744,7 @@ F & F & F & F & F & \TTbf{T} & F & F & F
 \vspace{1em}
 \end{minipage}
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $\enot(P \eor Q) \eiff (\enot P \eand \enot Q)$ %taut
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d | f e e e e e e e e e}
@@ -761,7 +757,9 @@ F & F & T & F & F & F & \TTbf{T} & T & F & T & T & F
  \end{tabular}
 \end{flushleft}}
 \vspace{1em}
+\end{minipage}
 
+\begin{comment}
 \item $[(P\eand Q) \eand\enot(P\eand Q)] \eand S$ %contradiction
 \myanswer{\begin{flushleft}
 \begin{tabular}{d d d | f e e e e e e e e e}
@@ -778,6 +776,7 @@ F & F & F & F & F & F & F & T & F & F & F & \TTbf{F} & F
 \end{tabular}
 \end{flushleft}}
 \vspace{1em}
+\end{comment}
 
 \begin{minipage}{10cm}
 \item $[(P \eand Q) \eand S] \eif Q$ %taut
@@ -916,9 +915,30 @@ F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{F} &  F& T & F\\
 \vspace{1em}
 
 \newpage
+%%%%%%%%%%%
+% PART C
+%%%%%%%%%%%
+
 \problempart
 
 \begin{earg}
+
+% MAKE FIRST
+\item	$(D \eand \enot D) \eif G $
+%\vspace{1em}
+\myanswer{
+\begin{flushleft}
+\begin{tabular}{d d | f e e e e e }
+$D$& $G$	&	(D 	&	 \eand 	& 	 \enot	&	 D) 	&	 \eif 	&	 G \\
+ \hline
+T&  T	&	T	&	F		&	F		&	T	&	\TTbf{T}	&	T\Tstrut	\\
+T&  F	&	T	&	F		&	F		&	T	&	\TTbf{T}	&	F	\\
+F&  T	&	F	&	F		&	T		&	F	&	\TTbf{T}	&	T	\\
+F&  F	&	F	&	F		&	T		&	F	&	\TTbf{T}	&	F	\\
+\end{tabular}
+\end{flushleft}
+}
+\vspace{1em}
 
 \item $\enot (N \eiff (P \eif N))$
 \myanswer{
@@ -935,6 +955,24 @@ F & F	& 	\TTbf{T} 		&	F	&	F	&	F	&	T	&	F	\\
 }
 \vspace{1em}
 
+%% MAKE THIRD
+\item	$\enot \enot (\enot P \eand \enot Q)  $
+\myanswer{
+\begin{flushleft}
+\begin{tabular}{d d | f e e e e e e}
+$P$& $Q$	&	\enot		&	 \enot 	&	(\enot 	& 	 P 	& \eand 	& 	\enot 	&	 Q)  \\
+ \hline
+T& T	&	\TTbf{F}		&	T		&	F		&	T	&	F	&	F		&	T\Tstrut	\\
+T& F	&	\TTbf{F}		&	T		&	F		&	T	&	F	&	T		&	F	\\
+F& T	&	\TTbf{F}		&	T		&	T		&	F	&	F	&	F		&	T	\\
+F& F	&	\TTbf{T}		&	F		&	T		&	F	&	T	&	T		&	F	\\
+\end{tabular}
+\end{flushleft}
+}
+\vspace{1em}
+
+
+\begin{comment}
 \item $\enot [(X \eand Y) \eor (X \eor Y)]$
 \myanswer{
 \begin{flushleft}
@@ -949,7 +987,9 @@ F & F	&	\TTbf{T}	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
 \end{flushleft}
 }
 \vspace{1em}
+\end{comment}
 
+\begin{comment}
 \item $(P \eif Q) \eiff (\enot Q\eiff \enot P)$
 \myanswer{
 \begin{flushleft}
@@ -964,6 +1004,7 @@ F & F	&	F	&	T	&	F	&	\TTbf{T}		&	T	 &	F	&	T	&	T		&	F	\\
 \end{flushleft}
 }
 \vspace{1em}
+\end{comment}
 
 \item $[R \eiff (S \eor W)] \eand \enot R$
 \myanswer{
@@ -984,8 +1025,7 @@ F& F&	 F   &	F	&	T	&	F	&	F	&	F	&	\TTbf{T}		&	T		&	F	\\
 }
 \vspace{1em}
 
-\filbreak
-
+\noindent\begin{minipage}{0.90\textwidth}
 \item $\enot(P \eand (Q \eand S)) \eiff (P \eor (Q \eor S))$
 \myanswer{
 \begin{flushleft}
@@ -1003,26 +1043,11 @@ F& F& F	&T	   &	F	&	F   &	F	&	F		&	F	&	\TTbf{F}	&	F	&	F	&	F	&	F	&	F	\\
 \end{tabular}
 \end{flushleft}
 }
-
 \vspace{1em}
-
-\item	$(D \eand \enot D) \eif G $
-%\vspace{1em}
-\myanswer{
-\begin{flushleft}
-\begin{tabular}{d d | f e e e e e }
-$D$& $G$	&	(D 	&	 \eand 	& 	 \enot	&	 D) 	&	 \eif 	&	 G \\
- \hline
-T&  T	&	T	&	F		&	F		&	T	&	\TTbf{T}	&	T\Tstrut	\\
-T&  F	&	T	&	F		&	F		&	T	&	\TTbf{T}	&	F	\\
-F&  T	&	F	&	F		&	T		&	F	&	\TTbf{T}	&	T	\\
-F&  F	&	F	&	F		&	T		&	F	&	\TTbf{T}	&	F	\\
-\end{tabular}
-\end{flushleft}
-}
-\vspace{1em}
+\end{minipage}
 
 
+\begin{comment}
 \item	$(\enot P \eor \enot R) \eiff R $
 \myanswer{
 \begin{flushleft}
@@ -1037,25 +1062,10 @@ F& F	&	T		&	F	&	T	&	T		&	F	&	\TTbf{F}	&	F	\\
 \end{flushleft}
 }
 \vspace{1em}
+\end{comment}
 
 
-\item	$\enot \enot (\enot P \eand \enot Q)  $
-\myanswer{
-\begin{flushleft}
-\begin{tabular}{d d | f e e e e e e}
-$P$& $Q$	&	\enot		&	 \enot 	&	(\enot 	& 	 P 	& \eand 	& 	\enot 	&	 Q)  \\
- \hline
-T& T	&	\TTbf{F}		&	T		&	F		&	T	&	F	&	F		&	T\Tstrut	\\
-T& F	&	\TTbf{F}		&	T		&	F		&	T	&	F	&	T		&	F	\\
-F& T	&	\TTbf{F}		&	T		&	T		&	F	&	F	&	F		&	T	\\
-F& F	&	\TTbf{T}		&	F		&	T		&	F	&	T	&	T		&	F	\\
-\end{tabular}
-\end{flushleft}
-}
-\vspace{1em}
-
-\filbreak
-
+\begin{comment}
 \item 	$[(D \eand H) \eif J] \eif \enot(D \eor H) $
 \myanswer{
 \begin{flushleft}
@@ -1072,10 +1082,9 @@ F&  F&  T	&	F	&	F		&	F	&	T	&	T	&	\TTbf{T}	&	T		&	F	&	F		&F	\\
 F&  F&  F	&	F	&	F		&	F	&	T	&	F	&	\TTbf{T}	&	T		&	F	&	F		&F	\\
 \end{tabular}
 \end{flushleft}
-}
-	
+}	
 \vspace{1em}
-
+\end{comment}
 
 \item	$\enot [(D \eiff F) \eiff G] \eif (\enot D \eand F) $
 \myanswer{
@@ -1101,8 +1110,8 @@ F&  F&  F	&	T		&	F	&	T	&	F	&	F	&	F	&	\TTbf{F}	&	T		&	F	&	F	&F	\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{SCfigure}[1.9] %The [#] adjusts the width of the caption.
-\includegraphics[width=.25\textwidth]{i_falsed-2.jpg}
-\caption{Mistakes happen. Try to minimize them by not rushing and always consulting the characteristic truth tables in chapter \ref{s:CharacteristicTruthTables}. \tiny{Peanuts $\textcopyright$ 1969}}
+\includegraphics[width=.30\textwidth]{i_falsed-2.jpg}
+\caption{Mistakes happen. Try to minimize them by not rushing and always consulting the characteristic truth tables in chapter \ref{s:CharacteristicTruthTables}. \tiny{Peanuts~$\textcopyright$~1969}}
 \label{fig:falsed}
 \end{SCfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1372,15 +1381,14 @@ $P$&$Q$&\enot&$P$&\eand&$P$&\enot&$Q$&\eand&&$Q$\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
 
 %\practiceproblems
 \section{Practice exercises}
 \setcounter{ProbPart}{0}
 
 \begin{small}
-\problempart
-Revisit your answers to the exercises in part A of chapter \ref{s:CompleteTruthTables}, and determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.\\
+%\problempart
+%Revisit your answers to the exercises in part A of chapter \ref{s:CompleteTruthTables}, and determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.\\
 
 
 \problempart Create a truth table for each sentence, and then determine whether the sentence is a \textbf{tautology}, a \textbf{contradiction}, or is \textbf{contingent}.
@@ -1391,6 +1399,7 @@ Revisit your answers to the exercises in part A of chapter \ref{s:CompleteTruthT
 \item $(P \eand Q) \eor (Q\eand P)$\vspace{.5ex} %contingent
 \item $\enot[P \eif (Q \eif P)]$\vspace{.5ex} %contra
 \item $P \eiff [P \eif (Q \eand \enot Q)]$ \vspace{.5ex}%contra
+\item $(P \eif Q) \eor (Q \eif P)$ % taut
 \item $[(P \eand Q) \eiff Q] \eif (P \eif Q)$ \vspace{.5ex}% contingent. 
 \end{earg}
 
@@ -1399,42 +1408,40 @@ Revisit your answers to the exercises in part A of chapter \ref{s:CompleteTruthT
 \label{pr.TT.consistent}
 For each set of sentences, create a truth table and then determine whether the sentences are \textbf{jointly consistent} or \textbf{jointly inconsistent}.
 \begin{earg}
-\item $P\eif P$, $\enot P \eif \enot P$, $P\eand P$, $P\eor P$ %consistent
-\item $P\eor Q$, $P\eif S$, $Q\eif S$ %consistent
-\item $Q\eand(S\eor P)$, $P\eif Q$, $\enot(Q\eor S)$  %inconsistent
-\item $P\eiff(Q\eor S)$, $S\eif \enot P$, $P\eif \enot Q$ %consistent
+%\item $P\eif P$, $\enot P \eif \enot P$, $P\eand P$, $P\eor P$ %consistent
+%\item $P\eor Q$, $P\eif S$, $Q\eif S$ %consistent
+%\item $Q\eand(S\eor P)$, $P\eif Q$, $\enot(Q\eor S)$  %inconsistent
+%\item $P\eiff(Q\eor S)$, $S\eif \enot P$, $P\eif \enot Q$ %consistent
 
 \item $P \eand \enot Q$, $\enot(P \eif Q)$, $Q \eif P$\vspace{.5ex} %Consistent
 \item $P \eor Q$, $P \eif \enot P$, $Q \eif \enot Q$ \vspace{.5ex}%inconsistent. 
-\item $\enot(\enot P \eor Q) $, $P \eif \enot S$, $P \eif (Q \eif S)$\vspace{.5ex} %Inconsistent
+%\item $\enot(\enot P \eor Q) $, $P \eif \enot S$, $P \eif (Q \eif S)$\vspace{.5ex} %Inconsistent
 \item $P \eif Q$, $P \eand \enot Q$\vspace{.5ex} %Inconsistent
 \item $P \eif (Q \eif S)$, $(P \eif Q) \eif S$, $P \eif S$\vspace{.5ex} % consistent. 
 
-\item $\enot Q$, $P \eif Q$, $P$ \vspace{.5ex}%inconsistent.
+%\item $\enot Q$, $P \eif Q$, $P$ \vspace{.5ex}%inconsistent.
 \item $\enot(P \eor Q)$, $P \eiff Q$, $Q \eif P$\vspace{.5ex} %Consistent
 \item $P \eor Q$, $\enot Q$, $\enot Q \eif \enot P$\vspace{.5ex} %Inconsistent
-\item $P \eiff Q$, $\enot Q \eor \enot P$, $P \eif Q$\vspace{.5ex} %consistent. 
-\item $(P \eor Q) \eor S$, $\enot P \eor \enot Q$, $\enot S \eor \enot Q$\vspace{.5ex} %consistent
+%\item $P \eiff Q$, $\enot Q \eor \enot P$, $P \eif Q$\vspace{.5ex} %consistent. 
+%\item $(P \eor Q) \eor S$, $\enot P \eor \enot Q$, $\enot S \eor \enot Q$\vspace{.5ex} %consistent
 \end{earg}
 
-\newpage
 
 \problempart
 \label{pr.TT.equiv}
 For each pair of sentences, create a truth table and then determine whether the sentences are \textbf{equivalent} or are not. 
 \begin{earg}
-\item $P$ and $\enot P$
+%\item $P$ and $\enot P$
 \item $P \eand \enot P$ and $\enot Q \eiff Q$
 \item $[(P \eor Q) \eor S]$ and $[P \eor (Q \eor S)]$
 \item $P \eor (Q \eand S)$ and $(P \eor Q) \eand (P \eor S)$
-\item $[P \eand (P \eor Q)] \eif Q$ and $P \eif Q$
+%\item $[P \eand (P \eor Q)] \eif Q$ and $P \eif Q$
 
-
-\item $P\eif P$ and $P \eiff P$
+%\item $P\eif P$ and $P \eiff P$
 \item $\enot(P \eif Q)$ and $\enot P \eif \enot Q$
 \item $P \eor Q$ and $\enot P \eif Q$
 \item$(P \eif Q) \eif S$ and $P \eif (Q \eif S)$
-\item $P \eiff (Q \eiff S)$ and $P \eand (Q \eand S)$
+%\item $P \eiff (Q \eiff S)$ and $P \eand (Q \eand S)$
 \end{earg}
 
 
@@ -1465,25 +1472,27 @@ Is this principle correct? Explain your answer.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+
 
 \section{Answers}
 \setcounter{ProbPart}{0}
 
+\begin{comment}
 \problempart
 From chapter \ref{s:CompleteTruthTables}
 \begin{earg}
-\item $P \eif P$ \hfill \myanswer{tautology}
+%\item $P \eif P$ \hfill \myanswer{tautology}
 \item $S \eif\enot S$ \hfill \myanswer{contingent}
-\item $(P \eiff Q) \eiff \enot(P\eiff \enot Q)$  \hfill \myanswer{tautology}
-\item $(P \eif Q) \eor (Q \eif P)$  \hfill \myanswer{tautology}
+\item $\enot(P\eiff \enot Q)$  \hfill \myanswer{contingent}
+%\item $(P \eif Q) \eor (Q \eif P)$  \hfill \myanswer{tautology}
 \item $(P \eand Q) \eif (Q \eor P)$  \hfill \myanswer{tautology}
 \item $\enot(P \eor Q) \eiff (\enot P \eand \enot Q)$ \hfill \myanswer{tautology}
-\item $[(P\eand Q) \eand\enot(P\eand Q)] \eand S$  \hfill \myanswer{contradiction}
+%\item $[(P\eand Q) \eand\enot(P\eand Q)] \eand S$  \hfill \myanswer{contradiction}
 \item $[(P \eand Q) \eand S] \eif Q$  \hfill \myanswer{tautology}
 \item $\enot[(S\eor P) \eor Q]$  \hfill \myanswer{contingent}
 \end{earg}
 \bigskip
+\end{comment}
 
 \problempart Use a truth table to determine whether each sentence is a tautology, a contradiction, or contingent.
 \begin{earg}
@@ -1550,6 +1559,21 @@ F & F &    F & \TTbf{F} &    F & T &   F & F & T & F
 \end{flushleft}}
 \medskip
 
+\item $(P \eif Q) \eor (Q \eif P)$ is a tautology.
+{
+\begin{flushleft}
+\begin{tabular}{d d | f e e e e e e}
+$P$ & $Q$&$(P$&$\eif$&$Q)$&$\eor$&$(Q$&$\eif$&$P)$ \\
+\hline
+T & T & T & T & T & \TTbf{T} & T & T & T\Tstrut\\
+T & F & T & F & F & \TTbf{T} & F & T & T\\
+F & T & F & T & T & \TTbf{T} & T & F & F \\
+F & F & F & T & F & \TTbf{T} & F & T & F
+ \end{tabular}
+\end{flushleft}}
+\medskip
+
+
 \item $[(P \eand Q) \eiff Q] \eif (P \eif Q)$ is contingent.
 {\begin{flushleft}
 \begin{tabular}{d d | f e e e e e e e e}
@@ -1566,12 +1590,20 @@ F & F &        F & F & F &   T &  F &   \TTbf{T} &   F & T & F
 \end{earg}
 
 
+%%%%%%%%
+%% BEGIN PART B
+%%%%%%%%
+
+\filbreak
+
 \problempart
 \label{pr.TT.consistent}
 
 \noindent Use a truth table to determine whether the sentences in each set are \textbf{jointly consistent} or \textbf{jointly inconsistent}.
 
 \begin{earg}
+
+\begin{comment}
 \item $P\eif P$, $\enot P \eif \enot P$, $P\eand P$, $P\eor P$ \\
 These sentences are jointly consistent. (See line 1.)
 \myanswer{\begin{flushleft}
@@ -1583,8 +1615,9 @@ F & F & \TTbf{T} & F& T & F & \TTbf{T} & T & F & F & \TTbf{F} & F & F & \TTbf{F}
 \end{tabular}
 \end{flushleft}}
 \medskip
+\end{comment}
 
-
+\begin{comment}
 \item $P\eor Q$, $P\eif S$, $Q\eif S$ \\
 These sentences are jointly consistent. (See line 1.)
 \myanswer{\begin{flushleft}
@@ -1601,7 +1634,9 @@ F & F & T & F & \TTbf{F} & F & F & \TTbf{T} & T & F & \TTbf{T} & T\\
 F & F & F & F & \TTbf{F} & F & F & \TTbf{T} & F & F & \TTbf{T} & F\\
 \end{tabular}
 \end{flushleft}}\medskip
+\end{comment}
 
+\begin{comment}
 \noindent\begin{minipage}{0.99\textwidth}
 \item $Q\eand(S\eor P)$, $P\eif Q$, $\enot(Q\eor S)$ \\
 These sentences are jointly inconsistent.
@@ -1620,7 +1655,9 @@ F & F & F & F & \TTbf{F} & F & F & F & F & \TTbf{T} & F & \TTbf{T} & F & F & F\\
 \end{tabular}
 \end{flushleft}}\medskip
 \end{minipage}
+\end{comment}
 
+\begin{comment}
 \begin{minipage}{10cm}
 \item $P\eiff(Q\eor S)$, $S\eif \enot P$, $P\eif \enot Q$  \\
 These sentences are jointly consistent. (See line 8.)
@@ -1639,6 +1676,7 @@ F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T & F & F & \TTbf{T} & T &
 \end{tabular}
 \end{flushleft}}\medskip
 \end{minipage}
+\end{comment}
 
 \item $P \eand \enot Q$, $\enot(P \eif Q)$, $Q \eif P$\\
 These sentences are jointly consistent. (See line 2.)
@@ -1668,6 +1706,7 @@ F &  F  &	 F	& 	 F	 & 	 F	  	 	 & 	 F	 & 	 T	 & 	 T	 & 	 F	 & 	 	  	 F	 & 	 T	 &
 \end{tabular}
 \end{flushleft}}\medskip
 
+\begin{comment}
 \begin{minipage}{10cm}
 \item $\enot(\enot P \eor Q) $, $P \eif \enot S$, $P \eif (Q \eif S)$\\
 These sentences are jointly consistent.
@@ -1686,6 +1725,7 @@ F&	F&	F&	   	 F	& 	 T	& 	F & T	 & 	F   & 	F & T	 & 	T & F	  	 & F	 & T	 & F	 & T
 \end{tabular}
 \end{flushleft}\medskip
 \end{minipage}
+\end{comment}
 
 \item $P \eif Q$, $P \eand \enot Q$ \\
 These sentences are jointly inconsistent.
@@ -1717,6 +1757,7 @@ F & F & F &    F & T &   F & T & F &          F & T & F  &  F & F  &     F & T &
 \end{tabular}
 \end{flushleft}\medskip
 
+\begin{comment}
 \item $\enot Q$, $P \eif Q$, $P$\\
 These sentences are jointly inconsistent.
 \begin{flushleft}
@@ -1729,6 +1770,7 @@ F & T &  F & T &    F & T & T &   F\\
 F & F &  T & F &    F & T & F &   F
 \end{tabular}
 \end{flushleft}\medskip
+\end{comment}
 
 \item $\enot(P \eor Q)$, $P \eiff Q$, $Q \eif P$\\
 These sentences are jointly consistent.
@@ -1756,6 +1798,7 @@ F & F &    F & F & F &   T & F &    T & F & T & T & F
 \end{tabular}
 \end{flushleft}\medskip
 
+\begin{comment}
 \item $P \eiff Q$, $\enot Q \eor \enot P$, $P \eif Q$\\
 These sentences are jointly consistent. 
 \begin{flushleft}
@@ -1768,7 +1811,9 @@ F & T &    F & F &  T &     F & T & T & T & F &      F & T & T\\
 F & F &    F & T &  F &     T & F & T & T & F &      F & T & F
 \end{tabular}
 \end{flushleft}\medskip
+\end{comment}
 
+\begin{comment}
 \item $(P \eor Q) \eor S$, $\enot P \eor \enot Q$, $\enot S \eor \enot Q$\\
 These sentences are jointly consistent.
 \begin{flushleft}
@@ -1785,16 +1830,22 @@ F & F & T &      F & F & F &   T & T &      T  &F & T & T & F &      F & T & T &
 F & F & F &      F & F & F &   F & F &     T & F & T & T & F &      T & F & T & T & F 
 \end{tabular}
 \end{flushleft}\medskip
+\end{comment}
 
 \end{earg}
 
-\newpage
+
+%%%%%%%%%%%
+%% PART C
+%%%%%%%%%%%
 
 \problempart
 \label{pr.TT.equiv}
 Use a truth table to determine whether the sentences in each set are \textbf{equivalent} or not.
 
 \begin{earg}
+
+\begin{comment}
 \item $P$ and $\enot P$ are not equivalent.
 \begin{flushleft}
 \begin{tabular}{d | g  | f e}
@@ -1804,6 +1855,7 @@ T &  \TTbf{T} &  \TTbf{F} & T\Tstrut\\
 F &  \TTbf{F} &  \TTbf{T} & F 
 \end{tabular}
 \end{flushleft}\medskip
+\end{comment}
 
 \item $P \eand \enot P$ and $\enot Q \eiff Q$ are equivalent.
 \begin{flushleft}
@@ -1835,6 +1887,7 @@ F & F & F &      F & F & F &   \TTbf{F} & F &     F & \TTbf{F} &   F & F & F
 \end{flushleft}\medskip
 \end{minipage}
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $P \eor (Q \eand S)$ and $(P \eor Q) \eand (P \eor S)$ are equivalent.
 \begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e e e}
@@ -1850,7 +1903,9 @@ F & F & T &    F & \TTbf{F} &   F & F & T  &        F & F & F &   \TTbf{F} &   F
 F & F & F &    F & \TTbf{F} &   F & F & F  &        F & F & F &   \TTbf{F}  &  F & F & F 
 \end{tabular}
 \end{flushleft}\medskip
+\end{minipage}
 
+\begin{comment}
 \noindent\begin{minipage}{0.99\textwidth}
 \item $[P \eand (P \eor Q)] \eif Q$ and $P \eif Q$ are equivalent
 \begin{flushleft}
@@ -1864,7 +1919,9 @@ F & F &      F & F &   F & F & F &     \TTbf{T} & F &      F & \TTbf{T} & F
 \end{tabular}
 \end{flushleft}\medskip
 \end{minipage}
+\end{comment}
 
+\begin{comment}
 \item $P\eif P$ and $P \eiff P$ are equivalent.
 \begin{flushleft}
 \begin{tabular}{d | f e h | f e e}
@@ -1874,7 +1931,7 @@ T &    T & T & T &      T & T &  T\Tstrut\\
 F &    F & T & F &      F & T &  F 
 \end{tabular}
 \end{flushleft}\medskip
-
+\end{comment}
 
 \item $\enot(P \eif Q)$ and $\enot P \eif \enot Q$ are not equivalent.
 \begin{flushleft}
@@ -1918,6 +1975,7 @@ F & F & F &      F & T & F &   F & F &      F & T &   F & T & F
 \end{tabular}
 \end{flushleft}\medskip
 
+\begin{comment}
 \begin{minipage}{10cm}
 \item $P \eiff (Q \eiff S)$ and $P \eand (Q \eand S)$ are not equivalent.
 \begin{flushleft}
@@ -1935,10 +1993,11 @@ F & F & F &    F & F &    F & T &  F &        F & F &   F & F & F
 \end{tabular}
 \end{flushleft}\medskip
 \end{minipage}
+\end{comment}
 
 \end{earg}
 
-
+\filbreak
 \problempart
 \label{pr.TT.concepts}
 \begin{earg}
