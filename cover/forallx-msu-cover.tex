@@ -1,7 +1,9 @@
 
 %% USE LUALATEX!!!
 
-\documentclass[bleedwidth=6.35mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=12.53mm]{bookcover}
+%\documentclass[bleedwidth=6.35mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=12.53mm]{bookcover} %Amazon
+
+\documentclass[bleedwidth=3.17mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=14.05mm]{bookcover} %Lulu
 
 % for Amazon
 % page-turn direction: left to right
@@ -90,7 +92,8 @@
 \bookcovercomponent{normal}{back}[,1cm,,]{
 \vfill
 \centering\textcolor{forallx-orange}{
-\savebox0{\EANBarcode[module_height=12mm]{ISBN 9798865977643}}
+%\savebox0{\EANBarcode[module_height=12mm]{ISBN 9798865977643}} %Amazon
+\savebox0{\EANBarcode[module_height=12mm]{ISBN 9781716848377}} %Lulu
 \colorbox{white}{%
 \usebox0
 \raisebox{\depth}{\qrcode[height=\ht0]{https://loighic.net}}
