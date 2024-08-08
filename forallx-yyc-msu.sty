@@ -62,7 +62,7 @@
 
 %% for math mode
 \usepackage{unicode-math}
-\setmathfont{Asana Math} % for math symbols, can be any other OpenType math font
+\setmathfont{Asana-Math} % for math symbols, can be any other OpenType math font: Asana-Math
 \setmathfont[range=\mathup]{YaleNew-Roman.otf}
 \setmathfont[range=\mathbfup]{YaleNew-Bold.otf}
 %\setmathfont[range=\mathbfit]{Minion Pro Bold Italic}
@@ -79,13 +79,6 @@
 
 \usepackage[hang,flushmargin]{footmisc}   	% To prevent the first line of footnotes from being indented.
 
-
-% This def is for the \Lua\LaTeX symbol. 
-\def\logosmaller#1{%
-  \hbox{\sbox\z@ L%
-    \vbox to\ht\z@{\hbox{\check@mathfonts
-      \fontsize\sf@size\z@
-      \math@fontsfalse\selectfont #1}\vss}}}
 
 
 %%%%%%%%%%%%%%%  TABLES
@@ -319,8 +312,15 @@
 % equivalent to commenting something out, but usable on multiple lines
 \providecommand{\nix}[1]{}
 
-\newcommand*{\script}[1]{\ensuremath{\mathcal{#1}}}
-\renewcommand*{\meta}[1]{\ensuremath{\mathsf{#1}}} % TB: used for all metavariables  {\ensuremath{\mathcal{#1}}}, \mathsf,  
+%%% META VARIABLES
+%% The Euler script font needs the first package, and the bold san serif script needs the second.
+%\usepackage[mathscr]{euscript}
+\usepackage[scaled=1.15]{urwchancal}
+\usepackage{bm}
+%\renewcommand*{\meta}[1]{\ensuremath{\mathcal{#1}}} % for meta variables in either script (depending on which package is used) 
+\renewcommand*{\meta}[1]{\ensuremath{\bm{\mathsf{#1}}}} % for bold, upright, san serif meta variables
+
+
 % create a blank
 \newcommand*{\blank}{\underline{\hspace*{2.5em}}}
 \newcommand*{\gap}[1]{\blank$_{#1}$} % TB: used for keys, to avoid use/mention confusion

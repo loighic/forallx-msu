@@ -377,12 +377,7 @@ $$\forall x \forall y \forall z((Lxy \eand Lyz) \eif Lxz)$$
 %\vspace{-2mm}
 In English, this is read, `for all \textit{x}, for all \textit{y}, and for all \textit{z}, if \textit{x} is larger than \textit{y} and \textit{y} is larger than \textit{z}, then \textit{x} is larger than \textit{z}'. 
 (Not all two-place predicates are transitive, which is why we need this premise. You can see this by thinking about a different two-place that `$L$' might represent: `\rule{1cm}{0.15mm} loves \rule{1cm}{0.15mm}'.)
- 
-%This is the argument:
-%\medskip
 
-%$\forall x \forall y \forall z([L(x,y) \eand L(y,z)] \eif L(x,z))\textcolor{magenta}{,}~ L(a,b)\textcolor{magenta}{,}~ L(b,c) \proves L(a,c)$
-%\medskip
 
 \smallskip
 In the proof, we use the universal elimination rule three times to remove each of the universal quantifiers. Then, it is a simple matter of using the conjunction introduction and conditional elimination rules to get the conclusion `$a$ is larger than $c$'.
