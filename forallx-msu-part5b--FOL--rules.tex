@@ -9,16 +9,29 @@ We retain the TFL rules that are given in chapter \ref{s:BasicTFL}, and now we a
 
 \section{Universal elimination}
 
-If we know that everyone in some domain likes chocolate, then we know that a specific individual in this domain---let's say, Carol---likes chocolate. The universal elimination rule captures this reasoning process. 
+If we know that everyone in a domain likes chocolate, then we know that a specific individual in this domain---let's say, Carol---likes chocolate. The universal elimination rule captures this reasoning process. 
 
 \begin{factboxy}{universal elimination rule}
 \begin{proof}
-	\have[m]{a}{\forall \meta{x Ax}}
-	\have[\ ]{c}{\meta{Ac}} \Ae{a}
+	\have[m]{a}{\forall \meta{x Dx}}
+	\have[\ ]{c}{\meta{Dc}} \Ae{a}
 \end{proof}
 
-\small{If we have $\forall \meta{x Ax}$ on a line, then we can put $\meta{Ac}$ on a new line.\\ 
-Any predicate can  be used in the place of `\meta{A}', any variable can occur in place of `\meta{x}', and any name can be used in place of `\meta{c}'.}
+\small{If we have $\forall \meta{x Dx}$ on a line, then we can put $\meta{Dc}$ on a new line.
+\smallskip
+
+Any predicate can  be used in the place of `\meta{D}', any variable can occur in place of `\meta{x}', and any name can be used in place of `\meta{c}'.
+\smallskip
+
+Similarly:}
+
+\begin{proof}
+	\have[m]{a}{\forall \meta{x (Fx \eif Gx)}}
+	\have[\ ]{c}{\meta{Fc \eif Gc}} \Ae{a}
+\end{proof}
+
+\small{The same name must be used to replace every instance of the variable.}
+
 \end{factboxy}
 
 
@@ -28,11 +41,22 @@ If we know, for instance, that David is on the train, then we know that someone 
 
 \begin{factboxy}{existential introduction rule}
 \begin{proof}
-	\have[m]{a}{\meta{Ac}}
-	\have[\ ]{c}{\exists \meta{x Ax}} \Ei{a}
+	\have[m]{a}{\meta{Dc}}
+	\have[\ ]{c}{\exists \meta{x Dx}} \Ei{a}
 \end{proof}
 
-\small{If we have $\meta{Ac}$ on a line, then we can put $\exists \meta{x Ax}$ on a new line.}
+\small{If we have $\meta{Dc}$ on a line, then we can put $\exists \meta{x Dx}$ on a new line.
+\smallskip
+
+Similarly:}
+
+\begin{proof}
+	\have[m]{a}{\meta{Fc \eif Gc}}
+	\have[\ ]{c}{\exists \meta{x (Fx \eif Gx)}} \Ei{a}
+\end{proof}
+
+\small{The same variable must be used to replace every instance of the name.}
+
 \end{factboxy}
 
 The universal elimination and existential introduction rules are straightforward. It's obvious that if \textit{everyone} has some property, then any particular individual (in that group) has it. It's equally clear that if a particular individual has a property, then \textit{someone} has it.
@@ -72,14 +96,23 @@ This brings us to the following idea. We can use the \define{universal introduct
 
 \begin{factboxy}{universal introduction rule}
 \begin{proof}
-	\have[m]{a}{\meta{Ac}}
-	\have[\ ]{c}{\forall \meta{xAx}} \Ai{a}
+	\have[m]{a}{\meta{Dc}}
+	\have[\ ]{c}{\forall \meta{xDx}} \Ai{a}
 \end{proof}
 
-\small{If we have $\meta{Ac}$ on a line, then we can put $\forall \meta{xAx}$ on a new line provided these conditions are met:\\
+\small{If we have $\meta{Dc}$ on a line, then we can put $\forall \meta{xDx}$ on a new line provided these conditions are met:\\
 1. $\meta{c}$ must not occur in any premise or undischarged assumption.\\
-2. When $\meta{A}$ is a multi-place predicate, $\meta{x}$ must not occur in $\meta{A(\ldots c\ldots)}$.
-}
+2. When $\meta{D}$ is a multi-place predicate, $\meta{x}$ must not occur in $\meta{D(\ldots c\ldots)}$.
+\smallskip
+
+Similarly:}
+
+\begin{proof}
+	\have[m]{a}{\meta{Fc \eif Gc}}
+	\have[\ ]{c}{\forall \meta{x (Fx \eif Gx)}} \Ai{a}
+\end{proof}
+
+\small{The same variable must be used to replace every instance of the name.}
 \end{factboxy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,9 +175,9 @@ So far, so good. Because `$e$' was just a randomly chosen name and we do know if
 
 \begin{factboxy}{existential elimination rule}
 \begin{proof}
-	\have[m]{a}{\exists \meta{x}\meta{Ax}}
+	\have[m]{a}{\exists \meta{x}\meta{Dx}}
 	\open
-		\hypo[i]{b}{\meta{Ac}} \as{}
+		\hypo[i]{b}{\meta{Dc}} \as{}
 		%\have[ \ ]{es}{\vdots}
 		\have[j]{c}{\meta{B}}
 	\close
@@ -162,7 +195,7 @@ Given an existentially quantified sentence as a premise, assume an instance of t
 %One more thing to note about this rule is that the only time when we are really eliminating an existential quantifier is when we make our assumption. And that sentence, $\meta{Ac}$, cannot appear outside of the subproof. This elimination step is still significant, however, when it provides a sentence that is needed to use the rules that were introduced in chapter \ref{s:BasicTFL}.
 
 \begin{notebox}
-The constraint that we have on the existential elimination rule is more restrictive than strictly necessary. The name $\meta{c}$ that we assumed can occur outside the subproof, as long as it doesn't occur in $\exists \meta{x}\meta{Ax}$ (when $\meta{A}$ it is a multi-place predicate), in an earlier undischarged assumption, or in $\meta{B}$.
+The constraint that we have on the existential elimination rule is more restrictive than strictly necessary. The name $\meta{c}$ that we assumed can occur outside the subproof, as long as it doesn't occur in $\exists \meta{x}\meta{Dx}$ (when $\meta{D}$ it is a multi-place predicate), in an earlier undischarged assumption, or in $\meta{B}$.
 \end{notebox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -185,11 +218,11 @@ When thinking about identities, however, the more interesting assertion is one l
 \begin{factboxy}{identity elimination rule}
 \begin{proof}
 	\have[m]{ab}{\meta{a = b}}
-	\have[n]{a}{\meta{Aa}}
-	\have[\ ]{b}{\meta{Ab}} \ie{ab,a}
+	\have[n]{a}{\meta{Da}}
+	\have[\ ]{b}{\meta{Db}} \ie{ab,a}
 \end{proof}
 
-\small{If you have \meta{a = b} on one line and \meta{Aa} on another line, you can put \meta{Ab} on a new line.}
+\small{If you have \meta{a = b} on one line and \meta{Da} on another line, you can put \meta{Db} on a new line.}
 \end{factboxy}
 
 
@@ -314,13 +347,13 @@ Here are some examples of proofs that use the rules introduced in this chapter, 
 \bigskip
 
 \noindent\begin{minipage}{0.99\textwidth}
-\item $a=b, M(b,a) \proves \exists xM(x,x)$
+\item $a=b, Mba \proves \exists xMxx$
 
 \begin{proof}
 	\hypo{p1}{a=b} \pr{}
-	\hypo{p2}{M(b,a)} \pr{}
-	\have{m}{M(a,a)} \ie{p1,p2}
-	\have{c}{\exists xM(x,x)} \Ei{m}
+	\hypo{p2}{Mba} \pr{}
+	\have{m}{Maa} \ie{p1,p2}
+	\have{c}{\exists xMxx} \Ei{m}
 \end{proof}
 \smallskip
 \end{minipage}
