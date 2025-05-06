@@ -30,7 +30,7 @@ Similarly:}
 	\have[\ ]{c}{\meta{Fc \eif Gc}} \Ae{a}
 \end{proof}
 
-\small{The same name must be used to replace every instance of the variable.}
+\small{If a sentence of FOL contains multiple instances of the same variable, the same name must be used to replace every instance of the variable.}
 
 \end{factboxy}
 
@@ -48,23 +48,82 @@ If we know, for instance, that David is on the train, then we know that someone 
 \small{If we have $\meta{Dc}$ on a line, then we can put $\exists \meta{x Dx}$ on a new line.
 \smallskip
 
-Similarly:}
+If a sentence of FOL contains multiple instances of the same name, replace one or more (or all) instances of the name.}
 
 \begin{proof}
 	\have[m]{a}{\meta{Fc \eif Gc}}
 	\have[\ ]{c}{\exists \meta{x (Fx \eif Gx)}} \Ei{a}
 \end{proof}
 
-\small{The same variable must be used to replace every instance of the name.}
+\begin{proof}
+	\have[m]{a}{\meta{Fc \eif Gc}}
+	\have[\ ]{c}{\exists \meta{x (Fx \eif Gc)}} \Ei{a}
+\end{proof}
 
 \end{factboxy}
+
+
+\section{A couple of examples}
+
+The existential quantifier and the universal quantifier are logical operators, and so we have to continue to follow this guideline from p.~\pageref{rule-proofs-main-operator}: {Each of the rules of derivation can only be applied to the main logical operator of a sentence}. And as we said in \S \ref{main_logical_operator}, the main logical operator is the logical operator that's scope is the entire sentence. 
+
+So, consider a sentence like this one:
+
+\begin{ebullet}
+\item[] $\forall x(Bx \eand Nx)$
+\end{ebullet}
+The scope of the universal quantifier is the whole sentence. Therefore, it is the main logical operator. As such, for this sentence, we can use the universal elimination rule, and we can't use the conjunction elimination rule. If we use the universal elimination rule, we get a sentence like this one:
+\begin{ebullet}
+\item[] $Bc \eand Nc$
+\end{ebullet}
+Now, we can use the conjunction elimination rule to get either `$Bc$' or `$Nc$' on a new line. %But, again, we \textit{cannot} use the conjunction elimination rule with `$\forall x[Bx \eand Nx]$' because the universal quantifier is the main logical operator.
+
+Here are some examples of proofs that use the first two rules introduced in this chapter along with the rules from chapter \ref{s:BasicTFL}.
+\bigskip
+
+\begin{earg}
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\forall x(Fx \eif Gx), \forall zFz \proves \exists x(Fx \eand Gx)$
+
+\begin{proof}
+	\hypo{p1}{\forall x(Fx \eif Gx)} \pr{}
+	\hypo{p2}{\forall zFz} \pr{}
+	\have{fg}{Fa \eif Ga} \Ae{p1}
+	\have{f}{Fa} \Ae{p2}
+	\have{g}{Ga} \ce{fg,f}
+	\have{fg2}{Fa \eand Ga} \ai{f,g}
+	\have{c}{\exists x(Fx \eand Gx)} \Ei{fg2}	
+\end{proof}
+\bigskip
+\end{minipage}
+
+%\noindent\begin{minipage}{0.90\textwidth}
+\item $ \exists yQy \eif \forall zTz, \forall x(Px \eand Qx) \proves Te$
+\medskip
+
+\noindent The main logical operator in the first premise is  the `$\eif$'. Therefore, first, we have to get `$\exists yQy$' on a line by itself, and then we can use the conditional elimination rule to get `$\forall zTz$'. 
+
+\begin{proof}
+	\hypo{p1}{\exists yQy \eif \forall zTz} \pr{}
+	\hypo{p2}{\forall x(Px \eand Qx)} \pr{}
+	\have{pq}{Pa \eand Qa} \Ae{p2}
+	\have{q}{Qa} \ae{pq}
+	\have{Eq}{\exists yQy} \Ei{q}
+	\have{At}{\forall zTz} \ce{p1,Eq}
+	\have{c}{Te} \Ae{f}
+\end{proof}
+\bigskip
+%\end{minipage}
+
+\end{earg}
+
+
+\section{Universal introduction}
 
 The universal elimination and existential introduction rules are straightforward. It's obvious that if \textit{everyone} has some property, then any particular individual (in that group) has it. It's equally clear that if a particular individual has a property, then \textit{someone} has it.
 
 Matters aren't quite that simple for the universal introduction and existential elimination rules, and consequently, these rules are a little more complex. 
-
-
-\section{Universal introduction}
 
 We'll take up the universal introduction rule first. What would it take to introduce the claim that everyone likes chocolate (i.e., $\forall x Cx$)? One method would be to check that every single individual in the domain likes chocolate. This, however, isn’t practical for our purposes since a domain can have an infinite number of members.
 We need a different way of introducing a universal quantifier.
@@ -112,13 +171,13 @@ Similarly:}
 	\have[\ ]{c}{\forall \meta{x (Fx \eif Gx)}} \Ai{a}
 \end{proof}
 
-\small{The same variable must be used to replace every instance of the name.}
+\small{If a sentence of FOL contains multiple instances of the same name, the same variable must be used to replace every instance of the name.}
 \end{factboxy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\filbreak
+\filbreak
 
 \section{Existential elimination}
 
@@ -230,49 +289,9 @@ When thinking about identities, however, the more interesting assertion is one l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Some examples}
-
-The existential quantifier and the universal quantifier are logical operators, and so we have to continue to follow this guideline from p.~\pageref{rule-proofs-main-operator}: {Each of the rules of derivation can only be applied to the main logical operator of a sentence}. And as we said in \S \ref{main_logical_operator}, the main logical operator is the one that's scope is the entire sentence. 
-
-So, consider a sentence like this one:
-
-\begin{ebullet}
-\item[] $\forall x(Bx \eand Nx)$
-\end{ebullet}
-The scope of the universal quantifier is the whole sentence. Therefore, it is the main logical operator. As such, for this sentence, we can use the universal elimination rule, and we can't use the conjunction elimination rule. If we use the universal elimination rule, we get a sentence like this one:
-\begin{ebullet}
-\item[] $Bc \eand Nc$
-\end{ebullet}
-Now, we can use the conjunction elimination rule to get either `$Bc$' or `$Nc$' on a new line. %But, again, we \textit{cannot} use the conjunction elimination rule with `$\forall x[Bx \eand Nx]$' because the universal quantifier is the main logical operator.
-
-Here are some examples of proofs that use the rules introduced in this chapter, along with the rules from chapter \ref{s:BasicTFL}.
-\bigskip
+\section{Some more examples}
 
 \begin{earg}
-%\noindent\begin{minipage}{0.99\textwidth}
-%\item $\forall xFx \proves \forall yFy$
-
-%\begin{proof}
-%	\hypo{p1}{\forall xFx} \pr{}
-%	\have{f}{Fa} \Ae{p1}
-%	\have{c}{\forall yFy} \Ai{f}
-%\end{proof}
-%\bigskip
-%\end{minipage}
-
-\noindent\begin{minipage}{0.99\textwidth}
-\item $\forall x(Fx \eif Gx), Fa \proves \exists x(Fx \eand Gx)$
-
-\begin{proof}
-	\hypo{p1}{\forall x(Fx \eif Gx)} \pr{}
-	\hypo{p2}{Fa} \pr{}
-	\have{fg}{Fa \eif Ga} \Ae{p1}
-	\have{g}{Ga} \ce{p2,fg}
-	\have{fg2}{Fa \eand Ga} \ai{p2,g}
-	\have{c}{\exists x(Fx \eand Gx)} \Ei{fg2}	
-\end{proof}
-\bigskip
-\end{minipage}
 
 \noindent\begin{minipage}{0.99\textwidth}
 \item $\forall x(Gx \eif Hx), \forall xGx \proves \forall xHx$
