@@ -9,7 +9,7 @@
 
 We have mastered truth functional logic. There may be difficult proofs that still confound us, but we have covered everything that there is to cover in this branch of logic. We now move on to the logic system that is typically studied immediately after truth functional logic: first-order logic (which is also called \textit{predicate logic}). 
 
-As you know, the language of truth functional logic consists of atomic sentences, the logical operators \textit{and}, \textit{or}, \textit{if \ldots then \ldots}, \textit{if and only if}, and \textit{not}, and parentheses. First-order logic includes those logical operators plus a few more (and parentheses). And instead of atomic sentences, in first-order logic, these two are represented separately: 
+As you know, the language of truth functional logic consists of atomic sentences, the logical operators \textit{and}, \textit{or}, \textit{if \ldots then \ldots}, \textit{if and only if}, and \textit{not}, and parentheses. First-order logic includes those logical operators and parentheses. It also, however, adds three more logical operators, and instead of atomic sentences, these two are represented separately: 
 \begin{ebullet}
 \item[(\textit{a})] the subject of a sentence
 \item[(\textit{b})] the verb and direct object of the sentence
@@ -141,8 +141,9 @@ The identity symbol, `=’, is used to signify that two things are the same; tha
 
 \paragraph{Domains}
 
-A logic system must be precise. But `all’ or `every’, when taken literally and without any qualification, refer to a vast set of individuals or things. For instance, if `$H$' represents `is happy’, then ‘$\forall x Hx$’ represents ‘Everyone is happy’. But when we say this in English, we are not referring to everyone now alive on Earth or everyone who ever was alive or who ever will be alive. Rather, we mean something like `everyone now in the room is happy,’ or `everyone enrolled in this course is happy’.
+A logic system must be precise. But `all’ or `every’, when taken literally and without any qualification, refer to a vast set of individuals or things. For instance, if `$H$' represents `is happy’, then ‘$\forall x Hx$’ represents ‘Everyone is happy’. But when we say this in English, we are not referring to everyone now alive or everyone who ever was alive or who ever will be alive. Rather, we mean something like `everyone now in the room is happy,’ or `everyone enrolled in this course is happy’ {\libser \Large\symbol{"263A}}.
  
+
 So, to be precise when we use quantified expressions in FOL, we need to specify a \define{domain}. The domain is the collection of things about which we want to refer. If we want to talk about people in Starkville, we define the domain as \textit{people in Starkville}. We write this at the beginning of the symbolization key, like this:
 
 \begin{earg}
@@ -150,7 +151,7 @@ So, to be precise when we use quantified expressions in FOL, we need to specify 
 \end{earg}
 The quantifiers, then, apply to (or range over) the domain. Given this domain, ‘$\forall x$’ is to be read roughly as ‘Every person in Starkville \ldots ’, and ‘$\exists x$’ is to be read roughly as ‘Some person in Starkville, \ldots ’.
 
-In FOL, the domain must always include at least one thing. Moreover, in English we can legitimately infer ‘someone is angry’ from ‘David is angry’. Likewise in FOL, we will want to be able to infer ‘$\exists xAx$’ from ‘$Ad$’. So, when we use a name, it still be the case that each name picks out exactly one thing in the domain. (Although there can be members of a domain that don’t have names or have more than one name.)
+In FOL, the domain must always include at least one object. Moreover, in English we can legitimately infer ‘someone is angry’ from ‘David is angry’. Likewise in FOL, we will want to be able to infer $\exists xAx$ from $Ad$. So, when we use a name, it must be the case that each name picks out exactly one object in the domain (for instance, one person). There can, however, be members of a domain that don't have names or have more than one name.
 
 
 

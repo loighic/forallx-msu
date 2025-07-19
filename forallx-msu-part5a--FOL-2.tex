@@ -42,12 +42,12 @@ Here is a translation scheme.
 If you are stuck on a translation, you can always just translate $\forall x$ and $\exists x$ like this:
 \begin{ebullet}
 \item[] For all \textit{x}, \textit{x} is \ldots
-\item[] There exists an \textit{x} such that \textit{x} is \ldots
+\item[] For some \textit{x}, \textit{x} is \ldots
 \end{ebullet}
 
-\begin{notebox}
-The ``such that'' in `There exists an \textit{x} such that \textit{x} is \ldots' means roughly ``with the property that.''  
-\end{notebox} 
+%\begin{notebox}
+%The ``such that'' in `There exists an \textit{x} such that \textit{x} is \ldots' means roughly ``with the property that.''  
+%\end{notebox} 
 
 %So, to translate the expression, proceed this way. (1) Begin reading from the left. (2) Read the universal or existential quantifier and variable as ``For all \ldots'' or ``There exists \ldots''. (3) Read the predicates as is given in the translation scheme. (4) Read the logical operators as we did in TFL. (5) If there is a `not' sign somewhere, translate it right where it is as `it is not the case that'. Once you've translated the sentence this way, you may want to word it more naturally using `someone', `everyone', and just `not'.
 
@@ -73,6 +73,13 @@ According to the second sentence, maybe different people ate the burrito and too
 %\end{earg} 
 %\end{notebox} 
 
+%Finally, these existentially and universally quanitfied sentences are equivalent.
+\begin{factboxy-width}[width=7cm]{equivalent quantified expressions}
+$\exists \meta{x} ¬\meta{Bx} $ is equivalent to $¬\forall \meta{x Bx}$.\medskip
+
+$\forall \meta{x} ¬\meta{Dx}$ is equivalent to $¬\exists \meta{x Dx}$.
+\end{factboxy-width}
+
 \begin{factboxy-width}[width=9.6cm]{The formats for common expressions that are translated into first-order logic as conditionals or conjunctions}
 \begin{small}
 \begin{itemize}
@@ -80,22 +87,19 @@ According to the second sentence, maybe different people ate the burrito and too
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
   \setlength{\itemindent}{-1cm}
-\item[] $\forall x(Fx \eif Gx)$: For all $x$, if $x$ is an $F$, then $x$ is a $G$ \textbf{or} %Every $F$ is $G$.\medskip
-\item[] \hspace{24mm}Every $F$ is $G$.\medskip
-\item[] $\exists x(Fx \eand Gx)$: There exists an $x$, such that $x$ is an $F$ and a $G$ \textbf{or}
-\item[] \hspace{24mm}Some $F$ is $G$.\medskip
+\item[] $\forall x(Fx \eif Gx)$: For all $x$, if $x$ is an $F$, then $x$ is a $G$. 
+%\textbf{Or} Every $F$ is $G$.\medskip
+\item[] \hspace{24mm}\textbf{Or} Every $F$ is $G$.\medskip
+\item[] $\exists x(Fx \eand Gx)$: For some $x$, $x$ is an $F$ and a $G$. \textbf{Or} Some $F$ is $G$.
+%\item[] \hspace{24mm}Some $F$ is $G$.
+\medskip
 \item[] No $F$ is $G$: $¬\exists x(Fx \eand Gx) $ \textbf{or} $\forall x(Fx \eif ¬Gx)$\medskip
 \item[] Only $F$s are $G$s: $\enot \exists x(Gx \eand \enot Fx)$ \textbf{or} $\forall x(Gx \eif Fx)$
 \end{itemize}
 \end{small}
 \end{factboxy-width}
 
-%Finally, these existentially and universally quanitfied sentences are equivalent.
-\begin{factboxy-width}[width=7cm]{equivalent quantified expressions}
-$\exists \meta{x} ¬\meta{Bx} $ is equivalent to $¬\forall \meta{x Bx}$.\medskip
 
-$\forall \meta{x} ¬\meta{Dx}$ is equivalent to $¬\exists \meta{x Dx}$.
-\end{factboxy-width}
 
 
 \section{Scope}

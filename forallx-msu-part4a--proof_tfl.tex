@@ -325,7 +325,7 @@ And then last, we use the disjunction introduction rule to get the conclusion.
 %\end{proof}
 
 \subsection{Introduction and elimination}
-When you use the rules that are in this chapter, you are applying the \textit{patterns} given in the definition of each rule. Every pattern is different, and so you have to make sure that you understand each one. But you don't, actually, have to think beyond the patterns---although you can, and some people find it helpful to think about how the rules of derivation conform to what you learned about each logical operator in the chapter on the characteristic truth tables (chapter \ref{s:CharacteristicTruthTables}).
+When you use the rules in this chapter, you are applying the \textit{patterns} given in the definition of each rule. Every pattern is different, and so you have to make sure that you understand each one. But you don't, actually, have to think beyond the patterns---although you can, and some people find it helpful to think about how the rules of derivation conform to what you learned about each logical operator in chapter \ref{s:CharacteristicTruthTables}.
 
 It can also be useful to understand why we call these \textit{introduction} and \textit{elimination} rules. (Or, at least, it's useful not to misunderstand why we use these terms.) The introduction rules are given this name because, in each case, we introduce a logical operator. For instance, if a proof begins this way: 
 
@@ -340,19 +340,21 @@ It can also be useful to understand why we call these \textit{introduction} and 
 	\have[3]{pq}{P\eand Q} \ai{p,q}
 \end{proof}
 
-The elimination rules, meanwhile, all, in a way, eliminate a logical operator. It might, however, be more useful to think of these as \textit{extraction} rules because, really, what they do is allow us to extract a part of a sentence and put it on a new line. For instance, if we have this:
+\noindent And similarly (although each in its own way), the disjunction introduction, biconditional introduction, and conditional introduction rules let us create sentences with the `$\eor$', `$\eiff$,' and `$\eif$' as the main logical operator.
+
+The elimination rules, meanwhile, in a way, eliminate a logical operator. It might, however, be more useful to think of these as \textit{extraction} rules because we use them to extract a part of a sentence and put it on a new line. For instance, if we have this:
 
 \begin{proof}
 	\hypo{rt}{R \eand T} \pr{}
 \end{proof}
 
-\noindent then we can use the \&E rule to take the `$R$' and put it on a line by itself:
+\noindent then we can use the conjunction elimination rule to take the $R$ and put it on a line by itself:
 
 \begin{proof}
 	\have[2]{r}{R} \ae{rt}
 \end{proof}
 
-\noindent We might think of this as having eliminated the `$\eand$', and, in a way, that's what we have done. But the `$R \eand T$' is still on line 1 and can be used again in the proof. Hence, \textit{extraction rules} is a little more accurate than \textit{elimination rules}, but \textit{elimination} is the commonly used term, and so we will stick with it. 
+\noindent We might think of this as having eliminated the `$\eand$', but the $(R \eand T)$ is still on line 1 and can be used again in the proof. Hence, \textit{extraction rules} is a little more accurate than \textit{elimination rules}, but \textit{elimination} is the commonly used term, and so we will stick with it. 
 
 
 \subsection{Double negation}\label{subsection-DN}
@@ -1664,16 +1666,16 @@ We may also, however, have a sentence for which it is possible to give a proof w
 $\meta{C}$ is a \define{theorem} if and only if ~ $\proves \meta{C}$
 \end{factboxy}
 
-One such sentence is `$\enot (P \eand \enot P)$'. To show that this sentence is a theorem, we give a proof that has no premises and no undischarged assumptions. To get started, we do, however, have to make an assumption. We will assume `$P \eand \enot P$'. Once we show that this assumption leads to contradiction, we can discharge it and we will have `$\enot (P \eand \enot P)$'. This is the proof:
+One such sentence is $\enot (P \eand \enot P)$. To show that this sentence is a theorem, we give a proof that has no premises and no undischarged assumptions. To get started, we do, however, have to make an assumption. We will assume $(P \eand \enot P)$. Once we show that this assumption leads to contradiction, we can discharge it and we will have $\enot (P \eand \enot P)$. This is the proof:
 	\begin{proof}
 		\open
-			\hypo{con}{P \eand \enot P}
+			\hypo{con}{P \eand \enot P} \as{}
 			\have{a}{P}\ae{con}
 			\have{na}{\enot P}\ae{con}
 		\close
 		\have{lnc}{\enot (P \eand \enot P)}\ni{con-na}
 	\end{proof}
-This theorem, `$\proves \enot (P \eand \enot P)$' is an instance of what is sometimes called \emph{the law of non-contradiction}.
+This theorem, $\proves \enot (P \eand \enot P)$, is an instance of what is sometimes called \emph{the law of non-contradiction}.
 
 To show that a sentence is a theorem, we just have to find a suitable proof. On the other hand, it is not possible to show that a sentence is \emph{not} a theorem this same way. To show that a sentence is not a theorem with our natural deduction system, we would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if we fail in trying to give a proof for a sentence in a thousand different ways, perhaps the proof is just too long and complex for us to figure out. 
 
@@ -1683,8 +1685,9 @@ To show that a sentence is a theorem, we just have to find a suitable proof. On 
 In \S\ref{equivalence--tt}, we defined \textit{equivalent} in terms of truth tables, namely, if two sentences have the same truth value on every line of a truth table, then they are equivalent. We can also show that two sentences are equivalent using our natural deduction system. To indicate that we have shown that the two sentences are equivalent with a derivation (or actually with two derivations), we will call this equivalence \define{provably equivalent}. 
 
 \begin{factboxy}{Provably equivalent}
-Two sentences \meta{A} and \meta{B} are \define{provably equivalent} iff each can be derived from the other. I.e., $\meta{A}\proves\meta{B}$ and $\meta{B}\proves\meta{A}$.\\
-(Equivalently, \meta{A} and \meta{B} are \define{provably equivalent} if $\proves \meta{A} \eiff \meta{B}$.)
+Two sentences \meta{A} and \meta{B} are \define{provably equivalent} iff each can be derived from the other. I.e., $\meta{A}\proves\meta{B}$ and $\meta{B}\proves\meta{A}$.\medskip
+
+Equivalently, \meta{A} and \meta{B} are \define{provably equivalent} if $\proves \meta{A} \eiff \meta{B}$.
 \end{factboxy}
         
 As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent is not possible for t he same reason that it isn't possible to show that a sentence is not a theorem. Even if we fail to produce two proofs showing that two sentences are provably equivalent, that doesn't mean that the proofs don't exist. It just means that we've failed to figure out what they are. 
@@ -1697,7 +1700,7 @@ The sentences $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably in
 %If they are not \define{inconsistent}, then $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably consistent}.
 \end{factboxy}
         
-To show that a set of sentences are provably inconsistent, we use the sentences as premises and then derive a contradiction. (Any contradiction will do.) For instance, this proof demonstrates that $P \eand Q$ and $\enot P \eor \enot Q$ are provably inconsistent.
+To show that a set of sentences are provably inconsistent, we use the sentences as premises and then derive a contradiction. (Any contradiction will do.) For instance, this proof demonstrates that $(P \eand Q)$ and $(\enot P \eor \enot Q)$ are provably inconsistent.
 
 	\begin{proof}
 	\hypo{p1}{P \eand Q} \pr{}
