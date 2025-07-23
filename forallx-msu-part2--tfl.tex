@@ -94,7 +94,8 @@ has a form that we can represent like this:
 		\item[3.] Therefore, not K
 	\end{earg}
 
-\filbreak
+%\filbreak
+
 \section{Atomic sentences and symbolization}\label{s:atomic}
 
 Consider this sentence again:
@@ -234,11 +235,18 @@ Sentence \ref{and3} is a little more complicated. We know from the previous sect
 Notice the difference between sentences \ref{and2} and \ref{and3} in English and how we translated them into truth-functional logic. In sentence \ref{and2}, the negation only applies to `Sam is on the train'. Thus, the `$\enot$' is right next to the $S$. In sentence \ref{and3}, the negation applies to the whole `both Sam and Kate are on the train'. Consequently, we need to have the `$\enot$' outside the parentheses to indicate that the whole $(S \eand K)$ is being negated.
 
 \begin{notebox}
-There is a method for ``distributing'' the `$\enot$' inside the parentheses, but it's not as simple as moving the `$\enot$' next to both sentence letters. In other words,  $\enot(S \eand K) \neq (\enot S \eand \enot K)$.  
+There is a method for ``distributing'' the `$\enot$' inside the parentheses, but it's not as simple as just moving the `$\enot$' next to both sentence letters. In other words,  $\enot(S \eand K) \neq (\enot S \eand \enot K)$.  
 \end{notebox}
 
 
 Finally, we don't symbolize the `both' in \ref{and3}, other than to use the `$\eand$' between the $S$ and the $K$. The `both' indicates where the conjunction begins, which is important for distinguishing sentences \ref{and2} and \ref{and3}, and it is also sometimes used in English just for emphasis. It doesn't, however, have any separate meaning in truth-functional logic.
+
+% Depending on how the layout falls, the conjunction definition box could go here. (It's after then next paragraph right now.)
+
+\subsection{Parentheses}
+
+Although we will relax this requirement later, in truth-functional logic, conjunctions, as well as the types of sentences that we will discuss in sections \ref{s:ConnectiveDisjunction} - \ref{s:biconditional-1}, should be enclosed in parentheses. (A negation [for instance, $\enot P$] should not, though.) The purpose of the parentheses is to let us be perfectly explicit about how each logical operator is related to each sentence letter in a sentence. 
+
 
 \begin{factboxy}{Conjunction}
 A sentence can be symbolized as $(\meta{A}\eand\meta{B})$ if it can be paraphrased any of these ways in English:
@@ -252,9 +260,7 @@ A sentence can be symbolized as $(\meta{A}\eand\meta{B})$ if it can be paraphras
 \end{earg}
 \end{factboxy}
 	
-\subsection{Parentheses}
 
-Although we will relax this requirement later, in truth-functional logic, conjunctions, as well as the types of sentences that we will discuss in sections \ref{s:ConnectiveDisjunction} - \ref{s:biconditional-1}, should be enclosed in parentheses. (A negation [for instance, $\enot P$] should not, though.) The purpose of the parentheses is to let us be perfectly explicit about how each logical operator is related to each sentence letter in a sentence. 
 
 
 
