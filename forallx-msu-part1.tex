@@ -12,14 +12,14 @@
 In everyday discourse, the word \textit{argument} typically refers to a verbal disagreement between two people. In logic and philosophy, however, it has a different and special meaning (although plenty of people do argue, in the everyday sense of the word, in logic and philosophy). We will use \textit{argument} to refer to a set of sentences like these:
 	\begin{earg}\label{argRaining}
 		\item[1.] It is raining heavily. 
-		\item[2.] You don't want to get soaked.
-		\item[3.] If you do not take an umbrella, you will get soaked.
+		\item[2.] Jeff doesn't want to get soaked.
+		\item[3.] If Jeff doesn't take an umbrella, he will get soaked.
 		      \vspace{0.1cm}
      			\hrule
       			\vspace{0.12cm}
-		\item[4.] Therefore, you take an umbrella.
+		\item[4.] Therefore, Jeff will take an umbrella.
 	\end{earg}
-In this set, the first three sentences support---or justify---the third sentence. The sentences providing support are the \emph{premises}. The sentence that is supported by (or justified by) the premises is the \emph{conclusion}. Together, \textit{premises} and a \textit{conclusion} comprise an \textit{argument}.  
+In this set, the first three sentences support---or justify---the fourth sentence. The sentences providing support are the \emph{premises}. The sentence that is supported by (or justified by) the premises is the \emph{conclusion}. Together, \textit{premises} and a \textit{conclusion} comprise an \textit{argument}.  
 
 \begin{factboxy}{Argument}
 An \define{argument} is a set of sentences. One or more of the sentences provide support for another sentence in the set. The sentences providing support are \define{premises}. The sentence being supported is the \define{conclusion}.
@@ -27,13 +27,13 @@ An \define{argument} is a set of sentences. One or more of the sentences provide
 
 That's the definition of an argument, but a broader analysis must include the idea that arguments can be good or bad---or  somewhere in between. A good argument is one in which the premises do, in fact, support the conclusion. For such an argument, if the premises are true, then we have good reason to believe that the conclusion is true. On the other hand, a bad (or a weak) argument is still an argument. It is just one in which the premises provide little support for the conclusion.
 
-In the definition of an argument, we said that each premise and the conclusion is a sentence. And, as we saw, both premises and the conclusion in the example are individual sentences. All arguments can be expressed this way and many are, but a single sentence, like this one, can also contain a complete argument:
+In the definition of an argument, we said that each premise and the conclusion is a sentence. And, as we saw, the premises and the conclusion in the example are all individual sentences. All arguments can be expressed this way and many are, but a single sentence, like this one, can also contain a complete argument:
 	\begin{quote}
 		Joan was wearing sunglasses when she came inside, and so it must be sunny.
 	\end{quote}
 This argument has one premise and a conclusion. The premise and the conclusion could both be individual sentences, but here they are just independent clauses separated by the `and'. (The premise is before the `and', and the conclusion is after it.)
 
-Many arguments also start with premises and end with a conclusion. But not all arguments are expressed in this order. For instance, here we have the same argument, but the conclusion is at the beginning:
+Many arguments also start with the premises and end with a conclusion. But not all arguments are expressed in this order. For instance, here we have the same argument about Joan, but the conclusion is at the beginning:
 	\begin{quote}
 		It must be sunny because Joan was wearing sunglasses when she came inside.
 	\end{quote}
@@ -42,7 +42,7 @@ When approaching an argument, we want to know whether or not the conclusion is s
 	\begin{quote}
 		so, therefore, hence, thus, accordingly, consequently
 	\end{quote}
-By contrast, these expressions often indicate that we are dealing with a premise, rather than a conclusion:
+And these often indicate that what follows are premises:
 	\begin{quote}
 		since, because, given that
 	\end{quote}
@@ -53,7 +53,9 @@ So that we can undertake a more detailed and precise analysis of some kinds of a
 \section{Sentences}
 \label{intro.sentences}
 
-Only sentences that can be true or false can be the premises or the conclusion of an argument. The following types of sentences cannot be true or false, and so they cannot be part of an argument.
+Only sentences that can be true or false can be the premises or the conclusion of an argument, and for the purpose of studying truth-funcitonal logic, we will define \define{sentence} as a statement that can be true or false.
+
+The following types of sentences cannot be true or false, and so they are not, in this sense, sentences and cannot be part of an argument.
 
 \paragraph{Questions} `Are you sleepy yet?' is, obviously, a question. Although you might be sleepy or you might be alert, the question itself is neither true nor false. For this reason, questions will not count as sentences in logic. 
 
@@ -62,7 +64,9 @@ Only sentences that can be true or false can be the premises or the conclusion o
 \paragraph{Exclamations} Some exclamatory sentences can be true or false (and so they are also declarative sentences) and some cannot be. `It's Friday!' is an exclamation, and it is true or false. It can be part of an argument. On the other hand, a sentence such as `Ouch!' is neither true nor false, and so it cannot be part of an argument. 
 
 \section{Truth values}
-Going forward, by \define{sentence}, we will mean a declarative sentence. We impose this restriction because the premises and conclusion of an argument must be capable of having a \define{truth value}. That is, we must be able to assign a value about its truth to each sentence in an argument. Although more advanced ``non-classical'' logic systems introduce more options, the two truth values that concern us are just `true' and `false'. 
+We define \define{sentence} in this restrictive way because all of the premises and the conclusion in an argument must be capable of having a \define{truth value}. Although more advanced ``non-classical'' logic systems introduce more options, the two truth values that concern us are just `true' and `false'. 
+
+It may be the case that we would have great difficulty or be unable to establish whether a particular premise or conclusion is true or false, but nonethess, we can coherently think about each one being true or false (which we can't do for, say, a question). 
 
 \begin{factboxy}{truth values}
 \define{Truth values} are the logical values that a sentence can have, \textit{true} and \textit{false}.
@@ -145,7 +149,7 @@ Every argument that does not satisfy the definition of \textit{valid} is \define
 \end{factboxy}
 \noindent Typically, the study of logic focuses on determining when the conclusion of an argument follows from the premises with certainty. From the perspective of logic, whether the premises actually are true is less important. Of course, determining whether or not they are true can be important for many reasons, but this task is normally left to historians, scientists, or the Hardy boys.
 
-We want to know whether, if all the premises \textit{were} true, would the conclusion also have to be true? Consider this argument:
+Here is another argument to consider:
 	\begin{earg}
 		\item[1.] Paris is a large city in France, or Paris is a large city on Jupiter.
 		\item[2.] Paris is not a large city in France.
@@ -157,7 +161,12 @@ This argument is valid. \emph{If} both premises are true (they're not, but if th
 		\item[2.] Beijing is in China.
 		\item[3.] Therefore, Paris is in France.
 	\end{earg}
-The premises and conclusion of this argument are all true, but the argument is invalid. If Paris were, somehow, to become independence from the rest of France, then the conclusion would be false, even though both of the premises would remain true. Thus, it is \emph{possible} for the premises of this argument to be true and the conclusion false. Hence, the argument is \textit{invalid}.
+The premises and conclusion of this argument are all true, but the argument is invalid. If Paris were, somehow, to become independence from the rest of France, then the conclusion would be false, even though both of the premises would remain true. Thus, it is \emph{possible} for the premises of this argument to be true and the conclusion false. Hence, the argument is \textit{invalid}. Here is another example of an invalid argument:
+	\begin{earg}
+		\item[1.] If you are in Paris, then you are in France.
+		\item[2.] You are in France.
+		\item[3.] Therefore, you are in Paris.
+	\end{earg}
 
 The important point to remember is that validity is not about the actual truth or falsity of the sentences in the argument. It is about whether it is \emph{possible} or \emph{impossible} for all of the premises to be true and the conclusion to be false. (Or, to say the same thing in a different way, whether the conclusion has to be true \textit{if} all of the premises are true.)
 
@@ -181,13 +190,13 @@ Many good arguments are invalid. Consider this one:
 	\item[8.] Therefore, next January, it will rain in London.
 \end{earg}
 
-This argument generalizes from observations about several cases to a conclusion about all cases. This argument could be made stronger by adding additional premises, for instance: `In January \the\numexpr \year - 7, it rained in London,' `In January \the\numexpr \year - 8, it rained in London,' and so on. But, however many premises like this we add, the argument will remain invalid. Even if it has rained in London every January for the past 10,000 years, it remains \emph{possible} that it won't rain in London next January. Hence, this argument is invalid. But, at the same time, you might think, ``but it's still a good argument!'' It is, and we have a way of classifying such arguments.
+This argument generalizes from observations about several recent past cases to a conclusion about the next one. It could be made even stronger by adding additional premises, for instance: `In January \the\numexpr \year - 7, it rained in London,' `In January \the\numexpr \year - 8, it rained in London,' and so on. But, however many premises like this we add, the argument will remain invalid. Even if it has rained in London every January for the past 10,000 years, it remains \emph{possible} that it won't rain in London next January. Hence, this argument is invalid. But, at the same time, you might think, ``but it's still a good argument!'' It is, and we have a way of classifying such arguments.
 
 \begin{factboxy}{Inductively strong}
 An argument is \define{inductively strong} when (and only when) [1] it is not valid and [2] it is the case that if the premises are true, then their being true makes it likely that the conclusion is true.
 \end{factboxy}
 
-An inductively strong argument is one for which the conclusion has a high probability of being true (if the premises are). Arguments that are invalid, but not inductively strong, can have conclusions with every possible probability of being true (if the premises are true) from very high to zero. To simplify matters, we can say that the options are \textit{inductively strong}, \textit{medium}, or \textit{weak}. Since we are on a continuum, we could be much more fine grained than this. (But we won't. See table \ref{invalid-strong}.)
+When an argument is invalid, the probability that the conclusion will be true (if the premises are true) can range from very high to zero. To simplify matters, we can say that the options are \textit{inductively strong}, \textit{medium}, or \textit{weak}, although since this is a continuum, we could be much more fine grained than this. (But we won't. See table \ref{invalid-strong}.)
 
 \begin{table*} %[hb]
 \centering\sffamily\footnotesize
@@ -204,13 +213,13 @@ do not make it very likely that the conclusion will be true. & inductively weak\
 \caption{Every argument is valid or invalid. Invalid arguments can have any degree of inductive strength, depending on how likely the conclusion is to be true given the premises.}\label{invalid-strong}
 \end{table*}
 
-And finally, we have a concept for inductively strong arguments that serves the role that \textit{sound} does for valid ones.
+Whereas a valid argument that has all true premises is \textit{sound}, an inductively strong argument that has all true premises is \textit{reliable}.
 
 \begin{factboxy}{Reliable}
 An argument is \define{reliable} when (and only when) it is inductively strong and has all true premises.
 \end{factboxy}
 
-In this textbook, however, we will set aside the analysis of inductively strong arguments and focus on just valid versus invalid ones.  
+In this textbook, we are going to set aside the analysis of inductively strong arguments and focus just on valid versus invalid arguments. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -232,19 +241,19 @@ Determine if each of the following arguments is valid or invalid.
 \item
 \begin{earg}
 \item Either today is Labor Day, or the building is full.
-\item The building isn’t full.
+\item The building isn't full.
 \item Therefore, today is Labor Day.
 \end{earg}
 \smallskip
 
-\noindent\begin{minipage}{0.99\textwidth}
+%\noindent\begin{minipage}{0.99\textwidth}
 \item
 \begin{earg}
 \item If the green van is missing, then Claire is at the beach.
 \item The green van is missing.
 \item Therefore, Claire is at the beach.
 \end{earg}
-\end{minipage}
+%\end{minipage}
 \smallskip
 
 \item\begin{earg}
@@ -349,7 +358,7 @@ Determine if each of the following arguments is valid or invalid.
 
 \end{enumerate}
 
-\filbreak
+%\filbreak
 
 \problempart
 \label{pr.EnglishCombinations}
@@ -549,6 +558,8 @@ These are the answers for the chapter \ref{s:Arguments} practice problems \label
 
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \problempart
 \begin{enumerate}[(1)]
 \item A valid argument that has one false premise and one true premise\\
@@ -560,7 +571,47 @@ These are the answers for the chapter \ref{s:Arguments} practice problems \label
 \end{earg}
 
 \item A valid argument that has a false conclusion\\
-Yes, this is possible. See example from previous exercise.\smallskip
+Yes, this is possible. See the example from the previous exercise.\smallskip
+
+\item A valid argument that has only false premises\\
+Yes, this is possible.
+\begin{earg}
+\item Starkville, Mississippi is larger than Atlanta. (\emph{false}) 
+\item Atlanta is larger than New York City. (\emph{false})
+\item Therefore, Starkville, Mississippi is larger than New York City.
+\end{earg}
+\smallskip
+
+\item A valid argument with only false premises and a false conclusion\\
+Yes, this is possible. See the example from the previous exercise.\smallskip
+
+\item An invalid argument that can be made valid by the addition of a new premise\\
+Yes, this is possible. This argument is invalid:
+\begin{earg}
+\item At State University, all members of the men's basketball team can dunk. 
+\item Jeff is not a member of the men's basketball team.
+\item Therefore, Jeff cannot dunk.
+\end{earg}
+But when an additional premise is added, it becomes valid:
+\begin{earg}
+\item At State University, only members of the men's basketball team can dunk.
+\item At State University, all members of the men's basketball team can dunk. 
+\item Jeff is not a member of the men's basketball team.
+\item Therefore, Jeff cannot dunk.
+\end{earg}
+\smallskip
+
+\item A valid argument that can be made invalid by the addition of a new premise\\
+No, this is not possible. For an argument to be valid, it must be the case that if all of the premises are true, then the conclusion has to be true. For instance, here is a valid argument:
+\begin{earg}
+\item If you are in Paris, then you are in France. 
+\item You are in Paris.
+\item Therefore, you are in France.
+\end{earg}
+Adding a premise such as ``You are cold and wet'' isn't going to change anything.
+If you add a premise that creates a contradiction---for instance ``You are not in Paris.''---
+then you've just made it impossible for all of the premises to be true at the same time, but that doesn't violate the definition of \textit{valid}. 
+
 
 \end{enumerate}
 
