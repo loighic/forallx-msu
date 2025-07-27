@@ -4,7 +4,7 @@
 
 \section{Translations}
 
-Here is a translation scheme.
+Here is a symbolization key.
 
 \begin{ekey}
 	\item[\textrm{domain}] people in Starkville
@@ -27,12 +27,12 @@ Here is a translation scheme.
 	\item[]$Ldc \eand Bc$: David loves Carol, and Carol ate a burrito.
 \end{ebullet}
 
-\noindent Here are some quantified expressions.
+\noindent Here are some sentences that include quantifiers.
 
 \begin{ebullet}
 	\item[] $\forall y Ny$: Everyone took a nap.\smallskip
 	\item[] $\exists x Bx$: Someone ate a burrito.\smallskip
-	\item[] $\enot\forall xNx$: It is not the case that everyone took a nap.\smallskip
+	\item[] $\enot\forall xNx$: Not everyone took a nap.\smallskip
 	\item[]$\forall x \enot Nx$: Everyone did not take a nap.\smallskip
 	\item[]$\enot\exists yBy$: It is not the case that someone ate a burrito.\smallskip
 	\item[]$\exists y \enot By$: Someone did not eat a burrito.\smallskip
@@ -63,7 +63,7 @@ These sentences contain either both a name and a variable or both of the quantif
 \end{ebullet}
 According to the second sentence, maybe different people ate the burrito and took the nap, or maybe the same person did both. The third sentence, however, means that the same person did both.
 
-\label{quantifier-order} In the final two sentences, the `$Lxy$' is the same, but the order of the `$\forall x$' and `$\exists y$' is switched. And, although it's not exactly apparent in the English translations given there, the two FOL sentences have different meanings. `$\forall x \exists yLxy$' means that everyone loves someone, but the someone who is loved can be different for different people. Meanwhile, `$\exists y \forall xLxy$' means that there is one particular someone who is loved by everyone.
+\label{quantifier-order} In the final two sentences, the $Lxy$ is the same, but the order of the `$\forall x$' and `$\exists y$' is switched. And, although it's not exactly apparent in the English translations given there, the two FOL sentences have different meanings. $\forall x \exists yLxy$ means that everyone loves someone, but the someone who is loved can be different for different people. Meanwhile, $\exists y \forall xLxy$ means that there is one particular someone who is loved by everyone.
 
 %\begin{notebox}
 %From the point of view of our study of logic, it is, perhaps, easier to grasp the idea that `$\forall x \exists yLxy$' and `$\exists y \forall xLxy$' have different meanings by noting that this first argument is valid and the second one is not.
@@ -107,8 +107,22 @@ $\forall \meta{x} ¬\meta{Dx}$ is equivalent to $¬\exists \meta{x Dx}$.
 Just like the `$\eand$', `$\eor$', `$\eif$', `$\eiff$', and `$\enot$', the universal quantifier (`$\forall$’) and the existential quantifier (`$\exists$’) have a scope. For both, their scope is the part of the expression to which the quantifier applies---or, as we often say, the part of the sentence that it \textit{ranges over}. Basically, the scope of the quantifiers works like the scope of the negation operator (i.e., the `$\enot$’). 
 
 \begin{ebullet}
-\item[(1)] If there is \textit\textbf{not} a parenthesis between the quantifier and a predicate---e.g., `$\forall xFx$’ or `$\forall x \enot Fx$’---then the scope of the quantifier is that predicate (or the predicate and a $\enot$) and its variable or variables.\smallskip
-\item[(2)] If there is a parenthesis between the quantifier and the first predicate---e.g., `$\forall x(Fx \eor Gx)$’---then the scope of the quantifier is everything inside the parentheses.\smallskip
-\item[(3)] If there is a second quantifier between the quantifier and a predicate or a parenthesis---e.g., `$\forall x \exists yLxy$' or `$\forall x \exists y(Fx \eif Gy)$'---then the scope of the first quantifier includes the second quantifier. And likewise if there are more than two quantifiers.\smallskip
+\item[(1)] When there is \textit\textbf{not} a parenthesis between the quantifier and a predicate, then the scope of the quantifier is that predicate (or the predicate and a $\enot$) and its variable or variables. For instance, here the scope of the $\color{blue}{\forall x}$ is in red:
+\begin{earg}
+\item[] $\color{blue}{\forall x} \color{red}{Fx}$ or $\color{blue}{\forall x} \color{red}{\enot Fx}$ 
+\end{earg}
+\smallskip
+
+\item[(2)] When there is a parenthesis between the quantifier and the first predicate, then the scope of the quantifier is everything inside the parentheses.
+\begin{earg}
+\item[] $\color{blue}{\forall x} \color{red}{(Fx \eor Gx)}$ 
+\end{earg}
+\smallskip
+
+\item[(3)] When there is a second quantifier between the quantifier and a predicate or a parenthesis, the scope of the first quantifier includes the second quantifier. And likewise if there are more than two quantifiers.
+\begin{earg}
+\item[] $\color{blue}{\forall x} \color{red}{\exists yLxy}$ or $\color{blue}{\forall x} \color{red}{\exists y(Fx \eif Gy)}$
+\end{earg}
+\smallskip
 \item[] \textit{Notice that this is all the same as the scope of the} `$\enot$’.
 \end{ebullet}

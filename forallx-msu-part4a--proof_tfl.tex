@@ -547,7 +547,7 @@ In chapter \ref{s:CharacteristicTruthTables}, we said that the biconditional is 
 
 \section{Some examples}
 
-We will now look at some proofs that use the rules that are covered in \S\S \ref{s:conj-rule} -- \ref{s:bi-rules}. There are also practice exercises using these rules on p.~\pageref{practice-proofs-1}. 
+We will now look at some proofs that use the rules that are covered in sections \ref{s:conj-rule} -- \ref{s:bi-rules}. There are also practice exercises using these rules on p.~\pageref{practice-proofs-1}. 
 
 \begin{earg}
 
@@ -1675,24 +1675,24 @@ One such sentence is $\enot (P \eand \enot P)$. To show that this sentence is a 
 		\close
 		\have{lnc}{\enot (P \eand \enot P)}\ni{con-na}
 	\end{proof}
-This theorem, $\proves \enot (P \eand \enot P)$, is an instance of what is sometimes called \emph{the law of non-contradiction}.
+This theorem, $\proves \enot (P \eand \enot P)$, is an instance of what is called \emph{the law of non-contradiction}.
 
 To show that a sentence is a theorem, we just have to find a suitable proof. On the other hand, it is not possible to show that a sentence is \emph{not} a theorem this same way. To show that a sentence is not a theorem with our natural deduction system, we would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if we fail in trying to give a proof for a sentence in a thousand different ways, perhaps the proof is just too long and complex for us to figure out. 
 
 
 \section{Equivalent, consistent, and inconsistent}
 
-In \S\ref{equivalence--tt}, we defined \textit{equivalent} in terms of truth tables, namely, if two sentences have the same truth value on every line of a truth table, then they are equivalent. We can also show that two sentences are equivalent using our natural deduction system. To indicate that we have shown that the two sentences are equivalent with a derivation (or actually with two derivations), we will call this equivalence \define{provably equivalent}. 
+In section \ref{equivalence--tt}, we defined \textit{equivalent} in terms of truth tables, namely, if two sentences have the same truth value on every line of a truth table, then they are equivalent. We can also show that two sentences are equivalent using our natural deduction system. To indicate that we have shown that the two sentences are equivalent with a derivation (or actually with two derivations), we will call this equivalence \define{provably equivalent}. 
 
 \begin{factboxy}{Provably equivalent}
 Two sentences \meta{A} and \meta{B} are \define{provably equivalent} iff each can be derived from the other. I.e., $\meta{A}\proves\meta{B}$ and $\meta{B}\proves\meta{A}$.\medskip
 
-Equivalently, \meta{A} and \meta{B} are \define{provably equivalent} if $\proves \meta{A} \eiff \meta{B}$.
+Equivalently, \meta{A} and \meta{B} are \define{provably equivalent} if $\proves (\meta{A} \eiff \meta{B})$.
 \end{factboxy}
         
 As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent is not possible for t he same reason that it isn't possible to show that a sentence is not a theorem. Even if we fail to produce two proofs showing that two sentences are provably equivalent, that doesn't mean that the proofs don't exist. It just means that we've failed to figure out what they are. 
 
-We also, in \S\ref{consistency--tt}, defined \textit{jointly inconsistent} using truth tables: sentences are jointly inconsistent if there is no line on a truth table where they are all true. Again, we can show that two or more sentences are jointly inconsistent with our natural deduction system. 
+We also, in section \ref{consistency--tt}, defined \textit{jointly inconsistent} using truth tables: sentences are jointly inconsistent if there is no line on a truth table where they are all true. Again, we can show that two or more sentences are jointly inconsistent with our natural deduction system. 
 
 \begin{factboxy}{Provably inconsistent}
 The sentences $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably inconsistent} iff, from them, a contradiction can be derived. I.e.\ $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n \proves (\meta{B} \eand \enot \meta{B})$.

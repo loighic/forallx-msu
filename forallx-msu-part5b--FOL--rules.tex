@@ -5,11 +5,11 @@
 
 \section{New rules for FOL}
 
-We retain the TFL rules that are given in chapter \ref{s:BasicTFL}, and now we add introduction and elimination rules for the universal and existential quantifiers and the identity operator.
+We retain the TFL rules that are given in chapter \ref{s:BasicTFL}. We also have introduction and elimination rules for the universal and existential quantifiers and the identity operator.
 
 \section{Universal elimination}
 
-If we know that everyone in a domain likes chocolate, then we know that a specific individual in this domain---let's say, Carol---likes chocolate. The universal elimination rule captures this reasoning process. 
+If we know that everyone in a domain likes chocolate, then we know that a specific individual in this domain---let's say, Carol---likes chocolate. The universal elimination rule captures this basic inference. 
 
 \begin{factboxy}{universal elimination rule}
 \begin{proof}
@@ -37,7 +37,8 @@ Similarly:}
 
 \section{Existential introduction}
 
-If we know, for instance, that David is on the train, then we know that someone is on the train. The existential introduction rule is based on this simple reasoning process.
+If we know that Alice is a spy, then we know that someone is is a spy. 
+This kind of inference is the basis for the existential introduction rule.
 
 \begin{factboxy}{existential introduction rule}
 \begin{proof}
@@ -65,18 +66,17 @@ If a sentence of FOL contains multiple instances of the same name, replace one o
 
 \section{A couple of examples}
 
-The existential quantifier and the universal quantifier are logical operators, and so we have to continue to follow this guideline from p.~\pageref{rule-proofs-main-operator}: {Each of the rules of derivation can only be applied to the main logical operator of a sentence}. And as we said in \S \ref{main_logical_operator}, the main logical operator is the logical operator that's scope is the entire sentence. 
-
+The existential quantifier and the universal quantifier are logical operators, and so we have to continue to follow this guideline from p.~\pageref{rule-proofs-main-operator}: {Each of the rules of derivation can only be applied to the main logical operator of a sentence}.  
 So, consider a sentence like this one:
 
 \begin{ebullet}
 \item[] $\forall x(Bx \eand Nx)$
 \end{ebullet}
-The scope of the universal quantifier is the whole sentence. Therefore, it is the main logical operator. As such, for this sentence, we can use the universal elimination rule, and we can't use the conjunction elimination rule. If we use the universal elimination rule, we get a sentence like this one:
+The scope of the universal quantifier is the whole sentence. Therefore, it is the main logical operator. As such, we can use the universal elimination rule, and we can't use the conjunction elimination rule. If we use the universal elimination rule, we get a sentence like this one:
 \begin{ebullet}
-\item[] $Bc \eand Nc$
+\item[] $(Ba \eand Na)$
 \end{ebullet}
-Now, we can use the conjunction elimination rule to get either `$Bc$' or `$Nc$' on a new line. %But, again, we \textit{cannot} use the conjunction elimination rule with `$\forall x[Bx \eand Nx]$' because the universal quantifier is the main logical operator.
+Now, we can use the conjunction elimination rule to get either $Ba$ or $Na$ on a new line. %But, again, we \textit{cannot} use the conjunction elimination rule with `$\forall x[Bx \eand Nx]$' because the universal quantifier is the main logical operator.
 
 Here are some examples of proofs that use the first two rules introduced in this chapter along with the rules from chapter \ref{s:BasicTFL}.
 \bigskip
@@ -138,13 +138,13 @@ $$\forall x (Fx \eand Gx) \proves \forall x Fx$$
 	\have{a}{Fa \eand Ga} \Ae{x}
 	\have{b}{Fa} \ae{a}
 \end{proof}
-We have derived `$Fa$'. This is an \textit{instance} of the conclusion that we are after: `$\forall xFx$'. (For example, `Albert is fast' is one \textit{instance} of `everyone is fast'.) 
-Alternatively, on lines 2 and 3 (and using the universal elimination and conjunction elimination rules), we could have put `$Fb$', `$Fc$', `$Fm_2$', `$Fr_{791}$', or anything else until we run out of space, time, or patience.   
+We have derived $Fa$. This is an \textit{instance} of the conclusion that we are after: $\forall xFx$. (For example, `Albert is fast' is one \textit{instance} of `everyone is fast'.) 
+Alternatively, on lines 2 and 3 (and using the universal elimination and conjunction elimination rules), we could have put $Fb$, $Fc$, $Fm_2$, $Fg_{791}$, or anything else until we run out of space, time, or patience.   
 
-So, from the premise `$\forall x (Fx \eand Gx)$', we could, in principle, use the name of any and every individual in the domain for `$(F\rule{1.7mm}{0.15mm} \eand G\rule{1.7mm}{0.15mm})$'.
-Therefore, because we arbitrarily chose `$a$' for the `$(Fa \eand Ga)$'---and then derived `$Fa$'---we should be allowed to infer `$\forall x Fx$' from the `$Fa$'.  
+So, from the premise $\forall x (Fx \eand Gx)$, we could, in principle, use the name of any and every individual in the domain for $(F\rule{1.7mm}{0.15mm} \eand G\rule{1.7mm}{0.15mm})$.
+Since we arbitrarily chose $a$ for the $(Fa \eand Ga)$---and then derived $Fa$---we are allowed to infer $\forall x Fx$ from the $Fa$.  
 
-This brings us to the following idea. We can use the \define{universal introduction rule} to get `$\forall x Fx$' from `$Fa$' as long as the `$a$' in `$Fa$' is arbitrarily chosen from the names of everyone or everything in the domain. And therefore, in this situation, we can complete the proof with this rule.
+This brings us to the following idea. We can use the \define{universal introduction rule} to get $\forall x Fx$ from $Fa$ as long as the $a$ in $Fa$ was arbitrarily chosen from the names of everyone or everything in the domain. Since it was, we complete the proof with this rule.
 
 \begin{proof}
 	\hypo{x}{\forall x (Fx \eand Gx)} \pr{}
@@ -192,7 +192,7 @@ The first thing to note about the \define{existential elimination rule} is that 
 
 \noindent Hence, we shouldn't get hung up on the word \textit{elimination}. We do eliminate the existential quantifier for the second step, but, in the end, we're right back to having an existentially quantified sentence---albeit a different one than the one with which we began.
 
-Now, let's think about how this rule works in a little more detail. Suppose that we know that \emph{someone} is $F$ (say ``fast''). The problem is that simply knowing this doesn't tell us which particular person is $F$. (Abigail? Carol? David? Who?) So from `$\exists x Fx$' we cannot immediately infer `$Fa$', or `$Fc$', or `$Fd$',  or any other instance of the sentence. What can we do?  How can we derive anything from an existentially quantified premise?
+Now, let's think about how this rule works in a little more detail. Suppose that we know that \emph{someone} is $F$ (say ``fast''). The problem is that simply knowing this doesn't tell us which particular person is $F$. (Abigail? Carol? David? Who?) So, from $\exists x Fx$, we cannot immediately infer $Fa$, or $Fc$, or $Fd$,  or any other instance of the sentence. How, then, can we derive anything from an existentially quantified premise?
 
 We will examine how our existential elimination rule works with this argument:
 $$\exists x Fx, \forall x(Fx \eif Gx) \proves \exists x Gx$$
@@ -203,7 +203,7 @@ After the premises, we make an assumption.
 	\open
 		\hypo{s}{Fe} \as{}
 \end{proof}
-Premise 1 tell us that \emph{someone} is an $F$.  So, on line 3, we introduce an arbitrary name for this someone: `$e$'. Essentially, we are saying, ``let's call this individual who is fast \textit{Eddie}.'' And we are assuming nothing about ``Eddie'' other than that the predicate `$F$' is true of true of him or her. (I.e., he or she is fast.) Now that we have `$Fe$', we proceed as follows. 
+Premise 1 tell us that \emph{someone} is an $F$.  So, on line 3, we introduce an arbitrary name for this someone: $e$. Essentially, we are saying, ``let's call this individual who is fast \textit{Eddie}.'' And we are assuming nothing about ``Eddie'' other than that the predicate $F$ is true of true of him or her. (I.e., he or she is fast.) Now that we have $Fe$, we proceed as follows. 
 %Other than removing the existential quantifier and replacing the variable with a name, our assumption must match the sentence in premise 1. 
 \begin{proof}
 	\hypo{es}{\exists x Fx} \pr{}
@@ -213,7 +213,7 @@ Premise 1 tell us that \emph{someone} is an $F$.  So, on line 3, we introduce an
 		\have{st}{Fe \eif Ge}\Ae{ast}
 		\have{t}{Ge} \ce{s, st}
 \end{proof}
-So far, so good. Because `$e$' was just a randomly chosen name and we do know if there is, in fact, an `$e$' that is `$F$', we cannot take the `$e$' outside the subproof. But we don't need to do so anyway. We can use the existential introduction rule to get `$\exists xGx$' on line 6. Then, we can exit the subproof and, using the \define{existential elimination rule}, repeat `$\exists xGx$' on the next line.
+So far, so good. Because $e$ was just a randomly chosen name and we don't know if there is, in fact, an $e$ that is $F$, we cannot take the $e$ outside the subproof. But we don't need to do so anyway. We can use the existential introduction rule to get $\exists xGx$ on line 6. Then, we can exit the subproof and, using the \define{existential elimination rule}, repeat $\exists xGx$ on the next line.
 %\noindent\begin{minipage}{0.99\textwidth}
 \begin{proof}
 	\hypo{es}{\exists x Fx} \pr{}
@@ -227,6 +227,7 @@ So far, so good. Because `$e$' was just a randomly chosen name and we do know if
 	\have{et2}{\exists x Gx}\Ee{es,s-et1}
 \end{proof}
 %\end{minipage}\bigskip
+Notice that, when we cite the rule on line 7, we give the range for the subproof and the number for the line containing the existentially quantified sentence that was the basis for the assumption.
 
 	\begin{quote}
 %Since somone is $F$, there is some particular individual who is $F$. We do not know anything about this individual, other than that he or she is $F$, but for convenience, let's call this individual ``Oby''. So, Oby is $F$. Since everyone who is $F$ is $G$, it follows that ``Oby'' is $G$. And since Oby is $G$, it follows that \emph{someone} is $G$. Nothing depends on who, exactly, our ``Oby'' is. But someone is $G$.
@@ -245,7 +246,7 @@ So far, so good. Because `$e$' was just a randomly chosen name and we do know if
 
 \small{The name \meta{c} may not occur outside the subproof.\smallskip
 
-Given an existentially quantified sentence as a premise, assume an instance of that sentence. Proceed until the desired sentence $\meta{B}$ is reached. $\meta{B}$ cannot contain the name that was used in the assumption. Exit the subproof, and put $\meta{B}$ on the next line.
+Given an existentially quantified sentence as a premise, assume an instance of that sentence. Proceed until the desired sentence $\meta{B}$ is reached. $\meta{B}$ cannot contain the name that was used in the assumption. Exit the subproof, and repeat $\meta{B}$ on the next line.
 }
 \end{factboxy}
 
@@ -307,6 +308,57 @@ When thinking about identities, however, the more interesting assertion is one l
 \bigskip
 \end{minipage}
 
+
+\item $\forall x(Mx \eiff Wx), \exists yPy \eif \forall xWx, Pa \proves \forall xMx$
+
+\begin{proof}
+	\hypo{p1}{\forall x(Mx \eiff Wx)} \pr{}
+	\hypo{p2}{\exists yPy \eif \forall xWx} \pr{}
+	\hypo{p3}{Pa} \pr{}
+	\have{4}{\exists yPy} \Ei{p3}
+	\have{5}{\forall xWx} \ce{p2,4}
+	\have{6}{Wc} \Ae{5}
+	\have{7}{Mc \eiff Wc} \Ae{p1}
+	\have{8}{Mc} \be{6,7}
+	\have{con}{\forall xMx} \Ai{8}
+\end{proof}
+\bigskip
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item$\enot Fe \eiff \forall xGx, \forall y\enot Hy, \forall x(Hx \eor \enot Fx) \proves Gb$
+
+\begin{proof}
+	\hypo{p1}{\enot Fe \eiff \forall xGx} \pr{}
+	\hypo{p2}{\forall y\enot Hy} \pr{}
+	\hypo{p3}{\forall x(Hx \eor \enot Fx)} \pr{}
+	\have{4}{\enot He} \Ae{p2}
+	\have{5}{He \eor \enot Fe} \Ae{p3}
+	\have{6}{\enot Fe} \oe{4,5}
+	\have{7}{\forall xGx} \be{p1,6}
+	\have{8}{Gb} \Ae{7}
+\end{proof}
+\bigskip
+\end{minipage}
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\exists y \forall xLxy \proves \forall x \exists yLxy$
+
+\begin{proof}
+	\hypo{p1}{\exists y \forall xLxy} \pr{}
+	\open
+		\hypo{lxc}{\forall xLxc} \as{}
+		\have{lac}{Lac} \Ae{lxc}
+		\have{lay}{\exists yLay} \Ei{lac}
+		\have{c1}{\forall x \exists yLxy} \Ai{lay}
+	\close
+	\have{c2}{\forall x \exists yLxy} \Ee{p1,lxc-c1}
+\end{proof}
+\smallskip
+On p.~\pageref{quantifier-order}, we said that $\forall x \exists yLxy$ and $\exists y \forall xLxy$ have different meanings. One consequence of this is that $\exists y \forall xLxy \proves \forall x \exists yLxy$ is valid (as just shown), but $\forall x \exists yLxy \proves \exists y \forall xLxy$ is not. 
+\bigskip
+\end{minipage}
+
+
 \noindent\begin{minipage}{0.99\textwidth}
 \item $\exists xMx \proves \exists x(Mx \eor Nx)$
 
@@ -339,6 +391,8 @@ When thinking about identities, however, the more interesting assertion is one l
 \bigskip
 \end{minipage}
 
+
+
 \noindent\begin{minipage}{0.99\textwidth}
 \item $\exists x(Bx \eif Dx), \forall xBx \proves \exists xDx$
 
@@ -353,8 +407,31 @@ When thinking about identities, however, the more interesting assertion is one l
 	\close
 	\have{c}{\exists xDx} \Ee{p1,bd-d2}
 \end{proof}
+%\bigskip
+\end{minipage}
+
+
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\forall xPx \eif \exists y(Qy \eand Ty), \forall zPz \proves \exists xQx$
+
+\begin{proof}
+	\hypo{p1}{\forall xPx \eif \exists y(Qy \eand Ty)} \pr{}
+	\hypo{p2}{\forall zPz} \pr{}
+	\have{3}{Pa} \Ae{p2}
+	\have{4}{\forall xPx} \Ai{3}
+	\have{5}{\exists y(Qy \eand Ty)} \ce{p1,4}
+	\open
+		\hypo{6}{Qc \eand Tc} \as{}
+		\have{7}{Qc} \ae{6}
+		\have{8}{\exists xQx} \Ei{7}
+	\close
+\have{9}{\exists xQx} \Ee{5, 6-8}
+\end{proof}
 \bigskip
 \end{minipage}
+
+
 
 \item $Ga \eiff Ha, a=d \proves Gd \eiff Hd$
 
@@ -388,24 +465,10 @@ When thinking about identities, however, the more interesting assertion is one l
 	\have{bd}{b=d} \ce{p2,n}
 	\have{c}{Nd} \ie{n,bd}
 \end{proof}
-\medskip
+\bigskip
 \end{minipage}
 
-\item $\exists y \forall xLxy \proves \forall x \exists yLxy$
-
-\begin{proof}
-	\hypo{p1}{\exists y \forall xLxy} \pr{}
-	\open
-		\hypo{lxc}{\forall xLxc} \as{}
-		\have{lac}{Lac} \Ae{lxc}
-		\have{lay}{\exists yLay} \Ei{lac}
-		\have{c1}{\forall x \exists yLxy} \Ai{lay}
-	\close
-	\have{c2}{\forall x \exists yLxy} \Ee{p1,lxc-c1}
-\end{proof}
-\smallskip
-On p.~\pageref{quantifier-order}, we said that `$\forall x \exists yLxy$' and `$\exists y \forall xLxy$' have different meanings. One consequence of this is that $\exists y \forall xLxy \proves \forall x \exists yLxy$ is valid (as just shown), but $\forall x \exists yLxy \proves \exists y \forall xLxy$ is not. 
-\bigskip
+\medskip   %This is just to force part of the last paragraph on this page onto the next one.
 
 \item $\forall x \forall y \forall z((Lxy \eand Lyz) \eif Lxz)\textcolor{magenta}{,}~ Lab\textcolor{magenta}{,}~ Lbc \proves Lac$
 \end{earg}  % This is here, rather than at the end, so that the text that follows will be more properly formatted.

@@ -35,11 +35,11 @@ $J$&$K$&  	$K$&\eor&$(J$&\eand&\enot&$K)$\\
 \end{center}
 To begin thinking about truth tables, notice the following features of this one.
 \begin{earg}
-\item[1.] The sentence for which we are creating the truth table, in this case, `$K \eor (J \eand \enot K)$', is at the top of the truth table, to the right of the vertical line.
-\item[2.] The atomic sentences that are in `$K \eor (J \eand \enot K)$' are at the top of the truth table to the left of the vertical line, and they are placed in alphabetical order. 
-\item[3.] The `T's and `F's below the horizontal line stand for `true' and `false'. (See the definition of \define{truth values} at the beginning of the next section.)
-\item[4.] Below the `$J$' and `$K$' on the left are the different possible combinations of true and false. Below the `$J$', each `T’ is a scenario where $J$ is true, and each `F’ is a scenario where $J$ is false. (And likewise for $K$.) So, on the first line (right below the horizontal line), $J$ is true, and $K$ is true. On the second line, $J$ is true, and $K$ is false. On the third line, $J$ is false, and $K$ is true. And on the fourth line, $J$ is false, and $K$ is false. 
-\item[5.] The columns of Ts and Fs that are to the left of the vertical line are repeated on the right side of the table under each `$J$' and `$K$', respectively. 
+\item[1.] The sentence for which we are creating the truth table, in this case, $(K \eor (J \eand \enot K))$, is at the top of the truth table, to the right of the vertical line.
+\item[2.] The atomic sentences that are in $(K \eor (J \eand \enot K))$ are at the top of the truth table to the left of the vertical line, and they are placed in alphabetical order. 
+\item[3.] The Ts and Fs below the horizontal line stand for `true' and `false'. (See the definition of \define{truth values} at the beginning of the next section.)
+\item[4.] Below the $J$ and $K$ on the left are the different possible combinations of true and false. Below the $J$, each T is a scenario where $J$ is true, and each F is a scenario where $J$ is false. (And likewise for $K$.) So, on the first line (right below the horizontal line), $J$ is true, and $K$ is true. On the second line, $J$ is true, and $K$ is false. On the third line, $J$ is false, and $K$ is true. And on the fourth line, $J$ is false, and $K$ is false. 
+\item[5.] The columns of Ts and Fs that are to the left of the vertical line are repeated on the right side of the table under each $J$ and $K$, respectively. 
 %(See figure \ref{fig:tt-intro}.)
 \end{earg}
 
@@ -1960,6 +1960,9 @@ F & F &    F & F & F &     T & F & F & F
 \end{tabular}
 \end{flushleft}\medskip
 
+
+
+\noindent\begin{minipage}{0.99\textwidth}
 \item $(P \eif Q) \eif S$ and $P \eif (Q \eif S)$ are not equivalent.
 \begin{flushleft}
 \begin{tabular}{d d d | f e e e h | f e e e e}
@@ -1974,7 +1977,10 @@ F & T & F &      F & T & T &   F & F &      F & T &   T & F & F\\
 F & F & T &      F & T & F &   T & T &      F & T &   F & T & T\\
 F & F & F &      F & T & F &   F & F &      F & T &   F & T & F 
 \end{tabular}
-\end{flushleft}\medskip
+\end{flushleft}
+\end{minipage}
+\medskip
+
 
 \begin{comment}
 \begin{minipage}{10cm}
