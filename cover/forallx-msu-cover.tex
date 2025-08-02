@@ -1,19 +1,25 @@
 
 %% USE LUALATEX!!!
 
-%\documentclass[bleedwidth=6.35mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=12.53mm]{bookcover} %Amazon
+%\PassOptionsToPackage{cmyk}{xcolor}
 
-\documentclass[bleedwidth=3.17mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=14.05mm]{bookcover} %Lulu
+%\documentclass[bleedwidth=6.35mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=12.3mm]{bookcover} %Amazon
+
+\documentclass[bleedwidth=3.17mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=13.82mm]{bookcover} %Lulu
 
 % for Amazon
 % page-turn direction: left to right
 % interior trim size: 152.4 x 228.6 mm
 % find spine width
 
-\usepackage{GS1,qrcode}   % for the barcode
-\usepackage{xcolor}
+% For Lulu, just change the spinewidth, which will be provided once the pdf is uploaded.
 
-\definecolor{forallx-orange}{RGB}{254, 102, 1}
+\usepackage{GS1,qrcode}   % for the barcode
+%\usepackage[cmyk]{xcolor}
+
+%\definecolor{forallx-orange}{RGB}{254, 102, 1}
+%\definecolor{forallx-orange}{cmyk}{0, 60, 100, 0}
+\definecolor{forallx-orange}{HTML}{FE6601}
 
 
 % FONTS
@@ -49,7 +55,8 @@
 
 \begin{document}
 \begin{bookcover}
-\bookcovercomponent{color}{bg whole}{color=forallx-orange}
+%\bookcovercomponent{color}{bg whole}{color=forallx-orange}
+\pagecolor{forallx-orange}
 
 %TITLE
 \bookcovercomponent{normal}{front}[20mm,,10mm,110mm]{\sffamily   %spacing: left, bottom, right, top 
