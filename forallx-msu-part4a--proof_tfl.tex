@@ -801,6 +801,60 @@ With the `$Q$' on line 4 and `$Q \eif R$' on line 2, we can use the conditional 
 
 \section{Negation introduction and elimination}\label{s:neg-rules}
 
+This conversation between Jeff and Claire illustrates an important method for making a deductive inference.\smallskip
+
+{\textsc{\small Jeff.}}~ The earth is flat.\vspace{1pt}
+
+{\textsc{\small Claire.}}~ Huh?\vspace{1pt}
+
+{\textsc{\small Jeff.}}~ I said that the earth is flat.\vspace{1pt}
+
+{\textsc{\small Claire.}~ Okay, let’s imagine that the earth is flat.\vspace{1pt}
+
+{\textsc{\small Jeff.}~ I’m not imagining it. I’m believing it.\vspace{1pt}
+
+\hangindent=1cm {\textsc{\small Claire.}~ If the earth was flat, then people would not be able to travel straight west and then return to their starting point from the east.\vspace{1pt}
+
+{\textsc{\small Jeff.}~ Okay.\vspace{1pt}
+
+\hangindent=1cm {\textsc{\small Claire.}~ But people can travel straight west and then return to their starting point from the east.\vspace{1pt}
+
+{\textsc{\small Jeff.}~ So?\vspace{1pt}
+
+{\textsc{\small Claire.}~ The last two things that I said are a contradiction.\vspace{1pt}
+
+{\textsc{\small Jeff.}~ What’s a contradiction?\vspace{1pt}
+
+{\textsc{\small Claire.}~ The earth is not flat.\smallskip
+
+\filbreak
+
+\noindent Notice how Claire proceeds. The second time that she speaks, she makes an assumption:
+\begin{ebullet}
+	\item[] The Earth is flat.
+\end{ebullet}
+\noindent She then arrives at a contradiction---that is, a statement and the denial of that statement:
+\begin{ebullet}
+	\item[\textit{a}:] People cannot travel straight west and then return to their starting point from the east. 
+	\item[\textit{b}:] People can travel straight west and then return to their starting point from the east.
+\end{ebullet}
+Since it is impossible for both (\textit{a}) and (\textit{b}) to be true, the assumption that Claire made---\textit{the Earth is flat}---must be wrong. Consequently, she can safely conclude the opposite of her assumption: 
+\begin{ebullet}
+	\item[] The earth is not flat. 
+\end{ebullet}
+Our two negation rules (which are basically the same rule) formalize this reasoning process. These (plus the reiteration rule, which is sometimes used with these rules) are the final ones in our natural deduction system. They are rules of last resort, and as such, are used when we can't reach a conclusion using only the rules so far covered. 
+
+Here is a simple argument in English:
+\begin{earg}
+\item If Lukas is in Cairo, then Maria has the code.
+\item Maria does not have the code.
+\item Therefore, Lukas is not in Cairo.
+\end{earg}
+This is a valid argument, but in TFL we have no way to create a proof for $(L \eif M)$, $\enot M \proves \enot L$ unless we use one of these negation rules.
+
+
+
+\begin{comment}
 Here is a simple mathematical argument in English:
 \begin{earg}
 \item[1.] Assume that there is some greatest natural number. Call it $G$.
@@ -810,13 +864,10 @@ Here is a simple mathematical argument in English:
 \item[5.] The previous line is a contradiction.
 \item[6.] Therefore, the assumption that we made on line 1 is false. There is no greatest natural number.
 \end{earg}
-This type of argument is traditionally called a \emph{reductio}. Its full Latin name is \emph{reductio ad absurdum}, which means `reduction to absurdity' (although \textit{absurdity} in the sense that we generally use the word today isn't part of this). In a reductio, we assume something for the sake of argument---for example, that there is a greatest natural number. Then we show that the assumption leads to two contradictory sentences---for example, `$G$ is the greatest natural number' and `$G$ is not the greatest natural number.' In this way, we have shown that the original assumption must be false, which means that the denial of the assumption is true. 
+\end{comment}
 
-Our two negation rules (which are basically the same rule) formalize this reasoning process.
 
 \medskip
-
-%\begin{tcbraster}[raster columns=2, raster valign=top]
 
 \begin{factboxy}{negation introduction rule}
 \begin{proof}
@@ -849,10 +900,12 @@ There can be as many or as few lines as needed between lines $m$ and $n$, but $n
 
 \end{factboxy}
 
-%\end{tcbraster}
-\medskip
 
-\noindent Notice that, just as we do when using the conditional introduction rule, we begin by making an assumption. The subproof that follows is indented, and the assumption that we made must be discharged by applying either the negation introduction rule or the negation elimination rule. 
+\begin{notebox}
+This type of argument is traditionally called a \emph{reductio}. Its full Latin name is \emph{reductio ad absurdum}, which means `reduction to absurdity,' although \textit{absurdity} in the sense that we generally use the word today isn't part of this. Rather, it is reasoning to the point that the assumption leads to two contradictory sentences. This, as you have seen, means that the denial of the assumption is true. 
+\end{notebox}\smallskip
+
+Notice that, just as we do when using the conditional introduction rule, we begin by making an assumption. The subproof that follows is indented, and the assumption that we made must be discharged by applying either the negation introduction rule or the negation elimination rule. 
 
 When using either of the negation rules, the last two lines of the subproof must be an explicit contradiction: \meta{B} on one line and its negation, $\enot\meta{B}$, on the next line (or vice versa). Those two lines cannot be separated. When you cite the rule, however, the lines that you give are the lines for the whole subproof (starting with the assumption), not just the two lines containing the contradiction. 
 
@@ -878,36 +931,60 @@ To get a contradiction on the last two lines of a subproof, we will usually have
 \end{proof}
 \end{factboxy-width}
 
-To demonstrate both the negation elimination rule and the reiteration rule, we will go through the proof for this argument: `$\enot P \eif \enot Q, Q \proves P$'. Looking at the argument, you'll notice that our conclusion is `$P$', but we cannot get `$P$' by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. This means that we will need to use one of our negation rules.
+To demonstrate both the negation introduction rule and the reiteration rule, we will go through the proof for this argument: $(L \eif M), \enot M \proves \enot L$. Looking at the argument, you'll notice that our conclusion is $\enot L$, but we cannot get $\enot L$ by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. This means that we will need to use one of our negation rules.
 
-After the premises, we make the assumption that we need for negation elimination. Since, ultimately, we want `$P$', we will assume `$\enot P$' so that, once we discharge that assumption (and close the subproof), we will have the `$P$' that we are after.
-
-\begin{proof}
-	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
-	\hypo{p2}{Q} \pr{}
-	\open
-		\hypo{np}{\enot P}\as{}
-\end{proof}
-We then use the conditional elimination rule to get $\enot Q$ on line 4. 
-\begin{proof}
-	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
-	\hypo{p2}{Q} \pr{}
-	\open
-		\hypo{np}{\enot P}\as{}
-		\have{nq}{\enot Q}\ce{p1,np}
-%		\have{ng}{Q}\reit{p2}
-\end{proof}
-The $Q$ on line 2 and $\enot Q$ on line 4 are a contradiction, but to use the negation elimination rule we need to have `$Q$' on line 5. To get it there, we use the reiteration rule. 
+After the premises, we make an assumption. Since, ultimately, we want $\enot L$, we will assume $L$ so that, once we discharge that assumption (and close the subproof), we will have the $L$ that we are after.
 
 \begin{proof}
-	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
-	\hypo{p2}{Q} \pr{}
+	\hypo{p1}{L \eif M} \pr{}	
+	\hypo{p2}{\enot M} \pr{}
 	\open
-		\hypo{np}{\enot P}\as{}
-		\have{nq}{\enot Q}\ce{p1,np}
-		\have{ng}{Q}\reit{p2}
+		\hypo{np}{L}\as{}
 \end{proof}
-Now that `$\enot Q$' and `$Q$' are on consecutive lines, we can use the negation elimination rule to discharge the assumption that we made, and that gives us the conclusion we are after: `$P$'.
+We then use the conditional elimination rule to get $M$ on line 4. 
+\begin{proof}
+	\hypo{p1}{L \eif M} \pr{}	
+	\hypo{p2}{\enot M} \pr{}
+	\open
+		\hypo{np}{L}\as{}
+		\have{nq}{M}\ce{p1,np}
+%		\have{ng}{\enot M}\reit{p2}
+\end{proof}
+The $\enot M$ on line 2 and $M$ on line 4 are a contradiction, but to use the negation elimination rule we need to have $\enot M$ on line 5. To get it there, we use the reiteration rule. 
+
+\begin{proof}
+	\hypo{p1}{L \eif M} \pr{}	
+	\hypo{p2}{\enot M} \pr{}
+	\open
+		\hypo{np}{L}\as{}
+		\have{nq}{M}\ce{p1,np}
+		\have{ng}{\enot M}\reit{p2}
+\end{proof}
+Now that $\enot M$ and $M$ are on consecutive lines, we can use the negation elimination rule to discharge the assumption that we made, which gives us the conclusion: $\enot L$.
+
+\begin{proof}
+	\hypo{p1}{L \eif M} \pr{}	
+	\hypo{p2}{\enot M} \pr{}
+	\open
+		\hypo{np}{L}\as{}
+		\have{nq}{M}\ce{p1,np}
+		\have{ng}{\enot M}\reit{p2}
+	\close
+	\have{c}{\enot L}\ni{np-ng}
+\end{proof}
+
+We just used the negation introduction rule. The negation elimination rule is, essentially, the same. Whether you use the negation introduction rule or negation elimination rule is just a function of whether you want `$\enot \meta{A}$' or `$\meta{A}$' on the line after the subproof.
+
+
+%\newpage
+
+\section{Even more examples}
+
+The negation introduction rule or the negation elimination rule is used in each of these proofs.
+
+\begin{earg}
+
+\item $(\enot P \eif \enot Q), Q \proves P$
 
 \begin{proof}
 	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
@@ -919,18 +996,9 @@ Now that `$\enot Q$' and `$Q$' are on consecutive lines, we can use the negation
 	\close
 	\have{c}{P}\ne{np-ng}
 \end{proof}
+\medskip
 
-We just used the negation elimination rule. The negation introduction rule is, essentially, the same. Whether you use the negation introduction rule or negation elimination rule is just a function of whether you want `$\enot \meta{A}$' or `$\meta{A}$' on the line after the subproof.
-
-
-%\newpage
-
-\section{Even more examples}
-
-The negation introduction rule or the negation elimination rule is used in each of these proofs.
-
-\begin{earg}
-
+\begin{comment}
 \item $P \eif Q, \enot Q \proves \enot P$
 
 \begin{proof}
@@ -944,7 +1012,7 @@ The negation introduction rule or the negation elimination rule is used in each 
 	\have{c}{\enot P} \ni{p-nq}
 \end{proof}
 \medskip
-
+\end{comment}
 
 \item $P \eif \enot Q \proves \enot(P \eand Q)$
 
