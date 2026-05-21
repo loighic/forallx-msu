@@ -106,7 +106,7 @@ Consider this sentence again:
 	\end{earg}
 `Claire is in the safe house' and `The agency has the document' are \textit{subsentences} of sentence (a). To specify the structure of the first argument in this chapter, we replaced the sentences and subsentences in it with individual letters. `Claire is in the safe house' was replaced with `A', and `The agency has the document' was replaced with `B'. This kind of representation---letters standing for sentences or subsentences---is one important part of the formal language developed in this textbook.
 
-\begin{factboxy}{Atomic sentences}
+\begin{factboxy}{atomic sentences}
 Again, we define \define{sentence} as a statement that can be true or false. When no smaller sentence can be extracted from a sentence, it is an \define{atomic sentence}.\medskip
 
 In English, an atomic sentence is a declarative sentence that does not contain any subsentences.\smallskip
@@ -182,7 +182,7 @@ The second sentence is partially symbolized as `It is not the case that $M$'. In
 
 Sentence \ref{not3} is worded a little bit differently, but it is equivalent to sentence \ref{not2}. As such, we can also symbolize it as $\enot M$.
 
-\begin{factboxy}{Negation}
+\begin{factboxy}{negation}
 A sentence can be symbolized as $\enot\meta{A}$ if it can be paraphrased in English as `It is not the case that \ldots '.
 \end{factboxy}
 
@@ -249,7 +249,7 @@ Finally, we don't symbolize the `both' in \ref{and3}, other than to use the `$\e
 Although we will relax this requirement later, in truth-functional logic, conjunctions, as well as the types of sentences that we will discuss in sections \ref{s:ConnectiveDisjunction} - \ref{s:biconditional-1}, should be enclosed in parentheses. (A negation [for instance, $\enot P$] should not, though.) The purpose of the parentheses is to let us be perfectly explicit about how each logical operator is related to each sentence letter in a sentence. 
 
 
-\begin{factboxy}{Conjunction}
+\begin{factboxy}{conjunction}
 A sentence can be symbolized as $(\meta{A}\eand\meta{B})$ if it can be paraphrased any of these ways in English:
 \vspace{-2mm}
 \begin{earg}
@@ -294,7 +294,7 @@ Or with the $S$ like this:
 In the English sentence, the `either' indicates where the disjunction begins. Hence, $(T \eor S)$ is the disjunction, and $K \eand \ldots$ precedes it, giving us this: $(K \eand (T \eor S))$.
 
 
-\begin{factboxy}{Disjunction}
+\begin{factboxy}{disjunction}
 A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.'
 \end{factboxy}
 
@@ -344,7 +344,7 @@ Sentence \ref{if1} has this form: if P, then F, and we call this type of sentenc
 
 In a conditional, what goes before the `$\eif$'  is called the \define{antecedent}, and what comes after the `$\eif$' is called the \define{consequent}. So, in sentence \ref{if1}, `Jean is in Paris' is the antecedent, and `Jean is in France' is the consequent.
 
-\begin{factboxy}{Conditional}
+\begin{factboxy}{conditional}
 A sentence can be symbolized as $(\meta{A} \eif \meta{B})$ if it can be paraphrased in English as `If A, then B'.
 \end{factboxy}
 
@@ -395,7 +395,7 @@ So, sentence \ref{iff1} is equivalent to $((W \eif P) \eand (P \eif W))$, which 
 
 The expression `if and only if' occurs frequently in philosophy, mathematics, and logic, and sometimes you will see it abbreviated `iff'. (Although even when `iff' is written, we still say `if and only if.') 
 
-\begin{factboxy}{Biconditional}
+\begin{factboxy}{biconditional}
 A sentence can be symbolized as $(\meta{A} \eiff \meta{B})$ if it can be paraphrased in English as `A if and only if B'.
 \end{factboxy}
 	
@@ -417,7 +417,7 @@ One meaning of sentence \ref{unless1} is that if you do not wear a jacket, then 
 
 All three ways of symbolizing sentence \ref{unless1} are correct. In fact, in chapter \ref{s:SemanticConcepts}, we will see that these three TFL sentences are equivalent. Following the somewhat standard practice, however, we will define \textit{unless} as a disjunction.
 	
-\begin{factboxy}{Unless}
+\begin{factboxy}{unless}
 If a sentence can be paraphrased as `A unless B,' then it can be symbolized as `$(\meta{A}\eor\meta{B})$'.
 \end{factboxy}
 
@@ -623,7 +623,7 @@ Many expressions of TFL will be total gibberish. We want to know when an express
 
 %We can stipulate similar rules for each of the other logical operators. For instance, if \meta{A} and \meta{B} are sentences of TFL, then combining them with an `$\eand$' and brackets will yield a new sentence of TFL: $(\meta{A}\eand\meta{B})$. Providing rules like this for all of the logical operators, we arrive at the following formal definition for a \define{sentence of TFL}.
 
-\begin{factboxy}{Sentences of TFL}\label{TFLsentences}
+\begin{factboxy}{sentences of TFL}\label{TFLsentences}
 	\begin{enumerate}
 		\item Every atomic sentence is a sentence.
 		\item If \meta{A} is a sentence, then $\enot\meta{A}$ is a sentence.
@@ -694,7 +694,7 @@ You will learn to recognize sentences of TFL more quickly if you write neatly an
 
 Setting aside the `$\enot$' for a moment, each of the other logical operators, as you know, combine two sentences (which may, themselves, be composed of multiple sentences). The two sentences that are joined together by a logical operator comprise that operator's \define{scope}. 
 
-\begin{factboxy}{Scope}
+\begin{factboxy}{scope}
 For `$\eand$', `$\eor$', `$\eif$', and `$\eiff$', the \define{scope} of the logical operator is the two sentences that the logical operator is conjoining. 
 \smallskip
 
@@ -716,7 +716,7 @@ $$(((T \eif P) \eand R) \eor (S \eiff Q))$$
 
 When the scope of a logical operator is the whole sentence (besides that operator itself), then that logical operator is the \define{main logical operator}. So, in the previous example, the `$\eor$' is the main logical operator. This means that the sentence is a disjunction. (The subsentences are different kinds of sentences, but the whole sentence is a disjunction.)
 
-\begin{factboxy}{Main Logical Operator (MLO)}
+\begin{factboxy}{main logical operator (MLO)}
 The \define{main logical operator} is the logical operator whose scope is the entire sentence. 
 \end{factboxy}
 
@@ -845,7 +845,7 @@ We use $\meta{A}$ and $\meta{B}$ (and other capital letters in this font) when w
 
 $\meta{A}, \meta{B}, \meta{C}, \meta{D},$ etc. are not actually part of TFL. Rather, they are a part of  English, and we use them to talk about expressions of TFL. 
 	
-\begin{factboxy}{Metavariable}
+\begin{factboxy}{metavariable}
 A \define{metavariable} is a variable in the metalanguage (i.e., English) that represents any sentence in TFL. The symbols $\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$ are used for the metavariables.
 \end{factboxy}
 
