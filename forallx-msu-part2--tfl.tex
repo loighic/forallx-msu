@@ -149,13 +149,13 @@ In addition to symbolizing English sentences with sentence letters, we also want
 
 \begin{table*}\centering\sffamily\footnotesize
 \ra{1.25}
-\begin{tabular}{@{}l l l@{}}\toprule
-\textth{symbol} & \textth{the sentence's name} & \textth{its meaning}\\\midrule
-	\enot&negation&`It is not the case that $\ldots$.'\\
-	\eand&conjunction&`Both $\ldots$, and $\ldots$.'\\
-	\eor&disjunction&`Either $\ldots$, or $\ldots$.'\\
-	\eif&conditional&`If $\ldots$, then $\ldots$.'\\
-	\eiff&biconditional&`$\ldots$ if and only if $\ldots$.'\\
+\begin{tabular}{@{}l l l l@{}}\toprule
+\textth{} & \textth{symbol's name} & \textth{sentence's name} & \textth{symbol's meaning}\\\midrule
+	\enot~~&not sign &negation&`It is not the case that $\ldots$.'\\
+	\eand~~&ampersand&conjunction&`Both $\ldots$, and $\ldots$.'\\
+	\eor~~&wedge&disjunction&`Either $\ldots$, or $\ldots$.'\\
+	\eif~~&arrow&conditional&`If $\ldots$, then $\ldots$.'\\
+	\eiff~~&double-arrow&biconditional&`$\ldots$ if and only if $\ldots$.'\\
 \bottomrule
 \end{tabular}
 \caption{The logical operators of truth functional logic. See table \ref{symbols-Carnap} on p.~\pageref{symbols-Carnap} for instructions about how to type these symbols.}\label{table.connectives}
@@ -204,9 +204,8 @@ Finally, consider these English sentences:
 		\item[\ex{not6}] Jane is happy.
 		\item[\ex{not7}] Jane is unhappy.
 	\end{earg}
-If we use $H$ stand for `Jane is happy', then we can symbolize sentence \ref{not6} as $H$. It would be a mistake, however, to symbolize sentence \ref{not7} with $\enot{H}$. 
-$\enot{H}$ means `Jane is not happy', but `Jane is not happy' does not have the same meaning as `Jane is unhappy'. After all, Jane might be neither happy nor unhappy; her mood might just be neutral. In order to symbolize sentence \ref{not7}, we would need a different sentence letter.
-
+If we use $H$ to stand for `Jane is happy', then we can symbolize sentence \ref{not6} as $H$. It would be a mistake, however, to symbolize \ref{not7} as $\enot{H}$. 
+$\enot{H}$ means `Jane is not happy', but `Jane is not happy' does not have the same meaning as `Jane is unhappy'. Someone who is not happy might be confused, angry, or just neutral---or he or she might be unhappy. Since \textit{being unhappy} specifically means being upset or sad, to symbolize sentence \ref{not7}, we would need a different sentence letter.
 
 \section{Conjunction}
 \label{s:ConnectiveConjunction}
@@ -306,6 +305,8 @@ At other times, the word `or' allows for the possibility that both disjuncts mig
 
 When, by ``A or B,'' we mean that A is true or B is true or \textit{both} are true, then we are using the \define{inclusive or}. The TFL symbol `\eor' always symbolizes an \emph{inclusive or}.
 
+
+\begin{comment}
 \subsection{Negation and disjunction}
 
 Think about these sentences:
@@ -318,7 +319,7 @@ Sentence \ref{or3} is symbolized as $(\enot K \eor \enot S)$. Sentences \ref{or4
 
 According to sentence \ref{or4}, neither one is at the train station. Therefore, we can paraphrase it like this:
 \begin{ebullet}
-	\item[] It is not the case that either Amy is at the train station or Sarah is at the train station. 
+	\item[] It is not the case that either Kate is at the train station or Sarah is at the train station. 
 \end{ebullet}
 As our paraphrased sentence shows, we are negating the entire disjunction. Hence, we symbolize sentence \ref{or4} as $\enot (K \eor S)$. 
 
@@ -327,6 +328,7 @@ Sentence \ref{or.xor} expresses the meaning of the \textit{exclusive or}: one or
 The first part, `Kate is at the train station or Sarah is at the train station', is symbolized as $(K \eor S)$. The second part, which states that both won't be there, is paraphrased this way: `It is not the case that both Kate is at the train station and Sarah is at the train station'. We symbolize this as $\enot(K \eand S)$. We put the two parts together with an `and', and sentence \ref{or.xor} becomes $((K \eor S) \eand  \enot(K \eand S))$.
 
 These last two examples demonstrate that we can sometimes symbolize English sentences that, at first, appear not to be using the logical operators of TFL. (That is, the ones listed in table \ref{table.connectives}.) We can do this as long as we can figure out a way to paraphrase the English sentence so that it is using some combination of `\textit{and}', `\textit{or}' (i.e., the inclusive-or), `\textit{not}', `\textit{if \ldots, then \ldots}', and `\textit{if and only if}'. 
+\end{comment}
 
 
 \section{Conditional}
@@ -866,14 +868,14 @@ When we use one language to talk about another one, the language about which we 
 \label{pr.wiffTFL}
 For each of the following, (a) is it, strictly speaking, a sentence of TFL, and (b) is it a sentence of TFL when we allow ourselves to drop the outermost parentheses and use square brackets? If, by either of these standards, it is a sentence of TFL, then (c) what is the main logical operator?
 \begin{earg}
-\item $(A)$
-\item $J_{374} \eor \enot J_{374}$
-\item $\enot \enot \enot \enot F$
+\item $(Q)$
+\item $M_{374} \eor \enot M_{374}$
+\item $\enot \enot \enot \enot P$
 \item $\enot \eand S$
-\item $(G \eand \enot G)$
-\item $(A \eif (A \eand \enot F)) \eor (D \eiff E)$
-\item $[(Z \eiff S) \eif W] \eand [J \eor X]$
-\item $(F \eiff \enot D \eif J) \eor (C \eand D)$
+\item $(T \eand \enot T)$
+\item $(S \eif (S \eand \enot P)) \eor (Q \eiff M)$
+\item $[(W \eiff S) \eif Q] \eand [T \eor R]$
+\item $(S \eiff \enot L \eif P) \eor (M \eand Q)$
 \end{earg}
 
 %\problempart
@@ -893,28 +895,28 @@ $$[(H \eif I) \eor (G \eiff M)] \eand (J \eor K)$$
 \problempart
 \label{pr.wiffTFL}
 \begin{earg}
-\item $(A)$\hfill \myanswer{(a) no (b) no}
+\item $(Q)$\hfill \myanswer{(a) no (b) no}
 \medskip
 
-\item $J_{374} \eor \enot J_{374}$ \hfill \myanswer{(a) no (b) yes (c) the `$\eor$'}
+\item $M_{374} \eor \enot M_{374}$ \hfill \myanswer{(a) no (b) yes (c) the `$\eor$'}
 \medskip
 
-\item $\enot \enot \enot \enot F$ \hfill \myanswer{(a) yes (b) yes (c) the first `$\enot'$}
+\item $\enot \enot \enot \enot P$ \hfill \myanswer{(a) yes (b) yes (c) the first `$\enot'$}
 \medskip
 
 \item $\enot \eand S$\hfill \myanswer{(a) no (b) no}
 \medskip
 
-\item $(G \eand \enot G)$\hfill \myanswer{(a) yes (b) yes (c) the `$\eand$'}
+\item $(T \eand \enot T)$\hfill \myanswer{(a) yes (b) yes (c) the `$\eand$'}
 \medskip
 
-\item $(A \eif (A \eand \enot F)) \eor (D \eiff E)$\hfill \myanswer{(a) no (b) yes (c) the `$\eor$'}
+\item $(S \eif (S \eand \enot P)) \eor (Q \eiff M)$\hfill \myanswer{(a) no (b) yes (c) the `$\eor$'}
 \medskip
 
-\item $[(Z \eiff S) \eif W] \eand [J \eor X]$\hfill \myanswer{(a) no (b) yes (c) the `$\eand$'}
+\item $[(W \eiff S) \eif Q] \eand [T \eor R]$\hfill \myanswer{(a) no (b) yes (c) the `$\eand$'}
 \medskip
 
-\item $(F \eiff \enot D \eif J) \eor (C \eand D)$\hfill \myanswer{(a) no (b) no}
+\item $(S \eiff \enot L \eif P) \eor (M \eand Q)$\hfill \myanswer{(a) no (b) no}
 \medskip
 \end{earg}
 
