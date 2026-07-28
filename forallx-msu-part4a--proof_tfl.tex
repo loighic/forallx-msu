@@ -11,10 +11,10 @@
 An argument is valid when (and only when) it is impossible for all of the premises to be true and the conclusion to be false. And we have seen that truth tables can be used to determine whether an argument is valid. In the next chapter, you will learn another method for verifying that an argument is valid. Before we turn to this new method, however, let’s review the strengths and weakness of truth tables.
 
 \begin{earg}
-\item The truth table method for determining if an argument is valid focuses directly on the definition of \textit{valid}. Each line of a complete truth table corresponds to a truth-value assignment. Thus, given an argument in TFL, truth tables reveal whether or not the conclusion is true when all of the premises true. 
+\item The truth table method focuses directly on the definition of \textit{valid}. Each line of a complete truth table corresponds to a truth-value assignment. Thus, given an argument in TFL, truth tables reveal whether or not the conclusion is true when all of the premises true. 
 \medskip
 
-\item Truth tables also allow us to easily and rigorously set the meaning for each logical operator. As we discussed in \S\ref{s:ConnectiveDisjunction}, in English, `or’ can take the inclusive-or meaning (one or the other, or both) or the exclusive-or meaning (one or the other, but not both), and, at different times, both meanings are used in English. We can discuss which English meaning is closest to the meaning of `$\eor$’ in TFL (it's the inclusive-or), but, in the end, we just set the meaning of the symbol `$\eor$’ with this truth table:
+\item Truth tables also allow us to easily and rigorously set the meaning for each logical operator. As we discussed in section \ref{s:ConnectiveDisjunction}, in English, `or’ can take the inclusive-or meaning (one or the other, or both) or the exclusive-or meaning (one or the other, but not both), and, at different times, both meanings are used in English. We can discuss which English meaning is closest to the meaning of `$\eor$’ in TFL (it's the inclusive-or), but, in the end, we just set the meaning of the symbol `$\eor$’ with this truth table:
 
 \begin{center}
 \begin{tabular}{d d | f}
@@ -36,9 +36,9 @@ Hence, the definition for the `$\eor$’ is simple this: the operator that conne
 \item But what is typically seen as the biggest weakness of using truth tables to determine if an argument is valid is that it doesn't reveal to us \textit{why} the argument is valid. It doesn’t, in other words, lay out the reasoning that demonstrates why (and how) the conclusion follows from the premises.
 \end{earg}
  
-As an alternative to truth tables, we have a \textit{natural deduction system}. Such a system allows us to verify that an argument is valid and to see why it is valid. We do this by making explicit the reasoning process that takes us from the premises to the conclusion. We begin with twelve basic rules---which we call \textit{rules of derivation}. (For instance, this is one of the rules: if we know that `$P \eor Q$' is true; and we also know that `\enot P' is true, then we can assert that `\textit{Q}' is true.) The rules can be combined, and with just these twelve, we hope to be able to show how we get from the premises to the conclusion for all of the valid arguments that can be represented in TFL. 
+As an alternative to truth tables, we have a \textit{natural deduction system}. Such a system allows us to verify that an argument is valid and to see why it is valid. We do this by making explicit the reasoning process that takes us from the premises to the conclusion. We begin with twelve basic rules---which we call \textit{rules of derivation}. This, for instance, is one of the rules: if we know that $(P \eor Q)$ is true; and we also know that $\enot P$ is true, then we can assert that $Q$ is true. The rules can be combined, and with just these twelve, we hope to be able to show how we get from the premises to the conclusion for all of the valid arguments that can be represented in TFL. 
 
-There are different natural deduction systems that can be used with TFL. But all, for the most part, reflect the ways that we naturally reason---at least insofar as the reasoning involves ‘and’, ‘or’, ‘not’, ‘if \ldots, then \ldots’, and ‘if and only if’. 
+There are different natural deduction systems that can be used with TFL. But all, for the most part, reflect the ways that we naturally reason---at least insofar as the reasoning involves \textit{and}, \textit{or}, \textit{not}, \textit{if \ldots, then \ldots}, and \textit{if and only if}. 
 
 
 \section{Truth functional propositional logic}
@@ -62,7 +62,7 @@ The modern development of natural deduction dates from simultaneous but unrelate
 
 \section{Proofs}\label{intro-proofs}
 
-As was explained in the previous chapter, creating a \define{proof} is one way of demonstrating that an argument is valid. (And, as you know, using a truth table is the  other way.) A proof is a list of sentences. The sentence or sentences at the beginning of the list are the premises of the argument. Every other sentence in the list follows from earlier sentences by a specific rule (with one exception, which we will get to in \S \ref{s:CI-rule}). The final sentence is the conclusion of the argument.
+As was explained in the previous chapter, creating a {proof} is one way of demonstrating that an argument is valid. (And, as you know, using a truth table is the  other way.) A proof is a list of sentences. The sentence or sentences at the beginning of the list are the premises of the argument. Every other sentence in the list follows from earlier sentences by a specific rule (with one exception, which we will get to in \S \ref{s:CI-rule}). The final sentence is the conclusion of the argument.
 
 As an illustration, consider this argument:
 	$$\enot (P \eor Q) \proves \enot P \eand \enot Q$$
@@ -96,7 +96,7 @@ This, meanwhile, will be the final line of the proof:
 \end{proof}
 Setting up the premises and the conclusion is, however, the easy part. The real task---and the interesting part---is determining each of the steps that get us from the premise or premises to the conclusion. 
 
-To do that, we will use a \define{natural deduction} system. \label{intro-elim} In this system, there are two rules for each logical operator: an \define{introduction} rule, which allows us to derive a new sentence that has the logical operator as the main connective, and an \define{elimination} rule, which allows us to extract a sub-sentence from a sentence that has that logical operator as the main connective. (Table \ref{table.TFL-rules} contains a list of the rules.) These rules can then be combined to demonstrate each step that must be taken to get from the premises to the conclusion. All of the rules introduced in this chapter are also summarized on pp.~\pageref{ProofRules} - \pageref{ProofRules-end}.
+To do that, we will use a \textbf{natural deduction system}. \label{intro-elim} In this system, there are two rules for each logical operator: an \textbf{introduction rule}, which allows us to derive a new sentence that has the logical operator as the MLO, and an \textbf{elimination rule}, which allows us to extract a sub-sentence from a sentence that has that logical operator as the MLO. (Table \ref{table.TFL-rules} contains a list of the rules.) These rules can then be combined to demonstrate each step that must be taken to get from the premises to the conclusion. All of the rules introduced in this chapter are also summarized on pp.~\pageref{ProofRules} - \pageref{ProofRules-end}.
 
 
 \begin{table*}\centering\sffamily\footnotesize
@@ -833,7 +833,7 @@ This conversation between Jeff and Claire illustrates an important method for ma
 \begin{ebullet}
 	\item[] The Earth is flat.
 \end{ebullet}
-\noindent She then arrives at a contradiction---that is, a statement and the denial of that statement:
+\noindent She then (after implicitly doing a conditional elimination with the assumption and her third statement) arrives at a contradiction---that is, a statement and the denial of that statement:
 \begin{ebullet}
 	\item[\textit{a}:] People cannot travel straight west and then return to their starting point from the east. 
 	\item[\textit{b}:] People can travel straight west and then return to their starting point from the east.
@@ -849,7 +849,7 @@ Here is a simple argument in English:
 \item If Lukas is in Cairo, then Maria has the code.
 \item Maria does not have the code.
 \item Therefore, Lukas is not in Cairo.
-\end{earg}
+\end{earg}\label{Cairo}
 This is a valid argument, but in TFL we have no way to create a proof for $(L \eif M)$, $\enot M \proves \enot L$ unless we use one of these negation rules.
 
 
@@ -922,7 +922,7 @@ When using either of the negation rules, the last two lines of the subproof must
 
 \subsection{Reiteration}
 
-To get a contradiction on the last two lines of a subproof, we will usually have to move a sentence that is on an earlier line to the last or second-to-last line of the subproof. This is done with the \define{reiteration rule}. Just as the double negation rule is a rule of convenience that sometimes compliments the disjunction elimination rule, the reiteration rule is a rule of convenience that compliments the negation elimination and negation introduction rules.  
+To get a contradiction on the last two lines of a subproof, we will usually have to move a sentence that is on an earlier line to the last or second-to-last line of the subproof. This is done with the {reiteration rule}. Just as the double negation rule is a rule of convenience that sometimes compliments the disjunction elimination rule, the reiteration rule is a rule of convenience that compliments the negation elimination and negation introduction rules.  
 
 \begin{factboxy-width}[width=7.5cm]{reiteration rule}
 \begin{proof}
@@ -931,7 +931,13 @@ To get a contradiction on the last two lines of a subproof, we will usually have
 \end{proof}
 \end{factboxy-width}
 
-To demonstrate both the negation introduction rule and the reiteration rule, we will go through the proof for this argument: $(L \eif M), \enot M \proves \enot L$. Looking at the argument, you'll notice that our conclusion is $\enot L$, but we cannot get $\enot L$ by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. This means that we will need to use one of our negation rules.
+\subsection{If Lukas is in Cairo, then Maria has the code.}
+
+To demonstrate both the negation introduction rule and the reiteration rule, we will go through the proof for this argument from p.~\pageref{Cairo}: 
+
+\centerline{$(L \eif M), \enot M \proves \enot L$} 
+
+\noindent Looking at the argument, you'll notice that our conclusion is $\enot L$, but we cannot get $\enot L$ by using $\eand$E, $\eor$E, $\eif$E, or $\eiff$E. This means that we will need to use one of our negation rules.
 
 After the premises, we make an assumption. Since, ultimately, we want $\enot L$, we will assume $L$ so that, once we discharge that assumption (and close the subproof), we will have the $L$ that we are after.
 
@@ -973,7 +979,7 @@ Now that $\enot M$ and $M$ are on consecutive lines, we can use the negation eli
 	\have{c}{\enot L}\ni{np-ng}
 \end{proof}
 
-We just used the negation introduction rule. The negation elimination rule is, essentially, the same. Whether you use the negation introduction rule or negation elimination rule is just a function of whether you want `$\enot \meta{A}$' or `$\meta{A}$' on the line after the subproof.
+We just used the negation introduction rule. The negation elimination rule is, essentially, the same. Whether you use the negation introduction rule or negation elimination rule is just a function of whether you want $\enot \meta{A}$ or $\meta{A}$ on the line after the subproof.
 
 
 %\newpage
@@ -1722,19 +1728,20 @@ Sketching out a proof in this way is easy to do when you are writing on paper. I
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\chapter{Proof-theoretic concepts}\label{s:ProofTheoreticConcepts}
 
-\section{Theorems}\label{s:theorems}
+\chapter{Theorems}\label{s:theorems}
 
 You are familiar with arguments that have this form:
 $$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$$
-We may also, however, have a sentence for which it is possible to give a proof with no premises: ${} \proves \meta{C}$. In this case, we say that $\meta{C}$ is a \define{theorem}.
+It is also, in some cases, possible to give a proof for a sentence (that is, for a conclusion) without any premises. When this is possible, the sentence is called a \textit{theorem}.
 
-\begin{factboxy}{Theorem}\label{def:syntactic_tautology_in_sl}
+\begin{factboxy}{theorem}\label{def:syntactic_tautology_in_sl}
 $\meta{C}$ is a \define{theorem} if and only if ~ $\proves \meta{C}$
 \end{factboxy}
 
-One such sentence is $\enot (P \eand \enot P)$. To show that this sentence is a theorem, we give a proof that has no premises and no undischarged assumptions. To get started, we do, however, have to make an assumption. We will assume $(P \eand \enot P)$. Once we show that this assumption leads to contradiction, we can discharge it and we will have $\enot (P \eand \enot P)$. This is the proof:
+\noindent Such sentences are unique, of course. The proofs for all of the arguments in chapter \ref{s:BasicTFL} could only be completed with the premises that were given. But we can give a proof without any premises for any sentence that is, according to a truth table analysis, a tautology. (See p.~\pageref{tautology-def} to remind yourself what a tautology is.) 
+
+Let's try $\proves \enot (P \eand \enot P)$. We will assume $(P \eand \enot P)$. Once we show that this assumption leads to contradiction, we can exit the sub-proof and we will have $\enot (P \eand \enot P)$.
 	\begin{proof}
 		\open
 			\hypo{con}{P \eand \enot P} \as{}
@@ -1744,15 +1751,154 @@ One such sentence is $\enot (P \eand \enot P)$. To show that this sentence is a 
 		\have{lnc}{\enot (P \eand \enot P)}\ni{con-na}
 	\end{proof}
 This theorem, $\proves \enot (P \eand \enot P)$, is an instance of what is called \emph{the law of non-contradiction}.
+Now, let's use the conditional introduction rule to give a proof for this theorem:
+
+\centerline{$\proves (P \eand (\enot P \eor T)) \eif T$}
+
+	\begin{proof}
+		\open
+			\hypo{ant}{P \eand (\enot P \eor T)} \as{}
+			\have{p}{P}\ae{ant}
+			\have{np}{\enot P \eor T}\ae{ant}
+			\have{nnp}{\enot\enot P}\dn{p}
+			\have{t}{T}\oe{np,nnp}
+		\close
+		\have{con}{(P \eand (\enot P \eor T)) \eif T}\ci{ant-t}
+	\end{proof}
+
+
+
+
 
 To show that a sentence is a theorem, we just have to find a suitable proof. On the other hand, it is not possible to show that a sentence is \emph{not} a theorem this same way. To show that a sentence is not a theorem with our natural deduction system, we would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if we fail in trying to give a proof for a sentence in a thousand different ways, perhaps the proof is just too long and complex for us to figure out. 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercises for chapter on theorems
+
+\section{Practice exercises}
+%\setcounter{ProbPart}{0}
+
+\begin{small}
+
+%\problempart
+Give a proof for each of these theorems.
+\begin{earg}
+\item $\proves O \eif O$\smallskip
+\item $\proves S \eif (S \eor R)$\smallskip
+\item $\proves N \eor \enot N$\smallskip
+\item $\proves \enot((R \eor T) \eand (\enot R  \eand \enot T))$\smallskip
+\item $\proves (R \eiff M) \eif (M \eif R)$\smallskip
+%\item $\proves (P \eif Q) \eor (Q \eif P)$\smallskip
+% \item $\proves ((A \eif B) \eif A) \eif A$\smallskip 
+\end{earg}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  answers
+
+
+\section{Answers}
+%\setcounter{ProbPart}{0}
+
+%\problempart
+
+
+\begin{earg}
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\proves O \eif O$
+\begin{proof}
+\open
+	\hypo{o}{O} \as{}
+	\have{o2}{O}\reit{o}
+\close
+\have{con}{O \eif O}\ci{o-o2}
+\end{proof}
+\bigskip
+\end{minipage}
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\proves S \eif (S \eor R)$
+\begin{proof}
+\open
+	\hypo{s}{S} \as{}
+	\have{s2}{S} \reit{s}
+	\have{sr}{S \eor R} \oi{s2}
+\close
+\have{con}{S \eif (S \eor R)}\ci{s-sr}
+\end{proof}
+\medskip
+\end{minipage}
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\proves N \eor \enot N$
+\begin{proof}
+\open
+        \hypo{ncon}{\enot (N \eor \enot N)} \as{}
+        \open
+                \hypo{n}{N} \as{}
+                \have{nnn1}{N \eor \enot N}\oi{n}
+                \have{ncon2}{\enot (N \eor \enot N)} \reit{ncon}
+        \close
+        \have{nn}{\enot N} \ni{n-ncon2}
+        \have{nnn2}{N \eor \enot N} \oi{nn}
+        \have{ncon3}{\enot (N \eor \enot N)} \reit{ncon}
+\close
+\have{con}{N \eor \enot N} \ne{ncon-ncon3}
+\end{proof}\end{minipage}
+\medskip
+
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\proves \enot((R \eor T) \eand (\enot R  \eand \enot T))$
+\begin{proof}
+\open
+        \hypo{ncon}{(R \eor T) \eand (\enot R  \eand \enot T)} \as{}
+        \have{rt}{R \eor T} \ae{ncon}
+        \have{nrnt}{\enot R  \eand \enot T} \ae{ncon}
+        \have{nr}{\enot R} \ae{nrnt}
+        \have{nt}{\enot T} \ae{nrnt}
+        \have{t}{T} \oe{rt,nr}
+\close
+\have{con}{\enot((R \eor T) \eand (\enot R  \eand \enot T))} \ni{ncon-t}
+\end{proof}
+\medskip
+\end{minipage}
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $\proves (R \eiff M) \eif (M \eif R)$
+\begin{proof}
+\open
+        \hypo{rm}{R \eiff M} \as{}
+        	\open
+        	\hypo{m}{M} \as{}
+        	\have{r}{R} \be{rm,m}
+        \close
+        \have{mr}{M \eif R} \ci{m-r}
+\close
+\have{con}{(R \eiff M) \eif (M \eif R)} \ci{rm-mr}
+\end{proof}
+\medskip
+\end{minipage}
+
+\end{earg}
+\end{small}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Proof-theoretic concepts}\label{s:ProofTheoreticConcepts}
+
+
 \section{Equivalent, consistent, and inconsistent}
 
-In section \ref{equivalence--tt}, we defined \textit{equivalent} in terms of truth tables, namely, if two sentences have the same truth value on every line of a truth table, then they are equivalent. We can also show that two sentences are equivalent using our natural deduction system. To indicate that we have shown that the two sentences are equivalent with a derivation (or actually with two derivations), we will call this equivalence \define{provably equivalent}. 
+In section \ref{equivalence--tt}, we defined \textit{equivalent} in terms of truth tables, namely, if two sentences have the same truth value on every line of a truth table, then they are equivalent. We can also show that two sentences are equivalent using our natural deduction system. To indicate that we have shown that the two sentences are equivalent with a derivation (or actually with two derivations), we will call this equivalence \textit{provably equivalent}. 
 
-\begin{factboxy}{Provably equivalent}
+\begin{factboxy}{provably equivalent}
 Two sentences \meta{A} and \meta{B} are \define{provably equivalent} iff each can be derived from the other. I.e., $\meta{A}\proves\meta{B}$ and $\meta{B}\proves\meta{A}$.\medskip
 
 Equivalently, \meta{A} and \meta{B} are \define{provably equivalent} if $\proves (\meta{A} \eiff \meta{B})$.
@@ -1762,7 +1908,7 @@ As in the case of showing that a sentence is a theorem, it is relatively easy to
 
 We also, in section \ref{consistency--tt}, defined \textit{jointly inconsistent} using truth tables: sentences are jointly inconsistent if there is no line on a truth table where they are all true. Again, we can show that two or more sentences are jointly inconsistent with our natural deduction system. 
 
-\begin{factboxy}{Provably inconsistent}
+\begin{factboxy}{provably inconsistent}
 The sentences $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably inconsistent} iff, from them, a contradiction can be derived. I.e.\ $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n \proves (\meta{B} \eand \enot \meta{B})$.
 %\tcblower
 %If they are not \define{inconsistent}, then $\meta{A}_1,\meta{A}_2,\ldots, \meta{A}_n$ are \define{provably consistent}.
@@ -1804,24 +1950,11 @@ consistent & \textit{not possible with proofs} & one proof\\
 \newpage
 
 \section{Practice exercises}
-\setcounter{ProbPart}{0}
+%\setcounter{ProbPart}{0}
 
 \begin{small}
 
-\problempart
-Give a proof for each of these theorems.
-\begin{earg}
-\item $\proves O \eif O$\smallskip
-\item $\proves S \eif (S \eor R)$\smallskip
-\item $\proves N \eor \enot N$\smallskip
-\item $\proves \enot((R \eor T) \eand (\enot R  \eand \enot T))$\smallskip
-\item $\proves (R \eiff M) \eif (M \eif R)$\smallskip
-%\item $\proves (P \eif Q) \eor (Q \eif P)$\smallskip
-% \item $\proves ((A \eif B) \eif A) \eif A$\smallskip 
-\end{earg}
-
-
-\problempart
+%\problempart
 Show that each of the following pairs of sentences are provably equivalent. (To indicate that the inference from the premise to the conclusion goes from the first sentence to the second and vice versa, we use the symbols $\leftproves\proves$.)
 \begin{earg}
 \item $T\eif S \leftproves\proves \enot S \eif \enot T$
@@ -1834,154 +1967,9 @@ Show that each of the following pairs of sentences are provably equivalent. (To 
 
 
 \section{Answers}
-\setcounter{ProbPart}{0}
+%\setcounter{ProbPart}{0}
 
-\problempart
-
-
-\begin{earg}
-
-\noindent\begin{minipage}{0.99\textwidth}
-\item $\proves O \eif O$
-\begin{proof}
-\open
-	\hypo{o}{O} \as{}
-	\have{o2}{O}\reit{o}
-\close
-\have{con}{O \eif O}\ci{o-o2}
-\end{proof}
-\bigskip
-\end{minipage}
-
-\noindent\begin{minipage}{0.99\textwidth}
-\item $\proves S \eif (S \eor R)$
-\begin{proof}
-\open
-	\hypo{s}{S} \as{}
-	\have{s2}{S} \reit{s}
-	\have{sr}{S \eor R} \oi{s2}
-\close
-\have{con}{S \eif (S \eor R)}\ci{s-sr}
-\end{proof}
-\medskip
-\end{minipage}
-
-
-\item $\proves N \eor \enot N$
-\begin{proof}
-\open
-        \hypo{ncon}{\enot (N \eor \enot N)} \as{}
-        \open
-                \hypo{n}{N} \as{}
-                \have{nnn1}{N \eor \enot N}\oi{n}
-                \have{ncon2}{\enot (N \eor \enot N)} \reit{ncon}
-        \close
-        \have{nn}{\enot N} \ni{n-ncon2}
-        \have{nnn2}{N \eor \enot N} \oi{nn}
-        \have{ncon3}{\enot (N \eor \enot N)} \reit{ncon}
-\close
-\have{con}{N \eor \enot N} \ne{ncon-ncon3}
-\end{proof}
-\medskip
-
-
-\noindent\begin{minipage}{0.99\textwidth}
-\item $\proves \enot((R \eor T) \eand (\enot R  \eand \enot T))$
-\begin{proof}
-\open
-        \hypo{ncon}{(R \eor T) \eand (\enot R  \eand \enot T)} \as{}
-        \have{rt}{R \eor T} \ae{ncon}
-        \have{nrnt}{\enot R  \eand \enot T} \ae{ncon}
-        \have{nr}{\enot R} \ae{nrnt}
-        \have{nt}{\enot T} \ae{nrnt}
-        \have{t}{T} \oe{rt,nr}
-\close
-\have{con}{\enot((R \eor T) \eand (\enot R  \eand \enot T))} \ni{ncon-t}
-\end{proof}
-\medskip
-\end{minipage}
-
-\noindent\begin{minipage}{0.99\textwidth}
-\item $\proves (R \eiff M) \eif (M \eif R)$
-\begin{proof}
-\open
-        \hypo{rm}{R \eiff M} \as{}
-        	\open
-        	\hypo{m}{M} \as{}
-        	\have{r}{R} \be{rm,m}
-        \close
-        \have{mr}{M \eif R} \ci{m-r}
-\close
-\have{con}{(R \eiff M) \eif (M \eif R)} \ci{rm-mr}
-\end{proof}
-\medskip
-\end{minipage}
-
-\begin{comment}
-\begin{minipage}{10cm}
-\item $\proves (P \eif Q) \eor (Q \eif P)$
-\begin{proof}
-\open
-        \hypo{ncon}{\enot ((P \eif Q) \eor (Q \eif P))} \as{}
-        \open
-        		\hypo{p}{P} \as{}
-        		\open
-        			\hypo{nq}{\enot Q} \as{}
-        			\open
-        				\hypo{q}{Q} \as{}
-        				\have{p2}{P} \reit{p}
-				\close
-				\have{qp}{Q \eif P} \ci{q-p2}
-				\have{pqqp}{(P \eif Q) \eor (Q \eif P)} \oi{qp}
-				\have{ncon2}{\enot ((P \eif Q) \eor (Q \eif P))} \reit{ncon}
-			\close
-			\have{q}{Q} \ne{nq-ncon2}
-		\close
-		\have{pq}{P \eif Q} \ci{p-q}
-		\have{pqqp2}{(P \eif Q) \eor (Q \eif P)} \oi{pq}
-		\have{ncon2}{\enot ((P \eif Q) \eor (Q \eif P))} \reit{ncon}
-\close
-\have{con}{(P \eif Q) \eor (Q \eif P)} \ne{ncon-ncon2}
-\end{proof}
-\bigskip
-\end{minipage}
-\end{comment}
-
-%\filbreak
-%\item $((A \eif B) \eif A) \eif A$ 
-%\begin{proof}
-%\open
-%	\hypo{aba}{(A \eif B) \eif A} \as{}
-%	\open 
-%		\hypo{na}{\enot A} \as{}
-%		\open
-%		\have{nab}{\enot (A \eif B)} \as{}
-%			\open
-%				\hypo{a}{A} \as{}
-%					\open
-%					\hypo{nb}{\enot B} \as{}
-%					\have{a2}{A} \reit{a}
-%					\have{na2}{\enot A} \reit{na}
-%				\close
-%				\have{b}{B} \ne{nb-na2}
-%			\close
-%		\have{ab}{A \eif B}\ci{a-b}
-%		\have{nab2}{\enot (A \eif B)}\reit{nab}
-%	\close
-%	\have{ab2}{A \eif B} \ne{nab-nab2}
-%	\have{a}{A} \ce{aba,ab2}
-%	\have{na3}{\enot A} \reit{na}
-%\close
-%\have{a2}{A} \ne{aba-na3}
-%\close
-%\have{con}{((A \eif B) \eif A) \eif A}\ci{aba-a2}
-%\end{proof}
-
-\end{earg}
-
-
-\problempart
-
+%\problempart
 \begin{earg}
 \item $T\eif S \leftproves\proves \enot S \eif \enot T$
 \begin{proof}

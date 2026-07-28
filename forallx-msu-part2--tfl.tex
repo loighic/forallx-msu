@@ -52,7 +52,7 @@ In contrast, this argument is valid, but there is no particular form that makes 
 	\end{earg}
 Unlike the previous three examples, this argument is not valid because of the form of the argument. Rather, it's valid because of the particular meanings of \textit{oncologist} and \textit{doctor}. 
 
-These examples illustrate the idea of \define{validity in virtue of form}. The arguments about Claire, Mary, Simon, Seoul, London, and Chicago are valid, but---unlike the argument about Kate---their being valid has nothing to do with the specific meaning of `Claire is in the safe house', `Simon is a double agent', `Seoul', `London', or `Chicago.' (Whether the arguments are sound depends on these meanings, but not whether the arguments are valid.) Instead, these arguments are valid in virtue of the meanings of just these words: \textit{if, then} and \textit{is larger than}.
+These examples illustrate the idea of \textbf{validity in virtue of form}. The arguments about Claire, Mary, Simon, Seoul, London, and Chicago are valid, but---unlike the argument about Kate---their being valid has nothing to do with the specific meaning of `Claire is in the safe house', `Simon is a double agent', `Seoul', `London', or `Chicago.' (Whether the arguments are sound depends on these meanings, but not whether the arguments are valid.) Instead, these arguments are valid in virtue of the meanings of just these words: \textit{if, then} and \textit{is larger than}.
 
 \begin{factboxy}{valid in virtue of form}
 Let us define \define{structure words} as \textit{if-then}, \textit{and}, \textit{or}, \textit{not}, \textit{if and only if}, and comparative adjectives followed by \textit{than} (e.g., \textit{larger than}, \textit{faster than}, \textit{older than}).
@@ -141,28 +141,48 @@ When we do this, we are not fixing this symbolization once and for all. We are j
 \chapter{Logical operators}
 \label{s:TFLConnectives}
 
-\define{Truth-functional logic} is a branch of logic that focuses on the relationships between atomic sentences. One part of truth-functional logic (or `TFL' for short) is a formal language. This formal language consists of atomic sentences of TFL (see \S \ref{s:atomic}) and the \define{logical} or \define{truth-functional operators} `and', `or', `not', `if \ldots, then \ldots' and `if and only if'. 
+{Truth-functional logic} is a branch of logic that focuses on the relationships between atomic sentences. One part of truth-functional logic (or `TFL' for short) is a formal language. This formal language consists of atomic sentences of TFL and these \textbf{truth-functional operators}: 
 
-A logical operator is a word or phrase that modifies a sentence or connects two sentences to form a more complex sentence. We call these operators \textit{truth-functional} because the truth of the complex sentences depends entirely on the truth of the atomic sentences of which they are composed. (These operators are also sometimes referred to as \textit{connectives} since, except for `not', they all connect two simpler sentences.)  
+\centerline{\textit{and}\quad|\quad \textit{or}\quad|\quad \textit{not}\quad|\quad \textit{if \ldots, then \ldots}\quad|\quad \textit{if and only if}}
+
+% \textit{and}, \textit{or}, \textit{not}, \textit{if \ldots, then \ldots}, and \textit{if and only if}.
+
+%\begin{earg}
+%\item[] and
+%\item[] or
+%\item[] not 
+%\item[] if \ldots, then \ldots
+%\item[] if and only if
+%\end{earg} 
+
+\noindent A logical operator is a word or phrase that modifies a sentence or connects two sentences to form a more complex sentence. We call these operators \textit{truth-functional} because the truth of the complex sentences depends entirely on the truth of the atomic sentences of which they are composed. (These operators are also sometimes referred to as \textit{connectives} since, except for `not', they all connect two simpler sentences.)  
 
 In addition to symbolizing English sentences with sentence letters, we also want to symbolize the logical operators. The symbols that we will use are shown in table \ref{table.connectives}. The operators listed there are not the only ones that we have in English. Others are, for example, `unless', `neither \dots{} nor \dots', `necessarily', and `because'. As we will see, the first two can be expressed with the connectives that are in table \ref{table.connectives}. The last two, however, cannot. Although they are logical operators, `necessarily' and `because' are not truth functional.
 
+
+%% tabularx and {\textwidth} are used here to create a full width table.
 \begin{table*}\centering\sffamily\footnotesize
 \ra{1.25}
-\begin{tabular}{@{}l l l l@{}}\toprule
-\textth{} & \textth{symbol's name} & \textth{sentence's name} & \textth{symbol's meaning}\\\midrule
-	\enot~~&not sign &negation&`It is not the case that $\ldots$.'\\
-	\eand~~&ampersand&conjunction&`Both $\ldots$, and $\ldots$.'\\
-	\eor~~&wedge&disjunction&`Either $\ldots$, or $\ldots$.'\\
-	\eif~~&arrow&conditional&`If $\ldots$, then $\ldots$.'\\
-	\eiff~~&double-arrow&biconditional&`$\ldots$ if and only if $\ldots$.'\\
+\begin{tabularx}{\textwidth}{@{}X @{\hspace{5mm}} l @{\hspace{5mm}} l @{\hspace{5mm}} l@{}}\toprule		% {@{}X l l l@{}}\toprule
+\textth{symbol} & \textth{symbol's name} & \textth{symbol's meaning} & \textth{sentence's name}\\\midrule
+\enot~&not sign 			&It is not the case that				&negation\\
+\eand~&ampersand		&Both $\ldots$, and $\ldots$.		&conjunction\\
+\eor~&wedge				&Either $\ldots$, or $\ldots$.			&disjunction\\
+\eif~&arrow				&If $\ldots$, then $\ldots$.			&conditional\\
+\eiff~&double-arrow		&if and only if							&biconditional\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \caption{The logical operators of truth functional logic. See table \ref{symbols-Carnap} on p.~\pageref{symbols-Carnap} for instructions about how to type these symbols.}\label{table.connectives}
 \end{table*}
 	
 Once we have introduced these logical operators (in this chapter and in chapter \ref{s:CharacteristicTruthTables}) and have explained what can and cannot be a sentence in TFL (which we will do in chapter \ref{s:TFLSentences}), our formal language will be complete. Although the formal language is central, truth-functional logic does not consist only of a formal language. There is also a \textit{deductive system}, which we will explore in part \ref{ch.NDTFL}. 
 
+%\bigskip
+
+%\def\EngA{\textsf{Σ}\:} 
+%\def\EngB{\textsf{Φ}\:}
+
+%\noindent Let \EngA and \EngB stand for any English sentences. So, \EngA might be an atomic sentence of English---for example, `The cat is on the mat.' Or it might be a more complex sentence such as `Mary is in the library, and if it is sunny outside, then Jeff is in the park.'
         
 \section{Negation}
 
@@ -172,7 +192,7 @@ Consider how we might symbolize these sentences:
 	\item[\ex{not2}] It is not the case that Mary is in Barcelona.
 	\item[\ex{not3}] Mary is not in Barcelona.
 	\end{earg}
-To begin, we need an atomic sentence. This will be our symbolization key:
+To begin, we need an atomic sentence of TFL. This will be our symbolization key:
 	\begin{ekey}
 		\item[M] Mary is in Barcelona.
 	\end{ekey}
@@ -183,7 +203,7 @@ The second sentence is partially symbolized as `It is not the case that $M$'. In
 Sentence \ref{not3} is worded a little bit differently, but it is equivalent to sentence \ref{not2}. As such, we can also symbolize it as $\enot M$.
 
 \begin{factboxy}{negation}
-A sentence can be symbolized as $\enot\meta{A}$ if it can be paraphrased in English as `It is not the case that \ldots '.
+`It is not the case that $\meta{A}$' is symbolized $\enot\meta{A}$.
 \end{factboxy}
 
 Here are a few more examples:
@@ -197,7 +217,7 @@ For these, we will use this symbolization key:
 		\item[R] The cog is replaceable
 	\end{ekey}
 Sentence \ref{not4} is symbolized just by $R$. Sentence \ref{not5} can be reworded as \textit{it is not the case that the cog is replaceable}. So even though sentence \ref{not5} does not contain the word `not', we will symbolize it $\enot R$.
-Sentence \ref{not5b}, you will notice, is the denial of sentence \ref{not5}. So, we symbolize \ref{not5b} as $\enot\enot R$.
+Sentence \ref{not5b}, you will notice, is the negation of sentence \ref{not5}. So, we symbolize \ref{not5b} as $\enot\enot R$.
 
 Finally, consider these English sentences:
 	\begin{earg}
@@ -205,10 +225,22 @@ Finally, consider these English sentences:
 		\item[\ex{not7}] Jane is unhappy.
 	\end{earg}
 If we use $H$ to stand for `Jane is happy', then we can symbolize sentence \ref{not6} as $H$. It would be a mistake, however, to symbolize \ref{not7} as $\enot{H}$. 
-$\enot{H}$ means `Jane is not happy', but `Jane is not happy' does not have the same meaning as `Jane is unhappy'. Someone who is not happy might be confused, angry, or just neutral---or he or she might be unhappy. Since \textit{being unhappy} specifically means being upset or sad, to symbolize sentence \ref{not7}, we would need a different sentence letter.
+$\enot{H}$ means `Jane is not happy', but `Jane is not happy' does not have the same meaning as `Jane is unhappy'. Someone who is not happy might be confused, angry, or just neutral---or he or she might be unhappy. Since \textit{being unhappy} means being upset or sad, to symbolize sentence \ref{not7}, we would need a different sentence letter.
 
 \section{Conjunction}
 \label{s:ConnectiveConjunction}
+
+\begin{factboxy}{conjunction}
+The following are all symbolized as $(\meta{A}\eand\meta{B})$.
+\vspace{-2mm}
+\begin{earg}
+\item[] Both $\meta{A}$, and $\meta{B}$.
+\item[] $\meta{A}$, and $\meta{B}$.
+\item[] $\meta{A}$, but $\meta{B}$. 
+\item[] $\meta{A}$, although $\meta{B}$.
+\item[] $\meta{A}$, as well as $\meta{B}$.
+\end{earg}
+\end{factboxy}
 
 Let's start with these sentences:
 	\begin{earg}
@@ -223,7 +255,7 @@ Even though they are both about being on the train, we need these two sentence l
 	\end{ekey}
 Sentence \ref{and1} can be partially symbolized as ($S$ and $K$). For the `and', we will use `\eand', which is called the \textit{ampersand}. Thus, sentence \ref{and1} becomes $(S\eand K)$. 
 
-When two sentences are connected with an `$\eand$', the resulting sentence is called a \define{conjunction}. The two sentences that are combined with the `$\eand$' are the \define{conjuncts}. So, $S$ and $K$ are the conjuncts of $(S \eand K)$.
+When two sentences are connected with an `$\eand$', the resulting sentence is called a \textit{conjunction}. The two sentences that are combined with the `$\eand$' are the {conjuncts}. So, $S$ and $K$ are the conjuncts of $(S \eand K)$.
 
 For sentence \ref{and2}, we symbolize `Sam is not on the train' as $\enot S$. `But' may have a slightly different meaning in English than `and', but, grammatically, `but' and `and' do the same job: they join two sentences as a conjunction. Thus, sentence \ref{and2} is symbolized as $(\enot S \eand K)$.
 
@@ -239,27 +271,14 @@ Notice the difference between sentences \ref{and2} and \ref{and3} in English and
 There is a method for distributing the `$\enot$' inside the parentheses, but it's not as simple as just moving the `$\enot$' next to both sentence letters. In other words,  $\enot(S \eand K) \neq (\enot S \eand \enot K)$.  
 \end{notebox}
 
-Finally, we don't symbolize the `both' in \ref{and3}, other than to use the `$\eand$' between the $S$ and the $K$. The `both' indicates where the conjunction begins, which is important for distinguishing sentences \ref{and2} and \ref{and3}, and it is also sometimes used in English just for emphasis. It doesn't, however, have any separate meaning in truth-functional logic.
+Finally, we don't symbolize the `both' in \ref{and3}. The `both' indicates where the conjunction begins, which is important for distinguishing sentences \ref{and2} and \ref{and3}, and it is also sometimes used in English just for emphasis. It doesn't, however, have any special or additional meaning in truth-functional logic. The single `$\eand$' between the $S$ and the $K$ is all that we need.
 
 % Depending on how the layout falls, the conjunction definition box could go here. (It's after then next paragraph right now.)
 
 \subsection{Parentheses}
 
-Although we will relax this requirement later, in truth-functional logic, conjunctions, as well as the types of sentences that we will discuss in sections \ref{s:ConnectiveDisjunction} - \ref{s:biconditional-1}, should be enclosed in parentheses. (A negation [for instance, $\enot P$] should not, though.) The purpose of the parentheses is to let us be perfectly explicit about how each logical operator is related to each sentence letter in a sentence. 
+Although we will relax this requirement at the end of the next chapter, in truth-functional logic, conjunctions, as well as disjunctions, conditionals, and biconditionals (which we will discuss in sections \ref{s:ConnectiveDisjunction} - \ref{s:biconditional-1}), should be enclosed in parentheses. A negation (for instance, $\enot P$) should not be, though. 
 
-
-\begin{factboxy}{conjunction}
-A sentence can be symbolized as $(\meta{A}\eand\meta{B})$ if it can be paraphrased any of these ways in English:
-\vspace{-2mm}
-\begin{earg}
-\item[] `Both \ldots, and\ldots.'
-\item[] `\ldots, and \ldots.'
-\item[] `\ldots, but \ldots.' 
-\item[] `\ldots, although \ldots.'
-\item[] `\ldots, as well as \ldots.'
-\end{earg}
-\end{factboxy}
-	
 
 
 \section{Disjunction}
@@ -276,7 +295,18 @@ And we will use this symbolization key:
 		\item[S] Sarah is at the train station.
 		\item[T] Tom is at the train station.
 	\end{ekey}
-To represent the `or' in sentences \ref{or1} and \ref{or2}, we will use the symbol `$\eor$' (which we call the \textit{wedge}, not \textit{v}). Sentence \ref{or1}, then, is written as $(T \eor K)$. When two sentences are connected with an `$\eor$', the resulting sentence is called a \define{disjunction}. $T$ and $K$ are the \define{disjuncts} of $(T \eor K)$.
+To represent the `or' in sentences \ref{or1} and \ref{or2}, we will use the symbol `$\eor$' (which we call the \textit{wedge}, not \textit{v}). Sentence \ref{or1}, then, is written as $(T \eor K)$. When two sentences are connected with an `$\eor$', the resulting sentence is called a \textit{disjunction}. $T$ and $K$ are the {disjuncts} of $(T \eor K)$.
+
+
+\begin{factboxy}{disjunction}
+The following are symbolized as $(\meta{A}\eor\meta{B})$.
+\vspace{-2mm}
+\begin{earg}
+\item[] $\meta{A}$ or $\meta{B}$.
+\item[] Either $\meta{A}$ or $\meta{B}$.
+\end{earg}
+\end{factboxy}
+
 
 In sentence \ref{or2}, we have an \textit{and} and an \textit{or}. But this way of symbolizing the sentence is wrong:
 	\begin{earg}
@@ -286,24 +316,21 @@ We have to determine, and reveal in the TFL sentence, if the $T$ goes with the $
 	\begin{earg}
 		\item[] $((K \eand T) \eor S)$ 
 	\end{earg}
-Or with the $S$ like this:
+Or if it goes with the $S$ like this:
 	\begin{earg}
 		\item[] $(K \eand (T \eor S))$ 
 	\end{earg}
-In the English sentence, the `either' indicates where the disjunction begins. Hence, $(T \eor S)$ is the disjunction, and $K \eand \ldots$ precedes it, giving us this: $(K \eand (T \eor S))$.
+In the English sentence, the `either' indicates where the disjunction begins. Hence, $(T \eor S)$ is the disjunction, and $K \eand \ldots$ precedes it. Therefore, the correct translation is 
+$(K \eand (T \eor S))$.
 
-
-\begin{factboxy}{disjunction}
-A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.'
-\end{factboxy}
 
 \subsection{The inclusive or}\label{inclusive-or-1}
 
-Sometimes in English, the word `or' is used in a way that excludes the possibility that both disjuncts are true. This is called the \define{exclusive or}.  An \emph{exclusive or} is clearly intended when it says on a restaurant menu ``Entrees come with either soup or salad.'' This means that, with your entree, you may have soup or you may have salad, but you cannot have both.
+Sometimes in English, the word `or' is used in a way that excludes the possibility that both disjuncts are true. This is called the \textbf{exclusive or}.  An \emph{exclusive or} is clearly intended when it says on a restaurant menu ``Entrees come with either soup or salad.'' This means that, with your entree, you may have soup or you may have salad, but you cannot have both.
 
-At other times, the word `or' allows for the possibility that both disjuncts might be true. For instance, Amy might say, ``I am going to get an A in Logic or an A in German III.'' She probably means that she will get an A in one or both of these courses. (After all, if she ends up getting an A in both, we wouldn't insist that she was wrong when she said, ``I am going to get an A in Logic or an A in German III,'' and we wouldn't expect her to try to get a B in one if she knew that she was going to get an A in the other.)
+At other times, the word `or' allows for the possibility that both disjuncts might be true. For instance, Amy might say, ``I am going to get an A in Logic or an A in German III.'' She probably means that she will get an A in one or both of these courses. (After all, if she ends up getting an A in both, we wouldn't insist that her original statement was wrong. And we definitely wouldn't expect her to try to get a B in one of these courses if she knew that she was going to get an A in the other.)
 
-When, by ``A or B,'' we mean that A is true or B is true or \textit{both} are true, then we are using the \define{inclusive or}. The TFL symbol `\eor' always symbolizes an \emph{inclusive or}.
+When, by ``Y or Z,'' we mean that ``Y is true or Z is true or \textit{both} are true,'' then we are using the \textbf{inclusive or}. The TFL symbol `\eor' always symbolizes an \emph{inclusive or}.
 
 
 \begin{comment}
@@ -342,18 +369,18 @@ And we will use this symbolization key:
 		\item[P] Jean is in Paris.
 		\item[F] Jean is in France
 	\end{ekey}
-Sentence \ref{if1} has this form: if P, then F, and we call this type of sentence a \define{conditional}. We will use `\eif' to symbolize \textit{if \ldots, then \ldots}. Thus, sentence \ref{if1} becomes $(P\eif F)$. 
+Sentence \ref{if1} has this form: (if P, then F), and we call this type of sentence a \textit{conditional}. We will use `\eif' to symbolize \textit{if \ldots, then \ldots}. Thus, sentence \ref{if1} becomes $(P\eif F)$. 
 
-In a conditional, what goes before the `$\eif$'  is called the \define{antecedent}, and what comes after the `$\eif$' is called the \define{consequent}. So, in sentence \ref{if1}, `Jean is in Paris' is the antecedent, and `Jean is in France' is the consequent.
+In a conditional, what goes before the `$\eif$'  is called the \textbf{antecedent}, and what comes after the `$\eif$' is called the \textbf{consequent}. So, in sentence \ref{if1}, `Jean is in Paris' is the antecedent, and `Jean is in France' is the consequent.
 
 \begin{factboxy}{conditional}
-A sentence can be symbolized as $(\meta{A} \eif \meta{B})$ if it can be paraphrased in English as `If A, then B'.
+`If $\meta{A}$, then $\meta{B}$' is symbolized as $(\meta{A} \eif \meta{B})$.
 \end{factboxy}
 
-Many English expressions can be represented using the conditional, and the most common alternatives to `if $\meta{A}$, then $\meta{B}$' are listed in table \ref{table.conditional.English}. If you think about it, you'll see that all six of the sentences in the table have the same meaning, and so they can all be symbolized as ($\meta{A} \eif \meta{B}$). (Or, in this case, as ($P \eif F$).)
+There are many different ways of stating a conditional in English. The most common alternatives to `if $\meta{A}$, then $\meta{B}$' are listed in table \ref{table.conditional.English}. If you think about it, you'll see that all six of the sentences in the table have the same meaning, and so they can all be symbolized as ($\meta{A} \eif \meta{B}$). (Or, in this case, as ($P \eif F$).)
 
 
-\begin{table*}[b]\centering\sffamily\footnotesize
+\begin{table*}[h]\centering\sffamily\footnotesize
 \ra{1.25}
 \begin{tabular}{@{}l l@{}}\toprule
 If Jean is in Paris, then she is in France & If $\meta{A}$, then $\meta{B}$.\\
@@ -370,36 +397,39 @@ Jean is in Paris only if she is in France. 	&	$\meta{A}$ only if $\meta{B}$.\\
 
 \section{Biconditional}\label{s:biconditional-1}
 
+\begin{factboxy}{biconditional}
+`$\meta{A}$ if and only if $\meta{B}$' is symbolized as $(\meta{A} \eiff \meta{B})$.
+\end{factboxy}
+
+
 All of the logical operators that we have discussed so far are ones with which you were already familiar because you are an English speaker. The biconditional, which is mostly commonly expressed as `\textit{\ldots if and only if \ldots}', is one that you might not have really noticed before---even if you have used it on occasion. We'll start with the basic case.
 	\begin{earg}
-		\item[\ex{iff1}] The Bulldogs won if and only if they scored more points than the Razorbacks.
+		\item[\ex{iff1}] Mississippi State's season was a success if and only if they beat LSU.
 	\end{earg}
 And this will be our symbolization key:
 	\begin{ekey}
-		\item[P] The Bulldogs scored more points than the Razorbacks.
-		\item[W] The Bulldogs won.
+		\item[L] Mississippi State beat LSU.
+		\item[S] Mississippi State's season was a success.
 	\end{ekey}
-The symbol `\eiff' will stand for `if and only if', and so we can symbolize sentence \ref{iff1} as $(W \eiff P)$.
+The symbol `\eiff' will stand for `if and only if', and so we can symbolize sentence \ref{iff1} as $(S \eiff L)$.
 
 That's how we translate an English sentence containing \textit{if and only if} into TFL. But let's think about what \textit{if and only if} means. If sentence \ref{iff1} is true, then which of these conditionals must also be true?
 	\begin{earg}
-		\item[\ex{iff2}] If the Bulldogs won, then they scored more points than the Razorbacks.
-		\item[\ex{iff3}] If the Bulldogs scored more points than the Razorbacks, then they won.
+		\item[\ex{iff2}] If Mississippi State's season was a success, then they beat LSU.
+		\item[\ex{iff3}] If they beat LSU, then Mississippi State's season was a success.
 	\end{earg}
 The answer is both must be true.
 	
 From the previous section, you know that we symbolize sentences \ref{iff2} and \ref{iff3} like this:
 	\begin{earg}
-		\item[\ref{iff2}.] $(W \eif P)$
-		\item[\ref{iff3}.] $(P \eif W)$ 
+		\item[\ref{iff2}.] $(S \eif L)$
+		\item[\ref{iff3}.] $(L \eif S)$ 
 	\end{earg}
-So, sentence \ref{iff1} is equivalent to $((W \eif P) \eand (P \eif W))$, which is why we call $(W \eiff P)$ a \define{biconditional}: it is equivalent to the two conditionals that have their antecendent and consequent switched.
+So, sentence \ref{iff1} is equivalent to $((S \eif L) \eand (L \eif S))$, which is why we call $(S \eiff L)$ a \textit{biconditional}. It is equivalent to the two conditionals that have their antecendent and consequent switched.
 
-The expression `if and only if' occurs frequently in philosophy, mathematics, and logic, and sometimes you will see it abbreviated `iff'. (Although even when `iff' is written, we still say `if and only if.') 
+The expression `if and only if' occurs frequently in philosophy, mathematics, and logic, and sometimes you will see it abbreviated `iff'. Although even when `iff' is written, we still say `if and only if.' 
 
-\begin{factboxy}{biconditional}
-A sentence can be symbolized as $(\meta{A} \eiff \meta{B})$ if it can be paraphrased in English as `A if and only if B'.
-\end{factboxy}
+
 	
 %A word of caution. Ordinary speakers of English often use `if \ldots, then\ldots' when they really mean to use something more like `\ldots if and only if \ldots'. Perhaps your parents told you when you were a child: `if you don't eat your vegetables, you won't get any dessert'. Suppose that you ate your vegetables, but that your parents refused to give you any dessert, on the grounds that they were only committed to the \emph{conditional} (roughly `if you get dessert, then you will have eaten your vegetables'), rather than the biconditional (roughly, `you get dessert if and only if you eat your vegetables'). Despite the valuable lesson in truth functional propositional logic, you would have been upset. So, be aware of this when interpreting what people say, and in your own writing, make sure you use \textit{if and only if} if and only if you mean to use it.
 
@@ -415,12 +445,12 @@ To symbolize \ref{unless1}, we will use this symbolization key:
 		\item[D] You will catch a cold.
 	\end{ekey}
 
-One meaning of sentence \ref{unless1} is that if you do not wear a jacket, then you will catch a cold. This we symbolize as $(\enot J \eif D)$. Alternatively, the sentence can mean that if you do not catch a cold, then you must have worn a jacket. This is symbolized as $(\enot D \eif J)$. And, finally, it can also mean that either you will wear a jacket or you will catch a cold. This, we symbolize as $(J \eor D)$.
+One meaning of sentence \ref{unless1} is `if you do not wear a jacket, then you will catch a cold'. Since this is a conditional, we symbolize it as $(\enot J \eif D)$. Alternatively, the sentence can mean `if you do not catch a cold, then you must have worn a jacket'. This is symbolized as $(\enot D \eif J)$. And, finally, it can also mean that either you will wear a jacket or you will catch a cold. This we symbolize as $(J \eor D)$.
 
 All three ways of symbolizing sentence \ref{unless1} are correct. In fact, in chapter \ref{s:SemanticConcepts}, we will see that these three TFL sentences are equivalent. Following the somewhat standard practice, however, we will define \textit{unless} as a disjunction.
 	
 \begin{factboxy}{unless}
-If a sentence can be paraphrased as `A unless B,' then it can be symbolized as `$(\meta{A}\eor\meta{B})$'.
+`$\meta{A}$ unless $\meta{B}$' can be symbolized as $(\meta{A}\eor\meta{B})$.
 \end{factboxy}
 
 There is a complication with treating `unless' as a disjunction, however. As we said earlier, `or' has an inclusive and an exclusive meaning, but in TFL, `or' is always inclusive. Speakers of English, however, often use `unless' to mean something more like the exclusive-or. Suppose someone says: `I will go running unless it snows'. They probably mean `either I will go running or it will snow, but not both'. So, it can be argued that the conditional---i.e., `if it does not snow, then I will go running' or ($\enot S \eif R$)---captures the meaning of \textit{unless} better than does the disjunction.
@@ -500,6 +530,7 @@ Using this symbolization key, translate each English sentence into TFL.
 
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Answers
 
@@ -542,6 +573,7 @@ Using this symbolization key, translate each English sentence into TFL.
 
 \problempart
 \label{pr.spies}
+\vspace{-1em}
 %\myanswer{\begin{ekey}
 %\item[C] The code has been broken.
 %\item[E] The letter is in German embassy.
@@ -555,8 +587,10 @@ Using this symbolization key, translate each English sentence into TFL.
 \item If either Gorka or Lena is a spy, then the code has been broken.
 \item[] \myanswer{$((G \eor L) \eif C)$}\smallskip
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item If the letter is in the embassy and the code hasn't been broken, then Lena is not a spy.
 \item[] $((E \eand \enot C) \eif \enot L)$\smallskip
+\end{minipage}
 
 \item If the code has been broken and the letter isn't in the embassy, then Gorka is a spy.
 \item[] $((C \eand \enot E) \eif G)$\smallskip
@@ -579,8 +613,10 @@ Using this symbolization key, translate each English sentence into TFL.
 \item[] \myanswer{$((C \eor \enot C) \eand E)$}\medskip
 \end{minipage}
 
+\noindent\begin{minipage}{0.88\textwidth}
 \item Either Gorka or Lena is a spy, but not both.
 \item[] \myanswer{$((G \eor L) \eand \enot (G \eand L))$}
+\end{minipage}
 \end{earg}
 
 
@@ -626,6 +662,7 @@ Many expressions of TFL will be total gibberish. We want to know when an express
 %We can stipulate similar rules for each of the other logical operators. For instance, if \meta{A} and \meta{B} are sentences of TFL, then combining them with an `$\eand$' and brackets will yield a new sentence of TFL: $(\meta{A}\eand\meta{B})$. Providing rules like this for all of the logical operators, we arrive at the following formal definition for a \define{sentence of TFL}.
 
 \begin{factboxy}{sentences of TFL}\label{TFLsentences}
+Let \meta{A}, \meta{B}, \meta{C},\,\ldots\, stand for any sentence of truth functional logic. 
 	\begin{enumerate}
 		\item Every atomic sentence is a sentence.
 		\item If \meta{A} is a sentence, then $\enot\meta{A}$ is a sentence.
@@ -694,7 +731,7 @@ You will learn to recognize sentences of TFL more quickly if you write neatly an
 \section{The main logical operator}
 \label{main_logical_operator}
 
-Setting aside the `$\enot$' for a moment, each of the other logical operators, as you know, combine two sentences (which may, themselves, be composed of multiple sentences). The two sentences that are joined together by a logical operator comprise that operator's \define{scope}. 
+Setting aside the `$\enot$' for a moment, each of the other logical operators, as you know, combine two sentences (which may, themselves, be composed of multiple sentences). The two sentences that are joined together by a logical operator comprise that operator's \textbf{scope}. 
 
 \begin{factboxy}{scope}
 For `$\eand$', `$\eor$', `$\eif$', and `$\eiff$', the \define{scope} of the logical operator is the two sentences that the logical operator is conjoining. 
@@ -716,7 +753,7 @@ $$(((T \eif P) \eand R) \eor (S \eiff Q))$$
 	\item[] The scope of the `$\eor$' is $((T \eif P) \eand R)$ and $(S \eiff Q)$.
 \end{ebullet}
 
-When the scope of a logical operator is the whole sentence (besides that operator itself), then that logical operator is the \define{main logical operator}. So, in the previous example, the `$\eor$' is the main logical operator. This means that the sentence is a disjunction. (The subsentences are different kinds of sentences, but the whole sentence is a disjunction.)
+When the scope of a logical operator is the whole sentence (besides that operator itself), then that logical operator is the \textbf{main logical operator}. So, in the previous example, the `$\eor$' is the main logical operator. This means that the sentence is a disjunction. (The subsentences are different kinds of sentences, but the whole sentence is a disjunction.)
 
 \begin{factboxy}{main logical operator (MLO)}
 The \define{main logical operator} is the logical operator whose scope is the entire sentence. 

@@ -73,12 +73,13 @@ These are the basic features of every truth table. The task when creating a trut
 
 You were introduced to five logical operators in chapter \ref{s:TFLConnectives}, and now we need to explain when sentences using each one are true and when they are false. 
 
-\begin{factboxy}{Truth values}
-\textit{Truth values} are the logical values that a sentence can have: \textit{true} and \textit{false}.
+\begin{factboxy}{truth values}
+\define{Truth values} are the logical values that a sentence can have: \textit{true} and \textit{false}.
 \end{factboxy}
 
 
 \paragraph{Conjunction}\label{conjunction-tt}  For any sentences \meta{A} and \meta{B}, the conjunction $(\meta{A} \eand \meta{B})$ is true if and only if both \meta{A} and \meta{B} are true. If one or both of \meta{A} and \meta{B} are false, then the sentence $(\meta{A} \eand \meta{B})$ is false. We can summarize this in the \textit{characteristic truth table for conjunction}:
+\begin{comment}
 \begin{center}
 \begin{tabular}{d d | f e e}
 \meta{A} & \meta{B} & $\meta{A}$&\eand&$\meta{B}$\\
@@ -89,9 +90,25 @@ F & T &\TTlg{F}& F &\TTlg{T}\\
 F & F &\TTlg{F}& F &\TTlg{F}
 \end{tabular}
 \end{center}
+\end{comment}
+\begin{center}
+\begin{tabular}{p{1.5cm} k d d | f e e}
+&&\meta{A} & \meta{B} & $\meta{A}$&\eand&$\meta{B}$\\
+\cline{3-7}
+{\footnotesize{\textsf{line 1}}}\tikzmarks[xshift=2.8pt, yshift=.50pt]{j} &\tikzmarks[xshift=-.5pt, yshift=.5pt]{k} 		&T & T &\TTlg{T}& T &\TTlg{T}\Tstrut\\
+{\footnotesize{\textsf{line 2}}}\tikzmarks[xshift=2.8pt, yshift=.50pt]{m} &\tikzmarks[xshift=-.5pt, yshift=.5pt]{n}	&T & F &\TTlg{T}& F &\TTlg{F}\\
+{\footnotesize{\textsf{line 3}}}\tikzmarks[xshift=2.8pt, yshift=.50pt]{p} &\tikzmarks[xshift=-.5pt, yshift=.5pt]{q}		&F & T &\TTlg{F}& F &\TTlg{T}\\
+{\footnotesize{\textsf{line 4}}}\tikzmarks[xshift=2.8pt, yshift=.50pt]{r} &\tikzmarks[xshift=-.5pt, yshift=.5pt]{s}		&F & F &\TTlg{F}& F &\TTlg{F}
+\end{tabular}
+\drawcurvedarrow[bend right=0,-{Latex[round, length=2.25mm, width=1.0mm]}, thick, darkgreen]{j}{k}
+\drawcurvedarrow[bend right=0,-{Latex[round, length=2.25mm, width=1.0mm]}, thick, darkgreen]{m}{n}
+\drawcurvedarrow[bend right=0,-{Latex[round, length=2.25mm, width=1.0mm]}, thick, darkgreen]{p}{q}
+\drawcurvedarrow[bend right=0,-{Latex[round, length=2.25mm, width=1.0mm]}, thick, darkgreen]{r}{s}
+\end{center}
+
 
 Looking at line 1, we see that, when \meta{A} is true and \meta{B} is true, there is a `T' under the `$\eand$', which indicates that  $(\meta{A} \eand \meta{B})$ is true. 
-On line 2, meanwhile, \meta{A} is true and \meta{B} is false, which means that $(\meta{A}\eand\meta{B})$ is false. 
+On line 2, meanwhile, \meta{A} is true and \meta{B} is false, which means that $(\meta{A}\eand\meta{B})$ is false. This is represented by the `F' under the `$\eand$' on line 2.
 
 Lines 3 and 4 represent the final two combinations of `true' and `false' for \meta{A} and \meta{B}. On line 3, \meta{A} is false and \meta{B} is true. When that is the case, $(\meta{A} \eand \meta{B})$ is false. And then on line 4, \meta{A} and \meta{B} are both false. In that scenario, $(\meta{A} \eand \meta{B})$ is, again, false.
 
@@ -127,12 +144,11 @@ Conceivably, we could say that $(\meta{A}\eor \meta{B})$ is false when \meta{A} 
 
 
 \paragraph{Conditional} The conditional is interesting and, for some, philosophically contentious. One way to think about the conditional is as rule: if the antecedent happens, then the consequent has to happen. So, for instance, take this conditional: 
-
 \begin{ebullet}	
-		\item[] If it is Wednesday, then I am on campus by 10:00 am.
-	\end{ebullet}
+	\item[] If it is Wednesday, then I am on campus by 10:00 am.
+\end{ebullet}
 
-\noindent This sentence is obviously true when (1) it is Wednesday and I am on campus by 10:00 am. Conversely, this sentence is false when (2) it is Wednesday, but I am not on campus by 10:00 am. (If that happens, the rule has been broken.) Those two scenarios are represented by lines 1 and 2 in the characteristic truth table for the conditional:
+\noindent This sentence is obviously true when (1) it is Wednesday and I am on campus by 10:00 am. Conversely, this sentence is false when (2) it is Wednesday, but I am not on campus by 10:00 am. If that happens, the rule has been broken. Those two scenarios are represented by lines 1 and 2 in the characteristic truth table for the conditional:
 
 \begin{center}\label{characteristic-tt-conditional}
 \begin{tabular}{d d | f e e}
@@ -148,20 +164,21 @@ F & F & \TTlg{F}& T& \TTlg{F}
 For the other two scenarios, we have to concentrate a bit. 
 
 \begin{ebullet}	
-\item[(3)] Our conditional is also true when it is not Wednesday (let's say it's Tuesday), but I'm on campus by 10:00 am. In this case, the rule \textit{if it is Wednesday, then I am on campus by 10:00 am} hasn't been broken; it just doesn't apply. So, when the antecedent is false and the consequent is true, the conditional is true. That's represented by line 3 of the characteristic truth table for the conditional. 
+\item[(3)] Our conditional is also true when `today is Wednesday' is false (let's say it's Tuesday), but I'm on campus by 10:00 am. In this case, the rule \textit{if it is Wednesday, then I am on campus by 10:00 am} hasn't been broken; it just doesn't apply. So, when the antecedent is false and the consequent is true, the conditional is true. That's represented by line 3 of the characteristic truth table for the conditional. 
 \item[(4)] Similarly, when it is not Wednesday and I am not on campus by 10:00 am, the rule hasn't been broken. It is still in force. It just hasn't been invoked at all. So even though the antecedent didn't happen and the consequent didn't happen, the conditional is still true. (For instance, let's say, it's Saturday and, at 10:00 am, I am at home in bed. It's false that `it is Wednesday' and it's false that `I am on campus by 10:00 am', but it's still true that \textit{if it is Wednesday, then I am on campus by 10:00 am}.) This scenario is represented by line 4 of the characteristic truth table.
 \end{ebullet}
+Those four scenarios are pretty straightforward. The conditional is philosophically contentious, however, because every conditional is not as simple as `if it is Wednesday, then I am on campus by 10:00 am'. 
 
-Those four scenarios are pretty straightforward. The conditional is philosophically contentious, however, because every conditional is not as simple as `if it is Wednesday, then I am on campus by 10:00 am'. Take a conditional where the antecedent is always false: `if the King of England is on the moon, then Mississippi State University is in Starkville.' This isn't much of a rule, but it is a conditional. And since, in our current world, the antecedent is false and the consequent is true, the sentence is true. Even stranger, consider this conditional: `if the King of England is on the moon, then pigs can fly.' Now, the antecedent is always false and the consequent is always false (at least in our world), but, as is shown on line 4 of the characteristic truth table, the sentence is true. 
+Take this conditional: `if the King of England is on the moon, then Mississippi State University is in Starkville.' This isn't much of a rule, but it is a conditional. And since, in our current world, the antecedent is false and the consequent is true, according to our characteristic truth table, the sentence is true. Even stranger, consider this conditional: `if the King of England is on the moon, then pigs can fly.' Now, the antecedent is always false and the consequent is always false (at least in our world), but, as is shown on line 4 of the characteristic truth table, the sentence is true. 
 
 Sometimes the truth values for the antecedent, the consequent, and the whole conditional make sense (as in our first example) and sometimes they seem odd. That has generated philosophical debate, but it doesn't actually present a problem for us. The conditional is precisely defined by its characteristic truth table. We, then, simply use that definition, and we don't have to make any decisions about whether a particular conditional is odd or should really be considered true or false. 
 
 Finally, notice that, unlike the conjunction and the disjunction, the conditional is \emph{asymmetrical}. You cannot switch the antecedent and consequent without changing the meaning of the sentence. This is because $(\meta{A}\eif\meta{B})$ (e.g., `if it is Wednesday, then I am on campus by 10:00 am') has a different truth table than $(\meta{B}\eif\meta{A})$ (e.g., `if I am on campus by 10:00 am, then it is Wednesday').
 
 
-\paragraph{Biconditional}\label{biconditional-2} There are two ways to think about the characteristic truth table for the biconditional. First, as we said in section \ref{s:biconditional-1}, the biconditional is equivalent to the conjunction of a conditional running in each direction---that is, it is equivalent to $(\meta{A} \eif \meta{B}) \eand (\meta{A}\eif\meta{B})$. You will have to cover chapters \ref{s:CompleteTruthTables} and \ref{s:SemanticConcepts} to understand what we mean by two sentences being \textit{equivalent}, but suffice it to say, that they are.
+\paragraph{Biconditional}\label{biconditional-2} There are two ways to think about the characteristic truth table for the biconditional. First, as we said in section \ref{s:biconditional-1}, the biconditional is equivalent to the conjunction of a conditional running in each direction---that is, $(\meta{A} \eiff \meta{B})$ is equivalent to $((\meta{A} \eif \meta{B}) \eand (\meta{B}\eif\meta{A}))$. We will give a precise definition of \textit{equivalent} in chapter \ref{s:SemanticConcepts}, but for the time being, suffice it to say, that they are.
 
-Second, when a biconditional is true, what is before and after the `$\eiff$' have the same truth value, either both are true or both are false. Consider this biconditional in English: ``Mississippi State's season was a success if they beat Mississippi.'' If you know that this sentence is true, then you know that \textit{Mississippi State's season was a success} and \textit{They beat Mississippi} are either both true or both are false. (But you don't know which it is.) Thus, in the characteristic truth table, the biconditional is true on the first and fourth lines. 
+Second, when a biconditional is true, what is before and after the `$\eiff$' have the same truth value: either both are true or both are false. Consider this biconditional in English: ``Mississippi State's season was a success if and only if they beat LSU.'' If you know that this sentence is true, then you know that \textit{Mississippi State's season was a success} and \textit{They beat LSU} are either both true or both are false. (But you don't know which it is.) Thus, in the characteristic truth table, the biconditional is true on the first and fourth lines. 
 
 If the sentence before the `$\eiff$' is true and the sentence after it is false (or vice versa), then the biconditional is false. These two scenarios are represented by the second and third lines in the biconditional's characteristic truth table. 
 
@@ -1182,7 +1199,7 @@ In the previous chapter, we used truth tables to determine---for each possible t
 
 In section \ref{s:nec-truth}, we said that a \emph{necessary truth} is a sentence that must be true, a \emph{necessary falsehood} is a sentence that must be false, and a sentence that is neither a necessary truth or a necessary falsehood is \textit{contingent}. The first two, \textit{necessary truth} and \textit{necessary falsehood}, have surrogates in TFL. We will start with the one for necessary truth.
 
-\begin{factboxy}{tautology}
+\begin{factboxy}{tautology}\label{tautology-def}
 A sentence of TFL is a \define{tautology} if and only if it is true on every truth-value assignment.
 \end{factboxy}
 
