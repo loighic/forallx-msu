@@ -9,12 +9,12 @@
 
 We have mastered truth functional logic. There may be difficult proofs that still confound us, but we have covered everything that there is to cover in this branch of logic. We now move on to the logic system that is typically studied immediately after truth functional logic: first-order logic (which is also called \textit{predicate logic}). 
 
-As you know, the language of truth functional logic consists of atomic sentences, the logical operators \textit{and}, \textit{or}, \textit{if \ldots then \ldots}, \textit{if and only if}, and \textit{not}, and parentheses. First-order logic has all of those logical operators plus three more. It also has parentheses. Instead of atomic sentences, however, these two parts of a sentence are represented separately: 
+As you know, the language of truth functional logic consists of atomic sentences, the logical operators \textit{and}, \textit{or}, \textit{if \ldots then \ldots}, \textit{if and only if}, and \textit{not}, and parentheses. First-order logic has all of those logical operators---plus three more---and parentheses, but instead of atomic sentences, these two parts of a sentence are represented separately: 
 \begin{ebullet}
 \item[(\textit{a})] the subject of a sentence
 \item[(\textit{b})] the verb and direct object of the sentence
 \end{ebullet}
-This allows us to undertake a much more sophisticated analysis of different kinds of logical relationships (although we will only cover the basics in this textbook). Let's see what it looks like.
+This allows us to undertake a much more sophisticated analysis of different kinds of logical relationships (although we will only cover the basics in this textbook). 
 
 
 \begin{comment}
@@ -129,16 +129,22 @@ The most notable feature of first-order logic is the use of what are called \tex
 	\item[(\textit{b})] The existential quantifier, which is symbolized with `$\exists$' and can be translated as ``some,'' ``for some,'' or ``there exists.''
 \end{ebullet}
 
-When we use these quantifiers, we are not designating a specific individual and so, with them, we must use \define{variables}. Whereas names identify specific individuals (or objects), variables stand for an individual (or individuals), but not any specific one. Variables work with predicates the same way as names do. When we have a variable, however, we must also have a quantifier. (It is possible to have a variable that is not associated with a quantifier, but that won't be covered here.) We represent variables with the lowercase letters \textit{u} -- \textit{z}.
+When we use these quantifiers, we are not designating a specific individual and so, with them, we must use \textbf{variables}. Whereas names identify specific individuals (or objects), variables stand for an individual (or individuals), but not any specific one. Variables work with predicates the same way as names do. When we have a variable, however, we must also have a quantifier. (It is possible to have a variable that is not associated with a quantifier, but that won't be covered here.) We represent variables with the lowercase letters \textit{u} -- \textit{z}.
 
 Here are two English sentences that are each translated to FOL with a quantifier, a predicate, and a variable:
 \begin{ebullet}
 	\item[] Everyone ate dinner: $\forall x Dx$. 
 	\item[] Someone ate dinner: $\exists x Dx$.
 \end{ebullet}
-Notice that we are doing two things in each of these sentences. First, we are specifying if the variable represents everyone (or everything) or someone (or something). That's the purpose of the $\forall x$ and the $\exists x$. Then we indicate the property that the individual or individuals represented by the variable have. That's the $Dx$.
+Notice that we are doing two things in each of these sentences. First, we are specifying that the variable represents everyone (or everything) or someone (or something). That's the purpose of the $\forall x$ and the $\exists x$. Then, knowing that $x$ stands for \textit{everyone} or \textit{someone}, the $Dx$ is what we read as `Everyone at dinner' or `Someone ate dinner'.
 
-As we did with TFL, there will be a point where we won’t be as concerned with the English sentence that is represented by an expression in FOL. So, reading the first one, as an expression in FOL (and without a specific English translation for $D$), we say, ``for all $x, Dx$ or ``all $x$ are D.'' And for the second one: ``for some $x, Dx$'' or ``some $x$ is $D$.'' 
+As we did with TFL, there will be a point where we won’t be as concerned with the English sentence that is represented by an expression in FOL. So, reading the first one as an expression in FOL (and without a specific English translation for $D$), we say, 
+
+\centerline{for all $x, Dx$} 
+
+\noindent And for the second one:
+
+\centerline{for some $x, Dx$}
 
 
 \paragraph{Identity}
@@ -151,11 +157,11 @@ The identity symbol, `=’, is used to signify that two things are the same; tha
 A logic system must be precise. But `all’ or `every’, when taken literally and without any qualification, refer to a vast set of individuals or things. For instance, if $H$ represents `is happy’, then $\forall x Hx$ represents ‘Everyone is happy’. But when we say this in English, we are not referring to everyone now alive or everyone who ever was alive or who ever will be alive. Rather, we mean something like `everyone now in the room is happy,’ or `everyone enrolled in this course is happy’ {\libser \Large\symbol{"263A}}.
  
 
-So, to be precise when we use quantified expressions in FOL, we need to specify a \define{domain}. The domain is the collection of things about which we want to refer. If we want to talk about people in Starkville, we define the domain as \textit{people in Starkville}. We write this at the beginning of the symbolization key, like this:
+So, to be precise when we use quantified expressions in FOL, we need to specify a \define{domain}. The domain is the collection of things about which we want to refer. If we want to talk about people in Starkville, we define the domain as \textit{people in Starkville}, and we write this at the beginning of the symbolization key:
 
 \begin{earg}
 \item[] domain: people in Starkville
 \end{earg}
-The quantifiers, then, apply to (or range over) the domain. Given this domain, ‘$\forall x$’ is to be read roughly as ‘Every person in Starkville \ldots ’, and ‘$\exists x$’ is to be read roughly as ‘Some person in Starkville, \ldots ’.
+The quantifiers, then, apply to (or range over) the domain. Given this domain, ‘$\forall x$’ can be read, ‘Every person in Starkville \ldots ’, and ‘$\exists x$’ can be read, ‘Some person in Starkville, \ldots ’.
 
 In FOL, the domain must always include at least one object. Moreover, in English we can legitimately infer ‘someone is happy’ from ‘David is happy’. Likewise in FOL, we will want to be able to infer $\exists xHx$ from $Hd$. So, when we use a name, it must be the case that each name picks out exactly one object in the domain (for instance, one person). There can, however, be members of a domain that don't have names or have more than one name.

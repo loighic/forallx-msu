@@ -34,11 +34,13 @@ Here is a symbolization key.
 	\item[] $\exists x Bx$: Someone ate a burrito.\smallskip
 	\item[] $\enot\forall xNx$: Not everyone took a nap.\smallskip
 	\item[]$\forall x \enot Nx$: Everyone did not take a nap.\smallskip
-	\item[]$\enot\exists yBy$: It is not the case that someone ate a burrito.\smallskip
+	\item[]$\enot\exists yBy$: It is not the case that someone ate a burrito. 
+	\item[]\quad\quad\quad \textit{or} There isn't someone who ate a burrito.\smallskip
 	\item[]$\exists y \enot By$: Someone did not eat a burrito.\smallskip
 	\item[]$\exists x(Bx \eand Nx)$: Someone ate a burrito and took a nap.\smallskip
 \end{ebullet}
-	
+
+
 If you are stuck on a translation, you can always just translate $\forall x$ and $\exists x$ like this:
 \begin{ebullet}
 \item[] For all \textit{x}, \textit{x} is \ldots
@@ -73,15 +75,15 @@ According to the second sentence, maybe different people ate the burrito and too
 %\end{earg} 
 %\end{notebox} 
 
-%Finally, these existentially and universally quanitfied sentences are equivalent.
 \begin{factboxy-width}[width=7cm]{equivalent quantified expressions}
 $\exists \meta{x} ¬\meta{Bx} $ is equivalent to $¬\forall \meta{x Bx}$.\medskip
 
 $\forall \meta{x} ¬\meta{Dx}$ is equivalent to $¬\exists \meta{x Dx}$.
 \end{factboxy-width}
 
-\begin{factboxy-width}[width=9.6cm]{The formats for common expressions that are translated into first-order logic as conditionals or conjunctions}
-\begin{small}
+
+\begin{factboxy}{formats for common expressions}
+%\begin{small}
 \begin{itemize}
   \setlength{\itemsep}{1pt}
   \setlength{\parskip}{0pt}
@@ -96,10 +98,8 @@ $\forall \meta{x} ¬\meta{Dx}$ is equivalent to $¬\exists \meta{x Dx}$.
 \item[] No $F$ is $G$: $¬\exists x(Fx \eand Gx) $ \textbf{or} $\forall x(Fx \eif ¬Gx)$\medskip
 \item[] Only $F$s are $G$s: $\enot \exists x(Gx \eand \enot Fx)$ \textbf{or} $\forall x(Gx \eif Fx)$
 \end{itemize}
-\end{small}
-\end{factboxy-width}
-
-
+%\end{small}
+\end{factboxy}
 
 
 \section{Scope}
@@ -109,19 +109,19 @@ Just like the `$\eand$', `$\eor$', `$\eif$', `$\eiff$', and `$\enot$', the unive
 \begin{ebullet}
 \item[(1)] When there is \textit\textbf{not} a parenthesis between the quantifier and a predicate, then the scope of the quantifier is that predicate (or the predicate and a $\enot$) and its variable or variables. For instance, here the scope of the $\color{blue}{\forall x}$ is in red:
 \begin{earg}
-\item[] $\color{blue}{\forall x} \color{red}{Fx}$ or $\color{blue}{\forall x} \color{red}{\enot Fx}$ 
+\item[] $\color{blue}{\forall x} \color{red2}{Fx}$ or $\color{blue}{\forall x} \color{red2}{\enot Fx}$ 
 \end{earg}
 \smallskip
 
 \item[(2)] When there is a parenthesis between the quantifier and the first predicate, then the scope of the quantifier is everything inside the parentheses.
 \begin{earg}
-\item[] $\color{blue}{\forall x} \color{red}{(Fx \eor Gx)}$ 
+\item[] $\color{blue}{\forall x} \color{red2}{(Fx \eor Gx)}$ 
 \end{earg}
 \smallskip
 
 \item[(3)] When there is a second quantifier between the quantifier and a predicate or a parenthesis, the scope of the first quantifier includes the second quantifier. And likewise if there are more than two quantifiers.
 \begin{earg}
-\item[] $\color{blue}{\forall x} \color{red}{\exists yLxy}$ or $\color{blue}{\forall x} \color{red}{\exists y(Fx \eif Gy)}$
+\item[] $\color{blue}{\forall x} \color{red2}{\exists yLxy}$ or $\color{blue}{\forall x} \color{red2}{\exists y(Fx \eif Gy)}$
 \end{earg}
 \smallskip
 \item[] \textit{Notice that this is all the same as the scope of the} `$\enot$’.

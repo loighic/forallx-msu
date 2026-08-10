@@ -225,6 +225,77 @@ In our final step, we use the conjunction introduction rule to get the conclusio
 	\have{c}{(N\eor P)\eand S} \ai{a,b2}
 \end{proof}
  
+ 
+\section{Proofs in Carnap}\label{s:Carnap-proofs}
+
+%Creating proofs in Carnap is not difficult. To type the connectives, use the symbols on the right in table \ref{symbols-Carnap}. 
+
+\begin{table*}[b]\centering\sffamily\footnotesize
+\ra{1.25}
+\begin{tabular}{@{}l l@{}}\toprule
+\textth{TFL operator}\quad\quad & \textth{in Carnap} \\\midrule
+\quad	\enot 	&\quad $ \sim$\\
+\quad	\eand 	&\quad \&\\
+\quad	\eor 	&\quad v (lowercase v)\\
+\quad	\eif 	&\quad $-$$>$ (dash, greater than sign)\\
+\quad	\eiff 	&\quad $<$$-$$>$\\
+\bottomrule
+\end{tabular}
+\caption{}\label{symbols-Carnap}
+\end{table*}
+
+To create a proof, you are given an interface like the one shown in figure \ref{fig:proof-1a}. As you can see, the argument is given at the top. In this case, the premises are $(P \eif \enot Q)$ and $(R \eand P)$, and the conclusion is $\enot Q$. The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$').
+
+Carnap will number the lines automatically. After the TFL  sentence on each line, there has to be a colon (`:') before the `PR' or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put a tab space between the sentence and the `:PR' or the rule (:$\eand$E, :$\eor$I, etc.).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+%\centering
+\includegraphics[width=9.5cm]{textbook--1a.PNG}
+\caption{}
+\label{fig:proof-1a}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+Begin by listing the premises, and don't forget to put `:PR' after each one. If there is a problem with a line---the sentence isn't formed correctly, the rule you've cited isn't being used correctly, or there's some other mistake---Carnap will put \textsf{?} or {\fontencoding{U}\fontfamily{futs}\selectfont\char 49\relax} at the end of the line. When the line is ok, you will get a `+'. 
+% \danger \warning
+% Once you complete each line, Carnap will give you the typographically correct version on the right (figure \ref{fig:proof-1b}). 
+We finish this proof using the $\eand$E and $\eif$E rules (figure \ref{fig:proof-1c}). When the proof is correct, the box containing the argument will turn green, and the proof can be submitted. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+%\centering
+\includegraphics[width=9.5cm]{textbook--1b.PNG}
+\caption{}
+\label{fig:proof-1b}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+%\centering
+\includegraphics[width=9.5cm]{textbook--1c.PNG}
+\caption{}
+\label{fig:proof-1c}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Although creating proofs in Carnap is not difficult, you do have to be careful. Creating a program that can verify proofs that use only the rules of derivation given in this chapter is relatively simple because there are only a small number of rules and, to produce proofs for valid arguments, we follow those rules very strictly. But, as a consequence, Carnap is not designed to understand what you are trying to do if you deviate from the rules, even if it is a minor deviation or an innocent mistake. So, some reminders:
+\begin{enumerate}
+\itemsep-.6mm
+	\item As long as `$\enot$' is not the main logical operator, you can drop the outermost parentheses. \textbf{All other parentheses have to be used}. 
+	\item Capitalize `PR' and the`E' and `I' in the rules. Also capitalize all atomic sentences.
+	\item Don't forget the `:' right before PR or the rule that you are citing. 
+	\item There is no space between the $\eand$, $\eor$, $\eif$, $\eiff$, or $\enot$ and the `E' or `I'.  
+	\item There is a space (and no punctuation) after the `E' or `I'. 
+	\item There is a comma between the two lines that have to be cited for $\eand$I, $\eor$E, $\eif$E, and $\eiff$E (e.g., `$\eand$I 2,4').
+%	\item There is a dash between the two lines that have to be cited for $\eif$I, $\enot$I, and $\enot$E (e.g., `$\enot$E 4-6').
+%	\item The $\eiff$I rule requires dashes and a comma. (Check the format on p.~\pageref{eiff-I}.)
+\end{enumerate}
+ 
+ 
 
 \section{Disjunction intro and elim}\label{s:disj-rule}
 
@@ -705,6 +776,52 @@ To simplify matters at the beginning of section \ref{intro-proofs}, I only use t
 \end{earg}
 
 
+\section{Subproofs in Carnap}
+
+To create a subproof in Carnap, put a tab space at the beginning of the line. Then put the assumption (in this case, $\enot P$). And put `:AS' at the end of the line (figure \ref{fig:proof-2a}). Since the next line is also part of the subproof, we again begin with a tab space. Then, put the TFL sentence (in this case, $Q$) followed by a rule. We end the subproof (and discharge the assumption) with the $\eif$I rule. The conditional that we got by using the conditional introduction rule is not indented (figure \ref{fig:proof-2b}). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+%\centering
+\includegraphics[width=9.5cm]{textbook--2a.PNG}
+\caption{}
+\label{fig:proof-2a}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+%\centering
+\includegraphics[width=9.5cm]{textbook--2b.PNG}
+\caption{}
+\label{fig:proof-2b}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}
+%\begin{subfigure}[hb]{0.5\textwidth}
+%\centering
+%\includegraphics[angle=90, height=13cm]{textbook--2a.PNG}
+%\caption{}
+%\label{fig:proof-2a}
+%\end{subfigure}
+%\begin{subfigure}[hb]{0.5\textwidth}
+%\centering
+%\includegraphics[angle=90, height=13cm]{textbook--2b.PNG}
+%\caption{}
+%\label{fig:proof-2b}
+%\end{subfigure}
+% \caption{}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Some more examples}
 
 Each of these examples uses the conditional introduction rule.
@@ -825,15 +942,15 @@ This conversation between Jeff and Claire illustrates an important method for ma
 
 {\textsc{\small Jeff.}~ What’s a contradiction?\vspace{1pt}
 
-{\textsc{\small Claire.}~ The earth is not flat.\smallskip
+{\textsc{\small Claire.}~ The earth is not flat.
+\medskip
 
-\filbreak
 
 \noindent Notice how Claire proceeds. The second time that she speaks, she makes an assumption:
 \begin{ebullet}
 	\item[] The Earth is flat.
 \end{ebullet}
-\noindent She then (after implicitly doing a conditional elimination with the assumption and her third statement) arrives at a contradiction---that is, a statement and the denial of that statement:
+\noindent Then (after implicitly doing a conditional elimination with the assumption and her third statement), she arrives at a contradiction---that is, a statement and the denial of that statement:
 \begin{ebullet}
 	\item[\textit{a}:] People cannot travel straight west and then return to their starting point from the east. 
 	\item[\textit{b}:] People can travel straight west and then return to their starting point from the east.
@@ -842,7 +959,7 @@ Since it is impossible for both (\textit{a}) and (\textit{b}) to be true, the as
 \begin{ebullet}
 	\item[] The earth is not flat. 
 \end{ebullet}
-Our two negation rules (which are basically the same rule) formalize this reasoning process. These (plus the reiteration rule, which is sometimes used with these rules) are the final ones in our natural deduction system. They are rules of last resort, and as such, are used when we can't reach a conclusion using only the rules so far covered. 
+Our two negation rules, which are basically the same rule, formalize this reasoning process. These (plus the reiteration rule, which is sometimes used with these rules) are the final ones in our natural deduction system. They are rules of last resort, and as such, are used when we can't reach a conclusion using only the rules so far covered. 
 
 Here is a simple argument in English:
 \begin{earg}
@@ -902,7 +1019,7 @@ There can be as many or as few lines as needed between lines $m$ and $n$, but $n
 
 
 \begin{notebox}
-This type of argument is traditionally called a \emph{reductio}. Its full Latin name is \emph{reductio ad absurdum}, which means `reduction to absurdity,' although \textit{absurdity} in the sense that we generally use the word today isn't part of this. Rather, it is reasoning to the point that the assumption leads to two contradictory sentences. This, as you have seen, means that the denial of the assumption is true. 
+An argument using one of these rules to get the conclusion is traditionally called a \emph{reductio}. Its full Latin name is \emph{reductio ad absurdum}, which means `reduction to absurdity,' although we don't mean \textit{absurdity} in the sense that the word is generally used today. Rather, `reduction to absurdity' means reasoning to the point that the assumption leads to two contradictory sentences, which, as you have seen, means that the denial of the assumption is true. 
 \end{notebox}\smallskip
 
 Notice that, just as we do when using the conditional introduction rule, we begin by making an assumption. The subproof that follows is indented, and the assumption that we made must be discharged by applying either the negation introduction rule or the negation elimination rule. 
@@ -990,8 +1107,8 @@ The negation introduction rule or the negation elimination rule is used in each 
 
 \begin{earg}
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $(\enot P \eif \enot Q), Q \proves P$
-
 \begin{proof}
 	\hypo{p1}{\enot P \eif \enot Q} \pr{}	
 	\hypo{p2}{Q} \pr{}
@@ -1003,6 +1120,8 @@ The negation introduction rule or the negation elimination rule is used in each 
 	\have{c}{P}\ne{np-ng}
 \end{proof}
 \medskip
+\end{minipage}
+
 
 \begin{comment}
 \item $P \eif Q, \enot Q \proves \enot P$
@@ -1179,7 +1298,9 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
-\item $P \eif (Q \eor \enot P), P \proves Q$\\
+
+\noindent\begin{minipage}{0.99\textwidth}
+\item $P \eif (Q \eor \enot P), P \proves Q$
 \begin{proof}
 	\hypo{p1}{P \eif (Q \eor \enot P)} \pr{}
 	\hypo{p2}{P} \pr{}
@@ -1187,9 +1308,9 @@ Give a proof for each argument.
 	\have{nnp}{\enot\enot P} \dn{p2} 
 	\have{q}{Q} \oe{qp,nnp}
 \end{proof}
+\end{minipage}
 \medskip
 
-%\filbreak
 
 \item $D \eand H, H \eiff J  \proves J \eor N$ 
 \begin{proof}
@@ -1228,6 +1349,7 @@ Give a proof for each argument.
 \medskip
 
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $P \eand (Q \eor R), P \eif \enot R \proves Q$
 \begin{proof}
 	\hypo{p1}{P \eand (Q \eor R)} \pr{}
@@ -1237,6 +1359,7 @@ Give a proof for each argument.
 	\have{qr}{Q \eor R} \ae{p1}
 	\have{q}{Q} \oe{nr,qr}
 \end{proof}
+\end{minipage}
 \medskip
 
 \noindent\begin{minipage}{0.99\textwidth}
@@ -1255,6 +1378,7 @@ Give a proof for each argument.
 \end{minipage}
 
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $(R \eand T) \eif Q, R \eor \enot P, P \eand T \proves Q$\smallskip
 \begin{proof}
 \hypo{p1}{(R \eand T) \eif Q} \pr{}
@@ -1267,6 +1391,7 @@ Give a proof for each argument.
 \have{rt}{R \eand T} \ai{r,t}
 \have{con}{Q} \ce{p1, rt}
 \end{proof}
+\end{minipage}
 \medskip
 
 
@@ -1294,6 +1419,8 @@ Give a proof for each argument.
 \end{proof}
 \medskip
 
+
+\noindent\begin{minipage}{0.99\textwidth}
 \item $(P \eand R) \eiff (S \eor T), P \eif Q, T \proves Q$
 \begin{proof}
 \hypo{p1}{(P \eand R) \eiff (S \eor T)} \pr{}
@@ -1304,9 +1431,11 @@ Give a proof for each argument.
 \have{p}{P} \ae{pr}
 \have{q}{Q} \ce{p2,p}
 \end{proof}
+\end{minipage}
 \medskip
 
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $S \eif T, T \eif S, T \eiff (T \eiff S) \proves S$
 \begin{proof}
 \hypo{p1}{S \eif T} \pr{}
@@ -1316,15 +1445,14 @@ Give a proof for each argument.
 \have{t}{T} \be{p3,ts}
 \have{s}{S} \ce{p2,t}
 \end{proof}
-
-\medskip
+\end{minipage}
+\bigskip
 
 \end{earg}
 
 
 %%% Part B
 
-\filbreak
 
 \problempart
 \begin{earg}
@@ -1343,6 +1471,7 @@ Give a proof for each argument.
 \medskip
 
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $Q \eif R \proves (Q \eand S) \eif (R \eor T)$ 
 \begin{proof}
 	\hypo{p1}{Q \eif R} \pr{}
@@ -1355,9 +1484,9 @@ Give a proof for each argument.
 	\have{con}{(Q \eand S) \eif (R \eor T)} \ci{as-rt}
 \end{proof}
 \medskip
+\end{minipage}
 
-
-
+\noindent\begin{minipage}{0.99\textwidth}
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
 \begin{proof}
 \hypo{MnNnM}{M \eand (\enot N \eif \enot M)} \pr{}
@@ -1372,10 +1501,11 @@ Give a proof for each argument.
 \have{NM}{N \eand M}\ai{M,N}
 \have{con}{(N \eand M) \eor \enot M}\oi{NM}	
 \end{proof}
+\end{minipage}
 \medskip
 
-%\filbreak
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
 \begin{proof}
 \hypo{zkym}{(Z \eand K) \eiff (Y \eand M)} \pr{}
@@ -1392,8 +1522,10 @@ Give a proof for each argument.
 \have{yz}{Y \eif Z}\ci{y-z}
 \end{proof}
 \medskip
+\end{minipage}
 
 
+\noindent\begin{minipage}{0.99\textwidth}
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \begin{proof}
 \hypo{ceg}{C \eif (E \eand G)} \pr{}
@@ -1412,6 +1544,7 @@ Give a proof for each argument.
 \close
 \have{con}{G}\ne{ng-ng3}
 \end{proof}
+\end{minipage}
 \medskip
 
 \noindent\begin{minipage}{0.99\textwidth}
@@ -1432,6 +1565,8 @@ Give a proof for each argument.
 \medskip
 \end{minipage}
 
+
+\noindent\begin{minipage}{0.99\textwidth}
 \item $S \eiff T \proves S \eiff (T \eor S)$ 
 \begin{proof}
 	\hypo{p1}{S \eiff T} \pr{}
@@ -1455,6 +1590,7 @@ Give a proof for each argument.
 %	\have{con1}{(S \eif (T \eor S)) \eand ((T \eor S) \eif S)} \ai{c1,c2}
 	\have{con2}{S \eiff (T \eor S)} \bi{c1,c2}
 \end{proof}
+\end{minipage}
 \medskip
 
 
@@ -1540,120 +1676,8 @@ Give a proof for each argument.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\chapter{Proofs in Carnap}\label{s:Carnap-proofs}
-
-Creating proofs in Carnap is not difficult. To type the connectives, use the symbols on the right in table \ref{symbols-Carnap}. 
-
-\begin{table*}\centering\sffamily\footnotesize
-\ra{1.25}
-\begin{tabular}{@{}l l@{}}\toprule
-\textth{TFL operator}\quad\quad & \textth{in Carnap} \\\midrule
-\quad	\enot 	&\quad $ \sim$\\
-\quad	\eand 	&\quad \&\\
-\quad	\eor 	&\quad v (lowercase v)\\
-\quad	\eif 	&\quad $-$$>$ (dash, greater than sign)\\
-\quad	\eiff 	&\quad $<$$-$$>$\\
-\bottomrule
-\end{tabular}
-\caption{}\label{symbols-Carnap}
-\end{table*}
-
-
-Carnap will number the lines automatically. After the TFL  sentence on each line, there has to be a colon (`:') before the `PR', `AS', or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put a tab space between the sentence and `:PR', `:AS', or the rule (:$\eif$E, :$\eor$I, etc.). Also indent subproofs with a tab space. (Carnap will let you use more or fewer spaces, but a subproof has to be indented some amount.)
-
-To create a proof, you are given an interface like the one shown in figure \ref{fig:proof-1a}. As you can see, the argument is given at the top. In this case, the premises are $P \eif \enot Q$ and $R \eand P$, and the conclusion is $\enot Q$. (The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$').)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-%\centering
-\includegraphics[width=9.5cm]{textbook--1a.PNG}
-\caption{}
-\label{fig:proof-1a}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-Begin by listing the premises, and don't forget to put `:PR' after each one. If there is a problem with a line---the sentence isn't formed correctly, the rule you've cited isn't being used correctly, or there's some other mistake---Carnap will put \textsf{?} or {\fontencoding{U}\fontfamily{futs}\selectfont\char 49\relax} at the end of the line. When the line is ok, you will get a `+'. 
-% \danger \warning
-% Once you complete each line, Carnap will give you the typographically correct version on the right (figure \ref{fig:proof-1b}). 
-We finish this proof using the $\eand$E and $\eif$E rules (figure \ref{fig:proof-1c}). When the proof is correct, the box containing the argument will turn green, and the proof can be submitted. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-%\centering
-\includegraphics[width=9.5cm]{textbook--1b.PNG}
-\caption{}
-\label{fig:proof-1b}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-%\centering
-\includegraphics[width=9.5cm]{textbook--1c.PNG}
-\caption{}
-\label{fig:proof-1c}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Our next example, $(P \eor Q) \proves (\enot P \eif Q)$, requires a subproof. We begin as before. To create the subproof, put a tab space before $\enot P$ and put `:AS' at the end of the line (figure \ref{fig:proof-2a}). Since the next line is also part of the subproof, we again need a tab before the $Q$. We end the subproof (and discharge the assumption) with the $\eif$I rule. $\enot P \eif Q$ is not indented (so no tabs or spaces before the $\enot P$). That's the conclusion, and so if everything is correct, Carnap will give you the green bar and you can submit the proof (figure \ref{fig:proof-2b}). 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-%\centering
-\includegraphics[width=9.5cm]{textbook--2a.PNG}
-\caption{}
-\label{fig:proof-2a}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-%\centering
-\includegraphics[width=9.5cm]{textbook--2b.PNG}
-\caption{}
-\label{fig:proof-2b}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}
-%\begin{subfigure}[hb]{0.5\textwidth}
-%\centering
-%\includegraphics[angle=90, height=13cm]{textbook--2a.PNG}
-%\caption{}
-%\label{fig:proof-2a}
-%\end{subfigure}
-%\begin{subfigure}[hb]{0.5\textwidth}
-%\centering
-%\includegraphics[angle=90, height=13cm]{textbook--2b.PNG}
-%\caption{}
-%\label{fig:proof-2b}
-%\end{subfigure}
-% \caption{}
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-Although creating proofs in Carnap is not difficult, you do have to be careful. Creating a program that can verify proofs that use only the rules of derivation given in chapter \ref{s:BasicTFL} is relatively simple because there are only a small number of rules and, to produce proofs of valid arguments, we follow those rules very strictly. But, as a consequence, Carnap is not designed to understand what you are trying to do if you deviate from the rules, even if it is a minor deviation or an innocent mistake. So, some reminders:
-\begin{enumerate}
-\itemsep-.3mm
-	\item As long as `$\enot$' is not the main logical operator, you can drop the outermost parentheses. All other parentheses have to be used. 
-	\item Capitalize `PR', `AS',`E', `I' (in the rules), and all atomic sentences.
-	\item Don't forget the `:' right before PR, AS, or the rule that you are citing. 
-	\item There is no space between the $\eand$, $\eor$, $\eif$, $\eiff$, or $\enot$ and the `E' or `I'.  
-	\item There is a space (and no punctuation) after the `E' or `I'. 
-	\item There is a comma between the two lines that have to be cited for $\eand$I, $\eor$E, $\eif$E, and $\eiff$E (e.g., `$\eif$E 2,4').
-	\item There is a dash between the two lines that have to be cited for $\eif$I, $\enot$I, and $\enot$E (e.g., `$\enot$E 4-6').
-%	\item The $\eiff$I rule requires dashes and a comma. (Check the format on p.~\pageref{eiff-I}.)
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \chapter{Some strategies}
@@ -1766,11 +1790,7 @@ Now, let's use the conditional introduction rule to give a proof for this theore
 		\have{con}{(P \eand (\enot P \eor T)) \eif T}\ci{ant-t}
 	\end{proof}
 
-
-
-
-
-To show that a sentence is a theorem, we just have to find a suitable proof. On the other hand, it is not possible to show that a sentence is \emph{not} a theorem this same way. To show that a sentence is not a theorem with our natural deduction system, we would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if we fail in trying to give a proof for a sentence in a thousand different ways, perhaps the proof is just too long and complex for us to figure out. 
+%To show that a sentence is a theorem, we just have to find a suitable proof. On the other hand, it is not possible to show that a sentence is \emph{not} a theorem this same way. To show that a sentence is not a theorem with our natural deduction system, we would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if we fail in trying to give a proof for a sentence in a thousand different ways, perhaps the proof is just too long and complex for us to figure out. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1904,7 +1924,7 @@ Two sentences \meta{A} and \meta{B} are \define{provably equivalent} iff each ca
 Equivalently, \meta{A} and \meta{B} are \define{provably equivalent} if $\proves (\meta{A} \eiff \meta{B})$.
 \end{factboxy}
         
-As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent is not possible for t he same reason that it isn't possible to show that a sentence is not a theorem. Even if we fail to produce two proofs showing that two sentences are provably equivalent, that doesn't mean that the proofs don't exist. It just means that we've failed to figure out what they are. 
+It is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent is not possible. Even if we fail to produce two proofs showing that two sentences are provably equivalent, that doesn't mean that the proofs don't exist. It just means that we've failed to figure out what they are. 
 
 We also, in section \ref{consistency--tt}, defined \textit{jointly inconsistent} using truth tables: sentences are jointly inconsistent if there is no line on a truth table where they are all true. Again, we can show that two or more sentences are jointly inconsistent with our natural deduction system. 
 
@@ -1934,9 +1954,9 @@ Table \ref{table.one-mult-proofs} summarizes what we have covered in this chapte
 \ra{1.25}
 \begin{tabular}{@{}l l l@{}}\toprule
 \textth{To check} & \textth{that it is} & \textth{that it is not}\\\midrule
-theorem & one proof & \textit{not possible with proofs}\\
-equivalent & two proofs & \textit{not possible with proofs}\\
-inconsistent &  one proof  & \textit{not possible with proofs}\\
+theorem & one proof & {not possible with proofs}\\
+equivalent & two proofs & {not possible with proofs}\\
+inconsistent &  one proof  & {not possible with proofs}\\
 consistent & \textit{not possible with proofs} & one proof\\
 \bottomrule
 \end{tabular}

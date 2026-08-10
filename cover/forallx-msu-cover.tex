@@ -3,9 +3,9 @@
 
 %\PassOptionsToPackage{cmyk}{xcolor}
 
-%\documentclass[bleedwidth=6.35mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=12.3mm]{bookcover} %Amazon
+\documentclass[bleedwidth=6.35mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=12.3mm]{bookcover} %Amazon
 
-\documentclass[bleedwidth=3.17mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=13.82mm]{bookcover} %Lulu
+%\documentclass[bleedwidth=3.17mm, marklength=0mm, coverheight=228.6mm, coverwidth=152.4mm, spinewidth=13.82mm]{bookcover} %Lulu
 
 % for Amazon
 % page-turn direction: left to right
@@ -13,6 +13,11 @@
 % find spine width
 
 % For Lulu, just change the spinewidth, which will be provided once the pdf is uploaded.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% The only thing that needs to be changed below here is the bar code (and ISBN), which is at the very bottom.
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{GS1,qrcode}   % for the barcode
 %\usepackage[cmyk]{xcolor}
@@ -95,17 +100,18 @@
 }
 
 
-%ISBN [module_height=9mm]{ISBN 978-1-716-84837-7}
+%%%% Remove the barcode for Amazon.
+
 \bookcovercomponent{normal}{back}[,1cm,,]{
 \vfill
 \centering\textcolor{forallx-orange}{
-%\savebox0{\EANBarcode[module_height=12mm]{ISBN 9798865977643}} %Amazon
 \savebox0{\EANBarcode[module_height=12mm]{ISBN 9781716848377}} %Lulu
 \colorbox{white}{%
 \usebox0
 \raisebox{\depth}{\qrcode[height=\ht0]{https://loighic.net}}
 }}}
 
+%%%% \savebox0{\EANBarcode[module_height=12mm]{ISBN 9798865977643}} %Amazon
 
 \end{bookcover}
 \end{document}
