@@ -2,7 +2,7 @@
 *.glsdefs
 *.ist
 *.log
-# *.pdf
+*.pdf
 *.synctex.gz
 *.toc
 *.aux
