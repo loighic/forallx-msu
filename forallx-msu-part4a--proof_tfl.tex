@@ -224,6 +224,17 @@ In our final step, we use the conjunction introduction rule to get the conclusio
 	\have{b2}{S} \ae{b}
 	\have{c}{(N\eor P)\eand S} \ai{a,b2}
 \end{proof}
+\medskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+%\centering
+\includegraphics[width=9.5cm]{textbook--1a.PNG}
+\caption{}
+\label{fig:proof-1a}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 
  
  
 \section{Proofs in Carnap}\label{s:Carnap-proofs}
@@ -244,18 +255,9 @@ In our final step, we use the conjunction introduction rule to get the conclusio
 \caption{}\label{symbols-Carnap}
 \end{table*}
 
-To create a proof, you are given an interface like the one shown in figure \ref{fig:proof-1a}. As you can see, the argument is given at the top. In this case, the premises are $(P \eif \enot Q)$ and $(R \eand P)$, and the conclusion is $\enot Q$. The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$').
+To create a proof in Carnap, you begin with an interface like the one shown in figure \ref{fig:proof-1a}. As you can see, the argument is given at the top. In this case, the premises are $(P \eif \enot Q)$ and $(R \eand P)$, and the conclusion is $\enot Q$. The premises are separated by commas. The premises and the conclusion are separated by the turnstile (`$\proves$').
 
 Carnap will number the lines automatically. After the TFL  sentence on each line, there has to be a colon (`:') before the `PR' or the rule. Carnap is flexible with the spacing on a line, but as a guideline, put a tab space between the sentence and the `:PR' or the rule (:$\eand$E, :$\eor$I, etc.).
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-%\centering
-\includegraphics[width=9.5cm]{textbook--1a.PNG}
-\caption{}
-\label{fig:proof-1a}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 Begin by listing the premises, and don't forget to put `:PR' after each one. If there is a problem with a line---the sentence isn't formed correctly, the rule you've cited isn't being used correctly, or there's some other mistake---Carnap will put \textsf{?} or {\fontencoding{U}\fontfamily{futs}\selectfont\char 49\relax} at the end of the line. When the line is ok, you will get a `+'. 
 % \danger \warning
@@ -281,8 +283,7 @@ We finish this proof using the $\eand$E and $\eif$E rules (figure \ref{fig:proof
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-Although creating proofs in Carnap is not difficult, you do have to be careful. Creating a program that can verify proofs that use only the rules of derivation given in this chapter is relatively simple because there are only a small number of rules and, to produce proofs for valid arguments, we follow those rules very strictly. But, as a consequence, Carnap is not designed to understand what you are trying to do if you deviate from the rules, even if it is a minor deviation or an innocent mistake. So, some reminders:
+Although writing out a proof in Carnap is not difficult, you do have to be careful. Creating a program that can verify proofs that use only the rules of derivation given in this chapter is relatively simple because there are only a small number of rules and, to produce proofs for valid arguments, we follow those rules very strictly. But, as a consequence, Carnap is not designed to understand what you are trying to do if you deviate from the rules, even if it is a minor deviation or an innocent mistake. So, some reminders:
 \begin{enumerate}
 \itemsep-.6mm
 	\item As long as `$\enot$' is not the main logical operator, you can drop the outermost parentheses. \textbf{All other parentheses have to be used}. 
