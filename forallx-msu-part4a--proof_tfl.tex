@@ -1345,7 +1345,7 @@ Give a proof for each argument.
 	\have{hj}{H \eand J} \ae{p1}
 	\have{h}{H} \ae{hj}
 	\have{hj2}{H \eor M} \oi{h}
-	\have{k}{K} \ci{p2,hj2}
+	\have{k}{K} \ce{p2,hj2}
 \end{proof}
 \medskip
 
@@ -1356,7 +1356,7 @@ Give a proof for each argument.
 	\hypo{p1}{P \eand (Q \eor R)} \pr{}
 	\hypo{p2}{P \eif \enot R} \pr{}
 	\have{p}{P} \ae{p1}
-	\have{nr}{\enot R} \ci{p2,p}
+	\have{nr}{\enot R} \ce{p2,p}
 	\have{qr}{Q \eor R} \ae{p1}
 	\have{q}{Q} \oe{nr,qr}
 \end{proof}
